@@ -14,10 +14,16 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     gen.add_argument("config_path", help="Path to spec YAML or batch YAML")
     gen.add_argument("--workspace", default="workspace", help="Workspace directory")
 
+    gen_pool = sub.add_parser("generate-pool", help="Generate a background pool for a content profile")
+    gen_pool.add_argument("profile_name", help="Content profile name (e.g. python_repo, noir_fiction)")
+    gen_pool.add_argument("--workspace", default="workspace", help="Workspace directory")
+    gen_pool.add_argument("--target-tokens", type=int, default=1_000_000, help="Target token count")
+
     run = sub.add_parser("run", help="Run experiments in a batch")
     run.add_argument("config_path", help="Path to batch YAML")
     run.add_argument("--workspace", default="workspace", help="Workspace directory")
     run.add_argument("--specs-dir", default="specs", help="Specs directory")
+    run.add_argument("--experiments-dir", default="experiments", help="Experiments directory (v2)")
 
     judge = sub.add_parser("judge", help="Judge completed runs")
     judge.add_argument("config_path", help="Path to batch YAML")
@@ -39,11 +45,27 @@ def _is_batch_file(path: Path) -> bool:
         data = yaml.safe_load(f)
     return "batch_name" in data
 
+def _is_v2_experiment(path: Path) -> bool:
+    import yaml
+    with open(path) as f:
+        data = yaml.safe_load(f)
+    return data.get("schema_version") == "2.0"
+
 async def _generate(args: argparse.Namespace) -> None:
-    from agent_retrieval.generator import generate_experiment
     config_path = Path(args.config_path)
     workspace_dir = Path(args.workspace)
+
+    if _is_v2_experiment(config_path):
+        from agent_retrieval.generator import generate_experiment_v2
+        from agent_retrieval.schema.template import ExperimentTemplate
+        template = ExperimentTemplate.from_yaml(config_path)
+        print(f"Generating v2 experiment '{template.experiment_type}'...")
+        ids = await generate_experiment_v2(template, workspace_dir)
+        print(f"Generated {len(ids)} parametrisations")
+        return
+
     if _is_batch_file(config_path):
+        from agent_retrieval.generator import generate_experiment
         batch = BatchConfig.from_yaml(config_path)
         specs_dir = config_path.parent.parent / "specs"
         for run_config in batch.runs:
@@ -52,10 +74,19 @@ async def _generate(args: argparse.Namespace) -> None:
             await generate_experiment(spec, workspace_dir)
             print(f"  Done: {spec.experiment_id}")
     else:
+        from agent_retrieval.generator import generate_experiment
         spec = ExperimentSpec.from_yaml(config_path)
         print(f"Generating corpus for {spec.experiment_id}...")
         await generate_experiment(spec, workspace_dir)
         print(f"  Done: {spec.experiment_id}")
+
+async def _generate_pool(args: argparse.Namespace) -> None:
+    from agent_retrieval.generator.pool import generate_pool
+    workspace_dir = Path(args.workspace)
+    pool_dir = workspace_dir / "runner" / "pools" / args.profile_name
+    print(f"Generating background pool for '{args.profile_name}'...")
+    await generate_pool(args.profile_name, pool_dir, target_token_count=args.target_tokens)
+    print(f"Done: pool at {pool_dir}")
 
 async def _run(args: argparse.Namespace) -> None:
     from agent_retrieval.runner import run_batch
@@ -74,7 +105,9 @@ def _analyze(args: argparse.Namespace) -> None:
 
 def main() -> None:
     args = parse_args()
-    if args.command == "generate":
+    if args.command == "generate-pool":
+        asyncio.run(_generate_pool(args))
+    elif args.command == "generate":
         asyncio.run(_generate(args))
     elif args.command == "run":
         asyncio.run(_run(args))

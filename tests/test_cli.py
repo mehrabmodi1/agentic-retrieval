@@ -24,3 +24,18 @@ class TestCLI:
     def test_analyze_batch(self):
         args = parse_args(["analyze", "batches/test.yaml"])
         assert args.command == "analyze"
+
+class TestCLIV2:
+    def test_generate_pool_command(self):
+        args = parse_args(["generate-pool", "python_repo"])
+        assert args.command == "generate-pool"
+        assert args.profile_name == "python_repo"
+
+    def test_generate_pool_custom_workspace(self):
+        args = parse_args(["generate-pool", "python_repo", "--workspace", "/tmp/ws"])
+        assert args.workspace == "/tmp/ws"
+
+    def test_generate_v2_experiment(self):
+        args = parse_args(["generate", "experiments/single_needle.yaml"])
+        assert args.command == "generate"
+        assert args.config_path == "experiments/single_needle.yaml"
