@@ -45,3 +45,61 @@ class TestBackgroundGenerator:
             await gen.generate(spec, corpus_dir, red_herring_hint=red_herring_hint)
 
         assert corpus_dir.exists()
+
+
+from unittest.mock import MagicMock
+from agent_retrieval.generator.generate import generate_experiment_v2
+from agent_retrieval.schema.template import ExperimentTemplate
+
+
+class TestGenerateExperimentV2:
+    @pytest.mark.asyncio
+    async def test_orchestrates_all_phases(self, tmp_workspace):
+        workspace_dir = tmp_workspace / "workspace"
+        template_dict = {
+            "schema_version": "2.0",
+            "experiment_type": "single_needle",
+            "payload": {"item_type": "config_value"},
+            "question_examples": {
+                "python_repo": {
+                    "easy_exact": {
+                        "question": "What is X?",
+                        "needle": "X = 1",
+                        "answer": "1",
+                    },
+                },
+            },
+            "rubric_criteria": [{"criterion": "correctness", "weight": 1.0}],
+            "grid": {
+                "content_profile": ["python_repo"],
+                "corpus_token_count": [20000],
+                "discriminability": ["easy"],
+                "reference_clarity": ["exact"],
+            },
+            "runner": {
+                "n_repeats": 1,
+                "agent_model": "claude-sonnet-4-6",
+                "max_tokens": 100000,
+                "allowed_tools": ["Read"],
+            },
+        }
+        template = ExperimentTemplate.model_validate(template_dict)
+
+        # Pre-create a pool so pool generation is skipped
+        pool_dir = workspace_dir / "runner" / "pools" / "python_repo"
+        pool_dir.mkdir(parents=True)
+        for i in range(10):
+            (pool_dir / f"file_{i}.md").write_text(f"# File {i}\n" + "content " * 500)
+
+        with patch("agent_retrieval.generator.generate.insert_payloads", new_callable=AsyncMock) as mock_insert, \
+             patch("agent_retrieval.generator.generate.generate_pool", new_callable=AsyncMock) as mock_pool:
+            await generate_experiment_v2(template, workspace_dir)
+
+        # Pool generation should NOT have been called (pool exists with enough tokens)
+        mock_pool.assert_not_called()
+        # Insertion should have been called once (1 parametrisation)
+        assert mock_insert.call_count == 1
+        # Corpus should have been assembled
+        corpus_dir = workspace_dir / "runner" / "corpora" / "single_needle__python_repo__20k__easy__exact"
+        assert corpus_dir.exists()
+        assert len(list(corpus_dir.rglob("*.md"))) > 0
