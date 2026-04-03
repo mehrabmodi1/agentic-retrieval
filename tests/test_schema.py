@@ -161,3 +161,103 @@ class TestVerdict:
         })
         assert v.weighted_score == 0.85
         assert v.session_metrics.tool_calls["Grep"] == 3
+
+
+from agent_retrieval.schema.batch import BatchConfigV2, BatchExperimentEntry
+
+
+class TestBatchConfigV2:
+    def test_simple_experiment_list(self):
+        batch = BatchConfigV2.model_validate({
+            "batch_name": "test-batch",
+            "max_parallel": 4,
+            "retry_failed": True,
+            "judge_model": "claude-sonnet-4-6",
+            "experiments": ["single_needle", "multi_chain"],
+        })
+        assert len(batch.experiments) == 2
+        assert batch.experiments[0].experiment_type == "single_needle"
+        assert batch.experiments[0].filter is None
+
+    def test_filtered_experiment(self):
+        batch = BatchConfigV2.model_validate({
+            "batch_name": "test-batch",
+            "max_parallel": 2,
+            "retry_failed": True,
+            "judge_model": "claude-sonnet-4-6",
+            "experiments": [
+                {
+                    "experiment_type": "single_needle",
+                    "filter": {
+                        "content_profile": ["python_repo"],
+                        "corpus_token_count": [20000],
+                    },
+                },
+            ],
+        })
+        assert batch.experiments[0].experiment_type == "single_needle"
+        assert batch.experiments[0].filter["content_profile"] == ["python_repo"]
+
+    def test_mixed_format(self):
+        batch = BatchConfigV2.model_validate({
+            "batch_name": "test-batch",
+            "max_parallel": 2,
+            "retry_failed": True,
+            "judge_model": "claude-sonnet-4-6",
+            "experiments": [
+                "single_needle",
+                {"experiment_type": "multi_chain", "filter": {"n_items": [2]}},
+            ],
+        })
+        assert len(batch.experiments) == 2
+        assert batch.experiments[0].filter is None
+        assert batch.experiments[1].filter is not None
+
+
+class TestAnswerKeyV2:
+    def test_answer_key_with_parametrisation(self):
+        ak = AnswerKey.model_validate({
+            "experiment_id": "single_needle__python_repo__20k__easy__exact",
+            "generated_at": "2026-04-03T10:00:00Z",
+            "parametrisation_id": "single_needle__python_repo__20k__easy__exact",
+            "parameters": {
+                "content_profile": "python_repo",
+                "corpus_token_count": 20000,
+                "discriminability": "easy",
+                "reference_clarity": "exact",
+            },
+            "items": [{
+                "item_id": "target_001",
+                "inserted_text": "X = 1",
+                "file_path": "config.md",
+                "line_range": [1, 1],
+                "context_summary": "test",
+            }],
+            "expected_answers": {
+                "question": "What is X?",
+                "correctness": "1",
+            },
+            "rubric_criteria": [{"criterion": "correctness", "weight": 1.0}],
+        })
+        assert ak.parametrisation_id == "single_needle__python_repo__20k__easy__exact"
+        assert ak.parameters["content_profile"] == "python_repo"
+
+    def test_answer_key_backward_compat(self):
+        """V1 answer keys without parametrisation fields still work."""
+        ak = AnswerKey.model_validate({
+            "experiment_id": "test-001",
+            "generated_at": "2026-04-03T10:00:00Z",
+            "items": [{
+                "item_id": "target_001",
+                "inserted_text": "X = 1",
+                "file_path": "config.py",
+                "line_range": [1, 1],
+                "context_summary": "test",
+            }],
+            "expected_answers": {
+                "question": "What is X?",
+                "correctness": "1",
+            },
+            "rubric_criteria": [{"criterion": "correctness", "weight": 1.0}],
+        })
+        assert ak.parametrisation_id is None

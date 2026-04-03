@@ -1,5 +1,5 @@
 from agent_retrieval.schema.answer_key import AnswerKey, AnswerKeyItem, ExpectedAnswers
-from agent_retrieval.schema.batch import BatchConfig, BatchRunConfig
+from agent_retrieval.schema.batch import BatchConfig, BatchConfigV2, BatchExperimentEntry, BatchRunConfig
 from agent_retrieval.schema.experiment import (
     CorpusSpec,
     ExperimentSpec,
@@ -21,7 +21,7 @@ from agent_retrieval.schema.verdict import ScoreEntry, SessionMetrics, Verdict
 
 __all__ = [
     "AnswerKey", "AnswerKeyItem", "ExpectedAnswers",
-    "BatchConfig", "BatchRunConfig",
+    "BatchConfig", "BatchConfigV2", "BatchExperimentEntry", "BatchRunConfig",
     "CorpusSpec", "ExperimentSpec", "PayloadItem", "PayloadSpec",
     "PlacementConfig", "RubricCriterion", "RunnerSpec",
     "RunState",

@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from pathlib import Path
+from typing import Any
 
 import yaml
 from pydantic import BaseModel
@@ -25,6 +26,8 @@ class ExpectedAnswers(BaseModel):
 class AnswerKey(BaseModel):
     experiment_id: str
     generated_at: str
+    parametrisation_id: str | None = None
+    parameters: dict[str, Any] | None = None
     items: list[AnswerKeyItem]
     expected_answers: ExpectedAnswers
     rubric_criteria: list[RubricCriterion]
