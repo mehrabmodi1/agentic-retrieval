@@ -1,0 +1,8 @@
+workspace/
+__pycache__/
+*.egg-info/
+dist/
+.venv/
+*.pyc
+.pytest_cache/
+.ipynb_checkpoints/

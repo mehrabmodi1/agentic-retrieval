@@ -1,0 +1,36 @@
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry]
+name = "agent-retrieval"
+version = "0.1.0"
+description = "An experiment framework for measuring AI agent retrieval performance"
+authors = ["Your Name <you@example.com>"]
+readme = "README.md"
+packages = [{include = "agent_retrieval", from = "src"}]
+
+[tool.poetry.dependencies]
+python = "^3.12"
+pydantic = "^2.0"
+pyyaml = "^6.0"
+anthropic = "^0.50.0"
+claude-agent-sdk = "^0.1.0"
+pandas = "^2.0"
+matplotlib = "^3.8"
+seaborn = "^0.13"
+jinja2 = "^3.1"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.0"
+pytest-asyncio = "^0.23"
+
+[tool.poetry.group.notebook.dependencies]
+jupyterlab = "^4.0"
+
+[tool.poetry.scripts]
+agent-retrieval = "agent_retrieval.cli:main"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"
