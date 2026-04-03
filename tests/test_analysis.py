@@ -83,3 +83,49 @@ class TestToolUsageByType:
             workspace_dir=populated_workspace / "workspace", specs_dir=populated_workspace / "specs")
         result = tool_usage_by_type(df)
         assert "Grep" in result.columns or "Grep" in str(result.columns)
+
+
+class TestLoadBatchResultsV2:
+    def test_loads_v2_metadata_from_answer_key(self, tmp_path):
+        """V2 answer keys carry parametrisation metadata — no spec file needed."""
+        workspace = tmp_path / "workspace"
+        batch_name = "test-v2"
+
+        # Create a v2 answer key
+        ak_dir = workspace / "judge" / "answer_keys"
+        ak_dir.mkdir(parents=True)
+        ak_path = ak_dir / "single_needle__python_repo__20k__easy__exact.yaml"
+        ak_path.write_text(yaml.dump({
+            "experiment_id": "single_needle__python_repo__20k__easy__exact",
+            "parametrisation_id": "single_needle__python_repo__20k__easy__exact",
+            "parameters": {
+                "content_profile": "python_repo",
+                "corpus_token_count": 20000,
+                "discriminability": "easy",
+                "reference_clarity": "exact",
+            },
+            "generated_at": "2026-04-03T10:00:00Z",
+            "items": [{"item_id": "t1", "inserted_text": "X=1", "file_path": "a.md", "line_range": [1,1], "context_summary": "test"}],
+            "expected_answers": {"question": "What is X?", "correctness": "1"},
+            "rubric_criteria": [{"criterion": "correctness", "weight": 1.0}],
+        }))
+
+        # Create a verdict
+        verdict_dir = workspace / "judge" / "judgements" / batch_name / "single_needle__python_repo__20k__easy__exact"
+        verdict_dir.mkdir(parents=True)
+        (verdict_dir / "run001.yaml").write_text(yaml.dump({
+            "experiment_id": "single_needle__python_repo__20k__easy__exact",
+            "run_id": "run001",
+            "batch_name": batch_name,
+            "scores": [{"criterion": "correctness", "score": 0.9, "weight": 1.0, "reasoning": "Good"}],
+            "weighted_score": 0.9,
+            "session_metrics": {"total_context_tokens": 5000, "total_turns": 3, "tool_calls": {"Grep": 2}, "duration_seconds": 10.0},
+        }))
+
+        df = load_batch_results(batch_name, workspace_dir=workspace, specs_dir=tmp_path / "specs")
+        assert len(df) == 1
+        assert df.iloc[0]["content_profile"] == "python_repo"
+        assert df.iloc[0]["corpus_token_count"] == 20000
+        assert df.iloc[0]["discriminability"] == "easy"
+        assert df.iloc[0]["reference_clarity"] == "exact"
+        assert df.iloc[0]["experiment_type"] == "single_needle"
