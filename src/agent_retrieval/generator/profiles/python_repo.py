@@ -91,3 +91,108 @@ class PythonRepoProfile(ContentProfile):
             )
 
         return base_prompt
+
+    def pool_generation_brief(self, target_token_count: int) -> str:
+        return (
+            "You are generating background files for a realistic Python web application repository. "
+            "Each file should be a Markdown (.md) file containing realistic Python source code, "
+            "configuration, documentation, or project files. Files should look like they belong to "
+            "a medium-to-large production web application with database access, caching, API endpoints, "
+            "authentication, background tasks, and logging.\n\n"
+            "Requirements:\n"
+            "- Every file must have a .md extension\n"
+            "- Code files should contain 50-200 lines of realistic Python code\n"
+            "- Include imports, classes, functions, docstrings, and occasional inline comments\n"
+            "- Configuration files should use YAML or environment variable patterns\n"
+            "- Documentation files should describe setup, usage, and architecture\n"
+            "- Include realistic variable names, function signatures, and data structures\n"
+            "- Do NOT include any comments about the files being generated or synthetic\n"
+            f"- Target total output: approximately {target_token_count:,} tokens across all files\n"
+        )
+
+    def skeleton(self, target_token_count: int) -> list[dict]:
+        tokens_per_section = target_token_count // 8
+
+        return [
+            {
+                "name": "core",
+                "description": "Core application models, configuration, and entry points",
+                "target_tokens": tokens_per_section,
+                "files": [
+                    "README.md", "config/settings.md", "config/database.md",
+                    "config/logging.md", "core/models.md", "core/exceptions.md",
+                    "core/constants.md", "core/app.md",
+                ],
+            },
+            {
+                "name": "api",
+                "description": "API endpoints, serializers, and middleware",
+                "target_tokens": tokens_per_section,
+                "files": [
+                    "api/routes.md", "api/auth.md", "api/middleware.md",
+                    "api/serializers.md", "api/validators.md", "api/pagination.md",
+                    "api/rate_limiting.md", "api/error_handlers.md",
+                ],
+            },
+            {
+                "name": "services",
+                "description": "Business logic services and domain operations",
+                "target_tokens": tokens_per_section,
+                "files": [
+                    "services/user_service.md", "services/auth_service.md",
+                    "services/notification_service.md", "services/payment_service.md",
+                    "services/search_service.md", "services/analytics_service.md",
+                    "services/export_service.md", "services/scheduling_service.md",
+                ],
+            },
+            {
+                "name": "db",
+                "description": "Database access layer, migrations, and connection management",
+                "target_tokens": tokens_per_section,
+                "files": [
+                    "db/connection.md", "db/migrations.md", "db/repositories.md",
+                    "db/query_builder.md", "db/pool.md", "db/cache_layer.md",
+                    "db/seeds.md", "db/health_check.md",
+                ],
+            },
+            {
+                "name": "workers",
+                "description": "Background task workers and job processing",
+                "target_tokens": tokens_per_section,
+                "files": [
+                    "workers/task_runner.md", "workers/email_worker.md",
+                    "workers/report_generator.md", "workers/cleanup_worker.md",
+                    "workers/sync_worker.md", "workers/retry_handler.md",
+                ],
+            },
+            {
+                "name": "utils",
+                "description": "Utility functions, helpers, and shared components",
+                "target_tokens": tokens_per_section,
+                "files": [
+                    "utils/crypto.md", "utils/date_helpers.md", "utils/file_utils.md",
+                    "utils/http_client.md", "utils/logging_utils.md",
+                    "utils/string_utils.md", "utils/validators.md",
+                ],
+            },
+            {
+                "name": "tests",
+                "description": "Test files and test utilities",
+                "target_tokens": tokens_per_section,
+                "files": [
+                    "tests/conftest.md", "tests/test_auth.md", "tests/test_api.md",
+                    "tests/test_services.md", "tests/test_db.md",
+                    "tests/test_workers.md", "tests/fixtures.md",
+                ],
+            },
+            {
+                "name": "deploy",
+                "description": "Deployment configuration, CI/CD, and infrastructure",
+                "target_tokens": tokens_per_section,
+                "files": [
+                    "deploy/dockerfile.md", "deploy/docker_compose.md",
+                    "deploy/ci_pipeline.md", "deploy/nginx_config.md",
+                    "deploy/env_template.md", "deploy/monitoring.md",
+                ],
+            },
+        ]
