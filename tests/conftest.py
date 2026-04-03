@@ -11,6 +11,7 @@ def tmp_workspace(tmp_path: Path) -> Path:
     dirs = [
         "runner/corpora",
         "runner/runs",
+        "runner/pools",
         "judge/answer_keys",
         "judge/judgements",
         "analysis",
@@ -19,6 +20,7 @@ def tmp_workspace(tmp_path: Path) -> Path:
         (tmp_path / "workspace" / d).mkdir(parents=True)
     (tmp_path / "specs").mkdir()
     (tmp_path / "batches").mkdir()
+    (tmp_path / "experiments").mkdir()
     return tmp_path
 
 
