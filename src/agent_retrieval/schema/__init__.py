@@ -10,6 +10,12 @@ from agent_retrieval.schema.experiment import (
     RunnerSpec,
 )
 from agent_retrieval.schema.run_state import RunState
+from agent_retrieval.schema.template import (
+    ExperimentTemplate,
+    GridSpec,
+    Parametrisation,
+    QuestionExample,
+)
 from agent_retrieval.schema.verdict import ScoreEntry, SessionMetrics, Verdict
 
 __all__ = [
@@ -18,5 +24,6 @@ __all__ = [
     "CorpusSpec", "ExperimentSpec", "PayloadItem", "PayloadSpec",
     "PlacementConfig", "RubricCriterion", "RunnerSpec",
     "RunState",
+    "ExperimentTemplate", "GridSpec", "Parametrisation", "QuestionExample",
     "ScoreEntry", "SessionMetrics", "Verdict",
 ]
