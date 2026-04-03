@@ -14,6 +14,7 @@ from agent_retrieval.schema.template import (
     ExperimentTemplate,
     GridSpec,
     Parametrisation,
+    PayloadTemplateSpec,
     QuestionExample,
 )
 from agent_retrieval.schema.verdict import ScoreEntry, SessionMetrics, Verdict
@@ -24,6 +25,6 @@ __all__ = [
     "CorpusSpec", "ExperimentSpec", "PayloadItem", "PayloadSpec",
     "PlacementConfig", "RubricCriterion", "RunnerSpec",
     "RunState",
-    "ExperimentTemplate", "GridSpec", "Parametrisation", "QuestionExample",
+    "ExperimentTemplate", "GridSpec", "Parametrisation", "PayloadTemplateSpec", "QuestionExample",
     "ScoreEntry", "SessionMetrics", "Verdict",
 ]

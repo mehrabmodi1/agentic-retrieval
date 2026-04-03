@@ -24,13 +24,6 @@ class GridSpec(BaseModel):
     reference_clarity: list[Literal["exact", "synonym", "contextual"]]
     n_items: list[int] | None = None
 
-    @model_validator(mode="after")
-    def validate_discriminability_values(self) -> GridSpec:
-        for v in self.discriminability:
-            if v not in ("easy", "hard"):
-                raise ValueError(f"Invalid discriminability: {v}")
-        return self
-
 
 class PayloadTemplateSpec(BaseModel):
     item_type: str
