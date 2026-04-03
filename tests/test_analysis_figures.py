@@ -5,6 +5,12 @@ from agent_retrieval.analysis.figures import (
     plot_accuracy_vs_corpus_size, plot_context_usage,
     plot_tool_distribution, plot_cross_type_comparison,
 )
+from agent_retrieval.analysis.figures import (
+    plot_accuracy_vs_n_items,
+    plot_accuracy_by_discriminability,
+    plot_accuracy_by_reference_clarity,
+    plot_profile_comparison,
+)
 
 @pytest.fixture
 def sample_df() -> pd.DataFrame:
@@ -38,4 +44,41 @@ class TestFigures:
     def test_cross_type_creates_file(self, sample_df, tmp_path):
         out = tmp_path / "cross_type.png"
         plot_cross_type_comparison(sample_df, out)
+        assert out.exists()
+
+
+class TestV2Figures:
+    @pytest.fixture
+    def v2_df(self):
+        return pd.DataFrame([
+            {"experiment_type": "single_needle", "content_profile": "python_repo", "corpus_token_count": 20000,
+             "discriminability": "easy", "reference_clarity": "exact", "weighted_score": 0.9},
+            {"experiment_type": "single_needle", "content_profile": "python_repo", "corpus_token_count": 20000,
+             "discriminability": "hard", "reference_clarity": "exact", "weighted_score": 0.6},
+            {"experiment_type": "single_needle", "content_profile": "noir_fiction", "corpus_token_count": 20000,
+             "discriminability": "easy", "reference_clarity": "exact", "weighted_score": 0.85},
+            {"experiment_type": "multi_chain", "content_profile": "python_repo", "corpus_token_count": 40000,
+             "discriminability": "easy", "reference_clarity": "synonym", "weighted_score": 0.7, "n_items": 2},
+            {"experiment_type": "multi_chain", "content_profile": "python_repo", "corpus_token_count": 40000,
+             "discriminability": "easy", "reference_clarity": "synonym", "weighted_score": 0.5, "n_items": 8},
+        ])
+
+    def test_plot_accuracy_vs_n_items(self, v2_df, tmp_path):
+        out = tmp_path / "n_items.png"
+        plot_accuracy_vs_n_items(v2_df, out)
+        assert out.exists()
+
+    def test_plot_accuracy_by_discriminability(self, v2_df, tmp_path):
+        out = tmp_path / "disc.png"
+        plot_accuracy_by_discriminability(v2_df, out)
+        assert out.exists()
+
+    def test_plot_accuracy_by_reference_clarity(self, v2_df, tmp_path):
+        out = tmp_path / "ref.png"
+        plot_accuracy_by_reference_clarity(v2_df, out)
+        assert out.exists()
+
+    def test_plot_profile_comparison(self, v2_df, tmp_path):
+        out = tmp_path / "profile.png"
+        plot_profile_comparison(v2_df, out)
         assert out.exists()

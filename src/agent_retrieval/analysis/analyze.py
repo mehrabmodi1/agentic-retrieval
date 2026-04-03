@@ -72,6 +72,30 @@ def run_analysis(
         str(fig_cross.relative_to(output_dir)),
     ]
 
+    # --- V2 figures (only generated if v2 columns present) ---
+    if "discriminability" in df.columns:
+        from agent_retrieval.analysis.figures import (
+            plot_accuracy_vs_n_items,
+            plot_accuracy_by_discriminability,
+            plot_accuracy_by_reference_clarity,
+            plot_profile_comparison,
+        )
+        fig_n_items = figures_dir / "accuracy_vs_n_items.png"
+        plot_accuracy_vs_n_items(df, fig_n_items)
+        figure_paths.append(str(fig_n_items.relative_to(output_dir)))
+
+        fig_disc = figures_dir / "accuracy_by_discriminability.png"
+        plot_accuracy_by_discriminability(df, fig_disc)
+        figure_paths.append(str(fig_disc.relative_to(output_dir)))
+
+        fig_ref = figures_dir / "accuracy_by_reference_clarity.png"
+        plot_accuracy_by_reference_clarity(df, fig_ref)
+        figure_paths.append(str(fig_ref.relative_to(output_dir)))
+
+        fig_profile = figures_dir / "profile_comparison.png"
+        plot_profile_comparison(df, fig_profile)
+        figure_paths.append(str(fig_profile.relative_to(output_dir)))
+
     # --- Report ---
     generated_at = datetime.now(tz=timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
     report_path = output_dir / "report.html"

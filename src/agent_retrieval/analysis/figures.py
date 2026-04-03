@@ -102,3 +102,106 @@ def plot_cross_type_comparison(df: pd.DataFrame, output_path: Path) -> None:
     ax.set_title("Score Distribution by Experiment Type")
     plt.xticks(rotation=30, ha="right")
     _save_and_close(fig, output_path)
+
+
+def plot_accuracy_vs_n_items(df: pd.DataFrame, output_path: Path) -> None:
+    """Errorbar plot of weighted_score vs n_items, grouped by experiment_type."""
+    fig, ax = plt.subplots(figsize=(8, 5))
+    plot_df = df.dropna(subset=["n_items"])
+
+    if plot_df.empty:
+        ax.set_title("Accuracy vs N-Items (no data)")
+        _save_and_close(fig, output_path)
+        return
+
+    for exp_type, group in plot_df.groupby("experiment_type"):
+        stats = (
+            group.groupby("n_items")["weighted_score"]
+            .agg(mean="mean", std="std")
+            .reset_index()
+        )
+        ax.errorbar(
+            stats["n_items"], stats["mean"], yerr=stats["std"].fillna(0),
+            label=exp_type, marker="o", capsize=4,
+        )
+
+    ax.set_xlabel("Number of Items")
+    ax.set_ylabel("Weighted Score")
+    ax.set_title("Accuracy vs Number of Items")
+    ax.legend()
+    _save_and_close(fig, output_path)
+
+
+def plot_accuracy_by_discriminability(df: pd.DataFrame, output_path: Path) -> None:
+    """Grouped bar chart of weighted_score by discriminability, per experiment_type."""
+    fig, ax = plt.subplots(figsize=(8, 5))
+
+    if "discriminability" not in df.columns:
+        ax.set_title("Accuracy by Discriminability (no data)")
+        _save_and_close(fig, output_path)
+        return
+
+    stats = (
+        df.groupby(["experiment_type", "discriminability"])["weighted_score"]
+        .agg(mean="mean", std="std")
+        .reset_index()
+    )
+    pivot = stats.pivot(index="experiment_type", columns="discriminability", values="mean")
+    pivot.plot(kind="bar", ax=ax, capsize=4)
+
+    ax.set_xlabel("Experiment Type")
+    ax.set_ylabel("Weighted Score")
+    ax.set_title("Accuracy by Discriminability")
+    ax.legend(title="Discriminability")
+    plt.xticks(rotation=30, ha="right")
+    _save_and_close(fig, output_path)
+
+
+def plot_accuracy_by_reference_clarity(df: pd.DataFrame, output_path: Path) -> None:
+    """Grouped bar chart of weighted_score by reference_clarity, per experiment_type."""
+    fig, ax = plt.subplots(figsize=(8, 5))
+
+    if "reference_clarity" not in df.columns:
+        ax.set_title("Accuracy by Reference Clarity (no data)")
+        _save_and_close(fig, output_path)
+        return
+
+    stats = (
+        df.groupby(["experiment_type", "reference_clarity"])["weighted_score"]
+        .agg(mean="mean", std="std")
+        .reset_index()
+    )
+    pivot = stats.pivot(index="experiment_type", columns="reference_clarity", values="mean")
+    pivot.plot(kind="bar", ax=ax, capsize=4)
+
+    ax.set_xlabel("Experiment Type")
+    ax.set_ylabel("Weighted Score")
+    ax.set_title("Accuracy by Reference Clarity")
+    ax.legend(title="Reference Clarity")
+    plt.xticks(rotation=30, ha="right")
+    _save_and_close(fig, output_path)
+
+
+def plot_profile_comparison(df: pd.DataFrame, output_path: Path) -> None:
+    """Grouped bar chart comparing content profiles across experiment types."""
+    fig, ax = plt.subplots(figsize=(8, 5))
+
+    if "content_profile" not in df.columns:
+        ax.set_title("Profile Comparison (no data)")
+        _save_and_close(fig, output_path)
+        return
+
+    stats = (
+        df.groupby(["experiment_type", "content_profile"])["weighted_score"]
+        .agg(mean="mean", std="std")
+        .reset_index()
+    )
+    pivot = stats.pivot(index="experiment_type", columns="content_profile", values="mean")
+    pivot.plot(kind="bar", ax=ax, capsize=4)
+
+    ax.set_xlabel("Experiment Type")
+    ax.set_ylabel("Weighted Score")
+    ax.set_title("Profile Comparison: Python Repo vs Noir Fiction")
+    ax.legend(title="Content Profile")
+    plt.xticks(rotation=30, ha="right")
+    _save_and_close(fig, output_path)
