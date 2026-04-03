@@ -1,10 +1,12 @@
 from __future__ import annotations
 
 from agent_retrieval.generator.profiles.base import ContentProfile
+from agent_retrieval.generator.profiles.noir_fiction import NoirFictionProfile
 from agent_retrieval.generator.profiles.python_repo import PythonRepoProfile
 
 _PROFILES: dict[str, type[ContentProfile]] = {
     "python_repo": PythonRepoProfile,
+    "noir_fiction": NoirFictionProfile,
 }
 
 
