@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Analysis Report — {{ batch_name }}</title>
+  <style>
+    body { font-family: sans-serif; max-width: 1100px; margin: 2rem auto; color: #333; }
+    h1, h2 { color: #111; }
+    .metrics-grid { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 2rem; }
+    .card { background: #f5f7fa; border-radius: 8px; padding: 1rem 1.5rem; min-width: 160px; }
+    .card .label { font-size: 0.8rem; color: #666; text-transform: uppercase; }
+    .card .value { font-size: 1.6rem; font-weight: bold; }
+    table { border-collapse: collapse; width: 100%; margin-bottom: 2rem; }
+    th, td { border: 1px solid #ddd; padding: 0.5rem 0.75rem; text-align: left; }
+    th { background: #eef2f7; }
+    tr:nth-child(even) { background: #fafafa; }
+    .figures { display: flex; flex-wrap: wrap; gap: 1rem; }
+    .figures img { max-width: 48%; border: 1px solid #ddd; border-radius: 6px; }
+  </style>
+</head>
+<body>
+  <h1>Experiment Batch Report</h1>
+  <p><strong>Batch:</strong> {{ batch_name }} &nbsp;|&nbsp; <strong>Generated:</strong> {{ generated_at }}</p>
+
+  <h2>Summary</h2>
+  <div class="metrics-grid">
+    <div class="card">
+      <div class="label">Total Runs</div>
+      <div class="value">{{ total_runs }}</div>
+    </div>
+    <div class="card">
+      <div class="label">Experiments</div>
+      <div class="value">{{ total_experiments }}</div>
+    </div>
+    <div class="card">
+      <div class="label">Mean Score</div>
+      <div class="value">{{ "%.3f"|format(mean_score) }}</div>
+    </div>
+    <div class="card">
+      <div class="label">Std Score</div>
+      <div class="value">{{ "%.3f"|format(std_score) }}</div>
+    </div>
+    <div class="card">
+      <div class="label">Experiment Types</div>
+      <div class="value">{{ experiment_types | length }}</div>
+    </div>
+  </div>
+
+  <h2>Accuracy by Experiment Type</h2>
+  {{ accuracy_by_type_html | safe }}
+
+  <h2>Accuracy by Corpus Size</h2>
+  {{ accuracy_by_param_html | safe }}
+
+  <h2>Tool Usage by Experiment Type</h2>
+  {{ tool_usage_html | safe }}
+
+  <h2>Figures</h2>
+  <div class="figures">
+    {% for fig_path in figure_paths %}
+    <img src="{{ fig_path }}" alt="{{ fig_path }}">
+    {% endfor %}
+  </div>
+</body>
+</html>
