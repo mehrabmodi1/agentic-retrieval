@@ -1,0 +1,12 @@
+batch_name: "smoke-test-v2"
+max_parallel: 2
+retry_failed: true
+judge_model: "claude-sonnet-4-6"
+
+experiments:
+  - experiment_type: "single_needle"
+    filter:
+      content_profile: [python_repo]
+      corpus_token_count: [20000]
+      discriminability: [easy]
+      reference_clarity: [exact]

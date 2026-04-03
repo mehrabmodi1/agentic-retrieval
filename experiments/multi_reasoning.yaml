@@ -1,0 +1,68 @@
+schema_version: "2.0"
+experiment_type: "multi_reasoning"
+
+payload:
+  item_type: "fact"
+
+question_examples:
+  python_repo:
+    easy_exact:
+      question: "What is the total maximum memory allocation across all cache layers (L1_CACHE_SIZE_MB, L2_CACHE_SIZE_MB, L3_CACHE_SIZE_MB)?"
+      items:
+        - needle: "L1_CACHE_SIZE_MB = 512"
+          file_context: "cache/l1_config.md"
+        - needle: "L2_CACHE_SIZE_MB = 2048"
+          file_context: "cache/l2_config.md"
+        - needle: "L3_CACHE_SIZE_MB = 8192"
+          file_context: "cache/l3_config.md"
+      answer: "10,752 MB (512 + 2048 + 8192)"
+    hard_contextual:
+      question: "If the application processes requests at peak throughput, how many database connections would be needed simultaneously?"
+      items:
+        - needle: "WORKER_THREADS = 8"
+          file_context: "server/config.md"
+        - needle: "# each worker holds a connection for the duration of the transaction\nCONNS_PER_WORKER = 3  # read, write, advisory lock"
+          file_context: "db/pool.md"
+        - needle: "REPLICA_FACTOR = 2  # each write is mirrored"
+          file_context: "db/replication.md"
+      answer: "48 connections (8 workers x 3 connections x 2 replication factor)"
+  noir_fiction:
+    easy_exact:
+      question: "Three witnesses each saw part of the suspect's outfit. What was the full description?"
+      items:
+        - needle: "'He wore a charcoal overcoat,' said the doorman. 'Double-breasted, expensive.'"
+          file_context: "chapter_03.md"
+        - needle: "The cigarette girl remembered the hat. 'A grey fedora, tilted low. Hid most of his face.'"
+          file_context: "chapter_04.md"
+        - needle: "'Red shoes,' the shoeshine boy said without hesitation. 'Oxfords. Nobody wears red oxfords.'"
+          file_context: "chapter_06.md"
+      answer: "Charcoal double-breasted overcoat, grey fedora tilted low, red Oxford shoes"
+    hard_contextual:
+      question: "Based on the evidence collected across the investigation, what time window was the crime committed in?"
+      items:
+        - needle: "The coroner's preliminary note read: 'Rigor onset suggests no more than four hours prior to discovery at 11pm.'"
+          file_context: "chapter_03.md"
+        - needle: "Mrs. Chen was firm. 'I heard him playing that awful trumpet past nine. Stopped around quarter to ten.'"
+          file_context: "chapter_08.md"
+        - needle: "The receipt from the pharmacy was timestamped 8:47 PM. The pharmacist confirmed he looked 'perfectly alive and in a hurry.'"
+          file_context: "chapter_05.md"
+      answer: "Between 9:45 PM and 11:00 PM — alive at 8:47 (pharmacy receipt), heard until ~9:45 (neighbor), dead no more than 4 hours before 11 PM discovery"
+
+grid:
+  content_profile: [python_repo, noir_fiction]
+  corpus_token_count: [20000, 40000, 160000, 800000]
+  discriminability: [easy, hard]
+  reference_clarity: [exact, synonym, contextual]
+  n_items: [2, 8, 16]
+
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+  - criterion: "completeness"
+    weight: 0.5
+
+runner:
+  n_repeats: 3
+  agent_model: "claude-sonnet-4-6"
+  max_tokens: 100000
+  allowed_tools: ["Read", "Glob", "Grep", "Bash"]

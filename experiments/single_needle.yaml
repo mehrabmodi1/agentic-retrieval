@@ -1,0 +1,75 @@
+schema_version: "2.0"
+experiment_type: "single_needle"
+
+payload:
+  item_type: "config_value"
+
+question_examples:
+  python_repo:
+    easy_exact:
+      question: "What is the value of MAX_POOL_SIZE defined in this codebase?"
+      needle: "MAX_POOL_SIZE = 25"
+      answer: "25"
+    easy_synonym:
+      question: "What is the maximum number of connections in the database pool?"
+      needle: "MAX_POOL_SIZE = 25"
+      answer: "25, configured as MAX_POOL_SIZE"
+    easy_contextual:
+      question: "How many concurrent connections does the application allow?"
+      needle: "MAX_POOL_SIZE = 25"
+      answer: "The application allows 25 concurrent connections, configured via MAX_POOL_SIZE in the connection pool settings."
+    hard_exact:
+      question: "What is the value of CACHE_TTL_MS defined in this codebase?"
+      needle: "ttl_ms = int(os.environ.get('CACHE_DURATION', 1000 * 60 * 30))  # fallback: 30min"
+      answer: "1,800,000 milliseconds (30 minutes), set as a fallback default in the environment variable lookup"
+    hard_synonym:
+      question: "What is the cache expiration duration in this application?"
+      needle: "ttl_ms = int(os.environ.get('CACHE_DURATION', 1000 * 60 * 30))  # fallback: 30min"
+      answer: "30 minutes (1,800,000 ms), configured as a fallback default via the CACHE_DURATION environment variable"
+    hard_contextual:
+      question: "How long does the application cache responses before invalidating them?"
+      needle: "ttl_ms = int(os.environ.get('CACHE_DURATION', 1000 * 60 * 30))  # fallback: 30min"
+      answer: "30 minutes, derived from the default fallback value of 1000 * 60 * 30 milliseconds in the cache configuration"
+  noir_fiction:
+    easy_exact:
+      question: "What was the name of the bar where Mickey Doyle was last seen?"
+      needle: "Mickey Doyle had been drinking at The Silver Curtain since noon."
+      answer: "The Silver Curtain"
+    easy_synonym:
+      question: "What establishment was Mickey Doyle's last known drinking spot?"
+      needle: "Mickey Doyle had been drinking at The Silver Curtain since noon."
+      answer: "The Silver Curtain"
+    easy_contextual:
+      question: "Where was the victim's last known location before disappearing?"
+      needle: "Mickey Doyle had been drinking at The Silver Curtain since noon."
+      answer: "The Silver Curtain, a bar where he had been drinking since noon"
+    hard_exact:
+      question: "What was the license plate number on the sedan parked outside the warehouse?"
+      needle: "Rain pooled on the hood of something dark and low-slung across the street — a Buick, maybe, or an Olds. The plates were muddied but she caught the last three: 7-4-9."
+      answer: "Partial plate ending in 749, on a dark sedan (possibly Buick or Oldsmobile)"
+    hard_synonym:
+      question: "What identifying marks were on the vehicle near the warehouse?"
+      needle: "Rain pooled on the hood of something dark and low-slung across the street — a Buick, maybe, or an Olds. The plates were muddied but she caught the last three: 7-4-9."
+      answer: "Dark sedan (Buick or Oldsmobile) with muddied plates, last three digits 749"
+    hard_contextual:
+      question: "What vehicle was connected to the suspect's movements on the night of the crime?"
+      needle: "Rain pooled on the hood of something dark and low-slung across the street — a Buick, maybe, or an Olds. The plates were muddied but she caught the last three: 7-4-9."
+      answer: "A dark sedan, possibly a Buick or Oldsmobile, with a plate ending in 749"
+
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+  - criterion: "completeness"
+    weight: 0.5
+
+grid:
+  content_profile: [python_repo, noir_fiction]
+  corpus_token_count: [20000, 40000, 160000, 800000]
+  discriminability: [easy, hard]
+  reference_clarity: [exact, synonym, contextual]
+
+runner:
+  n_repeats: 3
+  agent_model: "claude-sonnet-4-6"
+  max_tokens: 100000
+  allowed_tools: ["Read", "Glob", "Grep", "Bash"]

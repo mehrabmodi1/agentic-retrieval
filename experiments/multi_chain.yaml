@@ -1,0 +1,68 @@
+schema_version: "2.0"
+experiment_type: "multi_chain"
+
+payload:
+  item_type: "cross_reference"
+
+question_examples:
+  python_repo:
+    easy_exact:
+      question: "Starting from DATABASE_URL in config.md, follow the connection string references. What is the final hostname?"
+      chain:
+        - needle: "DATABASE_URL = get_connection('primary_pool')"
+          file_context: "config/database.md"
+        - needle: "def get_connection(pool_name):\n    return POOLS[pool_name].dsn"
+          file_context: "db/pools.md"
+        - needle: "POOLS = {'primary_pool': PoolConfig(dsn='postgres://db-prod-07.internal:5432/main')}"
+          file_context: "db/settings.md"
+      answer: "db-prod-07.internal"
+    hard_contextual:
+      question: "Starting from the main database configuration, trace how connection parameters are resolved. What host does the application ultimately connect to?"
+      chain:
+        - needle: "conn = build_client(env='production')"
+          file_context: "app/startup.md"
+        - needle: "def build_client(env):\n    profile = load_profile(f'db_{env}')\n    return connect(**profile)"
+          file_context: "app/db/factory.md"
+        - needle: "db_production:\n  adapter: postgresql\n  host: rds-4a8b.us-east-1.amazonaws.com\n  port: 5432"
+          file_context: "config/profiles.md"
+      answer: "rds-4a8b.us-east-1.amazonaws.com, resolved through the production profile loaded by build_client"
+  noir_fiction:
+    easy_exact:
+      question: "Starting from the matchbook found in chapter_02.md, follow the trail of locations. Where does it end?"
+      chain:
+        - needle: "Inside his coat pocket she found a matchbook stamped 'The Red Lantern — 34th & Vine.'"
+          file_context: "chapter_02.md"
+        - needle: "The bartender at The Red Lantern remembered him. 'Took a card from the bulletin board — some place called Hargrove Storage, unit 19.'"
+          file_context: "chapter_05.md"
+        - needle: "Unit 19 was empty except for a forwarding label stuck to the wall: 'Deliver remaining to Pier 11, Warehouse C.'"
+          file_context: "chapter_07.md"
+      answer: "Pier 11, Warehouse C"
+    hard_contextual:
+      question: "Starting from the personal effects found on the body, trace where the deceased had been that evening. What was the final destination?"
+      chain:
+        - needle: "The coat was expensive but worn. In the breast pocket: a receipt from Delmonico's, timestamped 7:15 PM."
+          file_context: "chapter_01.md"
+        - needle: "The maitre d' at Delmonico's checked his book. 'Table for two. His companion left a card — the Avalon Club, members only.'"
+          file_context: "chapter_04.md"
+        - needle: "The Avalon's guest log showed a taxi called at 10:40 PM. Destination written in pencil: 'Pier 11, east entrance.'"
+          file_context: "chapter_06.md"
+      answer: "Pier 11, east entrance, reached by taxi from the Avalon Club at 10:40 PM"
+
+grid:
+  content_profile: [python_repo, noir_fiction]
+  corpus_token_count: [20000, 40000, 160000, 800000]
+  discriminability: [easy, hard]
+  reference_clarity: [exact, synonym, contextual]
+  n_items: [2, 8, 16]
+
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+  - criterion: "completeness"
+    weight: 0.5
+
+runner:
+  n_repeats: 3
+  agent_model: "claude-sonnet-4-6"
+  max_tokens: 100000
+  allowed_tools: ["Read", "Glob", "Grep", "Bash"]

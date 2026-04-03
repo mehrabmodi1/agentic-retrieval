@@ -1,0 +1,9 @@
+batch_name: "full-sweep-v1"
+max_parallel: 4
+retry_failed: true
+judge_model: "claude-sonnet-4-6"
+
+experiments:
+  - "single_needle"
+  - "multi_chain"
+  - "multi_reasoning"
