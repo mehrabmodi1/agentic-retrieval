@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import random
 from pathlib import Path
 
 from claude_agent_sdk import ClaudeAgentOptions, ResultMessage, query
@@ -84,30 +85,54 @@ def _format_examples(
     return "\n".join(lines)
 
 
+def _select_target_files(
+    corpus_dir: Path,
+    parametrisation: Parametrisation,
+    n_files: int,
+) -> list[Path]:
+    """Deterministically select target files from corpus using RNG."""
+    all_files = sorted(f for f in corpus_dir.rglob("*.md") if f.is_file())
+    if not all_files:
+        return []
+    rng = random.Random(hash(parametrisation.parametrisation_id) ^ 0xBEEF)
+    return rng.sample(all_files, min(n_files, len(all_files)))
+
+
+def _read_target_files(files: list[Path], corpus_dir: Path) -> str:
+    """Read files and format as inline content for the prompt."""
+    sections = []
+    for f in files:
+        rel = f.relative_to(corpus_dir)
+        content = f.read_text()
+        sections.append(f"### File: {rel}\n```\n{content}\n```")
+    return "\n\n".join(sections)
+
+
 def build_insertion_prompt(
     template: ExperimentTemplate,
     parametrisation: Parametrisation,
     answer_key_path: Path,
+    target_files_content: str = "",
 ) -> str:
     n_items = parametrisation.n_items or 1
     exp_type = parametrisation.experiment_type
 
     type_instructions = {
         "single_needle": (
-            "Insert exactly 1 needle into the corpus. "
+            "Insert exactly 1 needle into one of the target files below. "
             "Generate a question that asks about the inserted information."
         ),
         "multi_chain": (
-            f"Insert a chain of {n_items} linked needles. Each needle must reference or point to "
-            f"the next one in the chain. The question must provide the entry point (first needle's "
-            f"location) and ask what the chain ultimately resolves to. Each link should be in a "
-            f"different file. Previous links can be forgotten after following — only the final "
-            f"value matters."
+            f"Insert a chain of {n_items} linked needles across different target files below. "
+            f"Each needle must reference or point to the next one in the chain. The question "
+            f"must provide the entry point (first needle's location) and ask what the chain "
+            f"ultimately resolves to. Previous links can be forgotten after following — only "
+            f"the final value matters."
         ),
         "multi_reasoning": (
-            f"Insert {n_items} independent needles, each containing a distinct piece of information. "
-            f"The question must require finding ALL items and combining/reasoning about them to "
-            f"produce the answer. Items should be in different files."
+            f"Insert {n_items} independent needles across different target files below. "
+            f"Each needle contains a distinct piece of information. The question must require "
+            f"finding ALL items and combining/reasoning about them to produce the answer."
         ),
     }
 
@@ -138,13 +163,13 @@ def build_insertion_prompt(
         f"{REFERENCE_CLARITY_RUBRIC}\n"
         f"## Example\n{examples_str}\n\n"
         f"## Type-specific instructions\n{type_instructions[exp_type]}\n\n"
+        f"## Target files (pre-selected — use these)\n{target_files_content}\n\n"
         f"## Instructions\n"
-        f"1. Browse the corpus to understand its structure and content style\n"
-        f"2. Choose {n_items} file(s) to insert needles into\n"
-        f"3. Read each target file to understand the surrounding context\n"
-        f"4. Insert each needle so it reads naturally within the file\n"
-        f"5. Generate a question and expected answer\n"
-        f"6. Write the answer key as valid YAML to: {answer_key_path}\n\n"
+        f"The target files above have been pre-selected and pre-read for you.\n"
+        f"Do NOT browse or read any other files. Work only with what is provided above.\n\n"
+        f"1. Choose which of the target files above to insert needle(s) into\n"
+        f"2. Use the Edit tool to insert each needle so it reads naturally within the file\n"
+        f"3. Write the answer key YAML to: {answer_key_path}\n\n"
         f"The answer key MUST follow this exact structure:\n"
         f"```yaml\n{answer_schema}\n```\n\n"
         f"For multiple items, add additional entries under 'items:' with sequential "
@@ -163,20 +188,28 @@ async def insert_payloads(
 
     answer_key_path.parent.mkdir(parents=True, exist_ok=True)
 
-    system_prompt = build_insertion_prompt(template, parametrisation, answer_key_path)
+    n_items = parametrisation.n_items or 1
+    # Select more files than needed so the agent has choices
+    n_target_files = max(n_items * 2, 4)
+    target_files = _select_target_files(corpus_dir, parametrisation, n_target_files)
+    target_files_content = _read_target_files(target_files, corpus_dir)
+
+    system_prompt = build_insertion_prompt(
+        template, parametrisation, answer_key_path, target_files_content,
+    )
 
     options = ClaudeAgentOptions(
         model="claude-sonnet-4-6",
         system_prompt=system_prompt,
         cwd=str(corpus_dir),
-        allowed_tools=["Read", "Edit", "Write", "Glob", "Grep"],
+        allowed_tools=["Edit", "Write"],
         permission_mode="acceptEdits",
-        max_turns=100,
+        max_turns=10,
     )
 
     prompt = (
-        "Begin by browsing the corpus to understand its structure. "
-        "Then insert the needle(s) and write the answer key."
+        "Insert the needle(s) into the target files provided above, "
+        "then write the answer key. Do not read or browse any files."
     )
 
     async for message in query(prompt=prompt, options=options):

@@ -65,25 +65,30 @@ def parametrisation() -> Parametrisation:
 
 class TestBuildInsertionPrompt:
     def test_contains_experiment_type(self, single_template, parametrisation):
-        prompt = build_insertion_prompt(single_template, parametrisation, Path("/answer.yaml"))
+        prompt = build_insertion_prompt(single_template, parametrisation, Path("/answer.yaml"), "file content here")
         assert "single_needle" in prompt
 
     def test_contains_discriminability_rubric(self, single_template, parametrisation):
-        prompt = build_insertion_prompt(single_template, parametrisation, Path("/answer.yaml"))
+        prompt = build_insertion_prompt(single_template, parametrisation, Path("/answer.yaml"), "file content here")
         assert "easy" in prompt
         assert "Findable by exact string search" in prompt
 
     def test_contains_reference_clarity(self, single_template, parametrisation):
-        prompt = build_insertion_prompt(single_template, parametrisation, Path("/answer.yaml"))
+        prompt = build_insertion_prompt(single_template, parametrisation, Path("/answer.yaml"), "file content here")
         assert "exact" in prompt
 
     def test_contains_examples(self, single_template, parametrisation):
-        prompt = build_insertion_prompt(single_template, parametrisation, Path("/answer.yaml"))
+        prompt = build_insertion_prompt(single_template, parametrisation, Path("/answer.yaml"), "file content here")
         assert "MAX_POOL_SIZE" in prompt
 
     def test_contains_answer_key_path(self, single_template, parametrisation):
-        prompt = build_insertion_prompt(single_template, parametrisation, Path("/tmp/answer.yaml"))
+        prompt = build_insertion_prompt(single_template, parametrisation, Path("/tmp/answer.yaml"), "file content here")
         assert "/tmp/answer.yaml" in prompt
+
+    def test_contains_target_files(self, single_template, parametrisation):
+        prompt = build_insertion_prompt(single_template, parametrisation, Path("/answer.yaml"), "### File: config/settings.md\n```\nDEBUG=True\n```")
+        assert "config/settings.md" in prompt
+        assert "DEBUG=True" in prompt
 
     def test_multi_chain_specifies_n_items(self):
         tmpl = ExperimentTemplate.model_validate({
@@ -122,7 +127,7 @@ class TestBuildInsertionPrompt:
             reference_clarity="exact",
             n_items=4,
         )
-        prompt = build_insertion_prompt(tmpl, param, Path("/answer.yaml"))
+        prompt = build_insertion_prompt(tmpl, param, Path("/answer.yaml"), "file content")
         assert "4" in prompt
         assert "chain" in prompt.lower() or "sequential" in prompt.lower()
 
