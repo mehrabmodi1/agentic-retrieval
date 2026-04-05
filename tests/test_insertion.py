@@ -292,3 +292,23 @@ class TestReadTargetFragments:
 
         # Should contain line offset information for the agent
         assert "start_line" in result.lower() or "line " in result.lower()
+
+
+class TestBuildInsertionPromptFragments:
+    def test_instructs_batching(self, single_template, parametrisation):
+        prompt = build_insertion_prompt(
+            single_template, parametrisation, Path("/answer.yaml"), "fragment content"
+        )
+        assert "single response" in prompt.lower() or "batch" in prompt.lower()
+
+    def test_instructs_no_browsing(self, single_template, parametrisation):
+        prompt = build_insertion_prompt(
+            single_template, parametrisation, Path("/answer.yaml"), "fragment content"
+        )
+        assert "do not read" in prompt.lower() or "do not browse" in prompt.lower()
+
+    def test_mentions_fragments_not_full_files(self, single_template, parametrisation):
+        prompt = build_insertion_prompt(
+            single_template, parametrisation, Path("/answer.yaml"), "fragment content"
+        )
+        assert "fragment" in prompt.lower()
