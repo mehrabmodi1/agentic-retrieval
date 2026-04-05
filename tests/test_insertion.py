@@ -312,3 +312,98 @@ class TestBuildInsertionPromptFragments:
             single_template, parametrisation, Path("/answer.yaml"), "fragment content"
         )
         assert "fragment" in prompt.lower()
+
+
+class TestInsertPayloadsModelSelection:
+    @pytest.mark.asyncio
+    async def test_single_needle_uses_sonnet(self, corpus_dir, single_template, parametrisation, tmp_path):
+        answer_key_path = tmp_path / "answer_keys" / f"{parametrisation.parametrisation_id}.yaml"
+        captured_options = {}
+
+        async def fake_query(prompt, options):
+            captured_options["model"] = options.model
+            captured_options["max_turns"] = options.max_turns
+            answer_key_path.parent.mkdir(parents=True, exist_ok=True)
+            answer_key_path.write_text("placeholder: true")
+            result = MagicMock()
+            yield result
+
+        with patch("agent_retrieval.generator.insertion.query", side_effect=fake_query):
+            await insert_payloads(single_template, parametrisation, corpus_dir, answer_key_path)
+
+        assert captured_options["model"] == "claude-sonnet-4-6"
+
+    @pytest.mark.asyncio
+    async def test_multi_chain_uses_haiku(self, tmp_path):
+        corpus = tmp_path / "corpus"
+        corpus.mkdir()
+        for i in range(10):
+            (corpus / f"file_{i}.md").write_text("\n".join(f"line {j}" for j in range(50)))
+
+        tmpl = ExperimentTemplate.model_validate({
+            "schema_version": "2.0",
+            "experiment_type": "multi_chain",
+            "payload": {"item_type": "cross_reference"},
+            "question_examples": {
+                "python_repo": {
+                    "easy_exact": {
+                        "question": "Follow the chain.",
+                        "chain": [{"needle": "A", "file_context": "a.md"}],
+                        "answer": "A",
+                    },
+                },
+            },
+            "rubric_criteria": [{"criterion": "correctness", "weight": 1.0}],
+            "grid": {
+                "content_profile": ["python_repo"],
+                "corpus_token_count": [20000],
+                "discriminability": ["easy"],
+                "reference_clarity": ["exact"],
+                "n_items": [4],
+            },
+            "runner": {
+                "n_repeats": 1,
+                "agent_model": "claude-sonnet-4-6",
+                "max_tokens": 100000,
+                "allowed_tools": ["Read"],
+            },
+        })
+        param = Parametrisation(
+            experiment_type="multi_chain",
+            content_profile="python_repo",
+            corpus_token_count=20000,
+            discriminability="easy",
+            reference_clarity="exact",
+            n_items=4,
+        )
+        answer_key_path = tmp_path / "answer_keys" / f"{param.parametrisation_id}.yaml"
+        captured_options = {}
+
+        async def fake_query(prompt, options):
+            captured_options["model"] = options.model
+            answer_key_path.parent.mkdir(parents=True, exist_ok=True)
+            answer_key_path.write_text("placeholder: true")
+            result = MagicMock()
+            yield result
+
+        with patch("agent_retrieval.generator.insertion.query", side_effect=fake_query):
+            await insert_payloads(tmpl, param, corpus, answer_key_path)
+
+        assert captured_options["model"] == "claude-haiku-4-5-20251001"
+
+    @pytest.mark.asyncio
+    async def test_max_turns_is_3(self, corpus_dir, single_template, parametrisation, tmp_path):
+        answer_key_path = tmp_path / "answer_keys" / f"{parametrisation.parametrisation_id}.yaml"
+        captured_options = {}
+
+        async def fake_query(prompt, options):
+            captured_options["max_turns"] = options.max_turns
+            answer_key_path.parent.mkdir(parents=True, exist_ok=True)
+            answer_key_path.write_text("placeholder: true")
+            result = MagicMock()
+            yield result
+
+        with patch("agent_retrieval.generator.insertion.query", side_effect=fake_query):
+            await insert_payloads(single_template, parametrisation, corpus_dir, answer_key_path)
+
+        assert captured_options["max_turns"] == 3

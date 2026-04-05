@@ -229,24 +229,29 @@ async def insert_payloads(
     # Select more files than needed so the agent has choices
     n_target_files = max(n_items * 2, 4)
     target_files = _select_target_files(corpus_dir, parametrisation, n_target_files)
-    target_files_content = _read_target_files(target_files, corpus_dir)
+    base_seed = hash(parametrisation.parametrisation_id) ^ 0xDEAD
+    target_files_content = _read_target_fragments(target_files, corpus_dir, base_seed)
 
     system_prompt = build_insertion_prompt(
         template, parametrisation, answer_key_path, target_files_content,
     )
 
+    is_multi = parametrisation.experiment_type in ("multi_chain", "multi_reasoning")
+    model = "claude-haiku-4-5-20251001" if is_multi else "claude-sonnet-4-6"
+
     options = ClaudeAgentOptions(
-        model="claude-sonnet-4-6",
+        model=model,
         system_prompt=system_prompt,
         cwd=str(corpus_dir),
         allowed_tools=["Edit", "Write"],
         permission_mode="acceptEdits",
-        max_turns=10,
+        max_turns=3,
     )
 
     prompt = (
-        "Insert the needle(s) into the target files provided above, "
-        "then write the answer key. Do not read or browse any files."
+        "Insert the needle(s) into the provided fragments and write the answer key. "
+        "Batch all Edit and Write calls into a single response. "
+        "Do not read or browse any files."
     )
 
     async for message in query(prompt=prompt, options=options):
