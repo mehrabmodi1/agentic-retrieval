@@ -98,6 +98,24 @@ def _select_target_files(
     return rng.sample(all_files, min(n_files, len(all_files)))
 
 
+def _extract_fragment(
+    file_path: Path,
+    seed: int,
+    window: int = 30,
+) -> tuple[str, int]:
+    """Extract a random contiguous fragment from a file.
+
+    Returns (fragment_text, start_line_0indexed).
+    """
+    lines = file_path.read_text().splitlines()
+    if len(lines) <= window:
+        return "\n".join(lines), 0
+    rng = random.Random(seed)
+    max_start = len(lines) - window
+    start = rng.randint(0, max_start)
+    return "\n".join(lines[start:start + window]), start
+
+
 def _read_target_files(files: list[Path], corpus_dir: Path) -> str:
     """Read files and format as inline content for the prompt."""
     sections = []

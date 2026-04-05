@@ -3,7 +3,7 @@ import pytest
 from pathlib import Path
 from unittest.mock import AsyncMock, patch, MagicMock
 
-from agent_retrieval.generator.insertion import insert_payloads, build_insertion_prompt
+from agent_retrieval.generator.insertion import insert_payloads, build_insertion_prompt, _extract_fragment
 from agent_retrieval.schema.template import ExperimentTemplate, Parametrisation, QuestionExample
 
 
@@ -180,3 +180,74 @@ class TestInsertPayloads:
             )
 
         assert answer_key_path.exists()
+
+
+class TestExtractFragment:
+    def test_returns_30_lines_from_middle_of_long_file(self, tmp_path):
+        content = "\n".join(f"line {i}" for i in range(100))
+        f = tmp_path / "big.md"
+        f.write_text(content)
+
+        fragment, start_line = _extract_fragment(f, seed=42)
+
+        lines = fragment.strip().split("\n")
+        assert len(lines) == 30
+
+    def test_returns_full_file_when_under_30_lines(self, tmp_path):
+        content = "\n".join(f"line {i}" for i in range(10))
+        f = tmp_path / "small.md"
+        f.write_text(content)
+
+        fragment, start_line = _extract_fragment(f, seed=42)
+
+        lines = fragment.strip().split("\n")
+        assert len(lines) == 10
+        assert start_line == 0
+
+    def test_fragment_is_contiguous_slice_of_original(self, tmp_path):
+        content = "\n".join(f"line {i}" for i in range(200))
+        f = tmp_path / "big.md"
+        f.write_text(content)
+
+        fragment, start_line = _extract_fragment(f, seed=99)
+
+        original_lines = content.split("\n")
+        fragment_lines = fragment.strip().split("\n")
+        assert fragment_lines == original_lines[start_line:start_line + 30]
+
+    def test_different_seeds_produce_different_offsets(self, tmp_path):
+        content = "\n".join(f"line {i}" for i in range(200))
+        f = tmp_path / "big.md"
+        f.write_text(content)
+
+        _, start_1 = _extract_fragment(f, seed=1)
+        _, start_2 = _extract_fragment(f, seed=9999)
+
+        assert start_1 != start_2
+
+    def test_start_line_can_be_zero(self, tmp_path):
+        """No bias away from file start."""
+        content = "\n".join(f"line {i}" for i in range(50))
+        f = tmp_path / "file.md"
+        f.write_text(content)
+
+        starts = set()
+        for seed in range(200):
+            _, start = _extract_fragment(f, seed=seed)
+            starts.add(start)
+
+        assert 0 in starts
+
+    def test_fragment_can_end_at_last_line(self, tmp_path):
+        """No bias away from file end."""
+        content = "\n".join(f"line {i}" for i in range(50))
+        f = tmp_path / "file.md"
+        f.write_text(content)
+
+        starts = set()
+        for seed in range(200):
+            _, start = _extract_fragment(f, seed=seed)
+            starts.add(start)
+
+        # max valid start for 50 lines with window 30 is 20
+        assert 20 in starts
