@@ -133,15 +133,6 @@ def _read_target_fragments(
     return "\n\n".join(sections)
 
 
-def _read_target_files(files: list[Path], corpus_dir: Path) -> str:
-    """Read files and format as inline content for the prompt."""
-    sections = []
-    for f in files:
-        rel = f.relative_to(corpus_dir)
-        content = f.read_text()
-        sections.append(f"### File: {rel}\n```\n{content}\n```")
-    return "\n\n".join(sections)
-
 
 def build_insertion_prompt(
     template: ExperimentTemplate,
