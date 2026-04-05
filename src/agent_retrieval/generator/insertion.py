@@ -116,6 +116,23 @@ def _extract_fragment(
     return "\n".join(lines[start:start + window]), start
 
 
+def _read_target_fragments(
+    files: list[Path],
+    corpus_dir: Path,
+    base_seed: int,
+) -> str:
+    """Extract a 30-line fragment from each file and format for the prompt."""
+    sections = []
+    for i, f in enumerate(files):
+        rel = f.relative_to(corpus_dir)
+        seed = base_seed ^ (i * 0x9E3779B9)  # unique seed per file
+        fragment, start_line = _extract_fragment(f, seed=seed)
+        sections.append(
+            f"### File: {rel} (start_line: {start_line})\n```\n{fragment}\n```"
+        )
+    return "\n\n".join(sections)
+
+
 def _read_target_files(files: list[Path], corpus_dir: Path) -> str:
     """Read files and format as inline content for the prompt."""
     sections = []

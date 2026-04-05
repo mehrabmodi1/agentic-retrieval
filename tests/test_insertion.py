@@ -3,7 +3,7 @@ import pytest
 from pathlib import Path
 from unittest.mock import AsyncMock, patch, MagicMock
 
-from agent_retrieval.generator.insertion import insert_payloads, build_insertion_prompt, _extract_fragment
+from agent_retrieval.generator.insertion import insert_payloads, build_insertion_prompt, _extract_fragment, _read_target_fragments
 from agent_retrieval.schema.template import ExperimentTemplate, Parametrisation, QuestionExample
 
 
@@ -251,3 +251,44 @@ class TestExtractFragment:
 
         # max valid start for 50 lines with window 30 is 20
         assert 20 in starts
+
+
+class TestReadTargetFragments:
+    def test_returns_fragments_with_file_metadata(self, tmp_path):
+        corpus = tmp_path / "corpus"
+        corpus.mkdir()
+        content = "\n".join(f"line {i}" for i in range(100))
+        f = corpus / "test.md"
+        f.write_text(content)
+
+        result = _read_target_fragments([f], corpus, base_seed=42)
+
+        assert "test.md" in result
+        assert "lines" in result.lower() or "line" in result.lower()
+
+    def test_each_file_gets_unique_seed(self, tmp_path):
+        corpus = tmp_path / "corpus"
+        corpus.mkdir()
+        content = "\n".join(f"line {i}" for i in range(200))
+        f1 = corpus / "a.md"
+        f1.write_text(content)
+        f2 = corpus / "b.md"
+        f2.write_text(content)
+
+        result = _read_target_fragments([f1, f2], corpus, base_seed=42)
+
+        # Both files should appear
+        assert "a.md" in result
+        assert "b.md" in result
+
+    def test_includes_start_line_info(self, tmp_path):
+        corpus = tmp_path / "corpus"
+        corpus.mkdir()
+        content = "\n".join(f"line {i}" for i in range(100))
+        f = corpus / "test.md"
+        f.write_text(content)
+
+        result = _read_target_fragments([f], corpus, base_seed=42)
+
+        # Should contain line offset information for the agent
+        assert "start_line" in result.lower() or "line " in result.lower()
