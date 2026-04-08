@@ -406,4 +406,5 @@ class TestInsertPayloadsModelSelection:
         with patch("agent_retrieval.generator.insertion.query", side_effect=fake_query):
             await insert_payloads(single_template, parametrisation, corpus_dir, answer_key_path)
 
-        assert captured_options["max_turns"] == 3
+        # single_needle: n_items=1, so max(1*3, 10) = 10
+        assert captured_options["max_turns"] == 10

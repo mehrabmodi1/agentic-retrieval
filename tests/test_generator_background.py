@@ -86,7 +86,7 @@ class TestGenerateExperimentV2:
         template = ExperimentTemplate.model_validate(template_dict)
 
         # Pre-create a pool so pool generation is skipped
-        pool_dir = workspace_dir / "runner" / "pools" / "python_repo"
+        pool_dir = workspace_dir / "background_corpora" / "python_repo"
         pool_dir.mkdir(parents=True)
         for i in range(10):
             (pool_dir / f"file_{i}.md").write_text(f"# File {i}\n" + "content " * 500)

@@ -152,7 +152,7 @@ class PayloadInserter:
         )
 
         answer_key = AnswerKey(
-            experiment_id=spec.experiment_id,
+            parametrisation_id=spec.experiment_id,
             generated_at=datetime.now(timezone.utc).isoformat(),
             items=answer_key_items,
             expected_answers=expected_answers,

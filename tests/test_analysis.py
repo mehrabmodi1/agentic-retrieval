@@ -36,7 +36,7 @@ def populated_workspace(tmp_workspace) -> Path:
     for exp_id, scores in [("needle-001", [0.9, 0.85]), ("needle-002", [0.7, 0.6]), ("chain-001", [0.95, 0.9])]:
         for i, score in enumerate(scores):
             verdict = {
-                "experiment_id": exp_id, "run_id": f"run_{i}", "batch_name": batch_name,
+                "parametrisation_id": exp_id, "run_id": f"run_{i}", "batch_name": batch_name,
                 "scores": [{"criterion": "correctness", "score": score, "weight": 1.0, "reasoning": "test"}],
                 "weighted_score": score,
                 "session_metrics": {"total_context_tokens": 50000 + i * 10000, "total_turns": 5 + i,
@@ -114,7 +114,7 @@ class TestLoadBatchResultsV2:
         verdict_dir = workspace / "judge" / "judgements" / batch_name / "single_needle__python_repo__20k__easy__exact"
         verdict_dir.mkdir(parents=True)
         (verdict_dir / "run001.yaml").write_text(yaml.dump({
-            "experiment_id": "single_needle__python_repo__20k__easy__exact",
+            "parametrisation_id": "single_needle__python_repo__20k__easy__exact",
             "run_id": "run001",
             "batch_name": batch_name,
             "scores": [{"criterion": "correctness", "score": 0.9, "weight": 1.0, "reasoning": "Good"}],

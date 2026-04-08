@@ -1,11 +1,36 @@
 from __future__ import annotations
 
 import random
+import shutil
+from dataclasses import dataclass, field
 from pathlib import Path
 
-from claude_agent_sdk import ClaudeAgentOptions, ResultMessage, query
+from claude_agent_sdk import (
+    AssistantMessage,
+    ClaudeAgentOptions,
+    ResultMessage,
+    TextBlock,
+    ToolUseBlock,
+    query,
+)
 
 from agent_retrieval.schema.template import ExperimentTemplate, Parametrisation
+
+
+@dataclass
+class InsertionStats:
+    """Stats captured from an insertion agent session."""
+
+    num_turns: int = 0
+    duration_ms: int = 0
+    total_cost_usd: float = 0.0
+    input_tokens: int = 0
+    output_tokens: int = 0
+    tool_calls: list[str] = field(default_factory=list)
+    is_error: bool = False
+    errors: list[str] = field(default_factory=list)
+    answer_key_written: bool = False
+    model: str = ""
 
 
 DISCRIMINABILITY_RUBRIC = """## Discriminability Rubric
@@ -195,7 +220,7 @@ def build_insertion_prompt(
         f"Do NOT read or browse any files. Work only with the fragments provided above.\n\n"
         f"1. Choose which of the target fragments above to insert needle(s) into\n"
         f"2. Use the Edit tool to insert each needle so it reads naturally within the fragment context\n"
-        f"3. Write the answer key YAML to: {answer_key_path}\n\n"
+        f"3. Write the answer key YAML to: {answer_key_path.resolve()}\n\n"
         f"IMPORTANT: Batch ALL Edit and Write tool calls into a single response.\n"
         f"Do not use multiple turns.\n\n"
         f"The answer key MUST follow this exact structure:\n"
@@ -210,9 +235,10 @@ async def insert_payloads(
     parametrisation: Parametrisation,
     corpus_dir: Path,
     answer_key_path: Path,
-) -> None:
+) -> InsertionStats | None:
+    """Insert payloads and return session stats, or None if skipped (already exists)."""
     if answer_key_path.exists():
-        return
+        return None
 
     answer_key_path.parent.mkdir(parents=True, exist_ok=True)
 
@@ -233,10 +259,10 @@ async def insert_payloads(
     options = ClaudeAgentOptions(
         model=model,
         system_prompt=system_prompt,
-        cwd=str(corpus_dir),
+        cwd=str(corpus_dir.resolve()),
         allowed_tools=["Edit", "Write"],
         permission_mode="acceptEdits",
-        max_turns=3,
+        max_turns=max(n_items * 3, 10),
     )
 
     prompt = (
@@ -245,6 +271,30 @@ async def insert_payloads(
         "Do not read or browse any files."
     )
 
+    stats = InsertionStats(model=model)
+
     async for message in query(prompt=prompt, options=options):
-        if isinstance(message, ResultMessage):
+        if isinstance(message, AssistantMessage):
+            if message.usage:
+                stats.input_tokens += message.usage.get("input_tokens", 0)
+                stats.output_tokens += message.usage.get("output_tokens", 0)
+            for block in message.content:
+                if isinstance(block, ToolUseBlock):
+                    stats.tool_calls.append(block.name)
+        elif isinstance(message, ResultMessage):
+            stats.num_turns = message.num_turns
+            stats.duration_ms = message.duration_ms
+            stats.total_cost_usd = message.total_cost_usd or 0.0
+            stats.is_error = message.is_error
+            stats.errors = message.errors or []
             break
+
+    stats.answer_key_written = answer_key_path.exists()
+
+    # Rollback: if edits were made but answer key wasn't written, the corpus
+    # is in an unknown state. Delete it so it gets cleanly regenerated next run.
+    if not stats.answer_key_written and stats.tool_calls:
+        shutil.rmtree(corpus_dir, ignore_errors=True)
+        stats.errors.append("rolled back corpus: edits applied but no answer key")
+
+    return stats

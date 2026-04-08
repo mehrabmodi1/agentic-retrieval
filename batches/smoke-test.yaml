@@ -1,8 +1,0 @@
-batch_name: "smoke-test"
-max_parallel: 2
-retry_failed: true
-judge_model: "claude-sonnet-4-6"
-
-runs:
-  - experiment_id: "needle-in-haystack-small"
-    n_repeats: 3

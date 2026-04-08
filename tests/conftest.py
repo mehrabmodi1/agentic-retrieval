@@ -11,7 +11,7 @@ def tmp_workspace(tmp_path: Path) -> Path:
     dirs = [
         "runner/corpora",
         "runner/runs",
-        "runner/pools",
+        "background_corpora",
         "judge/answer_keys",
         "judge/judgements",
         "analysis",

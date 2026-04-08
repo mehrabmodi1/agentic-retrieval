@@ -23,7 +23,7 @@ def load_batch_results(
         verdict = Verdict.from_yaml(verdict_path)
 
         row: dict = {
-            "experiment_id": verdict.experiment_id,
+            "experiment_id": verdict.parametrisation_id,
             "run_id": verdict.run_id,
             "batch_name": verdict.batch_name,
             "weighted_score": verdict.weighted_score,
@@ -33,7 +33,7 @@ def load_batch_results(
         }
 
         # Try to load metadata from v2 answer key first
-        ak_path = answer_keys_dir / f"{verdict.experiment_id}.yaml"
+        ak_path = answer_keys_dir / f"{verdict.parametrisation_id}.yaml"
         if ak_path.exists():
             ak = AnswerKey.from_yaml(ak_path)
             if ak.parameters:
@@ -49,7 +49,7 @@ def load_batch_results(
                     row["experiment_type"] = ""
             else:
                 # V1 fallback: load from spec file
-                spec_path = specs_dir / f"{verdict.experiment_id}.yaml"
+                spec_path = specs_dir / f"{verdict.parametrisation_id}.yaml"
                 if spec_path.exists():
                     spec = ExperimentSpec.from_yaml(spec_path)
                     row["experiment_type"] = spec.experiment_type
@@ -61,7 +61,7 @@ def load_batch_results(
                     row["experiment_type"] = ""
         else:
             # V1 fallback: load from spec file
-            spec_path = specs_dir / f"{verdict.experiment_id}.yaml"
+            spec_path = specs_dir / f"{verdict.parametrisation_id}.yaml"
             if spec_path.exists():
                 spec = ExperimentSpec.from_yaml(spec_path)
                 row["experiment_type"] = spec.experiment_type

@@ -7,33 +7,12 @@ import yaml
 from pydantic import BaseModel, model_validator
 
 
-class BatchRunConfig(BaseModel):
-    experiment_id: str
-    n_repeats: int
-    agent_model: str | None = None
-    judge_model: str | None = None
-
-
-class BatchConfig(BaseModel):
-    batch_name: str
-    max_parallel: int
-    retry_failed: bool
-    judge_model: str
-    runs: list[BatchRunConfig]
-
-    @classmethod
-    def from_yaml(cls, path: Path) -> BatchConfig:
-        with open(path) as f:
-            data = yaml.safe_load(f)
-        return cls.model_validate(data)
-
-
 class BatchExperimentEntry(BaseModel):
     experiment_type: str
     filter: dict[str, list[Any]] | None = None
 
 
-class BatchConfigV2(BaseModel):
+class BatchConfig(BaseModel):
     batch_name: str
     max_parallel: int
     retry_failed: bool
@@ -54,7 +33,7 @@ class BatchConfigV2(BaseModel):
         return data
 
     @classmethod
-    def from_yaml(cls, path: Path) -> BatchConfigV2:
+    def from_yaml(cls, path: Path) -> BatchConfig:
         with open(path) as f:
             data = yaml.safe_load(f)
         return cls.model_validate(data)
