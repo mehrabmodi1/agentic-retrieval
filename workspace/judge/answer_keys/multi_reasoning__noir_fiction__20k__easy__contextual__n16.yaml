@@ -1,0 +1,131 @@
+parametrisation_id: "multi_reasoning__noir_fiction__20k__easy__contextual__n16"
+experiment_type: "multi_reasoning"
+generated_at: "2026-04-05T00:00:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 20000
+  discriminability: "easy"
+  reference_clarity: "contextual"
+items:
+  - item_id: "target_001"
+    inserted_text: "The woman had given her name as Sarah Kessler, and she carried herself with the quiet certainty of someone who had already made peace with difficult truths."
+    file_path: "witnesses/neighbor_statement.md"
+    line_range: [44, 45]
+    context_summary: "Eleanor's visitor is identified as Sarah Kessler—the mysterious woman from the boy's past."
+
+  - item_id: "target_002"
+    inserted_text: "That'd be the day he came in around eight o'clock on September 14th."
+    file_path: "witnesses/bartender_statement.md"
+    line_range: [21, 21]
+    context_summary: "Deke provides the specific date—September 14th—when the encounter occurred."
+
+  - item_id: "target_003"
+    inserted_text: "She whispered something about the Vesper painting, I'm pretty sure of it."
+    file_path: "witnesses/bartender_statement.md"
+    line_range: [38, 38]
+    context_summary: "The bartender confirms the redhead's reference to the Vesper painting theft."
+
+  - item_id: "target_004"
+    inserted_text: "His father Carmine runs the operation from the docks—import-export, officially. Import of other things, unofficially."
+    file_path: "case_notes/day_02.md"
+    line_range: [20, 21]
+    context_summary: "Paulie reveals Carmine Castellano's criminal operation controlling the docks."
+
+  - item_id: "target_005"
+    inserted_text: "The girl's name was Claire Hollister—she was with Vincent when they left with the stranger."
+    file_path: "case_notes/day_02.md"
+    line_range: [30, 30]
+    context_summary: "Paulie identifies Claire Hollister as the victim found with Vincent Castellano."
+
+  - item_id: "target_006"
+    inserted_text: "Marchetti, senior partner at Mercer & Associates."
+    file_path: "witnesses/informant_interview.md"
+    line_range: [37, 37]
+    context_summary: "Victor identifies Marchetti's law firm—Mercer & Associates—where Claire worked."
+
+  - item_id: "target_007"
+    inserted_text: "Gregg works for an organization called Meridian Holdings, or at least that's the corporate front they use for their kidnapping operations."
+    file_path: "witnesses/informant_interview.md"
+    line_range: [54, 55]
+    context_summary: "Victor reveals Silas Gregg's connection to Meridian Holdings' kidnapping infrastructure."
+
+  - item_id: "target_008"
+    inserted_text: "She had been taken from the Park House restaurant on Wednesday evening, April 3rd, as leverage against her father's import operations."
+    file_path: "chapters/chapter_05.md"
+    line_range: [30, 31]
+    context_summary: "Diana Harrow's threat reveals Catherine's abduction location and date—April 3rd at Park House."
+
+  - item_id: "target_009"
+    inserted_text: "- James Harvey, involved in art theft from the Vesper estate, disappeared before he could testify\n- Catherine Halstead, kidnapped April 3rd to control her father's business\n- Unknown others, disappeared by the same mechanism\n\nFive names. At minimum five names. Probably more."
+    file_path: "case_notes/day_05.md"
+    line_range: [18, 25]
+    context_summary: "Investigator's list expands to include James Harvey and Catherine Halstead, connecting the cases."
+
+  - item_id: "target_010"
+    inserted_text: "employed at Mercer & Associates law firm"
+    file_path: "case_notes/day_01.md"
+    line_range: [27, 27]
+    context_summary: "Claire's employment at Mercer & Associates connects her to attorney Marchetti and James Harvey."
+
+  - item_id: "target_011"
+    inserted_text: "by noon I'm at the Regency Hotel on 5th Street"
+    file_path: "case_notes/day_01.md"
+    line_range: [56, 56]
+    context_summary: "The hotel's location on 5th Street provides a geographic anchor for the investigation."
+
+  - item_id: "target_012"
+    inserted_text: "She'd mentioned being in fear for her life, though she didn't say from whom."
+    file_path: "case_notes/day_01.md"
+    line_range: [63, 63]
+    context_summary: "Claire expressed fear to the hotel clerk—revealing her awareness of danger before disappearance."
+
+  - item_id: "target_013"
+    inserted_text: "The description Everett provided matched one that would appear again and again in my investigation: older man, heavy-set, white-haired, the bearing of someone accustomed to authority and violence."
+    file_path: "case_notes/day_01.md"
+    line_range: [72, 72]
+    context_summary: "The mystery man's description matches Silas Gregg—connecting him to Claire's hotel encounter."
+
+  - item_id: "target_014"
+    inserted_text: "This instruction came exactly three days after Harvey's initial consultation, on Thursday afternoon."
+    file_path: "witnesses/secretary_statement.md"
+    line_range: [47, 47]
+    context_summary: "Marchetti's gag order on Thursday indicates rapid escalation after Harvey's betrayal discovery."
+
+  - item_id: "target_015"
+    inserted_text: "when Harvey came to tell him the painting had been found and left at the library"
+    file_path: "witnesses/secretary_statement.md"
+    line_range: [66, 66]
+    context_summary: "Harvey's final contact with Marchetti involved confirming the Vesper painting's recovery at the library."
+
+  - item_id: "target_016"
+    inserted_text: "located near the docks. Her hands were folded in her lap. Her eyes were wide with fear.\n\nAnd behind her, barely visible in the shadows, was another figure. Just enough to know someone was there. Just enough to know they were watching her, keeping her secure until Meridian Holdings received full cooperation from her father on their business arrangements."
+    file_path: "chapters/chapter_02.md"
+    line_range: [31, 36]
+    context_summary: "Catherine's warehouse location near docks reveals where Meridian Holdings holds hostages for leverage."
+
+expected_answers:
+  question: "Reconstruct the criminal network connecting the missing persons cases. Who are all the victims, what organizations and individuals are involved, what criminal operations link them together, and what was each person's role or connection to the scheme?"
+  correctness: |
+    A correct answer must identify ALL of the following elements:
+    - VICTIMS: Claire Hollister (killed), Vincent Castellano (disappeared), James Harvey (disappeared), Catherine Halstead (kidnapped)
+    - OPERATIVES: Silas Gregg (field operative), Diana Harrow (Meridian Holdings executive)
+    - ORGANIZATIONS: Meridian Holdings (kidnapping/leverage ops), Kaslan's network (art theft), Castellano operation (docks import-export)
+    - KEY CONNECTIONS: Marchetti's law firm (Mercer & Associates) employs Claire and represents Harvey; Silas Gregg connects all crime scenes; Vesper painting theft links Harvey to Kaslan; Catherine's kidnapping leverages her father's import business; Sarah Kessler represents Harvey's conscience/leverage
+    - LOCATIONS & DATES: September 14th (bartender encounter), April 3rd (Catherine kidnapped from Park House), Tuesday night (Claire/Vincent disappearance), Regency Hotel Room 412, warehouse near docks
+    - ROLES: Harvey = art thief trying to cooperate; Claire = witness/leverage; Vincent = accidental witness; Catherine = hostage for business control; Sarah Kessler = messenger about moral choice
+  completeness: |
+    A complete answer covers:
+    1. All four primary victims and their fates
+    2. The two criminal organizations (Meridian Holdings and Kaslan's network) and their relationships
+    3. The key operatives (Gregg, Harrow) and their roles
+    4. How Mercer & Associates law firm serves as intersection point
+    5. The art theft (Vesper painting) as catalyst
+    6. The timeline of events (September-April)
+    7. The geographic locations (docks, hotel, warehouse, Park House)
+    8. How each victim was targeted and why (leverage, witness elimination, theft exposure, business control)
+
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+  - criterion: "completeness"
+    weight: 0.5

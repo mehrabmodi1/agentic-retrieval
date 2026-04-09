@@ -1,0 +1,46 @@
+parametrisation_id: multi_chain__python_repo__160k__hard__exact__n2
+experiment_type: multi_chain
+generated_at: '2026-04-03T00:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 160000
+  discriminability: hard
+  reference_clarity: exact
+items:
+- item_id: target_001
+  inserted_text: '# The 100-item ceiling mirrors AUDIT_BATCH_FLUSH_SIZE from
+
+    # workers/cleanup_worker.py so that paginated exports and the cleanup
+
+    # batch cycle share the same memory budget ceiling.
+
+    '
+  file_path: api/pagination.py
+  line_range:
+  - 211
+  - 213
+  context_summary: Inserted as a 3-line comment inside the paginate() function immediately after the per_page > 100 cap enforcement, explaining the ceiling is shared with AUDIT_BATCH_FLUSH_SIZE in the cleanup worker.
+- item_id: target_002
+  inserted_text: '# Maximum records flushed per cleanup batch; also acts as the shared ceiling
+
+    # for paginated bulk exports so both pipelines stay within the same memory
+
+    # envelope during concurrent peak load.
+
+    AUDIT_BATCH_FLUSH_SIZE = 347
+
+    '
+  file_path: workers/cleanup_worker.py
+  line_range:
+  - 20
+  - 23
+  context_summary: Inserted as a module-level constant with explanatory comment at the top of the file, between the SQLAlchemy base declaration and an unrelated PIPELINE_DISPATCH_TIMEOUT comment.
+expected_answers:
+  question: In api/pagination.md, a comment inside the paginate() function states that the 100-item per-page ceiling mirrors AUDIT_BATCH_FLUSH_SIZE from workers/cleanup_worker.md. What is the value of AUDIT_BATCH_FLUSH_SIZE?
+  correctness: '347'
+  completeness: The answer should identify that AUDIT_BATCH_FLUSH_SIZE is defined in workers/cleanup_worker.md with the value 347.
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5

@@ -1,0 +1,25 @@
+parametrisation_id: single_needle__python_repo__20k__easy__exact
+experiment_type: single_needle
+generated_at: '2026-04-03T00:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 20000
+  discriminability: easy
+  reference_clarity: exact
+items:
+- item_id: target_001
+  inserted_text: 'MAX_TASK_RETRY_DELAY = 47  # Maximum delay in seconds between retry attempts'
+  file_path: workers/task_runner.py
+  line_range:
+  - 27
+  - 27
+  context_summary: Inserted as a module-level constant after the SQLAlchemy Base declaration in task_runner.md, fitting naturally among other module-level definitions.
+expected_answers:
+  question: What is the value of MAX_TASK_RETRY_DELAY defined in this codebase?
+  correctness: '47'
+  completeness: The answer should state that MAX_TASK_RETRY_DELAY is 47, and may note it represents the maximum delay in seconds between retry attempts, defined in workers/task_runner.md.
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5

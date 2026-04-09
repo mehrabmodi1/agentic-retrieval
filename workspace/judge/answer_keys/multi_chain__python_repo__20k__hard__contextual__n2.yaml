@@ -1,0 +1,40 @@
+parametrisation_id: multi_chain__python_repo__20k__hard__contextual__n2
+experiment_type: multi_chain
+generated_at: '2026-04-03T10:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 20000
+  discriminability: hard
+  reference_clarity: contextual
+items:
+- item_id: target_001
+  inserted_text: "# Log slow requests; threshold is calibrated against STALE_LOCK_TIMEOUT_SECONDS\n            # in the sync_worker module to ensure a consistent latency budget across layers.\n"
+  file_path: api/middleware.py
+  line_range:
+  - 90
+  - 91
+  context_summary: Inserted as a replacement for the brief '# Log slow requests' comment inside RequestLoggingMiddleware.after_request, referencing STALE_LOCK_TIMEOUT_SECONDS in the sync worker module.
+- item_id: target_002
+  inserted_text: '# Upper bound on how long a sync lock may be held before it is considered stale
+
+    # and eligible for reacquisition; also referenced by the request logging middleware
+
+    # as its slow-request cutoff threshold to keep latency budgets consistent.
+
+    STALE_LOCK_TIMEOUT_SECONDS = 12
+
+    '
+  file_path: workers/sync_worker.py
+  line_range:
+  - 21
+  - 24
+  context_summary: Inserted as a module-level constant with explanatory comment after the Base declarative setup, before the SyncDirection enum definition.
+expected_answers:
+  question: The middleware layer responsible for measuring and logging HTTP request durations contains a comment explaining how its threshold for flagging slow requests relates to a constant in the worker handling external data synchronization. Starting from that middleware file (api/middleware.md), trace this cross-module link to the synchronization worker. What numeric value does that referenced constant hold?
+  correctness: '12'
+  completeness: The answer should identify that STALE_LOCK_TIMEOUT_SECONDS = 12 is defined as a module-level constant in workers/sync_worker.md, and that it is referenced by the slow-request warning comment inside RequestLoggingMiddleware.after_request in api/middleware.md.
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5

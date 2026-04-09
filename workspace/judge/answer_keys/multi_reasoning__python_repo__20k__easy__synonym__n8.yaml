@@ -1,0 +1,74 @@
+parametrisation_id: multi_reasoning__python_repo__20k__easy__synonym__n8
+experiment_type: multi_reasoning
+generated_at: '2026-04-05T00:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 20000
+  discriminability: easy
+  reference_clarity: synonym
+items:
+- item_id: target_001
+  inserted_text: REPORT_BATCH_LIMIT = 100
+  file_path: workers/report_generator.py
+  line_range:
+  - 36
+  - 36
+  context_summary: Added after ReportFormat enum as a constant controlling batch processing size for reports.
+- item_id: target_002
+  inserted_text: REQUEST_RATE_CAP = 50
+  file_path: api/middleware.py
+  line_range:
+  - 170
+  - 170
+  context_summary: Inserted within RequestValidationMiddleware class as a rate limiting constant.
+- item_id: target_003
+  inserted_text: EMAIL_QUEUE_CAPACITY = 200
+  file_path: workers/email_worker.py
+  line_range:
+  - 130
+  - 130
+  context_summary: Added in send_email method as queue size constant for email dispatch.
+- item_id: target_004
+  inserted_text: SYNC_RECORD_THRESHOLD = 1000
+  file_path: workers/sync_worker.py
+  line_range:
+  - 155
+  - 155
+  context_summary: Inserted in exception handler as maximum records per sync operation.
+- item_id: target_005
+  inserted_text: CACHE_ENTRY_LIMIT = 500
+  file_path: tests/fixtures.py
+  line_range:
+  - 185
+  - 185
+  context_summary: Added in create_mock_cache method as cache capacity configuration.
+- item_id: target_006
+  inserted_text: CLEANUP_BATCH_SIZE = 250
+  file_path: workers/cleanup_worker.py
+  line_range:
+  - 228
+  - 228
+  context_summary: Inserted in _cleanup_database method as bulk delete batch size.
+- item_id: target_007
+  inserted_text: CONCURRENT_TASK_LIMIT = 10
+  file_path: api/__init__.py
+  line_range:
+  - 228
+  - 228
+  context_summary: Added in get_paginated_response function as max concurrent task constraint.
+- item_id: target_008
+  inserted_text: PDF_BUFFER_SIZE_KB = 512
+  file_path: workers/report_generator.py
+  line_range:
+  - 37
+  - 37
+  context_summary: Added after REPORT_BATCH_LIMIT as memory buffer allocation for PDF generation.
+expected_answers:
+  question: What is the total sum of all throughput and capacity constraints across the worker processes and API layers (report batch size, request rate limit, email queue capacity, sync record threshold, cache entry limit, cleanup batch size, concurrent task limit, and PDF buffer size)?
+  correctness: 'The answer must be a numerical sum of all eight configuration values: 100 + 50 + 200 + 1000 + 500 + 250 + 10 + 512 = 2622'
+  completeness: A complete answer must identify and locate all eight constraint values across all six files, extract each numerical value, and perform the arithmetic summation without omitting any items.
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5

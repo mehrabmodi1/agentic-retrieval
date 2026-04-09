@@ -1,0 +1,130 @@
+parametrisation_id: multi_chain__python_repo__20k__hard__exact__n16
+experiment_type: multi_chain
+generated_at: '2026-04-03T00:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 20000
+  discriminability: hard
+  reference_clarity: exact
+items:
+- item_id: target_001
+  inserted_text: '    ''mesh_config_ref'': ''primary_config_loader'',  # resolved at runtime via config module'
+  file_path: api/__init__.py
+  line_range:
+  - 285
+  - 285
+  context_summary: Inserted as an extra key in the API_DEFAULTS configuration dictionary, after the existing rate_limit_window entry.
+- item_id: target_002
+  inserted_text: "# Service mesh resolution table for runtime config discovery\n_SERVICE_MESH_RESOLUTION = {\n    'primary_config_loader': 'db_pool_sentinel',\n    'secondary_config_loader': 'standby_pool',\n}"
+  file_path: api/config.py
+  line_range:
+  - 72
+  - 76
+  context_summary: Inserted as a module-level constant in the new api/config.md file, under a 'Service Mesh Configuration' section, mapping config loader names to pool identifiers.
+- item_id: target_003
+  inserted_text: "# Pool profiles for replica set discovery and connection management\n_POOL_REGISTRY = {\n    'db_pool_sentinel': {\n        'max_connections': 20,\n        'replica_discovery_key': 'model_registry_key',\n        'timeout': 30,\n        'retry_on_failure': True,\n    },\n    'standby_pool': {\n        'max_connections': 5,\n        'replica_discovery_key': None,\n        'timeout': 60,\n        'retry_on_failure': False,\n    },\n}"
+  file_path: api/database.py
+  line_range:
+  - 38
+  - 52
+  context_summary: Inserted as a pool profile registry constant in the new api/database.md file, under a 'Connection Pool Registry' section, with db_pool_sentinel's replica_discovery_key pointing forward.
+- item_id: target_004
+  inserted_text: "# ORM schema metadata for replica binding and auth integration\n_MODEL_SCHEMA_BINDINGS = {\n    'model_registry_key': {\n        'auth_binding': 'auth_cluster_identity',\n        'schema_version': 2,\n        'cache_ttl': 300,\n    },\n}"
+  file_path: api/models.py
+  line_range:
+  - 30
+  - 37
+  context_summary: Inserted as a module-level schema binding constant in the new api/models.md file, under an 'ORM Schema Metadata' section, with model_registry_key's auth_binding pointing forward.
+- item_id: target_005
+  inserted_text: "# Auth cluster binding table for session relay configuration\n_AUTH_CLUSTER_BINDINGS = {\n    'auth_cluster_identity': {\n        'relay': 'session_relay_tag',\n        'token_expiry': 3600,\n        'algorithm': 'RS256',\n        'refresh_enabled': True,\n    },\n}"
+  file_path: api/auth.py
+  line_range:
+  - 31
+  - 39
+  context_summary: Inserted as an auth cluster binding table constant in the new api/auth.md file, under an 'Auth Cluster Bindings' section, with auth_cluster_identity's relay pointing forward.
+- item_id: target_006
+  inserted_text: "# Middleware relay table mapping session tags to upstream route handlers\n_MIDDLEWARE_RELAY_TABLE = {\n    'session_relay_tag': {\n        'target': 'upstream_route_prefix',\n        'propagate_headers': True,\n        'timeout_ms': 5000,\n        'log_requests': True,\n    },\n}"
+  file_path: api/middleware.py
+  line_range:
+  - 24
+  - 32
+  context_summary: Inserted as a middleware relay table constant in the new api/middleware.md file, under a 'Middleware Relay Table' section, with session_relay_tag's target pointing forward.
+- item_id: target_007
+  inserted_text: "# Route gateway configuration for upstream prefix resolution\n_ROUTE_GATEWAY_CONFIG = {\n    'upstream_route_prefix': {\n        'serializer': 'schema_version_token',\n        'auth_required': True,\n        'rate_limit_group': 'default',\n        'cache_enabled': False,\n    },\n}"
+  file_path: api/routes.py
+  line_range:
+  - 37
+  - 45
+  context_summary: Inserted as a route gateway configuration constant in the new api/routes.md file, under a 'Route Gateway Configuration' section, with upstream_route_prefix's serializer pointing forward.
+- item_id: target_008
+  inserted_text: "# Schema version registry binding serializer tokens to pagination engines\n_SCHEMA_VERSION_REGISTRY = {\n    'schema_version_token': {\n        'pagination_engine': 'cursor_engine_id',\n        'max_fields': 50,\n        'strict_mode': True,\n        'unknown_fields': 'raise',\n    },\n}"
+  file_path: api/serializers.py
+  line_range:
+  - 23
+  - 31
+  context_summary: Inserted as a schema version registry constant in the new api/serializers.md file, under a 'Schema Version Registry' section, with schema_version_token's pagination_engine pointing forward.
+- item_id: target_009
+  inserted_text: "# Cursor engine configuration with rate limiter namespace bindings\n_CURSOR_ENGINE_CONFIG = {\n    'cursor_engine_id': {\n        'rate_limiter': 'rate_bucket_origin',\n        'default_page_size': 20,\n        'max_page_size': 100,\n        'cursor_encoding': 'base64url',\n    },\n}"
+  file_path: api/pagination.py
+  line_range:
+  - 28
+  - 36
+  context_summary: Inserted as a cursor engine configuration constant in the new api/pagination.md file, under a 'Cursor Engine Configuration' section, with cursor_engine_id's rate_limiter pointing forward.
+- item_id: target_010
+  inserted_text: "# Token bucket registry with test fixture identifiers for integration testing\n_RATE_BUCKET_REGISTRY = {\n    'rate_bucket_origin': {\n        'test_fixture_id': 'fixture_upstream_token',\n        'capacity': 100,\n        'refill_rate': 10,\n        'window_seconds': 3600,\n    },\n}"
+  file_path: api/rate_limiting.py
+  line_range:
+  - 25
+  - 33
+  context_summary: Inserted as a rate bucket registry constant in the new api/rate_limiting.md file, under a 'Rate Bucket Registry' section, with rate_bucket_origin's test_fixture_id pointing forward.
+- item_id: target_011
+  inserted_text: "    # fixture_upstream_token is the canonical upstream auth fixture identifier.\n    # The corresponding commit origin in DB integration tests is 'db_commit_origin'.\n    _UPSTREAM_FIXTURE_REF = {\n        'fixture_upstream_token': 'db_commit_origin',\n    }"
+  file_path: tests/test_auth.py
+  line_range:
+  - 197
+  - 201
+  context_summary: Inserted as a class-level constant dict inside TestTokenManagement, immediately after the class docstring, mapping fixture_upstream_token to the next chain identifier.
+- item_id: target_012
+  inserted_text: "    # db_commit_origin marks the commit boundary for transaction-level assertions.\n    # Linked service dispatch handle for cross-suite validation: 'svc_dispatch_handle'.\n    _COMMIT_ORIGIN_REF = {\n        'db_commit_origin': 'svc_dispatch_handle',\n    }"
+  file_path: tests/test_db.py
+  line_range:
+  - 446
+  - 450
+  context_summary: Inserted as a class-level constant dict inside TestDatabaseConstraints, immediately after the class docstring, mapping db_commit_origin to the next chain identifier.
+- item_id: target_013
+  inserted_text: "    # svc_dispatch_handle is the identifier for tracking service dispatch events\n    # across test suites. The corresponding worker deployment ref is 'worker_deploy_ref'.\n    _DISPATCH_REF = {\n        'svc_dispatch_handle': 'worker_deploy_ref',\n    }"
+  file_path: tests/test_services.py
+  line_range:
+  - 309
+  - 313
+  context_summary: Inserted as a class-level constant dict inside TestReportService, immediately after the class docstring, mapping svc_dispatch_handle to the next chain identifier.
+- item_id: target_014
+  inserted_text: "    # worker_deploy_ref identifies the deployment unit for worker task routing.\n    # The validation pipeline sentinel for this worker target is 'pipeline_sentinel_key'.\n    _WORKER_DEPLOY_REF = {\n        'worker_deploy_ref': 'pipeline_sentinel_key',\n    }"
+  file_path: tests/test_workers.py
+  line_range:
+  - 318
+  - 322
+  context_summary: Inserted as a class-level constant dict inside TestWorkerContext, immediately after the class docstring, mapping worker_deploy_ref to the next chain identifier.
+- item_id: target_015
+  inserted_text: "# pipeline_sentinel_key is the internal checkpoint identifier for the validation pipeline.\n# The error cluster origin binding for this sentinel is 'error_cluster_origin'.\n_PIPELINE_SENTINEL_CONFIG = {\n    'pipeline_sentinel_key': 'error_cluster_origin',\n}"
+  file_path: api/validators.py
+  line_range:
+  - 21
+  - 25
+  context_summary: Inserted as a module-level constant immediately after the logger definition and before the ValidationError class, mapping pipeline_sentinel_key to the next chain identifier.
+- item_id: target_016
+  inserted_text: "# error_cluster_origin is the canonical deployment cluster for API error reporting.\n# The production routing target resolved from this origin is 'zephyr-indigo-07'.\n_ERROR_ROUTING_TABLE = {\n    'error_cluster_origin': 'zephyr-indigo-07',\n}"
+  file_path: api/error_handlers.py
+  line_range:
+  - 20
+  - 24
+  context_summary: Inserted as a module-level constant immediately after the logger definition and before the custom exception class definitions, providing the terminal chain value.
+expected_answers:
+  question: Starting from api/__init__.md, locate the mesh_config_ref key in the API_DEFAULTS dictionary. Follow the chain of references across the codebase — each identifier resolves to another in a different file. What is the final string value that mesh_config_ref ultimately resolves to after following the complete chain?
+  correctness: zephyr-indigo-07
+  completeness: 'The answer must be exactly ''zephyr-indigo-07''. A complete answer may also describe the 16-step chain: mesh_config_ref → primary_config_loader → db_pool_sentinel → model_registry_key → auth_cluster_identity → session_relay_tag → upstream_route_prefix → schema_version_token → cursor_engine_id → rate_bucket_origin → fixture_upstream_token → db_commit_origin → svc_dispatch_handle → worker_deploy_ref → pipeline_sentinel_key → error_cluster_origin → zephyr-indigo-07.'
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5

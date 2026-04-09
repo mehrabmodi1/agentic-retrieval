@@ -1,0 +1,117 @@
+parametrisation_id: "multi_reasoning__noir_fiction__800k__hard__exact__n16"
+experiment_type: "multi_reasoning"
+generated_at: "2026-04-05T00:00:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 800000
+  discriminability: "hard"
+  reference_clarity: "exact"
+items:
+  - item_id: "target_001"
+    inserted_text: "The lock was installed on March 15th, two days after he received a mysterious phone call."
+    file_path: "witnesses/landlady_statement.md"
+    line_range: [21, 24]
+    context_summary: "Embedded in landlady's description of Harvey's unusual lock payment, providing evidence of advance warning before his departure."
+
+  - item_id: "target_002"
+    inserted_text: "This consistency, it was his signature—a man who avoided attention through perfect regularity."
+    file_path: "witnesses/landlady_statement.md"
+    line_range: [31, 33]
+    context_summary: "Added to observations about Harvey's identical rent checks, suggesting deliberate patterns to remain invisible."
+
+  - item_id: "target_003"
+    inserted_text: "The timestamp of his visit was recorded in my maintenance log: 2:47 PM on October 26th."
+    file_path: "witnesses/landlady_statement.md"
+    line_range: [50, 54]
+    context_summary: "Provides precise timing of Silas Gregg's apartment visit, critical to establishing the investigation timeline."
+
+  - item_id: "target_004"
+    inserted_text: "The check he gave me that day was dated October 29th, 1947, the same date as always—but this time he seemed like a man preparing to disappear."
+    file_path: "witnesses/landlady_statement.md"
+    line_range: [63, 67]
+    context_summary: "Establishes Harvey's final sighting date and behavioral shift indicating imminent departure."
+
+  - item_id: "target_005"
+    inserted_text: "Room 412 ledger entry: October 22nd, 1947, signed register as J.P. Whitmore."
+    file_path: "case_notes/day_01.md"
+    line_range: [10, 12]
+    context_summary: "Documents Claire's hotel encounter with the suspect, placing her at Regency Hotel under witness observation."
+
+  - item_id: "target_006"
+    inserted_text: "Later analysis would identify it as Givenchy Gentleman, a French fragrance that cost forty-five dollars per bottle—a significant clue to the suspect's wealth and international connections."
+    file_path: "case_notes/day_01.md"
+    line_range: [35, 40]
+    context_summary: "Provides forensic evidence of cologne matching the killer's luxury profile and international background."
+
+  - item_id: "target_007"
+    inserted_text: "Helen's employment file would later reveal Claire earned sixty-five dollars per week and had access to the firm's confidential client files, particularly those related to art acquisitions and maritime shipping transactions."
+    file_path: "case_notes/day_01.md"
+    line_range: [49, 55]
+    context_summary: "Establishes Claire's access to sensitive legal information connecting her to the art theft operation."
+
+  - item_id: "target_008"
+    inserted_text: "The hospital intake form showed his previous admission was October 23rd, 1944, with a diagnosis of acute trauma—suggesting a pattern of violent incidents spanning three years."
+    file_path: "case_notes/day_04.md"
+    line_range: [25, 29]
+    context_summary: "Reveals Vincent's pattern of abuse and prior hospitalization, establishing him as a repeated victim in the criminal network."
+
+  - item_id: "target_009"
+    inserted_text: "Later, financial records would show that Margaret's real estate firm, Hollister Realty, had received irregular deposits totaling $47,000 over the past eighteen months from an offshore shell corporation registered in the Cayman Islands—a pattern that suggested money laundering and corruption extending far beyond her legitimate business."
+    file_path: "case_notes/day_04.md"
+    line_range: [34, 39]
+    context_summary: "Documents Margaret's financial involvement in the criminal conspiracy, connecting her to the international money laundering network."
+
+  - item_id: "target_010"
+    inserted_text: "The coroner's report, completed on November 9th, indicated Claire had been dead for approximately four days, placing time of death on October 24th—two days after the hotel encounter and five days before Harvey's final sighting."
+    file_path: "case_notes/day_08.md"
+    line_range: [7, 11]
+    context_summary: "Establishes precise time of death, critical to the investigation timeline and determining events sequence."
+
+  - item_id: "target_011"
+    inserted_text: "The envelope contains forty-three pages of bank transfers dated between January 1946 and September 1947, with amounts ranging from $500 to $8,300 per transaction."
+    file_path: "case_notes/day_05.md"
+    line_range: [24, 30]
+    context_summary: "Details the documentary evidence of financial conspiracy connecting Sinclair, Ashford, and Margaret."
+
+  - item_id: "target_012"
+    inserted_text: "The painting, a Flemish work titled 'The Merchant's Burden,' bore a catalog designation that would later appear in museum records dated 1512, stolen from the Vesper estate on June 15th, 1947."
+    file_path: "witnesses/informant_interview.md"
+    line_range: [13, 17]
+    context_summary: "Identifies the specific stolen artwork that triggered Harvey's moral crisis and decision to exit the criminal network."
+
+  - item_id: "target_013"
+    inserted_text: "The diary entries later recovered would show the relationship began in July 1947, with the man identified only as 'S,' who Catherine described as 'powerful and frightening but also protective, like someone who could make problems disappear.'"
+    file_path: "chapters/chapter_03.md"
+    line_range: [31, 35]
+    context_summary: "Establishes Catherine's secret relationship with Sinclair ('S'), providing motive for her kidnapping and leverage over Halstead."
+
+  - item_id: "target_014"
+    inserted_text: "Gregg's passport file showed entry and exit stamps from Buenos Aires, Havana, and Montreal during 1946-1947, establishing his role as a facilitator in the international smuggling network."
+    file_path: "witnesses/detective_debrief.md"
+    line_range: [34, 39]
+    context_summary: "Confirms Silas Gregg's international operational experience and coordination of criminal activities across multiple jurisdictions."
+
+  - item_id: "target_015"
+    inserted_text: "Background check revealed Margot's real name as Margaret 'Maggie' Rousseau, born Montreal 1922, with known associates in Paris art circles dating to 1945—suggesting she had been handling stolen works for at least two years."
+    file_path: "witnesses/detective_debrief.md"
+    line_range: [48, 52]
+    context_summary: "Identifies the red-haired woman and her extended history in the international art theft operation."
+
+  - item_id: "target_016"
+    inserted_text: "Halstead Import-Export's shipping manifests, once obtained by police, revealed transactions with known Kaslan operation front companies in Montreal and Buenos Aires, with shipments dated August 1946 through October 1947 valued at approximately $890,000."
+    file_path: "chapters/chapter_02.md"
+    line_range: [35, 41]
+    context_summary: "Establishes Halstead's direct financial involvement in the smuggling operation, providing motive for why his daughter was leveraged."
+
+expected_answers:
+  question: "Reconstruct the criminal conspiracy by identifying all 16 pieces of evidence that connected Harvey's disappearance, Claire Hollister's murder, Catherine Halstead's kidnapping, and the art theft operation. What was the complete timeline, the key people involved, their roles, and the financial flows that linked these crimes together?"
+  correctness: "A complete answer must identify all 16 evidence items and synthesize them into a coherent narrative showing: (1) Harvey's involvement in the Kaslan art theft network and his moral crisis over 'The Merchant's Burden'; (2) The three-person timeline—March 15 lock installation, October 22-24 hotel encounter and Claire's death, October 26 Gregg's visit, October 29 Harvey's final sighting; (3) The international network comprising Silas Gregg (facilitator), Maggie Rousseau/Margot (negotiator), Victor Ashford (money pipeline), Sinclair (enforcer), Margaret Hollister (money launderer), and Halstead (smuggling operations); (4) Financial evidence totaling $47,000 offshore deposits to Margaret and $890,000 in smuggling transactions; (5) The leverage chain: stolen painting → Harvey's conscience crisis → Claire as collateral → Catherine Halstead as kidnapping victim."
+  completeness: "A complete answer covers all four crime elements: (1) the art theft operation's history from 1945-1947 with 'The Merchant's Burden' as the triggering piece; (2) Harvey's movement through the network with dated evidence of his advancement warning (March 15), legal consultation, final associates, and October 29 departure; (3) Claire Hollister's death on October 24 and her access to confidential firm files connecting to the conspiracy; (4) Catherine Halstead's relationship with Sinclair beginning July 1947 and the kidnapping as leverage over Halstead; (5) the complete financial trail showing irregular deposits, wire transfers, and shipping manifests; (6) identification of all key operatives and their specific roles; (7) hospital records showing Vincent as a victim pattern; (8) forensic evidence (cologne, dates, documentation) substantiating each claim."
+
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+    description: "All 16 evidence items must be identified and correctly synthesized to demonstrate the conspiracy structure."
+  - criterion: "completeness"
+    weight: 0.5
+    description: "Answer must cover all four interconnected crime elements and demonstrate understanding of how Harvey's moral crisis cascaded into Claire's murder and Catherine's kidnapping."

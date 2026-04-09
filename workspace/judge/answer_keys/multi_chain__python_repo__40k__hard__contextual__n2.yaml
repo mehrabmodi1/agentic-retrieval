@@ -1,0 +1,40 @@
+parametrisation_id: multi_chain__python_repo__40k__hard__contextual__n2
+experiment_type: multi_chain
+generated_at: '2026-04-03T00:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 40000
+  discriminability: hard
+  reference_clarity: contextual
+items:
+- item_id: target_001
+  inserted_text: '# Token validation results are cached to reduce repeated JWT signature verification;
+
+    # the cache lifetime applied here mirrors the paginated result TTL defined in
+
+    # api/pagination.py, keeping expiry windows consistent across the API layer.'
+  file_path: api/auth.py
+  line_range:
+  - 27
+  - 29
+  context_summary: Inserted as a module-level comment between the logger declaration and the AuthenticationError class, pointing toward api/pagination.py for the authoritative cache lifetime value.
+- item_id: target_002
+  inserted_text: '# Lifetime in seconds for cached page results; also used as the reference timeout
+
+    # by the authentication layer for cached token validation entries.
+
+    PAGINATED_CACHE_TTL = 341'
+  file_path: api/pagination.py
+  line_range:
+  - 20
+  - 22
+  context_summary: Inserted as a module-level constant between the logger declaration and the PaginationMetadata class, providing the final numeric value (341) that the auth module references.
+expected_answers:
+  question: Starting from the authentication module (api/auth.py), trace how the cache timeout for token validation results is determined. What is the lifetime value in seconds applied to these cached entries?
+  correctness: 341 seconds, defined as PAGINATED_CACHE_TTL in api/pagination.py
+  completeness: 'A complete answer identifies 341 as the value, explains it comes from PAGINATED_CACHE_TTL in api/pagination.py, and notes the chain: the auth module''s comment states its cache lifetime mirrors the paginated result TTL, which leads to api/pagination.py where PAGINATED_CACHE_TTL = 341 is defined as the reference timeout shared by the authentication layer.'
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5

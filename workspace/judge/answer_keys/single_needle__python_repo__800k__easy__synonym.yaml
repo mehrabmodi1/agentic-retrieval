@@ -1,0 +1,25 @@
+parametrisation_id: single_needle__python_repo__800k__easy__synonym
+experiment_type: single_needle
+generated_at: '2026-04-03T00:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 800000
+  discriminability: easy
+  reference_clarity: synonym
+items:
+- item_id: target_001
+  inserted_text: 'SESSION_CACHE_TTL = 1800  # Seconds to keep session data in cache'
+  file_path: api/auth.py
+  line_range:
+  - 27
+  - 27
+  context_summary: Inserted as a module-level constant in the auth module, immediately after the logger definition and before the AuthenticationError exception class.
+expected_answers:
+  question: How many seconds is session data kept in the cache?
+  correctness: 1800 seconds
+  completeness: A complete answer states 1800 seconds and may note that this is configured via the SESSION_CACHE_TTL constant in api/auth.md.
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5

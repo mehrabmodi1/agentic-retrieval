@@ -1,0 +1,68 @@
+parametrisation_id: "multi_chain__noir_fiction__40k__easy__exact__n8"
+experiment_type: "multi_chain"
+generated_at: "2026-04-05T15:30:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 40000
+  discriminability: "easy"
+  reference_clarity: "exact"
+
+items:
+  - item_id: "target_001"
+    inserted_text: "Before he could continue, I realized something. If Halstead had hired Marchetti & Associates for legal counsel, his secretary Dorothy would have the appointment records that connected him to this situation. The files would tell me what kind of arrangement Halstead was making. That's where I needed to look first."
+    file_path: "chapters/chapter_01.md"
+    line_range: [37, 41]
+    context_summary: "Inserted at the end of Webb's interrogation scene; Shepherd realizes he needs to check Marchetti's records for Halstead's legal arrangement."
+
+  - item_id: "target_002"
+    inserted_text: "All of them. He's all three at once.' Dorothy paused. 'And Detective, there was someone else who came through before all this—Margaret Hollister. She'd been to see Mr. Marchetti about real estate matters, or so it seemed. But her visits were more frequent than ordinary business would require. Perhaps that line of inquiry would prove illuminating.'"
+    file_path: "witnesses/secretary_statement.md"
+    line_range: [50, 53]
+    context_summary: "Inserted into Dorothy's testimony; she reveals Margaret Hollister had suspicious real estate dealings with Marchetti."
+
+  - item_id: "target_003"
+    inserted_text: "I need to connect Margaret's financial dealings to whoever was in that hotel room with Claire. The real estate records will show everything—the Castellano connections are in there, waiting to be found."
+    file_path: "case_notes/day_01.md"
+    line_range: [40, 42]
+    context_summary: "Inserted before Shepherd enters the Regency Hotel; he realizes Margaret's real estate deals are key to understanding the case."
+
+  - item_id: "target_004"
+    inserted_text: "I pressed him on what connected all this—Margaret's business dealings, the Castellano operation, the hotels and hidden contacts. Morris mentioned something about the Paradise on Seventh. I needed to check on that—Morris would know who ran it, and that would lead me to the money flow."
+    file_path: "case_notes/day_02.md"
+    line_range: [50, 56]
+    context_summary: "Inserted after Morris discusses Vincent Castellano; Shepherd identifies the Paradise nightclub as the next investigative target."
+
+  - item_id: "target_005"
+    inserted_text: "The financial trail connects Margaret to the Castellano shell companies through seven property sales. But what strikes me is the pattern—each transaction moves money that shouldn't be traced. If the Paradise is connected, then Victor Ashford's import operation must be the next link in this chain."
+    file_path: "case_notes/day_03.md"
+    line_range: [25, 27]
+    context_summary: "Inserted at the Castellano Family Tree section; Shepherd deduces that Ashford's import business is connected to the money laundering network."
+
+  - item_id: "target_006"
+    inserted_text: "That's when I realize Victor Ashford isn't the real power—he's just another layer in this operation. The import business is the front for something bigger. I need to understand who's really orchestrating this. Following the money means following Ashford's entire network, which means the public exposure is coming."
+    file_path: "case_notes/day_04.md"
+    line_range: [50, 56]
+    context_summary: "Inserted after Morris discusses the hierarchy; Shepherd recognizes Ashford is not the ultimate authority and that exposure is imminent."
+
+  - item_id: "target_007"
+    inserted_text: "As the investigation closes in on Sinclair and the financial network, I realize there are still missing pieces. Someone will know about Harvey and whether he escaped the Kaslan operation—someone with inside knowledge of the art theft ring. That informant exists somewhere, and they'll know about Margot and the Vesper painting."
+    file_path: "case_notes/day_07.md"
+    line_range: [48, 52]
+    context_summary: "Inserted during The Investigation Intensifies section; Shepherd understands he needs testimony from someone inside the Kaslan operation about Harvey and Margot."
+
+  - item_id: "target_008"
+    inserted_text: "Victor paused at the door. 'The last thing you should know: Margot negotiated his exit. She's the one who made the deal with Harvey—return the painting, accept the terms, and stay quiet. That arrangement came from the highest authority in the Kaslan structure. Harvey's freedom was purchased, but the price was permanent exile from any life he'd ever known.'"
+    file_path: "witnesses/informant_interview.md"
+    line_range: [50, 57]
+    context_summary: "Final link in the chain; Victor reveals that Margot brokered Harvey's escape from the Kaslan operation by returning the Vesper painting."
+
+expected_answers:
+  question: "Starting from Shepherd's realization about checking Marchetti's records in chapter_01.md, follow the chain of leads through the investigation. What was the ultimate arrangement that resolved Harvey's situation with the Kaslan operation?"
+  correctness: "The answer must identify Margot and the negotiated deal involving the return of the Vesper painting and Harvey's permanent exile."
+  completeness: "A complete answer should trace the full chain: Marchetti records → Margaret Hollister → Castellano financial connections → Paradise nightclub → Victor Ashford's import operation → Harvey's involvement with Kaslan art theft ring → Margot's negotiation and the painting's return."
+
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+  - criterion: "completeness"
+    weight: 0.5

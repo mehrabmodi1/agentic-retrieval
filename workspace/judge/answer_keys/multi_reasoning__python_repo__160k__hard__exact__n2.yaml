@@ -1,0 +1,34 @@
+parametrisation_id: multi_reasoning__python_repo__160k__hard__exact__n2
+experiment_type: multi_reasoning
+generated_at: '2026-04-05T00:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 160000
+  discriminability: hard
+  reference_clarity: exact
+items:
+- item_id: target_001
+  inserted_text: max_retry_attempts = 5
+  file_path: workers/retry_handler.py
+  line_range:
+  - 28
+  - 28
+  context_summary: Inserted as a class attribute of RateLimitError, defining the maximum number of retry attempts allowed for rate-limited operations within the exception hierarchy.
+- item_id: target_002
+  inserted_text: retention_days=240,
+  file_path: workers/cleanup_worker.py
+  line_range:
+  - 28
+  - 28
+  context_summary: Embedded in the CleanupTask configuration for failed task cleanup, specifying a 240-day retention window for tasks that have failed and will be deleted after this period expires.
+expected_answers:
+  question: Given the system's maximum retry attempts for rate-limited operations and the retention period for failed tasks in the cleanup worker, what is the average retention window in days per retry attempt?
+  correctness: 'The answer must identify both the max_retry_attempts value (5) from the RateLimitError class in workers/retry_handler.md and the retention_days value (240) from the cleanup_failed_tasks configuration in workers/cleanup_worker.md, then correctly calculate: 240 ÷ 5 = 48 days per retry attempt.'
+  completeness: 'A complete answer must: (1) locate and explicitly cite the max_retry_attempts = 5 constant from the RateLimitError class definition in workers/retry_handler.md, (2) locate and explicitly cite the retention_days=240 value from the cleanup_failed_tasks CleanupTask configuration in workers/cleanup_worker.md, (3) explain how these two values relate to the system''s retry and cleanup lifecycle, and (4) perform the mathematical calculation (240 ÷ 5) to derive the final answer of 48 days per retry attempt available for each retry cycle.'
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+  description: Answer correctly identifies both values and performs accurate calculation
+- criterion: completeness
+  weight: 0.5
+  description: Answer references both file locations, explains the relationship between retry attempts and retention policy, and shows calculation work

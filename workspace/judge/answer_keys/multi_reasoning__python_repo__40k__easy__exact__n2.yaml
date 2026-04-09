@@ -1,0 +1,34 @@
+parametrisation_id: multi_reasoning__python_repo__40k__easy__exact__n2
+experiment_type: multi_reasoning
+generated_at: '2026-04-05T00:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 40000
+  discriminability: easy
+  reference_clarity: exact
+items:
+- item_id: target_001
+  inserted_text: '# Rate limiting capacity configuration
+
+    MAX_BURST_CAPACITY = 75  # Maximum tokens in burst capacity'
+  file_path: api/rate_limiting.py
+  line_range:
+  - 348
+  - 349
+  context_summary: Configuration constant defining maximum burst token capacity inserted before the burst_limit function definition.
+- item_id: target_002
+  inserted_text: 'MAX_NOTIFICATION_QUEUE = 50  # Maximum concurrent notifications allowed'
+  file_path: tests/test_services.py
+  line_range:
+  - 259
+  - 259
+  context_summary: Configuration constant defining maximum notification queue size inserted as a class variable in TestNotificationService.
+expected_answers:
+  question: What is the total maximum capacity across both the burst rate limiter (MAX_BURST_CAPACITY) and the notification queue (MAX_NOTIFICATION_QUEUE)?
+  correctness: The answer must identify both MAX_BURST_CAPACITY = 75 and MAX_NOTIFICATION_QUEUE = 50, and correctly sum them to arrive at 125.
+  completeness: A complete answer must locate both configuration constants in their respective files, identify their values, and demonstrate the addition operation combining them.
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5

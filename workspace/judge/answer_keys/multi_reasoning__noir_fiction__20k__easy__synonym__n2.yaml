@@ -1,0 +1,28 @@
+parametrisation_id: "multi_reasoning__noir_fiction__20k__easy__synonym__n2"
+experiment_type: "multi_reasoning"
+generated_at: "2026-04-05T00:00:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 20000
+  discriminability: "easy"
+  reference_clarity: "synonym"
+items:
+  - item_id: "target_001"
+    inserted_text: "What I didn't learn until later was that H had visited his oncologist that same afternoon. The diagnosis had been delivered with clinical precision: six months, possibly fewer. The cancer was aggressive and had already spread. He'd sat in that office for ten minutes afterward, simply staring at the wall, before he called Catherine to say goodbye."
+    file_path: "chapters/chapter_04.md"
+    line_range: [32, 35]
+    context_summary: "Inserted after Catherine's final journal entry revealing that her lover H received a terminal cancer diagnosis the same day he ended their relationship."
+  - item_id: "target_002"
+    inserted_text: "\"What changed his mind?\" I ask.\n\n\"He had a visitor yesterday. A woman he cared about deeply. She came to his apartment and told him that running, hiding, staying silent—it was all cowardice dressed up as survival. She said that meaning didn't come from living longer, it came from what you did with the time you had left. He says watching her cry, knowing what his silence had cost her, was the moment he realized he had nothing left to lose.\""
+    file_path: "case_notes/day_06.md"
+    line_range: [112, 120]
+    context_summary: "Inserted within discussion of Mercer's cancer diagnosis showing how a visitor's emotional intervention motivated him to cooperate with authorities despite terminal illness."
+expected_answers:
+  question: "What life-limiting medical condition did a man discover hours before ending a crucial relationship, and how did that same person's emotional visit later catalyze a dying man's decision to finally testify against criminals?"
+  correctness: "The answer must identify: (1) that the man (H/Mercer) received a terminal cancer diagnosis; (2) that the time frame was measured in months; (3) that Catherine's visit and emotional plea convinced Mercer to testify despite his terminal condition."
+  completeness: "A complete answer requires synthesizing information from both sources: connecting H's oncology diagnosis and his goodbye to Catherine with Mercer's cancer diagnosis and his decision to testify, recognizing these are references to the same two individuals in a noir noir narrative where terminal illness drives moral choice."
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+  - criterion: "completeness"
+    weight: 0.5

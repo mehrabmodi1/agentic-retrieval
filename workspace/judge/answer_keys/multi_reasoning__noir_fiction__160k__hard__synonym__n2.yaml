@@ -1,0 +1,30 @@
+parametrisation_id: "multi_reasoning__noir_fiction__160k__hard__synonym__n2"
+experiment_type: "multi_reasoning"
+generated_at: "2026-04-05T00:00:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 160000
+  discriminability: "hard"
+  reference_clarity: "synonym"
+items:
+  - item_id: "target_001"
+    inserted_text: "When I cleared the table later, I caught a glimpse of what had been inside—document folder, official-looking seal on the upper corner, the kind of thing you don't question because questioning it might get you hurt. Whatever credentials that envelope contained, they represented more than hope. They represented a way out."
+    file_path: "witnesses/bartender_statement.md"
+    line_range: [36, 42]
+    context_summary: "Embedded in Deke's description of the older man's envelope exchange with Harvey, revealing it contained official travel credentials rather than cash or threats."
+  - item_id: "target_002"
+    inserted_text: "When he left, I noticed he was no longer carrying the briefcase he'd brought—Mr. Marchetti was holding it instead, his expression stricken. He walked to the elevator without looking at me, and I heard him weeping as he waited for it to arrive. Not loud weeping. Quiet weeping, the kind of sound a man makes when he is trying to suppress it but cannot quite manage. Mr. Marchetti stood in his office doorway for a moment, staring at that briefcase as if it contained the weight of his entire career's ethics."
+    file_path: "witnesses/secretary_statement.md"
+    line_range: [33, 40]
+    context_summary: "Embedded in Dorothy's account of Harvey's final visit to the lawyer, showing that Harvey transferred his briefcase to Marchetti as part of formalizing his departure arrangements."
+expected_answers:
+  question: "What evidence indicates Harvey had obtained travel authorization or official credentials before his disappearance, and what specific action did he take immediately after his final legal consultation to formalize his preparations?"
+  correctness: "A complete answer must identify both the official credentials/documents in the envelope from the older man AND the transfer of the briefcase to the lawyer as key evidence of preparation. Must use information from both witness accounts."
+  completeness: "The answer should explain: (1) that Harvey received an envelope containing official travel documents or credentials with an official seal from the older man (Gregg), indicating he was given means of passage; (2) that Harvey handed over his briefcase to his lawyer (Marchetti) after their final meeting, suggesting he was consolidating documents and finalizing preparations for departure; (3) that both actions together demonstrate coordinated planning for his exit."
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+    description: "Answer must accurately reflect both needles without contradiction. Must distinguish between the credentials he received and the materials he transferred."
+  - criterion: "completeness"
+    weight: 0.5
+    description: "Answer must synthesize both pieces of evidence to show the full sequence of preparation events. Partial answers identifying only one needle are incomplete."

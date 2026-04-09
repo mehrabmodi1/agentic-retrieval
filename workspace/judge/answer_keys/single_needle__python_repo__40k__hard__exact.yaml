@@ -1,0 +1,29 @@
+parametrisation_id: single_needle__python_repo__40k__hard__exact
+experiment_type: single_needle
+generated_at: '2026-04-03T00:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 40000
+  discriminability: hard
+  reference_clarity: exact
+items:
+- item_id: target_001
+  inserted_text: '# Minimum time (in seconds) between checkpoint flushes to the database.
+
+    # Derived from: (3 minutes * 60 s/min) + 45 s — avoids excessive I/O under load.
+
+    CHECKPOINT_FLUSH_INTERVAL_SECONDS = 3 * 60 + 45'
+  file_path: workers/sync_worker.py
+  line_range:
+  - 21
+  - 23
+  context_summary: Inserted as a module-level constant after the SQLAlchemy Base declaration and before the SyncDirection enum class definition, with a two-line comment explaining its derivation.
+expected_answers:
+  question: What is the value of CHECKPOINT_FLUSH_INTERVAL_SECONDS defined in the sync worker?
+  correctness: 225 seconds (or equivalently 3 minutes and 45 seconds), computed as 3 * 60 + 45.
+  completeness: A complete answer states the numeric result of 225 seconds, notes that it is expressed in the code as the arithmetic expression 3 * 60 + 45, and may mention that the comment explains it is derived from 3 minutes plus 45 seconds to avoid excessive I/O under load.
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5

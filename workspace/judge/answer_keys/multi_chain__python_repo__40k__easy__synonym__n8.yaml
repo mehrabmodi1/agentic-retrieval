@@ -1,0 +1,90 @@
+parametrisation_id: multi_chain__python_repo__40k__easy__synonym__n8
+experiment_type: multi_chain
+generated_at: '2026-04-03T10:30:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 40000
+  discriminability: easy
+  reference_clarity: synonym
+items:
+- item_id: target_001
+  inserted_text: '# JWT clock skew tolerance; corresponds to REQUEST_WINDOW_SECS in api/middleware.py
+
+    JWT_CLOCK_SKEW = REQUEST_WINDOW_SECS'
+  file_path: api/auth.py
+  line_range:
+  - 27
+  - 28
+  context_summary: Inserted after the module-level logger definition in api/auth.py, establishing JWT_CLOCK_SKEW as a reference to REQUEST_WINDOW_SECS in api/middleware.py.
+- item_id: target_002
+  inserted_text: '# Request validation window; mapped from PAGE_FETCH_LIMIT in api/pagination.py
+
+    REQUEST_WINDOW_SECS = PAGE_FETCH_LIMIT'
+  file_path: api/middleware.py
+  line_range:
+  - 26
+  - 27
+  context_summary: Inserted after the module-level logger definition in api/middleware.py, defining REQUEST_WINDOW_SECS as a reference to PAGE_FETCH_LIMIT in api/pagination.py.
+- item_id: target_003
+  inserted_text: '# Page fetch window limit; sourced from BURST_ALLOWANCE in api/rate_limiting.py
+
+    PAGE_FETCH_LIMIT = BURST_ALLOWANCE'
+  file_path: api/pagination.py
+  line_range:
+  - 20
+  - 21
+  context_summary: Inserted after the module-level logger definition in api/pagination.py, defining PAGE_FETCH_LIMIT as a reference to BURST_ALLOWANCE in api/rate_limiting.py.
+- item_id: target_004
+  inserted_text: '# Burst allowance for rate throttling; mirrors WORKER_POLL_TICKS in workers/task_runner.py
+
+    BURST_ALLOWANCE = WORKER_POLL_TICKS'
+  file_path: api/rate_limiting.py
+  line_range:
+  - 26
+  - 27
+  context_summary: Inserted after the module-level logger definition in api/rate_limiting.py, defining BURST_ALLOWANCE as a reference to WORKER_POLL_TICKS in workers/task_runner.py.
+- item_id: target_005
+  inserted_text: '# Worker polling ticks constant; delegates to REPORT_CHUNK_SIZE in workers/report_generator.py
+
+    WORKER_POLL_TICKS = REPORT_CHUNK_SIZE'
+  file_path: workers/task_runner.py
+  line_range:
+  - 26
+  - 27
+  context_summary: Inserted after the DEFAULT_TASK_QUEUE_TIMEOUT constant in workers/task_runner.py, defining WORKER_POLL_TICKS as a reference to REPORT_CHUNK_SIZE in workers/report_generator.py.
+- item_id: target_006
+  inserted_text: '# Report data chunk size; taken from PURGE_THRESHOLD in workers/cleanup_worker.py
+
+    REPORT_CHUNK_SIZE = PURGE_THRESHOLD'
+  file_path: workers/report_generator.py
+  line_range:
+  - 25
+  - 26
+  context_summary: Inserted after the module-level logger definition in workers/report_generator.py, defining REPORT_CHUNK_SIZE as a reference to PURGE_THRESHOLD in workers/cleanup_worker.py.
+- item_id: target_007
+  inserted_text: '# Purge threshold for old record removal; forwarded from SYNC_BATCH_CAP in workers/sync_worker.py
+
+    PURGE_THRESHOLD = SYNC_BATCH_CAP'
+  file_path: workers/cleanup_worker.py
+  line_range:
+  - 18
+  - 19
+  context_summary: Inserted after the module-level logger definition in workers/cleanup_worker.py, defining PURGE_THRESHOLD as a reference to SYNC_BATCH_CAP in workers/sync_worker.py.
+- item_id: target_008
+  inserted_text: '# Maximum batch size per synchronization cycle, in records
+
+    SYNC_BATCH_CAP = 73'
+  file_path: workers/sync_worker.py
+  line_range:
+  - 25
+  - 26
+  context_summary: Inserted after the STALE_LOCK_TIMEOUT_SECONDS constant in workers/sync_worker.py, defining SYNC_BATCH_CAP with the final numeric value of 73.
+expected_answers:
+  question: In api/auth.py, there is a module-level constant representing the token timestamp tolerance. Follow the chain of constant references across eight modules to determine the final numeric value.
+  correctness: The correct answer is 73.
+  completeness: A complete answer traces JWT_CLOCK_SKEW (api/auth.py) -> REQUEST_WINDOW_SECS (api/middleware.py) -> PAGE_FETCH_LIMIT (api/pagination.py) -> BURST_ALLOWANCE (api/rate_limiting.py) -> WORKER_POLL_TICKS (workers/task_runner.py) -> REPORT_CHUNK_SIZE (workers/report_generator.py) -> PURGE_THRESHOLD (workers/cleanup_worker.py) -> SYNC_BATCH_CAP (workers/sync_worker.py) = 73.
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5

@@ -1,0 +1,23 @@
+parametrisation_id: "single_needle__noir_fiction__160k__easy__synonym"
+experiment_type: "single_needle"
+generated_at: "2026-04-03T00:00:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 160000
+  discriminability: "easy"
+  reference_clarity: "synonym"
+items:
+  - item_id: "target_001"
+    inserted_text: "Victor's real name, known only to Detective Halloway and the department's protected source coordinator, was Joseph Kravitz—a former mid-level operative in the Kessler smuggling ring who had been turned three years earlier after a tax fraud conviction gave the department the leverage it needed."
+    file_path: "witnesses/informant_interview.md"
+    line_range: [14, 14]
+    context_summary: "Inserted as a standalone paragraph between the scene-setting prose and Victor's first line of dialogue, providing his true identity immediately after he is introduced as a code-named informant."
+expected_answers:
+  question: "What is the true identity of the informant known as Victor?"
+  correctness: "Joseph Kravitz"
+  completeness: "The answer should state that Victor's real name is Joseph Kravitz, a former operative in the Kessler smuggling ring who was turned after a tax fraud conviction."
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+  - criterion: "completeness"
+    weight: 0.5

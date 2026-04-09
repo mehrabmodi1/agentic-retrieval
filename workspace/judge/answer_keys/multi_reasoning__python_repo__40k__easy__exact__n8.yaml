@@ -1,0 +1,76 @@
+parametrisation_id: multi_reasoning__python_repo__40k__easy__exact__n8
+experiment_type: multi_reasoning
+generated_at: '2026-04-05T00:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 40000
+  discriminability: easy
+  reference_clarity: exact
+items:
+- item_id: target_001
+  inserted_text: EMAIL_VERIFICATION_RETRY_COUNT = 3
+  file_path: tests/test_workers.py
+  line_range:
+  - 99
+  - 99
+  context_summary: Configuration constant for email verification retry logic defined in TestDataProcessingWorker class.
+- item_id: target_002
+  inserted_text: AUDIT_LOG_RETENTION_DAYS = 90
+  file_path: tests/conftest.py
+  line_range:
+  - 207
+  - 207
+  context_summary: Audit log retention period defined in mock_email_service fixture for compliance requirements.
+- item_id: target_003
+  inserted_text: PROJECT_NAME_MAX_LENGTH = 200
+  file_path: api/validators.py
+  line_range:
+  - 269
+  - 269
+  context_summary: Maximum length constraint for project names defined in validate_project_creation function.
+- item_id: target_004
+  inserted_text: TOKEN_EXPIRY_MINUTES = 1440
+  file_path: tests/test_auth.py
+  line_range:
+  - 321
+  - 321
+  context_summary: Token validity window in minutes (24 hours) defined in TestAuthorizationAndPermissions class.
+- item_id: target_005
+  inserted_text: RATE_LIMIT_REQUESTS_PER_MINUTE = 60
+  file_path: api/rate_limiting.py
+  line_range:
+  - 74
+  - 74
+  context_summary: Default rate limiting threshold defined in check_rate_limit method.
+- item_id: target_006
+  inserted_text: EMAIL_LOG_SUCCESS_THRESHOLD_PERCENT = 95
+  file_path: workers/email_worker.py
+  line_range:
+  - 280
+  - 280
+  context_summary: Success rate threshold for email logging defined in email statistics reporting function.
+- item_id: target_007
+  inserted_text: ERROR_RESPONSE_MAX_DETAILS_LENGTH = 500
+  file_path: api/error_handlers.py
+  line_range:
+  - 383
+  - 383
+  context_summary: Maximum details field length constraint defined in create_error_response function.
+- item_id: target_008
+  inserted_text: SYNC_TIMEOUT_SECONDS = 300
+  file_path: workers/sync_worker.py
+  line_range:
+  - 173
+  - 173
+  context_summary: Synchronization operation timeout duration defined in execute_all_syncs method.
+expected_answers:
+  question: What is the sum of EMAIL_VERIFICATION_RETRY_COUNT, AUDIT_LOG_RETENTION_DAYS, PROJECT_NAME_MAX_LENGTH, TOKEN_EXPIRY_MINUTES, RATE_LIMIT_REQUESTS_PER_MINUTE, EMAIL_LOG_SUCCESS_THRESHOLD_PERCENT, ERROR_RESPONSE_MAX_DETAILS_LENGTH, and SYNC_TIMEOUT_SECONDS?
+  correctness: 'The answer must identify and sum all 8 constant values: 3 + 90 + 200 + 1440 + 60 + 95 + 500 + 300 = 2688'
+  completeness: A complete answer must (1) locate all 8 constants across their respective files, (2) extract their exact numeric values, (3) perform arithmetic summation, and (4) report the final sum of 2688
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+  description: Final sum must equal 2688; partial credit for identifying subsets of constants
+- criterion: completeness
+  weight: 0.5
+  description: Must find all 8 items; finding 7 or fewer items is incomplete regardless of arithmetic correctness

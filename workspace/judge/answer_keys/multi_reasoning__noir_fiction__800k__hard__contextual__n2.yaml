@@ -1,0 +1,39 @@
+parametrisation_id: "multi_reasoning__noir_fiction__800k__hard__contextual__n2"
+experiment_type: "multi_reasoning"
+generated_at: "2026-04-05T00:00:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 800000
+  discriminability: "hard"
+  reference_clarity: "contextual"
+items:
+  - item_id: "target_001"
+    inserted_text: "Before Gregg drove away from the building, I saw the car—it had diplomatic plates, the kind that belong to government consultants. On the seat beside him, I caught a glimpse of a folder marked with a symbol I recognized from the newspapers. It was the same symbol that had appeared next to the name Charles Sinclair in an article about international trade delegations."
+    file_path: "witnesses/landlady_statement.md"
+    line_range: [25, 26]
+    context_summary: "Embedded at the end of Eva's description of Gregg's visit, connecting the visitor to Sinclair through a visual detail (diplomatic plates and folder symbol) that requires contextual knowledge to interpret."
+  - item_id: "target_002"
+    inserted_text: "The investigators found records indicating Sinclair employs a network of field operatives—men like Gregg Vasil—who travel internationally under diplomatic cover. These operatives identify targets with leverage and execute what Sinclair calls 'compliance acquisitions.' Harvey was just one of dozens. Sinclair documented everything in coded memos, and in one memo dated three weeks prior, he'd written: 'Vasil reports target 47 is receptive to timeline pressure. Seventy-two-hour assessment window confirms viability for secondary asset deployment.'"
+    file_path: "case_notes/day_07.md"
+    line_range: [17, 17]
+    context_summary: "Inserted within Helen Crawford's warning to the detective about Sinclair's operating methods, providing evidence of his network structure and a memo matching the 'seventy-two hour' timeframe Eva overheard."
+expected_answers:
+  question: "Based on the evidence from multiple sources, what organization directed Mr. Harvey's coercion, and what method was used to establish the connection between the field operative and the organizational leadership?"
+  correctness: |
+    A correct answer must identify:
+    1. Charles Sinclair's organization as the entity directing the coercion
+    2. The use of field operatives (specifically naming Gregg Vasil) operating under diplomatic cover
+    3. The connection between Gregg's visit and Sinclair, established through the diplomatic plates and folder with Sinclair's symbol
+    4. The memo referencing "seventy-two-hour assessment window" and "target 47" as corroborating evidence
+  completeness: |
+    A complete answer should address:
+    1. Eva's observation of Gregg leaving with diplomatic plates and Sinclair's symbol on a folder (Needle 1)
+    2. The case notes revealing Sinclair's "compliance acquisitions" network and Gregg Vasil's role as a field operative (Needle 2)
+    3. The alignment of the "seventy-two-hour" timeline mentioned by both Eva and in Sinclair's memo
+    4. The systematic nature of the operation ("Harvey was just one of dozens")
+    5. The sophistication of the disguise (diplomatic cover) that enabled the coercion operation
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+  - criterion: "completeness"
+    weight: 0.5

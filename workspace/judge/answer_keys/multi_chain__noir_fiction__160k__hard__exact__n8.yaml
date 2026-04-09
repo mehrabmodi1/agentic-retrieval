@@ -1,0 +1,70 @@
+parametrisation_id: "multi_chain__noir_fiction__160k__hard__exact__n8"
+experiment_type: "multi_chain"
+generated_at: "2026-04-05T00:00:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 160000
+  discriminability: "hard"
+  reference_clarity: "exact"
+
+items:
+  - item_id: "target_001"
+    inserted_text: "But here's the thing nobody noticed—on the back, someone had written in pencil: 'Blackrock Holdings—Hastings Registry.' Looked like an address reference, something he needed to remember."
+    file_path: "witnesses/cab_driver_statement.md"
+    line_range: [64, 65]
+    context_summary: "Added notation on train receipt back pointing to Blackrock Holdings property registry, establishing the first link in the chain."
+
+  - item_id: "target_002"
+    inserted_text: "The mention of Harwick Falls had struck something in my memory. Before the meeting, I'd spent an hour checking property records—just a routine check, the kind of thing you do when names start appearing that shouldn't be connected. The property registry office in Harwick Falls had a listing for \"Blackrock Holdings Ltd.,\" a company registered five years ago. The owner of record was buried in layers of corporate shells, but the original deed mentioned a single name before the shells were built: Richard Sinclair. Not Charles. Richard."
+    file_path: "chapters/chapter_02.md"
+    line_range: [45, 46]
+    context_summary: "Shepherd researches Blackrock Holdings in property registry, revealing the company's true ownership structure."
+
+  - item_id: "target_003"
+    inserted_text: "When the old man left, I noticed the envelope had writing on it—\"Blackrock Safe Deposit, Box 447.\" Nothing else. But the kid's face went white when he saw those words."
+    file_path: "witnesses/bartender_statement.md"
+    line_range: [42, 43]
+    context_summary: "Bartender observes envelope with safe deposit box reference, providing the specific account number."
+
+  - item_id: "target_004"
+    inserted_text: "Before I ask about Vincent, I ask her something else: \"You keep books on this place? Old transaction records?\"\n\nShe looks at me like I'm crazy, but she pulls out a ledger from 1944. There, in meticulous handwriting, I find an entry: \"Safe deposit box rental arrangement—Blackrock Holdings, Box 447, Meridian Bank, downtown location.\" The entry is dated exactly three years ago, with a notation: \"Client storage for secure documents.\""
+    file_path: "case_notes/day_03.md"
+    line_range: [55, 56]
+    context_summary: "Investigator discovers Paradise nightclub ledger confirming Box 447 rental tied to Blackrock Holdings."
+
+  - item_id: "target_005"
+    inserted_text: "By ten a.m., I'm at Meridian Bank's downtown branch, looking for someone who remembers deposit box transactions. The manager, a thin man named Foster, is reluctant until I mention the box number: 447, registered to Blackrock Holdings.\n\nFoster's face goes pale. He says the box has been inactive for six months, but before that, it had regular activity. Multiple access entries, some dating back years. The last person to access it was a man matching Sinclair's description, approximately two weeks ago. Foster remembers because the man removed something substantial—\"papers, documents, the kind that filled a briefcase,\" according to the security guard who was present."
+    file_path: "case_notes/day_05.md"
+    line_range: [47, 48]
+    context_summary: "Bank manager confirms Box 447's existence and recent access by Sinclair, who removed substantial documents."
+
+  - item_id: "target_006"
+    inserted_text: "Oh, and one more detail—when the heavy-set man came that second time, I saw him slip an envelope under the doormat. The boy found it after he left. That envelope, Detective, it had Blackrock Estate written on it. Not the business card, but something else. A place, I think. Not a box number. A real location."
+    file_path: "witnesses/neighbor_statement.md"
+    line_range: [76, 77]
+    context_summary: "Neighbor reveals envelope with Blackrock Estate address left for Harvey, connecting the safe deposit box to a physical location."
+
+  - item_id: "target_007"
+    inserted_text: "Which aligns perfectly with our informant Victor's account. Subject was involved in the Kaslan art theft operation, identified as a facilitator. He wanted to exit the operation and potentially cooperate with law enforcement, but before he could formalize cooperation, he disappeared. And here's what just came in from day shift: we found a reference to \"Blackrock Estate\" in Harvey's bank records. Safe deposit box activity tied to a holding company that owns property in Harwick Falls. The Estate itself is registered as a private residence, owned through multiple corporate shells. That's where the safe house is. That's where the operation was coordinating from."
+    file_path: "witnesses/detective_debrief.md"
+    line_range: [30, 31]
+    context_summary: "Detective debrief identifies Blackrock Estate in Harwick Falls as the central coordination point for criminal operations."
+
+  - item_id: "target_008"
+    inserted_text: "\"That estate,\" Helen finally says, \"that's where it all comes back to. That's the origin point. Blackrock Estate is where the network was born, where the money was consolidated, where the original power structure was built. Everything—Sinclair, Ashford, the Kaslan operation, Harvey's involvement—it all traces back to that place. Harvey understood something critical before he disappeared: the organization was rooted in Blackrock, and Blackrock extended everywhere. Even if he severed contact with Kaslan, even if he tried to cooperate with authorities, the network extended backward to Harwick Falls, to that estate, to whoever built it and whoever still controls it. He was trying to exit not just a criminal enterprise, but an entire infrastructure of power and control anchored in one location.\""
+    file_path: "case_notes/day_08.md"
+    line_range: [130, 131]
+    context_summary: "Final resolution: lawyer Helen Crawford reveals Blackrock Estate as the ultimate anchor and origin of the entire criminal network."
+
+expected_answers:
+  question: "Following the chain of references found in Jerry Salvatore's train receipt, the Paradise nightclub ledger, and the bank deposit box records, what location emerges as the ultimate center of the criminal network's operations?"
+  correctness: "Answer must identify 'Blackrock Estate' (or 'Blackrock Estate in Harwick Falls') as the final destination where all threads converge. The answer should recognize this as the origin point and anchoring location of the broader criminal organization."
+  completeness: "A complete answer should trace at least three intermediate links (property registry → safe deposit box → bank records → location) and explain that Blackrock Estate serves as the coordination center and origin point for the criminal enterprise described in the case."
+
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+    description: "Must identify Blackrock Estate as the ultimate resolution"
+  - criterion: "completeness"
+    weight: 0.5
+    description: "Should trace multiple links in the chain and explain the Estate's role"

@@ -1,0 +1,46 @@
+parametrisation_id: multi_chain__python_repo__160k__hard__synonym__n2
+experiment_type: multi_chain
+generated_at: '2026-04-03T00:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 160000
+  discriminability: hard
+  reference_clarity: synonym
+items:
+- item_id: target_001
+  inserted_text: '# When the API serialises resource collections, the number of objects passed
+
+    # to a single bulk dump must stay within a module-shared ceiling; the
+
+    # authoritative figure is maintained in workers/sync_worker.py.
+
+    '
+  file_path: api/serializers.py
+  line_range:
+  - 26
+  - 28
+  context_summary: Inserted as a comment between the module-level logger declaration and the BaseSchema class definition, pointing to workers/sync_worker.py for the authoritative bulk-serialisation ceiling.
+- item_id: target_002
+  inserted_text: '# Shared cap on the number of objects that may be serialised in one pass;
+
+    # observed by the API serialisation layer when it renders bulk collection
+
+    # responses to cap per-call memory overhead.
+
+    MAX_BULK_SERIALIZATION_ITEMS = 573
+
+    '
+  file_path: workers/sync_worker.py
+  line_range:
+  - 26
+  - 29
+  context_summary: Inserted after the STALE_LOCK_TIMEOUT_SECONDS constant and before the PIPELINE_DISPATCH_TIMEOUT comment block, defining the shared serialisation item cap used by both the sync and API layers.
+expected_answers:
+  question: In api/serializers.py, there is a cross-module reference for a threshold that governs how many items may be processed in a single batch schema conversion. Following that reference to its target module, what is the numeric value of that threshold?
+  correctness: '573'
+  completeness: The answer must be 573, tracing the chain from the comment in api/serializers.py (which defers to workers/sync_worker.py) to the MAX_BULK_SERIALIZATION_ITEMS constant defined there.
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5

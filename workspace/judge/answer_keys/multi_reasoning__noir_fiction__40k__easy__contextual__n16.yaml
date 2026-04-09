@@ -1,0 +1,98 @@
+parametrisation_id: "multi_reasoning__noir_fiction__40k__easy__contextual__n16"
+experiment_type: "multi_reasoning"
+generated_at: "2026-04-05T00:00:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 40000
+  discriminability: "easy"
+  reference_clarity: "contextual"
+items:
+  - item_id: "target_001"
+    inserted_text: "His lawyer is a man named Dalton. Made a career of defending white-collar criminals."
+    file_path: "case_notes/day_07.md"
+    line_range: [48, 50]
+    context_summary: "Sinclair's legal representation identified as criminal defense specialist during detective debrief."
+  - item_id: "target_002"
+    inserted_text: "The Castellano family itself—they run a money laundering operation. Real estate transactions, moving criminal proceeds through legitimate-looking sales. Vincent was supposed to inherit that operation."
+    file_path: "case_notes/day_02.md"
+    line_range: [74, 80]
+    context_summary: "Paulie reveals the Castellano family's money laundering infrastructure and Vincent's role."
+  - item_id: "target_003"
+    inserted_text: "The piece was a Fifteenth century work—Italian Renaissance. Worth at least a quarter million at legitimate sale, maybe more."
+    file_path: "witnesses/informant_interview.md"
+    line_range: [26, 30]
+    context_summary: "Victor identifies the stolen painting's historical period and substantial market value."
+  - item_id: "target_004"
+    inserted_text: "He was significantly older, very successful. He was keeping her—paying for things, making sure she was secure. That kind of arrangement."
+    file_path: "chapters/chapter_03.md"
+    line_range: [32, 36]
+    context_summary: "Catherine's secret boyfriend revealed as older, wealthy figure providing financial support."
+  - item_id: "target_005"
+    inserted_text: "The redhead, maybe thirty, expensive green coat with fur collar. That kind of dangerous beauty."
+    file_path: "witnesses/bartender_statement.md"
+    line_range: [30, 34]
+    context_summary: "Deke describes the mysterious woman's appearance and expensive clothing in detail."
+  - item_id: "target_006"
+    inserted_text: "Catherine Halstead is being held by Meridian Holdings. Her safety depends entirely on your cooperation and your silence."
+    file_path: "chapters/chapter_05.md"
+    line_range: [85, 88]
+    context_summary: "Diana Harrow reveals Catherine is kidnapped and being used as leverage."
+  - item_id: "target_007"
+    inserted_text: "Synthetic material—very precise. But the fibers don't match anything in Sinclair's possession."
+    file_path: "case_notes/day_08.md"
+    line_range: [31, 34]
+    context_summary: "Ellen Hartley emphasizes the synthetic murder weapon lacks physical evidence linking Sinclair."
+  - item_id: "target_008"
+    inserted_text: "'The Starlight Motor Inn. Room fourteen. Key under the mat.' She seemed to understand perfectly, like they'd arranged it beforehand."
+    file_path: "case_notes/day_01.md"
+    line_range: [45, 48]
+    context_summary: "Hotel clerk reveals pre-arranged meeting instructions given to Claire at the Regency."
+  - item_id: "target_009"
+    inserted_text: "Harvey visited attorney Marchetti three times. Confidential consultations that appeared to involve matters beyond standard legal work. After the final visit, Marchetti was visibly disturbed—the kind of disturbance that comes from being asked to participate in something unethical but feeling compelled to do it anyway."
+    file_path: "witnesses/detective_debrief.md"
+    line_range: [54, 56]
+    context_summary: "Detective briefing reveals Harvey's legal consultations and Marchetti's ethical distress."
+  - item_id: "target_010"
+    inserted_text: "All three categories at once—breaking the law, evading consequences, and breaking himself in the process."
+    file_path: "witnesses/secretary_statement.md"
+    line_range: [51, 55]
+    context_summary: "Dorothy interprets Marchetti's assessment of Harvey's triple moral/legal/practical crisis."
+  - item_id: "target_011"
+    inserted_text: "And Oak Hill—that residential district address—that's where they conduct their secure business. That's where the important meetings happen, where deals get made that don't get documented."
+    file_path: "case_notes/day_03.md"
+    line_range: [28, 30]
+    context_summary: "Narrator identifies Oak Hill as the location of the Castellano crime family's headquarters."
+  - item_id: "target_012"
+    inserted_text: "Terminal cancer—six months maybe, less if he's unlucky. He was present when Sinclair gave the order about the girl. He heard the exact words."
+    file_path: "case_notes/day_04.md"
+    line_range: [62, 66]
+    context_summary: "Helen reveals Mercer's terminal condition and his eyewitness testimony to Sinclair's murder order."
+  - item_id: "target_013"
+    inserted_text: "They left with him—that older man, that dangerous man. That's the connection you need to make."
+    file_path: "case_notes/day_06.md"
+    line_range: [72, 76]
+    context_summary: "Mercer emphasizes Vincent and Claire's joint disappearance with the mysterious third party."
+  - item_id: "target_014"
+    inserted_text: "He was giving the boy options, I think. Both the cost of staying and the possibility of leaving."
+    file_path: "witnesses/neighbor_statement.md"
+    line_range: [59, 62]
+    context_summary: "Eleanor describes the white-haired man's role as a negotiator presenting escape options."
+  - item_id: "target_015"
+    inserted_text: "When they reached Oak Hill, the old man put money on the seat. Several hundred dollars. Enough for months of living. It was a gesture of finality, like a father's last gift to a son who was leaving home."
+    file_path: "witnesses/cab_driver_statement.md"
+    line_range: [36, 39]
+    context_summary: "Cab driver reveals the go-between's provision of funds to facilitate the young man's escape."
+  - item_id: "target_016"
+    inserted_text: "That's what I'm looking for in a good woman."
+    file_path: "witnesses/informant_interview.md"
+    line_range: [83, 84]
+    context_summary: "Summary needle representing investigative synthesis across multiple interviews and evidence."
+expected_answers:
+  question: "What are the 16 key pieces of evidence that investigators discovered connecting the major players to Claire Hollister's murder and the criminal operations surrounding her?"
+  correctness: "A complete answer must identify all 16 distinct pieces of information: Sinclair's lawyer Dalton; the Castellano money laundering operation; the fifteenth-century stolen painting's value; Catherine's older wealthy boyfriend; the redheaded woman in the green coat; Meridian Holdings' kidnapping of Catherine; the synthetic murder weapon; the Starlight Motor Inn meeting location; Harvey's consultations with attorney Marchetti; Marchetti's ethical distress; Oak Hill as the crime headquarters; Mercer's terminal illness and testimony; Mercer's eyewitness account of Sinclair's murder order; the white-haired go-between's role; and his provision of escape funds."
+  completeness: "A complete answer must integrate all 16 pieces into a coherent narrative showing: (1) the crime organization structure (Castellano family, Sinclair's operation, Meridian Holdings); (2) the victims and their circumstances (Claire's secret relationship, Vincent's involvement, Catherine's kidnapping); (3) the physical evidence (murder weapon type, painting details); (4) the key witnesses and informants (Mercer, Harvey, the redheaded woman, the go-between); (5) the investigation's progression (legal consultations, escape arrangements, financial flows); and (6) the prosecutorial strategy (testimonial evidence, circumstantial connections, organizational hierarchy)."
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+  - criterion: "completeness"
+    weight: 0.5

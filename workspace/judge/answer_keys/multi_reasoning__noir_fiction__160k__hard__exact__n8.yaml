@@ -1,0 +1,73 @@
+parametrisation_id: "multi_reasoning__noir_fiction__160k__hard__exact__n8"
+experiment_type: "multi_reasoning"
+generated_at: "2026-04-05T00:00:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 160000
+  discriminability: "hard"
+  reference_clarity: "exact"
+items:
+  - item_id: "target_001"
+    inserted_text: "Ashford was in Atlantic City during the initial extraction, which gave him plausible deniability. But his absence was orchestrated—scheduled carefully so no one could pin any involvement to him directly. That's the mark of a professional operation."
+    file_path: "case_notes/day_02.md"
+    line_range: [42, 45]
+    context_summary: "Inserted detail about Ashford's Atlantic City alibi during the crime, indicating pre-planned coordination of the operation."
+
+  - item_id: "target_002"
+    inserted_text: "The man who picked him up—he had identification that said 'Lawrence Mercer,' but he signed the release as 'Thomas Mercer.' Two different names on the same person. When I asked about it, he just smiled and slipped me fifty dollars and said, 'Confusion is sometimes a gift.' Vincent didn't even fight it. He just went with him. Like he'd been expecting it."
+    file_path: "case_notes/day_04.md"
+    line_range: [12, 15]
+    context_summary: "Revealed that Thomas Mercer used multiple identities and removed Vincent from hospital custody without resistance, showing orchestrated control."
+
+  - item_id: "target_003"
+    inserted_text: "The coroner also noted particulate matter under her fingernails—red fabric fibers that matched the decorative scarf used as the murder weapon. That scarf had monogrammed initials: 'T.M.' The coroner's notes explicitly stated: 'These initials may indicate either the killer or someone closely connected to the victim's death. Further investigation recommended.' The evidence was documented but not immediately pursued by the police."
+    file_path: "case_notes/day_06.md"
+    line_range: [19, 22]
+    context_summary: "Embedded evidence connecting the murder weapon (scarf with T.M. initials) to Thomas Mercer while showing police negligence."
+
+  - item_id: "target_004"
+    inserted_text: "But I noticed something. A black sedan parked across the street, two blocks down. The kind of car that blends in if you're not paying attention. The engine was running. And when Catherine said she wanted to walk, I saw the driver—a woman with red hair—adjust something in the vehicle. She looked focused. Purposeful. Not like someone waiting for a cab customer. More like someone waiting for a specific person."
+    file_path: "chapters/chapter_03.md"
+    line_range: [30, 35]
+    context_summary: "Identified Margot (redheaded woman) as Catherine's coordinated abductor, waiting with vehicle at pickup location."
+
+  - item_id: "target_005"
+    inserted_text: "He also said something I didn't mention at first—'The woman you'll see next week, the one with red hair, she's going to ask you about this drive. Tell her exactly what you told me. Tell her you saw nothing. Tell her twice if she asks. Consistency is how we all survive this.' That prediction, Detective, it came true exactly. The redheaded woman—Margot—she showed up at my cab stand seven days later."
+    file_path: "witnesses/cab_driver_statement.md"
+    line_range: [26, 31]
+    context_summary: "Revealed advance planning and coordination between Sinclair and Margot, with specific instructions about follow-up contact."
+
+  - item_id: "target_006"
+    inserted_text: "But then the old man said something else, softer—'If she asks about your family, tell her they're safe. But they're only safe if you cooperate.' The kid's whole body went rigid. The old man left right after that. And I realized—this wasn't a meeting between colleagues. This was a man controlling another man through fear."
+    file_path: "witnesses/bartender_statement.md"
+    line_range: [30, 35]
+    context_summary: "Revealed that Mercer used threats against family members to enforce coercion of the young man (Harvey)."
+
+  - item_id: "target_007"
+    inserted_text: "But here's what I haven't told the police yet, what I was afraid to mention—Catherine had been receiving letters. Unsigned letters delivered by courier to my office. The first one said: 'Your daughter is valuable to someone. Prepare her for transition.' That was three weeks before she disappeared."
+    file_path: "chapters/chapter_01.md"
+    line_range: [22, 26]
+    context_summary: "Revealed pre-kidnapping intimidation letters sent to Catherine, indicating advance preparation and psychological grooming."
+
+  - item_id: "target_008"
+    inserted_text: "But here is the thing nobody asked me—after Gregg left that day, I heard a phone ringing in Harvey's apartment. I heard Harvey's voice, very quiet, saying one phrase over and over: 'I understand. I'll do it. I understand. I'll do it.' Like he was accepting instructions. Like his entire will had been surrendered."
+    file_path: "witnesses/landlady_statement.md"
+    line_range: [25, 30]
+    context_summary: "Documented Harvey's coerced capitulation and acceptance of criminal instructions from his handlers."
+
+  - item_id: "target_009"
+    inserted_text: "Our timeline for this operation was coordinated across multiple parties. Morris submitted his resignation letter on September 8th. Catherine received her final letter on September 14th warning her to 'say goodbye to anyone who matters.' The kidnapping occurred on September 17th. These dates were not coincidental. They were part of a synchronized plan that required precise execution at each stage."
+    file_path: "chapters/chapter_05.md"
+    line_range: [19, 23]
+    context_summary: "Revealed the synchronized timeline showing coordination between Morris's departure, Catherine's intimidation, and the kidnapping date."
+
+expected_answers:
+  question: "Based on all the evidence presented by witnesses and investigators, reconstruct the full conspiracy that orchestrated Catherine Halstead's kidnapping and Claire Hollister's murder. Identify all the key participants, their roles, the evidence connecting them, and the timeline showing how the operation was coordinated."
+  correctness: "Answer must identify: (1) Sinclair as the primary orchestrator, (2) Thomas Mercer as the legal facilitator using dual identities, (3) Morris as the inside man with account access, (4) Margot/Gregg as the operational executor, (5) Harvey as a coerced participant, (6) Ashford as the financial backer with alibi, (7) The specific timeline coordination from August acquisition attempts through September kidnapping, (8) Physical evidence (T.M. scarf initials, ledger entries, warning letters), and (9) The 72-hour deadline pattern repeated across multiple participants."
+  completeness: "A complete answer synthesizes ALL 8-9 pieces of evidence to show: the hierarchical structure of the conspiracy (Ashford/Sinclair at top, through Mercer and Morris to field operatives), the coordinated timeline with specific dates, the coercion mechanisms used on multiple targets, the role of each witness location in documenting different aspects, and how physical evidence (scarf, letters, identities) proves each participant's involvement."
+
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+  - criterion: "completeness"
+    weight: 0.5

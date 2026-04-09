@@ -1,0 +1,44 @@
+parametrisation_id: multi_chain__python_repo__160k__hard__contextual__n2
+experiment_type: multi_chain
+generated_at: '2026-04-03T00:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 160000
+  discriminability: hard
+  reference_clarity: contextual
+items:
+- item_id: target_001
+  inserted_text: '# The upper bound on the number of records returned in any serialized collection
+
+    # response is shared with the report export subsystem; consult
+
+    # workers/report_generator.py for the governing constant.
+
+    '
+  file_path: api/serializers.py
+  line_range:
+  - 26
+  - 28
+  context_summary: Inserted as a module-level comment after the logger declaration and before the BaseSchema class definition, describing a cross-module dependency on the report generator for the collection record ceiling.
+- item_id: target_002
+  inserted_text: '# Maximum records included in a single API collection response or export batch;
+
+    # referenced by the serialization layer to cap response payloads.
+
+    COLLECTION_BATCH_CEILING = 614
+
+    '
+  file_path: workers/report_generator.py
+  line_range:
+  - 30
+  - 32
+  context_summary: Inserted after the PIPELINE_DISPATCH_TIMEOUT comment block and before the ReportFormat enum class, defining the numeric ceiling that the serializer cross-references.
+expected_answers:
+  question: Starting from the API serialization module, follow the cross-module reference governing how many records may appear in a single collection response. What is the numeric ceiling that both the serializer and the report export pipeline share?
+  correctness: '614'
+  completeness: 'A complete answer traces the chain: api/serializers.py contains a comment directing to workers/report_generator.py for the governing constant, where COLLECTION_BATCH_CEILING = 614 is defined with a note that it is referenced by the serialization layer.'
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5

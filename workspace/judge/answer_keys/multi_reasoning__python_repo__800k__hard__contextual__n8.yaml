@@ -1,0 +1,110 @@
+parametrisation_id: multi_reasoning__python_repo__800k__hard__contextual__n8
+experiment_type: multi_reasoning
+generated_at: '2026-04-05T00:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 800000
+  discriminability: hard
+  reference_clarity: contextual
+items:
+- item_id: target_001
+  inserted_text: 'self.retry_after = retry_after  # default recovery window of 60 seconds before retry allowed'
+  file_path: api/error_handlers.py
+  line_range:
+  - 153
+  - 155
+  context_summary: Modified RateLimitError initialization to document the mandatory 60-second wait period before retrying rate-limited requests.
+- item_id: target_002
+  inserted_text: 'base_delay_seconds = 10  # exponential backoff: each attempt waits 10 * 2^(attempt-1) seconds'
+  file_path: workers/retry_handler.py
+  line_range:
+  - 227
+  - 232
+  context_summary: Inserted calculation of exponential backoff base delay within the retry scheduling logic.
+- item_id: target_003
+  inserted_text: 'max_file_size_mb = 100  # report exports cannot exceed 100MB before compression'
+  file_path: workers/report_generator.py
+  line_range:
+  - 216
+  - 219
+  context_summary: Added file size validation constraint in JSON export method to document maximum report file size.
+- item_id: target_004
+  inserted_text: 'timeout=30  # all external API calls must complete within 30 seconds or abort'
+  file_path: workers/sync_worker.py
+  line_range:
+  - 260
+  - 265
+  context_summary: Documented the 30-second timeout enforced on all HTTP requests (DELETE, PUT, POST operations).
+- item_id: target_005
+  inserted_text: 'max_retries = Column(Integer, default=3)  # at most 3 retry attempts before task marked failed'
+  file_path: workers/task_runner.py
+  line_range:
+  - 73
+  - 75
+  context_summary: Clarified TaskModel field max_retries with comment that tasks receive exactly 3 retry opportunities.
+- item_id: target_006
+  inserted_text: 'retention_days = 90  # system deletes files older than 90 days during cleanup cycles'
+  file_path: workers/cleanup_worker.py
+  line_range:
+  - 249
+  - 252
+  context_summary: Added retention period value (90 days) in the cutoff calculation for file deletion logic.
+- item_id: target_007
+  inserted_text: "if not re.search(r'[!@#$%^&*()_+-=\\[\\]{};:\\'\"<>,.?/]', password):\n        return False, \"Password must contain at least one special character from: !@#$%^&*\""
+  file_path: api/validators.py
+  line_range:
+  - 88
+  - 91
+  context_summary: Extended password validation to enforce requirement for at least one special character, improving security requirements context.
+- item_id: target_008
+  inserted_text: '# Permission check gates sensitive operations; admin_level_required = True for audit-critical mutations'
+  file_path: api/auth.py
+  line_range:
+  - 340
+  - 345
+  context_summary: Added clarification that sensitive operations require admin-level permissions, embedded in the require_permission decorator.
+expected_answers:
+  question: If an API enforces a 60-second rate limit recovery window, tasks are retried with exponential backoff starting at 10 seconds per attempt (doubling each retry), a maximum of 3 retries are allowed, each API request has a 30-second timeout, and the system deletes files older than 90 days, what is the minimum total elapsed time (in seconds) for a rate-limited task to exhaust all retry attempts assuming each attempt takes the full timeout?
+  correctness: 'The answer must calculate:
+
+    1. Initial rate limit wait: 60 seconds
+
+    2. First attempt timeout: 30 seconds
+
+    3. First retry delay: 10 * 2^0 = 10 seconds
+
+    4. Second attempt timeout: 30 seconds
+
+    5. Second retry delay: 10 * 2^1 = 20 seconds
+
+    6. Third attempt timeout: 30 seconds
+
+    7. Third retry delay: 10 * 2^2 = 40 seconds
+
+    8. Fourth (final) attempt timeout: 30 seconds
+
+    Total: 60 + 30 + 10 + 30 + 20 + 30 + 40 + 30 = 250 seconds
+
+    '
+  completeness: 'A complete answer must:
+
+    - Identify the 60-second rate limit recovery period
+
+    - Recognize the exponential backoff formula (10 * 2^(attempt-1))
+
+    - Count all 4 attempts (initial + 3 retries within max_retries=3)
+
+    - Include all 30-second timeouts (one per attempt)
+
+    - Sum the delays between retries
+
+    - Provide the total in seconds
+
+    - Optionally note that 90-day retention and password requirements provide additional context about system durability and security but don''t affect the calculation directly
+
+    '
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5

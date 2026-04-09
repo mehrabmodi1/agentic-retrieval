@@ -1,0 +1,38 @@
+parametrisation_id: multi_chain__python_repo__800k__hard__contextual__n2
+experiment_type: multi_chain
+generated_at: '2026-04-04T00:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 800000
+  discriminability: hard
+  reference_clarity: contextual
+items:
+- item_id: target_001
+  inserted_text: "    if 'tags' in data and data['tags']:\n        # The ceiling on tag count mirrors the pre-seeded collection size\n        # used in the test bootstrap configuration; import from there to\n        # keep enforcement and fixture data generation in step.\n        from tests.conftest import MAX_TASK_TAGS\n        if len(data['tags']) > MAX_TASK_TAGS:\n            errors['tags'] = [f\"A task may not carry more than {MAX_TASK_TAGS} tags\"]"
+  file_path: api/validators.py
+  line_range:
+  - 388
+  - 394
+  context_summary: Inserted within validate_task_creation, after the assigned_to validation block and before the return statement, as a tag-count validation that defers its upper bound to tests/conftest.py via an import.
+- item_id: target_002
+  inserted_text: '# Maximum number of tags that may be attached to a single task.
+
+    # Imported by the API validator to keep task creation enforcement
+
+    # consistent with the size of tag collections seeded in test fixtures.
+
+    MAX_TASK_TAGS = 12'
+  file_path: tests/conftest.py
+  line_range:
+  - 26
+  - 29
+  context_summary: Inserted after the import block and before the first pytest fixture, defining the authoritative integer value for the maximum task tag count.
+expected_answers:
+  question: In api/validators.py, the task creation validator enforces a ceiling on how many classification labels can be attached to a task. Starting from that validator, trace where the enforced upper bound is ultimately defined and what its value is.
+  correctness: '12'
+  completeness: The answer should state that the maximum tag count per task is 12, traced from api/validators.py (where the validate_task_creation function imports MAX_TASK_TAGS from tests/conftest.py) to tests/conftest.py (where MAX_TASK_TAGS = 12 is defined).
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5

@@ -1,0 +1,25 @@
+parametrisation_id: single_needle__python_repo__40k__easy__contextual
+experiment_type: single_needle
+generated_at: '2026-04-03T00:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 40000
+  discriminability: easy
+  reference_clarity: contextual
+items:
+- item_id: target_001
+  inserted_text: 'MAX_RETRY_ATTEMPTS = 3  # Maximum number of times to retry sending a failed email'
+  file_path: workers/email_worker.py
+  line_range:
+  - 22
+  - 22
+  context_summary: Inserted as a module-level configuration constant after the SQLAlchemy Base declaration, just before the EmailTemplate dataclass definition in the email worker module.
+expected_answers:
+  question: How many times will the system attempt to resend an email that previously failed to deliver?
+  correctness: The correct answer is 3 (three retry attempts), as defined by MAX_RETRY_ATTEMPTS = 3.
+  completeness: A complete answer identifies the value as 3 and notes it is configured via the MAX_RETRY_ATTEMPTS constant in the email worker module.
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5

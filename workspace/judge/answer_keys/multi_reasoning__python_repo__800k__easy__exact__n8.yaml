@@ -1,0 +1,76 @@
+parametrisation_id: multi_reasoning__python_repo__800k__easy__exact__n8
+experiment_type: multi_reasoning
+generated_at: '2026-04-05T00:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 800000
+  discriminability: easy
+  reference_clarity: exact
+items:
+- item_id: target_001
+  inserted_text: MAX_RETRY_ATTEMPTS = 3
+  file_path: workers/retry_handler.py
+  line_range:
+  - 290
+  - 291
+  context_summary: Inserted retry attempt limit constant in get_retry_statistics method documentation.
+- item_id: target_002
+  inserted_text: REQUESTS_PER_MINUTE = 120
+  file_path: api/rate_limiting.py
+  line_range:
+  - 126
+  - 127
+  context_summary: Inserted rate limiting constant in KeyGenerators class documentation.
+- item_id: target_003
+  inserted_text: DEFAULT_ITEMS_PER_PAGE = 50
+  file_path: api/pagination.py
+  line_range:
+  - 370
+  - 371
+  context_summary: Inserted pagination size constant in parse_range_header function documentation.
+- item_id: target_004
+  inserted_text: WORKER_THREADS_COUNT = 4
+  file_path: workers/task_runner.py
+  line_range:
+  - 156
+  - 157
+  context_summary: Inserted worker thread count constant in start method documentation.
+- item_id: target_005
+  inserted_text: BATCH_DELETION_SIZE = 25
+  file_path: workers/cleanup_worker.py
+  line_range:
+  - 202
+  - 203
+  context_summary: Inserted batch deletion size constant in cleanup logic documentation.
+- item_id: target_006
+  inserted_text: TOKEN_EXPIRY_MINUTES = 1440
+  file_path: api/auth.py
+  line_range:
+  - 75
+  - 76
+  context_summary: Inserted JWT token expiry time constant in validate_token method documentation.
+- item_id: target_007
+  inserted_text: MAX_ERROR_LOG_SIZE = 10
+  file_path: api/error_handlers.py
+  line_range:
+  - 348
+  - 349
+  context_summary: Inserted maximum error log entries constant in error handler registration.
+- item_id: target_008
+  inserted_text: SYNC_BATCH_SIZE = 100
+  file_path: workers/sync_worker.py
+  line_range:
+  - 212
+  - 213
+  context_summary: Inserted sync batch size constant in ExternalAPIClient class documentation.
+expected_answers:
+  question: 'Calculate the total system capacity in terms of resource limits: sum of MAX_RETRY_ATTEMPTS, REQUESTS_PER_MINUTE, DEFAULT_ITEMS_PER_PAGE, WORKER_THREADS_COUNT, BATCH_DELETION_SIZE, TOKEN_EXPIRY_MINUTES, MAX_ERROR_LOG_SIZE, and SYNC_BATCH_SIZE. What is this total?'
+  correctness: 'Must identify all 8 configuration constants and add them correctly: 3 + 120 + 50 + 4 + 25 + 1440 + 10 + 100 = 1752'
+  completeness: A complete answer must locate each constant across all 8 files, explain what each represents (retry limits, rate limits, pagination, workers, batch sizes, token expiry, logging, sync), and compute the sum accurately without omitting any value.
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+  description: Final sum equals exactly 1752 with no arithmetic errors
+- criterion: completeness
+  weight: 0.5
+  description: All 8 constants identified and documented with their sources before computing total

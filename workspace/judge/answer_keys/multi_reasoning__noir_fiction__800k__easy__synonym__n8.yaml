@@ -1,0 +1,67 @@
+parametrisation_id: "multi_reasoning__noir_fiction__800k__easy__synonym__n8"
+experiment_type: "multi_reasoning"
+generated_at: "2026-04-05T00:00:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 800000
+  discriminability: "easy"
+  reference_clarity: "synonym"
+items:
+  - item_id: "target_001"
+    inserted_text: "Under Sinclair is a man named Silas Gregg—white-haired, military bearing, handles the wet work and coordination. But above them both is someone called Kastlan. That's the real operation. The kidnappings, the acquisitions, the art theft—all of it flows through Kastlan's network."
+    file_path: "case_notes/day_03.md"
+    line_range: [90, 92]
+    context_summary: "Sylvia reveals the network hierarchy with Kastlan as the supreme orchestrator above Sinclair and Gregg."
+
+  - item_id: "target_002"
+    inserted_text: "When we got to the address, a big house set back from the road in the Oak Hill neighborhood—that's where Sinclair operates his primary command center—the old man got out first. Later I'd learn that Oak Hill address was connected to the larger operation, the one that goes beyond just the Castellano family."
+    file_path: "witnesses/cab_driver_statement.md"
+    line_range: [42, 42]
+    context_summary: "Cab driver connects Oak Hill location to Sinclair's command center and broader criminal network."
+
+  - item_id: "target_003"
+    inserted_text: "You helped launder money knowing it was dirty. And you also represented Victor Ashford's import business, which is the legitimate front for the acquisition network."
+    file_path: "case_notes/day_05.md"
+    line_range: [71, 71]
+    context_summary: "Detective identifies Victor Ashford's import business as the legitimate cover for the criminal acquisition network."
+
+  - item_id: "target_004"
+    inserted_text: "Later I would learn this was Silas Gregg—the field coordinator for the entire operation. He was at 3F to give Mr. Harvey his final instructions about the Vesper painting."
+    file_path: "witnesses/landlady_statement.md"
+    line_range: [36, 36]
+    context_summary: "Landlady's visitor is identified as Silas Gregg, coordinating the Vesper painting art theft operation."
+
+  - item_id: "target_005"
+    inserted_text: "I'm not the top of this. I never was. There's a man above me—a man who orchestrates operations across the entire city. Art theft, acquisitions, money movement, witness elimination. All of it. He's the reason you can't win. He's the reason people like me exist."
+    file_path: "case_notes/day_04.md"
+    line_range: [119, 119]
+    context_summary: "Sinclair explicitly states Kastlan as the master orchestrator controlling all criminal operations across the city."
+
+  - item_id: "target_006"
+    inserted_text: "Catherine discovered that Sinclair has been using his import-export operation as cover for acquiring pieces—he's coordinated with someone called Margot to target specific assets. The real power is a man named Kastlan, who orchestrates all of it from the shadows."
+    file_path: "chapters/chapter_02.md"
+    line_range: [39, 39]
+    context_summary: "Halstead reveals Catherine's discovery of Margot's role and Kastlan's orchestration of the acquisition network."
+
+  - item_id: "target_007"
+    inserted_text: "But I heard the kid call her Margot once, under his breath. The way he said it—with fear and respect mixed together—told me she was someone important. Someone higher up in whatever operation he was tangled in. Someone who didn't just work for a criminal organization. Someone who helped run it."
+    file_path: "witnesses/bartender_statement.md"
+    line_range: [52, 54]
+    context_summary: "Bartender identifies the redheaded woman as Margot, a high-ranking member of the criminal operation."
+
+  - item_id: "target_008"
+    inserted_text: "She came into the network about two years ago, and she's been Kaslan's personal acquisition specialist since then. But here's what's important: Margot doesn't just work the art theft operation. She coordinates with Sinclair on the kidnapping side of things—high-value targets who have connections to the import business, like the Halstead girl. She's the link between Sinclair's acquisition network and Kaslan's broader criminal enterprise."
+    file_path: "witnesses/informant_interview.md"
+    line_range: [74, 74]
+    context_summary: "Informant Victor reveals Margot as the crucial link coordinating both art theft and kidnapping operations for Kastlan."
+
+expected_answers:
+  question: "Identify all five key members of the criminal network and explain what specific roles each plays in coordinating the kidnapping and art acquisition operations."
+  correctness: "Answer must identify each of the five individuals (Kastlan, Charles Sinclair, Silas Gregg, Victor Ashford, and Margot) with their precise roles in the organization."
+  completeness: "A complete answer includes: (1) Kastlan as the master orchestrator of all city operations, (2) Charles Sinclair as the coordinator of acquisitions and kidnappings, (3) Silas Gregg as the field operative handling enforcement and coordination, (4) Victor Ashford as the legitimate import business front operator, and (5) Margot as the personal acquisition specialist linking kidnapping and art theft operations. Must also explain how these roles interconnect to create a unified criminal enterprise spanning both art theft and kidnapping."
+
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+  - criterion: "completeness"
+    weight: 0.5

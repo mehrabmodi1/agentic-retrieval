@@ -1,0 +1,120 @@
+parametrisation_id: "multi_chain__noir_fiction__160k__easy__synonym__n16"
+experiment_type: "multi_chain"
+generated_at: "2026-04-05T15:30:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 160000
+  discriminability: "easy"
+  reference_clarity: "synonym"
+
+items:
+  - item_id: "target_001"
+    inserted_text: "If you want to know more about his movements after he left here, talk to the cab drivers. The kid used their services regular-like. They'll remember the warehouse district runs."
+    file_path: "witnesses/bartender_statement.md"
+    line_range: [28, 45]
+    context_summary: "Bartender references cab driver accounts of Harvey's warehouse district pickups"
+
+  - item_id: "target_002"
+    inserted_text: "For more detail on his residential situation and who was visiting him at home, you'll want to talk to the landlady at Riverside Apartments. She notices things—notices everything, actually. Women like that always do."
+    file_path: "witnesses/cab_driver_statement.md"
+    line_range: [18, 25]
+    context_summary: "Cab driver directs investigation to landlady's observations of Harvey's apartment visitors"
+
+  - item_id: "target_003"
+    inserted_text: "The young man's lawyer—Mr. Marchetti—he's the one you should ask about what Harvey was mixed up in. He takes the morally complicated cases, the ones where good men have done bad things."
+    file_path: "witnesses/landlady_statement.md"
+    line_range: [2, 15]
+    context_summary: "Landlady identifies Marchetti as key to understanding Harvey's moral situation"
+
+  - item_id: "target_004"
+    inserted_text: "When you want to understand what Harvey was really involved with, check the informant interview. There's context there about paintings and the Kaslan operation that makes the moral weight of his situation clearer."
+    file_path: "witnesses/secretary_statement.md"
+    line_range: [40, 55]
+    context_summary: "Secretary points to informant's detailed knowledge of Kaslan operation and painting theft"
+
+  - item_id: "target_005"
+    inserted_text: "The detective debrief from the Police Bureau has more on what happened after Harvey tried to turn state's evidence. That's where you'll get the operational details and the Oak Hill connection."
+    file_path: "witnesses/informant_interview.md"
+    line_range: [21, 35]
+    context_summary: "Informant directs to police debrief for details on Harvey's cooperation attempt"
+
+  - item_id: "target_006"
+    inserted_text: "The neighbor's account of Harvey's final days before departure provides crucial context on the woman's role and his psychological state during the escape decision. That statement corroborates the timeline established here."
+    file_path: "witnesses/detective_debrief.md"
+    line_range: [84, 90]
+    context_summary: "Detective debrief references neighbor statement about Harvey's escape and the redhead's involvement"
+
+  - item_id: "target_007"
+    inserted_text: "If you want to understand the full scope of what this case connects to—the girl who disappeared, the money, the entire criminal enterprise—you need to read the case notes from day one. That's where the Mercer connection begins, and that's where you'll understand how Harvey's situation relates to a much larger investigation."
+    file_path: "witnesses/neighbor_statement.md"
+    line_range: [44, 60]
+    context_summary: "Neighbor connects Harvey's escape to larger Claire Hollister case and Mercer's role"
+
+  - item_id: "target_008"
+    inserted_text: "I mark him down as someone worth talking to again. Later, I'll learn from Vincent Castellano's situation what that flicker meant—Mercer knew more than he was saying. He knew the Paradise Club was connected to the girl. He knew about the power structure. Check day two for what I discover about the family."
+    file_path: "case_notes/day_01.md"
+    line_range: [47, 60]
+    context_summary: "Day one investigation notes reference Castellano family situation from day two"
+
+  - item_id: "target_009"
+    inserted_text: "What Morris will tell me about Castellano's disappearance will lead to my day three conversation with Sylvia, where she mentions Sinclair. That's when the picture starts to come together—when I understand Sinclair isn't just a middleman, he's the enforcer for someone much bigger."
+    file_path: "case_notes/day_02.md"
+    line_range: [81, 91]
+    context_summary: "Day two notes bridge Castellano intelligence to day three's Sinclair revelation"
+
+  - item_id: "target_010"
+    inserted_text: "Sylvia's information about Sinclair—his description, his power, his ability to operate freely in the city—this is the thread that will lead me to day four. That's when Sinclair will visit my apartment and make me an offer I can't refuse but have to refuse anyway. That's when I'll understand the depth of the threat."
+    file_path: "case_notes/day_03.md"
+    line_range: [67, 75]
+    context_summary: "Day three connects Sinclair's threat to day four confrontation in investigator's apartment"
+
+  - item_id: "target_011"
+    inserted_text: "The visit from Sinclair and his threat about the warehouse—this drives everything that follows. By day five, I'll have the envelope from Mercer. By day six, Helen will bring news of Mercer's testimony. By day seven, I'll be preparing for trial. The warehouse, the evidence, the transaction records—these are the physical proof that will make the case."
+    file_path: "case_notes/day_04.md"
+    line_range: [129, 138]
+    context_summary: "Day four threat catalyzes events leading through days five-seven with Mercer's evidence"
+
+  - item_id: "target_012"
+    inserted_text: "I take the envelope. It's thick. It's real. This envelope will mean nothing without Mercer's living testimony. That comes tomorrow, when Helen brings the news about Mercer's diagnosis and his decision to testify anyway."
+    file_path: "case_notes/day_05.md"
+    line_range: [84, 95]
+    context_summary: "Day five envelope proves worthless without day six testimony from dying Mercer"
+
+  - item_id: "target_013"
+    inserted_text: "With Mercer's testimony, the case changes. Suddenly there's a witness. Someone who was actually in the room when Sinclair ordered the removal of the girl. Someone who can connect the money to the crime. Mercer's testimony, combined with Chen's story about the money laundering, combined with the evidence I've gathered—it's not enough to prove murder, but it's enough to open an investigation. By day seven, I'll be preparing for the actual trial. By day eight, the FBI will arrive with their own agenda and accusations."
+    file_path: "case_notes/day_06.md"
+    line_range: [91, 105]
+    context_summary: "Day six testimony pivots case toward day seven trial preparation and day eight FBI pressure"
+
+  - item_id: "target_014"
+    inserted_text: "Tomorrow the FBI arrives. They'll try to discredit everything I've done, paint me as corrupt, suggest I fabricated evidence for publicity. That interrogation on day eight will be the real turning point—will I fold under pressure, or will I stand by the truth I've uncovered?"
+    file_path: "case_notes/day_07.md"
+    line_range: [114, 125]
+    context_summary: "Day seven trial notes anticipate day eight FBI interrogation as crucial test"
+
+  - item_id: "target_015"
+    inserted_text: "I solved the case. I found out who killed Claire Hollister. I brought the facts to the authorities. I've cooperated fully with the investigation. The case ends not with the FBI's suspicion or Sinclair's lawyers' attacks, but with Mercer's willingness to testify despite his cancer diagnosis. That's the real resolution—one man choosing his conscience over his safety, choosing to make the girl's death mean something. The warehouse evidence, the transaction records, the connections to Ashford and the money pipeline—it all matters because Mercer provides the human testimony that brings it all together. Without him, it's just documents. With him, it's the truth."
+    file_path: "case_notes/day_08.md"
+    line_range: [83, 100]
+    context_summary: "Day eight resolution circles back to Mercer's sacrifice as the ultimate foundation of the case"
+
+  - item_id: "target_016"
+    inserted_text: "The resolution of this investigation begins not here at the end, but at the start. Richard Halstead's initial phone call, his daughter Catherine missing, the kidnapping that wasn't actually a kidnapping—it was the entry point to understanding the entire network. Everything that followed—Harvey's moral struggle, Mercer's conscience, Sinclair's arrogance—all of it traces back to that single call in the dark."
+    file_path: "chapters/chapter_01.md"
+    line_range: [7, 18]
+    context_summary: "Final entry returns to original call that initiated entire chain of events"
+
+expected_answers:
+  question: "Starting from the bartender's statement about Harvey's cab rides to the warehouse district, follow the trail of references through investigative accounts. What is the single most important element that ultimately resolves the entire case?"
+  correctness: "The answer must identify Mercer's testimony or Mercer's willingness to testify as the crucial element. Answers should recognize that physical evidence (envelope, transaction records, warehouse materials) requires human testimony to carry legal and moral weight."
+  completeness: "A complete answer traces the chain from bartender → cab driver → landlady → secretary → informant → detective → neighbor → day_01 → day_02 → day_03 → day_04 → day_05 → day_06 → day_07 → day_08 → chapter_01 and identifies that Mercer's choice to testify despite terminal cancer is what transforms isolated evidence into a case with moral authority and legal viability."
+
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+  - criterion: "completeness"
+    weight: 0.5
+  - criterion: "chain_following"
+    weight: 0.75
+  - criterion: "synonym_recognition"
+    weight: 0.25

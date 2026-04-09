@@ -1,0 +1,74 @@
+parametrisation_id: multi_chain__python_repo__40k__easy__exact__n8
+experiment_type: multi_chain
+generated_at: '2026-04-03T00:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 40000
+  discriminability: easy
+  reference_clarity: exact
+items:
+- item_id: target_001
+  inserted_text: 'DEPLOYMENT_CONFIG_KEY = "AUTH_TOKEN_SALT"  # next: see AUTH_TOKEN_SALT in api/auth.py'
+  file_path: api/__init__.py
+  line_range:
+  - 86
+  - 86
+  context_summary: Inserted after the API_BASE_PATH constant definition in the version/constants section of the API module init file.
+- item_id: target_002
+  inserted_text: 'AUTH_TOKEN_SALT = "MIDDLEWARE_HMAC_KEY"  # next: see MIDDLEWARE_HMAC_KEY in api/middleware.py'
+  file_path: api/auth.py
+  line_range:
+  - 26
+  - 26
+  context_summary: Inserted immediately after the logger declaration, before the AuthenticationError class definition in the auth module.
+- item_id: target_003
+  inserted_text: 'MIDDLEWARE_HMAC_KEY = "VALIDATOR_SCHEMA_HASH"  # next: see VALIDATOR_SCHEMA_HASH in api/validators.py'
+  file_path: api/middleware.py
+  line_range:
+  - 25
+  - 25
+  context_summary: Inserted immediately after the logger declaration, before the RequestIDMiddleware class definition in the middleware module.
+- item_id: target_004
+  inserted_text: 'VALIDATOR_SCHEMA_HASH = "CURSOR_ENCODING_SECRET"  # next: see CURSOR_ENCODING_SECRET in api/pagination.py'
+  file_path: api/validators.py
+  line_range:
+  - 19
+  - 19
+  context_summary: Inserted immediately after the logger declaration, before the ValidationError class definition in the validators module.
+- item_id: target_005
+  inserted_text: 'CURSOR_ENCODING_SECRET = "ERROR_HANDLER_SIGNING_KEY"  # next: see ERROR_HANDLER_SIGNING_KEY in api/error_handlers.py'
+  file_path: api/pagination.py
+  line_range:
+  - 19
+  - 19
+  context_summary: Inserted immediately after the logger declaration, before the PaginationMetadata class definition in the pagination module.
+- item_id: target_006
+  inserted_text: 'ERROR_HANDLER_SIGNING_KEY = "RETRY_JITTER_SEED"  # next: see RETRY_JITTER_SEED in workers/retry_handler.py'
+  file_path: api/error_handlers.py
+  line_range:
+  - 19
+  - 19
+  context_summary: Inserted immediately after the logger declaration, before the Custom Exception Classes section comment in the error handlers module.
+- item_id: target_007
+  inserted_text: 'RETRY_JITTER_SEED = "SYNC_API_SECRET"  # next: see SYNC_API_SECRET in workers/sync_worker.py'
+  file_path: workers/retry_handler.py
+  line_range:
+  - 21
+  - 21
+  context_summary: Inserted after the Base declarative_base assignment, before the RetryStrategy enum class definition in the retry handler worker.
+- item_id: target_008
+  inserted_text: 'SYNC_API_SECRET = "v7Tz#kQ3mX9$pN6"  # terminal value'
+  file_path: workers/sync_worker.py
+  line_range:
+  - 20
+  - 20
+  context_summary: Inserted after the Base declarative_base assignment, before the SyncDirection enum class definition in the sync worker, holding the final resolved value.
+expected_answers:
+  question: Starting from DEPLOYMENT_CONFIG_KEY in api/__init__.md, follow the chain of constant references across files. What is the final string value that SYNC_API_SECRET resolves to in workers/sync_worker.md?
+  correctness: v7Tz#kQ3mX9$pN6
+  completeness: 'A complete answer identifies the final value ''v7Tz#kQ3mX9$pN6'' by following the full 8-step chain: DEPLOYMENT_CONFIG_KEY -> AUTH_TOKEN_SALT -> MIDDLEWARE_HMAC_KEY -> VALIDATOR_SCHEMA_HASH -> CURSOR_ENCODING_SECRET -> ERROR_HANDLER_SIGNING_KEY -> RETRY_JITTER_SEED -> SYNC_API_SECRET = ''v7Tz#kQ3mX9$pN6''.'
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5

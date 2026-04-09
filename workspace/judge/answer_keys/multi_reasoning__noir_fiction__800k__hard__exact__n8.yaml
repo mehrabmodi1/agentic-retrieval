@@ -1,0 +1,67 @@
+parametrisation_id: "multi_reasoning__noir_fiction__800k__hard__exact__n8"
+experiment_type: "multi_reasoning"
+generated_at: "2026-04-05T00:00:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 800000
+  discriminability: "hard"
+  reference_clarity: "exact"
+items:
+  - item_id: "target_001"
+    inserted_text: "NOTE: Richard Halstead states that Catherine has a distinctive crescent-shaped birthmark just below her left collarbone—this detail was volunteered unprompted and may be significant for identification of the victim in photographs."
+    file_path: "chapters/chapter_01.md"
+    line_range: [61, 61]
+    context_summary: "Inserted as investigator's notebook entry documenting Catherine's unique identifying mark for victim identification purposes."
+
+  - item_id: "target_002"
+    inserted_text: "More critically: Margaret Hollister was Claire's mother—confirmed through public records cross-reference—which means the family laundering business directly exposed Claire to the criminal elements that eventually led to her kidnapping and death. The leverage the criminals held over Margaret was not just financial; it was personal."
+    file_path: "case_notes/day_03.md"
+    line_range: [28, 28]
+    context_summary: "Embedded in financial investigation section revealing that Margaret's money laundering created direct vulnerability for her daughter Claire."
+
+  - item_id: "target_003"
+    inserted_text: "White hair, probably in his fifties. He helped Vincent into a car and they drove off. The discharge paperwork was signed, but nobody actually watched him walk out the front door. And here's the thing—the white-haired man, before he left, he told the nursing staff that all of Vincent's medical bills would be handled privately, cash payment, and that Vincent would need absolute rest and discretion. That's the language of someone who owns another person, not someone visiting a friend."
+    file_path: "case_notes/day_04.md"
+    line_range: [41, 41]
+    context_summary: "Inserted in hospital discharge scene describing white-haired man's control over Vincent Castellano and his coordination of Vincent's removal."
+
+  - item_id: "target_004"
+    inserted_text: "And when I describe her more specifically—mention her family business, her mother's real estate work—Paulie's face goes gray. \"Jesus,\" he whispers. \"She's Margaret Hollister's daughter. That's the girl. Of course that's the girl. That means Sinclair took her on purpose. That wasn't a random kidnapping. That was a message.\""
+    file_path: "case_notes/day_02.md"
+    line_range: [80, 80]
+    context_summary: "Waterfront informant recognizes connection between Claire and Margaret Hollister, confirming targeted kidnapping rather than random crime."
+
+  - item_id: "target_005"
+    inserted_text: "What I can tell you in confidence, Detective, is that Mr. Harvey was asked to draft legal documentation that would legitimize the transfer of ransom funds in a kidnapping operation. He initially refused. Then someone applied significant pressure—Mr. Marchetti didn't specify what kind—and Mr. Harvey returned with a new resolve. He drafted the documents. By doing so, he made himself an accessory to the crime, and I believe this knowledge is what broke him."
+    file_path: "witnesses/secretary_statement.md"
+    line_range: [72, 72]
+    context_summary: "Secretary reveals that James Harvey was coerced into providing legal documentation for ransom fund transfers, implicating him as accessory."
+
+  - item_id: "target_006"
+    inserted_text: "I tell them what Sinclair said in the warehouse. He said the girl was a complication. He said she had to be resolved. He didn't say he killed her, but he denied it minimally. More damningly, when I asked him directly how Claire Hollister died, he said: \"The girl was taken because her mother's leverage was valuable. But once she was in custody, she became a liability. She had access to information—her mother's business records, conversations she'd overheard. She was a weak link. Weak links break. When they break, they talk. Dead girls don't talk.\" This statement demonstrates clear knowledge of how she died and why."
+    file_path: "case_notes/day_07.md"
+    line_range: [56, 56]
+    context_summary: "Police interrogation capturing Sinclair's explicit admission of his logic for murdering Claire Hollister as a liability."
+
+  - item_id: "target_007"
+    inserted_text: "I have photographs from Tuesday night. At the Magnifico Hotel, room 308. Before you took her. Before anything happened. I took them with a camera my father gave me—I was documenting the evening for posterity, thinking I was going to propose. Instead I documented a crime. I have photographs that show you meeting with her at nine forty-five, show you giving her a drink, show you explaining the ransom scheme to her while she was still conscious and terrified. Those photographs prove you orchestrated everything."
+    file_path: "case_notes/day_05.md"
+    line_range: [122, 122]
+    context_summary: "Vincent Castellano reveals he has photographic evidence from the Magnifico Hotel showing Sinclair's direct involvement in Claire's kidnapping."
+
+  - item_id: "target_008"
+    inserted_text: "The old guy, before they even sat down, I heard him say something to the kid—just a whisper across the bar, but clear enough: 'Everything's arranged for Tuesday. The Magnifico, room 308, nine forty-five. You bring the girl, you make sure she's alone, you introduce them. Then you disappear for twenty minutes. When you come back, she'll be sedated and ready for transport. You'll make fifty thousand dollars and a new life.' The kid looked like he was going to be sick right there on the bar stools. Then when the old guy left, he put his hand on the kid's shoulder."
+    file_path: "witnesses/bartender_statement.md"
+    line_range: [38, 40]
+    context_summary: "Bartender overhears white-haired man's explicit instructions to the young man detailing the kidnapping plan, hotel location, time, and payment terms."
+
+expected_answers:
+  question: "Based on all available evidence from witnesses, documents, and confessions, who were the principal conspirators in Claire Hollister's kidnapping and murder, what were their specific roles, and what concrete proof exists of their coordinated criminal intent?"
+  correctness: "A correct answer must identify all four key conspirators: Charles J. Sinclair (orchestrator/financier), Margaret Hollister (leverage provider through money laundering), Vincent Castellano (accomplice/handler), and James Harvey (legal facilitator). It must specify roles: Sinclair directed and financed the operation; Margaret's laundering created the initial leverage; Vincent was instructed to deliver Claire; Harvey provided legal cover for fund transfers."
+  completeness: "A complete answer covers: (1) Sinclair's explicit admission that Claire was a liability requiring elimination, (2) Vincent's photographs from the Magnifico Hotel proving Sinclair's direct involvement at 9:45 PM Tuesday, (3) The bartender's overheard conversation detailing the kidnapping plan with specific hotel, room, time, and payment, (4) Margaret Hollister being Claire's mother, making the family leverage personal, (5) The white-haired man's hospital coordination of Vincent's extraction and control, (6) Harvey's coerced drafting of ransom fund documentation, (7) Claire's crescent birthmark as identification for victim confirmation, and (8) The logical chain from blackmail to kidnapping to murder."
+
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+  - criterion: "completeness"
+    weight: 0.5

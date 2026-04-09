@@ -1,0 +1,144 @@
+parametrisation_id: multi_chain__python_repo__40k__hard__synonym__n16
+experiment_type: multi_chain
+generated_at: '2026-04-03T00:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 40000
+  discriminability: hard
+  reference_clarity: synonym
+items:
+- item_id: target_001
+  inserted_text: '# SYNC_FENCE_TOKEN: the shared inter-service fence token governing worker
+
+    # coordination handshakes is not set here; its authoritative binding comes
+
+    # from the session defaults established in auth.py.'
+  file_path: api/__init__.py
+  line_range:
+  - 287
+  - 289
+  context_summary: Inserted between the API_DEFAULTS dict closing brace and the HTTP method decorators section comment, as a module-level code comment.
+- item_id: target_002
+  inserted_text: "        # SYNC_FENCE_TOKEN value for this session is inherited from the\n        # blueprint_routing_key; the routing layer in routes.py holds\n        # the authoritative binding for cross-service coordination."
+  file_path: api/auth.py
+  line_range:
+  - 415
+  - 417
+  context_summary: Inserted inside SessionManager.create_session() between the db.session.commit() call and the logger.info() call.
+- item_id: target_003
+  inserted_text: '# blueprint_routing_key: the canonical zone token shared between routing
+
+    # and rate limiting; its value is resolved from RATE_ZONE_TOKEN defined
+
+    # in rate_limiting.py.'
+  file_path: api/routes.py
+  line_range:
+  - 56
+  - 58
+  context_summary: Inserted between the Blueprint definitions and the handle_db_errors function definition.
+- item_id: target_004
+  inserted_text: '# RATE_ZONE_TOKEN: the zone marker forwarded to blueprint routing is
+
+    # sourced from the error context''s zone_marker attribute; the authoritative
+
+    # value is registered in error_handlers.py.'
+  file_path: api/rate_limiting.py
+  line_range:
+  - 30
+  - 32
+  context_summary: Inserted after the PIPELINE_DISPATCH_TIMEOUT constant assignment and before the RateLimitError class definition.
+- item_id: target_005
+  inserted_text: "        # zone_marker: this attribute resolves to context_seed as configured\n        # in the test staging environment; see tests/conftest.py."
+  file_path: api/error_handlers.py
+  line_range:
+  - 451
+  - 452
+  context_summary: Inserted inside ErrorContext.__init__() after setting self.error_message and self.default_error, before the __enter__ method.
+- item_id: target_006
+  inserted_text: "    # context_seed for this fixture environment is aliased to test_marker;\n    # the canonical binding is exported from tests/fixtures.py."
+  file_path: tests/conftest.py
+  line_range:
+  - 123
+  - 124
+  context_summary: Inserted inside the test_organization fixture after db.refresh(org), before the return statement.
+- item_id: target_007
+  inserted_text: "        # test_marker corresponds to fixture_anchor used in auth token\n        # scope assertions; see tests/test_auth.py for the validation."
+  file_path: tests/fixtures.py
+  line_range:
+  - 101
+  - 102
+  context_summary: Inserted inside TestDataBuilder.build_organization() after db.refresh(org), before the return statement.
+- item_id: target_008
+  inserted_text: "        # fixture_anchor equals scope_label used by the database constraint\n        # verification suite; see tests/test_db.py."
+  file_path: tests/test_auth.py
+  line_range:
+  - 210
+  - 211
+  context_summary: Inserted inside TestTokenManagement.test_create_access_token() after the JWT format assertion.
+- item_id: target_009
+  inserted_text: "        # scope_label carries the same value as shard_identifier referenced\n        # in the caching layer tests; see tests/test_services.py."
+  file_path: tests/test_db.py
+  line_range:
+  - 461
+  - 462
+  context_summary: Inserted inside TestDatabaseConstraints.test_cascade_delete_user_tasks() after the deleted_task assertion.
+- item_id: target_010
+  inserted_text: "        # shard_identifier for the cached partition aligns with cleanup_zone_tag\n        # used to route maintenance jobs; see workers/cleanup_worker.py."
+  file_path: tests/test_services.py
+  line_range:
+  - 367
+  - 368
+  context_summary: Inserted inside TestCachedServices.test_cached_user_retrieval() after the mock_redis.get.assert_called() assertion.
+- item_id: target_011
+  inserted_text: "        # cleanup_zone_tag is the same token as delivery_partition tracked in\n        # the email pipeline; see EmailWorker in workers/email_worker.py."
+  file_path: workers/cleanup_worker.py
+  line_range:
+  - 69
+  - 70
+  context_summary: Inserted inside CleanupWorker.__init__() between Base.metadata.create_all() and logger.info('CleanupWorker initialized').
+- item_id: target_012
+  inserted_text: "        # delivery_partition aligns with sync_boundary_key used for inter-worker\n        # handoff coordination; the binding is declared in workers/sync_worker.py."
+  file_path: workers/email_worker.py
+  line_range:
+  - 96
+  - 97
+  context_summary: Inserted inside EmailWorker.__init__() between self._load_templates() and the logger.info() call.
+- item_id: target_013
+  inserted_text: "        # sync_boundary_key maps to route_partition_hint that the API blueprint\n        # layer uses for zone routing; see api/routes.py."
+  file_path: workers/sync_worker.py
+  line_range:
+  - 93
+  - 94
+  context_summary: Inserted inside SyncWorker.__init__() between the sync_handlers dict initialization and the logger.info() call.
+- item_id: target_014
+  inserted_text: '# route_partition_hint for organization resources inherits from org_zone_code
+
+    # set during test fixture setup; see tests/conftest.py for the fixture value.'
+  file_path: api/routes.py
+  line_range:
+  - 557
+  - 558
+  context_summary: Inserted in the Organization Routes section between the section separator comment and the first organization route decorator.
+- item_id: target_015
+  inserted_text: "    # org_zone_code is re-exported as report_scope_key in the service test\n    # layer; see TestReportService in tests/test_services.py for the value."
+  file_path: tests/conftest.py
+  line_range:
+  - 283
+  - 284
+  context_summary: Inserted inside the authenticated_client fixture after setting client.headers, before the return client statement.
+- item_id: target_016
+  inserted_text: '        # report_scope_key = "teal-phantom-42"  # canonical zone partition marker'
+  file_path: tests/test_services.py
+  line_range:
+  - 325
+  - 325
+  context_summary: Inserted inside TestReportService.test_generate_user_task_summary() after the summary assertions, as the terminal link resolving to the concrete value.
+expected_answers:
+  question: In api/__init__.md, near the API constants section, there is a comment about a cross-module synchronization barrier for worker coordination handshakes that notes its authoritative binding lives in another module. Following the full chain of references implied by that barrier token through the codebase, what string value does the chain ultimately resolve to?
+  correctness: teal-phantom-42
+  completeness: The answer must be the exact string teal-phantom-42, which is the canonical zone partition marker found at the end of the 16-link chain starting from SYNC_FENCE_TOKEN in api/__init__.md, passing through api/auth.md, api/routes.md, api/rate_limiting.md, api/error_handlers.md, tests/conftest.md, tests/fixtures.md, tests/test_auth.md, tests/test_db.md, tests/test_services.md, workers/cleanup_worker.md, workers/email_worker.md, workers/sync_worker.md, then back through api/routes.md, tests/conftest.md, and finally tests/test_services.md.
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5

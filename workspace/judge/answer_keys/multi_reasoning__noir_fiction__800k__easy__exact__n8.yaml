@@ -1,0 +1,72 @@
+parametrisation_id: "multi_reasoning__noir_fiction__800k__easy__exact__n8"
+experiment_type: "multi_reasoning"
+generated_at: "2026-04-05T12:00:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 800000
+  discriminability: "easy"
+  reference_clarity: "exact"
+items:
+  - item_id: "target_001"
+    inserted_text: "Critically, Harvey's testimony could directly implicate Sinclair in the Hollister murder—he has firsthand knowledge of Sinclair's orders regarding \"problem resolution.\""
+    file_path: "witnesses/detective_debrief.md"
+    line_range: [72, 73]
+    context_summary: "Detective Halloway identifies Harvey as the key witness who can implicate Sinclair in Catherine Hollister's murder through direct knowledge of orders."
+
+  - item_id: "target_002"
+    inserted_text: "His real connections run through international networks—the Kaslan operation, import-export schemes that move merchandise across borders. That's where the real money is, and that's where Catherine Halstead got tangled up."
+    file_path: "case_notes/day_03.md"
+    line_range: [85, 86]
+    context_summary: "Reveals that Sinclair's international Kaslan operation is the mechanism through which Catherine Halstead became involved in his crimes."
+
+  - item_id: "target_003"
+    inserted_text: "Though between us, we suspected the relationship wasn't entirely voluntary—the way she'd mention needing permission for things, the way she seemed controlled even when happy."
+    file_path: "chapters/chapter_03.md"
+    line_range: [25, 26]
+    context_summary: "Catherine's friends observe that her secret relationship involves coercion and control, indicating she was not a willing participant."
+
+  - item_id: "target_004"
+    inserted_text: "\"I said nothing. I took the money. But I remembered that ride with the kid and the old man, and I realized the old man had been making sure I'd keep quiet about it. He knew what he was doing—three days later, leaving nothing to chance.\""
+    file_path: "witnesses/cab_driver_statement.md"
+    line_range: [54, 55]
+    context_summary: "Cab driver confirms that the older man (Sinclair's agent) deliberately paid him to silence potential witnesses to Harvey's meetings and movements."
+
+  - item_id: "target_005"
+    inserted_text: "What matters is that Harvey witnessed Sinclair's operations, including the network that brought Catherine into Sinclair's control, and Sinclair couldn't afford to have Harvey talking to law enforcement about it."
+    file_path: "case_notes/day_07.md"
+    line_range: [56, 57]
+    context_summary: "Establishes Harvey's knowledge of the complete criminal chain linking Sinclair's operations to Catherine's kidnapping and death."
+
+  - item_id: "target_006"
+    inserted_text: "She gave him something—an envelope. I saw her press it into his hand. The girl looked frightened, like she was delivering a message from someone dangerous. This was after the white-haired man came. I think—I think she was helping him leave."
+    file_path: "witnesses/landlady_statement.md"
+    line_range: [48, 49]
+    context_summary: "The redhead (Margot) delivers a message and helps Harvey escape after Sinclair's agent visits him, revealing her role in assisting his disappearance."
+
+  - item_id: "target_007"
+    inserted_text: "Specifically, I've worked with the Kaslan organization on import-export operations. They wanted Catherine as leverage to ensure my continued cooperation and discretion."
+    file_path: "chapters/chapter_01.md"
+    line_range: [63, 64]
+    context_summary: "Halstead reveals that Sinclair/Kaslan deliberately kidnapped Catherine to maintain control over his illegal business activities."
+
+  - item_id: "target_008"
+    inserted_text: "\"He decided to cooperate with federal authorities. He was willing to testify about the entire Kaslan network in exchange for protection and a reduced sentence. The painting from Vesper's widow—that was his leverage, his proof of good faith. Harvey was going to bring down the operation from inside.\""
+    file_path: "witnesses/informant_interview.md"
+    line_range: [24, 25]
+    context_summary: "Harvey chose to become a federal informant to dismantle the Kaslan network, providing the final piece connecting his knowledge to the broader criminal conspiracy."
+
+expected_answers:
+  question: "How did James Harvey's decision to become a federal informant connect to Catherine Hollister's murder, and what was the complete chain of events that revealed Sinclair's criminal network?"
+  correctness: "The answer must identify all eight connections: (1) Harvey's direct knowledge of Sinclair's murder orders, (2) Sinclair's Kaslan international operation, (3) Catherine's coercive control by Sinclair, (4) Sinclair's agent paying witnesses to silence them, (5) Harvey's witnessed knowledge of Catherine's ensnarement, (6) Margot helping Harvey escape, (7) Halstead's coerced participation in Kaslan operations with Catherine as leverage, and (8) Harvey's federal cooperation agreement to dismantle the network."
+  completeness: "A complete answer connects Harvey's escape and cooperation to the larger conspiracy showing: Sinclair used Catherine as leverage over Halstead's business compliance, Harvey witnessed this entire operation and attempted to cooperate with authorities, Sinclair's agent tried to prevent witnesses from talking, Margot facilitated Harvey's escape, and ultimately Harvey's federal testimony became the key to dismantling the international Kaslan operation."
+
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+    description: "All eight distinct pieces of information must be identified and accurately described"
+  - criterion: "completeness"
+    weight: 0.5
+    description: "Answer must show how these eight pieces interconnect to form the complete conspiracy narrative"
+  - criterion: "reasoning"
+    weight: 0.5
+    description: "Answer must demonstrate multi-step reasoning connecting Harvey's role, the murder, and the larger criminal network"

@@ -1,0 +1,32 @@
+parametrisation_id: multi_reasoning__python_repo__800k__hard__synonym__n2
+experiment_type: multi_reasoning
+generated_at: '2026-04-05T00:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 800000
+  discriminability: hard
+  reference_clarity: synonym
+items:
+- item_id: target_001
+  inserted_text: 'data_preservation_window_seconds=7776000,  # 90-day retention window in seconds'
+  file_path: workers/cleanup_worker.py
+  line_range:
+  - 91
+  - 91
+  context_summary: Embedded within the cleanup_old_logs CleanupTask definition, showing the data retention window duration in seconds for application logs.
+- item_id: target_002
+  inserted_text: 'self.timeout = timeout  # max_operation_duration_seconds: 30 seconds per external call'
+  file_path: workers/sync_worker.py
+  line_range:
+  - 229
+  - 229
+  context_summary: Embedded within ExternalAPIClient initialization, clarifying that the timeout parameter represents the maximum operation duration (30 seconds) for external API synchronization calls.
+expected_answers:
+  question: What is the ratio of the data preservation window to the maximum operation duration allowed for external API synchronization, based on the configured timing parameters in seconds?
+  correctness: The answer must identify both timing values (7,776,000 seconds for data retention and 30 seconds for operation timeout) and correctly calculate their ratio as 259,200.
+  completeness: 'A complete answer must: (1) locate the data preservation window value in the cleanup worker configuration, (2) identify the maximum operation duration in the external API client, (3) convert both to a common unit (seconds), and (4) compute the mathematical ratio between them.'
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5

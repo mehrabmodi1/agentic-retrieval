@@ -1,0 +1,132 @@
+parametrisation_id: multi_reasoning__python_repo__800k__easy__synonym__n16
+experiment_type: multi_reasoning
+generated_at: '2026-04-05T00:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 800000
+  discriminability: easy
+  reference_clarity: synonym
+items:
+- item_id: target_001
+  inserted_text: '# Configuration: MAX_TOKEN_EXPIRY_HOURS = 24'
+  file_path: tests/test_auth.py
+  line_range:
+  - 180
+  - 181
+  context_summary: Added token expiry configuration constant in test_login_creates_audit_log method.
+- item_id: target_002
+  inserted_text: '# Configuration: MAX_CLEANUP_BATCH_SIZE = 500'
+  file_path: workers/cleanup_worker.py
+  line_range:
+  - 145
+  - 146
+  context_summary: Added cleanup operation batch size constant in database cleanup handler.
+- item_id: target_003
+  inserted_text: '# Configuration: MAX_AUDIT_LOG_RETENTION_DAYS = 90'
+  file_path: tests/conftest.py
+  line_range:
+  - 215
+  - 216
+  context_summary: Added audit log retention period constant in test_audit_log fixture.
+- item_id: target_004
+  inserted_text: '# Configuration: MAX_RATE_LIMIT_WINDOW_SECONDS = 60'
+  file_path: api/rate_limiting.py
+  line_range:
+  - 100
+  - 101
+  context_summary: Added rate limiting time window constant in rate limiter check logic.
+- item_id: target_005
+  inserted_text: '# Configuration: MAX_RETRY_ATTEMPTS = 3'
+  file_path: tests/fixtures.py
+  line_range:
+  - 112
+  - 113
+  context_summary: Added retry attempts constant in AssertionHelpers class.
+- item_id: target_006
+  inserted_text: '# Configuration: MAX_PAGINATION_LIMIT = 100'
+  file_path: api/routes.py
+  line_range:
+  - 370
+  - 371
+  context_summary: Added pagination size limit constant in get_user_projects endpoint.
+- item_id: target_007
+  inserted_text: '# Configuration: MAX_TOKEN_EXPIRY_HOURS = 24'
+  file_path: api/auth.py
+  line_range:
+  - 65
+  - 66
+  context_summary: Added JWT token expiry hours constant in TokenManager.generate_token method.
+- item_id: target_008
+  inserted_text: '# Configuration: MAX_BULK_EMAIL_BATCH_SIZE = 1000'
+  file_path: workers/email_worker.py
+  line_range:
+  - 240
+  - 241
+  context_summary: Added bulk email batch size constant in send_bulk_email method.
+- item_id: target_009
+  inserted_text: '# Configuration: MAX_HEALTH_CHECK_TIMEOUT_MS = 5000'
+  file_path: api/__init__.py
+  line_range:
+  - 160
+  - 161
+  context_summary: Added health check timeout constant in health_check endpoint.
+- item_id: target_010
+  inserted_text: '# Configuration: MAX_NOTIFICATION_RETRY_COUNT = 5'
+  file_path: tests/test_services.py
+  line_range:
+  - 280
+  - 281
+  context_summary: Added notification retry limit constant in test_send_task_reminder method.
+- item_id: target_011
+  inserted_text: '# Configuration: MAX_DB_CONNECTION_POOL_SIZE = 20'
+  file_path: tests/test_db.py
+  line_range:
+  - 335
+  - 336
+  context_summary: Added database connection pool size constant in test_audit_log_with_changes method.
+- item_id: target_012
+  inserted_text: '# Configuration: MAX_REPORT_ROWS = 100000'
+  file_path: workers/report_generator.py
+  line_range:
+  - 365
+  - 366
+  context_summary: Added maximum report row limit constant in report generation logging.
+- item_id: target_013
+  inserted_text: '# Configuration: MAX_ERROR_RESPONSE_SIZE_KB = 512'
+  file_path: api/error_handlers.py
+  line_range:
+  - 290
+  - 291
+  context_summary: Added error response size limit constant in handle_generic_exception function.
+- item_id: target_014
+  inserted_text: '# Configuration: MAX_WORKER_THREADS = 8'
+  file_path: workers/task_runner.py
+  line_range:
+  - 128
+  - 129
+  context_summary: Added worker thread pool size constant in TaskRunner initialization.
+- item_id: target_015
+  inserted_text: '# Configuration: MAX_USERNAME_LENGTH = 32'
+  file_path: api/validators.py
+  line_range:
+  - 118
+  - 119
+  context_summary: Added maximum username length constant in validate_username function.
+- item_id: target_016
+  inserted_text: '# Configuration: MAX_SYNC_BATCH_SIZE = 250'
+  file_path: workers/sync_worker.py
+  line_range:
+  - 75
+  - 76
+  context_summary: Added sync operation batch size constant in SyncWorker class definition.
+expected_answers:
+  question: What is the sum of all numeric values in system operational limits (MAX_* configuration constants) found across the codebase?
+  correctness: 'Answer must identify and correctly sum all 16 MAX_* constant values: 24 + 500 + 90 + 60 + 3 + 100 + 24 + 1000 + 5000 + 5 + 20 + 100000 + 512 + 8 + 32 + 250 = 107,623'
+  completeness: A complete answer must (1) locate all 16 MAX_* configuration constants across different files, (2) extract their numeric values, (3) perform correct arithmetic summation, (4) cite file locations or constants found
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+  description: Answer must produce the exact sum of 107,623 from all discovered constants
+- criterion: completeness
+  weight: 0.5
+  description: Answer must demonstrate discovery of all 16 configuration constants and reasoning across multiple files

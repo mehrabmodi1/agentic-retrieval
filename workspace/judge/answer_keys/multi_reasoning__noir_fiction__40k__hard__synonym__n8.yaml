@@ -1,0 +1,67 @@
+parametrisation_id: "multi_reasoning__noir_fiction__40k__hard__synonym__n8"
+experiment_type: "multi_reasoning"
+generated_at: "2026-04-05T00:00:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 40000
+  discriminability: "hard"
+  reference_clarity: "synonym"
+items:
+  - item_id: "target_001"
+    inserted_text: "the kind of distinctive mark that can be used for positive identification in morgue work"
+    file_path: "case_notes/day_01.md"
+    line_range: [47, 49]
+    context_summary: "Crescent birthmark on Catherine Halstead identified as crucial forensic marker for victim identification"
+
+  - item_id: "target_002"
+    inserted_text: "It's a distinctive scent—something I'll recognize again. Later, I'll find that same cologne in Sinclair's personal effects. It becomes a signature link to the crime."
+    file_path: "case_notes/day_01.md"
+    line_range: [13, 17]
+    context_summary: "Expensive cologne found in hotel room later linked to Sinclair as crime scene evidence"
+
+  - item_id: "target_003"
+    inserted_text: "We left at approximately 10:45 PM on Tuesday—we remember because that's when they close the bar... That precise timing—10:45 PM—becomes critical to establishing when Catherine was last seen alive."
+    file_path: "chapters/chapter_03.md"
+    line_range: [18, 20]
+    context_summary: "Exact departure time from Park House restaurant establishes timeline for victim's disappearance"
+
+  - item_id: "target_004"
+    inserted_text: "This secret romantic involvement would later prove crucial—it showed motive, that Catherine had reason to trust whoever took her, that someone had access to her private life and her trust."
+    file_path: "chapters/chapter_03.md"
+    line_range: [30, 32]
+    context_summary: "Secret dating relationship revealed as motive and access point for perpetrator"
+
+  - item_id: "target_005"
+    inserted_text: "It's on Dock Street, building seven—the physical location that would later be searched and yielded crucial physical evidence."
+    file_path: "case_notes/day_03.md"
+    line_range: [18, 20]
+    context_summary: "Warehouse location identified as crime scene where physical evidence would be recovered"
+
+  - item_id: "target_006"
+    inserted_text: "The display of cash as leverage would later become key evidence of Sinclair's coercive methods."
+    file_path: "case_notes/day_03.md"
+    line_range: [42, 44]
+    context_summary: "Cash display observed as coercive leverage demonstrating perpetrator's methods"
+
+  - item_id: "target_007"
+    inserted_text: "The bracelet is gold with three small pearls—distinctive enough that anyone seeing Claire wear it could identify her later from the physical object alone. The ring is a sapphire in a silver setting, custom-made with her initials on the inside."
+    file_path: "case_notes/day_07.md"
+    line_range: [5, 8]
+    context_summary: "Specific jewelry pieces with identifying characteristics found in suspect's apartment"
+
+  - item_id: "target_008"
+    inserted_text: "The money was filtered through at least three intermediaries, each taking a percentage, making it nearly impossible to trace back to the source... The financial chain would become crucial evidence—when combined with Chen's accounting records, it would prove Sinclair's money laundering operation."
+    file_path: "case_notes/day_04.md"
+    line_range: [29, 32]
+    context_summary: "Money laundering financial trail through multiple intermediaries linked to organized crime"
+
+expected_answers:
+  question: "What eight distinct pieces of investigative evidence and testimony comprised the complete prosecution case against Sinclair?"
+  correctness: "Answer must identify all eight evidence categories: (1) victim's distinctive birthmark for identification, (2) signature cologne found in suspect's possession, (3) precise 10:45 PM departure time establishing disappearance timeline, (4) secret romantic relationship showing motive and access, (5) warehouse location on Dock Street building seven, (6) cash display as coercive leverage, (7) specific jewelry items with identifying marks, (8) three-intermediary money laundering financial chain"
+  completeness: "A complete answer synthesizes all eight pieces into a coherent narrative showing how they collectively demonstrated Sinclair's guilt through multiple independent evidentiary streams: forensic identification, crime scene evidence, temporal markers, motive, location, methods of coercion, recovered property, and financial conspiracy"
+
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+  - criterion: "completeness"
+    weight: 0.5

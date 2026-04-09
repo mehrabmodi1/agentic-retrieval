@@ -1,0 +1,87 @@
+parametrisation_id: "multi_reasoning__noir_fiction__20k__hard__synonym__n8"
+experiment_type: "multi_reasoning"
+generated_at: "2026-04-05T14:32:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 20000
+  discriminability: "hard"
+  reference_clarity: "synonym"
+items:
+  - item_id: "target_001"
+    inserted_text: "Before he left, I noticed the rectangular Longine watch on his wrist—distinctive, expensive, the kind with a leather strap worn from years of use."
+    file_path: "witnesses/cab_driver_statement.md"
+    line_range: [41, 50]
+    context_summary: "Embedded within cab driver's description of the old man dropping off the young passenger at Oak Hill house"
+
+  - item_id: "target_002"
+    inserted_text: "The registration showed Claire checked in Tuesday evening under a false name, Room 407, with a man matching Sinclair's description."
+    file_path: "case_notes/day_01.md"
+    line_range: [70, 75]
+    context_summary: "Inserted into Rossi's theory section, showing where Claire was last seen"
+
+  - item_id: "target_003"
+    inserted_text: "Frank called back within hours: Meridian was a shell corporation created to acquire compromising documents from city officials. They specifically sought out blackmail material, including financial ledgers showing hush payments."
+    file_path: "chapters/chapter_05.md"
+    line_range: [56, 62]
+    context_summary: "Added to Shepherd's investigation of Meridian Holdings' true business purpose"
+
+  - item_id: "target_004"
+    inserted_text: "The security cameras he installed last month—high-definition systems with a clear view of every corner and the warehouse door—had captured everything. He'd positioned them specifically to make me look like the aggressor."
+    file_path: "case_notes/day_06.md"
+    line_range: [15, 22]
+    context_summary: "Embedded in the realization section describing how Sinclair fabricated evidence against Shepherd"
+
+  - item_id: "target_005"
+    inserted_text: "with no possibility of parole for the first twelve"
+    file_path: "case_notes/day_08.md"
+    line_range: [156, 158]
+    context_summary: "Added to the epilogue detailing Sinclair's sentence duration"
+
+  - item_id: "target_006"
+    inserted_text: "He also requested that I install a brass deadbolt with a reinforced strike plate—something I'd never heard a tenant ask for before."
+    file_path: "witnesses/landlady_statement.md"
+    line_range: [12, 18]
+    context_summary: "Inserted into landlady's account of Mr. Harvey's security paranoia"
+
+  - item_id: "target_007"
+    inserted_text: "pale pink and roughly the size of a fingernail"
+    file_path: "chapters/chapter_01.md"
+    line_range: [22, 24]
+    context_summary: "Added to the detailed physical description of Catherine's identifying birthmark"
+
+  - item_id: "target_008"
+    inserted_text: "The envelope also contains photographic evidence of the ledger entries and Sinclair's handwritten correspondence with Ashford."
+    file_path: "case_notes/day_05.md"
+    line_range: [28, 30]
+    context_summary: "Embedded in Helen's insurance policy documentation, describing what evidence was sealed away"
+
+expected_answers:
+  question: "Reconstruct the complete chain of evidence and identifying details that proved Charles Sinclair's guilt in Claire Hollister's murder. What physical descriptions, financial records, surveillance methods, and procedural safeguards were essential to the prosecution's case?"
+
+  correctness: |
+    A correct answer must identify and connect:
+    1. Claire checked into the Regency Hotel Tuesday evening under a false name (Room 407) with a man matching Sinclair's description
+    2. Sinclair's shell corporation Meridian Holdings was acquiring blackmail documents and financial ledgers showing hush payments
+    3. Security camera footage from the warehouse (positioned to incriminate Shepherd instead, but ultimately used against Sinclair)
+    4. The sealed envelope containing photographic evidence of ledgers and Sinclair-Ashford correspondence held by attorney Helen Crawford
+    5. The distinctive rectangular Longine watch observed on the old man (the senior figure in the case)
+    6. Catherine's crescent-shaped birthmark (pale pink, roughly fingernail-sized) serving as physical identification
+    7. The landlord's observation of Mr. Harvey's security paranoia—brass deadbolt with reinforced strike plate
+    8. Sinclair's sentence: exactly twenty years with no parole eligibility for twelve years
+
+  completeness: |
+    A complete answer must synthesize all eight items into a coherent narrative showing how:
+    - Multiple witness testimonies corroborate the timeline
+    - Physical evidence (birthmark, watch) identifies key persons
+    - Financial records (ledgers, insurance payments) establish motive
+    - Surveillance and security measures reveal Sinclair's premeditation
+    - Legal safeguards (sealed envelope, attorney custody) preserved evidence
+    - The final sentence demonstrates the severity of the crime's proof
+
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+  - criterion: "completeness"
+    weight: 0.5
+  - criterion: "synthesis"
+    weight: 0.5

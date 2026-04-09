@@ -1,0 +1,28 @@
+parametrisation_id: "multi_chain__noir_fiction__160k__hard__exact__n2"
+experiment_type: "multi_chain"
+generated_at: "2026-04-05T00:00:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 160000
+  discriminability: "hard"
+  reference_clarity: "exact"
+items:
+  - item_id: "target_001"
+    inserted_text: "Before he left, I heard him tell Harvey something about a painting—he said, 'Kaslan knows you're thinking about the medieval piece. He's prepared a way out, but you need to decide if you're keeping it or returning it.' Harvey didn't answer, but his whole body went rigid."
+    file_path: "witnesses/landlady_statement.md"
+    line_range: [19, 20]
+    context_summary: "Inserted after Eva's description of Silas Gregg's demeanor, where she recalls overhearing him reference a specific painting and Kaslan's knowledge of Harvey's dilemma regarding it."
+  - item_id: "target_002"
+    inserted_text: "When Kaslan's operative—a man named Silas Gregg—visited Harvey to assess the situation, he offered what amounted to a bribe disguised as an escape route. A motel room, an alias, time to think. But the message was clear: either Harvey would hand over the fifteenth-century medieval piece to be moved to the South American market, or Gregg would return to collect him."
+    file_path: "witnesses/informant_interview.md"
+    line_range: [25, 25]
+    context_summary: "Inserted within Victor's explanation of Harvey's moral crisis, explicitly naming Gregg as the operative and identifying the 'medieval piece' as a fifteenth-century painting destined for South American market."
+expected_answers:
+  question: "Starting from Eva's account in landlady_statement.md of what Silas Gregg mentioned to Harvey regarding 'the medieval piece,' what was this object ultimately revealed to be, and what was its connection to an unsolved crime?"
+  correctness: "The answer must identify the object as a fifteenth-century medieval painting and connect it to Carl Vesper's widow and the banker's unsolved homicide."
+  completeness: "A complete answer includes: (1) the identification as a fifteenth-century medieval painting, (2) that it belonged to/was stolen from Carl Vesper's widow, (3) that Carl Vesper was a banker killed in an unsolved homicide five years prior, (4) the context of Kaslan's distribution network and Gregg's coercion of Harvey."
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+  - criterion: "completeness"
+    weight: 0.5

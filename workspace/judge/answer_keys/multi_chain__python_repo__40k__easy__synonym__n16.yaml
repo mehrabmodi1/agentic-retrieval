@@ -1,0 +1,162 @@
+parametrisation_id: multi_chain__python_repo__40k__easy__synonym__n16
+experiment_type: multi_chain
+generated_at: '2026-04-03T10:45:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 40000
+  discriminability: easy
+  reference_clarity: synonym
+items:
+- item_id: target_001
+  inserted_text: '# Cross-module reference tracer — follow TRACE_NEXT_MODULE through each linked module.
+
+    TRACE_NEXT_MODULE = "api/auth.py::TRACE_NEXT_MODULE"'
+  file_path: api/__init__.py
+  line_range:
+  - 87
+  - 88
+  context_summary: Inserted after the API_BASE_PATH constant definition in the package-level __init__.py, establishing the entry point of the forwarding chain.
+- item_id: target_002
+  inserted_text: '# Cross-module reference tracer — follow TRACE_NEXT_MODULE through each linked module.
+
+    TRACE_NEXT_MODULE = "api/middleware.py::TRACE_NEXT_MODULE"'
+  file_path: api/auth.py
+  line_range:
+  - 27
+  - 28
+  context_summary: Inserted after the module-level logger definition in api/auth.py, pointing the chain forward to the middleware module.
+- item_id: target_003
+  inserted_text: '# Cross-module reference tracer — follow TRACE_NEXT_MODULE through each linked module.
+
+    TRACE_NEXT_MODULE = "api/pagination.py::TRACE_NEXT_MODULE"'
+  file_path: api/middleware.py
+  line_range:
+  - 26
+  - 27
+  context_summary: Inserted after the module-level logger definition in api/middleware.py, pointing the chain forward to the pagination module.
+- item_id: target_004
+  inserted_text: '# Cross-module reference tracer — follow TRACE_NEXT_MODULE through each linked module.
+
+    TRACE_NEXT_MODULE = "api/rate_limiting.py::TRACE_NEXT_MODULE"'
+  file_path: api/pagination.py
+  line_range:
+  - 20
+  - 21
+  context_summary: Inserted after the module-level logger definition in api/pagination.py, pointing the chain forward to the rate limiting module.
+- item_id: target_005
+  inserted_text: '# Cross-module reference tracer — follow TRACE_NEXT_MODULE through each linked module.
+
+    TRACE_NEXT_MODULE = "api/serializers.py::TRACE_NEXT_MODULE"'
+  file_path: api/rate_limiting.py
+  line_range:
+  - 26
+  - 27
+  context_summary: Inserted after the module-level logger definition in api/rate_limiting.py, pointing the chain forward to the serializers module.
+- item_id: target_006
+  inserted_text: '# Cross-module reference tracer — follow TRACE_NEXT_MODULE through each linked module.
+
+    TRACE_NEXT_MODULE = "api/validators.py::TRACE_NEXT_MODULE"'
+  file_path: api/serializers.py
+  line_range:
+  - 26
+  - 27
+  context_summary: Inserted after the module-level logger definition in api/serializers.py, pointing the chain forward to the validators module.
+- item_id: target_007
+  inserted_text: '# Cross-module reference tracer — follow TRACE_NEXT_MODULE through each linked module.
+
+    TRACE_NEXT_MODULE = "api/error_handlers.py::TRACE_NEXT_MODULE"'
+  file_path: api/validators.py
+  line_range:
+  - 20
+  - 21
+  context_summary: Inserted after the module-level logger definition in api/validators.py, pointing the chain forward to the error handlers module.
+- item_id: target_008
+  inserted_text: '# Cross-module reference tracer — follow TRACE_NEXT_MODULE through each linked module.
+
+    TRACE_NEXT_MODULE = "workers/task_runner.py::TRACE_NEXT_MODULE"'
+  file_path: api/error_handlers.py
+  line_range:
+  - 20
+  - 21
+  context_summary: Inserted after the module-level logger definition in api/error_handlers.py, bridging from the API layer to the workers layer.
+- item_id: target_009
+  inserted_text: '# Cross-module reference tracer — follow TRACE_NEXT_MODULE through each linked module.
+
+    TRACE_NEXT_MODULE = "workers/retry_handler.py::TRACE_NEXT_MODULE"'
+  file_path: workers/task_runner.py
+  line_range:
+  - 27
+  - 28
+  context_summary: Inserted after the DEFAULT_TASK_QUEUE_TIMEOUT constant in workers/task_runner.py, pointing the chain forward to the retry handler.
+- item_id: target_010
+  inserted_text: '# Cross-module reference tracer — follow TRACE_NEXT_MODULE through each linked module.
+
+    TRACE_NEXT_MODULE = "workers/sync_worker.py::TRACE_NEXT_MODULE"'
+  file_path: workers/retry_handler.py
+  line_range:
+  - 22
+  - 23
+  context_summary: Inserted after Base = declarative_base() in workers/retry_handler.py, pointing the chain forward to the sync worker.
+- item_id: target_011
+  inserted_text: '# Cross-module reference tracer — follow TRACE_NEXT_MODULE through each linked module.
+
+    TRACE_NEXT_MODULE = "tests/conftest.py::TRACE_NEXT_MODULE"'
+  file_path: workers/sync_worker.py
+  line_range:
+  - 26
+  - 27
+  context_summary: Inserted after the STALE_LOCK_TIMEOUT_SECONDS constant in workers/sync_worker.py, bridging from the workers layer to the test suite.
+- item_id: target_012
+  inserted_text: '# Cross-module reference tracer — follow TRACE_NEXT_MODULE through each linked module.
+
+    TRACE_NEXT_MODULE = "tests/test_api.py::TRACE_NEXT_MODULE"'
+  file_path: tests/conftest.py
+  line_range:
+  - 26
+  - 27
+  context_summary: Inserted after the import block in tests/conftest.py before the first pytest fixture, pointing the chain forward to the API test module.
+- item_id: target_013
+  inserted_text: '# Cross-module reference tracer — follow TRACE_NEXT_MODULE through each linked module.
+
+    TRACE_NEXT_MODULE = "tests/test_db.py::TRACE_NEXT_MODULE"'
+  file_path: tests/test_api.py
+  line_range:
+  - 16
+  - 17
+  context_summary: Inserted after the imports in tests/test_api.py before the first test class, pointing the chain forward to the database test module.
+- item_id: target_014
+  inserted_text: '# Cross-module reference tracer — follow TRACE_NEXT_MODULE through each linked module.
+
+    TRACE_NEXT_MODULE = "tests/test_services.py::TRACE_NEXT_MODULE"'
+  file_path: tests/test_db.py
+  line_range:
+  - 18
+  - 19
+  context_summary: Inserted after the imports in tests/test_db.py before the first test class, pointing the chain forward to the services test module.
+- item_id: target_015
+  inserted_text: '# Cross-module reference tracer — follow TRACE_NEXT_MODULE through each linked module.
+
+    TRACE_NEXT_MODULE = "tests/test_workers.py::TRACE_NEXT_MODULE"'
+  file_path: tests/test_services.py
+  line_range:
+  - 19
+  - 20
+  context_summary: Inserted after the imports in tests/test_services.py before the first test class, pointing the chain forward to the workers test module.
+- item_id: target_016
+  inserted_text: '# Cross-module reference tracer — this is the terminal node in the forwarding sequence.
+
+    TRACE_NEXT_MODULE = "TERMINUS_HAWK_JUNCTION_8R4Z"'
+  file_path: tests/test_workers.py
+  line_range:
+  - 19
+  - 20
+  context_summary: Inserted after the imports in tests/test_workers.py before the first test class, holding the terminal string value that ends the chain.
+expected_answers:
+  question: In api/__init__.py (the API package initialization module), there is a module-level relay marker that begins a forwarding chain across sixteen files. Starting from that entry point, follow the inter-module hop sequence to its conclusion. What string value does the terminal node contain?
+  correctness: The correct answer is TERMINUS_HAWK_JUNCTION_8R4Z.
+  completeness: 'A complete answer traces TRACE_NEXT_MODULE across all 16 files: api/__init__.py -> api/auth.py -> api/middleware.py -> api/pagination.py -> api/rate_limiting.py -> api/serializers.py -> api/validators.py -> api/error_handlers.py -> workers/task_runner.py -> workers/retry_handler.py -> workers/sync_worker.py -> tests/conftest.py -> tests/test_api.py -> tests/test_db.py -> tests/test_services.py -> tests/test_workers.py = TERMINUS_HAWK_JUNCTION_8R4Z.'
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5

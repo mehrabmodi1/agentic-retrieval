@@ -1,0 +1,130 @@
+parametrisation_id: multi_reasoning__python_repo__40k__easy__exact__n16
+experiment_type: multi_reasoning
+generated_at: '2026-04-05T14:30:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 40000
+  discriminability: easy
+  reference_clarity: exact
+items:
+- item_id: target_001
+  inserted_text: TOKEN_EXPIRY_MINUTES = 1440
+  file_path: api/auth.py
+  line_range:
+  - 395
+  - 425
+  context_summary: Inserted as token expiry configuration constant in session creation logic
+- item_id: target_002
+  inserted_text: SESSION_TIMEOUT_MINUTES = 60
+  file_path: api/auth.py
+  line_range:
+  - 395
+  - 425
+  context_summary: Inserted as session timeout configuration constant in session creation logic
+- item_id: target_003
+  inserted_text: MAX_PROJECT_NAME_LENGTH = 200
+  file_path: api/validators.py
+  line_range:
+  - 273
+  - 303
+  context_summary: Inserted in project validation logic for name length constraint
+- item_id: target_004
+  inserted_text: MAX_DESCRIPTION_LENGTH = 2000
+  file_path: api/validators.py
+  line_range:
+  - 273
+  - 303
+  context_summary: Inserted in project validation logic for description length constraint
+- item_id: target_005
+  inserted_text: JSON_INDENT_SPACES = 2
+  file_path: workers/report_generator.py
+  line_range:
+  - 218
+  - 245
+  context_summary: Inserted as JSON formatting configuration in report export method
+- item_id: target_006
+  inserted_text: PDF_COMPRESSION_LEVEL = 9
+  file_path: workers/report_generator.py
+  line_range:
+  - 218
+  - 245
+  context_summary: Inserted as PDF compression configuration in export method
+- item_id: target_007
+  inserted_text: ERROR_LOG_RETENTION_DAYS = 30
+  file_path: api/error_handlers.py
+  line_range:
+  - 326
+  - 355
+  context_summary: Inserted as error log retention policy in error handler registration
+- item_id: target_008
+  inserted_text: API_RESPONSE_TIMEOUT_SECONDS = 30
+  file_path: tests/test_api.py
+  line_range:
+  - 337
+  - 365
+  context_summary: Inserted as response timeout constant in API test suite
+- item_id: target_009
+  inserted_text: FIXTURE_POOL_SIZE = 10
+  file_path: tests/conftest.py
+  line_range:
+  - 285
+  - 310
+  context_summary: Inserted as database connection pool size in pytest configuration
+- item_id: target_010
+  inserted_text: AUDIT_LOG_BATCH_SIZE = 100
+  file_path: tests/test_db.py
+  line_range:
+  - 321
+  - 350
+  context_summary: Inserted as batch size constant in audit log test
+- item_id: target_011
+  inserted_text: PROJECT_CREATION_BATCH_SIZE = 50
+  file_path: api/routes.py
+  line_range:
+  - 263
+  - 290
+  context_summary: Inserted as batch size for project creation operations
+- item_id: target_012
+  inserted_text: API_VERSION_MAJOR = 2
+  file_path: api/__init__.py
+  line_range:
+  - 158
+  - 185
+  context_summary: Inserted as major version number in API documentation endpoint
+- item_id: target_013
+  inserted_text: API_VERSION_MINOR = 1
+  file_path: api/__init__.py
+  line_range:
+  - 158
+  - 185
+  context_summary: Inserted as minor version number in API documentation endpoint
+- item_id: target_014
+  inserted_text: SMTP_CONNECTION_TIMEOUT_SECONDS = 10
+  file_path: workers/email_worker.py
+  line_range:
+  - 53
+  - 85
+  context_summary: Inserted as SMTP timeout configuration in email worker initialization
+- item_id: target_015
+  inserted_text: SERVICE_QUERY_TIMEOUT_SECONDS = 25
+  file_path: tests/test_services.py
+  line_range:
+  - 186
+  - 215
+  context_summary: Inserted as query timeout constant in service test suite
+- item_id: target_016
+  inserted_text: MAX_RETRY_ATTEMPTS = 7
+  file_path: workers/retry_handler.py
+  line_range:
+  - 176
+  - 205
+  context_summary: Inserted as maximum retry attempts configuration in retry handler
+expected_answers:
+  question: 'Calculate the sum of all system configuration constants: TOKEN_EXPIRY_MINUTES, SESSION_TIMEOUT_MINUTES, MAX_PROJECT_NAME_LENGTH, MAX_DESCRIPTION_LENGTH, JSON_INDENT_SPACES, PDF_COMPRESSION_LEVEL, ERROR_LOG_RETENTION_DAYS, API_RESPONSE_TIMEOUT_SECONDS, FIXTURE_POOL_SIZE, AUDIT_LOG_BATCH_SIZE, PROJECT_CREATION_BATCH_SIZE, API_VERSION_MAJOR, API_VERSION_MINOR, SMTP_CONNECTION_TIMEOUT_SECONDS, SERVICE_QUERY_TIMEOUT_SECONDS, and MAX_RETRY_ATTEMPTS. What is the total?'
+  correctness: The answer must locate all 16 configuration constants by their exact variable names and include each value exactly once without duplication or omission.
+  completeness: 'A complete answer must: (1) identify all 16 needle locations across 7 different files, (2) extract the exact numeric values for each constant, (3) perform arithmetic summation correctly, and (4) report the final sum as 3987.'
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5

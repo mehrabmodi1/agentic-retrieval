@@ -1,0 +1,58 @@
+parametrisation_id: "multi_reasoning__noir_fiction__160k__easy__exact__n8"
+experiment_type: "multi_reasoning"
+generated_at: "2026-04-05T12:00:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 160000
+  discriminability: "easy"
+  reference_clarity: "exact"
+items:
+  - item_id: "target_001"
+    inserted_text: "Patricia mentions something she'd overheard from the hospital records room. \"By the way, Harvey was recruited into the Kaslan network on August 15, 1946. That's documented in police reports now. He lasted eighteen months before his conscience got the better of him.\""
+    file_path: "case_notes/day_05.md"
+    line_range: [47, 60]
+    context_summary: "Inserted after Patricia's direction statement, establishing Harvey's recruitment date and duration in the operation."
+  - item_id: "target_002"
+    inserted_text: "Dorothy paused, glancing at her notes. \"I should add that during that first consultation, I overheard enough to understand Mr. Harvey was deeply concerned about a specific painting—one valued at approximately $275,000, stolen from the widow of a man named Carl Vesper. That fact seemed central to his distress.\""
+    file_path: "witnesses/secretary_statement.md"
+    line_range: [13, 26]
+    context_summary: "Added to Dorothy's testimony about the first meeting, revealing the painting's monetary value and the Vesper connection."
+  - item_id: "target_003"
+    inserted_text: "And the ticket Jerry mentioned was for Boston on November 3rd—that's where the federal witness protection safe house is located in the Northeast district."
+    file_path: "witnesses/detective_debrief.md"
+    line_range: [38, 47]
+    context_summary: "Appended to Rossi's statement, specifying Harvey's train destination and its connection to federal witness protection."
+  - item_id: "target_004"
+    inserted_text: "Specifically, Marchetti secured a preliminary immunity agreement from federal prosecutors: full testimony about the Kaslan art network and recovery of stolen works in exchange for prosecution immunity. That was Harvey's way out, if he could execute it before Kaslan found out."
+    file_path: "witnesses/informant_interview.md"
+    line_range: [40, 43]
+    context_summary: "Elaborates Victor's account of Marchetti's legal strategy, detailing the federal immunity agreement terms."
+  - item_id: "target_005"
+    inserted_text: "That's how they recruit—they find young men with access to shipping and dock facilities, legitimate credentials, minimal connections. Men like Harvey. Easy to control, easy to disappear if they become problems."
+    file_path: "chapters/chapter_02.md"
+    line_range: [45, 52]
+    context_summary: "Inserted into Halstead's explanation, revealing Harvey's role as a young facilitator with shipping credentials."
+  - item_id: "target_006"
+    inserted_text: "Below that I scribbled: *Remember—Vesper murder five years unsolved. His widow's painting stolen. That's what broke Harvey. That's the moral trigger that made him want to escape the Kaslan operation. Unsolved murder + stolen art = conscience.*"
+    file_path: "chapters/chapter_01.md"
+    line_range: [61, 65]
+    context_summary: "Added to the detective's notebook, establishing the connection between the unsolved Vesper murder and the stolen painting."
+  - item_id: "target_007"
+    inserted_text: "But after the woman visited on October 23rd, the pacing stopped."
+    file_path: "witnesses/neighbor_statement.md"
+    line_range: [44, 45]
+    context_summary: "Edited Eleanor's statement to specify the exact date the redhead (Margot) visited, marking Harvey's turning point."
+  - item_id: "target_008"
+    inserted_text: "Eva hesitated. \"Yes, actually. There was a redheaded woman—beautiful, well-dressed. She came twice in that final week. I heard her in the hallway speaking with him about 'arrangements being confirmed' and 'Margot will make sure you get there safely.' Then she left, and he began packing.\""
+    file_path: "witnesses/landlady_statement.md"
+    line_range: [58, 61]
+    context_summary: "Replaced Eva's initial denial with confirmation of Margot's visits, establishing her role in arranging safe passage."
+expected_answers:
+  question: "What are the eight key pieces of evidence that document James Harvey's recruitment into the Kaslan art theft network, his moral crisis, and the arrangements made for his escape?"
+  correctness: "A complete answer must identify and connect all eight elements: (1) Harvey was recruited August 15, 1946 and lasted 18 months; (2) the stolen painting was valued at $275,000; (3) his train destination was Boston on November 3rd via federal witness protection; (4) federal prosecutors offered immunity in exchange for testimony; (5) Harvey worked as a young facilitator with shipping/dock credentials; (6) the moral trigger was Carl Vesper's unsolved five-year-old murder and theft from his widow; (7) the redhead Margot visited on October 23rd; (8) Margot arranged safe passage confirmations in final week."
+  completeness: "A complete answer requires finding all 8 distinct pieces of information across all 8 different files and synthesizing them into a coherent narrative of Harvey's 18-month involvement with Kaslan, his conscience crisis triggered by the Vesper connection, his legal consultation with immunity terms, and his planned escape facilitated by Margot to Boston witness protection."
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+  - criterion: "completeness"
+    weight: 0.5

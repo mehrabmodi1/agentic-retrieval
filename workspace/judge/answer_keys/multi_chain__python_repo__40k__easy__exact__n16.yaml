@@ -1,0 +1,162 @@
+parametrisation_id: multi_chain__python_repo__40k__easy__exact__n16
+experiment_type: multi_chain
+generated_at: '2026-04-03T09:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 40000
+  discriminability: easy
+  reference_clarity: exact
+items:
+- item_id: target_001
+  inserted_text: '# Pipeline marker: PIPELINE_STEP_01 -> see PIPELINE_STEP_02 in api/serializers.md
+
+    PIPELINE_STEP_01 = "next: PIPELINE_STEP_02 in api/serializers.md"'
+  file_path: api/rate_limiting.py
+  line_range:
+  - 26
+  - 27
+  context_summary: Inserted after the module-level logger definition and before the RateLimitError exception class.
+- item_id: target_002
+  inserted_text: '# Pipeline marker: PIPELINE_STEP_02 -> see PIPELINE_STEP_03 in api/validators.md
+
+    PIPELINE_STEP_02 = "next: PIPELINE_STEP_03 in api/validators.md"'
+  file_path: api/serializers.py
+  line_range:
+  - 38
+  - 39
+  context_summary: Inserted after the BaseSchema Meta class (strict = True) and before the UserSerializer class definition.
+- item_id: target_003
+  inserted_text: '# Pipeline marker: PIPELINE_STEP_03 -> see PIPELINE_STEP_04 in tests/fixtures.md
+
+    PIPELINE_STEP_03 = "next: PIPELINE_STEP_04 in tests/fixtures.md"'
+  file_path: api/validators.py
+  line_range:
+  - 29
+  - 30
+  context_summary: Inserted after the ValidationError class definition and before the Validators section comment header.
+- item_id: target_004
+  inserted_text: '# Pipeline marker: PIPELINE_STEP_04 -> see PIPELINE_STEP_05 in tests/test_api.md
+
+    PIPELINE_STEP_04 = "next: PIPELINE_STEP_05 in tests/test_api.md"'
+  file_path: tests/fixtures.py
+  line_range:
+  - 104
+  - 105
+  context_summary: Inserted after the TestDataBuilder.create_organization method return statement and before the AssertionHelpers class.
+- item_id: target_005
+  inserted_text: '# Pipeline marker: PIPELINE_STEP_05 -> see PIPELINE_STEP_06 in tests/test_auth.md
+
+    PIPELINE_STEP_05 = "next: PIPELINE_STEP_06 in tests/test_auth.md"'
+  file_path: tests/test_api.py
+  line_range:
+  - 17
+  - 18
+  context_summary: Inserted after the module imports and before the TestTaskAPI class decorator and definition.
+- item_id: target_006
+  inserted_text: '# Pipeline marker: PIPELINE_STEP_06 -> see PIPELINE_STEP_07 in tests/test_db.md
+
+    PIPELINE_STEP_06 = "next: PIPELINE_STEP_07 in tests/test_db.md"'
+  file_path: tests/test_auth.py
+  line_range:
+  - 22
+  - 23
+  context_summary: Inserted after the module imports (InvalidCredentialsError, UserAlreadyExistsError) and before the TestUserRegistration class.
+- item_id: target_007
+  inserted_text: '# Pipeline marker: PIPELINE_STEP_07 -> see PIPELINE_STEP_08 in tests/test_workers.md
+
+    PIPELINE_STEP_07 = "next: PIPELINE_STEP_08 in tests/test_workers.md"'
+  file_path: tests/test_db.py
+  line_range:
+  - 19
+  - 20
+  context_summary: Inserted after the hash_password import and before the TestUserModel class decorator and definition.
+- item_id: target_008
+  inserted_text: '# Pipeline marker: PIPELINE_STEP_08 -> see PIPELINE_STEP_09 in workers/cleanup_worker.md
+
+    PIPELINE_STEP_08 = "next: PIPELINE_STEP_09 in workers/cleanup_worker.md"'
+  file_path: tests/test_workers.py
+  line_range:
+  - 20
+  - 21
+  context_summary: Inserted after the sqlalchemy.orm Session import and before the TestTaskQueue class decorator and definition.
+- item_id: target_009
+  inserted_text: '# Pipeline marker: PIPELINE_STEP_09 -> see PIPELINE_STEP_10 in workers/report_generator.md
+
+    PIPELINE_STEP_09 = "next: PIPELINE_STEP_10 in workers/report_generator.md"'
+  file_path: workers/cleanup_worker.py
+  line_range:
+  - 32
+  - 33
+  context_summary: Inserted after the CleanupTask dataclass (target_directory field) and before the CleanupLog SQLAlchemy model class.
+- item_id: target_010
+  inserted_text: '# Pipeline marker: PIPELINE_STEP_10 -> see PIPELINE_STEP_11 in workers/retry_handler.md
+
+    PIPELINE_STEP_10 = "next: PIPELINE_STEP_11 in workers/retry_handler.md"'
+  file_path: workers/report_generator.py
+  line_range:
+  - 37
+  - 38
+  context_summary: Inserted after the ReportFormat enum (HTML = 'html') and before the ReportMetadata dataclass definition.
+- item_id: target_011
+  inserted_text: '# Pipeline marker: PIPELINE_STEP_11 -> see PIPELINE_STEP_12 in workers/sync_worker.md
+
+    PIPELINE_STEP_11 = "next: PIPELINE_STEP_12 in workers/sync_worker.md"'
+  file_path: workers/retry_handler.py
+  line_range:
+  - 31
+  - 32
+  context_summary: Inserted after the RetryStrategy enum (FIXED = 'fixed') and before the RetryReason enum class.
+- item_id: target_012
+  inserted_text: '# Pipeline marker: PIPELINE_STEP_12 -> see PIPELINE_STEP_13 in workers/task_runner.md
+
+    PIPELINE_STEP_12 = "next: PIPELINE_STEP_13 in workers/task_runner.md"'
+  file_path: workers/sync_worker.py
+  line_range:
+  - 34
+  - 35
+  context_summary: Inserted after the SyncDirection enum (BIDIRECTIONAL = 'bidirectional') and before the SyncStatus enum class.
+- item_id: target_013
+  inserted_text: '# Pipeline marker: PIPELINE_STEP_13 -> see PIPELINE_STEP_14 in api/rate_limiting.md
+
+    PIPELINE_STEP_13 = "next: PIPELINE_STEP_14 in api/rate_limiting.md"'
+  file_path: workers/task_runner.py
+  line_range:
+  - 40
+  - 41
+  context_summary: Inserted after the TaskStatus enum (CANCELLED = 'cancelled') and before the Task dataclass definition.
+- item_id: target_014
+  inserted_text: '# Pipeline marker: PIPELINE_STEP_14 -> see PIPELINE_STEP_15 in api/validators.md
+
+    PIPELINE_STEP_14 = "next: PIPELINE_STEP_15 in api/validators.md"'
+  file_path: api/rate_limiting.py
+  line_range:
+  - 177
+  - 178
+  context_summary: Inserted after the KeyGenerators.for_user_endpoint method return statement and before the rate_limit decorator function.
+- item_id: target_015
+  inserted_text: '# Pipeline marker: PIPELINE_STEP_15 -> see PIPELINE_STEP_16 in tests/fixtures.md
+
+    PIPELINE_STEP_15 = "next: PIPELINE_STEP_16 in tests/fixtures.md"'
+  file_path: api/validators.py
+  line_range:
+  - 181
+  - 182
+  context_summary: Inserted after the validate_pagination function return statement and before the validate_user_creation function definition.
+- item_id: target_016
+  inserted_text: '# Pipeline marker: PIPELINE_STEP_16 is the terminal node in the chain
+
+    PIPELINE_STEP_16 = "COBALT_PHOENIX_9"'
+  file_path: tests/fixtures.py
+  line_range:
+  - 314
+  - 315
+  context_summary: Inserted after the JSONTestDataFactory class closing brace and before the data_builder pytest fixture definition.
+expected_answers:
+  question: Starting from PIPELINE_STEP_01 in api/rate_limiting.md, follow the chain of PIPELINE_STEP references across files. What is the final value stored in PIPELINE_STEP_16?
+  correctness: COBALT_PHOENIX_9
+  completeness: 'A complete answer identifies ''COBALT_PHOENIX_9'' as the string value of PIPELINE_STEP_16, reached by following the 16-step chain: PIPELINE_STEP_01 (api/rate_limiting.md) -> PIPELINE_STEP_02 (api/serializers.md) -> PIPELINE_STEP_03 (api/validators.md) -> PIPELINE_STEP_04 (tests/fixtures.md) -> PIPELINE_STEP_05 (tests/test_api.md) -> PIPELINE_STEP_06 (tests/test_auth.md) -> PIPELINE_STEP_07 (tests/test_db.md) -> PIPELINE_STEP_08 (tests/test_workers.md) -> PIPELINE_STEP_09 (workers/cleanup_worker.md) -> PIPELINE_STEP_10 (workers/report_generator.md) -> PIPELINE_STEP_11 (workers/retry_handler.md) -> PIPELINE_STEP_12 (workers/sync_worker.md) -> PIPELINE_STEP_13 (workers/task_runner.md) -> PIPELINE_STEP_14 (api/rate_limiting.md) -> PIPELINE_STEP_15 (api/validators.md) -> PIPELINE_STEP_16 (tests/fixtures.md) = ''COBALT_PHOENIX_9''.'
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5

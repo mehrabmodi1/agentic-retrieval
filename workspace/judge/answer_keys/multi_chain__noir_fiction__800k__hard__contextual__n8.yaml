@@ -1,0 +1,67 @@
+parametrisation_id: "multi_chain__noir_fiction__800k__hard__contextual__n8"
+experiment_type: "multi_chain"
+generated_at: "2026-04-06T00:00:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 800000
+  discriminability: "hard"
+  reference_clarity: "contextual"
+items:
+  - item_id: "target_001"
+    inserted_text: "But Margot alone couldn't have arranged safe passage out of the country—someone had to coordinate the shipping logistics, the dock credentials, the international connections. That someone was the man who visited Harvey repeatedly. He left an envelope. The bartender said Harvey seemed shaken after learning about a meeting place—the Starlight Motor Inn, room fourteen. That's where the first link in the escape chain began."
+    file_path: "witnesses/detective_debrief.md"
+    line_range: [53, 56]
+    context_summary: "Inserted after speculation about Margot as facilitator, pointing to the older man visitor and the Starlight Motor Inn as the logistics coordinator's meeting place."
+
+  - item_id: "target_002"
+    inserted_text: "And he said something I caught—'the Starlight Motor Inn, room fourteen, the key's under the mat.' Not a lover's meeting. A dead drop. A logistics point. Someone had prepared that room in advance, which meant someone with resources beyond the Crimson Door was already arranging Harvey's exit before that redhead even walked through the door."
+    file_path: "witnesses/bartender_statement.md"
+    line_range: [38, 42]
+    context_summary: "Embedded in Deke's description of Harvey's interaction with the mysterious woman, clarifying that the Starlight Motor Inn was a pre-arranged logistics point."
+
+  - item_id: "target_003"
+    inserted_text: "The man who came to 3F—he was the one coordinating Harvey's exit. The way he moved, cataloging the building and its people, taking inventory as if he needed to report every detail—he was assessing whether Harvey could use the building as a safe house or drop point. But more likely, he was confirming Harvey was ready to move. The heavy folder he carried, the one marked 'V.A.' on the spine—those were the logistics documents. Tickets, credentials, bank notes arranged through a shipping company in the harbor district."
+    file_path: "witnesses/landlady_statement.md"
+    line_range: [30, 34]
+    context_summary: "Inserted into Eva's description of the mysterious man visitor, identifying him as the logistics coordinator and the folder as containing travel documents."
+
+  - item_id: "target_004"
+    inserted_text: "The old guy didn't talk because he didn't have to. The pickup to Oak Hill—that was a surveillance confirmation, I realized later. He was checking whether Harvey still had his nerve for the move. When he put that hand on Harvey's shoulder before getting out, he was confirming the timeline. The Starlight Motor Inn was the staging point. Oak Hill was the observation post. But the real destination—the one nobody was supposed to know about—that information was in the folder marked 'V.A.' which stood for Victor Ashford's shipping network. That was the exit route."
+    file_path: "witnesses/cab_driver_statement.md"
+    line_range: [31, 37]
+    context_summary: "Embedded in Jerry's description of the ride with Harvey and the older man, identifying the broader escape logistics involving Ashford's shipping network."
+
+  - item_id: "target_005"
+    inserted_text: "The painting was the leverage. When Harvey stole his conscience and wanted to return the Vesper painting, he wasn't just trying to clear his conscience—he was negotiating his exit price with Kaslan. Return the painting, and Kaslan agrees to let him go cleanly through Victor Ashford's channels. Ashford runs shipping. He can move people the same way he moves merchandise. The agreement was: the painting goes back to Vesper's widow, Harvey's debt is paid, and Margot—Kaslan's acquisition specialist—arranges the handoff while Ashford arranges the transportation."
+    file_path: "witnesses/informant_interview.md"
+    line_range: [35, 42]
+    context_summary: "Inserted into Victor's explanation of Harvey's conscience crisis, revealing the full three-way agreement between Harvey, Kaslan/Margot, and Ashford."
+
+  - item_id: "target_006"
+    inserted_text: "The consulting agreement in the files—the one signed by 'V. Ashford'—it wasn't about legal consultation at all. Mr. Marchetti was facilitating the arrangement. He was documenting the terms under attorney-client privilege so nobody could follow the paper trail. Ashford wanted Marchetti to witness the agreement: Harvey returns the painting, Kaslan receives it back into his network through Margot, and Ashford provides the transportation out using his dock credentials and shipping manifests. The agreement specified three meetings: to draft the terms, to refine the exit logistics, and to confirm the final arrangements. Harvey's deteriorating demeanor reflected the weight of what he was agreeing to—betrayal of his employers in exchange for his life."
+    file_path: "witnesses/secretary_statement.md"
+    line_range: [15, 22]
+    context_summary: "Inserted into Dorothy's description of Harvey's three visits, reframing them as documented stages of the escape agreement."
+
+  - item_id: "target_007"
+    inserted_text: "Helen's words stuck with me: 'the network extended beyond any single person or operation.' But by then I understood. Harvey had escaped through Victor Ashford's shipping operation—using the Starlight Motor Inn as a staging point, with Margot as the intermediary, with Attorney Marchetti as the witness who'd documented the arrangement, and with Sinclair enforcing silence through intimidation. The painting's return three days before Harvey's disappearance wasn't coincidence. It was the final condition being met. Harvey hadn't been killed. He'd been released. The question was: released by whom, and for what cost beyond the painting?"
+    file_path: "case_notes/day_08.md"
+    line_range: [125, 135]
+    context_summary: "Inserted into the reflection on power structures, revealing that Harvey escaped through Ashford's shipping operation as part of a documented agreement."
+
+  - item_id: "target_008"
+    inserted_text: "It wasn't until after the case had tangled itself into knots that I understood what Halstead's original call really meant. He'd hired me not just to find Catherine, but because his daughter's kidnapping was connected to Harvey's disappearance, and both were connected to the Vesper painting, and all of it traced back to Victoria Ashford's shipping operation and the men who used it to move things that couldn't be moved through normal channels. When Halstead said he hadn't called the police, he was telling me the people who took Catherine had also been the people arranging Harvey's exit. Same network. Same infrastructure. Catherine's kidnapping was the price the organization demanded for letting Harvey go. That's what Halstead was afraid of—not just that his daughter was taken, but that she'd been taken as payment for someone else's freedom."
+    file_path: "chapters/chapter_01.md"
+    line_range: [18, 28]
+    context_summary: "Inserted into Shepherd's initial conversation with Halstead, revealing that Harvey's escape and Catherine's kidnapping were part of the same transaction."
+
+expected_answers:
+  question: "Starting from Detective Morello's debrief about Harvey's escape, trace the arrangement that allowed him to leave the city. Who provided the logistics, where was the staging point, and what was the price Harvey paid for his freedom?"
+  correctness: "A correct answer must identify at least three elements: (1) Victor Ashford's shipping operation as the exit logistics provider, (2) the Starlight Motor Inn as the staging point for the arrangement, and (3) the return of the stolen Vesper painting as the exchange price. Must show understanding that the escape was a negotiated agreement, not a kidnapping or death."
+  completeness: "A complete answer traces the full chain: Harvey's conscience crisis → consultation with attorney Marchetti → negotiation through Margot/Kaslan → documentation of the deal → staging at Starlight Motor Inn → logistics through Ashford's shipping network → painting returned as payment. Should recognize that Catherine Halstead's kidnapping was the organization's payment to Kaslan/Ashford for allowing Harvey to disappear cleanly."
+
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+  - criterion: "completeness"
+    weight: 0.5

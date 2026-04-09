@@ -1,0 +1,131 @@
+parametrisation_id: "multi_chain__noir_fiction__40k__hard__synonym__n16"
+experiment_type: "multi_chain"
+generated_at: "2026-04-05T14:32:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 40000
+  discriminability: "hard"
+  reference_clarity: "synonym"
+items:
+  - item_id: "target_001"
+    inserted_text: "Before he leaves, I hear him say something to Mr. Harvey on the stairs—something about the secretary knows more than she should. Find her in the building on Fifth Avenue."
+    file_path: "witnesses/landlady_statement.md"
+    line_range: [32, 33]
+    context_summary: "Inserted cryptic instruction from visitor about secretary needing to be found, establishing first link in chain."
+    next_reference: "secretary on Fifth Avenue"
+
+  - item_id: "target_002"
+    inserted_text: "And then, in a lower voice, he said something I wasn't meant to hear: Tell him the answer is waiting where good money becomes legitimate business. The Paradise keeps its secrets in the basement vaults."
+    file_path: "witnesses/secretary_statement.md"
+    line_range: [48, 51]
+    context_summary: "Secretary reports overhearing Marchetti's cryptic message about Paradise nightclub location."
+    next_reference: "Paradise nightclub basement"
+
+  - item_id: "target_003"
+    inserted_text: "But what I find is even more interesting: the Paradise's basement has been renovated three times in the last two years—expensive work, done quietly. The contractor records show payments to someone named Sinclair, always in cash. And there's a notation in the deed: Restricted access—art storage facility, not for commercial display. The location is very specific: under the floorboards, where the old wine cellar used to be, approximately sixteen feet down beneath the main bar."
+    file_path: "case_notes/day_03.md"
+    line_range: [20, 25]
+    context_summary: "Investigator discovers Paradise's secret art storage facility with specific depth measurements and Sinclair connection."
+    next_reference: "Oak Hill address"
+
+  - item_id: "target_004"
+    inserted_text: "The cellar stairs are not hard to find—they're behind the kitchen, locked with a chain. Sylvia sees me looking at them and smiles. That's where they keep the really expensive inventory. The Castellanos and their friends. I don't go down there. Not my business. But I know that Sinclair's been down there every Wednesday at midnight, collecting things or moving them. There's always a car waiting outside, engine running, during those visits. Sometimes he comes out carrying small crates, wrapped carefully like they contain something that shouldn't see daylight."
+    file_path: "case_notes/day_02.md"
+    line_range: [56, 60]
+    context_summary: "Manager reveals crate movements and pattern of Wednesday midnight collections from Paradise basement."
+    next_reference: "crates transported to residential address"
+
+  - item_id: "target_005"
+    inserted_text: "I ask him about the crates that Sinclair moves from the warehouse. Paulie looks around and leans in close. Those are art shipments. I've handled the paperwork. They come from the Castellano network and get transported to a private address—somewhere in the residential district. I think it's Oak Hill, but I'm not sure exactly where. All I know is that whoever owns that place, they've got serious money and serious protection. Cops don't ask questions about it. City officials avoid it. The place is a fortress, and whatever goes there doesn't come back out again."
+    file_path: "case_notes/day_04.md"
+    line_range: [108, 116]
+    context_summary: "Harbor worker identifies Oak Hill as final destination for art crates with high-level protection."
+    next_reference: "Oak Hill number seventeen"
+
+  - item_id: "target_006"
+    inserted_text: "He pauses, then adds in a voice barely above a whisper: And inside the envelope, you'll find something else—a note with an address. Oak Hill address, number seventeen. That's where they keep the valuable pieces. The paintings, the sculptures, the things that were stolen from people who had more sentimental value for them than market value. One of those pieces came from the widow of a banker named Vesper. That painting has been their leverage for years."
+    file_path: "case_notes/day_05.md"
+    line_range: [95, 98]
+    context_summary: "Mercer reveals specific Oak Hill address and mentions Vesper painting as network's leverage."
+    next_reference: "Vesper painting and hidden ledger"
+
+  - item_id: "target_007"
+    inserted_text: "Chen notices the address written on Mercer's note. Oak Hill, seventeen, he reads aloud. That's interesting. I've been trying to find out who owns that property for months. It's registered to a corporation that doesn't officially exist—on paper, yes, but no real operations. Whatever happens at that address stays private. But I have a source who says that's where the serious stolen art gets stored before international shipment. If you want proof of what Sinclair's operation really is, that's where you'll find it."
+    file_path: "case_notes/day_06.md"
+    line_range: [62, 64]
+    context_summary: "Reporter confirms Oak Hill as central art storage facility for Sinclair operation."
+    next_reference: "private art storage vault"
+
+  - item_id: "target_008"
+    inserted_text: "He leaned down and said something before he took his hand away. Bar was quiet that night, and I caught a few words clear enough—'the Starlight Motor Inn, room fourteen, the key's under the mat. But before you go, you need to understand something: the painting that's been stored at Oak Hill—the Vesper painting—that's your ticket out. Get it, return it to the family, and Margot will arrange safe passage.' Said it like giving directions, real matter-of-fact. The kid nodded once, didn't write it down. The kind of thing a man memorizes because he knows he'll need it. And that's the last I saw of him."
+    file_path: "witnesses/bartender_statement.md"
+    line_range: [42, 43]
+    context_summary: "Bartender overhears instruction to retrieve Vesper painting as escape condition."
+    next_reference: "Vesper painting recovery"
+
+  - item_id: "target_009"
+    inserted_text: "A package arrived this morning. No postage, no return address. Just left on the front step. Another pause. It contained a photograph. It was Catherine, but... she was frightened. There was a note. The note said: 'Your daughter has been photographed in the storage facility where expensive things are kept. The facility is beneath the earth, guarded and secret. If you want her back alive, you need to understand what she learned about the older man. He visits a place on Oak Hill regularly. That's where the art collection stays—stolen, valuable, and absolutely essential to his operation. Your daughter is collateral because she knows about his connections to that place.'"
+    file_path: "chapters/chapter_01.md"
+    line_range: [40, 44]
+    context_summary: "Kidnapping note explicitly references Oak Hill vault and Catherine's unwanted discovery of hidden art collection."
+    next_reference: "underground vault beneath Oak Hill"
+
+  - item_id: "target_010"
+    inserted_text: "You have to find her before they contact me again. You have to find her before they ask for something I can't give them. The men I've dealt with—they're not acting independently. There's a structure, a hierarchy. Someone above Sinclair, someone orchestrating these operations. Someone who makes decisions that people like Sinclair execute. That's the real power in this city. And that power lives in a house on Oak Hill—number seventeen—where the stolen art is kept in a climate-controlled vault beneath the main residence. That's what Catherine saw. That's what got her taken. Someone photographed her inside that vault, standing in front of paintings that have been missing from museums and family estates for years."
+    file_path: "chapters/chapter_02.md"
+    line_range: [39, 40]
+    context_summary: "Halstead confirms Oak Hill vault location and Catherine's dangerous knowledge of underground art collection."
+    next_reference: "third shelf left corner vault"
+
+  - item_id: "target_011"
+    inserted_text: "Catherine was dating someone, Eleanor said finally. She's been seeing him for a few months. She was very secretive about it, wouldn't tell us his name or much about him. But she was happy about it. We assumed it was going somewhere serious. That was the kind of detail that changed everything. A secret boyfriend was either completely innocent or the key to the entire puzzle. Do any of you know who this man is? Susan exchanged a glance with the others. We heard his friends call him 'H' once. He took Catherine to some kind of private showing—artwork, she said, though she wouldn't tell us where. She mentioned it was 'beneath the public eye, stored away, worth a fortune.' She said the man took her down into a vault and showed her paintings. She seemed both impressed and frightened. She said, 'He showed me where everything of value gets kept. He showed me his world, and it's not the world I thought he lived in.' After that, she became distant, worried. She knew too much about that basement on Oak Hill."
+    file_path: "chapters/chapter_03.md"
+    line_range: [33, 37]
+    context_summary: "Friends reveal Catherine was shown underground vault containing stolen paintings by mysterious man 'H'."
+    next_reference: "false panel in vault"
+
+  - item_id: "target_012"
+    inserted_text: "Then, about three weeks ago, something shifted. The entries became worried. H is different lately. Distracted. When I ask him what's wrong, he changes the subject or holds me without answering. I think something is happening in his business. Something serious. But he won't tell me what it is. He says it's better if I don't know. Says it's to protect me. But it feels like being kept in the dark. How can I help him if I don't understand what's happening? He took me to Oak Hill today, to the vault again. He was frantic, checking things, moving things. He showed me a painting—a fifteenth-century piece, he said. It belonged to a banker's widow, he told me. He said he'd made a terrible mistake being involved with taking it. He said if anything happened to him, I should know that the painting is hidden in a false panel behind the main storage shelves. He made me memorize the location: third shelf, left corner, beneath the portrait of a woman in blue."
+    file_path: "chapters/chapter_04.md"
+    line_range: [23, 26]
+    context_summary: "Catherine's diary reveals Harvey's secret instructions about hidden Vesper painting in third shelf false panel."
+    next_reference: "leather-bound ledger in false panel"
+
+  - item_id: "target_013"
+    inserted_text: "In exchange for what? The painting? Let me be clear on the details: the Vesper painting—the fifteenth-century work stolen from Carl Vesper's widow—has been stored in a climate-controlled vault at Oak Hill, location seventeen. That's our missing piece. That vault is where Catherine Halstead was photographed by Sinclair's people, using her as leverage against her father. That vault is where the entire operation's value resides. If Harvey wanted to secure safe passage, he would have needed to arrange for that painting to be recovered and returned, breaking the network's insurance policy. The painting wasn't just an artwork. It was collateral. It was leverage. And it became Harvey's bargaining chip."
+    file_path: "witnesses/detective_debrief.md"
+    line_range: [46, 48]
+    context_summary: "Police debrief connects Vesper painting to Harvey's negotiated escape plan and network leverage system."
+    next_reference: "painting returned to library steps"
+
+  - item_id: "target_014"
+    inserted_text: "That's the interesting part, Victor said, and for the first time there was something like satisfaction in his voice. The painting was recovered. Three days ago, it was found leaning against the steps of the public library downtown. It was wrapped in museum-quality archival cloth, secured with cord—the kind of care a professional conservator would use. There was a note attached that said, 'Property of the Vesper Estate. Return to family of Carl Vesper with apologies. This painting came from the vault at Oak Hill, location seventeen, where many other stolen works are being held. All records of its location and condition are catalogued in a leather-bound ledger hidden beneath the false panel on the third shelf, left corner, where the painting itself was stored. That ledger contains the names, locations, and values of every stolen artwork in the network. It also contains the truth about what happened to Sinclair's other leverage—the girl named Catherine who was photographed there.' No signature. But here's what's significant: the handwriting on the note—precise, educated, meticulous—matches samples of Harvey's writing that we recovered from his apartment. Harvey didn't just secure his own escape. He buried the entire operation by recovering the painting and revealing the ledger's location."
+    file_path: "witnesses/informant_interview.md"
+    line_range: [66, 70]
+    context_summary: "Informant reports Vesper painting recovery with note revealing hidden ledger location in third shelf false panel."
+    next_reference: "leather-bound ledger with all operation records"
+
+  - item_id: "target_015"
+    inserted_text: "The headline reads: CITY'S IMPORT OPERATION TIED TO ORGANIZED MONEY LAUNDERING—STOLEN ART VAULT DISCOVERED AT OAK HILL RESIDENCE. Chen's investigation has found the vault. Police have secured warrants. They've opened the false panel on the third shelf, left corner. They've found the leather-bound ledger. And they've started processing the paintings—over forty stolen artworks, each documented, each catalogued, each representing a crime that can now be traced and prosecuted."
+    file_path: "case_notes/day_07.md"
+    line_range: [8, 14]
+    context_summary: "Chronicle publishes discovery of Oak Hill vault with reference to false panel location containing comprehensive ledger."
+    next_reference: "comprehensive documentary evidence"
+
+  - item_id: "target_016"
+    inserted_text: "Catherine Halstead is found safe. She'd been held in a secure room at Oak Hill—not in danger, but as living insurance against investigation. When police breach the vault, they find her there, frightened but unharmed. She's able to provide testimony about everything she saw: the paintings, the ledger, the names in the documentation. Her father's mysterious business associate 'H' was James Harvey, and his decision to cooperate with authorities and orchestrate the recovery of the Vesper painting was his way of protecting Catherine and dismantling the network that had placed her in danger. The ledger at Oak Hill—hidden in the false panel on the third shelf, left corner, exactly where Harvey said it would be—becomes the centerpiece of the prosecution. Every stolen artwork can now be traced. Every name in the operation can now be prosecuted. Every location where art was stored or moved can now be secured."
+    file_path: "case_notes/day_08.md"
+    line_range: [52, 58]
+    context_summary: "Final entry confirms discovery of leather-bound ledger in third shelf false panel containing complete operation documentation."
+    next_reference: "[FINAL - CHAIN RESOLVES]"
+
+expected_answers:
+  question: "Starting from the landlady's observation about the visitor's cryptic instruction regarding the secretary, follow the trail of references through subsequent discoveries. What specific location and specific item within that location contain the complete documented evidence that finally breaks the entire criminal network?"
+  correctness: "Answer must identify BOTH: (1) The location as Oak Hill (number seventeen) or 'Oak Hill address seventeen'; AND (2) The specific item/location within as 'leather-bound ledger' or 'ledger' AND 'false panel' or 'hidden panel' AND 'third shelf, left corner' OR 'third shelf left corner'"
+  completeness: "Complete answer covers the hierarchical location (Oak Hill vault → false panel → third shelf left corner → leather-bound ledger) and recognizes that this ledger contains the complete operational documentation that enables prosecution of all crimes and identification of all conspirators"
+
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+  - criterion: "completeness"
+    weight: 0.5

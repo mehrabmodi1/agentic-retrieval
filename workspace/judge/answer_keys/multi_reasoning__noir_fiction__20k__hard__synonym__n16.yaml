@@ -1,0 +1,134 @@
+parametrisation_id: "multi_reasoning__noir_fiction__20k__hard__synonym__n16"
+experiment_type: "multi_reasoning"
+generated_at: "2026-04-05T00:00:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 20000
+  discriminability: "hard"
+  reference_clarity: "synonym"
+items:
+  - item_id: "target_001"
+    inserted_text: "handling containerized goods worth millions annually"
+    file_path: "case_notes/day_04.md"
+    line_range: [89, 91]
+    context_summary: "Extends description of Victor Ashford's import business scale and operations"
+
+  - item_id: "target_002"
+    inserted_text: "with registered agents in Delaware and Panama"
+    file_path: "case_notes/day_04.md"
+    line_range: [95, 97]
+    context_summary: "Specifies international shell company jurisdictions used by the organization"
+
+  - item_id: "target_003"
+    inserted_text: "specifically warehouses numbered 7 through 12 along Pier Road"
+    file_path: "case_notes/day_04.md"
+    line_range: [95, 97]
+    context_summary: "Identifies specific warehouse locations in harbor district where victims were taken"
+
+  - item_id: "target_004"
+    inserted_text: "at 447 Maritime Court"
+    file_path: "case_notes/day_04.md"
+    line_range: [95, 97]
+    context_summary: "Reveals the P.O. box address used for financial records"
+
+  - item_id: "target_005"
+    inserted_text: "handling all offshore account transfers and acquisitions for the organization"
+    file_path: "case_notes/day_04.md"
+    line_range: [99, 101]
+    context_summary: "Establishes Sinclair's role as financial operations manager for the crime network"
+
+  - item_id: "target_006"
+    inserted_text: "young women, all of them, all disappearing into the harbor district operations"
+    file_path: "case_notes/day_04.md"
+    line_range: [105, 107]
+    context_summary: "Indicates multiple female victims and warehouse trafficking pattern"
+
+  - item_id: "target_007"
+    inserted_text: "My daughter was twenty-one years old, Detective. Blonde hair. She had dreams of working in architecture."
+    file_path: "case_notes/day_02.md"
+    line_range: [129, 133]
+    context_summary: "Provides identifying details of first victim Claire Hollister"
+
+  - item_id: "target_008"
+    inserted_text: "Margaret Hollister's real estate company has moved millions through shell corporations, suggesting either her involvement or her manipulation by powerful parties"
+    file_path: "case_notes/day_02.md"
+    line_range: [138, 140]
+    context_summary: "Links victim's parent to financial structures of the criminal enterprise"
+
+  - item_id: "target_009"
+    inserted_text: "a dark-haired young woman who'd been seen with Vincent the night before"
+    file_path: "case_notes/day_03.md"
+    line_range: [80, 82]
+    context_summary: "Identifies second victim appearance and connections"
+
+  - item_id: "target_010"
+    inserted_text: "Victor Ashford, someone who makes the Castellano family look like street hustlers. Ashford's the real power in this city. Sinclair's just his blade"
+    file_path: "case_notes/day_03.md"
+    line_range: [92, 94]
+    context_summary: "Establishes Sinclair's subordinate role to crime boss Ashford"
+
+  - item_id: "target_011"
+    inserted_text: "Victor Ashford controls shipping. Sinclair controls the people. Together, they control what happens to girls who know too much"
+    file_path: "case_notes/day_03.md"
+    line_range: [100, 102]
+    context_summary: "Reveals organizational structure and targeting methodology"
+
+  - item_id: "target_012"
+    inserted_text: "She was taken from the Paradise by Sinclair, transported to the warehouses, and she never came out"
+    file_path: "case_notes/day_03.md"
+    line_range: [104, 106]
+    context_summary: "Documents first victim's final movements and suspected fate"
+
+  - item_id: "target_013"
+    inserted_text: "specifically fibers consistent with the dress Claire was last seen wearing"
+    file_path: "case_notes/day_07.md"
+    line_range: [75, 77]
+    context_summary: "Provides forensic linkage between victim's clothing and perpetrator"
+
+  - item_id: "target_014"
+    inserted_text: "Something involving warehouses and shipping and money that he seems ashamed to have"
+    file_path: "chapters/chapter_04.md"
+    line_range: [43, 45]
+    context_summary: "Second victim Catherine's journal references her lover's criminal involvement"
+
+  - item_id: "target_015"
+    inserted_text: "But his questions kept returning to how one shields personal assets from legal discovery, how shell companies protect beneficial owners"
+    file_path: "witnesses/secretary_statement.md"
+    line_range: [20, 23]
+    context_summary: "Documents lawyer James Harvey receiving instructions on asset protection for the organization"
+
+  - item_id: "target_016"
+    inserted_text: "He came to the office at lunch and asked if Mr. Marchetti could see him immediately, urgently. He waited forty minutes, and during that wait, he did not sit still. He paced the reception area. He checked the elevator repeatedly. He kept checking his watch. He seemed to be waiting for someone—or waiting for news about someone—as though the appointment itself was merely a means to an end"
+    file_path: "witnesses/secretary_statement.md"
+    line_range: [31, 37]
+    context_summary: "Shows escalating distress of legal intermediary once victims are reported missing"
+
+expected_answers:
+  question: "Reconstruct the complete criminal organization: Who was the mastermind and his lieutenant? What legitimate business concealed the operation? Where did the trafficking occur? Who were the victims? How were finances laundered? What evidence ultimately connected the perpetrator to the crimes?"
+  correctness: |
+    A correct answer must identify:
+    - Victor Ashford as the crime boss/mastermind
+    - Charles Sinclair as his financial advisor and operational lieutenant
+    - Shipping/import business as the commercial front
+    - Harbor district warehouses (7-12 Pier Road) as trafficking locations
+    - Shell companies in Delaware/Panama with P.O. box 447 Maritime Court
+    - Two identified victims: Claire Hollister (21, blonde) and Catherine Halstead (23, blonde)
+    - Multiple other young female victims trafficked through the operation
+    - Margaret Hollister's real estate company involvement in money laundering
+    - James Harvey and Thomas Mercer as legal representatives coerced into facilitating the enterprise
+    - Jewelry (bracelet with pearls, sapphire ring) and fiber evidence linking Sinclair to Claire Hollister
+    - Sinclair as the operator who physically took victims and delivered them to warehouses
+  completeness: |
+    A complete answer must synthesize information from multiple sources showing:
+    1. The hierarchy: Ashford (power) → Sinclair (operations/finance) → Mercer/Harvey (legal cover)
+    2. The financial apparatus: Shell corporations, real estate laundering, offshore accounts
+    3. The physical infrastructure: Specific warehouse numbers, pier location, transport routes
+    4. The victims: At least two named with identifying details, plus evidence of pattern
+    5. The evidence: Both circumstantial (financial records, property ownership) and forensic (jewelry, fiber)
+    6. The methods: Coercion of professionals, use of legitimate businesses, targeting of isolated young women
+
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+  - criterion: "completeness"
+    weight: 0.5

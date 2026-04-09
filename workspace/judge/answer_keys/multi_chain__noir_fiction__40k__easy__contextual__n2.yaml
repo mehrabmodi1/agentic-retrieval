@@ -1,0 +1,28 @@
+parametrisation_id: "multi_chain__noir_fiction__40k__easy__contextual__n2"
+experiment_type: "multi_chain"
+generated_at: "2026-04-05T00:00:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 40000
+  discriminability: "easy"
+  reference_clarity: "contextual"
+items:
+  - item_id: "target_001"
+    inserted_text: "There's something else. Mercer kept documentation—video recordings from Sinclair's private office, filed under the reference label 'archive_alpha'. He preserved them by copying the files before Sinclair could destroy the originals. He's willing to turn them over."
+    file_path: "case_notes/day_06.md"
+    line_range: [26, 29]
+    context_summary: "Inserted into Helen's explanation of Mercer's evidence, introducing the video recordings labeled 'archive_alpha' as the critical preserved documentation."
+  - item_id: "target_002"
+    inserted_text: "Before the arrest is even processed, Morris calls me. \"We found them,\" he says. \"The video files. The ones Mercer called archive_alpha. They were in a safety deposit box at First National, and we had to move fast before Sinclair's lawyers got wind of it. Helen's right—it's all there. Sinclair on tape, in his office, telling one of the operatives: 'The Hollister situation is becoming a complication. It needs to be resolved within the week. Make sure there's no connection back to this office.' Clear as day. No room for interpretation.\""
+    file_path: "case_notes/day_07.md"
+    line_range: [8, 10]
+    context_summary: "Inserted after evidence discovery, revealing what the archive_alpha recordings contain—Sinclair's explicit recorded instructions regarding Claire Hollister's elimination."
+expected_answers:
+  question: "In day_06.md, Helen mentions that Mercer has preserved video documentation filed under a specific reference label. Following that evidence chain to its discovery in day_07.md, what does that documentation ultimately reveal about Sinclair's involvement in the Hollister situation?"
+  correctness: "A correct answer must identify that the video recordings (archive_alpha) contain Sinclair's explicit instruction to eliminate the Hollister situation or Claire Hollister specifically. The answer should reference either the specific quote ('resolved within the week', 'Hollister situation', 'complication') or the substance that Sinclair gave a direct order."
+  completeness: "A complete answer covers the entire chain: (1) the evidence is introduced in day_06 as video recordings labeled archive_alpha that Mercer preserved, (2) those recordings are discovered in day_07 in a safety deposit box, and (3) the recordings contain Sinclair's recorded instruction to resolve the Hollister situation. The answer should clearly indicate this is the endpoint/resolution of the chain."
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+  - criterion: "completeness"
+    weight: 0.5

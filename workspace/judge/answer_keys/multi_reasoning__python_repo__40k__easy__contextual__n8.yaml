@@ -1,0 +1,74 @@
+parametrisation_id: multi_reasoning__python_repo__40k__easy__contextual__n8
+experiment_type: multi_reasoning
+generated_at: '2026-04-05T00:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 40000
+  discriminability: easy
+  reference_clarity: contextual
+items:
+- item_id: target_001
+  inserted_text: MAX_API_KEY_LENGTH = 256
+  file_path: api/auth.py
+  line_range:
+  - 190
+  - 191
+  context_summary: API key length limit constant defined in validate_api_key method
+- item_id: target_002
+  inserted_text: BATCH_SIZE_LIMIT = 512
+  file_path: tests/test_workers.py
+  line_range:
+  - 108
+  - 109
+  context_summary: Batch size limit for bulk import operations in test configuration
+- item_id: target_003
+  inserted_text: DEFAULT_WORKER_THREADS = 8
+  file_path: workers/task_runner.py
+  line_range:
+  - 118
+  - 119
+  context_summary: Default worker thread count in TaskRunner initialization
+- item_id: target_004
+  inserted_text: MAX_RECORDS_PER_EXPORT = 1024
+  file_path: workers/report_generator.py
+  line_range:
+  - 213
+  - 214
+  context_summary: Maximum records allowed in single JSON export operation
+- item_id: target_005
+  inserted_text: NOTIFICATION_QUEUE_SIZE = 256
+  file_path: tests/test_services.py
+  line_range:
+  - 260
+  - 261
+  context_summary: Maximum notification queue capacity in notification service tests
+- item_id: target_006
+  inserted_text: MAX_RETRY_ATTEMPTS = 5
+  file_path: workers/retry_handler.py
+  line_range:
+  - 175
+  - 176
+  context_summary: Maximum number of retry attempts for failed tasks in retry policy
+- item_id: target_007
+  inserted_text: MAX_URL_LENGTH = 2048
+  file_path: api/validators.py
+  line_range:
+  - 138
+  - 139
+  context_summary: Maximum URL length validation limit in URL validator function
+- item_id: target_008
+  inserted_text: DEFAULT_PAGE_SIZE = 100
+  file_path: api/routes.py
+  line_range:
+  - 318
+  - 319
+  context_summary: Default pagination size for list_projects endpoint
+expected_answers:
+  question: 'A development team is planning system resource allocation across multiple components. They need to calculate the total sum of all maximum configured buffer and capacity limits defined throughout the system''s core services. What is the combined total capacity when adding together: API key validation length limits, batch processing size constraints, worker thread allocations, export record limits, notification queue capacity, task retry thresholds, URL validation boundaries, and default pagination parameters?'
+  correctness: The answer must identify and sum all 8 specific numeric capacity values found in the system configuration. Correct answer is 4,415 (256 + 512 + 8 + 1024 + 256 + 5 + 2048 + 100).
+  completeness: 'A complete answer must: (1) locate all 8 configuration values across the different service layers, (2) correctly identify each numeric value, (3) perform accurate arithmetic summation, (4) provide the final total, and (5) optionally map each value to its corresponding system component.'
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5

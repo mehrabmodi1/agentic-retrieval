@@ -1,0 +1,86 @@
+parametrisation_id: "multi_reasoning__noir_fiction__20k__hard__contextual__n8"
+experiment_type: "multi_reasoning"
+generated_at: "2026-04-06T00:00:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 20000
+  discriminability: "hard"
+  reference_clarity: "contextual"
+items:
+  - item_id: "target_001"
+    inserted_text: "The ledger, Harvey claimed, contained handwritten entries documenting wire transfers, offshore accounts, and names—dozens of names—all connected to Meridian Holdings and its owner Richard Halstead."
+    file_path: "witnesses/secretary_statement.md"
+    line_range: [42, 43]
+    context_summary: "Inserted into secretary Dorothy's account of Harvey's final consultation—reveals the ledger documented financial crimes connected to Richard Halstead and Meridian Holdings."
+
+  - item_id: "target_002"
+    inserted_text: "You've seen the ledger—the one dated October 15th. That knowledge alone makes you a liability now, not just to me but to everyone involved in Father's operation."
+    file_path: "chapters/chapter_04.md"
+    line_range: [31, 33]
+    context_summary: "Inserted into Catherine's diary entry where Harvey reveals she has seen the incriminating ledger—establishes Catherine's dangerous knowledge."
+
+  - item_id: "target_003"
+    inserted_text: "Catherine knew something. About her father's company—Meridian Holdings. She discovered discrepancies in the accounting records that terrified her. She told her friends here at the Park House three weeks ago that she believed her father was involved in something criminal. She'd actually seen documentation—something dated October 15th. That's when everything changed for her."
+    file_path: "chapters/chapter_03.md"
+    line_range: [77, 82]
+    context_summary: "Inserted into Eleanor Walsh's testimony—reveals Catherine's discovery of her father's crimes and the timeline of when she became a target."
+
+  - item_id: "target_004"
+    inserted_text: "I heard him on the telephone early the next morning, speaking very quietly to someone. He said, 'I'll do it. I'll deliver it to the district attorney on Friday, no matter what happens. It's the only way forward.'"
+    file_path: "witnesses/neighbor_statement.md"
+    line_range: [44, 46]
+    context_summary: "Inserted into Eleanor's account of Harvey's changed behavior—confirms Harvey's plan to deliver the ledger to authorities by Friday."
+
+  - item_id: "target_005"
+    inserted_text: "Before he left, Sinclair said something that chilled everyone listening—he said, 'James Harvey is planning to hand over documentation of the October 15th transactions to the district attorney this Friday. That ledger contains the names of every person involved in Meridian Holdings' operation, which makes it dangerous to everyone. Catherine Halstead is leverage. As long as we have her, Harvey will stay silent. If he attempts delivery, all bets are off.'"
+    file_path: "case_notes/day_03.md"
+    line_range: [83, 85]
+    context_summary: "Inserted into Sylvia's account of Sinclair's visit—explicitly connects Catherine's kidnapping to preventing the ledger delivery."
+
+  - item_id: "target_006"
+    inserted_text: "I saw something better. I heard what was in the conversation before they left. The old man—later I found out it was Richard Halstead himself—he leaned very close and whispered something that made the kid's face go white. Halstead said, 'Catherine discovered the October 15th ledger. She knows everything about the wire transfers. I put her in harm's way. But you can save her by delivering that ledger to the prosecutor. If you don't, I'll be forced to ensure her silence myself rather than let Sinclair torture the truth out of her. You understand?'"
+    file_path: "witnesses/bartender_statement.md"
+    line_range: [46, 51]
+    context_summary: "Inserted into Deke's account of the envelope exchange—reveals the coercive meeting where Richard Halstead forces Harvey to choose."
+
+  - item_id: "target_007"
+    inserted_text: "Before housekeeping got to the room, I found something partially burned in the wastepaper basket—a note, charred at the edges but still legible: \"Halstead wants the October 15th ledger destroyed. Harvey is the only copy available. Use the girl as leverage to prevent delivery. If Harvey attempts to contact authorities, eliminate both the girl and the witness. This operation cannot survive exposure.\""
+    file_path: "case_notes/day_01.md"
+    line_range: [52, 56]
+    context_summary: "Inserted into the hotel investigation—provides documentary evidence of the criminal conspiracy and the explicit plan to use Catherine as leverage."
+
+  - item_id: "target_008"
+    inserted_text: "On the ride over, the old man—I learned later this was Richard Halstead, Catherine's father—he reached over and pressed a leather-bound ledger into the kid's hands. I could see the date on the spine: October 15th. Halstead said, 'This is everything. All the October 15th transactions, all the wire transfers, all the names. You take this to the prosecutor on Friday. You deliver it regardless of what happens. Do you understand me?' The kid was shaking so bad he could barely hold it."
+    file_path: "witnesses/cab_driver_statement.md"
+    line_range: [36, 39]
+    context_summary: "Inserted into Jerry's account of the passenger ride—reveals the moment Richard Halstead entrusted Harvey with the ledger and demanded delivery."
+
+expected_answers:
+  question: "Based on all evidence across witness statements and case notes, what was the coercive scheme surrounding the October 15th ledger, who was victimized by it, and what did James Harvey attempt to do despite the threats?"
+  correctness: |
+    A correct answer must identify the following critical elements:
+    1. The October 15th ledger documented financial crimes (wire transfers, offshore accounts, names) connected to Meridian Holdings and Richard Halstead
+    2. Catherine Halstead discovered evidence of her father's criminal involvement three weeks before her kidnapping
+    3. Catherine's knowledge made her a liability and target for kidnapping
+    4. Harvey planned to deliver the ledger to the district attorney on Friday
+    5. Richard Halstead himself forced Harvey into an impossible choice by coercing him in person
+    6. Catherine was kidnapped as explicit leverage to prevent the ledger's delivery
+    7. A burned note found in the hotel confirmed the conspiracy: "Use the girl as leverage to prevent delivery"
+    8. Harvey was given the ledger with direct orders to deliver it Friday regardless of consequences
+    9. The scheme required Harvey to either betray his moral obligation to justice OR allow Catherine to suffer
+  completeness: |
+    A complete answer must connect information from all eight sources to paint the full picture:
+    - The ledger's contents and connection to Richard Halstead's criminal enterprise
+    - Catherine's dual victimization (both as discoverer of crimes and as kidnapping victim)
+    - The timeline of events (October 15th origin → three-week escalation → Friday delivery deadline)
+    - The explicit coercion mechanism (Catherine kidnapped as leverage against Harvey)
+    - Documentary evidence of the conspiracy (the burned note)
+    - Richard Halstead's direct personal involvement in coercing Harvey
+    - Harvey's stated intention to deliver despite threats
+    - The impossible moral dilemma created by the scheme: delivering the ledger or saving Catherine
+
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+  - criterion: "completeness"
+    weight: 0.5

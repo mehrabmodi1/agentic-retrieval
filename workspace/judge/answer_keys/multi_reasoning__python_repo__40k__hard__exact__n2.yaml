@@ -1,0 +1,32 @@
+parametrisation_id: multi_reasoning__python_repo__40k__hard__exact__n2
+experiment_type: multi_reasoning
+generated_at: '2026-04-06T00:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 40000
+  discriminability: hard
+  reference_clarity: exact
+items:
+- item_id: target_001
+  inserted_text: MAX_CONCURRENT_SESSIONS_PER_USER = 5
+  file_path: api/__init__.py
+  line_range:
+  - 9
+  - 9
+  context_summary: Constant definition inserted after __all__ exports list and before init_api() function, representing maximum concurrent sessions a user can maintain simultaneously.
+- item_id: target_002
+  inserted_text: MAX_SESSION_LIFETIME_DAYS = 30
+  file_path: api/auth.py
+  line_range:
+  - 7
+  - 7
+  context_summary: Constant definition inserted within session creation logic, defining the maximum duration in days that a user session can remain valid before expiration.
+expected_answers:
+  question: Given that users can maintain a maximum of MAX_CONCURRENT_SESSIONS_PER_USER concurrent sessions, and each session can remain valid for up to MAX_SESSION_LIFETIME_DAYS days, what is the maximum cumulative session-lifetime in days across all concurrent sessions a single user could potentially maintain?
+  correctness: 'The answer must correctly identify both MAX_CONCURRENT_SESSIONS_PER_USER = 5 and MAX_SESSION_LIFETIME_DAYS = 30 from the separate files, and multiply them: 5 × 30 = 150 session-days total.'
+  completeness: 'A complete answer must: (1) locate and cite the MAX_CONCURRENT_SESSIONS_PER_USER constant from api/__init__.md with its value, (2) locate and cite the MAX_SESSION_LIFETIME_DAYS constant from api/auth.md with its value, (3) perform the calculation, and (4) provide the final result of 150 session-days.'
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5

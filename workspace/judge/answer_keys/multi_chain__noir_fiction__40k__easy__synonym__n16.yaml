@@ -1,0 +1,115 @@
+parametrisation_id: "multi_chain__noir_fiction__40k__easy__synonym__n16"
+experiment_type: "multi_chain"
+generated_at: "2026-04-05T00:00:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 40000
+  discriminability: "easy"
+  reference_clarity: "synonym"
+items:
+  - item_id: "target_001"
+    inserted_text: "After he left, I checked my accounting ledger—the rent book I keep with all the tenant histories. I noticed something curious. The visitor had placed a notation in pencil on the margin of Mr. Harvey's page: 'Records at the property management office.'"
+    file_path: "witnesses/landlady_statement.md"
+    line_range: [30, 31]
+    context_summary: "Landlady Eva discovers visitor's cryptic note in her ledger directing to property management office records."
+
+  - item_id: "target_002"
+    inserted_text: "Before I left the precinct, I'd pulled the property records downtown—the ones that the landlady's ledger had directed me toward. Margaret's business transactions were all there, meticulously documented. Each sale correlated with deposits that led to further records."
+    file_path: "case_notes/day_04.md"
+    line_range: [3, 5]
+    context_summary: "Investigator retrieves property records from downtown office following landlady's ledger notation."
+
+  - item_id: "target_003"
+    inserted_text: "I lean forward. 'Because I need a witness. And because Helen told me you're cooperating—she mentioned the documentation you've prepared. The appointment books, the files connecting everything. That documentation will break this case wide open.'"
+    file_path: "case_notes/day_05.md"
+    line_range: [33, 34]
+    context_summary: "Interrogator references Mercer's prepared appointment books and files as key evidence."
+
+  - item_id: "target_004"
+    inserted_text: "\"James Harvey came to this office three times,\" Dorothy said, consulting the appointment book though she didn't need to. She could have recited the dates from memory. \"The first visit was September 8th. He met with Mr. Marchetti, my brother-in-law, for approximately two hours. The second visit was October 2nd, a much shorter meeting, perhaps thirty minutes. The third visit was October 28th, and that meeting lasted less than five minutes. All three dates are recorded here, along with a notation Mr. Marchetti made in his private margin: 'Obtain taxi driver record for October 30th Union Station pickup.'\""
+    file_path: "witnesses/secretary_statement.md"
+    line_range: [13, 13]
+    context_summary: "Secretary Dorothy reveals appointment book contains Marchetti's hidden notation about taxi driver record."
+
+  - item_id: "target_005"
+    inserted_text: "I kept the receipt from that fare—habit of mine. On the back, he'd written: 'Check the property titles—ask for Margaret Hollister's business associates.'"
+    file_path: "witnesses/cab_driver_statement.md"
+    line_range: [36, 37]
+    context_summary: "Cab driver Jerry produces fare receipt with handwritten note directing to property titles and Margaret Hollister's associates."
+
+  - item_id: "target_006"
+    inserted_text: "Before I leave, Paulie slides me something else—a torn piece of paper with an address. 'Her business operates through property titles,' he says. 'The deeds—they're the real documentation. Look at who's buying and selling. That's your paper trail.'"
+    file_path: "case_notes/day_02.md"
+    line_range: [3, 4]
+    context_summary: "Informant Paulie provides address and directs investigator to examine property deeds as real documentation trail."
+
+  - item_id: "target_007"
+    inserted_text: "Sylvia puts down her pen. She pulls out a small notebook—her daily record of who comes in, when, and what they order. It's meticulous. \"The Castellano kid came in Tuesday night. Brought a girl with him—young, pretty, nervous like she'd never been in a place like this before. He showed her around, introduced her to his father. That was her mistake. I wrote it all down, even before the name came out. September 18th, 10:15 PM. It's all in my notes.\""
+    file_path: "case_notes/day_03.md"
+    line_range: [6, 6]
+    context_summary: "Witness Sylvia reveals her meticulous daily notebook containing detailed records of the September 18th events."
+
+  - item_id: "target_008"
+    inserted_text: "The journal in my hand—Catherine's private record of everything that happened. The handwritten account that would eventually tie everything together."
+    file_path: "chapters/chapter_04.md"
+    line_range: [28, 29]
+    context_summary: "Investigator examines Catherine's personal journal as the handwritten account that connects all evidence."
+
+  - item_id: "target_009"
+    inserted_text: "I mark him down as someone worth talking to again. Before I leave, I make a note in my own case file: \"Mercer knows more than he's saying. He knows about Room 412. He knows how the system works. He'll be key to understanding this.\""
+    file_path: "case_notes/day_01.md"
+    line_range: [27, 28]
+    context_summary: "Investigator documents suspicions about Mercer in case file notes, identifying him as crucial to understanding the system."
+
+  - item_id: "target_010"
+    inserted_text: "Halstead produced it—typed on plain paper, words cut from newsprint like something out of a pulp novel. It said exactly what he'd told me: *Don't call the police. We'll be in touch. Act normally. Act like nothing's happened.* I studied it carefully, turning it over. There—written in pencil on the back: \"Find the jewelry. It's in Sinclair's apartment on Harbor Street.\""
+    file_path: "chapters/chapter_02.md"
+    line_range: [32, 32]
+    context_summary: "Investigator discovers handwritten pencil note on back of ransom letter directing to jewelry evidence in Sinclair's apartment."
+
+  - item_id: "target_011"
+    inserted_text: "By eleven p.m., there's a development that changes everything. The police find Claire Hollister's jewelry—a bracelet and a ring—in Sinclair's apartment. They were discovered during a search that wasn't authorized by the judge but was conducted anyway, which is a problem legally, but it's real evidence nonetheless. With the jewelry, they also find Sinclair's personal date book—the leather-bound journal where he recorded everything: meetings, transactions, orders. On September 29th, there's an entry: \"Meeting with Mercer re: Castellano problem. Solution required. Disposal arranged.\""
+    file_path: "case_notes/day_07.md"
+    line_range: [3, 3]
+    context_summary: "Police discover Sinclair's leather-bound date book containing explicit entry about meeting with Mercer and the Castellano problem."
+
+  - item_id: "target_012"
+    inserted_text: "Helen leans forward. \"There's something else. Mercer kept documentation—video recordings from Sinclair's private office, filed under the reference label 'archive_alpha'. He preserved them by copying the files before Sinclair could destroy the originals. He's willing to turn them over.\"\n\n\"That's evidence.\"\n\n\"That's more than evidence. That's Sinclair on video.\"\n\nHelen leans forward. \"Here's what matters: Mercer's willing to sign a statement that identifies the specific instructions Sinclair gave regarding Claire Hollister. He'll testify that on September 29th, Sinclair met with Mercer and two other operatives—he won't name them yet, but he will on the stand—and explicitly ordered 'the elimination of the Castellano problem.' Mercer understood this to mean Claire, who had become a liability. Mercer will also testify that he prepared the legal cover for moving her body and disposing of evidence, which he did reluctantly but did nonetheless. And he'll testify that he was motivated by fear, not money, though he took the money too.\"\n\nThat last line is crucial. \"The fear,\" I repeat.\n\n\"Exactly. Mercer was afraid of the person behind Sinclair. The real power. The one who orchestrates everything. Mercer never knew that person's name, but he knew they existed because he'd seen what they were capable of. That's why he kept the records. Insurance. Documentation that might save his life, or at least his legacy. Those records are now our roadmap to the truth.\""
+    file_path: "case_notes/day_06.md"
+    line_range: [34, 35]
+    context_summary: "Helen reveals complete scope of Mercer's documentary evidence including video archive_alpha and final explanation of the documentation's purpose."
+
+  - item_id: "target_013"
+    inserted_text: "Once. Maybe two weeks before the redhead came in. There was an older man, maybe late fifties, heavy-set type with white hair and the kind of face that'd probably been handsome twenty years ago before whatever was eating him at the inside did its work. They sat together, didn't talk much. But I noticed the old guy slid something across the table—looked like an envelope. White envelope. The kid put it in his jacket without looking at it. Like he'd been expecting it but didn't want to acknowledge the expectation. I mentioned it to Murphy—he keeps the register here—and he noted the transaction, the time, even a physical description of both men. It's all in the logbook, recorded on September 8th, 8:47 PM."
+    file_path: "witnesses/bartender_statement.md"
+    line_range: [30, 30]
+    context_summary: "Deke references Murphy's lounge logbook that documented the mysterious envelope transaction with precise date and time."
+
+  - item_id: "target_014"
+    inserted_text: "Eleanor hesitated before adding something else. \"The man Catherine was seeing—from what little she told us—was significantly older than her. Early fifties, we gathered. Wealthy enough to afford the expensive restaurants, the theater tickets, the gifts he'd given her. Sophisticated enough to appreciate Catherine's intelligence about literature and art. But there was something else. Catherine mentioned once that he had 'connections to business that operated beyond the law's reach.' She said it lightly, like it was a joke, but we didn't think it was funny at the time. We asked her what she meant, and she said, 'Nothing important. Just that he's more complicated than he appears.' We should have pressed her harder. We should have demanded names, details, anything. Catherine had mentioned she kept a small notebook where she wrote things she didn't want to forget—details about him, things he'd said, meetings they'd had. We never saw that notebook, but if it existed, it would have documented everything.\""
+    file_path: "chapters/chapter_03.md"
+    line_range: [43, 43]
+    context_summary: "Eleanor references Catherine's small personal notebook where she documented her relationship details and secret meetings."
+
+  - item_id: "target_015"
+    inserted_text: "I mentioned it to Murphy—he keeps the register here—and he noted the transaction, the time, even a physical description of both men. It's all in the logbook, recorded on September 8th, 8:47 PM."
+    file_path: "witnesses/bartender_statement.md"
+    line_range: [30, 31]
+    context_summary: "Bartender mentions Murphy's register logging system used to record suspicious transactions."
+
+  - item_id: "target_016"
+    inserted_text: "**HALLOWAY:** Let's consolidate what we have. We've got seven days of investigation, eleven witness statements, and approximately fifty leads ranging from credible to completely speculative. Most importantly, we have documentation—interviews, physical evidence, written records tracing back through the Hollister business, the Castellano operations, and Sinclair's involvement. It all started with that landlady's ledger and ends with Mercer's testimony."
+    file_path: "witnesses/detective_debrief.md"
+    line_range: [3, 4]
+    context_summary: "Detective Halloway summarizes the complete chain of documentation from landlady's ledger through to Mercer's testimony."
+
+expected_answers:
+  question: "Starting from the notation Eva the landlady discovered in her accounting ledger, follow the chain of documentation and evidence through the investigation. What document contains the final resolution that ties everyone to the crime?"
+  correctness: "The answer must correctly identify Mercer's preserved documentation and/or Sinclair's date book as the definitive evidence. Synonymous references to 'records,' 'files,' 'documentation,' 'ledger,' 'journal,' 'notebook,' 'logbook,' or 'written account' are acceptable for intermediate steps."
+  completeness: "A complete answer traces the chain: landlady's ledger → property records → appointment books → cab driver's receipt → property deeds → Sylvia's daily notes → Catherine's journal → investigator's case file → ransom letter notation → Sinclair's date book → Mercer's comprehensive documentation. The final answer resolves to Mercer's preserved records (including video archive_alpha) and Sinclair's personal date book as the definitive documentary evidence."
+
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+  - criterion: "completeness"
+    weight: 0.5

@@ -1,0 +1,28 @@
+parametrisation_id: "multi_reasoning__noir_fiction__800k__easy__contextual__n2"
+experiment_type: "multi_reasoning"
+generated_at: "2026-04-05T00:00:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 800000
+  discriminability: "easy"
+  reference_clarity: "contextual"
+items:
+  - item_id: "target_001"
+    inserted_text: "Claire had proof. She photographed the ledgers—the real ones, the ones showing where every illegal transaction originated. She hid the photographs in a burgundy folder marked with her initials, C.H., and gave them to Vincent. He was supposed to take them to the federal building downtown and hand them directly to an agent she'd been communicating with. But he never made it there. Someone intercepted him that night at the bar. Someone who knew exactly what he was carrying."
+    file_path: "case_notes/day_04.md"
+    line_range: [37, 39]
+    context_summary: "Margaret confesses to the detective about Claire's plan to provide photographic evidence of the money laundering scheme to federal authorities through Vincent Castellano."
+  - item_id: "target_002"
+    inserted_text: "After the old guy left, the kid opened it. Just a crack, like he didn't want anyone to see. But I could make out what was inside—photographs. Color photographs of papers, documents, ledgers. Financial records of some kind. He went white again, even whiter than when the redhead Margot had spoken to him. He closed the envelope carefully, tucked it under his jacket against his chest, and sat there for the rest of the hour just running his hand over it like it might disappear. When that redhead came in again last Thursday, I thought maybe she was trying to retrieve it from him."
+    file_path: "witnesses/bartender_statement.md"
+    line_range: [32, 34]
+    context_summary: "The bartender describes witnessing Vincent receive an envelope containing photographs of financial records and observes the redhead woman's suspicious return visit, suggesting an attempt to recover the evidence."
+expected_answers:
+  question: "What incriminating material did Vincent Castellano receive at the bar, and what conflicting interests do the different parties have regarding this material?"
+  correctness: "A correct answer must identify that Vincent received photographs of financial ledgers/records (the evidence Claire had gathered), and must recognize that Claire wanted this delivered to federal authorities while others (like the redhead Margot/Sinclair's associates) were attempting to retrieve or suppress it."
+  completeness: "A complete answer addresses both the nature of the evidence (photographic proof of illegal transactions in ledger form) and the opposing objectives of the parties involved (Claire's desire for federal investigation vs. the criminals' need to suppress the evidence). It should connect the bartender's observations about the envelope's contents to Margaret's revelation about Claire's documentation strategy."
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+  - criterion: "completeness"
+    weight: 0.5

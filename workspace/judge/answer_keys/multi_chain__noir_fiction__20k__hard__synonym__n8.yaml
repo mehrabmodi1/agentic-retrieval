@@ -1,0 +1,67 @@
+parametrisation_id: "multi_chain__noir_fiction__20k__hard__synonym__n8"
+experiment_type: "multi_chain"
+generated_at: "2026-04-05T14:32:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 20000
+  discriminability: "hard"
+  reference_clarity: "synonym"
+items:
+  - item_id: "target_001"
+    inserted_text: "He gave me the brass key before he went—said if anything happens, it opens the deposit box at Continental Trust, vault section C. He said it was insurance, that it would explain everything."
+    file_path: "chapters/chapter_04.md"
+    line_range: [38, 39]
+    context_summary: "Catherine's diary entry about H (Harvey) giving her a brass key to a bank vault before disappearing."
+
+  - item_id: "target_002"
+    inserted_text: "Marchetti also told Harvey to secure his evidence—told him to place documents at Continental Trust under a safety deposit arrangement, with a brass key as the retrieval mechanism. Said that physical evidence protected in a bank would be insurance against both the authorities and Kaslan."
+    file_path: "witnesses/informant_interview.md"
+    line_range: [43, 44]
+    context_summary: "Victor reveals that attorney Marchetti advised Harvey to secure evidence at Continental Trust with a brass key."
+
+  - item_id: "target_003"
+    inserted_text: "I noticed she was holding something in her closed hand—something small, metallic. A key, I thought. She kept it clasped so tightly her knuckles turned white."
+    file_path: "witnesses/neighbor_statement.md"
+    line_range: [32, 33]
+    context_summary: "Eleanor's observation of the woman (Catherine) leaving Harvey's apartment clutching something small and metallic."
+
+  - item_id: "target_004"
+    inserted_text: "Before Gregg left, the boy pressed something into his palm—small, brass colored. A key. Gregg closed his fist around it and nodded, like that exchange contained everything they both needed to know."
+    file_path: "witnesses/cab_driver_statement.md"
+    line_range: [41, 42]
+    context_summary: "Jerry the cab driver witnesses the young man (Harvey) handing a brass key to Gregg (the white-haired field operative) at Oak Hill."
+
+  - item_id: "target_005"
+    inserted_text: "And before he left, he gave something to that white-haired guy—Gregg. Something small. I didn't think anything of it at the time, but later that week I see Gregg at the Continental Trust building downtown, walking out with a safety deposit ledger in his hand. Nervous, like he was making sure nobody saw him with it."
+    file_path: "case_notes/day_02.md"
+    line_range: [73, 74]
+    context_summary: "Paulie reports seeing Gregg at Continental Trust with a safety deposit ledger, connecting the key transfer to the bank vault."
+
+  - item_id: "target_006"
+    inserted_text: "I don't know if you're aware, but there's a Continental Trust deposit box—vault section C—that my associates believe contains evidence of... well, of certain operations. Gregg was obsessed with finding whoever held the key to that box."
+    file_path: "chapters/chapter_02.md"
+    line_range: [49, 50]
+    context_summary: "Halstead reveals to Jack that the deposit box in vault section C contains evidence, and Gregg has been searching for whoever holds the key."
+
+  - item_id: "target_007"
+    inserted_text: "Then you become a complication. And complications get resolved the same way the girl did.\" Sinclair stands and walks to my bookshelf, examining the titles. \"Do you know what Gregg was looking for before he disappeared? A key. A small brass key to a bank deposit box. Very important key. Contains documents that would destroy the entire operation. Gregg had it, we think. Or someone he was protecting had it. That's what Claire knew about—that's what made her a problem."
+    file_path: "case_notes/day_04.md"
+    line_range: [147, 148]
+    context_summary: "Sinclair reveals to Jack that the brass key to the Continental Trust deposit box contains documents that would expose the operation, and this is why Claire was eliminated."
+
+  - item_id: "target_008"
+    inserted_text: "The documents in Continental Trust vault section C—the ones Harvey secured with that brass key—they contain the real name. The name of who runs everything. That's why everyone's looking for it."
+    file_path: "case_notes/day_08.md"
+    line_range: [128, 129]
+    context_summary: "Helen Crawford reveals that the documents in the vault accessed by Harvey's brass key contain the identity of the person running the entire criminal operation."
+
+expected_answers:
+  question: "Starting from Catherine's diary entry in chapter_04.md where she mentions the security deposit that her lover H provided, follow the chain of references through the investigation. What does the vault ultimately contain that everyone in the criminal organization is desperately seeking?"
+  correctness: "The answer must identify that the vault contains evidence revealing the real name/identity of the person running the entire criminal organization."
+  completeness: "A complete answer should trace the path: Catherine's key → Marchetti's advice → the woman observer → Gregg's acquisition → Paulie's sighting → Halstead's confirmation → Sinclair's admission → Helen's revelation, and conclude with what is actually stored in Continental Trust vault section C."
+
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+  - criterion: "completeness"
+    weight: 0.5

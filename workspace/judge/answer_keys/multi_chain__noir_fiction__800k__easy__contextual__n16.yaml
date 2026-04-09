@@ -1,0 +1,116 @@
+parametrisation_id: "multi_chain__noir_fiction__800k__easy__contextual__n16"
+experiment_type: "multi_chain"
+generated_at: "2026-04-06T00:00:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 800000
+  discriminability: "easy"
+  reference_clarity: "contextual"
+
+items:
+  - item_id: "target_001"
+    inserted_text: "What I didn't mention was the unsigned envelope that had arrived at my office earlier that evening, containing only a handwritten note: *\"The document Catherine carried referred to Harbor Street, Building 47. Check there first if you want to understand what she's mixed up in.\"*"
+    file_path: "chapters/chapter_01.md"
+    line_range: [25, 27]
+    context_summary: "Shepherd receives initial call from Halstead; note hintsat Harbor Street Building 47 as next location."
+
+  - item_id: "target_002"
+    inserted_text: "In the nightstand I find something the original investigators missed: a hotel notepad with Margaret Hollister's name and a single line written in pencil: *\"Real documents are with the secretary—Dorothy Marchetti's office, Floor 14.\"*"
+    file_path: "case_notes/day_01.md"
+    line_range: [6, 8]
+    context_summary: "Initial investigation at Regency Hotel Room 412 discovers note pointing to Marchetti's office."
+
+  - item_id: "target_003"
+    inserted_text: "He also mentions something useful: \"If you really want to understand the full operation, you need to find the documents that Harvey collected. They're supposedly being kept in a lawyer's office—Marchetti & Associates, somewhere downtown. That's your next lead.\""
+    file_path: "case_notes/day_02.md"
+    line_range: [28, 30]
+    context_summary: "Morris confirms Marchetti's office contains Harvey's collected documents."
+
+  - item_id: "target_004"
+    inserted_text: "Before Morello could leave, Dorothy added one more detail: \"There's something in the file we keep under 'H. Protocol matters.' It references the Starlight Motor Inn—that's where Mr. Marchetti advised Harvey to go. Room fourteen. That's where everything was arranged.\""
+    file_path: "witnesses/secretary_statement.md"
+    line_range: [33, 36]
+    context_summary: "Dorothy Marchetti reveals Starlight Motor Inn as location where Harvey's exit was arranged."
+
+  - item_id: "target_005"
+    inserted_text: "Deke also mentioned one detail he almost forgot: \"When the redhead left that final time, she dropped an envelope. It had 'Eva K — Building 47, Apt 1A' written on the back. I kept it. It's somewhere under the register if you want it.\""
+    file_path: "witnesses/bartender_statement.md"
+    line_range: [40, 43]
+    context_summary: "Bartender finds envelope with landlady's name and Building 47 address, connecting back to Harbor Street."
+
+  - item_id: "target_006"
+    inserted_text: "Eva then leaned forward, speaking more quietly: \"Detective, that document Mr. Harvey kept hidden—the corner I saw in his pocket. It mentioned the Ashton Haven Protocol specifically. And that same protocol, I see referenced in the taxi company ledger that the driver, Jerry Salvatore, kept in his car. You should ask him about the October 30th pickup to Union Station.\""
+    file_path: "witnesses/landlady_statement.md"
+    line_range: [33, 37]
+    context_summary: "Landlady Eva identifies the Ashton Haven Protocol document and directs investigation to cab driver Jerry Salvatore."
+
+  - item_id: "target_007"
+    inserted_text: "The ledger referenced Sinclair Imports and all their property transactions. But I also noticed something in my logbook—I always recorded destinations and passengers for insurance. Next to that entry, in someone else's handwriting, were the words: 'Archive materials confirm content. Building 34, Dock Street—warehouse—contains video files labeled archive_alpha.' That's what you really want. That's the evidence."
+    file_path: "answer_keys/witnesses/cab_driver_statement.md"
+    line_range: [29, 30]
+    context_summary: "Cab driver's logbook reveals Dock Street warehouse location containing archive_alpha video files."
+
+  - item_id: "target_008"
+    inserted_text: "Sylvia paused, then added: \"Before he left, that man—Sinclair—he told Carmine something I'll never forget. He said, 'Make sure your family understands what happens when people interfere with video documentation. Archive_alpha shows everything. Everything.' He kept repeating that phrase. And Carmine's face went completely white. Like Sinclair had just confirmed that he knew about the files, knew they existed, knew what was in them. That's when I understood this was bigger than just a girl. This was about evidence. Real evidence.\""
+    file_path: "case_notes/day_03.md"
+    line_range: [20, 22]
+    context_summary: "Sinclair references archive_alpha files at Paradise club, confirming their existence and importance."
+
+  - item_id: "target_009"
+    inserted_text: "She continues: \"Most importantly, Mercer kept those video files—archive_alpha—in a safety deposit box. He also kept detailed notes about where Sinclair stored them originally: 'Second floor of the Consolidated Building, Suite 1450, in the wall safe behind the painting of the harbor. Access code changes monthly, but Mercer has documented every code change since May.' That's where the evidence is.\""
+    file_path: "case_notes/day_06.md"
+    line_range: [34, 36]
+    context_summary: "Helen reveals Mercer's location of archive_alpha files in Consolidated Building safe."
+
+  - item_id: "target_010"
+    inserted_text: "What impresses me most is Chen's methodology. He didn't just publish the ledger contents. He cross-referenced them with federal property records and discovered something critical: nearly every property transfer listed in the ledger had a notation in the margins. The notation appeared repeatedly: 'Archive materials confirm—see video evidence Dock Street.' Chen followed that thread and found the actual location where Sinclair kept his archive_alpha files: Harwick Falls, two hundred miles north, in a safe house registered under the name 'James Mitchell.'"
+    file_path: "case_notes/day_07.md"
+    line_range: [13, 19]
+    context_summary: "Chronicle reporter Chen traces ledger margin notes to Harwick Falls as Sinclair's true operational headquarters."
+
+  - item_id: "target_011"
+    inserted_text: "Before leaving, Diana Harrow also made a point that seemed almost casual but was clearly calculated: \"One more thing—if you're considering cooperating with anyone about the documents you've found, you should know that Meridian Holdings has already located the safe house in Harwick Falls. The location is no longer a secret. Anyone hiding there, anyone seeking protection there, is now at significant risk. That's the consequence of resistance.\""
+    file_path: "chapters/chapter_05.md"
+    line_range: [4, 7]
+    context_summary: "Diana Harrow warns Shepherd that Harwick Falls safe house location has been compromised."
+
+  - item_id: "target_012"
+    inserted_text: "I studied it carefully, turning it over. There—written in pencil on the back, in different handwriting: \"The real power is in Harwick Falls. That's where they've hidden everything. Harvey knows the route. Follow him north. He'll lead you to the architect.\""
+    file_path: "chapters/chapter_02.md"
+    line_range: [31, 33]
+    context_summary: "Ransom letter note on back reveals Harwick Falls as where the architect operates."
+
+  - item_id: "target_013"
+    inserted_text: "And most critically, near the back of the journal, Catherine had sketched a map. It showed a location north of the city, marked with a circle: \"Harwick Falls—where they keep what matters most.\" She'd added a note: \"H.C. goes there when things get too dangerous. The safe house is everything.\""
+    file_path: "chapters/chapter_04.md"
+    line_range: [27, 29]
+    context_summary: "Catherine's journal contains map and reference to Harwick Falls as H.C.'s safe house."
+
+  - item_id: "target_014"
+    inserted_text: "Margaret also recalled something important: \"Catherine did leave behind one document. It was in her desk when the police searched the apartment. A train ticket. Dated October 30th. Destination: Harwick Falls. She'd purchased it weeks in advance. She'd been planning to go there. Which means she knew something. Something she was going to confront this man about.\""
+    file_path: "chapters/chapter_03.md"
+    line_range: [43, 46]
+    context_summary: "Margaret reveals Catherine's pre-purchased train ticket to Harwick Falls dated October 30th."
+
+  - item_id: "target_015"
+    inserted_text: "But before he was dismissed, Victor added one final piece: \"If you really want to understand where this ends, follow the northern route. Harwick Falls. That's where Kaslan's actual headquarters operates. That's where the architect conducts real business, away from the city's scrutiny. Everyone who gets pulled into this network eventually learns about Harwick Falls. It's the promised land. It's also the graveyard.\""
+    file_path: "witnesses/informant_interview.md"
+    line_range: [42, 45]
+    context_summary: "Victor identifies Harwick Falls as Kaslan's true operational headquarters and the architect's seat of power."
+
+  - item_id: "target_016"
+    inserted_text: "**CRITICAL PRIORITY:** Coordinate federal resources to locate and protect any individuals in Harwick Falls area. Current evidence suggests this location is operational headquarters of the Kaslan network and the true seat of power in the city's criminal infrastructure."
+    file_path: "witnesses/detective_debrief.md"
+    line_range: [57, 59]
+    context_summary: "Final debrief identifies Harwick Falls as the ultimate destination and Kaslan's operational center."
+
+expected_answers:
+  question: "Starting from the unsigned envelope that arrives at Shepherd's office in chapter_01.md, follow the chain of clues. Each clue points to a location or document that contains the next clue. What is the final destination where the chain ultimately resolves?"
+  correctness: "The answer must identify Harwick Falls as the final destination. Harwick Falls appears as the ultimate location referenced across all 16 needles, representing the architect's true headquarters and operational center."
+  completeness: "A complete answer should trace the logical chain from Harbor Street (Building 47) → Marchetti's office (Floor 14) → Starlight Motor Inn (Room 14) → Landlady Eva (Building 47, Apt 1A) → Cab driver's logbook → Dock Street warehouse (archive_alpha files) → Sinclair's office in Consolidated Building → Chronicle ledger margin notes → Harwick Falls (final location). The answer should recognize that Harvey, Catherine, and the evidence trail all point to Harwick Falls as the architect's true seat of power."
+
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+  - criterion: "completeness"
+    weight: 0.5

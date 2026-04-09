@@ -1,0 +1,36 @@
+parametrisation_id: multi_chain__python_repo__40k__hard__exact__n2
+experiment_type: multi_chain
+generated_at: '2026-04-03T00:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 40000
+  discriminability: hard
+  reference_clarity: exact
+items:
+- item_id: target_001
+  inserted_text: "    # Streaming exports page objects in batches; the cap per batch is\n    # MAX_SERIALIZED_BATCH_SIZE, defined in workers/report_generator.py,\n    # which balances throughput against peak memory use during large dumps."
+  file_path: api/serializers.py
+  line_range:
+  - 34
+  - 36
+  context_summary: Inserted as an in-class comment inside BaseSchema, directly before the Meta inner class, referencing MAX_SERIALIZED_BATCH_SIZE and pointing to its definition in workers/report_generator.py.
+- item_id: target_002
+  inserted_text: '# Upper bound on objects serialized per batch in streaming export passes;
+
+    # also consumed by api/serializers.py to enforce consistent chunking limits.
+
+    MAX_SERIALIZED_BATCH_SIZE = 350'
+  file_path: workers/report_generator.py
+  line_range:
+  - 34
+  - 36
+  context_summary: Inserted as a module-level constant with explanatory comment between the existing REPORT_STAGGER_DELAY_SECONDS comment block and the ReportFormat enum class definition.
+expected_answers:
+  question: In api/serializers.md, a comment inside the BaseSchema class references MAX_SERIALIZED_BATCH_SIZE and states it is defined in workers/report_generator.py. Following that reference, what is the value of MAX_SERIALIZED_BATCH_SIZE?
+  correctness: '350'
+  completeness: The answer should identify that MAX_SERIALIZED_BATCH_SIZE equals 350, found in workers/report_generator.md after following the cross-file reference from the BaseSchema comment in api/serializers.md.
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5

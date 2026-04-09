@@ -1,0 +1,24 @@
+parametrisation_id: "single_needle__noir_fiction__20k__easy__contextual"
+experiment_type: "single_needle"
+generated_at: "2026-04-03T10:15:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 20000
+  discriminability: "easy"
+  reference_clarity: "contextual"
+items:
+  - item_id: "target_001"
+    inserted_text: |
+      "One more thing," Jerry said, reaching back toward his glove box. He produced a folded stub, soft with age and cab grease. "Found it wedged under the seat after he'd gone. Train receipt, northbound, stamped *Harwick Falls*—two stops up the coast from the city terminus. That's nowhere. That's exactly the kind of nowhere a man chooses when he doesn't want to be found."
+    file_path: "witnesses/cab_driver_statement.md"
+    line_range: [64, 64]
+    context_summary: "Inserted after cab driver Jerry Salvatore describes dropping Harvey at Union Station for the last time, as an additional detail where Jerry produces a northbound train receipt found wedged under the cab seat — revealing Harvey's apparent destination."
+expected_answers:
+  question: "Based on physical evidence left behind in the cab, where did Harvey appear to be headed when he left the city for good?"
+  correctness: "Harwick Falls"
+  completeness: "A complete answer identifies Harwick Falls as Harvey's apparent destination and notes it was inferred from a northbound train receipt (or ticket stub) found wedged under the cab seat after Harvey departed for Union Station."
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+  - criterion: "completeness"
+    weight: 0.5

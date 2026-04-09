@@ -1,0 +1,118 @@
+parametrisation_id: "multi_chain__noir_fiction__800k__easy__synonym__n16"
+experiment_type: "multi_chain"
+generated_at: "2026-04-05T12:00:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 800000
+  discriminability: "easy"
+  reference_clarity: "synonym"
+
+items:
+  - item_id: "target_001"
+    inserted_text: "I do learn that before he left the city, he visited a woman named Margot at a specific location—the address she'd given him for safe passage arrangements."
+    file_path: "case_notes/day_05.md"
+    line_range: [195, 198]
+    context_summary: "Vincent's departure sequence extended; needle directs to Margot's involvement in facilitating city exits."
+
+  - item_id: "target_002"
+    inserted_text: "Margot handles her arrangements at The Crimson Door—that's where she meets people seeking exit."
+    file_path: "witnesses/informant_interview.md"
+    line_range: [86, 89]
+    context_summary: "Victor's explanation of Margot's operations; needle identifies The Crimson Door as meeting location."
+
+  - item_id: "target_003"
+    inserted_text: "That redhead, that was Margot—I found out later she regularly picks up cargo from one specific cab driver who works the night shifts. Jerry Salvatore. He knows all her routes."
+    file_path: "witnesses/bartender_statement.md"
+    line_range: [48, 51]
+    context_summary: "Deke identifies the redhead as Margot and references cab driver Jerry Salvatore's involvement."
+
+  - item_id: "target_004"
+    inserted_text: "I said nothing. I took the money. And I remembered what he told me—that if anyone asked, a particular attorney's office was off-limits. Marchetti. That was the name he mentioned."
+    file_path: "witnesses/cab_driver_statement.md"
+    line_range: [107, 110]
+    context_summary: "Jerry reveals the old man's warning about attorney Marchetti's office being off-limits."
+
+  - item_id: "target_005"
+    inserted_text: "Not directly. But on that final visit—the one that lasted less than five minutes—I heard raised voices from Mr. Marchetti's office. Just for a moment. Mr. Harvey said something about 'the old man with white hair visited me.' That's all I could make out. The landlady had reported seeing exactly such a visitor."
+    file_path: "witnesses/secretary_statement.md"
+    line_range: [70, 74]
+    context_summary: "Dorothy overhears Harvey's reference to the old man with white hair during his final attorney visit."
+
+  - item_id: "target_006"
+    inserted_text: "But the older man, the one with white hair—he seemed familiar with someone's personal papers. I mentioned Mr. Harvey kept his life carefully organized. But the man moved like someone cataloging secrets. Like someone who would know about a young woman named Catherine Halstead."
+    file_path: "witnesses/landlady_statement.md"
+    line_range: [85, 89]
+    context_summary: "Eva connects the white-haired visitor to knowledge of Catherine Halstead through his scrutiny of Harvey's apartment."
+
+  - item_id: "target_007"
+    inserted_text: "'H's business involves people like 'Vincent'—he mentioned that name in a phone call. I think Vincent was trying to leave just like H wanted to.'"
+    file_path: "chapters/chapter_04.md"
+    line_range: [62, 65]
+    context_summary: "Catherine's journal entry reveals H's connection to Vincent and both men's desire to escape the operation."
+
+  - item_id: "target_008"
+    inserted_text: "I also need to understand the connection between the Hollister family and import-export operations. Margaret Halstead—that name keeps coming up. Are the Halsteads connected to the Hollisters through business?"
+    file_path: "case_notes/day_01.md"
+    line_range: [88, 91]
+    context_summary: "Detective notes the need to investigate connection between Hollister and Halstead families through business operations."
+
+  - item_id: "target_009"
+    inserted_text: "Halstead's operation ran through shipping networks that intersected with the Castellano family's routes—I would later learn that his daughter Catherine had met someone through these business connections. Someone he called 'H'—likely a code name to protect identity in these circles."
+    file_path: "chapters/chapter_02.md"
+    line_range: [12, 15]
+    context_summary: "Catherine's meeting with H is revealed as emerging from Halstead's import-export business connections."
+
+  - item_id: "target_010"
+    inserted_text: "Later we understood this man—her 'H'—was someone deeply involved in the city's criminal facilitation networks. His real name was Harrison Webb, though she never knew that."
+    file_path: "chapters/chapter_03.md"
+    line_range: [61, 64]
+    context_summary: "Catherine's friends understand that H is Harrison Webb, involved in criminal facilitation networks."
+
+  - item_id: "target_011"
+    inserted_text: "The Paradise had been Vincent's refuge—Sylvia ran it like a safe house for people caught between families. That's where Carmine Castellano saw Claire and decided she was expendable leverage."
+    file_path: "case_notes/day_02.md"
+    line_range: [106, 109]
+    context_summary: "The Paradise nightclub identified as Vincent's refuge where Carmine saw Claire and determined her utility."
+
+  - item_id: "target_012"
+    inserted_text: "She looked like someone—maybe someone who had connections to the man running the real operation. A man named Sinclair."
+    file_path: "case_notes/day_03.md"
+    line_range: [54, 57]
+    context_summary: "Sylvia reveals Carmine's targeting of Claire was because she resembled someone connected to Sinclair."
+
+  - item_id: "target_013"
+    inserted_text: "He mentioned Dostoevsky's exploration of guilt and conscience. I later heard he'd consulted with an attorney about moral choice. That attorney was a man named Marchetti."
+    file_path: "witnesses/neighbor_statement.md"
+    line_range: [36, 39]
+    context_summary: "Eleanor connects Harvey's literary discussions to his legal consultation with attorney Marchetti."
+
+  - item_id: "target_014"
+    inserted_text: "He's the front for something much larger. The real operation is run by Meridian Holdings. And Meridian, they do business through channels that cross state lines—they're the ones who coordinate with people like Harrison Webb."
+    file_path: "case_notes/day_04.md"
+    line_range: [27, 30]
+    context_summary: "Eddie reveals Sinclair is a front for Meridian Holdings, which coordinates with Harrison Webb's network."
+
+  - item_id: "target_015"
+    inserted_text: "Mercer was there when Sinclair made the decision. He witnessed the conversation about using Catherine Halstead as leverage against someone named Harrison Webb."
+    file_path: "case_notes/day_06.md"
+    line_range: [107, 110]
+    context_summary: "Helen reveals that Mercer witnessed Sinclair's decision to use Catherine as leverage against Harrison Webb."
+
+  - item_id: "target_016"
+    inserted_text: "The case ended not with a solved mystery but with a name in print. Charles J. Sinclair. The visible face of an operation that stretched from warehouse basements to corporate boardrooms, connected by people like Harvey and Webb and Mercer, all of whom had wanted out. All of whom paid the price for wanting something better."
+    file_path: "case_notes/day_08.md"
+    line_range: [177, 182]
+    context_summary: "Final resolution identifies Sinclair as the visible face of a larger network of people seeking escape."
+
+expected_answers:
+  question: "Starting from Vincent Castellano's departure described in day_05.md, follow the chain of connections. What is the final revelation about the true structure and purpose of the criminal operation?"
+  correctness: "A correct answer must identify that Charles J. Sinclair was the visible face of a larger operation (Meridian Holdings) that coordinated multiple people seeking exits (Harvey, Webb, Mercer), and that the network ultimately caused the deaths of those who wanted to escape."
+  completeness: "A complete answer covers: (1) Vincent's departure facilitated by Margot at The Crimson Door, (2) the connection to Harrison Webb through Catherine Halstead, (3) the old man (Silas Gregg) as Sinclair's enforcer, (4) Harvey's moral conflict and attorney consultation, (5) Sinclair as a front for Meridian Holdings, (6) the use of Catherine as leverage against Webb, and (7) the final conclusion that Sinclair was merely the visible face of a larger criminal machinery."
+
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+    definition: "Answer identifies Sinclair's role and the larger operation structure"
+  - criterion: "completeness"
+    weight: 0.5
+    definition: "Answer traces the full chain from initial departure through final resolution"

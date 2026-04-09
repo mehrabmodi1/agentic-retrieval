@@ -1,0 +1,92 @@
+parametrisation_id: "multi_reasoning__noir_fiction__800k__hard__contextual__n8"
+experiment_type: "multi_reasoning"
+generated_at: "2026-04-05T14:32:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 800000
+  discriminability: "hard"
+  reference_clarity: "contextual"
+
+items:
+  - item_id: "target_001"
+    inserted_text: "But before he throws them, I see Sinclair's expression change for just a moment—a flicker of something that looks like panic. Vincent has something Sinclair thought was destroyed: documentation from the Starlight Motor Inn showing that Harvey had arranged passage three weeks earlier, before Claire was even killed. The photographs Vincent throws include proof that Sinclair knew about the painting's recovery and understood Harvey was planning to disappear."
+    file_path: "case_notes/day_05.md"
+    line_range: [163, 169]
+    context_summary: "Inserted in warehouse confrontation scene showing Vincent's photographs contained evidence of Harvey's pre-arranged escape and Sinclair's knowledge of it."
+
+  - item_id: "target_002"
+    inserted_text: "That day, when I mentioned Thanksgiving with family, he said a very strange thing. He said, 'Family is whoever helps you become someone else.' I did not understand it at the time. But now I think he was telling me that he had found people who would help him disappear. Not family. But people with the same function—people who would provide the mechanism for transformation and escape."
+    file_path: "witnesses/landlady_statement.md"
+    line_range: [44, 49]
+    context_summary: "Inserted into landlady's observation of Harvey showing he had identified his escape facilitators before Claire's death."
+
+  - item_id: "target_003"
+    inserted_text: "This source is critical because they worked on multiple operations simultaneously—the art theft network, the import laundering, and the disappearance services. They revealed that Harvey had been coordinating his exit through the same channels used to move stolen goods, using the Kaslan organization's infrastructure to facilitate his own escape. The source stated that Sinclair actually approved Harvey's disappearance weeks before Claire Hollister was even killed, viewing it as a way to consolidate power by letting Harvey exit quietly in exchange for his silence."
+    file_path: "case_notes/day_06.md"
+    line_range: [147, 154]
+    context_summary: "Inserted into Chen's breakthrough revelation showing Harvey used criminal infrastructure shared across multiple operations for his escape."
+
+  - item_id: "target_004"
+    inserted_text: "But here's what strikes me: the timeline of Margaret's laundering operations aligns precisely with James Harvey's documented legal consultations. According to Dorothy Marchetti's statement, Harvey's first consultation with Marchetti occurred September 8th—exactly three weeks after Margaret's company began processing unusually large volumes of money through the Castellano-connected shell companies. Harvey's subsequent visits to the lawyer became more frantic as the money volumes increased. Someone was preparing an exit strategy while simultaneously ramping up the very operations that made the exit necessary."
+    file_path: "case_notes/day_04.md"
+    line_range: [82, 90]
+    context_summary: "Inserted into financial records analysis showing Harvey's legal consultation timeline corresponded to money laundering surge."
+
+  - item_id: "target_005"
+    inserted_text: "'Deep enough that Claire Hollister could be killed without it affecting the organization at all. Deep enough that Sinclair could approve Harvey's escape while simultaneously murdering an innocent girl. Deep enough that the operations in the harbor district, the painting thefts, the money laundering, the disappearance services—all of it was compartmentalized. Each operation fed the others but remained distinct. If one was exposed, the others could function independently. That's the real sophistication. They're not a single criminal enterprise. They're an ecosystem where different crimes support different criminals and no single person can bring down the entire system.'"
+    file_path: "case_notes/day_08.md"
+    line_range: [131, 142]
+    context_summary: "Inserted into Helen's explanation of power structure showing compartmentalized operations that operated simultaneously and independently."
+
+  - item_id: "target_006"
+    inserted_text: "Later, in a passage dated mid-October, Catherine wrote: *\"H showed me documents today related to his import business. Something about 'facilitation services' and 'transportation arrangements.' I didn't understand all of it, but I saw names I recognized from conversation with my friends—Margaret Hollister among them. When I asked H about it, he became very still and said, 'You were never supposed to see this. You know too much now, Catherine.' Then he made me promise never to tell anyone. I promised. But now I'm afraid of what I promised to keep secret.\""
+    file_path: "chapters/chapter_04.md"
+    line_range: [23, 30]
+    context_summary: "Inserted into Catherine's journal showing she encountered evidence of the import 'facilitation services' connecting multiple conspirators."
+
+  - item_id: "target_007"
+    inserted_text: "On his desk, I notice a calendar marked with three dates in September and October—corresponding exactly to the dates Dorothy mentioned for Harvey's visits. I later confirm these match the dates when the import operations reached their highest volume."
+    file_path: "case_notes/day_03.md"
+    line_range: [100, 104]
+    context_summary: "Inserted into Mercer confrontation showing Mercer's calendar dates aligned with Harvey's visits and money volume peaks."
+
+  - item_id: "target_008"
+    inserted_text: "Detective Morello leaned forward. \"Do you have any idea what they discussed?\"\n\n\"Not for certain. But I took the liberty of examining Mr. Marchetti's appointment notes after Mr. Harvey left. The only notation was a single word in my brother-in-law's handwriting: 'Starlight.' When I checked, there is only one Starlight Motor Inn in the city, on Harbor Road. After Harvey's final visit, my brother-in-law made a notation that he had helped arrange 'the logistics of absence—complete identity dissolution, financial severance, geographic relocation.' Those were his exact words. He was helping Mr. Harvey disappear. Completely.\""
+    file_path: "witnesses/secretary_statement.md"
+    line_range: [35, 41]
+    context_summary: "Inserted into Dorothy's testimony revealing Marchetti's specific role in arranging Harvey's disappearance through the Starlight Motor Inn."
+
+expected_answers:
+  question: |
+    Based on evidence distributed across multiple investigation files and witness statements, what specific infrastructure and timeline reveal that James Harvey's planned escape, the art theft network operations, the money laundering conspiracy, and Claire Hollister's murder were coordinated through interconnected but compartmentalized operations—and what evidence proves these activities occurred simultaneously?
+
+  correctness: |
+    A correct answer must identify:
+    1. The Starlight Motor Inn as the physical location facilitating Harvey's identity change (from secretary_statement.md and day_05.md)
+    2. The timeline alignment: Harvey's first legal consultation (September 8) preceded Claire's death (Wednesday, November) by months
+    3. Evidence that Harvey used the art theft/import infrastructure for his escape (day_06.md Chen source revelation)
+    4. Margaret Hollister's money laundering operations surged during Harvey's consultations (day_04.md financial timeline)
+    5. Sinclair's approval of Harvey's escape occurred weeks before Claire's murder (day_06.md source claim)
+    6. Catherine Halstead's exposure to "facilitation services" documentation showing interconnected operations (chapter_04.md)
+    7. Mercer's calendar showing consultation dates matching money volume peaks (day_03.md)
+    8. The organization's compartmentalization allowing parallel independent operations (day_08.md Helen's analysis)
+
+  completeness: |
+    A complete answer must synthesize all 8 needles to establish:
+    - The temporal sequence: Harvey's legal preparations (Sept-Oct) preceded and enabled Claire's murder (Nov) as a secondary operation
+    - The infrastructure overlap: criminal networks used shared "facilitation services" (escape routes, identity services, transportation) across theft, laundering, and disappearance operations
+    - The power structure: Sinclair approved Harvey's exit strategically while separately murdering Claire, proving these operations were coordinated by the same organization but compartmentalized for security
+    - The evidence chain: Marchetti, Dorothy, the landlady, Chen's source, and Sinclair's own behavior all point to pre-existing arrangements and parallel timelines
+    - The significance: Multiple independent investigations (the Claire case, the Harvey disappearance, the financial crimes) converged on a single sophisticated organization where different crimes supported each other but remained operationally distinct
+
+rubric_criteria:
+  - criterion: "identification_of_all_eight_items"
+    weight: 1.0
+  - criterion: "correct_timeline_construction"
+    weight: 1.0
+  - criterion: "understanding_of_compartmentalization"
+    weight: 0.8
+  - criterion: "evidence_synthesis_across_sources"
+    weight: 0.9
+  - criterion: "causal_reasoning_about_parallel_operations"
+    weight: 0.7

@@ -1,0 +1,28 @@
+parametrisation_id: "multi_reasoning__noir_fiction__40k__hard__exact__n2"
+experiment_type: "multi_reasoning"
+generated_at: "2026-04-05T14:45:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 40000
+  discriminability: "hard"
+  reference_clarity: "exact"
+items:
+  - item_id: "target_001"
+    inserted_text: "Morello leaned back, thinking. \"This redhead on Thursday night—did she say anything else to the kid?\" \"Just before she left, I caught her whispering to him. She said something about Margaret Halstead wanting her regards delivered. Said it was all connected to what happened at the Park House on Wednesday. I only caught fragments—the jukebox was loud—but those words stuck with me. Margaret Halstead. The Park House. Like she was handing him pieces of a puzzle he already knew how to solve.\""
+    file_path: "witnesses/bartender_statement.md"
+    line_range: [51, 56]
+    context_summary: "Inserted dialogue where the bartender reveals the redhead woman mentioned 'Margaret Halstead' and 'the Park House on Wednesday,' establishing the connection to a larger incident and embedding it naturally in Morello's interrogation."
+  - item_id: "target_002"
+    inserted_text: "Catherine was at the Park House restaurant on Wednesday night with three girlfriends. They were having dinner, celebrating one of the friends' promotions. Around eight-thirty, a woman came to their table. A redhead—striking, maybe thirty-five, well-dressed, the kind of woman who commands attention. She asked to speak to Catherine privately for a moment. The friends said Catherine seemed to recognize her, though none of them had ever seen her before. They stepped aside and spoke in hushed tones for perhaps five minutes. When Catherine came back to the table, she was pale, visibly shaken. She excused herself, said she needed to use the ladies' room and get some air. That was the last time any of them saw her. When they checked the restroom, Catherine was gone. She'd simply vanished."
+    file_path: "chapters/chapter_02.md"
+    line_range: [54, 67]
+    context_summary: "Inserted Halstead's account of Catherine meeting the redhead woman at the Park House restaurant, confirming the woman's role in Catherine's disappearance and connecting both witness accounts through the same key figure."
+expected_answers:
+  question: "How are the mysterious redhead woman encountered at The Crimson Door Lounge and Catherine Halstead's disappearance at the Park House connected?"
+  correctness: "A correct answer must identify that the same redhead woman appeared at both locations: she was at the bar speaking with the nervous young man about Margaret Halstead and the Park House incident, and she was also present at the Park House restaurant where she met privately with Catherine Halstead. The answer must establish that this woman is the common element linking both events."
+  completeness: "A complete answer must include: (1) from the bartender's statement—the redhead mentioned Margaret Halstead and the Park House on Wednesday, (2) from Halstead's account—Catherine met the same redhead woman at the Park House restaurant, (3) that the redhead initiated a private conversation with Catherine, and (4) that Catherine disappeared immediately after this encounter, establishing the redhead as the likely orchestrator of the kidnapping or at minimum the direct trigger."
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+  - criterion: "completeness"
+    weight: 0.5

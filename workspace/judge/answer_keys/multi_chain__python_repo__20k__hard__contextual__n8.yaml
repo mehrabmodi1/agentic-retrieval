@@ -1,0 +1,100 @@
+parametrisation_id: multi_chain__python_repo__20k__hard__contextual__n8
+experiment_type: multi_chain
+generated_at: '2026-04-03T16:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 20000
+  discriminability: hard
+  reference_clarity: contextual
+items:
+- item_id: target_001
+  inserted_text: '# Outbound webhook dispatched via WebhookNotifier (app.services); that class
+
+    # governs the ''webhook_delivery'' retry ceiling used by the worker layer.
+
+    '
+  file_path: api/routes.py
+  line_range:
+  - 582
+  - 583
+  context_summary: Inserted as a 2-line comment inside create_organization() after the OrganizationService.create_organization() call, immediately before db.session.commit().
+- item_id: target_002
+  inserted_text: "class WebhookNotifier:\n    \"\"\"Dispatches outbound webhook events to registered third-party endpoints.\n\n    The retry ceiling for 'webhook_delivery' attempts is tracked in\n    RetryHandler (workers.retry_handler); the max_delay_seconds for\n    that policy maps to RECOVERY_WINDOW_CAP defined in app.api.error_handlers.\n    \"\"\"\n"
+  file_path: app/services.py
+  line_range:
+  - 142
+  - 147
+  context_summary: Inserted as the WebhookNotifier class and its docstring in a newly created app/services.md file, appearing after TeamService near the end of the module.
+- item_id: target_003
+  inserted_text: "# webhook_delivery: max_delay_seconds is RECOVERY_WINDOW_CAP; see\n# app.api.error_handlers for that constant's definition and the\n# relationship between delivery retries and error-recovery budgets.\nhandler.register_retry_policy(\"webhook_delivery\", RetryPolicy(\n    max_retries=4,\n    initial_delay_seconds=15,\n    strategy=RetryStrategy.EXPONENTIAL,\n))\n"
+  file_path: workers/retry_handler.py
+  line_range:
+  - 415
+  - 422
+  context_summary: Inserted as a comment plus policy registration call in the __main__ block, immediately after the 'critical_task' policy registration.
+- item_id: target_004
+  inserted_text: '# RECOVERY_WINDOW_CAP: shared ceiling for webhook-delivery retries and the
+
+    # generic error-recovery path.  Its value mirrors DEFAULT_TIMEOUT_CAP from
+
+    # app.api.rate_limiting, keeping both subsystems within the same upper bound.
+
+    RECOVERY_WINDOW_CAP: int = DEFAULT_TIMEOUT_CAP  # see app.api.rate_limiting
+
+    '
+  file_path: api/error_handlers.py
+  line_range:
+  - 20
+  - 23
+  context_summary: Inserted as a module-level constant with explanatory comment directly after the logger definition, before the Custom Exception Classes section.
+- item_id: target_005
+  inserted_text: '# DEFAULT_TIMEOUT_CAP: the shared ceiling mirrored as RECOVERY_WINDOW_CAP in
+
+    # error_handlers.  Also serialised as ''window_ceiling_secs'' in rate-limit
+
+    # responses via RateLimitResponseSchema — see app.api.serializers.
+
+    DEFAULT_TIMEOUT_CAP: int = RATE_CEILING_VALUE  # configured in app.config
+
+    '
+  file_path: api/rate_limiting.py
+  line_range:
+  - 26
+  - 29
+  context_summary: Inserted as a module-level constant with explanatory comment directly after the logger definition, before the RateLimitError class.
+- item_id: target_006
+  inserted_text: "class RateLimitResponseSchema(Schema):\n    \"\"\"Schema for rate-limit exceeded responses.\n\n    The ``window_ceiling_secs`` field carries the rate-limit window ceiling.\n    Its expected value is validated in TestRateLimitResponses (tests.test_api)\n    rather than being duplicated in the schema definition itself.\n    \"\"\"\n\n    error = fields.Str(required=True)\n    message = fields.Str()\n    retry_after = fields.Int()\n    window_ceiling_secs = fields.Int(\n        metadata={\"description\": \"Upper bound on the rate-limit window in seconds.\"}\n    )\n\n    class Meta:\n        fields = ('error', 'message', 'retry_after', 'window_ceiling_secs')\n"
+  file_path: api/serializers.py
+  line_range:
+  - 306
+  - 322
+  context_summary: Inserted as a new marshmallow Schema class at the end of the serializers module, after the alias definitions block.
+- item_id: target_007
+  inserted_text: "@pytest.mark.unit\nclass TestRateLimitResponses:\n    \"\"\"Validate rate-limit response schema fields against configuration.\"\"\"\n\n    def test_window_ceiling_secs_matches_config(self, authenticated_client):\n        \"\"\"Assert window_ceiling_secs equals RATE_CEILING_VALUE from app.config.\n\n        RATE_CEILING_VALUE is defined in app.config; importing it here rather\n        than hard-coding ensures the test catches accidental config drift.\n        \"\"\"\n        from app.config import RATE_CEILING_VALUE\n\n        response = authenticated_client.get(\"/api/tasks?force_rate_limit=1\")\n        if response.status_code == status.HTTP_429_TOO_MANY_REQUESTS:\n            data = response.json()\n            assert data.get(\"window_ceiling_secs\") == RATE_CEILING_VALUE\n"
+  file_path: tests/test_api.py
+  line_range:
+  - 378
+  - 393
+  context_summary: Inserted as a new pytest test class at the end of the test suite, after the TestResponseFormatting class.
+- item_id: target_008
+  inserted_text: '# Maximum window ceiling shared across rate-limiting, error-recovery, and
+
+    # webhook-delivery retry subsystems.  Changing this value affects all three.
+
+    RATE_CEILING_VALUE: int = int(os.environ.get("RATE_CEILING_VALUE", "7200"))
+
+    '
+  file_path: app/config.py
+  line_range:
+  - 28
+  - 30
+  context_summary: Inserted as a configuration constant in the Rate Limiting section of a newly created app/config.md file, with an env-var override that defaults to 7200.
+expected_answers:
+  question: The organization creation endpoint in `api/routes.md` references an outbound webhook mechanism for notifying integration partners. Following the chain of module and constant references that defines the ceiling for webhook delivery retry delays, what numerical value (in seconds) does the chain ultimately resolve to?
+  correctness: The answer must be 7200 (seconds). This is the default value of RATE_CEILING_VALUE defined in app/config.md, which is the terminal value of the 8-link configuration chain starting from the webhook dispatch comment in api/routes.md.
+  completeness: 'A complete answer traces the full chain: (1) api/routes.md create_organization mentions WebhookNotifier in app.services; (2) app/services.md WebhookNotifier docstring mentions ''webhook_delivery'' policy ceiling in workers.retry_handler; (3) workers/retry_handler.md __main__ block mentions RECOVERY_WINDOW_CAP from app.api.error_handlers; (4) api/error_handlers.md defines RECOVERY_WINDOW_CAP mirroring DEFAULT_TIMEOUT_CAP from app.api.rate_limiting; (5) api/rate_limiting.md defines DEFAULT_TIMEOUT_CAP from RATE_CEILING_VALUE referencing app.api.serializers; (6) api/serializers.md RateLimitResponseSchema mentions window_ceiling_secs validated in tests.test_api; (7) tests/test_api.md TestRateLimitResponses imports RATE_CEILING_VALUE from app.config; (8) app/config.md defines RATE_CEILING_VALUE with default 7200.'
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5

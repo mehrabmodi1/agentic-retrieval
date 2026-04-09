@@ -1,0 +1,32 @@
+parametrisation_id: "multi_chain__noir_fiction__160k__easy__contextual__n2"
+experiment_type: "multi_chain"
+generated_at: "2026-04-05T00:00:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 160000
+  discriminability: "easy"
+  reference_clarity: "contextual"
+items:
+  - item_id: "target_001"
+    inserted_text: |
+      I lean forward. "Who was the agent? The one Claire was communicating with?"
+
+      Margaret's hands shake. "She called him the Shepherd in her notes. The Nightingale's Shepherd. That was their code. He was supposed to guide her to safety."
+    file_path: "case_notes/day_04.md"
+    line_range: [41, 43]
+    context_summary: "Margaret reveals the code name for Claire's contact—the Nightingale's Shepherd—who was supposed to help her escape."
+  - item_id: "target_002"
+    inserted_text: |
+      Later, I understand what Margaret meant. The Shepherd in Claire's notes wasn't a person—it was me. I was the Nightingale's Shepherd. The detective who was supposed to guide her out of the darkness. The man she trusted to protect her from Sinclair. And I failed. By the time I was looking for her, she was already dead, already resolved into nothing, and I was already condemned as a target for knowing too much about how everything worked.
+    file_path: "case_notes/day_07.md"
+    line_range: [31, 31]
+    context_summary: "The narrator discovers he is 'the Nightingale's Shepherd'—the failed protector of the victim Claire Hollister."
+expected_answers:
+  question: "Starting from the identity revealed in day_04.md about the Nightingale's Shepherd, who does that code name ultimately resolve to?"
+  correctness: "Must identify that 'the Nightingale's Shepherd' refers to the narrator/detective protagonist himself."
+  completeness: "Complete answer should note that the Shepherd was supposed to protect Claire but failed, and the revelation comes in day_07.md where the narrator understands his own role in the tragedy."
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+  - criterion: "completeness"
+    weight: 0.5

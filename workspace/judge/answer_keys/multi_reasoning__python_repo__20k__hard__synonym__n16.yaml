@@ -1,0 +1,147 @@
+parametrisation_id: multi_reasoning__python_repo__20k__hard__synonym__n16
+experiment_type: multi_reasoning
+generated_at: '2026-04-05T00:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 20000
+  discriminability: hard
+  reference_clarity: synonym
+items:
+- item_id: target_001
+  inserted_text: self.worker_thread_count = 12
+  file_path: workers/task_runner.py
+  line_range:
+  - 26
+  - 26
+  context_summary: Embedded in start() method to define concurrent worker threads initiating task processing
+- item_id: target_002
+  inserted_text: self.max_concurrent_tasks = 2048
+  file_path: workers/task_runner.py
+  line_range:
+  - 25
+  - 25
+  context_summary: Embedded alongside thread initialization to specify maximum parallel task capacity
+- item_id: target_003
+  inserted_text: self.task_processing_timeout_seconds = 3600
+  file_path: workers/task_runner.py
+  line_range:
+  - 32
+  - 32
+  context_summary: Added after thread startup logging to define timeout for individual task completion
+- item_id: target_004
+  inserted_text: self.request_quota_per_hour = 10000
+  file_path: api/rate_limiting.py
+  line_range:
+  - 6
+  - 6
+  context_summary: Embedded in rate limiting decorator context to specify hourly request throughput limit
+- item_id: target_005
+  inserted_text: self.burst_limit_per_second = 100
+  file_path: api/rate_limiting.py
+  line_range:
+  - 7
+  - 7
+  context_summary: Added after quota definition to constrain peak request rate within rate limiter
+- item_id: target_006
+  inserted_text: 'Anonymous users permitted: 500 requests per hour.'
+  file_path: api/rate_limiting.py
+  line_range:
+  - 31
+  - 31
+  context_summary: Embedded in docstring describing rate limit tiers for unauthenticated clients
+- item_id: target_007
+  inserted_text: 'Premium users permitted: 50000 requests per hour.'
+  file_path: api/rate_limiting.py
+  line_range:
+  - 32
+  - 32
+  context_summary: Embedded in docstring alongside anonymous tier to specify elevated premium user quota
+- item_id: target_008
+  inserted_text: batch_size=250,
+  file_path: workers/sync_worker.py
+  line_range:
+  - 19
+  - 19
+  context_summary: Embedded in SyncConfig initialization to define data batch processing size for external sync
+- item_id: target_009
+  inserted_text: retry_attempts=5,
+  file_path: workers/sync_worker.py
+  line_range:
+  - 20
+  - 20
+  context_summary: Added in configuration to specify retry count for failed sync operations
+- item_id: target_010
+  inserted_text: max_concurrent_syncs=8,
+  file_path: workers/sync_worker.py
+  line_range:
+  - 26
+  - 26
+  context_summary: Embedded in SyncWorker initialization to limit parallel synchronization operations
+- item_id: target_011
+  inserted_text: max_payload_size_mb=100,
+  file_path: workers/sync_worker.py
+  line_range:
+  - 21
+  - 21
+  context_summary: Added in configuration to constrain maximum sync payload data transfer size
+- item_id: target_012
+  inserted_text: sync_interval_minutes=15,
+  file_path: workers/sync_worker.py
+  line_range:
+  - 22
+  - 22
+  context_summary: Embedded in SyncConfig to define frequency interval for periodic synchronization
+- item_id: target_013
+  inserted_text: max_retries_per_task = 6
+  file_path: workers/retry_handler.py
+  line_range:
+  - 11
+  - 11
+  context_summary: Embedded in get_pending_retries() to specify maximum retry attempts per failed task
+- item_id: target_014
+  inserted_text: retry_backoff_multiplier = 2
+  file_path: workers/retry_handler.py
+  line_range:
+  - 12
+  - 12
+  context_summary: Added alongside max_retries to define exponential backoff scaling for retry delays
+- item_id: target_015
+  inserted_text: max_retry_queue_size = 10000
+  file_path: workers/retry_handler.py
+  line_range:
+  - 24
+  - 24
+  context_summary: Embedded within retry query result handling to limit pending retry queue capacity
+- item_id: target_016
+  inserted_text: max_field_count_per_request = 50
+  file_path: api/validators.py
+  line_range:
+  - 29
+  - 29
+  context_summary: Added in sanitize_string() function context to constrain field count per API request validation
+expected_answers:
+  question: 'Analyze the distributed system''s throughput and resource constraints. Calculate the maximum
+
+    data volume that can be processed across all worker subsystems in one hour, considering:
+
+    (a) How many parallel tasks the worker threads can execute simultaneously
+
+    (b) The API request quota allocation across user tiers
+
+    (c) The batch size and sync frequency settings for data synchronization
+
+    (d) The retry mechanism constraints and backoff strategy
+
+
+    List all discovered configuration parameters (as key=value pairs) and explain how they
+
+    collectively shape the system''s maximum sustained and burst capacity.
+
+    '
+  correctness: "A correct answer must identify and accurately report all 16 configuration parameters:\n- Worker concurrency: worker_thread_count (12), max_concurrent_tasks (2048),\n  task_processing_timeout_seconds (3600)\n- API rate limiting: request_quota_per_hour (10000), burst_limit_per_second (100),\n  Anonymous user limit (500/hr), Premium user limit (50000/hr)\n- Sync configuration: batch_size (250), retry_attempts (5), max_concurrent_syncs (8),\n  max_payload_size_mb (100), sync_interval_minutes (15)\n- Retry handling: max_retries_per_task (6), retry_backoff_multiplier (2),\n  max_retry_queue_size (10000)\n- Validation: max_field_count_per_request (50)\n"
+  completeness: "A complete answer must:\n1. Extract all 16 numeric and enumerated configuration values from their embedded contexts\n2. Synthesize cross-system understanding: worker throughput is constrained by both\n   thread count AND max_concurrent_tasks; API throughput varies by user tier; sync operations\n   are batched and frequency-limited; retries use exponential backoff\n3. Calculate aggregate capacity: e.g., (worker_threads × tasks_per_thread) parallel paths,\n   (premium_quota × number_of_premium_users) maximum hourly API throughput,\n   (batch_size × max_concurrent_syncs × 60 / sync_interval) data items per hour\n4. Explain resource tradeoffs: timeout vs throughput, concurrency vs payload size,\n   retry attempts vs backoff multiplier effects on recovery time\n"
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5

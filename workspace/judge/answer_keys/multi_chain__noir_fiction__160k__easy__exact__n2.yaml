@@ -1,0 +1,28 @@
+parametrisation_id: "multi_chain__noir_fiction__160k__easy__exact__n2"
+experiment_type: "multi_chain"
+generated_at: "2026-04-05T00:00:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 160000
+  discriminability: "easy"
+  reference_clarity: "exact"
+items:
+  - item_id: "target_001"
+    inserted_text: "Then, as an afterthought, he added quietly, 'There is a warehouse. The Sinclair warehouse. That is where it ends. That is where the moral reckoning will take place.'"
+    file_path: "witnesses/secretary_statement.md"
+    line_range: [55, 57]
+    context_summary: "Marchetti's final cryptic revelation to Dorothy about the Sinclair warehouse being the location where the moral reckoning will occur, inserted at the end of their conversation about James Harvey."
+  - item_id: "target_002"
+    inserted_text: "And in that moment, standing in the Sinclair warehouse—the very place Marchetti had whispered about months ago, the location where he said the moral reckoning would take place—I understand that I've reached the inevitable end."
+    file_path: "case_notes/day_05.md"
+    line_range: [169, 171]
+    context_summary: "The detective's recognition at the warehouse confrontation that he has reached the location Marchetti warned about, resolving the chain from Dorothy's testimony."
+expected_answers:
+  question: "Following the lead from Dorothy's testimony about her boss's cryptic final words, what specific location did Marchetti say would be the place where moral reckoning would take place?"
+  correctness: "A correct answer must identify 'the Sinclair warehouse' as the location Marchetti revealed to Dorothy regarding where the case would ultimately be resolved."
+  completeness: "A complete answer recognizes that Marchetti told Dorothy this warehouse was where moral reckoning would occur, and the detective's subsequent arrival at this exact location in day_05.md confirms this was the designated end point of the investigation."
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+  - criterion: "completeness"
+    weight: 0.5

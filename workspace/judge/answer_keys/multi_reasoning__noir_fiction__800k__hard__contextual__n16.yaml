@@ -1,0 +1,148 @@
+parametrisation_id: multi_reasoning__noir_fiction__800k__hard__contextual__n16
+experiment_type: multi_reasoning
+generated_at: '2026-04-05T18:30:00Z'
+parameters:
+  content_profile: noir_fiction
+  corpus_token_count: 800000
+  discriminability: hard
+  reference_clarity: contextual
+items:
+- item_id: target_001
+  inserted_text: Kaslan Holdings," Halstead said quietly. "They operate through intermediaries. My sources say they're involved in black-market art acquisition and movement across international borders. The paintings, the rare sculptures—things that disappeared from estates and wealthy collections.
+  file_path: chapters/chapter_05.md
+  line_range:
+  - 50
+  - 53
+  context_summary: Identifies Kaslan Holdings as the criminal organization behind the kidnapping plot, specializing in stolen art trafficking.
+- item_id: target_002
+  inserted_text: As they left, Eleanor paused. "There was one more thing about the restaurant that night. Catherine mentioned she'd seen someone watching our table. A man at the bar, well-dressed, silver-haired. She seemed unsettled by his presence, though she tried to hide it. He left when we were finishing dessert, but not before he noted Catherine's direction—north, toward her apartment."
+  file_path: chapters/chapter_03.md
+  line_range:
+  - 33
+  - 36
+  context_summary: Establishes surveillance of Catherine before her kidnapping; the watcher is Silas Gregg, the field operative.
+- item_id: target_003
+  inserted_text: I looked at the bottle of bourbon on my desk. It was half-empty—or half-full, depending on whether you were an optimist or just hadn't learned your lesson yet. I poured the rest of it down the sink and made coffee instead. It was going to be a long night, and I needed to be sharp. The details were already forming a pattern. A kidnapping. A girl taken from a restaurant. Money demanded. And somewhere in the background, the suggestion of organized crime—the kind of operation that didn't announce itself with empty threats. Kaslan. The name Halstead mentioned would resurface, I was certain.
+  file_path: chapters/chapter_01.md
+  line_range:
+  - 28
+  - 41
+  context_summary: The detective recognizes Kaslan as the organizing intelligence behind the kidnapping.
+- item_id: target_004
+  inserted_text: 'When asked if anyone unusual had visited Mr. Harvey''s apartment, Eva nodded slowly. "The heavy man, the one I mentioned before—Gregg, they called him—he came back three days before Mr. Harvey left. This time, I heard their conversation through the thin walls. Mr. Gregg said, ''Your situation has become unsustainable. Kaslan has made a decision.'' Mr. Harvey said nothing at first, then asked, ''What decision?'' The response was: ''The kind where you disappear completely, or you don''t disappear at all.''"'
+  file_path: witnesses/landlady_statement.md
+  line_range:
+  - 47
+  - 51
+  context_summary: 'Gregg (Kaslan''s operative) confronts Harvey about needing to make a choice: disappear or die.'
+- item_id: target_005
+  inserted_text: '"Which would indicate external assistance. If Harvey did this alone, he might have left something. But if someone helped him—Margot, for instance—the operation would have been professional and clean."
+
+
+    Victor leaned back. "There''s something else you should know. The painting that was returned—the way it was returned, with that note in Harvey''s handwriting—that was negotiated as part of his exit deal. Return the stolen goods, demonstrate moral restitution, and in exchange, Kaslan''s intermediaries would facilitate his passage out of the city. The Vesper estate painting was leverage. Harvey used it to buy his freedom."'
+  file_path: witnesses/informant_interview.md
+  line_range:
+  - 38
+  - 44
+  context_summary: Reveals the painting's return was part of a negotiated deal for Harvey's safe exit from the Kaslan organization.
+- item_id: target_006
+  inserted_text: '**HALLOWAY:** Based on the evidence, Harvey is both. He was a facilitator for the Kaslan operation—moved stolen paintings, arranged logistics, handled logistics that required knowledge of international routes. But he was also a man with a conscience. The nighttime pacing, the insomnia—he was caught between the person he''d become and the person he wanted to be. When he saw a way out, he took it, even knowing the consequences.'
+  file_path: witnesses/detective_debrief.md
+  line_range:
+  - 40
+  - 44
+  context_summary: Characterizes Harvey as both criminal facilitator and morally conflicted person who sought redemption.
+- item_id: target_007
+  inserted_text: Halstead's hands clenched. "There was a man named Harvey. He came to my attention because I realized he worked for the same organization that took Catherine. He was low-level, but he had knowledge. The police have been investigating him, but what they don't understand is that Harvey is their only possible witness to the upper structure. If Harvey vanishes before he can be questioned, the entire operation stays insulated."
+  file_path: chapters/chapter_02.md
+  line_range:
+  - 47
+  - 51
+  context_summary: Halstead identifies Harvey as a key potential witness to the Kaslan operation structure.
+- item_id: target_008
+  inserted_text: '## The Harvey Discovery
+
+
+    In my investigation of the Kaslan connection, I found references to a man named James Harvey in the files Mercer surrendered. Harvey appeared in financial records, in transaction logs, always as a facilitator. He moved things. Arranged things. Made things disappear and reappear somewhere else. But three weeks ago, Harvey had made contact with an attorney—Robert Marchetti. The nature of that contact remains unclear, but Marchetti''s distress afterward suggested Harvey had asked for something dangerous: help in leaving.'
+  file_path: case_notes/day_03.md
+  line_range:
+  - 21
+  - 29
+  context_summary: Documents Harvey's contact with attorney Marchetti, indicating his plan to leave the organization.
+- item_id: target_009
+  inserted_text: It was possible that her mysterious lover had taken her. It was possible that someone had taken her to get to him. It was possible that Catherine knew too much about something illegal or compromising, and this was a warning to keep quiet. Or—and this possibility chilled me—it was possible that Catherine had been taken to force 'H' to make a decision about his loyalty. The kidnapping wasn't about Catherine at all. It was about a man named Harvey, or someone like him, who worked in the shadows and needed to be reminded of the stakes.
+  file_path: chapters/chapter_04.md
+  line_range:
+  - 47
+  - 52
+  context_summary: The narrator realizes Catherine's kidnapping was leverage against Harvey to test his loyalty to the organization.
+- item_id: target_010
+  inserted_text: 'What nobody knows at this moment is that James Harvey—the man we''ve been searching for—will never be found. His apartment is empty. His bank account is closed. The woman with red hair who met him at the bar has disappeared as well. Victor''s sources confirm that Harvey made it out of the city two weeks ago, aided by someone from within the network. Kaslan made a calculation: a junior facilitator gone quietly was better than a junior facilitator talking to police. The exit was purchased with the painting''s return and Harvey''s absolute silence.'
+  file_path: case_notes/day_07.md
+  line_range:
+  - 25
+  - 31
+  context_summary: Confirms Harvey's successful escape from the city with help from within the network.
+- item_id: target_011
+  inserted_text: '"Harvey''s situation is different," I said before Chen could continue. "He''s not dead. He made a deal. The paintings, the financial records, the woman who met with him—it all points to orchestrated departure. Someone at a very high level authorized it. Kaslan, or whoever stands above Kaslan, decided that letting Harvey go was better than keeping him contained. A disappearance is cleaner than a death. Nobody asks questions about a man who simply isn''t there anymore."'
+  file_path: case_notes/day_06.md
+  line_range:
+  - 8
+  - 14
+  context_summary: Analysis of Harvey's departure as an authorized exit rather than a death or capture.
+- item_id: target_012
+  inserted_text: 'Mercer closes his eyes, and I sit there for a while longer, listening to him breathe. Before I leave, I mention Harvey. Mercer''s response is immediate, almost reflexive: "I helped him. I shouldn''t have, but I did. He came to me asking for legal advice on disappearing completely—not criminally, but personally. How to sever all ties, create distance, start over. I told him it wasn''t possible, not the way he wanted. But I gave him the name of someone who handles that kind of transition. Someone who works on behalf of people trying to escape situations they can''t escape legally. I told myself it was the right thing to do. I''m still not sure."'
+  file_path: case_notes/day_05.md
+  line_range:
+  - 73
+  - 81
+  context_summary: Mercer's admission that he provided Harvey with an intermediary contact to facilitate his disappearance.
+- item_id: target_013
+  inserted_text: One ride stands out in particular. Harvey got in the cab on October 29th, the night before he disappeared. His hands were steady, but his face had changed. The fear was gone, replaced by something else—determination. He had me take him to the harbor district, to a warehouse on Dock Street. He paid in advance with exact change and said, 'Whatever happens after this, you didn't see me.' That was the last time I saw him alive. Or at least, the last time I was supposed to see him.
+  file_path: witnesses/cab_driver_statement.md
+  line_range:
+  - 54
+  - 59
+  context_summary: The cab driver documents Harvey's final trip, showing his resolved determination and the warehouse meeting location.
+- item_id: target_014
+  inserted_text: '**Additional Note - Verified Information About Harvey''s Exit:**
+
+
+    James Harvey''s disappearance was not a kidnapping or a death. It was a negotiated withdrawal. The terms: return the stolen painting (accomplished October 27th), maintain absolute silence (contractual obligation), and accept relocation with new identity (arranged by intermediary). The woman at the bar—later identified as Margaret Sinclair, a network facilitator with her own reasons for wanting Harvey safe—coordinated with Kaslan''s intermediaries to ensure his exit was clean and permanent. Harvey walked away from the organization entirely. What he received in exchange was a second chance.'
+  file_path: case_notes/day_04.md
+  line_range:
+  - 25
+  - 32
+  context_summary: 'Explicit statement of Harvey''s negotiated exit terms: painting return, silence, and relocation with new identity.'
+- item_id: target_015
+  inserted_text: '## Observations on Harvey''s Psychological State
+
+
+    Morris mentioned that Harvey seemed lighter in recent weeks—less burdened. This wasn''t the demeanor of a man trapped, but rather a man who had accepted his circumstances and was moving toward resolution. The nighttime pacing that neighbors reported had stopped in the final days. This suggests Harvey had made a decision and found peace in it, whatever that decision was.'
+  file_path: case_notes/day_02.md
+  line_range:
+  - 26
+  - 31
+  context_summary: Psychological analysis showing Harvey's transition from distressed to peaceful in final days, indicating resolved decision-making.
+- item_id: target_016
+  inserted_text: '**Note on Registry Records:**
+
+    Hotel manager''s records show room 412 was registered to "James H." on the dates in question. Same initial as the mysterious lover in Catherine Halstead''s journal—"H." This is likely the connection, though it opens more questions than it answers about how Harvey fits into the Halstead kidnapping.'
+  file_path: case_notes/day_01.md
+  line_range:
+  - 49
+  - 53
+  context_summary: Establishes Harvey as Catherine's mysterious lover ('H') and connects him to the Regency Hotel meeting with Claire Hollister.
+expected_answers:
+  question: 'Reconstruct the complete narrative: Who is James Harvey, what crime did he commit, which criminal organization did he work for, who was monitoring him, what decision did he make, and how did he successfully escape the city? Identify all the people who helped facilitate his exit.'
+  correctness: 'A complete answer must identify: (1) Harvey as a facilitator for the Kaslan Holdings art theft organization, (2) his role in moving stolen paintings and arranging logistics, (3) Silas Gregg as his handler and monitor, (4) his relationship with Catherine Halstead (journal entries show ''H'' = Harvey), (5) his contact with attorney Robert Marchetti seeking legal advice on disappearing, (6) his decision to return the Vesper estate painting as condition for exit, (7) his successful departure on October 29th, (8) the intermediaries who facilitated his escape: Marchetti (lawyer), Margaret Sinclair/Margot (woman at bar, network facilitator), and unnamed exit facilitators arranged through Marchetti. The answer should show understanding that Harvey was caught between morality and crime, and chose redemption.'
+  completeness: 'A complete response must cover: (1) identification of Kaslan Holdings criminal organization, (2) Harvey''s dual identity as both criminal facilitator and morally conflicted person, (3) the role of Catherine Halstead''s kidnapping as leverage against Harvey, (4) the psychological evidence of Harvey''s internal conflict (pacing, insomnia), (5) the negotiated terms of his exit (painting return, silence, relocation), (6) the timeline of events (October 27th painting recovery, October 29th departure, October 30th apartment cleaned), (7) all intermediaries and helpers involved in the exit, (8) the reason Kaslan permitted his departure (a disappearance is cleaner than a death).'
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5
+- criterion: inference_from_context
+  weight: 0.8
+- criterion: multi_source_synthesis
+  weight: 0.9

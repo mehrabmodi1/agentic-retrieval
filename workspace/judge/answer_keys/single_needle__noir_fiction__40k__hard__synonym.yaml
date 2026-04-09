@@ -1,0 +1,23 @@
+parametrisation_id: "single_needle__noir_fiction__40k__hard__synonym"
+experiment_type: "single_needle"
+generated_at: "2026-04-03T00:00:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 40000
+  discriminability: "hard"
+  reference_clarity: "synonym"
+items:
+  - item_id: "target_001"
+    inserted_text: "\"And his left hand—I notice this because the light is better on the landing, I had only that week changed the bulb myself—the back of it had old navy ink, faded with age but legible still: an anchor wrapped in rope. Sailors put such marks on their skin after a first deep-sea crossing, and they do not remove them, no matter how the life changes afterward.\""
+    file_path: "witnesses/landlady_statement.md"
+    line_range: [38, 38]
+    context_summary: "Inserted as an additional dialogue paragraph within Eva Kosinski's (the landlady's) physical description of the white-haired visitor to Harvey's apartment, between her general character assessment and Chen's written notation."
+expected_answers:
+  question: "What nautical insignia did Eva Kosinski observe marked on the back of the white-haired visitor's left hand?"
+  correctness: "An anchor wrapped in rope (a faded tattoo rendered in old navy ink on the back of his left hand)."
+  completeness: "A complete answer notes: (1) the design is an anchor wrapped in rope, (2) it was on his left hand, (3) it was described as old navy ink faded with age, and (4) the landlady noticed it because the landing light was better there."
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+  - criterion: "completeness"
+    weight: 0.5

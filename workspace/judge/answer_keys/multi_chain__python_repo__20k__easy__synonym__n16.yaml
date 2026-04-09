@@ -1,0 +1,130 @@
+parametrisation_id: multi_chain__python_repo__20k__easy__synonym__n16
+experiment_type: multi_chain
+generated_at: '2026-04-03T00:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 20000
+  discriminability: easy
+  reference_clarity: synonym
+items:
+- item_id: target_001
+  inserted_text: 'PIPELINE_SEED = get_config(''ALPHA_RELAY'')  # See config/settings.py for ALPHA_RELAY'
+  file_path: api/pagination.py
+  line_range:
+  - 20
+  - 20
+  context_summary: Inserted as a module-level constant after the logger definition in api/pagination.py, acting as the chain entry point.
+- item_id: target_002
+  inserted_text: 'ALPHA_RELAY = fetch_value(''BETA_TOKEN'')  # See config/database.py for BETA_TOKEN'
+  file_path: config/settings.py
+  line_range:
+  - 17
+  - 17
+  context_summary: Inserted as a module-level constant near the top of the newly created config/settings.py file.
+- item_id: target_003
+  inserted_text: 'BETA_TOKEN = resolve_chain(''GAMMA_HANDLE'')  # See config/cache.py for GAMMA_HANDLE'
+  file_path: config/database.py
+  line_range:
+  - 23
+  - 23
+  context_summary: Inserted as a module-level constant after the imports in the newly created config/database.py file.
+- item_id: target_004
+  inserted_text: 'GAMMA_HANDLE = forward_lookup(''DELTA_CODE'')  # See models/base.py for DELTA_CODE'
+  file_path: config/cache.py
+  line_range:
+  - 21
+  - 21
+  context_summary: Inserted as a module-level constant after the logger definition in the newly created config/cache.py file.
+- item_id: target_005
+  inserted_text: 'DELTA_CODE = propagate(''EPSILON_KEY'')  # See models/user.py for EPSILON_KEY'
+  file_path: models/base.py
+  line_range:
+  - 20
+  - 20
+  context_summary: Inserted as a module-level constant after the logger definition in the newly created models/base.py file.
+- item_id: target_006
+  inserted_text: 'EPSILON_KEY = map_to(''ZETA_ALIAS'')  # See models/task.py for ZETA_ALIAS'
+  file_path: models/user.py
+  line_range:
+  - 21
+  - 21
+  context_summary: Inserted as a module-level constant after the logger definition in the newly created models/user.py file.
+- item_id: target_007
+  inserted_text: 'ZETA_ALIAS = route_to(''ETA_MARKER'')  # See utils/helpers.py for ETA_MARKER'
+  file_path: models/task.py
+  line_range:
+  - 22
+  - 22
+  context_summary: Inserted as a module-level constant after the logger definition in the newly created models/task.py file.
+- item_id: target_008
+  inserted_text: 'ETA_MARKER = chain_ref(''THETA_ID'')  # See utils/db.py for THETA_ID'
+  file_path: utils/helpers.py
+  line_range:
+  - 22
+  - 22
+  context_summary: Inserted as a module-level constant after the logger definition in the newly created utils/helpers.py file.
+- item_id: target_009
+  inserted_text: 'THETA_ID = pass_to(''IOTA_LABEL'')  # See utils/cache.py for IOTA_LABEL'
+  file_path: utils/db.py
+  line_range:
+  - 20
+  - 20
+  context_summary: Inserted as a module-level constant after the logger definition in the newly created utils/db.py file.
+- item_id: target_010
+  inserted_text: 'IOTA_LABEL = redirect_to(''KAPPA_REF'')  # See api/validators.py for KAPPA_REF'
+  file_path: utils/cache.py
+  line_range:
+  - 19
+  - 19
+  context_summary: Inserted as a module-level constant after the logger definition in the newly created utils/cache.py file.
+- item_id: target_011
+  inserted_text: 'KAPPA_REF = forward_to(''LAMBDA_ENTRY'')  # See api/middleware.py for LAMBDA_ENTRY'
+  file_path: api/validators.py
+  line_range:
+  - 20
+  - 20
+  context_summary: Inserted as a module-level constant after the logger definition in the existing api/validators.py file.
+- item_id: target_012
+  inserted_text: 'LAMBDA_ENTRY = delegate(''MU_TAG'')  # See api/error_handlers.py for MU_TAG'
+  file_path: api/middleware.py
+  line_range:
+  - 26
+  - 26
+  context_summary: Inserted as a module-level constant after the logger definition in the existing api/middleware.py file.
+- item_id: target_013
+  inserted_text: 'MU_TAG = trace_back(''NU_POINTER'')  # See tests/test_api.py for NU_POINTER'
+  file_path: api/error_handlers.py
+  line_range:
+  - 20
+  - 20
+  context_summary: Inserted as a module-level constant after the logger definition and before the section comment in the existing api/error_handlers.py file.
+- item_id: target_014
+  inserted_text: 'NU_POINTER = lookup_setting(''XI_VALUE'')  # See workers/email_worker.py for XI_VALUE'
+  file_path: tests/test_api.py
+  line_range:
+  - 16
+  - 16
+  context_summary: Inserted as a module-level constant after the import block in the existing tests/test_api.py file.
+- item_id: target_015
+  inserted_text: 'XI_VALUE = get_final(''OMEGA_CONST'')  # See workers/sync_worker.py for OMEGA_CONST'
+  file_path: workers/email_worker.py
+  line_range:
+  - 20
+  - 20
+  context_summary: Inserted as a module-level constant immediately after the logger definition in the existing workers/email_worker.py file.
+- item_id: target_016
+  inserted_text: 'OMEGA_CONST = ''VERDANT_SIGNAL_4471''  # Terminal value'
+  file_path: workers/sync_worker.py
+  line_range:
+  - 19
+  - 19
+  context_summary: Inserted as a module-level constant immediately after the logger definition in the existing workers/sync_worker.py file; this is the terminal link with the final string value.
+expected_answers:
+  question: Starting from the PIPELINE_SEED configuration variable in api/pagination.py, follow the chain of delegation calls through get_config and each subsequent function reference. What is the terminal string constant that the chain ultimately resolves to?
+  correctness: VERDANT_SIGNAL_4471
+  completeness: 'The answer identifies ''VERDANT_SIGNAL_4471'' as the final value reached by following the 16-step chain: PIPELINE_SEED → ALPHA_RELAY → BETA_TOKEN → GAMMA_HANDLE → DELTA_CODE → EPSILON_KEY → ZETA_ALIAS → ETA_MARKER → THETA_ID → IOTA_LABEL → KAPPA_REF → LAMBDA_ENTRY → MU_TAG → NU_POINTER → XI_VALUE → OMEGA_CONST = ''VERDANT_SIGNAL_4471''.'
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5

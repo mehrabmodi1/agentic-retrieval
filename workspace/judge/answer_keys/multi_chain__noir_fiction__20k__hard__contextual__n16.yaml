@@ -1,0 +1,116 @@
+parametrisation_id: "multi_chain__noir_fiction__20k__hard__contextual__n16"
+experiment_type: "multi_chain"
+generated_at: "2026-04-05T00:00:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 20000
+  discriminability: "hard"
+  reference_clarity: "contextual"
+
+items:
+  - item_id: "target_001"
+    inserted_text: "Later, he mentioned having a safe place—somewhere he called 'the insurance location.' He said if anything ever went wrong, the truth was kept there. The Marina Hotel, he said. But then he caught himself and wouldn't say more. He was frightened. That frightened me more than anything else."
+    file_path: "chapters/chapter_04.md"
+    line_range: [21, 22]
+    context_summary: "Inserted in Catherine's journal entry about H, referencing an 'insurance location' at Marina Hotel - the first clue in the chain."
+
+  - item_id: "target_002"
+    inserted_text: "He made one comment that stuck with me—he said, 'Some men leave their conscience with a safe keeper. Mr. Harvey is leaving his evidence in the safest place he could find. A place where no one would think to look.' He wouldn't elaborate, but his tone suggested he knew exactly where Harvey meant."
+    file_path: "witnesses/secretary_statement.md"
+    line_range: [42, 43]
+    context_summary: "Dorothy's observation about Marchetti's cryptic comment regarding Harvey's hidden evidence."
+
+  - item_id: "target_003"
+    inserted_text: "And inside the wrapping, there was a second note. Just two words and a location: 'The Marina. Room.'—he couldn't finish it, but the implication was clear. He was pointing toward somewhere he'd left evidence of the entire operation."
+    file_path: "witnesses/informant_interview.md"
+    line_range: [66, 67]
+    context_summary: "Victor reveals the hidden note in the returned painting pointing to 'The Marina' location."
+
+  - item_id: "target_004"
+    inserted_text: "And once, when I was checking the lights in the stairwell, I heard him on the telephone in his apartment. He was saying something about 'the other location'—he kept repeating it. 'Get the package to the other location before he finds out.' And then the name came: 'The Marina. Use the Marina.' He was frantic. Whoever was on the phone, they were his lifeline."
+    file_path: "witnesses/landlady_statement.md"
+    line_range: [43, 45]
+    context_summary: "Eva overhears Harvey's desperate phone call mentioning 'The Marina' as the location for 'the other location.'"
+
+  - item_id: "target_005"
+    inserted_text: "He leaned down and said something before he took his hand away. Bar was quiet that night, and I caught a few words clear enough—'not the Marina. They'll look there first. The Starlight Motor Inn, room fourteen, the key's under the mat. That's where the real insurance is.' Said it like giving directions, real matter-of-fact. The kid nodded once, didn't write it down. The kind of thing a man memorizes because he knows he'll need it. Before the old guy left, he added one more thing: 'The photographs and the ledger. Everything Kaslan doesn't want found. It's all there.'"
+    file_path: "witnesses/bartender_statement.md"
+    line_range: [42, 47]
+    context_summary: "Deke reveals the overheard instruction about the Starlight Motor Inn, room fourteen being the location for photographs and ledger evidence."
+
+  - item_id: "target_006"
+    inserted_text: "'There's someone I need you to find—James Harvey. He worked in our shipping operations. He knows where certain... evidence was hidden. Before he disappeared, he told a mutual associate that the evidence was kept at a specific location for insurance purposes. That location is critical to understanding what happened to Catherine.'"
+    file_path: "chapters/chapter_02.md"
+    line_range: [45, 46]
+    context_summary: "Halstead introduces Harvey and mentions evidence hidden at an unspecified insurance location."
+
+  - item_id: "target_007"
+    inserted_text: "I pulled out my notebook and wrote: *Catherine Halstead, 23, blonde, green eyes. Missing Tuesday 11 PM. Photo package Thursday morning. Kidnapping—demands likely coming. Meet Richard Halstead, Rosie's Diner, 5 AM. Note: Halstead mentioned mysterious lover 'H'—investigate. Look for connection to shipping operations and James Harvey. These threads may connect.*"
+    file_path: "chapters/chapter_01.md"
+    line_range: [61, 62]
+    context_summary: "Detective Shepherd's notebook entry connecting Catherine's lover H to James Harvey and shipping operations."
+
+  - item_id: "target_008"
+    inserted_text: "And then he caught himself and wouldn't say more. He was frightened. 'By now, my people have already been to the Starlight. Room fourteen is being emptied as we speak. Whatever Harvey left there—his precious evidence, his insurance policy—it's all being removed. So even if you stop me, even if you go to that room, you'll find nothing but dust and the memory of a conscience.'"
+    file_path: "case_notes/day_05.md"
+    line_range: [142, 144]
+    context_summary: "Sinclair's boastful revelation that he's already emptied the Starlight Motor Inn room fourteen."
+
+  - item_id: "target_009"
+    inserted_text: "Though I heard through back channels that Harvey did something clever before he ran. He made copies. Copies of the ledgers, the transaction records, the photographs documenting every acquisition and movement. And he sealed them away—not in one place, but in multiple locations, under multiple assumed names. The kind of insurance that only matters if someone knows where to look."
+    file_path: "witnesses/informant_interview.md"
+    line_range: [90, 92]
+    context_summary: "Victor reveals that Harvey created multiple copies of evidence hidden in different locations under assumed names."
+
+  - item_id: "target_010"
+    inserted_text: "No. But I begin to worry when he does not come out, not for three days, not for four. So on the fourth day, I go up to the apartment. I have a master key—for emergencies, in case someone is sick, has died, has become a danger to themselves. I knock first, loud. No answer. I use the key. The apartment, it is empty. His clothes are gone. His furniture, most of it. He left behind only what could not be carried—the old sofa that was here when he moved in, the kitchenette, things like that. But his personal things, his papers, his life—it is all gone. Except one thing. A letter, left on the kitchen table, addressed to me. He had written: 'If anyone asks about my apartment or my whereabouts, tell them nothing. But if a detective comes asking about evidence or a location called the Starlight, tell him that I moved everything. That I realized the first place was too obvious. The Harbor Trust Bank downtown. Box 447. That's where the real truth is kept.'"
+    file_path: "witnesses/landlady_statement.md"
+    line_range: [50, 53]
+    context_summary: "Eva discovers Harvey's letter explicitly naming Harbor Trust Bank, Box 447 as the true location of evidence."
+
+  - item_id: "target_011"
+    inserted_text: "Before I leave completely, Sinclair calls after me: 'They'll find it eventually, you know. The bank box. Harvey used his middle name—Charles Marshall. It's such an obvious lie. Eventually someone will cross-reference the name against banking records, and we'll find it. Your evidence, your victory—it has an expiration date.'"
+    file_path: "case_notes/day_05.md"
+    line_range: [179, 180]
+    context_summary: "Sinclair reveals the false name Harvey used to register the bank box: Charles Marshall."
+
+  - item_id: "target_012"
+    inserted_text: "'I've been contacted by Thomas Mercer,' Helen tells me quietly. 'He's willing to testify. He's willing to provide evidence about the money laundering, about Sinclair's orders to eliminate Claire Hollister, about the entire operation. But there's something else. Before he got sick, Mercer was contacted by Harvey. Harvey left something with him—a key and instructions. A backup. Another copy of the evidence. In case the Starlight location was compromised.'"
+    file_path: "case_notes/day_06.md"
+    line_range: [103, 106]
+    context_summary: "Helen reveals Mercer was given backup evidence and key by Harvey as contingency."
+
+  - item_id: "target_013"
+    inserted_text: "Chen says he's had a breakthrough. Someone finally willing to talk. A former Sinclair employee who's decided that loyalty's less valuable than truth. This employee confirmed that the Starlight Motor Inn was indeed one of Harvey's insurance locations—but not the primary one. The primary location was always meant to be the bank box, registered under the false name 'Charles Marshall.' Harvey's assumption was that Sinclair's people would find the motel room first (it was less well hidden), clear it out thinking they'd found everything, and never think to look further. The bank box, deep in the vault, would remain untouched."
+    file_path: "case_notes/day_06.md"
+    line_range: [145, 147]
+    context_summary: "Chen's source confirms Starlight was a decoy and Harbor Trust Bank box under Charles Marshall was the actual evidence repository."
+
+  - item_id: "target_014"
+    inserted_text: "Early morning on November 10, the police find Claire's body in the basement of an abandoned building on Harbor Avenue, two blocks from Sinclair's warehouse. She's been there since Wednesday night. She's been there while her mother's been going crazy, while I've been chasing leads, while Sinclair's been trying to make me disappear. \n\nAccompanying the body discovery is something else: an anonymous tip directing police to Harbor Trust Bank downtown, to a safety deposit box registered under the name Charles Marshall, box number 447. The tip comes from a woman who doesn't identify herself—it's traced to a pay phone near the docks. Later investigation suggests it was made by someone connected to the Vesper family, possibly someone Harvey contacted to ensure the truth would eventually surface if he didn't survive to deliver it himself."
+    file_path: "case_notes/day_06.md"
+    line_range: [151, 153]
+    context_summary: "Police receive anonymous tip directing them to Harbor Trust Bank, box 447, Charles Marshall—the final resolution point."
+
+  - item_id: "target_015"
+    inserted_text: "Helen tells me that David Chen is accelerating his story. It's going to run in two days, not two weeks. It's going to expose Ashford, Sinclair, and the money laundering operation. It's going to force the authorities to take action.\n\nChen says he's had a breakthrough. Someone finally willing to talk. A former Sinclair employee who's decided that loyalty's less valuable than truth. This employee also provided something else—confirmation that Sinclair's people did raid the Starlight Motor Inn, room fourteen, exactly as Sinclair boasted. But they found almost nothing. A few papers. Some photographs. Whatever Harvey hid there, most of it was already gone."
+    file_path: "case_notes/day_06.md"
+    line_range: [143, 148]
+    context_summary: "Confirmation that Starlight Motor Inn was successfully raided but contained minimal evidence, with the bulk already moved."
+
+  - item_id: "target_016"
+    inserted_text: "This person has also given Chen something else: the location of Claire Hollister's body. And the location of the secondary evidence repository that Harvey had already moved the critical materials to—a safety deposit box at the Harbor Trust Bank, opened under a false name. The bank hasn't been contacted to release it yet. The evidence is still there, waiting."
+    file_path: "case_notes/day_06.md"
+    line_range: [148, 150]
+    context_summary: "Final reference confirming Harbor Trust Bank safety deposit box contains untouched critical evidence."
+
+expected_answers:
+  question: "Starting from Catherine's journal entry mentioning H's 'insurance location,' trace the chain of evidence locations through the investigation. What is the final location where the evidence is confirmed to be stored, and under what name was the deposit box registered?"
+  correctness: "A correct answer must identify Harbor Trust Bank (or Harbor Trust) as the final location and Charles Marshall as the false name under which the safety deposit box was registered. Box number 447 should be mentioned. Answers may reference this as 'the actual/true/primary evidence location' as opposed to the Starlight Motor Inn decoy."
+  completeness: "A complete answer would trace the chain: H's mention of 'insurance location' → Marina Hotel reference → suggestion of Starlight Motor Inn, room fourteen → revelation that Starlight was a decoy → discovery of the true location at Harbor Trust Bank, box 447, registered under Charles Marshall. It should note that Harvey deliberately created a false lead (Starlight) knowing Sinclair would find and empty it, while keeping the real evidence in the bank vault under an assumed name."
+
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+  - criterion: "completeness"
+    weight: 0.5

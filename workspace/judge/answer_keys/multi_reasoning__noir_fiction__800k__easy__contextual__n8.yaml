@@ -1,0 +1,58 @@
+parametrisation_id: "multi_reasoning__noir_fiction__800k__easy__contextual__n8"
+experiment_type: "multi_reasoning"
+generated_at: "2026-04-05T00:00:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 800000
+  discriminability: "easy"
+  reference_clarity: "contextual"
+items:
+  - item_id: "target_001"
+    inserted_text: "Marchetti was very specific: Harvey would need to document everything, record conversations if possible, and prepare a detailed chronology of all Kaslan operations he'd facilitated over the past three years."
+    file_path: "witnesses/informant_interview.md"
+    line_range: [42, 44]
+    context_summary: "Inserted in Victor's explanation of Marchetti's legal strategy for Harvey's cooperation with law enforcement."
+  - item_id: "target_002"
+    inserted_text: "She'd been seeing an older man for several months—someone connected to my business world, someone I didn't approve of."
+    file_path: "chapters/chapter_01.md"
+    line_range: [24, 26]
+    context_summary: "Added detail about Catherine's secret relationship with an older man in Halstead's description of his daughter."
+  - item_id: "target_003"
+    inserted_text: "Later that week, when he thought I wasn't listening, I heard him on the phone. He was speaking to someone about 'the Harvey situation.' He said, 'He understands the risks now. He knows what will happen if Kaslan discovers his intention to turn state's evidence. But he's going to do it anyway.' Those were his exact words."
+    file_path: "witnesses/secretary_statement.md"
+    line_range: [56, 60]
+    context_summary: "Inserted Dorothy's overhearing of Marchetti's phone conversation confirming Harvey's commitment to betray Kaslan."
+  - item_id: "target_004"
+    inserted_text: "She sat without being invited. 'Mr. Shepherd? My name is Diana Harrow. I work for Meridian Holdings.' She sat without being invited. 'I'm here because you're asking questions about James Harvey. I'd like to know why.'"
+    file_path: "chapters/chapter_05.md"
+    line_range: [74, 75]
+    context_summary: "Added Diana Harrow's immediate interest in Harvey and her knowledge of his connection to the investigation."
+  - item_id: "target_005"
+    inserted_text: "There's one more thing. Harvey withdrew eight hundred dollars on October 30th, the day before his apartment was emptied. That's a significant amount—not enough to live on long-term, but enough to cover immediate travel expenses and a new identity. The timing suggests he received final clearance from Marchetti to make his move."
+    file_path: "witnesses/detective_debrief.md"
+    line_range: [63, 65]
+    context_summary: "Inserted Chen's analysis of Harvey's financial withdrawal as evidence of his planned disappearance timeline."
+  - item_id: "target_006"
+    inserted_text: "Let me tell you this much: the name Sinclair comes up in connection with at least three disappearances in the past two years. Young people. People who knew too much or were connected to people who knew too much. Claire Hollister isn't the first, and she won't be the last."
+    file_path: "case_notes/day_03.md"
+    line_range: [84, 86]
+    context_summary: "Added Mercer's warning about Sinclair's pattern of making people disappear, connecting Harvey's situation to broader criminal operations."
+  - item_id: "target_007"
+    inserted_text: "There was one time. A few days after the white-haired man visited. She came in the evening, wore a green coat. She was beautiful, yes, but sad in the way of someone carrying bad news. She went up to his apartment for perhaps one hour. When she left, she was crying. Not loudly, but I heard her on the stairs. I would have thought nothing of it, but Mr. Harvey, when he came down the next morning to pay his rent, he was different. Lighter. Like a decision had been made."
+    file_path: "witnesses/landlady_statement.md"
+    line_range: [62, 64]
+    context_summary: "Inserted Eva's crucial testimony about the redheaded woman's visit and its transformative effect on Harvey's resolve."
+  - item_id: "target_008"
+    inserted_text: "We knew only that he was older, successful, apparently quite connected to some kind of business operation, and apparently quite taken with her. She mentioned once that he'd made some difficult choices, that he was trying to be a better person. She had a look about her—the look of someone who's being taken care of, if you know what I mean. But also the look of someone worried about the man she cared for."
+    file_path: "chapters/chapter_03.md"
+    line_range: [39, 41]
+    context_summary: "Expanded description of Catherine's secret boyfriend to reveal his business connections and moral struggle, paralleling Harvey's arc."
+expected_answers:
+  question: "What was the complete chain of events that led to James Harvey's decision to betray the Kaslan organization and disappear? Identify the key people involved, the specific advice he received, the woman who influenced his decision, the timeline of his actions, and the consequences of his attempted cooperation."
+  correctness: "A complete answer must identify: (1) Marchetti as his attorney advisor; (2) The requirement to document Kaslan operations; (3) Harvey's knowledge of the risks; (4) The redheaded woman's visit and her message about escape; (5) His financial withdrawal on October 30th; (6) The eight hundred dollar amount as exit funds; (7) Sinclair as the threat pursuing him; (8) Catherine Halstead as the woman involved (connecting Harvey's situation to the kidnapping plot); (9) The transformation of Harvey's resolve after the woman's visit; (10) The timeline from attorney consultations through final disappearance."
+  completeness: "A complete answer ties together: Harvey's initial consultation with Marchetti about legal cooperation; the specific documentation and recording strategy; the redheaded woman (Catherine) visiting with news of an exit route; Harvey's decision to proceed despite understanding the lethal risks from Kaslan/Sinclair; the financial preparation (eight hundred dollar withdrawal); the apartment being cleaned out; and the broader criminal network context showing why disappearance was necessary rather than formal witness protection."
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+  - criterion: "completeness"
+    weight: 0.5

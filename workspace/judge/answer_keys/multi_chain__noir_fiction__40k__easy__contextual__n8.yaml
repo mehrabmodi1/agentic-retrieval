@@ -1,0 +1,68 @@
+parametrisation_id: "multi_chain__noir_fiction__40k__easy__contextual__n8"
+experiment_type: "multi_chain"
+generated_at: "2026-04-05T00:00:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 40000
+  discriminability: "easy"
+  reference_clarity: "contextual"
+
+items:
+  - item_id: "target_001"
+    inserted_text: "It's the look of a man who knows exactly who signed that register as \"James P. Whitmore\"—a name he'll never admit to knowing."
+    file_path: "case_notes/day_01.md"
+    line_range: [74, 75]
+    context_summary: "Mercer's recognition of the hotel register signature reveals knowledge of the identity behind the pseudonym."
+
+  - item_id: "target_002"
+    inserted_text: "\"My name is Charles Sinclair. And everything you've been asking about—Mercer, the hotel, the Castellano family—it all leads back to understanding what I do and why you should stop asking questions about it.\""
+    file_path: "case_notes/day_02.md"
+    line_range: [160, 162]
+    context_summary: "The midnight visitor identifies himself as Charles Sinclair, confirming Mercer's hidden knowledge and revealing the mastermind."
+
+  - item_id: "target_003"
+    inserted_text: "And Catherine—she must have seen something, learned something about how these operations really work. There's a young man involved, someone caught in the middle. If you find him, you find what they're protecting."
+    file_path: "chapters/chapter_02.md"
+    line_range: [39, 41]
+    context_summary: "Halstead reveals awareness of a young man trapped in Sinclair's organization who may be the key to understanding Catherine's disappearance."
+
+  - item_id: "target_004"
+    inserted_text: "From the shadows, I see there's another figure moving inside—a young man, maybe late twenties, who's been watching this exchange through a warehouse window. Someone who doesn't belong here. Someone trapped."
+    file_path: "case_notes/day_03.md"
+    line_range: [145, 147]
+    context_summary: "The narrator observes the trapped young man in the warehouse, confirming Halstead's reference to someone caught in the operation."
+
+  - item_id: "target_005"
+    inserted_text: "But the kid—James Harvey was his name, though I didn't know it at first—he was sharp."
+    file_path: "witnesses/cab_driver_statement.md"
+    line_range: [22, 23]
+    context_summary: "The cab driver identifies the young man as James Harvey, providing his actual name for the first time."
+
+  - item_id: "target_006"
+    inserted_text: "She was young, redheaded, beautiful in a way that made her seem almost unreal—the same woman I later learned had come from a law office where people make arrangements for difficult situations."
+    file_path: "witnesses/neighbor_statement.md"
+    line_range: [27, 29]
+    context_summary: "Eleanor reveals that the redheaded woman who visited James Harvey has connections to a law office facilitating his escape."
+
+  - item_id: "target_007"
+    inserted_text: "I also include the name James Harvey—the young man who worked for them, who knew too much, who someone helped disappear. ... But there's also something else—there's a lawyer named Marchetti, Robert Marchetti, who handled a sensitive matter recently. If Harvey reached out to get legal advice before disappearing, Marchetti might know something."
+    file_path: "case_notes/day_05.md"
+    line_range: [33, 41]
+    context_summary: "Helen Crawford mentions attorney Robert Marchetti as the lawyer who likely helped James Harvey arrange his legal disappearance."
+
+  - item_id: "target_008"
+    inserted_text: "He was a young man, maybe late twenties, with the kind of terrified composure that only comes from someone who's seen things they can't unsee. By his final visit, whatever Mr. Marchetti advised him to do, it had already been decided."
+    file_path: "witnesses/secretary_statement.md"
+    line_range: [16, 18]
+    context_summary: "Dorothy provides firsthand testimony that James Harvey sought legal counsel from Marchetti three times to extract himself from the operation."
+
+expected_answers:
+  question: "Starting from the moment Thomas Mercer's eyes flicker with recognition when the Regency Hotel is mentioned in day_01.md, follow the chain of revealed identities and legal arrangements. Who ultimately seeks attorney Marchetti's assistance, and what is the purpose of their consultations?"
+  correctness: "A correct answer must identify James Harvey as the young man seeking legal counsel and must mention attorney Marchetti as the lawyer providing assistance. The answer should indicate the consultations relate to Harvey's attempt to extricate himself from Sinclair's criminal operation."
+  completeness: "A complete answer covers: (1) James Harvey as the trapped young man in the warehouse operation, (2) attorney Robert Marchetti as the lawyer Harvey consulted, (3) three separate visits/consultations occurring on September 8, October 2, and October 28, and (4) the purpose being legal assistance to facilitate Harvey's safe disappearance from the organization."
+
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+  - criterion: "completeness"
+    weight: 0.5

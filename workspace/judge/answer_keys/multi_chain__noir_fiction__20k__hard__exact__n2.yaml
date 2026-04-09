@@ -1,0 +1,28 @@
+parametrisation_id: "multi_chain__noir_fiction__20k__hard__exact__n2"
+experiment_type: "multi_chain"
+generated_at: "2026-04-04T00:00:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 20000
+  discriminability: "hard"
+  reference_clarity: "exact"
+items:
+  - item_id: "target_001"
+    inserted_text: "Mercer's fingers tightened once more before the strength left them. \"One more thing. A cab driver—Jerome Salvatore, City Cab, license four-four-two-seven. About two weeks back I had him hold a sealed envelope for me. Couldn't leave it in the office once I knew Sinclair's people were watching the building. That envelope has the secondary account records—transactions that go higher than Ashford, maybe all the way to the Mayor's office. Salvatore said he'd keep it until someone came asking.\""
+    file_path: "case_notes/day_07.md"
+    line_range: [86, 86]
+    context_summary: "Inserted in the Mercer's Condition section of Day Seven, between Mercer's final spoken line about testifying and the narrator's observation that Mercer closes his eyes — Mercer discloses that Jerome Salvatore is holding a sealed envelope of secondary account records."
+  - item_id: "target_002"
+    inserted_text: "Jerry lit a fresh cigarette and stared at the ceiling for a moment. \"There's something else I should tell you. About two weeks back, a lawyer came in here—older man, very precise, the kind who folded his handkerchief just so. Said he needed a favor. Asked if I'd keep a sealed envelope somewhere safe, just for a while, until the right person came to claim it. I put it in my lockbox—second drawer of the cabinet in the break room upstairs, combination 19-47. It's still there, far as I know. Nobody's come for it.\""
+    file_path: "witnesses/cab_driver_statement.md"
+    line_range: [52, 52]
+    context_summary: "Inserted in Jerry Salvatore's cab driver statement, between his account of accepting the hundred-dollar bribe and Detective Rossi's follow-up question about the unknown man's identity — Jerry reveals he is holding a sealed envelope in his lockbox in the break room upstairs, combination 19-47."
+expected_answers:
+  question: "In case_notes/day_07.md, a hospitalized Mercer tells the detective about a cab driver named Jerome Salvatore who is holding a sealed envelope containing important documents. According to the cab driver's statement in witnesses/cab_driver_statement.md, where exactly is this envelope being kept?"
+  correctness: "The envelope is stored in Jerome Salvatore's lockbox — specifically the second drawer of the cabinet in the break room upstairs at the City Cab Company garage, with combination 19-47."
+  completeness: "A complete answer follows the chain from Mercer's hospital-bed disclosure (referencing Jerome Salvatore, City Cab) to Salvatore's own statement where he describes placing the envelope in his lockbox (second drawer, break room cabinet, combination 19-47), and names the final storage location clearly."
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+  - criterion: "completeness"
+    weight: 0.5

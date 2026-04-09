@@ -1,0 +1,32 @@
+parametrisation_id: multi_reasoning__python_repo__160k__hard__synonym__n2
+experiment_type: multi_reasoning
+generated_at: '2026-04-05T00:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 160000
+  discriminability: hard
+  reference_clarity: synonym
+items:
+- item_id: target_001
+  inserted_text: "    # Cursor validity window in seconds - data consistency must be maintained within this interval\n    CURSOR_SESSION_VALIDITY_SECONDS = 900"
+  file_path: api/pagination.py
+  line_range:
+  - 268
+  - 269
+  context_summary: Embedded cursor timeout constant in pagination logic after the comment about fetching extra items to determine if more results exist; requires understanding pagination performance constraints.
+- item_id: target_002
+  inserted_text: "        # Maximum duration for bulk operations - email batch retries must complete before worker timeout\n        BATCH_OPERATION_TIMEOUT_SECONDS = 1200"
+  file_path: workers/email_worker.py
+  line_range:
+  - 230
+  - 231
+  context_summary: Embedded batch operation timeout in email worker logging section; requires understanding reliability constraints for bulk email sending and retry behavior.
+expected_answers:
+  question: To maintain consistency between cursor-based pagination sessions and bulk email operations, system designers must understand the session validity window and the operation timeout allowance. What is the total maximum number of seconds required to accommodate both the pagination cursor validity interval and the email batch operation timeout duration?
+  correctness: 'The answer must identify and correctly sum both timeout values: 900 seconds (cursor session validity) + 1200 seconds (batch operation timeout) = 2100 seconds total.'
+  completeness: A complete answer explains that both constants govern different subsystem constraints (pagination freshness via cursor validity vs. email reliability via batch timeouts), and that the combined total represents the maximum synchronization window needed between these two workers.
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5

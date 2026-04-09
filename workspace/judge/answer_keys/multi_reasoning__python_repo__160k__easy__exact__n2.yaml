@@ -1,0 +1,36 @@
+parametrisation_id: multi_reasoning__python_repo__160k__easy__exact__n2
+experiment_type: multi_reasoning
+generated_at: '2026-04-05T00:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 160000
+  discriminability: easy
+  reference_clarity: exact
+items:
+- item_id: target_001
+  inserted_text: '# Email processing configuration
+
+    BATCH_SIZE = 25
+
+    '
+  file_path: workers/email_worker.py
+  line_range:
+  - 290
+  - 291
+  context_summary: Inserted email batch size constant before the create_email_task function definition
+- item_id: target_002
+  inserted_text: MAX_CONCURRENT_BATCHES = 4
+  file_path: tests/test_auth.py
+  line_range:
+  - 193
+  - 193
+  context_summary: Inserted concurrency configuration as class variable at the start of TestTokenManagement class
+expected_answers:
+  question: What is the maximum total number of emails that can be processed simultaneously, given the BATCH_SIZE and MAX_CONCURRENT_BATCHES configuration parameters?
+  correctness: The answer must be the product of BATCH_SIZE (25) and MAX_CONCURRENT_BATCHES (4), which equals 100
+  completeness: A complete answer must identify both configuration values from their respective files (workers/email_worker.md and tests/test_auth.md), multiply them together, and arrive at the total of 100 concurrent emails
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5

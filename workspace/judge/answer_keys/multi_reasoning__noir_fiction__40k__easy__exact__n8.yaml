@@ -1,0 +1,70 @@
+parametrisation_id: "multi_reasoning__noir_fiction__40k__easy__exact__n8"
+experiment_type: "multi_reasoning"
+generated_at: "2026-04-05T00:00:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 40000
+  discriminability: "easy"
+  reference_clarity: "exact"
+
+items:
+  - item_id: "target_001"
+    inserted_text: "Meridian Holdings operates through four distinct departments: acquisition manages asset procurement, logistics handles transportation networks, enforcement ensures compliance, and political relations maintains government protection."
+    file_path: "chapters/chapter_05.md"
+    line_range: [93, 94]
+    context_summary: "Diana Harrow reveals the organizational structure of Meridian Holdings to Jack Shepherd during their negotiation."
+
+  - item_id: "target_002"
+    inserted_text: "The organizational structure is now clear: Victor Ashford directs operations and reports to someone higher in the hierarchy, an unseen figure who has remained insulated from investigation."
+    file_path: "case_notes/day_07.md"
+    line_range: [108, 109]
+    context_summary: "Investigator notes the chain of command with Victor Ashford reporting to a higher authority."
+
+  - item_id: "target_003"
+    inserted_text: "He told me his import-export business moves more than merchandise—it moves information, documents, things that people need to keep hidden."
+    file_path: "chapters/chapter_04.md"
+    line_range: [21, 22]
+    context_summary: "Catherine Halstead's journal reveals H's explanation of his business scope."
+
+  - item_id: "target_004"
+    inserted_text: "Later, I found out the envelope contained authorization codes for accessing offshore accounts in the Cayman Islands—the kind of thing that moves money invisible to the government."
+    file_path: "witnesses/bartender_statement.md"
+    line_range: [42, 43]
+    context_summary: "Deke the bartender reveals the contents of the white envelope exchanged between Harvey and the older man."
+
+  - item_id: "target_005"
+    inserted_text: "One more thing—Sinclair maintains comprehensive records of all transactions in a safe behind the office wall painting, access code 447. If you can get those records, you have everything."
+    file_path: "case_notes/day_03.md"
+    line_range: [132, 133]
+    context_summary: "Thomas Mercer provides crucial information about Sinclair's hidden records and their location."
+
+  - item_id: "target_006"
+    inserted_text: "Though I should mention—based on documents I glimpsed on his desk afterward—Mr. Harvey was seeking legal guidance on transferring seventeen million dollars without triggering federal banking notifications."
+    file_path: "witnesses/secretary_statement.md"
+    line_range: [42, 43]
+    context_summary: "Dorothy Marchetti reveals James Harvey's legal consultation involved transferring a significant sum of money illegally."
+
+  - item_id: "target_007"
+    inserted_text: "This source estimates the full criminal enterprise involves operations across five states, with monthly net proceeds exceeding three hundred thousand dollars—far larger than anyone previously suspected."
+    file_path: "case_notes/day_06.md"
+    line_range: [56, 57]
+    context_summary: "David Chen's investigation reveals the scale of the criminal operation across multiple states."
+
+  - item_id: "target_008"
+    inserted_text: "The Kaslan operation maintains distribution centers in Montreal, Havana, and Buenos Aires, with quarterly shipments valued at five hundred thousand dollars each."
+    file_path: "witnesses/informant_interview.md"
+    line_range: [90, 91]
+    context_summary: "Informant Victor details the international distribution network and financial scope of the Kaslan operation."
+
+expected_answers:
+  question: "Describe the complete structure and operational scope of the criminal network revealed across all eight documents: including its organizational departments, leadership hierarchy, business methods, financial mechanisms, hidden records, scale of operations, and international distribution infrastructure."
+
+  correctness: "Answer must identify and correctly connect all eight key elements: (1) four organizational departments of Meridian Holdings, (2) Victor Ashford's reporting to a higher authority, (3) the information/document smuggling component of the import-export business, (4) Cayman Islands offshore account codes, (5) Sinclair's hidden records location and access code, (6) the seventeen million dollar transfer, (7) multi-state operations with $300k monthly proceeds, and (8) international distribution centers with $500k quarterly shipments."
+
+  completeness: "Complete answers must demonstrate how these eight pieces form an integrated picture of a sophisticated criminal enterprise spanning five states and three countries, with layered organizational structure, financial infrastructure using offshore accounts, hidden documentation, international logistics, and total quarterly criminal revenue exceeding $1.5 million."
+
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+  - criterion: "completeness"
+    weight: 0.5

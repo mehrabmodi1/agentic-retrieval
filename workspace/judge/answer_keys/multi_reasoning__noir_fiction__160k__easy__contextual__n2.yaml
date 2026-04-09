@@ -1,0 +1,28 @@
+parametrisation_id: "multi_reasoning__noir_fiction__160k__easy__contextual__n2"
+experiment_type: "multi_reasoning"
+generated_at: "2026-04-05T00:00:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 160000
+  discriminability: "easy"
+  reference_clarity: "contextual"
+items:
+  - item_id: "target_001"
+    inserted_text: "In the days following that visit, Eleanor heard sounds from his apartment that were new and deliberate. Telephone conversations at odd hours. The opening and closing of drawers. Once, she heard him reading aloud—a list of names and amounts, methodical and careful. She found a sealed envelope in the hallway outside his door on the morning of the fourth day; it had her name on it in his careful handwriting, though she never opened it. His apartment had been stripped of personal items—the books gone, the photographs removed from his walls."
+    file_path: "witnesses/neighbor_statement.md"
+    line_range: [41, 45]
+    context_summary: "Eleanor observes James making phone calls, reading lists of names and amounts, and removing personal items from his apartment in the days after the redheaded woman's visit."
+  - item_id: "target_002"
+    inserted_text: "When Mr. Morello pressed me to clarify what I believed Harvey had been asking about, I confessed that I had made certain deductions based on the materials left behind in the office after his final visit. A notepad with questions written in Harvey's hand: \"procedures for naming beneficiaries posthumously,\" \"life insurance requirements regarding death by accident versus suicide,\" \"proper documentation for transferring assets without probate.\" The questions were methodical, thorough, and they painted a picture of a man ordering his affairs with the precision of someone who expected not to be present to handle them himself."
+    file_path: "witnesses/secretary_statement.md"
+    line_range: [54, 61]
+    context_summary: "Dorothy reveals that James left behind a notepad with specific questions about posthumous beneficiary arrangements, life insurance in death scenarios, and asset transfers—indicating deliberate planning for his absence."
+expected_answers:
+  question: "What do Eleanor's observations from James's apartment and Dorothy's discovery of his written legal questions reveal about his intentions?"
+  correctness: "A correct answer must identify both Eleanor's observation of James making deliberate arrangements (phone calls, reading aloud lists of names and amounts, removing personal items) AND Dorothy's discovery of his specific legal questions about posthumous beneficiaries, life insurance regarding different types of death, and asset transfer procedures."
+  completeness: "A complete answer demonstrates understanding that these two independent pieces of evidence together paint a picture of James systematically arranging his final affairs with the expectation of not being present to manage them—suggesting he anticipated or planned for his own disappearance or death. The answer should synthesize that Eleanor heard him acting on arrangements while Dorothy found documentary evidence of the legal/financial specifics he was planning."
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+  - criterion: "completeness"
+    weight: 0.5

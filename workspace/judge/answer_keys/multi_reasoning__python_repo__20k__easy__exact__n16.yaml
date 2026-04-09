@@ -1,0 +1,167 @@
+parametrisation_id: multi_reasoning__python_repo__20k__easy__exact__n16
+experiment_type: multi_reasoning
+generated_at: '2026-04-05T00:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 20000
+  discriminability: easy
+  reference_clarity: exact
+items:
+- item_id: target_001
+  inserted_text: TASK_ENDPOINT_TIMEOUT_MS = 5000
+  file_path: api/routes.py
+  line_range:
+  - 12
+  - 13
+  context_summary: Configuration constant for task endpoint timeout defined in routes module.
+- item_id: target_002
+  inserted_text: TASK_PRIORITY_LEVELS = 3
+  file_path: api/routes.py
+  line_range:
+  - 13
+  - 14
+  context_summary: Number of priority levels supported for tasks in the API.
+- item_id: target_003
+  inserted_text: '202'
+  file_path: api/routes.py
+  line_range:
+  - 39
+  - 40
+  context_summary: HTTP response code returned on successful task completion.
+- item_id: target_004
+  inserted_text: '25'
+  file_path: api/routes.py
+  line_range:
+  - 41
+  - 42
+  context_summary: Maximum number of tasks allowed per batch operation.
+- item_id: target_005
+  inserted_text: DEFAULT_REQUEST_TIMEOUT_SECONDS = 30
+  file_path: api/middleware.py
+  line_range:
+  - 10
+  - 11
+  context_summary: Default timeout in seconds for request processing in middleware.
+- item_id: target_006
+  inserted_text: SLOW_REQUEST_THRESHOLD_SECONDS = 1.0
+  file_path: api/middleware.py
+  line_range:
+  - 11
+  - 12
+  context_summary: Threshold in seconds above which requests are logged as slow.
+- item_id: target_007
+  inserted_text: MAX_CONCURRENT_REQUESTS = 100
+  file_path: api/middleware.py
+  line_range:
+  - 12
+  - 13
+  context_summary: Maximum number of concurrent requests allowed by the system.
+- item_id: target_008
+  inserted_text: STALE_LOCK_TIMEOUT_SECONDS = 1.0
+  file_path: workers/sync_worker.py
+  line_range:
+  - 28
+  - 29
+  context_summary: Timeout value for stale lock detection in sync worker, calibrated with middleware.
+- item_id: target_009
+  inserted_text: SYNC_OPERATION_TIMEOUT_SECONDS = 30
+  file_path: workers/sync_worker.py
+  line_range:
+  - 29
+  - 30
+  context_summary: Timeout in seconds for sync operations with external APIs.
+- item_id: target_010
+  inserted_text: SYNC_BATCH_SIZE = 100
+  file_path: workers/sync_worker.py
+  line_range:
+  - 30
+  - 31
+  context_summary: Number of records to process in each sync batch operation.
+- item_id: target_011
+  inserted_text: SYNC_RETRY_ATTEMPTS = 3
+  file_path: workers/sync_worker.py
+  line_range:
+  - 31
+  - 32
+  context_summary: Number of retry attempts for failed sync operations.
+- item_id: target_012
+  inserted_text: SYNC_RATE_LIMIT_RPS = 10
+  file_path: workers/sync_worker.py
+  line_range:
+  - 32
+  - 33
+  context_summary: Rate limit for sync requests per second to external APIs.
+- item_id: target_013
+  inserted_text: '50'
+  file_path: api/serializers.py
+  line_range:
+  - 53
+  - 54
+  context_summary: Default number of items per page in pagination responses.
+- item_id: target_014
+  inserted_text: '100'
+  file_path: api/serializers.py
+  line_range:
+  - 59
+  - 60
+  context_summary: Maximum page size allowed in paginated API responses.
+- item_id: target_015
+  inserted_text: EMAIL_WORKER_TIMEOUT_SECONDS = 45
+  file_path: workers/email_worker.py
+  line_range:
+  - 9
+  - 10
+  context_summary: Timeout in seconds for email sending operations.
+- item_id: target_016
+  inserted_text: MAX_EMAIL_RECIPIENTS_PER_MESSAGE = 10
+  file_path: workers/email_worker.py
+  line_range:
+  - 10
+  - 11
+  context_summary: Maximum number of recipients allowed per email message.
+expected_answers:
+  question: 'Calculate the total sum of all numeric configuration values across the system:
+
+    - All timeout values (in seconds and milliseconds)
+
+    - All batch sizes and limits
+
+    - All rate limits and retry attempts
+
+    - All pagination settings
+
+    - All HTTP response codes
+
+
+    Include: TASK_ENDPOINT_TIMEOUT_MS, TASK_PRIORITY_LEVELS, HTTP response code for complete,
+
+    maximum tasks per batch, DEFAULT_REQUEST_TIMEOUT_SECONDS, SLOW_REQUEST_THRESHOLD_SECONDS,
+
+    MAX_CONCURRENT_REQUESTS, STALE_LOCK_TIMEOUT_SECONDS, SYNC_OPERATION_TIMEOUT_SECONDS,
+
+    SYNC_BATCH_SIZE, SYNC_RETRY_ATTEMPTS, SYNC_RATE_LIMIT_RPS, default items per page,
+
+    maximum page size, EMAIL_WORKER_TIMEOUT_SECONDS, and MAX_EMAIL_RECIPIENTS_PER_MESSAGE.
+
+
+    What is the total sum when all values are converted to a consistent unit?
+
+    '
+  correctness: 'Answer must identify all 16 configuration values scattered across 5 different files.
+
+    Must correctly note that TASK_ENDPOINT_TIMEOUT_MS is in milliseconds (convert to seconds by dividing by 1000).
+
+    Must sum all timeout values: 5 + 3 + 202 + 25 + 30 + 1.0 + 100 + 1.0 + 30 + 100 + 3 + 10 + 50 + 100 + 45 + 10 = 515.
+
+    '
+  completeness: "Complete answer must:\n1. Identify all 16 configuration values by exact name/value\n2. Locate values across all 5 target files (api/routes.md, api/middleware.md, workers/sync_worker.md,\n   api/serializers.md, workers/email_worker.md)\n3. Note the unit conversion needed for milliseconds\n4. Show the complete enumeration and sum calculation\n5. Provide the final total (515) with clear arithmetic showing all components\n"
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+  description: All 16 values identified correctly with proper unit handling
+- criterion: completeness
+  weight: 0.5
+  description: All 16 items found and included in calculation; cross-file reasoning evident
+- criterion: reasoning
+  weight: 0.5
+  description: Shows understanding that values are distributed across system components

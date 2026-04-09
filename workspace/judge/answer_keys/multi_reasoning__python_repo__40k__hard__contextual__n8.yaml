@@ -1,0 +1,127 @@
+parametrisation_id: multi_reasoning__python_repo__40k__hard__contextual__n8
+experiment_type: multi_reasoning
+generated_at: '2026-04-05T00:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 40000
+  discriminability: hard
+  reference_clarity: contextual
+items:
+- item_id: target_001
+  inserted_text: '# EMAIL_LOG_FIELDS: Persists 8 database columns per entry'
+  file_path: workers/email_worker.py
+  line_range:
+  - 232
+  - 233
+  context_summary: Inserted as comment describing the EmailLog schema before the model initialization, indicating 8 persisted columns in email logging.
+- item_id: target_002
+  inserted_text: '# USER_PROFILE_CONSTRAINTS: name fields limited to 100 chars maximum'
+  file_path: api/validators.py
+  line_range:
+  - 256
+  - 256
+  context_summary: Inserted as comment between first_name and timezone validation, documenting the 100-character limit enforced on user profile names.
+- item_id: target_003
+  inserted_text: '# EMAIL_TASK_TEMPLATES: system supports "welcome" template with context parameter'
+  file_path: tests/test_workers.py
+  line_range:
+  - 36
+  - 36
+  context_summary: Inserted as comment in email task queuing test, identifying the supported email template type and its context parameter structure.
+- item_id: target_004
+  inserted_text: '# PROJECT_ENUMS: 3 visibility states and 3 status states enforced'
+  file_path: api/serializers.py
+  line_range:
+  - 95
+  - 95
+  context_summary: Inserted as comment before project serializer visibility/status field definitions, documenting the enum cardinality for project states.
+- item_id: target_005
+  inserted_text: '# TASK_STATUS_STATES: New tasks initialize to "pending"; completion transitions to "completed"'
+  file_path: tests/fixtures.py
+  line_range:
+  - 128
+  - 128
+  context_summary: Inserted as comment in task creation assertion, defining the task status lifecycle and state transitions.
+- item_id: target_006
+  inserted_text: '# SYNC_LOG_METRICS: 5 required fields per sync operation logged'
+  file_path: workers/sync_worker.py
+  line_range:
+  - 193
+  - 193
+  context_summary: Inserted as comment in sync logging method signature, documenting the 5-field schema for sync operation metrics.
+- item_id: target_007
+  inserted_text: '# API_KEY_VALIDATION: Requires 3 checks (active status, expiration time, password hash)'
+  file_path: api/auth.py
+  line_range:
+  - 206
+  - 206
+  context_summary: Inserted as comment before API key expiration check, detailing the 3-step validation procedure required for API keys.
+- item_id: target_008
+  inserted_text: '# SECURITY_HEADERS: 5 security headers enforced on all responses'
+  file_path: api/middleware.py
+  line_range:
+  - 201
+  - 201
+  context_summary: Inserted as comment in security header middleware, documenting the 5 required HTTP security headers.
+expected_answers:
+  question: 'Based on the system architecture, when a user creates a project with tasks and emails are processed with full validation and security requirements, what is the minimum total sum of: (1) email log database fields, (2) maximum character length constraint for user profile names, (3) project status/visibility enum options combined, (4) task status states, (5) sync operation tracked fields, (6) required API key validation checks, and (7) enforced security headers? Then, explain which components would need to interact for a complete email notification with retry flow to function correctly.'
+  correctness: 'The numerical answer must sum to 28:
+
+    - Email log fields: 8
+
+    - User name constraint: 100 (from max 100 characters for first_name and last_name)
+
+    - Project enums: 6 (3 visibility + 3 status)
+
+    - Task status states: 2 (pending + completed)
+
+    - Sync fields: 5 (sync_type, direction, status, records_synced, records_failed)
+
+    - API key checks: 3 (active status, expiration, password verification)
+
+    - Security headers: 5 (X-Content-Type-Options, X-Frame-Options, X-XSS-Protection, Strict-Transport-Security, Content-Security-Policy)
+
+    Total: 8 + 100 + 6 + 2 + 5 + 3 + 5 = 129
+
+
+    The interaction component must identify:
+
+    - Email worker (_log_email) records all 8 fields to database
+
+    - Validators enforce 100-char limit for user profile before email can be queued
+
+    - Test queue shows email_task uses apply_async for task queueing
+
+    - Project must satisfy visibility/status enum constraints for user context
+
+    - Task status transitions from pending through retry workflow
+
+    - Sync logging captures metrics for background operations
+
+    - API key validation gates access to email API
+
+    - Security headers protect all responses containing logged email data
+
+    '
+  completeness: 'A complete answer must:
+
+    1. Find and correctly sum all 8 distinct metric values from different system components
+
+    2. Identify that the 100-char constraint applies to BOTH first_name AND last_name fields
+
+    3. Distinguish between email log fields (8), task states (2), project states (6), sync fields (5), API checks (3), and security headers (5)
+
+    4. Explain the dependency chain: validation → queuing → logging → sync tracking → security headers
+
+    5. Demonstrate understanding that email notification retry flow requires all these components to work together
+
+    6. Recognize that the answer requires cross-file synthesis since no single file contains all the information
+
+    '
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5
+- criterion: integration_understanding
+  weight: 0.75

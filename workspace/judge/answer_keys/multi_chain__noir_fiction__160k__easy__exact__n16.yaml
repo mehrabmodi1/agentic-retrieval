@@ -1,0 +1,115 @@
+parametrisation_id: "multi_chain__noir_fiction__160k__easy__exact__n16"
+experiment_type: "multi_chain"
+generated_at: "2026-04-05T00:00:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 160000
+  discriminability: "easy"
+  reference_clarity: "exact"
+items:
+  - item_id: "target_001"
+    inserted_text: "Morris slides a note across the desk. It reads: \"Real legal architect is Mercer & Associates, Whitfield Building, floor 3. That's where the cover gets drawn.\""
+    file_path: "case_notes/day_07.md"
+    line_range: [59, 61]
+    context_summary: "Morris provides the first clue pointing to Mercer & Associates as the legal intermediary for Sinclair."
+
+  - item_id: "target_002"
+    inserted_text: "Inside Helen's files—cross-reference to \"Charlie's front operation\"—I find a note in Mercer's own hand: \"Vehicle registration filed under Sinclair Holdings. Check hospital admission records for October 29th.\""
+    file_path: "case_notes/day_01.md"
+    line_range: [37, 38]
+    context_summary: "At Mercer's office, a note directs investigation toward hospital records for October 29th."
+
+  - item_id: "target_003"
+    inserted_text: "Eddie also mentions: \"Check with Patricia at Saint Michael's Hospital, east wing admissions. She's been cooperating with someone—someone important gave her standing orders.\""
+    file_path: "case_notes/day_04.md"
+    line_range: [26, 27]
+    context_summary: "Eddie's research reveals Patricia at Saint Michael's Hospital as a key witness with standing orders."
+
+  - item_id: "target_004"
+    inserted_text: "Patricia had left me one more piece before I left the hospital: \"The man who picked him up mentioned checking the paradise nightclub. That's where the girl was last seen—that's your next thread.\""
+    file_path: "case_notes/day_05.md"
+    line_range: [48, 49]
+    context_summary: "Patricia points toward the Paradise nightclub as the next location to investigate."
+
+  - item_id: "target_005"
+    inserted_text: "Before the accident, Mercer left word with a nurse: \"Check the paradise club manager. She knows about Vincent Castellano and the girl. That's where it all connects.\""
+    file_path: "case_notes/day_06.md"
+    line_range: [164, 165]
+    context_summary: "Mercer's deathbed message directs investigation to the Paradise club manager, Sylvia."
+
+  - item_id: "target_006"
+    inserted_text: "Sylvia also slides me a business card—nothing on it but an address: \"Dock Street warehouse, Wednesday night. That's where Carmine's man took her. That's where detective Morris comes in. He's your next step.\""
+    file_path: "case_notes/day_03.md"
+    line_range: [74, 75]
+    context_summary: "Sylvia provides the warehouse location and recommends Detective Morris for further investigation."
+
+  - item_id: "target_007"
+    inserted_text: "Morris leans in close. \"Before Vincent disappeared, he was connected to something bigger. Look at the warehouse records for the dock—there's an informant with details. Code name: Victor. He'll point you toward the real players in this.\""
+    file_path: "case_notes/day_02.md"
+    line_range: [92, 94]
+    context_summary: "Morris identifies informant Victor as the key source for understanding the larger criminal network."
+
+  - item_id: "target_008"
+    inserted_text: "Victor's intel mentions \"Kaslan operation—ask the informant about the Vesper painting. That's where Harvey's conscience broke.\" We need to trace that painting to understand what Harvey was running from."
+    file_path: "witnesses/detective_debrief.md"
+    line_range: [40, 41]
+    context_summary: "Detective debrief reveals the Vesper painting and Kaslan operation as central to Harvey's moral crisis."
+
+  - item_id: "target_009"
+    inserted_text: "An envelope Victor had brought contained a note: \"The widow Vesper was the key. Look at Eleanor Pembroke, the neighbor. She understands moral failure better than anyone.\""
+    file_path: "witnesses/informant_interview.md"
+    line_range: [35, 37]
+    context_summary: "Victor's intelligence points toward Eleanor Pembroke, Harvey's neighbor, as crucial witness to his moral reckoning."
+
+  - item_id: "target_010"
+    inserted_text: "Before Chen left, Eleanor pressed a slip of paper into her hand. \"That bartender at the Crimson Door—Deke. He knew Harvey longer than anyone. He'll tell you about the envelope and the white-haired man. That's where the next piece is.\""
+    file_path: "witnesses/neighbor_statement.md"
+    line_range: [78, 80]
+    context_summary: "Eleanor directs investigation toward Deke the bartender at The Crimson Door for information about Harvey's contacts."
+
+  - item_id: "target_011"
+    inserted_text: "Off the record, Deke added: \"Jerry Salvatore drove the kid places. Cab driver. He'll tell you where the kid went after leaving here. Check with the cab company on Industrial Avenue—that's the real trail.\""
+    file_path: "witnesses/bartender_statement.md"
+    line_range: [44, 46]
+    context_summary: "Deke identifies Jerry Salvatore, the cab driver, as the next link who knows Harvey's movements."
+
+  - item_id: "target_012"
+    inserted_text: "Before answering, Jerry placed a crumpled receipt on the desk. \"Riverside Apartments. That's where he was living. That's where the landlady Eva is. She knows more about his movements than anyone. Building at 1247 Harbor Road.\""
+    file_path: "witnesses/cab_driver_statement.md"
+    line_range: [24, 26]
+    context_summary: "Cab driver Jerry reveals Harvey's residence at Riverside Apartments and directs to landlady Eva."
+
+  - item_id: "target_013"
+    inserted_text: "She handed Chen a forwarding address. \"Before he left, he told me if anyone asked, to send them to his lawyer. Marchetti's office, Whitfield Building. Dorothy Marchetti, the secretary. She'll explain everything the law allows.\""
+    file_path: "witnesses/landlady_statement.md"
+    line_range: [27, 29]
+    context_summary: "Landlady Eva directs investigation to Dorothy Marchetti, the secretary at the lawyer's office."
+
+  - item_id: "target_014"
+    inserted_text: "Dorothy hesitated, then placed something in an envelope. \"There are other investigators. Private investigator named Jack Shepherd, works out of an office downtown. Mr. Harvey mentioned him once—said if anything happened, to find Shepherd. He's looking into a missing girl. That investigation will connect to Harvey's if you follow it correctly.\""
+    file_path: "witnesses/secretary_statement.md"
+    line_range: [36, 38]
+    context_summary: "Dorothy reveals that Jack Shepherd's investigation into a missing girl connects to Harvey's case."
+
+  - item_id: "target_015"
+    inserted_text: "The note that came with the referral mentioned: \"Richard Halstead hired you about his missing daughter. Follow that investigation. The answer involves Meridian Holdings.\""
+    file_path: "chapters/chapter_01.md"
+    line_range: [5, 7]
+    context_summary: "Shepherd's referral note explicitly directs him to the Halstead missing daughter case and Meridian Holdings."
+
+  - item_id: "target_016"
+    inserted_text: "One detail stuck with me—Halstead's mention of \"specialty goods\" from his import-export business. That phrase would come up again, I knew. In interrogations with Catherine's friends at the Park House, it would become important."
+    file_path: "chapters/chapter_02.md"
+    line_range: [4, 6]
+    context_summary: "Shepherd notes the significance of Halstead's import-export business and specialty goods, presaging the final revelation of Meridian Holdings."
+
+expected_answers:
+  question: "Starting from the note found in case_notes/day_07.md that Morris provides, follow the chain of references through the files. Where does the investigation ultimately lead?"
+  correctness: "The answer must identify Meridian Holdings as the final destination of the investigation chain, or specify that it is the organization coordinating Catherine Halstead's kidnapping, the art theft operation, and all the criminal activities across the chain."
+  completeness: "A complete answer should trace the path through at least 5-6 key reference points in the chain (Mercer & Associates → hospital → Paradise club → Victor the informant → Harvey's moral crisis → Eleanor Pembroke's testimony → bartender Deke → cab driver Jerry → landlady Eva → secretary Dorothy → Jack Shepherd → Halstead case → Meridian Holdings) and conclude that Meridian Holdings is the apex organization controlling all these criminal threads."
+
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+  - criterion: "completeness"
+    weight: 0.5

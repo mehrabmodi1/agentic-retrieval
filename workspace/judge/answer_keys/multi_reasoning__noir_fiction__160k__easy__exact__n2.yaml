@@ -1,0 +1,28 @@
+parametrisation_id: "multi_reasoning__noir_fiction__160k__easy__exact__n2"
+experiment_type: "multi_reasoning"
+generated_at: "2026-04-05T00:00:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 160000
+  discriminability: "easy"
+  reference_clarity: "exact"
+items:
+  - item_id: "target_001"
+    inserted_text: "Eleanor added, \"Margaret happened to mention once that Catherine's boyfriend worked in currency exchange operations. International transfers, she said. Very lucrative, but she seemed worried about the legitimacy of it all.\""
+    file_path: "chapters/chapter_03.md"
+    line_range: [47, 48]
+    context_summary: "Inserted after Susan describes Catherine's mysterious boyfriend as 'older, successful,' adding Eleanor's detail about his involvement in currency exchange operations."
+  - item_id: "target_002"
+    inserted_text: "According to Ashford's statement, Sinclair was the architect of the currency exchange scheme that Catherine Halstead had become aware of—the same scheme she threatened to expose during their final weeks together."
+    file_path: "case_notes/day_08.md"
+    line_range: [36, 37]
+    context_summary: "Inserted immediately after introducing Ashford's cooperation with the investigation, directly linking Sinclair to the currency exchange operation and Catherine's knowledge of it."
+expected_answers:
+  question: "What type of business operations was Catherine's secret boyfriend involved in, and which suspect was identified as the architect of this scheme?"
+  correctness: "The answer must identify both the currency exchange operations/money laundering scheme AND identify Sinclair as the architect of this operation. It must also establish the connection to Catherine's knowledge of the scheme."
+  completeness: "A complete answer will cite that Catherine's boyfriend worked in currency exchange operations for international transfers (Needle 1 from chapter_03.md), and that Sinclair was identified as the architect of this currency exchange scheme that Catherine had threatened to expose (Needle 2 from case_notes/day_08.md). The answer must combine both pieces to establish why Catherine's relationship to her boyfriend made her a threat."
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+  - criterion: "completeness"
+    weight: 0.5

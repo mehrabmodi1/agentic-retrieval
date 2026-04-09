@@ -1,0 +1,23 @@
+parametrisation_id: "single_needle__noir_fiction__40k__hard__contextual"
+experiment_type: "single_needle"
+generated_at: "2026-04-03T09:00:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 40000
+  discriminability: "hard"
+  reference_clarity: "contextual"
+items:
+  - item_id: "target_001"
+    inserted_text: "*\"H and I visited the botanical gardens on Saturday afternoon. The chrysanthemums were in full bloom—orange and amber and a deep rust that matched the season. He was distracted, as he sometimes is, standing very still in front of a bed of flowers with his hands in his coat pockets. When he finally turned to me, the autumn light caught the left side of his face, and I noticed something I hadn't seen before: a narrow white scar, barely a centimeter long, that nicked the outer edge of his left eyebrow. Healed for years, you could tell—the skin there had a different texture, a small ridge. He caught me looking and touched the spot instinctively, then dropped his hand. 'Don't,' he said. Not unkindly. Just quietly. He didn't want me asking about it. I thought: every person carries their own atlas of scars. His just happens to be mostly hidden.\"*"
+    file_path: "chapters/chapter_04.md"
+    line_range: [23, 23]
+    context_summary: "Inserted as a new journal entry within Catherine Halstead's diary, placed between her early happy accounts of dating 'H' and the later entries where she grows worried about his behavior, discovered by detective Jack Shepherd while searching her apartment."
+expected_answers:
+  question: "What physical mark on the face of Catherine Halstead's secret companion did she privately record noticing during their time together outdoors?"
+  correctness: "A narrow white scar on the outer edge of his left eyebrow, barely a centimeter long."
+  completeness: "A complete answer identifies that the scar was narrow and white, located at the outer edge of his left eyebrow, approximately a centimeter long with a slightly raised texture, noticed when autumn light caught his face during their visit to the botanical gardens, and that he reacted by touching the spot and deflecting her inquiry."
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+  - criterion: "completeness"
+    weight: 0.5

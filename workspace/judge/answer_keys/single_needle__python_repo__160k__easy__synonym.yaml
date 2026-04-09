@@ -1,0 +1,25 @@
+parametrisation_id: single_needle__python_repo__160k__easy__synonym
+experiment_type: single_needle
+generated_at: '2026-04-03T10:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 160000
+  discriminability: easy
+  reference_clarity: synonym
+items:
+- item_id: target_001
+  inserted_text: 'WORKER_IDLE_TIMEOUT = 120  # Seconds before an idle worker thread is recycled'
+  file_path: workers/task_runner.py
+  line_range:
+  - 25
+  - 25
+  context_summary: Inserted as a module-level constant in workers/task_runner.md immediately after the logger initialisation and before the SQLAlchemy Base declaration.
+expected_answers:
+  question: How many seconds does an inactive worker thread wait before being terminated?
+  correctness: '120'
+  completeness: The answer should state that the timeout is 120 seconds, defined by the constant WORKER_IDLE_TIMEOUT in workers/task_runner.md.
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5

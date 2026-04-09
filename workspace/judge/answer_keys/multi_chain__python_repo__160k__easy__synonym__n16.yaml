@@ -1,0 +1,162 @@
+parametrisation_id: multi_chain__python_repo__160k__easy__synonym__n16
+experiment_type: multi_chain
+generated_at: '2026-04-03T09:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 160000
+  discriminability: easy
+  reference_clarity: synonym
+items:
+- item_id: target_001
+  inserted_text: '# Routing chain entry; next hop is in api/auth.py
+
+    XFER_NODE_01 = "XFER_NODE_02"'
+  file_path: api/__init__.py
+  line_range:
+  - 87
+  - 88
+  context_summary: Inserted after the API_BASE_PATH constant and before the __all__ public API list, as a module-level routing chain entry constant.
+- item_id: target_002
+  inserted_text: '# Routing chain node; next hop is in api/routes.py
+
+    XFER_NODE_02 = "XFER_NODE_03"'
+  file_path: api/auth.py
+  line_range:
+  - 31
+  - 32
+  context_summary: Inserted after the token validation cache comment block and before the AuthenticationError class definition, as a module-level constant.
+- item_id: target_003
+  inserted_text: '# Routing chain node; next hop is in api/middleware.py
+
+    XFER_NODE_03 = "XFER_NODE_04"'
+  file_path: api/routes.py
+  line_range:
+  - 49
+  - 50
+  context_summary: Inserted after the logger definition and before the Blueprint definitions block, as a module-level constant.
+- item_id: target_004
+  inserted_text: '# Routing chain node; next hop is in api/serializers.py
+
+    XFER_NODE_04 = "XFER_NODE_05"'
+  file_path: api/middleware.py
+  line_range:
+  - 26
+  - 27
+  context_summary: Inserted after the logger definition and before the RequestIDMiddleware class definition, as a module-level constant.
+- item_id: target_005
+  inserted_text: '# Routing chain node; next hop is in api/validators.py
+
+    XFER_NODE_05 = "XFER_NODE_06"'
+  file_path: api/serializers.py
+  line_range:
+  - 26
+  - 27
+  context_summary: Inserted after the logger definition and before the BaseSchema class definition, as a module-level constant.
+- item_id: target_006
+  inserted_text: '# Routing chain node; next hop is in api/pagination.py
+
+    XFER_NODE_06 = "XFER_NODE_07"'
+  file_path: api/validators.py
+  line_range:
+  - 20
+  - 21
+  context_summary: Inserted after the logger definition and before the ValidationError class definition, as a module-level constant.
+- item_id: target_007
+  inserted_text: '# Routing chain node; next hop is in api/rate_limiting.py
+
+    XFER_NODE_07 = "XFER_NODE_08"'
+  file_path: api/pagination.py
+  line_range:
+  - 24
+  - 25
+  context_summary: Inserted after the PAGINATED_CACHE_TTL constant and before the PaginationMetadata class definition, as a module-level constant.
+- item_id: target_008
+  inserted_text: '# Routing chain node; next hop is in api/error_handlers.py
+
+    XFER_NODE_08 = "XFER_NODE_09"'
+  file_path: api/rate_limiting.py
+  line_range:
+  - 30
+  - 31
+  context_summary: Inserted after the PIPELINE_DISPATCH_TIMEOUT constant and before the RateLimitError class definition, as a module-level constant.
+- item_id: target_009
+  inserted_text: '# Routing chain node; next hop is in tests/conftest.py
+
+    XFER_NODE_09 = "XFER_NODE_10"'
+  file_path: api/error_handlers.py
+  line_range:
+  - 20
+  - 21
+  context_summary: Inserted after the logger definition and before the Custom Exception Classes section header comment, as a module-level constant.
+- item_id: target_010
+  inserted_text: '# Routing chain node; next hop is in tests/fixtures.py
+
+    XFER_NODE_10 = "XFER_NODE_11"'
+  file_path: tests/conftest.py
+  line_range:
+  - 26
+  - 27
+  context_summary: Inserted after the RedisCache import and before the first pytest fixture definition, as a module-level constant.
+- item_id: target_011
+  inserted_text: '# Routing chain node; next hop is in tests/test_api.py
+
+    XFER_NODE_11 = "XFER_NODE_12"'
+  file_path: tests/fixtures.py
+  line_range:
+  - 19
+  - 20
+  context_summary: Inserted after the SQLAlchemy Session import and before the TestDataBuilder class definition, as a module-level constant.
+- item_id: target_012
+  inserted_text: '# Routing chain node; next hop is in tests/test_auth.py
+
+    XFER_NODE_12 = "XFER_NODE_13"'
+  file_path: tests/test_api.py
+  line_range:
+  - 16
+  - 17
+  context_summary: Inserted after the app.models import and before the first test class definition, as a module-level constant.
+- item_id: target_013
+  inserted_text: '# Routing chain node; next hop is in tests/test_db.py
+
+    XFER_NODE_13 = "XFER_NODE_14"'
+  file_path: tests/test_auth.py
+  line_range:
+  - 21
+  - 22
+  context_summary: Inserted after the app.exceptions import and before the first test class definition, as a module-level constant.
+- item_id: target_014
+  inserted_text: '# Routing chain node; next hop is in tests/test_services.py
+
+    XFER_NODE_14 = "XFER_NODE_15"'
+  file_path: tests/test_db.py
+  line_range:
+  - 18
+  - 19
+  context_summary: Inserted after the app.security import and before the first test class definition, as a module-level constant.
+- item_id: target_015
+  inserted_text: '# Routing chain node; next hop is in workers/cleanup_worker.py
+
+    XFER_NODE_15 = "XFER_NODE_16"'
+  file_path: tests/test_services.py
+  line_range:
+  - 19
+  - 20
+  context_summary: Inserted after the app.cache import and before the first test class definition, as a module-level constant.
+- item_id: target_016
+  inserted_text: '# Terminal node in the XFER routing chain; this is the final value.
+
+    XFER_NODE_16 = "cascade-summit-4471"'
+  file_path: workers/cleanup_worker.py
+  line_range:
+  - 23
+  - 24
+  context_summary: Inserted after the existing PIPELINE_DISPATCH_TIMEOUT comment block and before the CleanupTask dataclass definition, as the terminal constant of the routing chain.
+expected_answers:
+  question: Starting from XFER_NODE_01 in api/__init__.py, follow the chain of data-forwarding hop constants across modules (each constant's value names the next transfer checkpoint). What string value does the final hop constant in the sequence hold?
+  correctness: cascade-summit-4471
+  completeness: 'The answer should identify cascade-summit-4471 as the terminal value reached by following: XFER_NODE_01 (api/__init__.py) → XFER_NODE_02 (api/auth.py) → XFER_NODE_03 (api/routes.py) → XFER_NODE_04 (api/middleware.py) → XFER_NODE_05 (api/serializers.py) → XFER_NODE_06 (api/validators.py) → XFER_NODE_07 (api/pagination.py) → XFER_NODE_08 (api/rate_limiting.py) → XFER_NODE_09 (api/error_handlers.py) → XFER_NODE_10 (tests/conftest.py) → XFER_NODE_11 (tests/fixtures.py) → XFER_NODE_12 (tests/test_api.py) → XFER_NODE_13 (tests/test_auth.py) → XFER_NODE_14 (tests/test_db.py) → XFER_NODE_15 (tests/test_services.py) → XFER_NODE_16 (workers/cleanup_worker.py) = cascade-summit-4471'
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5

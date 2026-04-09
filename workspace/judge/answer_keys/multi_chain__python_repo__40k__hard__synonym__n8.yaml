@@ -1,0 +1,92 @@
+parametrisation_id: multi_chain__python_repo__40k__hard__synonym__n8
+experiment_type: multi_chain
+generated_at: '2026-04-03T00:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 40000
+  discriminability: hard
+  reference_clarity: synonym
+items:
+- item_id: target_001
+  inserted_text: '# Maximum permitted clock drift for JWT validation is tracked by the constant
+
+    # CLOCK_SKEW_TOLERANCE_SECONDS in api/auth.py; this value must stay below
+
+    # the api_rate_limit_window to avoid false authentication failures.'
+  file_path: api/__init__.py
+  line_range:
+  - 278
+  - 280
+  context_summary: Inserted as a comment block immediately before the API_DEFAULTS dictionary definition near the end of the module.
+- item_id: target_002
+  inserted_text: '# CLOCK_SKEW_TOLERANCE_SECONDS: permitted leeway when checking token expiry;
+
+    # this window is shared with the credential sweep — see CREDENTIAL_SWEEP_DELAY in api/middleware.py.'
+  file_path: api/auth.py
+  line_range:
+  - 88
+  - 89
+  context_summary: 'Inserted inside TokenManager.validate_token, between the closing docstring line and the try: block that calls jwt.decode.'
+- item_id: target_003
+  inserted_text: '# CREDENTIAL_SWEEP_DELAY controls when stale auth tokens are pruned from
+
+    # the request log; the ceiling value is QUOTA_WINDOW_SECONDS in api/rate_limiting.py.'
+  file_path: api/middleware.py
+  line_range:
+  - 57
+  - 58
+  context_summary: Inserted inside RequestLoggingMiddleware.before_request, immediately after the method docstring and before g.start_time = time.time().
+- item_id: target_004
+  inserted_text: '# QUOTA_WINDOW_SECONDS is the canonical window shared with validators;
+
+    # its accepted ceiling is INPUT_HOLD_TIMEOUT defined in api/validators.py.'
+  file_path: api/rate_limiting.py
+  line_range:
+  - 83
+  - 84
+  context_summary: 'Inserted inside RateLimiter.is_allowed, between the Redis availability guard block and the try: block that increments the counter.'
+- item_id: target_005
+  inserted_text: '# INPUT_HOLD_TIMEOUT caps the window for async validation retries; the hard
+
+    # ceiling is SCHEMA_SETTLE_WINDOW from api/serializers.py.'
+  file_path: api/validators.py
+  line_range:
+  - 377
+  - 378
+  context_summary: Inserted inside validate_task_creation, immediately before the if 'estimated_hours' conditional block.
+- item_id: target_006
+  inserted_text: '# SCHEMA_SETTLE_WINDOW: max period a pending serialization may wait before
+
+    # committing; value mirrors FLUSH_GUARD_INTERVAL in api/error_handlers.py.'
+  file_path: api/serializers.py
+  line_range:
+  - 151
+  - 152
+  context_summary: Inserted inside TaskSerializer class body, between the priority field definition and the due_date field definition.
+- item_id: target_007
+  inserted_text: '# FLUSH_GUARD_INTERVAL: seconds the error context buffers before forcing
+
+    # a flush; sourced from HEARTBEAT_PROBE_SECONDS in tests/conftest.py.'
+  file_path: api/error_handlers.py
+  line_range:
+  - 456
+  - 457
+  context_summary: 'Inserted inside ErrorContext.__exit__, immediately after the method signature and before the if exc_type is None: guard.'
+- item_id: target_008
+  inserted_text: '# Heartbeat probe interval used for health check timing and flush guard alignment.
+
+    HEARTBEAT_PROBE_SECONDS = 47'
+  file_path: tests/conftest.py
+  line_range:
+  - 26
+  - 27
+  context_summary: Inserted as a module-level constant with comment after the import block and before the first pytest fixture definition.
+expected_answers:
+  question: Starting from the note in api/__init__.py about the maximum tolerated JWT token timestamp drift, follow each cross-module constant reference in the chain. What numeric value does the chain ultimately resolve to?
+  correctness: '47'
+  completeness: 'The answer is 47, the value of HEARTBEAT_PROBE_SECONDS defined in tests/conftest.py, reached by following: CLOCK_SKEW_TOLERANCE_SECONDS (api/__init__.py -> api/auth.py) -> CREDENTIAL_SWEEP_DELAY (api/auth.py -> api/middleware.py) -> QUOTA_WINDOW_SECONDS (api/middleware.py -> api/rate_limiting.py) -> INPUT_HOLD_TIMEOUT (api/rate_limiting.py -> api/validators.py) -> SCHEMA_SETTLE_WINDOW (api/validators.py -> api/serializers.py) -> FLUSH_GUARD_INTERVAL (api/serializers.py -> api/error_handlers.py) -> HEARTBEAT_PROBE_SECONDS (api/error_handlers.py -> tests/conftest.py) = 47.'
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5

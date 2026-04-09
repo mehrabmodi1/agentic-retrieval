@@ -1,0 +1,76 @@
+parametrisation_id: multi_reasoning__python_repo__160k__easy__synonym__n8
+experiment_type: multi_reasoning
+generated_at: '2026-04-05T00:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 160000
+  discriminability: easy
+  reference_clarity: synonym
+items:
+- item_id: target_001
+  inserted_text: SLOW_REQUEST_THRESHOLD_SECONDS = 15
+  file_path: api/middleware.py
+  line_range:
+  - 85
+  - 88
+  context_summary: Inserted as a constant definition in the after_request method where slow request logging is configured.
+- item_id: target_002
+  inserted_text: SMTP_OPERATION_TIMEOUT_SECONDS = 30
+  file_path: workers/email_worker.py
+  line_range:
+  - 200
+  - 203
+  context_summary: Inserted as a timeout constant before the SMTP connection is established in send_email method.
+- item_id: target_003
+  inserted_text: MAXIMUM_RETRY_ATTEMPTS = 5
+  file_path: workers/retry_handler.py
+  line_range:
+  - 340
+  - 343
+  context_summary: Inserted as a retry limit constant in the DecoratorRetryHandler class initialization.
+- item_id: target_004
+  inserted_text: REPORT_EXPORT_TIMEOUT_SECONDS = 120
+  file_path: workers/report_generator.py
+  line_range:
+  - 300
+  - 303
+  context_summary: Inserted as a timeout constant for report generation operations before the export methods.
+- item_id: target_005
+  inserted_text: TOKEN_VALIDITY_DURATION_HOURS = 24
+  file_path: api/auth.py
+  line_range:
+  - 426
+  - 429
+  context_summary: Inserted as a token expiration duration constant in the response data construction for login.
+- item_id: target_006
+  inserted_text: PASSWORD_CONSTRAINT_MAX_LENGTH = 128
+  file_path: api/validators.py
+  line_range:
+  - 76
+  - 79
+  context_summary: Inserted as a named constant for the maximum password length validation rule.
+- item_id: target_007
+  inserted_text: ORGANIZATION_API_QUOTA_REQUESTS = 1000
+  file_path: tests/conftest.py
+  line_range:
+  - 115
+  - 118
+  context_summary: Inserted as a test fixture constant defining the default API rate limit for organizations.
+- item_id: target_008
+  inserted_text: BURST_REQUEST_CAPACITY_LIMIT = 100
+  file_path: api/rate_limiting.py
+  line_range:
+  - 372
+  - 375
+  context_summary: Inserted as a capacity threshold constant in the adaptive rate limiter decorator.
+expected_answers:
+  question: 'What is the sum of all system timeout and limit constants defined across the middleware, worker, authentication, validation, and rate-limiting modules? (Include: slow request threshold, SMTP timeout, maximum retry attempts, report export timeout, token validity duration, password maximum length, organization API quota, and burst request capacity limit.)'
+  correctness: 'Must identify all 8 constants by their values: 15 + 30 + 5 + 120 + 24 + 128 + 1000 + 100 = 1422 seconds/units total. Answers must reference the constants by their synonymous names (e.g., ''SLOW_REQUEST_THRESHOLD_SECONDS'' vs ''slow_request_duration_seconds'', ''TOKEN_VALIDITY_DURATION_HOURS'' vs ''token_expiry_hours'').'
+  completeness: 'A complete answer must: (1) locate all 8 configuration constants across different files, (2) extract their numeric values, (3) recognize that these constants represent system limits and timeouts even when named differently, (4) perform arithmetic combination to derive the final sum, (5) acknowledge the role each constant plays in system behavior.'
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+  description: All 8 values correctly identified and summed to 1422
+- criterion: completeness
+  weight: 0.5
+  description: All 8 constants located; synonymous naming conventions recognized; explanation of why each constant matters

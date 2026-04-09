@@ -1,0 +1,25 @@
+parametrisation_id: single_needle__python_repo__160k__hard__contextual
+experiment_type: single_needle
+generated_at: '2026-04-03T00:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 160000
+  discriminability: hard
+  reference_clarity: contextual
+items:
+- item_id: target_001
+  inserted_text: "    # Maximum number of seconds between task progress updates before the runner\n    # considers a job stalled and marks it for forced termination and re-queuing\n    _HEARTBEAT_TIMEOUT_SECONDS = 900"
+  file_path: workers/task_runner.py
+  line_range:
+  - 94
+  - 96
+  context_summary: Inserted as a class-level constant in the TaskRunner class, between the class docstring and the __init__ method, with a comment explaining its purpose.
+expected_answers:
+  question: How long must a running job go without sending progress updates before the task orchestration system considers it stuck and eligible for re-execution?
+  correctness: The correct answer is 900 seconds (15 minutes), defined by the class attribute _HEARTBEAT_TIMEOUT_SECONDS = 900 in the TaskRunner class.
+  completeness: A complete answer identifies the value as 900 seconds (or equivalently 15 minutes), notes it is defined by _HEARTBEAT_TIMEOUT_SECONDS in the TaskRunner class in workers/task_runner.py, and explains that it represents the maximum interval between task progress updates before the runner forces termination and re-queuing.
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5

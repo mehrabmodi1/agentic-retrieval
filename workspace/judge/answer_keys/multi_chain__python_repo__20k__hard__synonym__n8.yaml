@@ -1,0 +1,78 @@
+parametrisation_id: multi_chain__python_repo__20k__hard__synonym__n8
+experiment_type: multi_chain
+generated_at: '2026-04-03T00:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 20000
+  discriminability: hard
+  reference_clarity: synonym
+items:
+- item_id: target_001
+  inserted_text: '        mock_queue.return_value.queue = "delta_dispatch_queue"  # configured routing target'
+  file_path: tests/conftest.py
+  line_range:
+  - 234
+  - 234
+  context_summary: Inserted inside mock_task_queue fixture, after the MagicMock return value assignment and before the yield statement, as a natural attribute set on the mock.
+- item_id: target_002
+  inserted_text: "        # Tasks routed through delta_dispatch_queue are claimed by the batch_harvest_handler worker\n        mock_queue._bound_consumer = \"batch_harvest_handler\""
+  file_path: tests/fixtures.py
+  line_range:
+  - 171
+  - 172
+  context_summary: Inserted inside MockFactory.create_mock_task_queue() before the return statement, embedding the delta_dispatch_queue → batch_harvest_handler link as a comment and attribute assignment.
+- item_id: target_003
+  inserted_text: '        # batch_harvest_handler archives task list snapshots under the sink label "shard_nine_epsilon"'
+  file_path: tests/test_api.py
+  line_range:
+  - 87
+  - 87
+  context_summary: Inserted after the final assertions in test_list_tasks, referencing batch_harvest_handler and its archive sink label shard_nine_epsilon as an inline comment.
+- item_id: target_004
+  inserted_text: '        # shard_nine_epsilon is the partition label routing analytics writes to the "replica_cluster_gamma" pool'
+  file_path: tests/test_db.py
+  line_range:
+  - 253
+  - 253
+  context_summary: Inserted after the final assertions in test_organization_settings_json_field, embedding the shard_nine_epsilon → replica_cluster_gamma connection pool reference as a comment.
+- item_id: target_005
+  inserted_text: '        # replica_cluster_gamma is the read replica backing exports; its outbound address alias is "outbound_relay_alpha"'
+  file_path: tests/test_services.py
+  line_range:
+  - 345
+  - 345
+  context_summary: Inserted after the final assertions in test_export_user_data inside TestReportService, linking replica_cluster_gamma to the outbound_relay_alpha address alias.
+- item_id: target_006
+  inserted_text: '            # outbound_relay_alpha resolves to the host identifier stored as SYNC_HOST_OVERRIDE in the sync layer'
+  file_path: workers/email_worker.py
+  line_range:
+  - 249
+  - 249
+  context_summary: Inserted inside EmailWorker._log_email between session.add(log) and session.commit(), linking outbound_relay_alpha to SYNC_HOST_OVERRIDE in the sync layer.
+- item_id: target_007
+  inserted_text: '        # SYNC_HOST_OVERRIDE for the primary data endpoint — authoritative value is in the report_worker module'
+  file_path: workers/sync_worker.py
+  line_range:
+  - 87
+  - 87
+  context_summary: Inserted after the logger.info statement in SyncWorker.__init__, directing the reader to the report_worker module for the authoritative SYNC_HOST_OVERRIDE value.
+- item_id: target_008
+  inserted_text: '# Primary data endpoint used for cross-component synchronisation.
+
+    # Shared by the sync layer (see SyncWorker) under the alias SYNC_HOST_OVERRIDE.
+
+    SYNC_HOST_OVERRIDE = "db-prod-41.internal"'
+  file_path: workers/report_worker.py
+  line_range:
+  - 17
+  - 19
+  context_summary: Defined at module level in the newly created report_worker.md file, with SYNC_HOST_OVERRIDE assigned the final hostname value db-prod-41.internal and used to build the DB URL template.
+expected_answers:
+  question: The Celery task mock helper in tests/conftest.md assigns a routing destination name to its return value. Starting from that queue name, follow the chain of references across the codebase. What hostname does the chain ultimately resolve to?
+  correctness: db-prod-41.internal
+  completeness: 'A complete answer identifies the final hostname as db-prod-41.internal, and may optionally trace the chain: delta_dispatch_queue (conftest.md) → batch_harvest_handler (fixtures.md) → shard_nine_epsilon (test_api.md) → replica_cluster_gamma (test_db.md) → outbound_relay_alpha (test_services.md) → SYNC_HOST_OVERRIDE (email_worker.md) → report_worker module (sync_worker.md) → db-prod-41.internal (report_worker.md).'
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5

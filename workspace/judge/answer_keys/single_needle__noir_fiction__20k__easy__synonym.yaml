@@ -1,0 +1,23 @@
+parametrisation_id: "single_needle__noir_fiction__20k__easy__synonym"
+experiment_type: "single_needle"
+generated_at: "2026-04-03T00:00:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 20000
+  discriminability: "easy"
+  reference_clarity: "synonym"
+items:
+  - item_id: "target_001"
+    inserted_text: "Once I picked him up from a breakfast place called The Blue Lantern on Garrison Street—he told me he liked to eat there whenever he needed to think."
+    file_path: "witnesses/cab_driver_statement.md"
+    line_range: [22, 22]
+    context_summary: "Inserted into cab driver Jerry Salvatore's account of pickup locations for Harvey, between mentions of the Fifth Street building and The Crimson Door."
+expected_answers:
+  question: "What dining establishment did Harvey visit to clear his head?"
+  correctness: "The Blue Lantern"
+  completeness: "The answer should identify The Blue Lantern on Garrison Street as the breakfast place Harvey frequented when he needed to think."
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+  - criterion: "completeness"
+    weight: 0.5

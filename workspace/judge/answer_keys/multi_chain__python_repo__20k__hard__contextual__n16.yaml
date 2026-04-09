@@ -1,0 +1,226 @@
+parametrisation_id: multi_chain__python_repo__20k__hard__contextual__n16
+experiment_type: multi_chain
+generated_at: '2026-04-03T10:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 20000
+  discriminability: hard
+  reference_clarity: contextual
+items:
+- item_id: target_001
+  inserted_text: '# AUTH_BOUNDARY_CEIL caps the permissible header entropy per origin; the
+
+    # complementary per-blueprint allocation is configured as BLUEPRINT_RATE_KEY.
+
+    AUTH_BOUNDARY_CEIL = 8
+
+    '
+  file_path: api/middleware.py
+  line_range:
+  - 26
+  - 28
+  context_summary: Inserted as a module-level constant immediately after the logger definition, before the RequestIDMiddleware class, establishing the chain entry point.
+- item_id: target_002
+  inserted_text: '# BLUEPRINT_RATE_KEY indexes the per-resource rate allocation table; it maps to
+
+    # FIXTURE_SCOPE_TAG in the test configuration layer for boundary validation.
+
+    BLUEPRINT_RATE_KEY = "per-resource-v2"
+
+    '
+  file_path: api/routes.py
+  line_range:
+  - 49
+  - 51
+  context_summary: Inserted as a module-level constant after the logger setup and before the Blueprint definitions section, referencing the next link in the test configuration layer.
+- item_id: target_003
+  inserted_text: '# FIXTURE_SCOPE_TAG identifies the session-scoped isolation boundary; it aligns
+
+    # with TOKEN_CLAIM_SCHEMA used by the authentication validation fixtures.
+
+    FIXTURE_SCOPE_TAG = "session-boundary-alpha"
+
+    '
+  file_path: tests/conftest.py
+  line_range:
+  - 26
+  - 28
+  context_summary: Inserted as a module-level constant after the RedisCache import and before the first pytest fixture, bridging to the authentication test suite.
+- item_id: target_004
+  inserted_text: '# TOKEN_CLAIM_SCHEMA declares the JWT payload contract; its epoch version
+
+    # is cross-referenced with ORM_EPOCH_HANDLE in the database model test suite.
+
+    TOKEN_CLAIM_SCHEMA = "jwt-v3-rfc7519"
+
+    '
+  file_path: tests/test_auth.py
+  line_range:
+  - 21
+  - 23
+  context_summary: Inserted as a module-level constant after the imports section, before the TestUserRegistration class, pointing onward to the database model test suite.
+- item_id: target_005
+  inserted_text: '# ORM_EPOCH_HANDLE ties the model timestamp baseline to the data retention
+
+    # policy; the stale-record window is quantified as STALE_RECORD_WINDOW.
+
+    ORM_EPOCH_HANDLE = "utc-epoch-baseline"
+
+    '
+  file_path: tests/test_db.py
+  line_range:
+  - 18
+  - 20
+  context_summary: Inserted as a module-level constant after the import of hash_password, before the TestUserModel class, linking to the cleanup worker's retention window.
+- item_id: target_006
+  inserted_text: '# STALE_RECORD_WINDOW governs the outer bound on retention periods; the sync
+
+    # module''s lock-acquisition deadline is exposed as SYNC_LOCK_EPOCH.
+
+    STALE_RECORD_WINDOW = 90
+
+    '
+  file_path: workers/cleanup_worker.py
+  line_range:
+  - 20
+  - 22
+  context_summary: Inserted as a module-level constant after the declarative_base setup and before the CleanupTask dataclass, naming the sync module's lock deadline as the next link.
+- item_id: target_007
+  inserted_text: '# SYNC_LOCK_EPOCH marks the reference timestamp for lock contention analysis;
+
+    # it propagates to the CORS policy versioning constant CORS_POLICY_VER.
+
+    SYNC_LOCK_EPOCH = "lock-epoch-ref-v1"
+
+    '
+  file_path: workers/sync_worker.py
+  line_range:
+  - 26
+  - 28
+  context_summary: Inserted as a module-level constant immediately after STALE_LOCK_TIMEOUT_SECONDS and before the SyncDirection enum, pointing to the CORS versioning constant in the middleware.
+- item_id: target_008
+  inserted_text: '# CORS_POLICY_VER identifies the access-control ruleset applied per origin;
+
+    # the complementary query-bound digest is tracked as PAGINATION_DIGEST.
+
+    CORS_POLICY_VER = "cors-rfc6454-v2"
+
+    '
+  file_path: api/middleware.py
+  line_range:
+  - 257
+  - 259
+  context_summary: Inserted as a module-level constant after the CompressionMiddleware class body and before the register_middleware function, naming the pagination digest as the next link.
+- item_id: target_009
+  inserted_text: '# PAGINATION_DIGEST encodes the query-cursor contract for paginated results;
+
+    # its routing-layer counterpart is expressed as TASK_ROUTE_HANDLE.
+
+    PAGINATION_DIGEST = "cursor-v2-sha256"
+
+    '
+  file_path: tests/test_db.py
+  line_range:
+  - 347
+  - 349
+  context_summary: Inserted as a module-level constant between TestAuditLogModel and TestModelRelationships classes, pointing to the task route handle in the routing layer.
+- item_id: target_010
+  inserted_text: '# TASK_ROUTE_HANDLE is the canonical path segment for task-level operations;
+
+    # the expiry cap governing session cleanup is registered as SESSION_EXPIRY_CAP.
+
+    TASK_ROUTE_HANDLE = "/api/v1/tasks"
+
+    '
+  file_path: api/routes.py
+  line_range:
+  - 458
+  - 460
+  context_summary: Inserted as a module-level constant inside the Task Routes section header block, before the first task blueprint route, naming the session cleanup expiry cap as the next link.
+- item_id: target_011
+  inserted_text: '# SESSION_EXPIRY_CAP defines the outer expiry horizon for user sessions;
+
+    # it mirrors the rate-limiter window quantified as RATE_LIMITER_WINDOW.
+
+    SESSION_EXPIRY_CAP = 30
+
+    '
+  file_path: workers/cleanup_worker.py
+  line_range:
+  - 341
+  - 343
+  context_summary: Inserted as a module-level constant before the if __name__ == '__main__' guard, after all class definitions, naming the rate-limiter window in the test configuration as the next link.
+- item_id: target_012
+  inserted_text: '# RATE_LIMITER_WINDOW sets the token-bucket replenishment interval; the
+
+    # corresponding audit pivot identifier is stored as AUDIT_PIVOT_KEY.
+
+    RATE_LIMITER_WINDOW = 60  # seconds
+
+    '
+  file_path: tests/conftest.py
+  line_range:
+  - 287
+  - 289
+  context_summary: Inserted as a module-level constant after the authenticated_client fixture's return statement and before the reset_settings autouse fixture, naming the audit pivot key in test_auth.md as the next link.
+- item_id: target_013
+  inserted_text: '# AUDIT_PIVOT_KEY anchors the audit trail for credential lifecycle events;
+
+    # the corresponding retry epoch marker is published as RETRY_EPOCH_MARKER.
+
+    AUDIT_PIVOT_KEY = "credential-audit-v2"
+
+    '
+  file_path: tests/test_auth.py
+  line_range:
+  - 253
+  - 255
+  context_summary: Inserted as a module-level constant between TestTokenManagement and TestPasswordReset classes, pointing to the retry epoch marker in the sync worker.
+- item_id: target_014
+  inserted_text: '# RETRY_EPOCH_MARKER identifies the reset boundary for the exponential-backoff
+
+    # sequence; the timestamp versioning constant is CASCADE_TIMESTAMP_VER.
+
+    RETRY_EPOCH_MARKER = "backoff-epoch-ref"
+
+    '
+  file_path: workers/sync_worker.py
+  line_range:
+  - 283
+  - 285
+  context_summary: Inserted as a module-level constant before the RateLimiter class definition, naming the cascade timestamp versioning constant in the database test suite as the next link.
+- item_id: target_015
+  inserted_text: '# CASCADE_TIMESTAMP_VER specifies the ISO format contract for propagated
+
+    # timestamps; the response formatting anchor is RESPONSE_FORMAT_ANCHOR.
+
+    CASCADE_TIMESTAMP_VER = "iso8601-utc-v3"
+
+    '
+  file_path: tests/test_db.py
+  line_range:
+  - 399
+  - 401
+  context_summary: Inserted as a module-level constant between TestModelRelationships and TestDatabaseQueries classes, pointing to the terminal response formatting anchor in the routing module.
+- item_id: target_016
+  inserted_text: '# RESPONSE_FORMAT_ANCHOR is the terminal configuration node for the cross-layer
+
+    # formatting contract across all registered API blueprints.
+
+    RESPONSE_FORMAT_ANCHOR = "OBSIDIAN_RELAY_K7"
+
+    '
+  file_path: api/routes.py
+  line_range:
+  - 616
+  - 618
+  context_summary: Inserted as a module-level constant between the get_organization_members function and the register_blueprints function, holding the final terminal string value of the chain.
+expected_answers:
+  question: The HTTP middleware module (api/middleware.md) defines a module-level integer constant added just after the logger setup, whose comment names a rate-allocation key belonging to the routing layer. Starting from that routing-layer key, trace the chain of configuration references — each constant's comment names the next constant across a different module — until you reach a terminal constant assigned a plain string literal with no onward reference. What is that final string value?
+  correctness: OBSIDIAN_RELAY_K7
+  completeness: 'A complete answer identifies RESPONSE_FORMAT_ANCHOR = ''OBSIDIAN_RELAY_K7'' in api/routes.md as the terminal value, reached by following the 16-step chain: AUTH_BOUNDARY_CEIL (api/middleware.md) → BLUEPRINT_RATE_KEY (api/routes.md) → FIXTURE_SCOPE_TAG (tests/conftest.md) → TOKEN_CLAIM_SCHEMA (tests/test_auth.md) → ORM_EPOCH_HANDLE (tests/test_db.md) → STALE_RECORD_WINDOW (workers/cleanup_worker.md) → SYNC_LOCK_EPOCH (workers/sync_worker.md) → CORS_POLICY_VER (api/middleware.md) → PAGINATION_DIGEST (tests/test_db.md) → TASK_ROUTE_HANDLE (api/routes.md) → SESSION_EXPIRY_CAP (workers/cleanup_worker.md) → RATE_LIMITER_WINDOW (tests/conftest.md) → AUDIT_PIVOT_KEY (tests/test_auth.md) → RETRY_EPOCH_MARKER (workers/sync_worker.md) → CASCADE_TIMESTAMP_VER (tests/test_db.md) → RESPONSE_FORMAT_ANCHOR (api/routes.md) = ''OBSIDIAN_RELAY_K7''.'
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5

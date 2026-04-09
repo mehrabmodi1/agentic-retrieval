@@ -1,0 +1,162 @@
+parametrisation_id: multi_chain__python_repo__20k__easy__exact__n16
+experiment_type: multi_chain
+generated_at: '2026-04-03T00:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 20000
+  discriminability: easy
+  reference_clarity: exact
+items:
+- item_id: target_001
+  inserted_text: '# Configuration marker: PIPELINE_STEP_01 -> see PIPELINE_STEP_02 in api/routes.py
+
+    PIPELINE_STEP_01 = "next: PIPELINE_STEP_02 in api/routes.py"'
+  file_path: api/__init__.py
+  line_range:
+  - 290
+  - 291
+  context_summary: Inserted after the API_DEFAULTS dict in the API configuration constants section.
+- item_id: target_002
+  inserted_text: '# Routing marker: PIPELINE_STEP_02 -> see PIPELINE_STEP_03 in api/serializers.py
+
+    PIPELINE_STEP_02 = "next: PIPELINE_STEP_03 in api/serializers.py"'
+  file_path: api/routes.py
+  line_range:
+  - 56
+  - 57
+  context_summary: Inserted immediately after the blueprint definitions at the top of routes.py.
+- item_id: target_003
+  inserted_text: '# Serializer marker: PIPELINE_STEP_03 -> see PIPELINE_STEP_04 in api/error_handlers.py
+
+    PIPELINE_STEP_03 = "next: PIPELINE_STEP_04 in api/error_handlers.py"'
+  file_path: api/serializers.py
+  line_range:
+  - 26
+  - 27
+  context_summary: Inserted after the logger definition and before the BaseSchema class.
+- item_id: target_004
+  inserted_text: '# Error handler marker: PIPELINE_STEP_04 -> see PIPELINE_STEP_05 in tests/conftest.py
+
+    PIPELINE_STEP_04 = "next: PIPELINE_STEP_05 in tests/conftest.py"'
+  file_path: api/error_handlers.py
+  line_range:
+  - 20
+  - 21
+  context_summary: Inserted after the module-level logger definition before the custom exception classes section.
+- item_id: target_005
+  inserted_text: '# Test config marker: PIPELINE_STEP_05 -> see PIPELINE_STEP_06 in tests/test_services.py
+
+    PIPELINE_STEP_05 = "next: PIPELINE_STEP_06 in tests/test_services.py"'
+  file_path: tests/conftest.py
+  line_range:
+  - 26
+  - 27
+  context_summary: Inserted after the RedisCache import and before the first pytest fixture definition.
+- item_id: target_006
+  inserted_text: '# Service test marker: PIPELINE_STEP_06 -> see PIPELINE_STEP_07 in workers/sync_worker.py
+
+    PIPELINE_STEP_06 = "next: PIPELINE_STEP_07 in workers/sync_worker.py"'
+  file_path: tests/test_services.py
+  line_range:
+  - 19
+  - 20
+  context_summary: Inserted after the RedisCache import and before the first test class definition.
+- item_id: target_007
+  inserted_text: '# Worker marker: PIPELINE_STEP_07 -> see PIPELINE_STEP_08 in api/__init__.py
+
+    PIPELINE_STEP_07 = "next: PIPELINE_STEP_08 in api/__init__.py"'
+  file_path: workers/sync_worker.py
+  line_range:
+  - 21
+  - 22
+  context_summary: Inserted after the logger and Base declarative_base definitions near the top of the module.
+- item_id: target_008
+  inserted_text: '# API init marker: PIPELINE_STEP_08 -> see PIPELINE_STEP_09 in api/error_handlers.py
+
+    PIPELINE_STEP_08 = "next: PIPELINE_STEP_09 in api/error_handlers.py"'
+  file_path: api/__init__.py
+  line_range:
+  - 344
+  - 345
+  context_summary: Inserted before the if __name__ == '__main__' guard at the end of the module.
+- item_id: target_009
+  inserted_text: '# Error handler chain marker: PIPELINE_STEP_09 -> see PIPELINE_STEP_10 in api/serializers.py
+
+    PIPELINE_STEP_09 = "next: PIPELINE_STEP_10 in api/serializers.py"'
+  file_path: api/error_handlers.py
+  line_range:
+  - 328
+  - 329
+  context_summary: Inserted before the Error Handler Registration section header and register_error_handlers function.
+- item_id: target_010
+  inserted_text: '# Schema chain marker: PIPELINE_STEP_10 -> see PIPELINE_STEP_11 in tests/conftest.py
+
+    PIPELINE_STEP_10 = "next: PIPELINE_STEP_11 in tests/conftest.py"'
+  file_path: api/serializers.py
+  line_range:
+  - 175
+  - 176
+  context_summary: Inserted before the CommentSerializer class definition, after TaskSerializer.
+- item_id: target_011
+  inserted_text: '# Fixture chain marker: PIPELINE_STEP_11 -> see PIPELINE_STEP_12 in api/routes.py
+
+    PIPELINE_STEP_11 = "next: PIPELINE_STEP_12 in api/routes.py"'
+  file_path: tests/conftest.py
+  line_range:
+  - 220
+  - 221
+  context_summary: Inserted before the mock_email_service pytest fixture in the conftest module.
+- item_id: target_012
+  inserted_text: '# Route chain marker: PIPELINE_STEP_12 -> see PIPELINE_STEP_13 in tests/test_services.py
+
+    PIPELINE_STEP_12 = "next: PIPELINE_STEP_13 in tests/test_services.py"'
+  file_path: api/routes.py
+  line_range:
+  - 611
+  - 612
+  context_summary: Inserted before the register_blueprints function at the bottom of routes.py.
+- item_id: target_013
+  inserted_text: '# Test service chain marker: PIPELINE_STEP_13 -> see PIPELINE_STEP_14 in workers/sync_worker.py
+
+    PIPELINE_STEP_13 = "next: PIPELINE_STEP_14 in workers/sync_worker.py"'
+  file_path: tests/test_services.py
+  line_range:
+  - 308
+  - 309
+  context_summary: Inserted before the TestReportService test class in the service tests module.
+- item_id: target_014
+  inserted_text: '# Sync chain marker: PIPELINE_STEP_14 -> see PIPELINE_STEP_15 in api/__init__.py
+
+    PIPELINE_STEP_14 = "next: PIPELINE_STEP_15 in api/__init__.py"'
+  file_path: workers/sync_worker.py
+  line_range:
+  - 216
+  - 217
+  context_summary: Inserted before the ExternalAPIClient class definition in the sync worker module.
+- item_id: target_015
+  inserted_text: '# Module chain marker: PIPELINE_STEP_15 -> see PIPELINE_STEP_16 in api/serializers.py
+
+    PIPELINE_STEP_15 = "next: PIPELINE_STEP_16 in api/serializers.py"'
+  file_path: api/__init__.py
+  line_range:
+  - 87
+  - 88
+  context_summary: Inserted after the API_BASE_PATH constant in the version constants section.
+- item_id: target_016
+  inserted_text: '# Final chain value: PIPELINE_STEP_16 is the terminal node in the chain
+
+    PIPELINE_STEP_16 = "TANGERINE_DELTA_7"'
+  file_path: api/serializers.py
+  line_range:
+  - 303
+  - 304
+  context_summary: Inserted before the alias definitions at the bottom of the serializers module.
+expected_answers:
+  question: Starting from PIPELINE_STEP_01 in api/__init__.py, follow the chain of PIPELINE_STEP references across files. What is the final value stored in PIPELINE_STEP_16?
+  correctness: TANGERINE_DELTA_7
+  completeness: 'A complete answer identifies ''TANGERINE_DELTA_7'' as the string value of PIPELINE_STEP_16, reached by following the 16-step chain: PIPELINE_STEP_01 (api/__init__.py) → PIPELINE_STEP_02 (api/routes.py) → PIPELINE_STEP_03 (api/serializers.py) → PIPELINE_STEP_04 (api/error_handlers.py) → PIPELINE_STEP_05 (tests/conftest.py) → PIPELINE_STEP_06 (tests/test_services.py) → PIPELINE_STEP_07 (workers/sync_worker.py) → PIPELINE_STEP_08 (api/__init__.py) → PIPELINE_STEP_09 (api/error_handlers.py) → PIPELINE_STEP_10 (api/serializers.py) → PIPELINE_STEP_11 (tests/conftest.py) → PIPELINE_STEP_12 (api/routes.py) → PIPELINE_STEP_13 (tests/test_services.py) → PIPELINE_STEP_14 (workers/sync_worker.py) → PIPELINE_STEP_15 (api/__init__.py) → PIPELINE_STEP_16 (api/serializers.py) = ''TANGERINE_DELTA_7''.'
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5

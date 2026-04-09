@@ -1,0 +1,40 @@
+parametrisation_id: multi_chain__python_repo__800k__easy__exact__n2
+experiment_type: multi_chain
+generated_at: '2026-04-03T09:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 800000
+  discriminability: easy
+  reference_clarity: exact
+items:
+- item_id: target_001
+  inserted_text: '# MAX_EXPORT_BATCH_SIZE: the maximum number of records processed in a single
+
+    # export validation pass; the authoritative value is defined in api/serializers.py.
+
+    MAX_EXPORT_BATCH_SIZE = None  # see api/serializers.py for the authoritative value'
+  file_path: api/validators.py
+  line_range:
+  - 20
+  - 22
+  context_summary: Inserted after the logger definition and before the ValidationError class, declaring MAX_EXPORT_BATCH_SIZE as None and pointing to api/serializers.py for the authoritative value.
+- item_id: target_002
+  inserted_text: '# Maximum records processed in a single export batch; validators enforce this
+
+    # ceiling via MAX_EXPORT_BATCH_SIZE in api/validators.py.
+
+    MAX_EXPORT_BATCH_SIZE = 278'
+  file_path: api/serializers.py
+  line_range:
+  - 26
+  - 28
+  context_summary: Inserted after the logger definition and before the BaseSchema class, defining MAX_EXPORT_BATCH_SIZE = 278 as the authoritative value referenced by api/validators.py.
+expected_answers:
+  question: Starting from api/validators.py, MAX_EXPORT_BATCH_SIZE is declared as None and defers to api/serializers.py. What is the value of MAX_EXPORT_BATCH_SIZE defined there?
+  correctness: '278'
+  completeness: The answer identifies that api/validators.py sets MAX_EXPORT_BATCH_SIZE = None and points to api/serializers.py, where MAX_EXPORT_BATCH_SIZE = 278 is the authoritative value.
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5

@@ -1,0 +1,23 @@
+parametrisation_id: "single_needle__noir_fiction__160k__hard__synonym"
+experiment_type: "single_needle"
+generated_at: "2026-04-03T10:00:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 160000
+  discriminability: "hard"
+  reference_clarity: "synonym"
+items:
+  - item_id: "target_001"
+    inserted_text: "When the lighter flared, his cuff shifted back at the wrist, and Halloway caught sight of the tattoo inside — a ship's anchor, the lines gone soft with decades, the ink faded to a dull sea-green. Victor drew the sleeve back down without comment."
+    file_path: "witnesses/informant_interview.md"
+    line_range: [26, 26]
+    context_summary: "Inserted within the paragraph describing Victor lighting a cigarette during his confidential interview with Detective Halloway, revealing a ship's anchor tattoo on his inner wrist as his cuff momentarily shifted."
+expected_answers:
+  question: "What marking did Detective Halloway notice on the protected informant's inner wrist?"
+  correctness: "A ship's anchor — specifically identified as a tattoo on the inside of the wrist, old enough that the lines had gone soft and the ink had faded to a dull sea-green."
+  completeness: "A complete answer identifies the marking as a ship's anchor tattoo, notes its location on the inner wrist, and ideally describes its aged condition — the lines softened with decades of wear and the ink faded from its original colour to a dull sea-green."
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+  - criterion: "completeness"
+    weight: 0.5

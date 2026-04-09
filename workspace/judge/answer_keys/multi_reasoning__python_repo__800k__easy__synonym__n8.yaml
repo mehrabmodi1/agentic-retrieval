@@ -1,0 +1,107 @@
+parametrisation_id: multi_reasoning__python_repo__800k__easy__synonym__n8
+experiment_type: multi_reasoning
+generated_at: '2026-04-05T00:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 800000
+  discriminability: easy
+  reference_clarity: synonym
+items:
+- item_id: target_001
+  inserted_text: 'PIPELINE_DISPATCH_TIMEOUT = 300  # 5 minutes maximum dispatch window'
+  file_path: workers/task_runner.py
+  line_range:
+  - 29
+  - 29
+  context_summary: Inserted async task dispatch timeout constant (300 seconds) to establish maximum pipeline execution window.
+- item_id: target_002
+  inserted_text: '''request_timeout_seconds'': 60,  # maximum request processing time'
+  file_path: api/__init__.py
+  line_range:
+  - 272
+  - 272
+  context_summary: Added request timeout configuration to API defaults specifying 60-second maximum processing duration.
+- item_id: target_003
+  inserted_text: PROJECT_NAME_MAX_LENGTH = 200
+  file_path: api/validators.py
+  line_range:
+  - 277
+  - 277
+  context_summary: Extracted project name length constraint (200 characters) as named constant in validation logic.
+- item_id: target_004
+  inserted_text: STALE_RECORD_THRESHOLD_DAYS = 30
+  file_path: tests/conftest.py
+  line_range:
+  - 40
+  - 40
+  context_summary: Defined test database record retention policy (30 days) for automatic pruning of aged records.
+- item_id: target_005
+  inserted_text: MAX_RETRY_DELAY_SECONDS = 3600
+  file_path: workers/retry_handler.py
+  line_range:
+  - 209
+  - 209
+  context_summary: Established maximum backoff delay (1 hour) to cap exponential retry intervals in task retry scheduler.
+- item_id: target_006
+  inserted_text: REQUEST_TIMEOUT_THRESHOLD = 30
+  file_path: api/middleware.py
+  line_range:
+  - 61
+  - 61
+  context_summary: Inserted request timeout threshold (30 seconds) for middleware response monitoring and logging.
+- item_id: target_007
+  inserted_text: DEFAULT_SYNC_TIMEOUT = 30
+  file_path: workers/sync_worker.py
+  line_range:
+  - 281
+  - 281
+  context_summary: Added default timeout constant (30 seconds) for external API synchronization operations.
+- item_id: target_008
+  inserted_text: API_KEY_HASH_LENGTH = 8
+  file_path: api/rate_limiting.py
+  line_range:
+  - 157
+  - 157
+  context_summary: Defined hash truncation length (8 characters) for API key rate limit key generation.
+expected_answers:
+  question: '"Across the system''s async operations, what is the total of all timeout and delay limits
+
+    (pipeline dispatch window, request processing time, maximum retry backoff, request monitoring
+
+    threshold, and external API sync timeout)? Additionally, what is the record retention period
+
+    in days, and what are the maximum name length and hash truncation length constraints?"
+
+    '
+  correctness: 'A correct answer must identify and sum all eight values:
+
+    - Pipeline dispatch timeout: 300 seconds
+
+    - Request timeout: 60 seconds
+
+    - Max retry delay: 3600 seconds
+
+    - Request timeout threshold: 30 seconds
+
+    - Sync worker timeout: 30 seconds
+
+    - Total timeout/delay: 4020 seconds
+
+    - Record retention: 30 days
+
+    - Project name max length: 200 characters
+
+    - API key hash length: 8 characters
+
+
+    The answer should clearly state each component value found and show the calculation
+
+    of the total timeout aggregate (300 + 60 + 3600 + 30 + 30 = 4020 seconds).
+
+    '
+  completeness: "A complete answer must:\n1. Locate all 8 inserted values across different system components\n2. Identify which values are timeout/delay measurements vs. constraints\n3. Calculate the total of all timeout/delay values (4020 seconds)\n4. State the individual values for non-aggregate metrics (30 days, 200 chars, 8 chars)\n5. Demonstrate understanding that these values span multiple system layers\n   (task dispatch, API requests, retry logic, middleware, external sync, and rate limiting)\n6. Show the reasoning path used to aggregate values from different configuration contexts\n"
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5

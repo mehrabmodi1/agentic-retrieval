@@ -1,0 +1,31 @@
+parametrisation_id: "multi_chain__noir_fiction__40k__hard__exact__n2"
+experiment_type: "multi_chain"
+generated_at: "2026-04-05T12:00:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 40000
+  discriminability: "hard"
+  reference_clarity: "exact"
+items:
+  - item_id: "target_001"
+    inserted_text: "Paulie also slipped me a detail before I left the bar. 'The older man,' he said quietly, 'he knew exactly where to find Vincent. They say Vincent had already arranged to be at The Magnifico's service entrance on the east side—the back ways, not the main entrance. Like he was expecting this to happen, like he'd already made peace with it.'"
+    file_path: "case_notes/day_02.md"
+    line_range: [89, 91]
+    context_summary: "Inserted after Paulie's description of the dangerous older man, embedding details about Vincent's planned meeting location within the bartender's gossip."
+
+  - item_id: "target_002"
+    inserted_text: "One particularly striking pickup was from The Magnifico's service entrance on the east side. The kid came out looking like he'd made a decision he couldn't take back. He was sober, sharp, gave me an address in Oak Hill without hesitation. But his hands were shaking when he counted out the fare money, even though he clearly had plenty of cash. That's when I understood—he wasn't just scared. He was saying goodbye to something."
+    file_path: "witnesses/cab_driver_statement.md"
+    line_range: [20, 22]
+    context_summary: "Inserted within Jerry's description of regular pickups, describing a specific memorable ride from The Magnifico's service entrance that echoes Paulie's intelligence from the investigation notes."
+
+expected_answers:
+  question: "Starting from Paulie's information about where Vincent arranged to meet the older man, what specific location does the cab driver's statement confirm he was picked up from?"
+  correctness: "Must identify The Magnifico's service entrance on the east side as both the meeting point mentioned by Paulie and the pickup location confirmed by the cab driver."
+  completeness: "A complete answer should explain that the information chains across both witnesses—Paulie's knowledge of where Vincent planned to be waiting connects directly to Jerry's account of picking him up from that exact location, suggesting the older man knew Vincent's movements in advance."
+
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+  - criterion: "completeness"
+    weight: 0.5

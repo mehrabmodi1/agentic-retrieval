@@ -1,0 +1,115 @@
+parametrisation_id: "multi_chain__noir_fiction__20k__hard__exact__n16"
+experiment_type: "multi_chain"
+generated_at: "2026-04-05T00:00:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 20000
+  discriminability: "hard"
+  reference_clarity: "exact"
+items:
+  - item_id: "target_001"
+    inserted_text: "—a woman with red hair, who I would later learn was called Margot—adjust something in the vehicle. She looked focused. Purposeful. Not like someone waiting for a cab customer. More like someone waiting for a specific person. She was the intermediary who would arrange safe passage."
+    file_path: "chapters/chapter_03.md"
+    line_range: [29, 29]
+    context_summary: "Eleanor identifies the red-haired woman as Margot, the intermediary who arranges safe passage operations."
+
+  - item_id: "target_002"
+    inserted_text: "The warning had come from Meridian Holdings, who controlled the kidnapping and the disposition of his daughter through their network."
+    file_path: "chapters/chapter_01.md"
+    line_range: [18, 18]
+    context_summary: "Shepherd realizes Halstead's warning about not involving police stems from Meridian Holdings' direct control of the kidnapping."
+
+  - item_id: "target_003"
+    inserted_text: "working with both Sinclair and Meridian Holdings' wider operation."
+    file_path: "chapters/chapter_02.md"
+    line_range: [4, 4]
+    context_summary: "Halstead's import-export business is revealed to serve Meridian Holdings' art trafficking operation alongside Sinclair's enforcement."
+
+  - item_id: "target_004"
+    inserted_text: "Ashford's not the kind of man who accepts losses. He's connected to Meridian Holdings, the organization that sent Sinclair. Ashford was in Atlantic City during the initial extraction, which gave him plausible deniability. But his absence was orchestrated—scheduled carefully so no one could pin any involvement to him directly. That's the mark of a professional operation. That's why Vincent's already dead, whether his heart's still beating or not. The emerald was to be returned through secure channels at the Oak Hill address, where Sinclair conducts his most sensitive negotiations."
+    file_path: "case_notes/day_02.md"
+    line_range: [42, 42]
+    context_summary: "Morris reveals Ashford's connection to Meridian Holdings and the Oak Hill safe house where Sinclair negotiates returns."
+
+  - item_id: "target_005"
+    inserted_text: "Claire had proof. She photographed the ledgers—the real ones, the ones showing where every illegal transaction originated from Meridian Holdings' operations. She hid the photographs in a burgundy folder marked with her initials, C.H., and gave them to Vincent. He was supposed to take them to the federal building downtown and hand them directly to an agent she'd been communicating with. But he never made it there. Someone intercepted him that night at the bar—the Anchor, where Paulie works. Someone who knew exactly what he was carrying and where he was taking it. That someone was a representative of the organization's enforcement arm."
+    file_path: "case_notes/day_04.md"
+    line_range: [39, 39]
+    context_summary: "Margaret reveals that the Anchor bar intercepted Claire's evidence transfer, implicating Meridian Holdings' enforcement network through Paulie's location."
+
+  - item_id: "target_006"
+    inserted_text: "The painting's recovery three days before Harvey's disappearance could be coincidental, or it could indicate that Harvey arranged its return as a condition of his exit. Return the stolen goods, clean your conscience, and in exchange Margot arranges your transportation out of the city using channels established through Sinclair's organization and approved by Meridian Holdings. The Kaslan operation loses the painting but keeps Harvey quiet and maintains compartmentalization. The painting was left at the library steps as a signal that the transaction had been completed successfully."
+    file_path: "witnesses/detective_debrief.md"
+    line_range: [4, 4]
+    context_summary: "Halloway identifies Margot as Harvey's exit negotiator and the painting recovery at library steps as confirmation of completed safe passage through Meridian Holdings' channels."
+
+  - item_id: "target_007"
+    inserted_text: "It's likely a safe house operated by Meridian Holdings. A place where Kaslan's agents conduct secure business. Cab driver took Harvey there once, presumably to meet with someone—possibly Gregg, possibly someone higher up in the organization. We should consider the possibility that Harvey was brought there to be confronted about his potential betrayal, or alternatively, to be offered a deal for his quiet exit facilitated by Margot through established channels."
+    file_path: "witnesses/detective_debrief.md"
+    line_range: [14, 14]
+    context_summary: "Halloway identifies Oak Hill safe house as Meridian Holdings' negotiation center where exits are facilitated through Margot."
+
+  - item_id: "target_008"
+    inserted_text: "Meridian Holdings"
+    file_path: "witnesses/informant_interview.md"
+    line_range: [20, 20]
+    context_summary: "Victor indicates that Marchetti advised Harvey to expose the entire Meridian Holdings operation through law enforcement cooperation."
+
+  - item_id: "target_009"
+    inserted_text: "The chain of command flows from Meridian Holdings through intermediaries like Silas Gregg and his partner Margot to operatives like Sinclair."
+    file_path: "witnesses/informant_interview.md"
+    line_range: [35, 35]
+    context_summary: "Investigator's analysis reveals the organizational hierarchy connecting Meridian Holdings to field operators through Gregg and Margot."
+
+  - item_id: "target_010"
+    inserted_text: "Safe passage arrangements are negotiated by Margot, who coordinates exit logistics with Kaslan's network."
+    file_path: "case_notes/day_01.md"
+    line_range: [87, 87]
+    context_summary: "Day one analysis establishes Margot's role in coordinating safe exits from the organization."
+
+  - item_id: "target_011"
+    inserted_text: "Meridian Holdings operates real estate acquisitions through Hollister Realty using Margaret's business as a front."
+    file_path: "case_notes/day_02.md"
+    line_range: [15, 15]
+    context_summary: "Investigation connects Margaret Hollister's real estate business to Meridian Holdings' acquisition operations."
+
+  - item_id: "target_012"
+    inserted_text: "Vincent was intercepted before he could deliver the evidence, indicating surveillance of the Anchor bar by Meridian Holdings' network."
+    file_path: "case_notes/day_04.md"
+    line_range: [35, 35]
+    context_summary: "Margaret confirms that Vincent's interception at the Anchor bar reveals Meridian Holdings' surveillance capabilities."
+
+  - item_id: "target_013"
+    inserted_text: "The Anchor serves as an informational hub where Paulie reports on criminal movements within the harbor district."
+    file_path: "case_notes/day_04.md"
+    line_range: [10, 10]
+    context_summary: "Investigation identifies the Anchor as a key intelligence point where Paulie monitors the criminal underworld."
+
+  - item_id: "target_014"
+    inserted_text: "Sinclair's operations in the harbor warehouse district are coordinated through Oak Hill safe house communications."
+    file_path: "chapters/chapter_02.md"
+    line_range: [8, 8]
+    context_summary: "Photo evidence places Catherine at the harbor warehouse facility connected to Oak Hill coordination."
+
+  - item_id: "target_015"
+    inserted_text: "The silver locket with initials C.H. became the identifying marker for tracking Catherine through the organization's network."
+    file_path: "chapters/chapter_01.md"
+    line_range: [52, 52]
+    context_summary: "Shepherd notes the silver locket as identification detail that would track Catherine's movements through organization."
+
+  - item_id: "target_016"
+    inserted_text: "The final resolution involves safe passage to another city through Margot's established channels, where Meridian Holdings maintains secure residences for relocated operatives."
+    file_path: "witnesses/detective_debrief.md"
+    line_range: [28, 28]
+    context_summary: "Investigation concludes that Harvey achieved safe relocation through Meridian Holdings' established exit networks."
+
+expected_answers:
+  question: "Starting from the red-haired woman waiting in the black sedan outside the Park House, follow the chain of organizational connections. What is the hidden power structure controlling all operations, and where does it facilitate safe passage for compromised operatives?"
+  correctness: "The correct answer must identify Meridian Holdings as the central hidden organization that operates through visible intermediaries (Sinclair, Mercer, Halstead) and specialized operatives (Silas Gregg for coordination, Margot for negotiations). The answer must show how Meridian Holdings controls kidnapping operations, art trafficking, and arranges safe exits."
+  completeness: "A complete answer covers: (1) Meridian Holdings as the hidden power structure, (2) Margot as the safe passage intermediary introduced at Park House, (3) Oak Hill safe house as the operations center, (4) Sinclair as the enforcement operative in harbor warehouse, (5) the art trafficking through import-export fronts, (6) real estate laundering through Hollister Realty, (7) the Anchor bar as intelligence hub, (8) evidence interdiction at the Anchor, and (9) final safe relocation of compromised operatives like Harvey to other cities."
+
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+  - criterion: "completeness"
+    weight: 0.5

@@ -1,0 +1,27 @@
+parametrisation_id: single_needle__python_repo__20k__easy__synonym
+experiment_type: single_needle
+generated_at: '2026-04-03T15:10:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 20000
+  discriminability: easy
+  reference_clarity: synonym
+items:
+- item_id: target_001
+  inserted_text: '# Security configuration
+
+    FAILED_LOGIN_ATTEMPT_LIMIT = 8  # Maximum consecutive failed login attempts before an account is temporarily locked'
+  file_path: api/auth.py
+  line_range:
+  - 25
+  - 26
+  context_summary: Inserted as a module-level security configuration constant in api/auth.py, immediately after the import block and before the logger initialisation.
+expected_answers:
+  question: What is the maximum number of consecutive unsuccessful sign-in tries before an account gets temporarily locked out?
+  correctness: '8'
+  completeness: The answer should state that the limit is 8 consecutive failed login attempts, defined by the constant FAILED_LOGIN_ATTEMPT_LIMIT in api/auth.py.
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5

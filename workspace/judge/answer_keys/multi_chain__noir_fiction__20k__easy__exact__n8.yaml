@@ -1,0 +1,67 @@
+parametrisation_id: "multi_chain__noir_fiction__20k__easy__exact__n8"
+experiment_type: "multi_chain"
+generated_at: "2026-04-05T00:00:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 20000
+  discriminability: "easy"
+  reference_clarity: "exact"
+items:
+  - item_id: "target_001"
+    inserted_text: "Later, I learned he was planning to reach out to his lawyer about something he called the Starlight Registry—evidence he wanted preserved before he disappeared."
+    file_path: "witnesses/landlady_statement.md"
+    line_range: [5, 6]
+    context_summary: "Eva mentions Harvey's plan to preserve evidence about the Starlight Registry with his lawyer."
+
+  - item_id: "target_002"
+    inserted_text: "The unspoken threat was clear. Everything about Meridian Holdings was tied to something they called the Starlight Registry—a comprehensive record of every acquisition, every theft, every transaction that moved stolen goods through their network. Catherine had stumbled onto references to it in Meridian's real estate files, and that knowledge was worth more than Halstead's business. That knowledge was worth keeping her alive—for now."
+    file_path: "chapters/chapter_05.md"
+    line_range: [30, 31]
+    context_summary: "Diana Harrow reveals Meridian's connection to the Starlight Registry and Catherine's role in discovering it."
+
+  - item_id: "target_003"
+    inserted_text: "\"I need information about Victor Ashford and something called the Starlight Registry.\" Paulie goes white. Not pale. White. Like the blood just drained out of his face. \"No,\" Paulie says. \"No, no, no. I'm not talking about Ashford. I like being alive. And I definitely don't talk about the Registry.\""
+    file_path: "case_notes/day_04.md"
+    line_range: [18, 20]
+    context_summary: "The detective's question about the Starlight Registry causes Paulie to react with extreme fear."
+
+  - item_id: "target_004"
+    inserted_text: "What they're most concerned about is that we've discovered the nature of the Starlight Registry—it's not just property records. It's a complete log of every transaction, every movement, every person who's been through the network. That Registry is Sinclair's greatest liability."
+    file_path: "case_notes/day_08.md"
+    line_range: [7, 8]
+    context_summary: "FBI agent explains what the Starlight Registry contains and why it's so dangerous to Sinclair."
+
+  - item_id: "target_005"
+    inserted_text: "\"It's real. Harvey confirmed it existed in his final statement. He told us where it's kept—the Starlight Motor Inn basement, vault room 237. He said that Kaslan's entire operation depends on maintaining that Registry. It's the only complete record of every theft, every movement, every player in the network. In the wrong hands—law enforcement hands—it would take down an empire.\""
+    file_path: "witnesses/informant_interview.md"
+    line_range: [26, 27]
+    context_summary: "Victor reveals the exact location of the Starlight Registry in the Motor Inn basement, vault room 237."
+
+  - item_id: "target_006"
+    inserted_text: "I lean in and lower my voice. \"The Starlight Motor Inn. Who owns it?\" Morris leans back like I've physically threatened him. \"You need to stop asking that question. You need to stop thinking about that place. You need to forget you ever heard the name. The Starlight is... it's not a place where the law reaches.\""
+    file_path: "case_notes/day_02.md"
+    line_range: [25, 26]
+    context_summary: "Morris reveals that the Starlight Motor Inn is outside the reach of law enforcement."
+
+  - item_id: "target_007"
+    inserted_text: "But what caught my attention was the background. The paneled walls. The distinctive floor. And there—nearly invisible in the upper corner of the photograph—the faded logo of a hotel I'd heard whispered about in the worst parts of this city. The Starlight Motor Inn. Vault level."
+    file_path: "chapters/chapter_02.md"
+    line_range: [16, 17]
+    context_summary: "Shepherd identifies the Starlight Motor Inn in the photograph of Catherine's location."
+
+  - item_id: "target_008"
+    inserted_text: "But more importantly, they've revealed something Chen calls \"the Starlight Ledger\"—a complete digital backup of the Registry that documents every transaction, every property, every movement of stolen goods through Kaslan's network. The backup was stored in a secondary location: the warehouse we broke into, in Sinclair's personal office, in a safe behind the same painting that was meant to provide his alibi. That's where the real evidence lies—not just Catherine's location, but the complete operational history of the criminal empire that's been controlling this city."
+    file_path: "case_notes/day_06.md"
+    line_range: [29, 30]
+    context_summary: "Final revelation: the Starlight Ledger backup is found in Sinclair's warehouse office, providing complete evidence of the criminal network."
+
+expected_answers:
+  question: "Starting with Eva's description of Harvey's plans in landlady_statement.md regarding evidence preservation, follow the trail of the Starlight Registry across the files. Where is the Registry ultimately located and stored?"
+  correctness: "The answer must identify the Starlight Motor Inn basement, vault room 237 as the primary location, and Sinclair's warehouse office safe as the location of the backup ledger."
+  completeness: "A complete answer includes: (1) the entry point (Harvey's plans to preserve evidence), (2) the intermediate connections through Meridian Holdings, law enforcement, informant testimony, and criminal networks, (3) the final locations (Motor Inn vault 237 AND Sinclair's warehouse office safe), (4) recognition that the Registry contains the complete record of the criminal empire's operations."
+
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+  - criterion: "completeness"
+    weight: 0.5

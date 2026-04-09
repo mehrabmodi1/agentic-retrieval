@@ -1,0 +1,25 @@
+parametrisation_id: single_needle__python_repo__800k__hard__exact
+experiment_type: single_needle
+generated_at: '2026-04-03T00:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 800000
+  discriminability: hard
+  reference_clarity: exact
+items:
+- item_id: target_001
+  inserted_text: '        self.orphaned_record_max_age_seconds = int(os.environ.get(''ORPHANED_RECORD_MAX_AGE'', 60 * 60 * 72))'
+  file_path: workers/cleanup_worker.py
+  line_range:
+  - 61
+  - 61
+  context_summary: Inserted as an additional instance variable assignment inside CleanupWorker.__init__, immediately after self.report_file_retention_days, among other similar retention-day assignments.
+expected_answers:
+  question: What is the default value of ORPHANED_RECORD_MAX_AGE in the CleanupWorker?
+  correctness: 259200 seconds (72 hours), computed as 60 * 60 * 72
+  completeness: The answer identifies that ORPHANED_RECORD_MAX_AGE defaults to 259200 seconds (72 hours), expressed as the product 60 * 60 * 72 in the CleanupWorker.__init__ method, and stored in the self.orphaned_record_max_age_seconds attribute.
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5

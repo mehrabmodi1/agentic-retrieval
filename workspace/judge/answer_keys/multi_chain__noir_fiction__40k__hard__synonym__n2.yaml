@@ -1,0 +1,28 @@
+parametrisation_id: "multi_chain__noir_fiction__40k__hard__synonym__n2"
+experiment_type: "multi_chain"
+generated_at: "2026-04-05T00:00:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 40000
+  discriminability: "hard"
+  reference_clarity: "synonym"
+items:
+  - item_id: "target_001"
+    inserted_text: "And we both know Webb already has the silver locket recovered from her apartment—the one with her initials engraved inside. That's the kind of detail that makes juries emotional, detective. That's the kind of detail that puts innocent men away."
+    file_path: "chapters/chapter_05.md"
+    line_range: [101, 103]
+    context_summary: "Inserted into Diana Harrow's threat scene, where she identifies the locket as evidence that Webb will use against Sinclair."
+  - item_id: "target_002"
+    inserted_text: "The fiber evidence and the silver locket with Catherine's initials will be the turning points—the jury won't discount personal touches like that, no matter what Dalton argues."
+    file_path: "case_notes/day_07.md"
+    line_range: [126, 127]
+    context_summary: "Inserted into testimony preparation notes, showing how the locket identified in Diana's threat becomes the crucial conviction evidence."
+expected_answers:
+  question: "Starting from Diana Harrow's identification of a personal keepsake in chapter_05.md, what becomes the turning point evidence in the trial testimony strategy outlined in day_07.md?"
+  correctness: "The answer must identify the silver locket with Catherine's initials as the piece of evidence that connects the two scenes. Synonym answers like 'the personal item,' 'the engraved keepsake,' or 'the memento' are acceptable."
+  completeness: "A complete answer should specify that this keepsake (1) was recovered from Catherine's apartment, (2) has her initials engraved on it, (3) is introduced by Meridian Holdings as evidence Webb will use, and (4) becomes critical to the jury's conviction of Sinclair in the final testimony strategy."
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+  - criterion: "completeness"
+    weight: 0.5

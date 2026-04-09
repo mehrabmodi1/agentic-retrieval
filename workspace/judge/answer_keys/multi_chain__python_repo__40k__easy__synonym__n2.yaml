@@ -1,0 +1,38 @@
+parametrisation_id: multi_chain__python_repo__40k__easy__synonym__n2
+experiment_type: multi_chain
+generated_at: '2026-04-03T00:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 40000
+  discriminability: easy
+  reference_clarity: synonym
+items:
+- item_id: target_001
+  inserted_text: '# RATE_LIMIT_REQUESTS_PER_MINUTE: per-user ceiling on API requests per minute;
+
+    # the authoritative value is API_THROTTLE_CAPACITY in workers/sync_worker.py.
+
+    RATE_LIMIT_REQUESTS_PER_MINUTE = API_THROTTLE_CAPACITY'
+  file_path: api/routes.py
+  line_range:
+  - 56
+  - 58
+  context_summary: Inserted after the Blueprint definitions and before the handle_db_errors decorator, as a module-level constant that references API_THROTTLE_CAPACITY from workers/sync_worker.py.
+- item_id: target_002
+  inserted_text: '# Maximum number of API calls permitted per minute per authenticated client.
+
+    API_THROTTLE_CAPACITY = 300'
+  file_path: workers/sync_worker.py
+  line_range:
+  - 26
+  - 27
+  context_summary: Inserted after STALE_LOCK_TIMEOUT_SECONDS and before the PIPELINE_DISPATCH_TIMEOUT comment, as a module-level constant defining the numeric rate limit value.
+expected_answers:
+  question: In api/routes.py, the per-user request ceiling is defined by RATE_LIMIT_REQUESTS_PER_MINUTE, which references an external constant. Following that reference to workers/sync_worker.py, what is the numeric value of the API call quota per minute?
+  correctness: '300'
+  completeness: A complete answer identifies that RATE_LIMIT_REQUESTS_PER_MINUTE references API_THROTTLE_CAPACITY defined in workers/sync_worker.py, and that API_THROTTLE_CAPACITY = 300.
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5

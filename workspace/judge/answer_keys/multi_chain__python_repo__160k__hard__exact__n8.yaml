@@ -1,0 +1,90 @@
+parametrisation_id: multi_chain__python_repo__160k__hard__exact__n8
+experiment_type: multi_chain
+generated_at: '2026-04-03T00:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 160000
+  discriminability: hard
+  reference_clarity: exact
+items:
+- item_id: target_001
+  inserted_text: '# AUDIT_FLUSH_INTERVAL governs how often test audit logs are committed to the
+
+    # test database; the base interval in seconds is defined as SCHEMA_REVISION_TTL in api/__init__.py.'
+  file_path: tests/test_api.py
+  line_range:
+  - 16
+  - 17
+  context_summary: Inserted as two comment lines between the import block and the first @pytest.mark.unit class decorator, blending naturally with module-level commentary.
+- item_id: target_002
+  inserted_text: '# SCHEMA_REVISION_TTL controls how long computed schema metadata is kept before
+
+    # a rebuild is forced; the field-masking grace window is FIELD_MASK_HORIZON in api/serializers.py.'
+  file_path: api/__init__.py
+  line_range:
+  - 83
+  - 84
+  context_summary: Inserted as two comment lines between the logger instantiation and the '# Version' constant block, appearing as an inline configuration note.
+- item_id: target_003
+  inserted_text: "    # FIELD_MASK_HORIZON caps the maximum age at which a serialized field value may be\n    # considered fresh; the aligned constraint slack is CONSTRAINT_SLACK_SECS in api/validators.py."
+  file_path: api/serializers.py
+  line_range:
+  - 37
+  - 38
+  context_summary: Inserted as indented comment lines inside the BaseSchema class body, after the inner Meta class definition and before the UserSerializer class.
+- item_id: target_004
+  inserted_text: '# CONSTRAINT_SLACK_SECS provides a brief grace window after constraint violation before
+
+    # the error is surfaced to callers; propagates as SLOW_REQUEST_THRESHOLD in api/middleware.py.'
+  file_path: api/validators.py
+  line_range:
+  - 20
+  - 21
+  context_summary: Inserted as two module-level comment lines between the logger instantiation and the ValidationError exception class definition.
+- item_id: target_005
+  inserted_text: '# SLOW_REQUEST_THRESHOLD marks the latency boundary beyond which a request is logged as
+
+    # slow; its value feeds the fault isolation tolerance as FAULT_WINDOW_SECONDS in api/error_handlers.py.'
+  file_path: api/middleware.py
+  line_range:
+  - 26
+  - 27
+  context_summary: Inserted as two module-level comment lines between the logger instantiation and the RequestIDMiddleware class definition.
+- item_id: target_006
+  inserted_text: '# FAULT_WINDOW_SECONDS is the interval during which repeated errors are grouped
+
+    # into a single fault event; the test teardown budget mirrors it as FIXTURE_ROLLBACK_BUDGET in tests/conftest.py.'
+  file_path: api/error_handlers.py
+  line_range:
+  - 20
+  - 21
+  context_summary: Inserted as two module-level comment lines between the logger instantiation and the Custom Exception Classes section divider.
+- item_id: target_007
+  inserted_text: '# FIXTURE_ROLLBACK_BUDGET is the maximum number of seconds allotted to test fixture
+
+    # teardown before the session is forcibly closed; expressed as DATA_SEED_EXPIRY in tests/fixtures.py.'
+  file_path: tests/conftest.py
+  line_range:
+  - 26
+  - 27
+  context_summary: Inserted as two comment lines between the import block and the first session-scoped pytest fixture definition.
+- item_id: target_008
+  inserted_text: '# Maximum age in seconds for seeded test data before it is considered stale and
+
+    # regenerated; the terminal constant in the AUDIT_FLUSH_INTERVAL chain.
+
+    DATA_SEED_EXPIRY = 73'
+  file_path: tests/fixtures.py
+  line_range:
+  - 19
+  - 21
+  context_summary: Inserted as a two-line comment followed by a module-level constant assignment, placed between the import block and the TestDataBuilder class definition.
+expected_answers:
+  question: Starting from AUDIT_FLUSH_INTERVAL in tests/test_api.md, follow the chain of constant references through the codebase. What integer value does the chain ultimately resolve to?
+  correctness: '73'
+  completeness: 'The answer must be the integer 73, which is the value of DATA_SEED_EXPIRY in tests/fixtures.md — reached by following: AUDIT_FLUSH_INTERVAL → SCHEMA_REVISION_TTL (api/__init__.py) → FIELD_MASK_HORIZON (api/serializers.py) → CONSTRAINT_SLACK_SECS (api/validators.py) → SLOW_REQUEST_THRESHOLD (api/middleware.py) → FAULT_WINDOW_SECONDS (api/error_handlers.py) → FIXTURE_ROLLBACK_BUDGET (tests/conftest.py) → DATA_SEED_EXPIRY = 73 (tests/fixtures.py).'
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5

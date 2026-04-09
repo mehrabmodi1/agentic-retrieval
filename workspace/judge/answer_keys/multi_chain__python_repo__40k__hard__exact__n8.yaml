@@ -1,0 +1,88 @@
+parametrisation_id: multi_chain__python_repo__40k__hard__exact__n8
+experiment_type: multi_chain
+generated_at: '2026-04-03T00:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 40000
+  discriminability: hard
+  reference_clarity: exact
+items:
+- item_id: target_001
+  inserted_text: '# BEACON_ROTATION_INTERVAL governs the polling cadence in database consistency checks;
+
+    # its base interval in seconds is defined as SCHEMA_CACHE_TTL in api/__init__.py.'
+  file_path: tests/test_db.py
+  line_range:
+  - 442
+  - 443
+  context_summary: Inserted as two comment lines immediately before the TestDatabaseConstraints class definition, blending naturally with module-level docstring commentary.
+- item_id: target_002
+  inserted_text: '# SCHEMA_CACHE_TTL sets the object schema expiry window used across cache layers;
+
+    # the corresponding expiry limit in seconds is tracked as CURSOR_EXPIRY_WINDOW in api/serializers.py.'
+  file_path: api/__init__.py
+  line_range:
+  - 279
+  - 280
+  context_summary: Inserted as two comment lines between the '# API configuration constants' heading and the API_DEFAULTS dictionary, appearing as an inline documentation note.
+- item_id: target_003
+  inserted_text: "    # CURSOR_EXPIRY_WINDOW aligns the schema validation window with the pagination subsystem;\n    # the final seconds value is propagated via WINDOW_DRAIN_TIMEOUT in api/pagination.py."
+  file_path: api/serializers.py
+  line_range:
+  - 37
+  - 38
+  context_summary: Inserted as indented comment lines inside the BaseSchema class body, after the inner Meta class definition and before the UserSerializer class.
+- item_id: target_004
+  inserted_text: '# WINDOW_DRAIN_TIMEOUT is calibrated to match the middleware latency budget;
+
+    # the concrete value in seconds is expressed as LATENCY_CUTOFF_SECONDS in api/middleware.py.'
+  file_path: api/pagination.py
+  line_range:
+  - 20
+  - 21
+  context_summary: Inserted as two module-level comment lines between the logger instantiation and the PaginationMetadata class definition.
+- item_id: target_005
+  inserted_text: '# LATENCY_CUTOFF_SECONDS is the threshold above which requests trigger the circuit breaker;
+
+    # the circuit-open tolerance value is tracked as CIRCUIT_OPEN_THRESHOLD in api/error_handlers.py.'
+  file_path: api/middleware.py
+  line_range:
+  - 269
+  - 270
+  context_summary: Inserted as two module-level comment lines after the register_middleware function's closing logger call and before the parse_pagination_params utility function.
+- item_id: target_006
+  inserted_text: '# CIRCUIT_OPEN_THRESHOLD is shared across the error recovery and retry subsystems;
+
+    # the retry backoff ceiling in seconds is recorded as BACKOFF_CEILING_SECS in workers/retry_handler.py.'
+  file_path: api/error_handlers.py
+  line_range:
+  - 434
+  - 435
+  context_summary: Inserted as two module-level comment lines immediately before the ErrorContext class definition in the error utilities section.
+- item_id: target_007
+  inserted_text: "    # BACKOFF_CEILING_SECS caps the exponential delay for task retries; its concrete value\n    # is expressed as MAX_DELIVERY_WINDOW_SECONDS in workers/email_worker.py."
+  file_path: workers/retry_handler.py
+  line_range:
+  - 46
+  - 47
+  context_summary: Inserted as indented comment lines inside the RetryPolicy dataclass body, immediately after the docstring and before the first field definition.
+- item_id: target_008
+  inserted_text: '# Maximum window in seconds allotted for pipeline email delivery; terminal value in the
+
+    # BEACON_ROTATION_INTERVAL chain that propagates through the service configuration layers.
+
+    MAX_DELIVERY_WINDOW_SECONDS = 47'
+  file_path: workers/email_worker.py
+  line_range:
+  - 25
+  - 27
+  context_summary: Inserted as a two-line comment followed by a module-level constant assignment, placed after the existing PIPELINE_DISPATCH_TIMEOUT comment and before the EmailTemplate dataclass definition.
+expected_answers:
+  question: Starting from BEACON_ROTATION_INTERVAL in tests/test_db.md, follow the chain of constant references through the codebase. What integer value does the chain ultimately resolve to?
+  correctness: '47'
+  completeness: 'The answer must be the integer 47, which is the value of MAX_DELIVERY_WINDOW_SECONDS in workers/email_worker.md — reached by following: BEACON_ROTATION_INTERVAL → SCHEMA_CACHE_TTL (api/__init__.py) → CURSOR_EXPIRY_WINDOW (api/serializers.py) → WINDOW_DRAIN_TIMEOUT (api/pagination.py) → LATENCY_CUTOFF_SECONDS (api/middleware.py) → CIRCUIT_OPEN_THRESHOLD (api/error_handlers.py) → BACKOFF_CEILING_SECS (workers/retry_handler.py) → MAX_DELIVERY_WINDOW_SECONDS = 47 (workers/email_worker.py).'
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5

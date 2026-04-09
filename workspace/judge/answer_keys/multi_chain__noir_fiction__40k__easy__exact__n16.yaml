@@ -1,0 +1,116 @@
+parametrisation_id: "multi_chain__noir_fiction__40k__easy__exact__n16"
+experiment_type: "multi_chain"
+generated_at: "2026-04-05T15:30:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 40000
+  discriminability: "easy"
+  reference_clarity: "exact"
+
+items:
+  - item_id: "target_001"
+    inserted_text: "Someone like Marcus Gregg, the man who'd visited my apartment three days ago with instructions and a warning."
+    file_path: "chapters/chapter_05.md"
+    line_range: [18, 25]
+    context_summary: "Introduced Marcus Gregg as the intermediary who delivered the kidnapping threat"
+
+  - item_id: "target_002"
+    inserted_text: "'the Starlight Motor Inn, room fourteen, the key's under the mat. Marcus Gregg will meet you there.'"
+    file_path: "witnesses/bartender_statement.md"
+    line_range: [29, 40]
+    context_summary: "Bartender reveals Marcus Gregg was the coordinating handler at the safe house"
+
+  - item_id: "target_003"
+    inserted_text: "This was Marcus Gregg, I learn later."
+    file_path: "witnesses/landlady_statement.md"
+    line_range: [2, 25]
+    context_summary: "Landlady identifies the white-haired visitor as Marcus Gregg"
+
+  - item_id: "target_004"
+    inserted_text: "That was the same evening Marcus Gregg had been here. I wonder if she'd encountered him in the hallway."
+    file_path: "witnesses/neighbor_statement.md"
+    line_range: [5, 30]
+    context_summary: "Neighbor connects Marcus Gregg's visit to the redhead's appearance"
+
+  - item_id: "target_005"
+    inserted_text: "Looked like Marcus Gregg, actually—I'd seen him before in other hotel business."
+    file_path: "case_notes/day_01.md"
+    line_range: [22, 40]
+    context_summary: "Hotel clerk recognizes Marcus Gregg's professional methodology at the Regency"
+
+  - item_id: "target_006"
+    inserted_text: "Marcus Gregg works for them, I realize. That's the connection."
+    file_path: "case_notes/day_02.md"
+    line_range: [40, 50]
+    context_summary: "Margaret's information reveals Marcus Gregg's affiliation with the Castellano family"
+
+  - item_id: "target_007"
+    inserted_text: "Someone like Marcus Gregg would have access to all of this through the Castellano organization."
+    file_path: "chapters/chapter_02.md"
+    line_range: [24, 35]
+    context_summary: "Halstead unwittingly identifies Marcus Gregg's role in the kidnapping"
+
+  - item_id: "target_008"
+    inserted_text: "Marcus Gregg's name appears in operational reports tied to the harbor warehouses."
+    file_path: "case_notes/day_03.md"
+    line_range: [17, 25]
+    context_summary: "Investigation connects Marcus Gregg to Castellano's shipping operations"
+
+  - item_id: "target_009"
+    inserted_text: "He helped move pieces for maybe eighteen months under handlers like Marcus Gregg."
+    file_path: "witnesses/informant_interview.md"
+    line_range: [18, 28]
+    context_summary: "Victor confirms Marcus Gregg's role as operational handler in the smuggling network"
+
+  - item_id: "target_010"
+    inserted_text: "looks like a warehouse on Dock Street."
+    file_path: "case_notes/day_04.md"
+    line_range: [6, 15]
+    context_summary: "Eddie's trace reveals the warehouse where Marcus Gregg conducts operations"
+
+  - item_id: "target_011"
+    inserted_text: "Claire is gone. She was a complication that had to be resolved. Marcus Gregg and his associates took care of it at the warehouse."
+    file_path: "case_notes/day_05.md"
+    line_range: [121, 130]
+    context_summary: "Sinclair confesses that Marcus Gregg disposed of Claire at the warehouse"
+
+  - item_id: "target_012"
+    inserted_text: "By ten a.m., they've seized the warehouse on Dock Street where the evidence pointed. By noon, they're executing search warrants on every property connected to Sinclair Imports and Marcus Gregg's known locations."
+    file_path: "case_notes/day_07.md"
+    line_range: [4, 12]
+    context_summary: "Police raid the warehouse, focal point of Marcus Gregg's operations"
+
+  - item_id: "target_013"
+    inserted_text: "This is where everything ends—not at the warehouse where Marcus Gregg did his work, but here, where what remains of Claire returns to nothing."
+    file_path: "case_notes/day_08.md"
+    line_range: [35, 42]
+    context_summary: "The crematory serves as the final destination, where Claire's remains are processed"
+
+  - item_id: "target_014"
+    inserted_text: "The trail leads from here eventually to the crematory, where her mother releases what's left."
+    file_path: "chapters/chapter_03.md"
+    line_range: [46, 58]
+    context_summary: "Catherine's walk from the restaurant ultimately leads to the crematory"
+
+  - item_id: "target_015"
+    inserted_text: "Marcus Gregg and his handlers had already made it clear: police involvement meant death."
+    file_path: "chapters/chapter_04.md"
+    line_range: [54, 70]
+    context_summary: "Webb's confrontation reveals the stakes involved with Marcus Gregg's organization"
+
+  - item_id: "target_016"
+    inserted_text: "Given what we found at the crematory on Dock Street, and Marcus Gregg's operational patterns, I suspect he made it out alive."
+    file_path: "witnesses/detective_debrief.md"
+    line_range: [35, 45]
+    context_summary: "Final debrief confirms the crematory location as the ultimate endpoint of the investigation"
+
+expected_answers:
+  question: "Starting from the threat mentioned in chapter_05.md involving Marcus Gregg, follow the chain of references through the investigation. What is the final location where everything ends?"
+  correctness: "The answer must identify the crematory as the final endpoint"
+  completeness: "A complete answer should trace the path from the initial threat through Marcus Gregg's involvement with the Castellano family, the warehouse operations, to the crematory where Claire's remains are processed"
+
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+  - criterion: "completeness"
+    weight: 0.5

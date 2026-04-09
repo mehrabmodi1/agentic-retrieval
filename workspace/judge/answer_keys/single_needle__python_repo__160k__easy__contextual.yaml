@@ -1,0 +1,27 @@
+parametrisation_id: single_needle__python_repo__160k__easy__contextual
+experiment_type: single_needle
+generated_at: '2026-04-03T00:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 160000
+  discriminability: easy
+  reference_clarity: contextual
+items:
+- item_id: target_001
+  inserted_text: '# Maximum number of IP addresses tracked simultaneously in the rate limit cache
+
+    MAX_TRACKED_CLIENTS = 10000'
+  file_path: api/rate_limiting.py
+  line_range:
+  - 26
+  - 27
+  context_summary: Inserted as a module-level constant immediately after the logger definition in the rate_limiting module, before the RateLimitError class.
+expected_answers:
+  question: What is the maximum number of distinct network sources the rate limiting system can monitor concurrently?
+  correctness: The correct answer is 10000 (MAX_TRACKED_CLIENTS = 10000).
+  completeness: A complete answer notes that this limit is defined by the constant MAX_TRACKED_CLIENTS set to 10000, located in api/rate_limiting.py.
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5

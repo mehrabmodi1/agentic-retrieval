@@ -1,0 +1,23 @@
+parametrisation_id: "single_needle__noir_fiction__160k__easy__contextual"
+experiment_type: "single_needle"
+generated_at: "2026-04-03T00:00:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 160000
+  discriminability: "easy"
+  reference_clarity: "contextual"
+items:
+  - item_id: "target_001"
+    inserted_text: "She'd left a business card on the edge of my desk without making a show of it. Glenmore Building, suite 4300, forty-third floor—apparently money liked the view from up high in this city."
+    file_path: "chapters/chapter_05.md"
+    line_range: [115, 115]
+    context_summary: "Inserted as a standalone paragraph between Diana Harrow's departure from Shepherd's office and his subsequent reflections, noting the business card she left behind revealing her office address."
+expected_answers:
+  question: "On which floor of the Glenmore Building did the representative from the company behind Catherine Halstead's kidnapping maintain her office?"
+  correctness: "The forty-third floor (suite 4300)"
+  completeness: "A complete answer identifies the forty-third floor and ideally mentions suite 4300, noting this came from a business card that Diana Harrow (the Meridian Holdings representative who delivered the ultimatum to Shepherd) left on his desk after her visit."
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+  - criterion: "completeness"
+    weight: 0.5

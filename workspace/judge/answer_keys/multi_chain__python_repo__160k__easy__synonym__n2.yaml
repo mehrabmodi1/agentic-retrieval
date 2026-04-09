@@ -1,0 +1,36 @@
+parametrisation_id: multi_chain__python_repo__160k__easy__synonym__n2
+experiment_type: multi_chain
+generated_at: '2026-04-03T00:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 160000
+  discriminability: easy
+  reference_clarity: synonym
+items:
+- item_id: target_001
+  inserted_text: '# Validator token freshness checks reference MAX_TOKEN_IDLE_SECONDS from api/auth.py
+
+    # for the maximum permitted idle window before a session token is rejected.'
+  file_path: api/validators.py
+  line_range:
+  - 20
+  - 21
+  context_summary: Inserted as a module-level comment after the logger initialisation in api/validators.py, pointing to MAX_TOKEN_IDLE_SECONDS defined in api/auth.py.
+- item_id: target_002
+  inserted_text: '# Maximum idle time (in seconds) allowed before a session token is considered expired.
+
+    MAX_TOKEN_IDLE_SECONDS = 1800'
+  file_path: api/auth.py
+  line_range:
+  - 27
+  - 28
+  context_summary: Inserted as a module-level constant with a descriptive comment after the logger initialisation in api/auth.py, providing the authoritative numeric value.
+expected_answers:
+  question: In api/validators.md there is a comment referencing MAX_TOKEN_IDLE_SECONDS from api/auth.py. What is the value of this token inactivity limit?
+  correctness: '1800'
+  completeness: The answer should state that MAX_TOKEN_IDLE_SECONDS is set to 1800 (seconds) in api/auth.md, reached by following the reference comment in api/validators.md.
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5

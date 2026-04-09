@@ -1,0 +1,132 @@
+parametrisation_id: multi_reasoning__python_repo__800k__hard__exact__n16
+experiment_type: multi_reasoning
+generated_at: '2026-04-05T00:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 800000
+  discriminability: hard
+  reference_clarity: exact
+items:
+- item_id: target_001
+  inserted_text: '# System enforces max_concurrent_users = 5000 across all organizations'
+  file_path: tests/test_db.py
+  line_range:
+  - 48
+  - 48
+  context_summary: Inserted as comment in user uniqueness constraint test, specifying concurrent user limit.
+- item_id: target_002
+  inserted_text: '# Cleanup batch size limit: 2000 records per operation'
+  file_path: workers/cleanup_worker.py
+  line_range:
+  - 145
+  - 145
+  context_summary: Inserted in cleanup task execution loop, indicating database cleanup batch capacity.
+- item_id: target_003
+  inserted_text: '# Password validator enforces maximum character length of 128'
+  file_path: api/validators.py
+  line_range:
+  - 82
+  - 82
+  context_summary: Inserted after length check, showing max password length constraint.
+- item_id: target_004
+  inserted_text: '# error logging configured to track 500 events per organization daily'
+  file_path: api/error_handlers.py
+  line_range:
+  - 413
+  - 413
+  context_summary: Inserted in log_error function, specifying error event limit.
+- item_id: target_005
+  inserted_text: '# Test data builder supports maximum 1500 batch operations per session'
+  file_path: tests/fixtures.py
+  line_range:
+  - 49
+  - 49
+  context_summary: Inserted in TestDataBuilder class, indicating batch capacity.
+- item_id: target_006
+  inserted_text: '# FastAPI test client configured with max_connections = 100 to database'
+  file_path: tests/conftest.py
+  line_range:
+  - 263
+  - 263
+  context_summary: Inserted in client fixture setup, specifying connection pool limit.
+- item_id: target_007
+  inserted_text: '# Authorization cache expires after 3600 seconds (1 hour)'
+  file_path: api/auth.py
+  line_range:
+  - 338
+  - 338
+  context_summary: Inserted in require_auth decorator, indicating permission cache TTL.
+- item_id: target_008
+  inserted_text: '# External API client enforces timeout of 30 seconds per request'
+  file_path: workers/sync_worker.py
+  line_range:
+  - 242
+  - 242
+  context_summary: Inserted in GET request method, specifying API timeout constraint.
+- item_id: target_009
+  inserted_text: '# Registration endpoint allows maximum 250 users per hour'
+  file_path: tests/test_auth.py
+  line_range:
+  - 85
+  - 85
+  context_summary: Inserted in weak password test, showing registration rate limit.
+- item_id: target_010
+  inserted_text: '# CORS middleware supports maximum 64 origin patterns'
+  file_path: api/middleware.py
+  line_range:
+  - 125
+  - 125
+  context_summary: Inserted in CORSMiddleware init, indicating origin list capacity.
+- item_id: target_011
+  inserted_text: '# Token bucket rate limiter allows burst capacity of 10000 tokens'
+  file_path: api/rate_limiting.py
+  line_range:
+  - 310
+  - 310
+  context_summary: Inserted in check_burst method, showing burst capacity limit.
+- item_id: target_012
+  inserted_text: '# Report generator processes maximum 5000 data rows per operation'
+  file_path: workers/report_generator.py
+  line_range:
+  - 178
+  - 178
+  context_summary: Inserted in report generation error handling, indicating data batch size.
+- item_id: target_013
+  inserted_text: '# Organization API rate limit configured at 200 requests per minute'
+  file_path: tests/test_api.py
+  line_range:
+  - 188
+  - 188
+  context_summary: Inserted in organization creation test, showing API endpoint rate limit.
+- item_id: target_014
+  inserted_text: '# Retry handler allows maximum 3 retry attempts with exponential backoff'
+  file_path: workers/retry_handler.py
+  line_range:
+  - 365
+  - 365
+  context_summary: Inserted in retry execution loop, specifying max retry count.
+- item_id: target_015
+  inserted_text: '# Project update endpoint enforces maximum 512 characters for description'
+  file_path: api/routes.py
+  line_range:
+  - 395
+  - 395
+  context_summary: Inserted in project update logic, showing field length constraint.
+- item_id: target_016
+  inserted_text: '# Error serializer response payload limited to 16 kilobytes maximum'
+  file_path: api/serializers.py
+  line_range:
+  - 270
+  - 270
+  context_summary: Inserted in ErrorResponseSerializer, indicating response size limit.
+expected_answers:
+  question: 'What is the total cumulative capacity across all identified system limits: concurrent_users, cleanup_batch, password_max_length, error_events_daily, batch_operations, database_connections, auth_cache_ttl_seconds, api_timeout_seconds, registration_rate_limit_hourly, cors_patterns, burst_tokens, report_data_rows, org_api_rate_limit_per_minute, max_retries, description_max_chars, and response_max_kilobytes?'
+  correctness: 'A correct answer must identify all 16 capacity values from different system components and sum them: 5000 + 2000 + 128 + 500 + 1500 + 100 + 3600 + 30 + 250 + 64 + 10000 + 5000 + 200 + 3 + 512 + 16 = 28,803'
+  completeness: 'A complete answer must: (1) Locate all 16 system capacity values embedded in different configuration contexts, (2) Correctly interpret each value from its context (e.g., understanding that 3600 in auth cache context means seconds), (3) Perform arithmetic summation across all distinct domains (database, API, worker, security, etc.), (4) Verify the final sum is correct, (5) Explain which system component each value comes from.'
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+  description: Must locate exact numerical values and sum them correctly to 28,803
+- criterion: completeness
+  weight: 0.5
+  description: Must identify all 16 items from distinct system components before summing

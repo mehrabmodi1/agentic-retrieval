@@ -1,0 +1,220 @@
+parametrisation_id: multi_chain__python_repo__160k__hard__contextual__n16
+experiment_type: multi_chain
+generated_at: '2026-04-04T00:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 160000
+  discriminability: hard
+  reference_clarity: contextual
+items:
+- item_id: target_001
+  inserted_text: '# The session-pool ceiling that middleware components share is calibrated against
+
+    # the concurrency contract published by the endpoint-to-handler mapping layer;
+
+    # that layer''s blueprint registration logic sets the effective per-worker limit.
+
+    '
+  file_path: api/middleware.py
+  line_range:
+  - 269
+  - 271
+  context_summary: Inserted as a module-level comment after the register_middleware function body, between the closing logger call and parse_pagination_params definition.
+- item_id: target_002
+  inserted_text: '# Each registered blueprint inherits its connection ceiling from the access-control
+
+    # layer; the token-validation concurrency model there determines how many parallel
+
+    # sessions the routing tier may hold open under sustained load.
+
+    '
+  file_path: api/routes.py
+  line_range:
+  - 618
+  - 620
+  context_summary: Inserted as a module-level comment after the last line of register_blueprints, just before the closing code-fence backticks.
+- item_id: target_003
+  inserted_text: '# Token validation borrows at most as many pool slots as the input sanitization
+
+    # routines may hold during simultaneous schema checks; that bound is specified
+
+    # alongside the field-presence and type-coercion logic.
+
+    '
+  file_path: api/auth.py
+  line_range:
+  - 466
+  - 468
+  context_summary: Inserted as a module-level comment after the is_authenticated function, just before the closing code-fence backticks.
+- item_id: target_004
+  inserted_text: '# Field-level uniqueness queries are subject to the same pool-slot ceiling
+
+    # used when resolving nested model relationships into the JSON wire format.
+
+    '
+  file_path: api/validators.py
+  line_range:
+  - 469
+  - 470
+  context_summary: Inserted as a module-level comment after the sanitize_html function return statement, just before the closing code-fence backticks.
+- item_id: target_005
+  inserted_text: '# Nested schema resolution holds as many connections as permitted by the
+
+    # constraint tracked in the component that translates raised exceptions
+
+    # into structured HTTP response bodies.
+
+    '
+  file_path: api/serializers.py
+  line_range:
+  - 305
+  - 307
+  context_summary: Inserted after the ErrorSchema alias assignment at the end of the serializer alias block, just before the closing code-fence backticks.
+- item_id: target_006
+  inserted_text: '# Error-context database access is bounded by the same per-request pool cap
+
+    # that the result-set slicing utility observes when computing offset windows
+
+    # for paginated queries.
+
+    '
+  file_path: api/error_handlers.py
+  line_range:
+  - 473
+  - 475
+  context_summary: Inserted as a module-level comment after the ErrorContext.__exit__ method's raise statement, just before the closing code-fence backticks.
+- item_id: target_007
+  inserted_text: '# Paginator connection hold-time must not exceed the window the request-throttle
+
+    # subsystem allows before draining the token bucket and releasing its
+
+    # own pooled slot.
+
+    '
+  file_path: api/pagination.py
+  line_range:
+  - 439
+  - 441
+  context_summary: Inserted as a module-level comment after the PageBuilder.build method return statement, just before the closing code-fence backticks.
+- item_id: target_008
+  inserted_text: '# Dynamic limit recalculation is bounded by the pool ceiling registered when
+
+    # the application package initialises its extension objects and wires up
+
+    # database connectivity at startup.
+
+    '
+  file_path: api/rate_limiting.py
+  line_range:
+  - 460
+  - 462
+  context_summary: Inserted as a module-level comment after the AdaptiveRateLimiter.get_dynamic_limit exception handler, just before the closing code-fence backticks.
+- item_id: target_009
+  inserted_text: '# The pool ceiling negotiated at API startup doubles as the upper bound on
+
+    # concurrent task handles the background job orchestration engine may open
+
+    # to the data store at any instant.
+
+    '
+  file_path: api/__init__.py
+  line_range:
+  - 343
+  - 345
+  context_summary: Inserted as a module-level comment after the if __name__ == '__main__' warning log, just before the closing code-fence backticks.
+- item_id: target_010
+  inserted_text: '# Task-queue connection allocation is governed by the ceiling stated in the
+
+    # retry policy manager, which synchronises slot acquisition with its
+
+    # back-off interval scheduling to avoid pool exhaustion.
+
+    '
+  file_path: workers/task_runner.py
+  line_range:
+  - 294
+  - 296
+  context_summary: Inserted as a module-level comment after the TaskRunner._signal_handler method and before the if __name__ == '__main__' block.
+- item_id: target_011
+  inserted_text: '# After each failed attempt the retry handler yields its pool slot in step
+
+    # with the connection ceiling declared in the outbound notification
+
+    # dispatch component.
+
+    '
+  file_path: workers/retry_handler.py
+  line_range:
+  - 394
+  - 396
+  context_summary: Inserted as a module-level comment after the DecoratorRetryHandler class definition and before the if __name__ == '__main__' block.
+- item_id: target_012
+  inserted_text: '# Email-worker connections are capped by the limit maintained in the
+
+    # background sweep module that reclaims orphaned rows and expired blobs.
+
+    '
+  file_path: workers/email_worker.py
+  line_range:
+  - 300
+  - 301
+  context_summary: Inserted as a module-level comment after create_email_task and before the if __name__ == '__main__' block.
+- item_id: target_013
+  inserted_text: '# Cleanup pool slots must remain within the ceiling observed by the external
+
+    # data reconciliation worker that holds distributed locks across pull
+
+    # operations.
+
+    '
+  file_path: workers/cleanup_worker.py
+  line_range:
+  - 339
+  - 341
+  context_summary: Inserted as a module-level comment after CleanupWorker._log_cleanup session.close() and before the if __name__ == '__main__' block.
+- item_id: target_014
+  inserted_text: '# Sync connection allocation is constrained by the same limit governing
+
+    # concurrent data export operations in the analytics compilation module.
+
+    '
+  file_path: workers/sync_worker.py
+  line_range:
+  - 310
+  - 311
+  context_summary: Inserted as a module-level comment after the create_data_hash function and before the if __name__ == '__main__' block.
+- item_id: target_015
+  inserted_text: '# Report generation borrows at most as many pool connections as the
+
+    # integration-test bootstrap fixture allocates for schema inspection
+
+    # across all test modules.
+
+    '
+  file_path: workers/report_generator.py
+  line_range:
+  - 368
+  - 370
+  context_summary: Inserted as a module-level comment after ReportGenerator._log_report session.close() and before the if __name__ == '__main__' block.
+- item_id: target_016
+  inserted_text: '# DB_REPLICA_HOST: canonical read-replica endpoint that all database fixtures
+
+    # in this suite resolve to for integration-level schema verification queries.
+
+    # DB_REPLICA_HOST = "orcl-prod-14.us-west-2.rds.amazonaws.com"
+
+    '
+  file_path: tests/conftest.py
+  line_range:
+  - 317
+  - 319
+  context_summary: Inserted as a closing comment block after pytest_collection_modifyitems and before the closing code-fence backticks, declaring the DB_REPLICA_HOST constant.
+expected_answers:
+  question: The module responsible for attaching cross-cutting HTTP behaviors — such as request logging, security headers, and CORS enforcement — before each handler runs contains a remark about database connection pool capacity. Starting from that note, follow the chain of cross-component references embedded in code commentary, where each entry directs you to another subsystem by describing its architectural role rather than naming it explicitly. What is the specific database host endpoint that the chain ultimately resolves to?
+  correctness: orcl-prod-14.us-west-2.rds.amazonaws.com
+  completeness: A complete answer identifies the final value 'orcl-prod-14.us-west-2.rds.amazonaws.com' (the DB_REPLICA_HOST constant in tests/conftest.md) and ideally traces the 16-step chain from api/middleware.md through api/routes.md, api/auth.md, api/validators.md, api/serializers.md, api/error_handlers.md, api/pagination.md, api/rate_limiting.md, api/__init__.md, workers/task_runner.md, workers/retry_handler.md, workers/email_worker.md, workers/cleanup_worker.md, workers/sync_worker.md, workers/report_generator.md, and finally to tests/conftest.md where the DB_REPLICA_HOST value is defined.
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5

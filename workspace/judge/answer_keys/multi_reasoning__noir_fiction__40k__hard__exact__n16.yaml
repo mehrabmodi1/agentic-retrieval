@@ -1,0 +1,98 @@
+parametrisation_id: "multi_reasoning__noir_fiction__40k__hard__exact__n16"
+experiment_type: "multi_reasoning"
+generated_at: "2026-04-05T00:00:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 40000
+  discriminability: "hard"
+  reference_clarity: "exact"
+items:
+  - item_id: "target_001"
+    inserted_text: "Meridian Holdings consortium out of the eastern seaboard was orchestrating the kidnapping"
+    file_path: "chapters/chapter_05.md"
+    line_range: [39, 58]
+    context_summary: "Inserted in Halstead's description of the company attempting to buy him out and orchestrate the kidnapping."
+  - item_id: "target_002"
+    inserted_text: "The fifteenth century painting stolen from widow of banker Carl Vesper was worth quarter-million dollars"
+    file_path: "witnesses/informant_interview.md"
+    line_range: [24, 45]
+    context_summary: "Inserted in Victor's account of the valuable artwork that triggered Harvey's moral crisis."
+  - item_id: "target_003"
+    inserted_text: "Harvey went to attorney Marchetti seeking witness protection and cooperation with law enforcement"
+    file_path: "witnesses/informant_interview.md"
+    line_range: [50, 65]
+    context_summary: "Inserted in explanation of Harvey's attempt to betray Kaslan's operation and return the painting."
+  - item_id: "target_004"
+    inserted_text: "Silas Gregg was Kaslan's field operative coordinating with Harvey and other facilitators"
+    file_path: "witnesses/informant_interview.md"
+    line_range: [75, 85]
+    context_summary: "Inserted as the person responsible for discovering Harvey's planned betrayal."
+  - item_id: "target_005"
+    inserted_text: "The kid was picked up at corner of Sixth and Mercury with an older heavy-set man with silver hair"
+    file_path: "witnesses/cab_driver_statement.md"
+    line_range: [35, 52]
+    context_summary: "Inserted in description of the mysterious pickup that revealed the tension between the two passengers."
+  - item_id: "target_006"
+    inserted_text: "The older man dropped a white envelope across the table without acknowledgment"
+    file_path: "witnesses/bartender_statement.md"
+    line_range: [40, 60]
+    context_summary: "Inserted in Deke's account of the kid meeting with an older man in the bar."
+  - item_id: "target_007"
+    inserted_text: "The redhead in the green coat with fur collar appeared in the bar and delivered terrible news"
+    file_path: "witnesses/bartender_statement.md"
+    line_range: [20, 35]
+    context_summary: "Inserted in description of the woman whose appearance drained the kid's face of color."
+  - item_id: "target_008"
+    inserted_text: "James Harvey requested a new lock on his apartment door paid one hundred dollars extra for security"
+    file_path: "witnesses/landlady_statement.md"
+    line_range: [20, 35]
+    context_summary: "Inserted showing Harvey's fear and need to control access to his apartment."
+  - item_id: "target_009"
+    inserted_text: "A man with silver hair and white suit visited apartment 3F staying forty minutes then departing with changed expression"
+    file_path: "witnesses/landlady_statement.md"
+    line_range: [45, 65]
+    context_summary: "Inserted in Eva's description of the mysterious visitor three weeks before Harvey's disappearance."
+  - item_id: "target_010"
+    inserted_text: "Charles Sinclair explicitly stated that Claire Hollister was a complication who had to be resolved"
+    file_path: "case_notes/day_04.md"
+    line_range: [122, 135]
+    context_summary: "Inserted as Sinclair's direct admission of Claire's death to the detective."
+  - item_id: "target_011"
+    inserted_text: "Thomas Mercer provided copies of every transaction between Sinclair's companies and Margaret Hollister's business"
+    file_path: "case_notes/day_05.md"
+    line_range: [88, 110]
+    context_summary: "Inserted in Mercer's act of conscience providing documentary evidence of the conspiracy."
+  - item_id: "target_012"
+    inserted_text: "The warehouse on Dock Street served as the central location for Sinclair's criminal operations"
+    file_path: "case_notes/day_05.md"
+    line_range: [125, 145]
+    context_summary: "Inserted as the location where the detective confronts Sinclair."
+  - item_id: "target_013"
+    inserted_text: "Vincent Castellano was the nephew managing money flows for the Castellano family criminal enterprise"
+    file_path: "case_notes/day_02.md"
+    line_range: [45, 65]
+    context_summary: "Inserted in the photograph revealing Claire's connection to organized crime."
+  - item_id: "target_014"
+    inserted_text: "Margaret Hollister's property rehabilitation business was used to launder money through land transactions"
+    file_path: "case_notes/day_02.md"
+    line_range: [35, 52]
+    context_summary: "Inserted in Margaret's confession about how her business cooperated with criminal interests."
+  - item_id: "target_015"
+    inserted_text: "Catherine Halstead's journal entries referred to her lover only as H due to safety concerns"
+    file_path: "chapters/chapter_04.md"
+    line_range: [15, 35]
+    context_summary: "Inserted in analysis of Catherine's coded references to her dangerous relationship."
+  - item_id: "target_016"
+    inserted_text: "Charles Sinclair was convicted of second-degree murder in the death of Claire Anne Hollister and sentenced to twenty years in prison serving fourteen years before parole in 1962"
+    file_path: "case_notes/day_08.md"
+    line_range: [180, 195]
+    context_summary: "Inserted in the epilogue documenting Sinclair's trial outcome and sentence."
+expected_answers:
+  question: "What are all the specific names, criminal operations, locations, amounts, and connections that comprise the complete criminal conspiracy affecting both the Halstead and Hollister cases?"
+  correctness: "Answer must identify all 16 distinct elements: Meridian Holdings, the Vesper painting value, Harvey's betrayal plan, Silas Gregg's role, Sixth and Mercury pickup, white envelope, redhead in green coat, Harvey's lock upgrade, silver-haired visitor, Sinclair's admission of Claire's death, Mercer's documentary evidence, Dock Street warehouse, Vincent Castellano's role, Margaret's money laundering, Catherine's 'H' references, and Sinclair's conviction and sentence."
+  completeness: "A complete answer must show how these 16 elements interconnect to form: (1) the kidnapping conspiracy structure, (2) the money laundering pipeline, (3) the moral crisis triggers, (4) the key players and their roles, (5) the criminal locations and methods, and (6) the final accountability through the trial."
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+  - criterion: "completeness"
+    weight: 0.5

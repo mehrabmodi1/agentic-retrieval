@@ -1,0 +1,28 @@
+parametrisation_id: "multi_reasoning__noir_fiction__20k__easy__exact__n2"
+experiment_type: "multi_reasoning"
+generated_at: "2026-04-05T00:00:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 20000
+  discriminability: "easy"
+  reference_clarity: "exact"
+items:
+  - item_id: "target_001"
+    inserted_text: "The landlady also mentioned he had a distinctive scar across his left knuckle—old and pale, the kind of injury that never fully heals. She said he kept flexing that hand while he looked around, like it was bothering him in the cold."
+    file_path: "witnesses/detective_debrief.md"
+    line_range: [36, 38]
+    context_summary: "Added detail about Silas Gregg's identifying mark (scar on left knuckle) during Morello's description of the suspect."
+  - item_id: "target_002"
+    inserted_text: "She paused. \"Though she did mention once that he had a noticeable scar on his left hand, across the knuckles. Very pale and old. She said it made him look distinguished, like he'd been through things. She seemed fascinated by it.\""
+    file_path: "chapters/chapter_03.md"
+    line_range: [36, 37]
+    context_summary: "Added detail about Catherine's secret boyfriend's identifying mark (scar on left knuckles) when friends describe characteristics of the mystery man."
+expected_answers:
+  question: "What distinctive physical mark on his left hand identified Catherine's secret boyfriend as the handler Silas Gregg?"
+  correctness: "Answer must identify the scar across the left knuckle/knuckles as the distinctive mark. Correct answers include references to both the scar being visible on Silas Gregg (from detective debrief) and on Catherine's boyfriend (from chapter_03)."
+  completeness: "A complete answer must cite evidence from both the detective's debrief (Gregg's scar) and Catherine's friends' account (the boyfriend's matching scar) to establish the connection between the two individuals."
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+  - criterion: "completeness"
+    weight: 0.5

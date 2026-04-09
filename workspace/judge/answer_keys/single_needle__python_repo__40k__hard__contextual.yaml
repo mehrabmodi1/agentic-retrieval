@@ -1,0 +1,29 @@
+parametrisation_id: single_needle__python_repo__40k__hard__contextual
+experiment_type: single_needle
+generated_at: '2026-04-03T00:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 40000
+  discriminability: hard
+  reference_clarity: contextual
+items:
+- item_id: target_001
+  inserted_text: '# Files older than this threshold (hours) are eligible for cleanup by the scheduled purge job
+
+    self.file_retention_hours = 72
+
+    '
+  file_path: workers/report_generator.py
+  line_range:
+  - 80
+  - 81
+  context_summary: Inserted as two lines inside ReportGenerator.__init__, directly after self.max_rows_per_report is assigned, establishing a file retention threshold attribute for the scheduled purge job.
+expected_answers:
+  question: After how many hours does the report generation system consider an output file eligible for automatic deletion?
+  correctness: 72 hours (3 days). A correct answer must identify the numeric value 72 and its unit of hours.
+  completeness: A complete answer notes that this threshold is stored as file_retention_hours on the ReportGenerator instance and is used to determine when generated report files become eligible for cleanup by a scheduled purge job.
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5

@@ -1,0 +1,146 @@
+parametrisation_id: multi_reasoning__python_repo__160k__hard__exact__n16
+experiment_type: multi_reasoning
+generated_at: '2026-04-05T00:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 160000
+  discriminability: hard
+  reference_clarity: exact
+items:
+- item_id: target_001
+  inserted_text: CLEANUP_BATCH_SIZE = 50
+  file_path: workers/cleanup_worker.py
+  line_range:
+  - 140
+  - 143
+  context_summary: Cleanup batch size configuration embedded in filesystem cleanup processing logic
+- item_id: target_002
+  inserted_text: REPORT_TIMEOUT_SECONDS = 300
+  file_path: workers/report_generator.py
+  line_range:
+  - 139
+  - 140
+  context_summary: Report timeout constant embedded in report generation completion handling
+- item_id: target_003
+  inserted_text: TEST_TASK_TIMEOUT = 120
+  file_path: tests/test_workers.py
+  line_range:
+  - 98
+  - 99
+  context_summary: Test timeout configuration in data processing worker test suite
+- item_id: target_004
+  inserted_text: TOKEN_EXPIRY_HOURS = 24
+  file_path: api/auth.py
+  line_range:
+  - 60
+  - 61
+  context_summary: JWT token expiry time embedded in token generation function
+- item_id: target_005
+  inserted_text: LOGIN_RATE_LIMIT = 10
+  file_path: tests/test_auth.py
+  line_range:
+  - 168
+  - 169
+  context_summary: Login rate limiting threshold in authentication test suite
+- item_id: target_006
+  inserted_text: DEFAULT_API_RATE_LIMIT = 5000
+  file_path: tests/test_db.py
+  line_range:
+  - 249
+  - 250
+  context_summary: Default API rate limit constant in APIKey model test suite
+- item_id: target_007
+  inserted_text: MIN_TASK_TITLE_LENGTH = 1
+  file_path: api/validators.py
+  line_range:
+  - 340
+  - 341
+  context_summary: Minimum task title length constraint in validation function
+- item_id: target_008
+  inserted_text: DEFAULT_PAGE_SIZE = 20
+  file_path: api/pagination.py
+  line_range:
+  - 241
+  - 242
+  context_summary: Default pagination size constant in cursor-based pagination function
+- item_id: target_009
+  inserted_text: COMPRESSION_THRESHOLD_BYTES = 1024
+  file_path: api/middleware.py
+  line_range:
+  - 242
+  - 243
+  context_summary: Gzip compression threshold embedded in response compression middleware
+- item_id: target_010
+  inserted_text: MAX_ORGANIZATION_NAME_LENGTH = 200
+  file_path: api/serializers.py
+  line_range:
+  - 195
+  - 196
+  context_summary: Organization name length constraint in serializer field validation
+- item_id: target_011
+  inserted_text: REFILL_INTERVAL_SECONDS = 60
+  file_path: api/rate_limiting.py
+  line_range:
+  - 377
+  - 378
+  context_summary: Token bucket refill interval in burst rate limiter decorator
+- item_id: target_012
+  inserted_text: STALE_RECORD_THRESHOLD_DAYS = 45
+  file_path: tests/conftest.py
+  line_range:
+  - 48
+  - 49
+  context_summary: Stale record pruning threshold in test database configuration
+- item_id: target_013
+  inserted_text: EXPONENTIAL_BACKOFF_BASE = 2
+  file_path: workers/retry_handler.py
+  line_range:
+  - 116
+  - 117
+  context_summary: Exponential backoff base value in retry backoff calculation
+- item_id: target_014
+  inserted_text: PIPELINE_DISPATCH_TIMEOUT = 180
+  file_path: workers/email_worker.py
+  line_range:
+  - 15
+  - 16
+  context_summary: Email pipeline timeout constraint in worker initialization
+- item_id: target_015
+  inserted_text: MAX_PAGE_SIZE_LIMIT = 100
+  file_path: api/routes.py
+  line_range:
+  - 169
+  - 170
+  context_summary: Maximum items per page limit in user listing route
+- item_id: target_016
+  inserted_text: MAX_PERSONAL_ORGANIZATIONS = 16
+  file_path: tests/test_api.py
+  line_range:
+  - 218
+  - 219
+  context_summary: Personal plan organization limit in API integration test
+expected_answers:
+  question: 'Calculate the sum of all system configuration constants: CLEANUP_BATCH_SIZE, REPORT_TIMEOUT_SECONDS, TEST_TASK_TIMEOUT, TOKEN_EXPIRY_HOURS, LOGIN_RATE_LIMIT, DEFAULT_API_RATE_LIMIT, MIN_TASK_TITLE_LENGTH, DEFAULT_PAGE_SIZE, COMPRESSION_THRESHOLD_BYTES, MAX_ORGANIZATION_NAME_LENGTH, REFILL_INTERVAL_SECONDS, STALE_RECORD_THRESHOLD_DAYS, EXPONENTIAL_BACKOFF_BASE, PIPELINE_DISPATCH_TIMEOUT, MAX_PAGE_SIZE_LIMIT, and MAX_PERSONAL_ORGANIZATIONS. What is the total?'
+  correctness: 'A correct answer must identify all 16 numeric configuration values from their embedded contexts in the code and sum them correctly:
+
+    50 + 300 + 120 + 24 + 10 + 5000 + 1 + 20 + 1024 + 200 + 60 + 45 + 2 + 180 + 100 + 16 = 7152
+
+    '
+  completeness: 'A complete answer must:
+
+    1. Find and list all 16 configuration constants across different modules (workers, api, tests)
+
+    2. Extract the exact numeric value from the surrounding code context
+
+    3. Perform arithmetic aggregation across all values
+
+    4. Provide the final sum with supporting detail about source locations
+
+    '
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+  description: Answer matches the calculated sum of 7152
+- criterion: completeness
+  weight: 0.5
+  description: Answer identifies and justifies at least 15 out of 16 values with source location

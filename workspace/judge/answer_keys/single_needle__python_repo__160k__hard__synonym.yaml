@@ -1,0 +1,29 @@
+parametrisation_id: single_needle__python_repo__160k__hard__synonym
+experiment_type: single_needle
+generated_at: '2026-04-03T00:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 160000
+  discriminability: hard
+  reference_clarity: synonym
+items:
+- item_id: target_001
+  inserted_text: '# Maximum time a task may remain in PENDING state before being treated as stale and dropped
+
+    self.pending_task_expiry_seconds = 86400  # 24 hours
+
+    '
+  file_path: workers/task_runner.py
+  line_range:
+  - 121
+  - 122
+  context_summary: Inserted inside TaskRunner.__init__ immediately after self.running = False, alongside other worker-thread configuration attributes, as a stale-task expiry threshold.
+expected_answers:
+  question: How long can a task remain waiting in the queue before the system considers it stale and discards it?
+  correctness: 24 hours (86400 seconds)
+  completeness: A complete answer states the value as 24 hours (or equivalently 86400 seconds), identifies that this applies to tasks sitting in the PENDING (queued) state, and notes it is configured as pending_task_expiry_seconds in the TaskRunner initializer.
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5

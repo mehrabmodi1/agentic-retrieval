@@ -1,0 +1,115 @@
+parametrisation_id: "multi_reasoning__noir_fiction__160k__hard__synonym__n16"
+experiment_type: "multi_reasoning"
+generated_at: "2026-04-05T00:00:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 160000
+  discriminability: "hard"
+  reference_clarity: "synonym"
+items:
+  - item_id: "target_001"
+    inserted_text: "She had access to client files, case histories, confidential correspondence—everything that moved through the office. Mr. Mercer relied on her completely."
+    file_path: "case_notes/day_01.md"
+    line_range: [57, 58]
+    context_summary: "Claire's role as secretary gave her access to sensitive legal information, revealing why she was valuable to the operation and why she became a liability."
+
+  - item_id: "target_002"
+    inserted_text: "But that changes once we establish a clear chain connecting Sinclair to the victim's disappearance."
+    file_path: "case_notes/day_06.md"
+    line_range: [100, 101]
+    context_summary: "The legal defense strategy relies on denial, but physical evidence would break that strategy by establishing Sinclair's direct connection to Claire."
+
+  - item_id: "target_003"
+    inserted_text: "I use intermediaries—shell companies, mostly. The Castellano family owns several. The money passes through my books, gets cleaned by the transaction, emerges legitimate."
+    file_path: "case_notes/day_02.md"
+    line_range: [25, 26]
+    context_summary: "Margaret explains the specific mechanism of money laundering using Castellano family entities and property transactions as cover."
+
+  - item_id: "target_004"
+    inserted_text: "stories about men who tried to settle debts with their fists, about women who came looking for men who'd disappeared, about transactions that happened in dark corners and left blood on the floor."
+    file_path: "witnesses/bartender_statement.md"
+    line_range: [6, 7]
+    context_summary: "Deke's background as bartender positions him as witness to criminal transactions and disappearances, establishing his credibility for subsequent observations."
+
+  - item_id: "target_005"
+    inserted_text: "She didn't look back. Means she knows he won't follow. Means she knows what happens next isn't going to be pleasant."
+    file_path: "witnesses/bartender_statement.md"
+    line_range: [36, 37]
+    context_summary: "The redheaded woman's behavior indicates she understands Vincent's fate after her visit, suggesting prior knowledge of the organization's lethal methods."
+
+  - item_id: "target_006"
+    inserted_text: "Sinclair used a car to try to eliminate me before I could testify. That's the level of desperation we're dealing with."
+    file_path: "case_notes/day_07.md"
+    line_range: [66, 67]
+    context_summary: "Mercer identifies the car attack as an assassination attempt, revealing Sinclair's willingness to murder to suppress testimony."
+
+  - item_id: "target_007"
+    inserted_text: "She got crushed in the machinery when she tried to run."
+    file_path: "case_notes/day_05.md"
+    line_range: [116, 117]
+    context_summary: "Sinclair explicitly reveals Claire's cause of death—attempting escape at the warehouse, caught in machinery—establishing his direct knowledge of the murder."
+
+  - item_id: "target_008"
+    inserted_text: "That's an institutional threat."
+    file_path: "case_notes/day_03.md"
+    line_range: [10, 11]
+    context_summary: "The narrator recognizes that the warning came from a larger organization using intermediaries, establishing the hierarchical structure of the criminal enterprise."
+
+  - item_id: "target_009"
+    inserted_text: "Claire Hollister got crushed by the machinery when she tried to escape the warehouse basement. Vincent Castellano got away, at least for now—disappeared after Sinclair released him with fifty thousand in cash, hoping he'd vanish. Thomas Mercer got hit by a car before he could fully testify, internal bleeding that nearly killed him but didn't quite."
+    file_path: "case_notes/day_08.md"
+    line_range: [154, 155]
+    context_summary: "Summary of three key events: Claire's death, Vincent's disappearance with payment, and Mercer's failed assassination—each representing consequences of the criminal operation."
+
+  - item_id: "target_010"
+    inserted_text: "She mentioned she'd learned something troubling at work—something about financial irregularities, about money flowing through properties in ways that didn't match the paperwork."
+    file_path: "chapters/chapter_03.md"
+    line_range: [49, 50]
+    context_summary: "Catherine discovered financial irregularities similar to Claire, suggesting both became liabilities for seeing money laundering operations they shouldn't have."
+
+  - item_id: "target_011"
+    inserted_text: "Three stories, professionally landscaped, the kind of property that Claire had seen in Margaret's transaction records."
+    file_path: "case_notes/day_04.md"
+    line_range: [36, 37]
+    context_summary: "Margaret's expensive property connects her to Claire's knowledge of fraudulent transactions, linking the victim to the money laundering scheme."
+
+  - item_id: "target_012"
+    inserted_text: "I think he consulted with someone—a lawyer, presumably, based on the men I saw visiting the building—about how to extract himself from a criminal operation. I think the woman was someone sent to help him, or perhaps someone from inside the organization who'd decided his escape was worth facilitating."
+    file_path: "witnesses/neighbor_statement.md"
+    line_range: [48, 49]
+    context_summary: "Eleanor identifies that Harvey sought legal counsel for extracting from criminal involvement, with the redheaded woman helping facilitate his escape."
+
+  - item_id: "target_013"
+    inserted_text: "Catherine's abduction wasn't random—it was designed specifically to force Halstead to compromise his own business operations, to push him toward making decisions that would expose his company to acquisition by whoever stood behind the kidnapping."
+    file_path: "chapters/chapter_05.md"
+    line_range: [42, 43]
+    context_summary: "The kidnapping was orchestrated by Meridian Holdings as a strategic business acquisition tool, revealing a corporate criminal conspiracy behind the personal crime."
+
+  - item_id: "target_014"
+    inserted_text: "The bracelet has an inscription: 'To Claire, with love, V.' Vincent had given her the piece before everything fell apart, before she learned the full extent of the money laundering, before she died."
+    file_path: "case_notes/day_07.md"
+    line_range: [179, 180]
+    context_summary: "The inscribed bracelet evidence proves Vincent's romantic relationship with Claire, establishing motive and personal connection to the victim."
+
+  - item_id: "target_015"
+    inserted_text: "What I see is a man planning to disappear. What I see is someone who has decided that the risk of staying is higher than the risk of running, and that requires a decision of moral courage or moral desperation."
+    file_path: "witnesses/landlady_statement.md"
+    line_range: [53, 54]
+    context_summary: "Eva recognizes Harvey's escape plan as morally fraught—a choice between complicity and danger—suggesting his attempt to exit the criminal organization."
+
+  - item_id: "target_016"
+    inserted_text: "He was involved in art theft—facilitation of stolen artwork through the legitimate market, mostly European paintings with complicated provenance histories. He was a willing participant initially, but somewhere along the line he developed a conscience about handling pieces that were connected to violent crimes. What makes him valuable is that he has detailed knowledge of Kaslan's distribution network, the facilitators involved, and the specific pieces in circulation."
+    file_path: "witnesses/detective_debrief.md"
+    line_range: [85, 86]
+    context_summary: "Halloway identifies Harvey's expertise in art trafficking network operations, establishing his intelligence value for prosecuting the Kaslan organization."
+
+expected_answers:
+  question: "Three people died or nearly died as a result of their involvement with a criminal organization: one was murdered trying to escape a warehouse, one was killed by machinery while attempting flight, and one was nearly killed in a vehicle assault to prevent testimony. Reconstruct the complete sequence of events by identifying: (1) who each person was and what made them dangerous to the organization, (2) what specific roles different organization members played in the criminal enterprise, (3) what evidence connected the organization's leadership to the crime, and (4) what factors determined who lived, who died, and who escaped."
+  correctness: "A complete answer must identify all three victims/near-victims (Claire Hollister, Vincent Castellano, Thomas Mercer), explain what information each possessed that made them liabilities (financial irregularities, photographs, direct testimony), describe the criminal enterprise structure (money laundering through real estate, art theft networks, corporate acquisition schemes), identify the key evidence (jewelry with inscriptions, testimony about specific orders, connection to Sinclair's apartment), and explain the outcomes (machinery death, cash escape, failed assassination)."
+  completeness: "A complete answer covers: Claire's discovery of money laundering and her role as secretary with access to sensitive files; Vincent's relationship with Claire and possession of incriminating photographs; Mercer's presence when orders were given and his decision to testify despite cancer; Margaret's role in laundering money through shell companies; the Castellano family's property holdings; Sinclair's direct orders and attempt to silence witnesses; the redheaded woman's role in helping people escape or delivering messages; Harvey's involvement with art theft and attempted cooperation with law enforcement; and how each piece of evidence (bracelet inscription, jewelry, car attack, machinery death) connected to the larger criminal operation."
+
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+  - criterion: "completeness"
+    weight: 0.5

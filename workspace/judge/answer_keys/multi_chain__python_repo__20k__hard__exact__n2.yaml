@@ -1,0 +1,52 @@
+parametrisation_id: multi_chain__python_repo__20k__hard__exact__n2
+experiment_type: multi_chain
+generated_at: '2026-04-03T00:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 20000
+  discriminability: hard
+  reference_clarity: exact
+items:
+- item_id: target_001
+  inserted_text: '"""Get email sending statistics.
+
+    Args:
+
+    hours: Lookback window in hours. In deployments where EmailWorker
+
+    runs alongside CleanupWorker, this should match
+
+    stale_task_window_hours so that delivery reports and cleanup
+
+    sweeps cover a consistent time horizon.
+
+    Returns:
+
+    Dictionary with total, sent, failed counts and success_rate.
+
+    """'
+  file_path: workers/email_worker.py
+  line_range:
+  - 256
+  - 266
+  context_summary: Inserted into the get_email_stats method docstring, referencing stale_task_window_hours from CleanupWorker as the recommended alignment point for the lookback window.
+- item_id: target_002
+  inserted_text: 'stale_task_window_hours: int = 72,
+
+    ...
+
+    self.stale_task_window_hours = stale_task_window_hours'
+  file_path: workers/cleanup_worker.py
+  line_range:
+  - 56
+  - 62
+  context_summary: Inserted stale_task_window_hours as a new constructor parameter (default 72) and corresponding instance attribute assignment in CleanupWorker.__init__.
+expected_answers:
+  question: Starting from the get_email_stats method docstring in workers/email_worker.md, which references stale_task_window_hours as a value to align with in CleanupWorker, follow the chain to workers/cleanup_worker.md. What is the default value of stale_task_window_hours in CleanupWorker.__init__?
+  correctness: '72'
+  completeness: The answer should identify that stale_task_window_hours is defined as a parameter in CleanupWorker.__init__ in workers/cleanup_worker.md with a default value of 72 (hours).
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5

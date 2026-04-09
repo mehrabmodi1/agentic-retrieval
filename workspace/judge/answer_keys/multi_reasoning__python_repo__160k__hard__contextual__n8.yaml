@@ -1,0 +1,126 @@
+parametrisation_id: multi_reasoning__python_repo__160k__hard__contextual__n8
+experiment_type: multi_reasoning
+generated_at: '2026-04-05T00:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 160000
+  discriminability: hard
+  reference_clarity: contextual
+items:
+- item_id: target_001
+  inserted_text: '# Performance metric: batches process at 250 rows per second'
+  file_path: workers/report_generator.py
+  line_range:
+  - 91
+  - 92
+  context_summary: Processing throughput constant inserted in report generator initialization
+- item_id: target_002
+  inserted_text: '# Database connection constraint: maximum 8 concurrent sessions per engine'
+  file_path: tests/conftest.py
+  line_range:
+  - 50
+  - 51
+  context_summary: Connection pool limit specified in test database configuration comments
+- item_id: target_003
+  inserted_text: 'per_page: Items per page (default batch size for cleanup operations: 500)'
+  file_path: api/__init__.py
+  line_range:
+  - 246
+  - 246
+  context_summary: Default pagination batch size embedded in docstring for cleanup tasks
+- item_id: target_004
+  inserted_text: '# CLEANUP_CYCLE_DURATION: expired token cleanup runs every 3600 seconds (1 hour)'
+  file_path: workers/sync_worker.py
+  line_range:
+  - 25
+  - 25
+  context_summary: Cleanup cycle interval specified alongside stale lock timeout in worker module
+- item_id: target_005
+  inserted_text: 'expires_in: TOKEN_EXPIRY_HOURS * 3600 (where TOKEN_EXPIRY_HOURS = 1)'
+  file_path: api/auth.py
+  line_range:
+  - 414
+  - 414
+  context_summary: Access token expiration time embedded in session creation return value
+- item_id: target_006
+  inserted_text: '# Retry backoff multiplier: 2x exponential delay between attempts'
+  file_path: workers/retry_handler.py
+  line_range:
+  - 206
+  - 206
+  context_summary: Exponential backoff factor specified in retry delay calculation logic
+- item_id: target_007
+  inserted_text: 'args=[30], # Cleanup interval: executes every 1800 seconds (30 minutes)'
+  file_path: tests/test_workers.py
+  line_range:
+  - 176
+  - 176
+  context_summary: Cleanup task scheduling interval embedded in test configuration arguments
+- item_id: target_008
+  inserted_text: '# Cache entry TTL: 3600 seconds per rate limit token bucket state'
+  file_path: api/rate_limiting.py
+  line_range:
+  - 38
+  - 38
+  context_summary: Rate limit cache TTL specified in token bucket initialization
+expected_answers:
+  question: 'The system performs expired token cleanup at regular intervals. How many complete cleanup cycles could theoretically occur before all tokens expire naturally, assuming:
+
+    - Cleanup runs on a fixed schedule every 30 minutes
+
+    - Each cleanup batch processes maximum 500 records using 8 concurrent database sessions
+
+    - Rate limiter caches track token state for 1 hour
+
+    - Each cleanup job can process 250 rows per second in the report generator
+
+    - Access tokens naturally expire after 1 hour
+
+    - The sync worker performs internal cleanup every 1 hour
+
+
+    Provide the calculation showing: (a) number of cleanup cycles per token lifetime, (b) total records processed per cycle at maximum capacity, (c) whether cleanup completes before token expiration.
+
+    '
+  correctness: 'Must correctly identify:
+
+    - Token lifetime: 1 hour (3600 seconds)
+
+    - Cleanup interval: 30 minutes (1800 seconds)
+
+    - Number of cleanup cycles before expiration: 2 cycles (0 min, 30 min, 60 min)
+
+    - Batch size: 500 records per cleanup operation
+
+    - Max concurrent sessions: 8
+
+    - Processing capacity: 250 rows/second
+
+    - Time to process one batch: 500 / 250 = 2 seconds (well under 30 minute window)
+
+    '
+  completeness: 'A complete answer must:
+
+    1. Calculate cycles per token lifetime: 3600 / 1800 = 2 complete cleanup cycles
+
+    2. Identify cleanup batch capacity: 8 sessions × 500 rows = 4000 total record slots available
+
+    3. Verify processing speed: 250 rows/second can handle 500-row batch in 2 seconds
+
+    4. Connect cache TTL to cleanup timing: 1-hour cache aligns with cleanup cycle
+
+    5. Conclude whether sync worker (3600 sec cycle) aligns with auth token expiry
+
+    6. Must reference ALL 8 constraint values to reach conclusion
+
+    '
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+  description: Answer correctly calculates number of cleanup cycles (2) using token expiry (3600s) and cleanup interval (1800s)
+- criterion: completeness
+  weight: 0.5
+  description: Answer references all 8 timing/capacity constraints and combines them to support final claim
+- criterion: reasoning
+  weight: 0.5
+  description: Answer shows explicit combination of multiple facts from different components

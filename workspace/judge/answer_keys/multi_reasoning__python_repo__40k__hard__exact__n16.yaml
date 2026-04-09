@@ -1,0 +1,178 @@
+parametrisation_id: multi_reasoning__python_repo__40k__hard__exact__n16
+experiment_type: multi_reasoning
+generated_at: '2026-04-05T00:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 40000
+  discriminability: hard
+  reference_clarity: exact
+items:
+- item_id: target_001
+  inserted_text: '# NEEDLE_L1_DEFAULT_PAGE_SIZE: Default pagination size is 20 items per request'
+  file_path: api/serializers.py
+  line_range:
+  - 31
+  - 31
+  context_summary: Inserted as comment documenting DEFAULT_PAGE_SIZE constant within pagination configuration section
+- item_id: target_002
+  inserted_text: '# NEEDLE_L2_MAX_PAGE_SIZE: Maximum allowed pagination size is 100 items'
+  file_path: api/serializers.py
+  line_range:
+  - 33
+  - 33
+  context_summary: Inserted as comment documenting MAX_PAGE_SIZE constant in pagination configuration
+- item_id: target_003
+  inserted_text: '# NEEDLE_L3_REQUEST_TIMEOUT_SECONDS: API request timeout threshold in seconds'
+  file_path: api/serializers.py
+  line_range:
+  - 35
+  - 35
+  context_summary: Inserted as comment labeling REQUEST_TIMEOUT_SECONDS = 30 configuration
+- item_id: target_004
+  inserted_text: '# NEEDLE_L4_SECURITY_ENTROPY_MULTIPLIER: 1.5 adjustment factor for password entropy validation'
+  file_path: api/routes.py
+  line_range:
+  - 20
+  - 20
+  context_summary: Embedded in comment explaining SECURITY_ENTROPY_MULTIPLIER = 1.5 in route handlers configuration
+- item_id: target_005
+  inserted_text: '# NEEDLE_L5_SLOW_REQUEST_THRESHOLD: Request performance monitoring threshold in milliseconds'
+  file_path: api/middleware.py
+  line_range:
+  - 32
+  - 32
+  context_summary: Inserted as comment documenting SLOW_REQUEST_THRESHOLD_MS = 1000 performance constant
+- item_id: target_006
+  inserted_text: '# NEEDLE_L6_CORS_MAX_AGE_SECONDS: CORS preflight cache validity duration in seconds (1 hour)'
+  file_path: api/middleware.py
+  line_range:
+  - 34
+  - 34
+  context_summary: Added new constant CORS_MAX_AGE_SECONDS = 3600 with explanatory comment in CORS configuration
+- item_id: target_007
+  inserted_text: '# NEEDLE_L7_MAX_FILE_SIZE_MB: Maximum file upload size in megabytes'
+  file_path: workers/task_runner.py
+  line_range:
+  - 33
+  - 33
+  context_summary: Inserted as comment documenting MAX_FILE_SIZE_MB = 50 in file upload constraints section
+- item_id: target_008
+  inserted_text: '# NEEDLE_L8_TASK_BATCH_SIZE: Number of tasks to process in a single batch cycle'
+  file_path: workers/task_runner.py
+  line_range:
+  - 35
+  - 35
+  context_summary: Added new constant TASK_BATCH_SIZE = 25 with comment in task processing configuration
+- item_id: target_009
+  inserted_text: '# NEEDLE_L9_POLL_INTERVAL_SECONDS: Worker polling interval in seconds'
+  file_path: tests/test_api.py
+  line_range:
+  - 31
+  - 31
+  context_summary: Inserted as comment documenting POLL_INTERVAL_SECONDS = 5 in system timing configuration
+- item_id: target_010
+  inserted_text: '# NEEDLE_L10_STALE_LOCK_TIMEOUT_SECONDS: Lock staleness detection timeout in seconds'
+  file_path: tests/test_api.py
+  line_range:
+  - 33
+  - 33
+  context_summary: Inserted as comment labeling STALE_LOCK_TIMEOUT_SECONDS = 60 timing constant
+- item_id: target_011
+  inserted_text: '# NEEDLE_L11_DEFAULT_LIMIT_PER_PAGE: Test default limit is 10 records (from assertion above)'
+  file_path: tests/test_api.py
+  line_range:
+  - 35
+  - 35
+  context_summary: Added new constant DEFAULT_LIMIT_PER_PAGE = 10 with comment referencing test context
+- item_id: target_012
+  inserted_text: '# NEEDLE_L12_MIN_PASSWORD_ENTROPY_BITS: 56 bits ensures adequate password complexity in user creation'
+  file_path: tests/test_db.py
+  line_range:
+  - 18
+  - 18
+  context_summary: Inserted as inline comment documenting MIN_PASSWORD_ENTROPY_BITS = 56 in user uniqueness test
+- item_id: target_013
+  inserted_text: '# NEEDLE_L13_MAX_RETRIES: Maximum retry attempts for failed report generation'
+  file_path: workers/report_generator.py
+  line_range:
+  - 33
+  - 33
+  context_summary: Inserted as comment documenting MAX_RETRIES = 3 in report processing configuration
+- item_id: target_014
+  inserted_text: '# NEEDLE_L14_CACHE_DURATION_SECONDS: Report cache validity period in seconds (5 minutes)'
+  file_path: workers/report_generator.py
+  line_range:
+  - 35
+  - 35
+  context_summary: Inserted as comment labeling CACHE_DURATION_SECONDS = 300 caching configuration
+- item_id: target_015
+  inserted_text: '# NEEDLE_L15_MAX_REPORT_SIZE_MB: Maximum size limit for generated reports in megabytes'
+  file_path: workers/report_generator.py
+  line_range:
+  - 37
+  - 37
+  context_summary: Added new constant MAX_REPORT_SIZE_MB = 500 with comment in report generation constraints
+- item_id: target_016
+  inserted_text: '# NEEDLE_L16_SESSION_TIMEOUT_MINUTES: User session timeout in minutes'
+  file_path: tests/test_workers.py
+  line_range:
+  - 33
+  - 33
+  context_summary: Inserted as comment documenting SESSION_TIMEOUT_MINUTES = 30 in worker exception handling tests
+expected_answers:
+  question: 'Across the entire codebase, identify all configuration constants that represent time-related thresholds or durations
+
+    (regardless of their unit: seconds, milliseconds, minutes, or hours).
+
+
+    For each time-related constant, convert its value to seconds and then sum all converted values.
+
+    Note: Constants found via their NEEDLE_L* labeled comments.
+
+
+    What is the total sum of all time-related configuration values when expressed in seconds?
+
+    '
+  correctness: 'A correct answer must:
+
+    1. Identify REQUEST_TIMEOUT_SECONDS = 30 (30 seconds)
+
+    2. Identify SLOW_REQUEST_THRESHOLD_MS = 1000 (1 second when converted)
+
+    3. Identify CORS_MAX_AGE_SECONDS = 3600 (3600 seconds)
+
+    4. Identify STALE_LOCK_TIMEOUT_SECONDS = 60 (60 seconds)
+
+    5. Identify POLL_INTERVAL_SECONDS = 5 (5 seconds)
+
+    6. Identify CACHE_DURATION_SECONDS = 300 (300 seconds)
+
+    7. Identify SESSION_TIMEOUT_MINUTES = 30 (1800 seconds when converted from 30 minutes)
+
+    8. Identify PASSWORD_RESET_EXPIRES_HOURS = 24 (86400 seconds when converted from 24 hours)
+
+    9. Calculate the correct sum: 30 + 1 + 3600 + 60 + 5 + 300 + 1800 + 86400 = 92,196 seconds
+
+    '
+  completeness: 'A complete answer covers:
+
+    1. All 8 time-related configuration constants from the codebase
+
+    2. Correct identification of units (seconds, milliseconds, minutes, hours) for each constant
+
+    3. Proper conversion of all time values to seconds (1000 ms = 1 sec, 30 min = 1800 sec, 24 hr = 86400 sec)
+
+    4. Accurate arithmetic to sum all converted values
+
+    5. Final answer of 92196 seconds
+
+    6. Reasoning showing how each constant was located and converted
+
+    '
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+  description: Answer must correctly identify all time-related constants and convert them to seconds accurately
+- criterion: completeness
+  weight: 0.5
+  description: Answer must include all 8 time-related constants and show work for conversions

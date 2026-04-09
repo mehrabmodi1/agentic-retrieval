@@ -1,0 +1,30 @@
+parametrisation_id: "multi_reasoning__noir_fiction__20k__hard__exact__n2"
+experiment_type: "multi_reasoning"
+generated_at: "2026-04-05T00:00:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 20000
+  discriminability: "hard"
+  reference_clarity: "exact"
+items:
+  - item_id: "target_001"
+    inserted_text: "I lean forward. \"What made her withdrawn, Mr. Mercer? Business problems? Personal ones?\"\n\nMercer's jaw tightens. For a moment I think he won't answer. Then: \"Two weeks ago, she came to me privately. Asked if I'd ever heard of a company called Meridian Holdings. Asked it like she was afraid of the answer. I told her it was outside the scope of her duties and not to concern herself with it. She seemed frightened, but also... relieved that I didn't want to know more.\"\n\n\"And you didn't ask why she wanted to know?\"\n\n\"No. I didn't want to know.\""
+    file_path: "case_notes/day_01.md"
+    line_range: [74, 84]
+    context_summary: "Embedded in detective's interrogation of Thomas Mercer about Claire Hollister; reveals Claire inquired about Meridian Holdings two weeks before disappearing."
+  - item_id: "target_002"
+    inserted_text: "But I flipped the Polaroid over. On the back, in faint pencil, was a single line in Catherine's careful handwriting: *Meridian Holdings sent them.*\n\nI let that sink in. Halstead was watching my face.\n\n\"She wrote that?\" I asked.\n\n\"Before they took the photo. She managed to write it on the back. She was trying to tell me who was behind this.\""
+    file_path: "chapters/chapter_02.md"
+    line_range: [35, 43]
+    context_summary: "Embedded in ransom photo description; reveals Catherine identified her kidnappers as working for Meridian Holdings through handwriting on photo's back."
+expected_answers:
+  question: "What company was directly responsible for orchestrating both Claire Hollister's abduction and Catherine Halstead's kidnapping?"
+  correctness: "The answer must identify Meridian Holdings as the organizing force behind both crimes. Acceptable answers include: 'Meridian Holdings', 'Meridian Holdings orchestrated both disappearances', or any phrasing that clearly attributes both kidnappings to this single entity."
+  completeness: "A complete answer requires synthesizing information from both crime scenes: (1) from day_01.md, that Claire inquired about Meridian Holdings before vanishing, suggesting she discovered their involvement; and (2) from chapter_02.md, that Catherine directly identified Meridian Holdings as hiring her kidnappers. The reader must connect these two independent witnesses/pieces of evidence to establish Meridian Holdings as the common perpetrator across both cases."
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+    description: "Answer correctly identifies Meridian Holdings by name as the responsible party"
+  - criterion: "completeness"
+    weight: 0.5
+    description: "Answer demonstrates synthesis of both needles—shows understanding that this connects the separate cases of Claire and Catherine"

@@ -1,0 +1,23 @@
+parametrisation_id: "single_needle__noir_fiction__20k__easy__exact"
+experiment_type: "single_needle"
+generated_at: "2026-04-03T00:00:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 20000
+  discriminability: "easy"
+  reference_clarity: "exact"
+items:
+  - item_id: "target_001"
+    inserted_text: "\"He leaned down and said something before he took his hand away. Bar was quiet that night, and I caught a few words clear enough—'the Starlight Motor Inn, room fourteen.' Said it like giving directions, real matter-of-fact. The kid nodded once, didn't write it down. The kind of thing a man memorizes because he knows he'll need it.\""
+    file_path: "witnesses/bartender_statement.md"
+    line_range: [42, 42]
+    context_summary: "Inserted as a new paragraph in Deke the bartender's witness statement, between his description of the older man's parting gesture toward the kid and Detective Morello's follow-up question about the envelope."
+expected_answers:
+  question: "According to Deke the bartender's witness statement, what location did the older man whisper to the kid at The Crimson Door Lounge before leaving?"
+  correctness: "The Starlight Motor Inn, room fourteen (or room 14)"
+  completeness: "A complete answer names the Starlight Motor Inn and specifies room fourteen, noting that Deke overheard this detail when the older man leaned down to the kid before departing."
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+  - criterion: "completeness"
+    weight: 0.5

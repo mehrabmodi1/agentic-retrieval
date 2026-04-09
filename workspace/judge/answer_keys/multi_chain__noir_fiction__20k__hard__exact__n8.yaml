@@ -1,0 +1,76 @@
+parametrisation_id: "multi_chain__noir_fiction__20k__hard__exact__n8"
+experiment_type: "multi_chain"
+generated_at: "2026-04-05T00:00:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 20000
+  discriminability: "hard"
+  reference_clarity: "exact"
+
+items:
+  - item_id: "target_001"
+    inserted_text: "He also recalls a silver locket around her neck—antique, with delicate filigree work."
+    file_path: "case_notes/day_01.md"
+    line_range: [39, 45]
+    context_summary: "Hotel clerk Everett recalls Claire wore a distinctive silver locket, establishing the first link in the chain."
+    next_reference: "silver locket"
+
+  - item_id: "target_002"
+    inserted_text: "The kid had the locket already. I'd stake money on it."
+    file_path: "witnesses/bartender_statement.md"
+    line_range: [16, 40]
+    context_summary: "Bartender confirms the young man received the silver locket after hearing about its location at Starlight Motor Inn, room fourteen."
+    next_reference: "silver locket"
+
+  - item_id: "target_003"
+    inserted_text: "When he came down from Mr. Harvey's apartment, his face told me something—he was looking for something specific. Something small, I think. Valuable. Maybe a locket, or something like that. He kept asking questions about Mr. Harvey's movements, whether anyone had visited. Whether the boy had received anything from the Starlight Motor Inn."
+    file_path: "witnesses/landlady_statement.md"
+    line_range: [7, 30]
+    context_summary: "Landlady Eva describes the mysterious visitor searching for the locket that Mr. Harvey supposedly received from the motor inn."
+    next_reference: "silver locket"
+
+  - item_id: "target_004"
+    inserted_text: "She left a short while later. But before she did, I heard something—she was asking him about a locket. A silver locket with initials. She seemed desperate about it. She said, 'You have to find it. It was at the Starlight Motor Inn. Room fourteen. You have to get it before they realize what it means.' He didn't answer much, just nodded. But his face—he already had it."
+    file_path: "witnesses/neighbor_statement.md"
+    line_range: [1, 25]
+    context_summary: "Neighbor Eleanor hears the redhead's urgent plea to find the silver locket from the motor inn, revealing its critical importance."
+    next_reference: "silver locket"
+
+  - item_id: "target_005"
+    inserted_text: "In the photograph, Claire is wearing the silver locket—the same one Everett mentioned seeing around her neck at the hotel. The locket is clearly visible, catching light. It's the kind of detail most people would miss. Most people aren't trained to notice."
+    file_path: "case_notes/day_02.md"
+    line_range: [43, 55]
+    context_summary: "Margaret's photograph confirms Claire wore the silver locket, which now becomes evidence of her connection to Castellano and the crime."
+    next_reference: "silver locket"
+
+  - item_id: "target_006"
+    inserted_text: "The jewelry includes the silver locket found in Claire's apartment—the same locket from the photograph with Castellano. The locket has her initials engraved inside—CHollister—and also the initials of someone else. The lab identified them as belonging to Marcus Sinclair. That's leverage."
+    file_path: "case_notes/day_07.md"
+    line_range: [114, 135]
+    context_summary: "The silver locket becomes critical evidence at trial, with dual initials proving Sinclair's connection to Claire's murder."
+    next_reference: "silver locket"
+
+  - item_id: "target_007"
+    inserted_text: "\"A silver locket. Antique. Filigree work. Currently in police evidence custody. We need to know everything about how it was recovered, who handled it, where it's been stored, and who has access to it. We particularly need to know about any engravings or markings that might have been documented.\""
+    file_path: "chapters/chapter_05.md"
+    line_range: [57, 85]
+    context_summary: "Diana Harrow's mysterious offer of fifty thousand dollars specifically targets the silver locket in police evidence, revealing external pressure to suppress the evidence."
+    next_reference: "silver locket"
+
+  - item_id: "target_008"
+    inserted_text: "I think about the silver locket—the evidence that will put Sinclair away, the evidence that people like Diana Harrow would pay fifty thousand dollars to obtain or destroy. In the end, it will all burn too. The locket is locked in an evidence locker now, but eventually it will be returned or destroyed. Everything disappears eventually. But not today."
+    file_path: "case_notes/day_08.md"
+    line_range: [57, 68]
+    context_summary: "The silver locket's ultimate fate—preserved as evidence in the locker, neither burned nor destroyed, standing as the final proof of Claire's story and Sinclair's guilt."
+    final_resolution: "silver locket preserved in evidence"
+
+expected_answers:
+  question: "Starting from the hotel clerk's memory of Claire in case_notes/day_01.md, trace the silver locket through the investigation. What is its final status and significance?"
+  correctness: "Answer must identify the silver locket as the chain's connecting element and trace its journey from Claire's possession through multiple witnesses to its role as trial evidence."
+  completeness: "Complete answer must include: (1) Claire's ownership of the locket, (2) the young man's possession of it, (3) its appearance in the photograph with Castellano, (4) the dual initials (CHollister and Marcus Sinclair), (5) its status as preserved police evidence, and (6) its significance in proving Sinclair's guilt and Claire's story."
+
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+  - criterion: "completeness"
+    weight: 0.5

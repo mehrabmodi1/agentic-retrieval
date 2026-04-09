@@ -1,0 +1,28 @@
+parametrisation_id: "multi_chain__noir_fiction__20k__easy__synonym__n2"
+experiment_type: "multi_chain"
+generated_at: "2026-04-04T00:00:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 20000
+  discriminability: "easy"
+  reference_clarity: "synonym"
+items:
+  - item_id: "target_001"
+    inserted_text: "While my thoughts circled, I flipped through the notes I'd copied from Catherine's apartment earlier that morning. One item stopped me cold—a torn slip of paper from her desk drawer that read: *'If anything happens to me, the landlady at Riverside Apartments, Harbor Road, has the sealed envelope.'*"
+    file_path: "chapters/chapter_05.md"
+    line_range: [73, 73]
+    context_summary: "Inserted as a new paragraph between Shepherd's post-Delgado-call reflection and the knock on his office door, framed as notes he copied from Catherine's apartment."
+  - item_id: "target_002"
+    inserted_text: "Eva rose and moved to her filing cabinet, pulling open the bottom drawer. \"He left something with me—Mr. Harvey did—about a week before he vanished. A sealed envelope. He said, 'Give it to whoever comes asking the right questions.'\" She placed it on the desk. Inside, on a single folded card, were the typed words: *Safe house: 19 Pelican Court, Eastside Docks.*"
+    file_path: "witnesses/landlady_statement.md"
+    line_range: [66, 66]
+    context_summary: "Inserted after Eva's final statement about Harvey running, just before the closing separator, as Eva produces the sealed envelope Harvey left in her care."
+expected_answers:
+  question: "Starting from the torn slip of paper Shepherd copied from Catherine's apartment, as described in chapter_05.md, follow the chain to the landlady at Riverside Apartments. What is the address of Harvey's hideout?"
+  correctness: "19 Pelican Court, Eastside Docks"
+  completeness: "A complete answer identifies the address as 19 Pelican Court, Eastside Docks, found by following the chain: the note in chapter_05.md directs to the landlady at Riverside Apartments (witnesses/landlady_statement.md), where Eva Kosinski produces a sealed envelope Harvey left, containing a card with that address labelled as a safe house."
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+  - criterion: "completeness"
+    weight: 0.5

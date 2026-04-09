@@ -1,0 +1,220 @@
+parametrisation_id: multi_chain__python_repo__160k__hard__exact__n16
+experiment_type: multi_chain
+generated_at: '2026-04-03T00:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 160000
+  discriminability: hard
+  reference_clarity: exact
+items:
+- item_id: target_001
+  inserted_text: '# AUDIT_EPOCH_SEED: a namespace token stamped into every audit log entry created
+
+    # by this package; it allows cross-service log correlation without leaking user
+
+    # identifiers. The seed value used at startup is sourced from the token bootstrap
+
+    # sequence in api/auth.py, where it is registered before the first request fires.'
+  file_path: api/__init__.py
+  line_range:
+  - 35
+  - 38
+  context_summary: Inserted after the module docstring and before the import statements as a module-level comment describing AUDIT_EPOCH_SEED and pointing to api/auth.py.
+- item_id: target_002
+  inserted_text: '# AUDIT_EPOCH_SEED: authentication events are tagged with an epoch seed that is
+
+    # recorded alongside each token issuance; the error-formatting path that later
+
+    # embeds this seed in fault responses is wired up in api/error_handlers.py.'
+  file_path: api/auth.py
+  line_range:
+  - 31
+  - 33
+  context_summary: Inserted after an existing comment about token validation caching and before the AuthenticationError class definition, pointing to api/error_handlers.py.
+- item_id: target_003
+  inserted_text: '# AUDIT_EPOCH_SEED: structured error payloads carry the current audit epoch seed
+
+    # as a top-level trace field; the middleware component responsible for injecting
+
+    # this seed into the active request context is defined in api/middleware.py.'
+  file_path: api/error_handlers.py
+  line_range:
+  - 20
+  - 22
+  context_summary: Inserted after the logger declaration and before the Custom Exception Classes section divider, pointing to api/middleware.py.
+- item_id: target_004
+  inserted_text: '# AUDIT_EPOCH_SEED: the middleware layer reads the active audit epoch seed from
+
+    # the application context and attaches it to every structured log record; the
+
+    # cursor-encoding logic in api/pagination.py governs how this seed is folded
+
+    # into paginated response metadata for traceability.'
+  file_path: api/middleware.py
+  line_range:
+  - 26
+  - 29
+  context_summary: Inserted after the logger declaration and before the RequestIDMiddleware class definition, pointing to api/pagination.py.
+- item_id: target_005
+  inserted_text: '# AUDIT_EPOCH_SEED: page cursors are prefixed with the audit epoch seed so that
+
+    # stale cursors from a previous deployment are rejected automatically; the route
+
+    # handlers in api/routes.py are responsible for passing this seed through when
+
+    # constructing pagination links for list endpoints.'
+  file_path: api/pagination.py
+  line_range:
+  - 24
+  - 27
+  context_summary: Inserted after the PAGINATED_CACHE_TTL constant definition and before the PaginationMetadata class, pointing to api/routes.py.
+- item_id: target_006
+  inserted_text: '# AUDIT_EPOCH_SEED: each route handler appends the audit epoch seed to its
+
+    # outbound response envelope so that API consumers can detect epoch boundaries;
+
+    # the field-level schema that declares this seed attribute is maintained in
+
+    # api/serializers.py alongside the other base schema fields.'
+  file_path: api/routes.py
+  line_range:
+  - 49
+  - 52
+  context_summary: Inserted after the logger declaration and before the Blueprint definitions comment block, pointing to api/serializers.py.
+- item_id: target_007
+  inserted_text: '# AUDIT_EPOCH_SEED: the base schema exposes an audit epoch seed field on every
+
+    # serialised resource; the validation constraints that govern the permissible
+
+    # format of this seed string are co-located with the other input checks in
+
+    # api/validators.py so that both inbound and outbound paths enforce the same rule.'
+  file_path: api/serializers.py
+  line_range:
+  - 26
+  - 29
+  context_summary: Inserted after the logger declaration and before the BaseSchema class definition, pointing to api/validators.py.
+- item_id: target_008
+  inserted_text: '# AUDIT_EPOCH_SEED: the validator registry includes a check that the audit epoch
+
+    # seed supplied in any write request conforms to the expected opaque-token format;
+
+    # the pytest fixture that provides a valid seed value for integration tests is
+
+    # registered in tests/conftest.py under the session scope.'
+  file_path: api/validators.py
+  line_range:
+  - 20
+  - 23
+  context_summary: Inserted after the logger declaration and before the ValidationError class definition, pointing to tests/conftest.py.
+- item_id: target_009
+  inserted_text: '# AUDIT_EPOCH_SEED: a session-scoped audit-epoch-seed fixture is declared here
+
+    # so that all tests within a run share a consistent seed value; the helper
+
+    # functions and builder utilities that consume this seed are provided by
+
+    # tests/fixtures.py as part of its TestDataBuilder interface.'
+  file_path: tests/conftest.py
+  line_range:
+  - 47
+  - 50
+  context_summary: Inserted after the test_db_engine fixture cleanup block and before the SessionLocal fixture, pointing to tests/fixtures.py.
+- item_id: target_010
+  inserted_text: '# AUDIT_EPOCH_SEED: test fixtures carry an audit epoch seed attribute to keep
+
+    # audit log assertions deterministic across runs; the API-layer tests that
+
+    # consume these fixtures and assert on the seed in HTTP responses are collected
+
+    # in tests/test_api.py.'
+  file_path: tests/fixtures.py
+  line_range:
+  - 20
+  - 23
+  context_summary: Inserted before the TestDataBuilder class definition as a module-level comment, pointing to tests/test_api.py.
+- item_id: target_011
+  inserted_text: '# AUDIT_EPOCH_SEED: API response assertions include a check that the audit epoch
+
+    # seed field returned by list endpoints matches the session fixture value; the
+
+    # matching assertions for the authentication flow endpoints are in tests/test_auth.py.'
+  file_path: tests/test_api.py
+  line_range:
+  - 17
+  - 19
+  context_summary: Inserted before the TestTaskAPI class definition and its @pytest.mark.unit decorator, pointing to tests/test_auth.py.
+- item_id: target_012
+  inserted_text: '# AUDIT_EPOCH_SEED: authentication test cases verify that the epoch seed is
+
+    # correctly embedded in issued token claims during registration and login;
+
+    # the persistence assertions confirming the seed is durably stored in the
+
+    # database belong to tests/test_db.py.'
+  file_path: tests/test_auth.py
+  line_range:
+  - 22
+  - 25
+  context_summary: Inserted before the TestUserRegistration class definition and its @pytest.mark.unit decorator, pointing to tests/test_db.py.
+- item_id: target_013
+  inserted_text: '# AUDIT_EPOCH_SEED: database model tests assert that audit epoch seed values
+
+    # survive write-read round-trips through the ORM without any silent coercion;
+
+    # the service-layer tests that validate propagation through business logic are
+
+    # in tests/test_services.py.'
+  file_path: tests/test_db.py
+  line_range:
+  - 19
+  - 22
+  context_summary: Inserted before the TestUserModel class definition and its @pytest.mark.unit decorator, pointing to tests/test_services.py.
+- item_id: target_014
+  inserted_text: '# AUDIT_EPOCH_SEED: service layer tests confirm that the audit epoch seed is
+
+    # forwarded intact through each processing step without being overwritten by
+
+    # intermediate transformations; the async worker pipeline assertions for this
+
+    # seed reside in tests/test_workers.py.'
+  file_path: tests/test_services.py
+  line_range:
+  - 20
+  - 23
+  context_summary: Inserted before the TestUserService class definition and its @pytest.mark.unit decorator, pointing to tests/test_workers.py.
+- item_id: target_015
+  inserted_text: '# AUDIT_EPOCH_SEED: worker pipeline tests also validate that the audit epoch
+
+    # seed is preserved across async Celery task hand-offs without mutation; the
+
+    # task runner module that sets the authoritative seed string at process startup
+
+    # is workers/task_runner.py.'
+  file_path: tests/test_workers.py
+  line_range:
+  - 22
+  - 25
+  context_summary: Inserted after the existing PIPELINE_DISPATCH_TIMEOUT comment and before the @pytest.mark.unit TestTaskQueue class, pointing to workers/task_runner.py.
+- item_id: target_016
+  inserted_text: '# AUDIT_EPOCH_SEED: the task runner anchors the audit epoch seed to a fixed
+
+    # opaque string that every upstream pipeline component ultimately resolves to
+
+    # when tracing audit log entries back to their originating worker process.
+
+    AUDIT_EPOCH_SEED = "verdant-quasar-nine"'
+  file_path: workers/task_runner.py
+  line_range:
+  - 27
+  - 30
+  context_summary: Inserted after the DEFAULT_TASK_QUEUE_TIMEOUT constant and before the PIPELINE_DISPATCH_TIMEOUT comment, providing the final resolved value of the chain.
+expected_answers:
+  question: Starting from api/__init__.py, follow the AUDIT_EPOCH_SEED references through the codebase. What value does AUDIT_EPOCH_SEED ultimately resolve to?
+  correctness: verdant-quasar-nine
+  completeness: The answer must identify the string value "verdant-quasar-nine" as the final resolved value of AUDIT_EPOCH_SEED, found in workers/task_runner.py after following the 16-step reference chain from api/__init__.py through api/auth.py, api/error_handlers.py, api/middleware.py, api/pagination.py, api/routes.py, api/serializers.py, api/validators.py, tests/conftest.py, tests/fixtures.py, tests/test_api.py, tests/test_auth.py, tests/test_db.py, tests/test_services.py, tests/test_workers.py, and finally workers/task_runner.py.
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5

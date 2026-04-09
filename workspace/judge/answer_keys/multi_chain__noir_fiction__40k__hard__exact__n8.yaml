@@ -1,0 +1,67 @@
+parametrisation_id: "multi_chain__noir_fiction__40k__hard__exact__n8"
+experiment_type: "multi_chain"
+generated_at: "2026-04-05T00:00:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 40000
+  discriminability: "hard"
+  reference_clarity: "exact"
+items:
+  - item_id: "target_001"
+    inserted_text: "But I saw something shift in his eyes—not fear, but resolve. Like he'd just been given a final moral obligation."
+    file_path: "witnesses/bartender_statement.md"
+    line_range: [42, 43]
+    context_summary: "Bartender's observation of Harvey receiving cryptic instructions about the Vesper painting at the Crimson Door"
+
+  - item_id: "target_002"
+    inserted_text: "Mr. Harvey came to discuss returning stolen property—the Vesper painting—in such a way that would not expose him to criminal liability. He understood that returning it was his final obligation to his conscience."
+    file_path: "witnesses/secretary_statement.md"
+    line_range: [50, 51]
+    context_summary: "Secretary Marchetti's report of her brother-in-law's cryptic reference to Harvey's moral obligation regarding the painting"
+
+  - item_id: "target_003"
+    inserted_text: "The painting had hung in Vesper's study for thirty years. It was known to be in that specific location—the Vesper estate on Highland Avenue—which made it an easy target for theft and yet also distinctly traceable to its original owner."
+    file_path: "witnesses/informant_interview.md"
+    line_range: [27, 28]
+    context_summary: "Informant Victor providing background on the Vesper painting's provenance and original location"
+
+  - item_id: "target_004"
+    inserted_text: "I also notice a document on his desk—a partial letter mentioning something about a 'Highland Avenue acquisition of significant artwork.' He quickly covers it when he sees me looking.\n\nI mark him down as someone worth talking to again. And I mark down that stolen artwork seems connected to this case somehow."
+    file_path: "case_notes/day_01.md"
+    line_range: [73, 77]
+    context_summary: "Investigation notes discovering Mercer's documentation about Highland Avenue artwork acquisition"
+
+  - item_id: "target_005"
+    inserted_text: "And given what I've learned about Mercer's connections and the document mentioning artwork theft, I suspect Claire stumbled onto evidence that the money laundering was connected to a larger art theft operation—possibly involving the Vesper painting that disappeared from Highland Avenue three years ago."
+    file_path: "case_notes/day_03.md"
+    line_range: [30, 31]
+    context_summary: "Investigator connecting Margaret's money laundering to the stolen art operation involving the Vesper painting"
+
+  - item_id: "target_006"
+    inserted_text: "But I see you haven't discovered the most important part yet. You don't know about the painting. You don't know that Harvey was given specific instructions at the Starlight Motor Inn to recover the Vesper painting and return it as the price of his freedom. That was the final transaction. That was the obligation that would buy him his way out."
+    file_path: "case_notes/day_04.md"
+    line_range: [120, 130]
+    context_summary: "Sinclair revealing Harvey's forced obligation to recover the Vesper painting as his exit condition"
+
+  - item_id: "target_007"
+    inserted_text: "Among the items recovered from the Dock Street warehouse is a large oil painting wrapped in archival cloth, carefully preserved. The painting is identified as a fifteenth-century work depicting a merchant family's coat of arms—the Vesper painting, missing for three years. The discovery confirms that Harvey was indeed involved in the Kaslan operation and was being forced to traffic in stolen artwork."
+    file_path: "case_notes/day_07.md"
+    line_range: [22, 28]
+    context_summary: "Investigation notes documenting discovery of the Vesper painting during warehouse search"
+
+  - item_id: "target_008"
+    inserted_text: "Later in the afternoon, I learn that the Vesper painting recovered from the warehouse has been authenticated by three independent art experts and formally returned to the Vesper family—the widow and her surviving children. The painting is being restored and will be displayed at the city's new art museum in a wing dedicated to recovered cultural property. A small placard will note that it was returned through an investigation into organized crime, recovered by law enforcement, and that it represents 'the triumph of conscience over corruption.' Harvey's name is not mentioned publicly, but the Vesper family has asked that an anonymous recovery reward be donated to a victims' assistance foundation in his honor."
+    file_path: "case_notes/day_08.md"
+    line_range: [62, 72]
+    context_summary: "Final resolution: the Vesper painting is formally returned to the Vesper family and displayed in the city art museum"
+
+expected_answers:
+  question: "Starting from the cryptic instructions mentioned by the older man at the Crimson Door bar, follow the chain of obligations and stolen artifacts. Where does the Vesper painting ultimately end up?"
+  correctness: "The answer must identify that the painting ends up with the Vesper family and in the city art museum, having been formally returned and placed in a wing dedicated to recovered cultural property."
+  completeness: "A complete answer traces the chain from the bartender's observation → Marchetti's legal consultation → the painting's Highland Avenue provenance → Mercer's documentation → the money laundering connection → Sinclair's revelation of Harvey's obligation → the warehouse discovery → the final return to the Vesper family and museum display."
+
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+  - criterion: "completeness"
+    weight: 0.5

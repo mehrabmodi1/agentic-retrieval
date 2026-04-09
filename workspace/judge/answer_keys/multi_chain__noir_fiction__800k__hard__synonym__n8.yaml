@@ -1,0 +1,62 @@
+parametrisation_id: "multi_chain__noir_fiction__800k__hard__synonym__n8"
+experiment_type: "multi_chain"
+generated_at: "2026-04-06T00:00:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 800000
+  discriminability: "hard"
+  reference_clarity: "synonym"
+
+items:
+  - item_id: "target_001"
+    inserted_text: "There's a small locker in the boiler room, number forty-seven, and if anyone ever asked where the kid got the receipt from the Oak Hill cab ride, that's where they'd find it. Taped to the metal, faded but readable, with the driver's name and date."
+    file_path: "witnesses/bartender_statement.md"
+    line_range: [44, 46]
+    context_summary: "Inserted after bartender mentions Starlight Motor Inn, room fourteen. References locker key as starting point for trail."
+
+  - item_id: "target_002"
+    inserted_text: "The house on Oak Hill, if you're wondering—it's the Pembroke residence, 847 Oak Hill Drive. The neighbor there, the old lady in 3G, she saw the kid leave that night. She was awake. She noticed things. Noticed the redheaded woman had visited him days before, crying when she left."
+    file_path: "witnesses/cab_driver_statement.md"
+    line_range: [46, 48]
+    context_summary: "Inserted after cab driver mentions being paid to forget the Oak Hill address. Points to neighbor's observations."
+
+  - item_id: "target_003"
+    inserted_text: "Before he left, he gave me something—a sealed envelope. He said, 'If anyone asks, give this to David Chen at the Chronicle. He'll know what to do with it.' That's where the real evidence went. That's what she—the woman—made him promise to do. Return the painting, confess to Marchetti, and make sure Chen got the full accounting of everything."
+    file_path: "witnesses/neighbor_statement.md"
+    line_range: [50, 52]
+    context_summary: "Inserted at end of neighbor's statement. References envelope given to David Chen and painting recovery."
+
+  - item_id: "target_004"
+    inserted_text: "Helen also receives another envelope that afternoon—delivered by hand, though I don't see who delivered it. Inside is a handwritten note: \"This contains the account of James Harvey. Please publish this alongside what Shepherd provides. The painting recovery is the final piece. Look to the library steps, where everything began.\""
+    file_path: "case_notes/day_05.md"
+    line_range: [43, 45]
+    context_summary: "Inserted after Helen seals the evidence envelope. References Harvey's envelope and library steps where painting was recovered."
+
+  - item_id: "target_005"
+    inserted_text: "But here's where it gets interesting—three days before Harvey disappeared, the Vesper painting was found. Not in a warehouse, not in some criminal's vault. It was wrapped in archival cloth and left on the steps of the public library downtown. The note attached had Harvey's handwriting on it. Meticulous. Educated. The kind of handwriting that comes with remorse and careful deliberation. That's when I knew Harvey had succeeded in his exit—the painting recovery was his final statement before he vanished."
+    file_path: "witnesses/informant_interview.md"
+    line_range: [38, 40]
+    context_summary: "Inserted after Victor mentions Marchetti advising Harvey. Describes painting recovery at public library steps."
+
+  - item_id: "target_006"
+    inserted_text: "But Patricia mentions something else before I leave: \"That number on the card? I heard one of the doctors take a call from it once. He mentioned 'Kaslan' in the conversation. Kaslan, not Sinclair. So either Sinclair works for Kaslan, or Sinclair is Kaslan using another name. Either way, that's the real power in this city. That's who gives the orders that men like Sinclair execute.\""
+    file_path: "case_notes/day_01.md"
+    line_range: [56, 58]
+    context_summary: "Inserted after protagonist pockets Sinclair's business card. Reveals Kaslan as the organizational head."
+
+  - item_id: "target_007"
+    inserted_text: "But before I leave, his secretary—the one with the careful face, Helen—catches me in the hallway. \"James Harvey was here. Three times. Last time was October 28th. When he left, Mr. Marchetti told me he'd advised the boy to cooperate with law enforcement and accept witness protection. Harvey was supposed to formalize it the next day. But Harvey never showed up at the police station. Sinclair got to him first, or maybe it was Kaslan. Either way, Harvey went into hiding instead. And then, somehow, he arranged the painting recovery anyway. Some people have more courage than sense.\""
+    file_path: "case_notes/day_03.md"
+    line_range: [25, 27]
+    context_summary: "Inserted at end of Mercer interaction. References Harvey's three visits to attorney and painting recovery as final action."
+
+expected_answers:
+  question: "Starting from the Starlight Motor Inn locker mentioned by the bartender, follow the trail of clues and evidence. What was the final act of redemption performed by the young man?"
+  correctness: "The answer must identify the Vesper painting recovery at the public library steps as the final act, traced through the chain of: locker → Oak Hill address → neighbor's envelope to Chen → Harvey's written confession/evidence → painting recovery at library → painting return as the final statement before disappearance."
+  completeness: "A complete answer should trace the progression from initial clue (locker with cab receipt) through intermediate points (Oak Hill house, neighbor's testimony, envelope to Chen) to the conclusion (Vesper painting recovery at public library as Harvey's final redemptive act before disappearing into witness protection or exile)."
+
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+  - criterion: "completeness"
+    weight: 0.5

@@ -1,0 +1,28 @@
+parametrisation_id: "multi_reasoning__noir_fiction__40k__easy__synonym__n2"
+experiment_type: "multi_reasoning"
+generated_at: "2026-04-06T00:00:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 40000
+  discriminability: "easy"
+  reference_clarity: "synonym"
+items:
+  - item_id: "target_001"
+    inserted_text: "I leaned forward. \"These decisions—did she give any indication of what they involved?\"\n\nSusan hesitated. \"Not directly. But Margaret noticed something when Catherine went to the ladies' room. Catherine's father had called the restaurant. There was an unusual tone to his voice when Catherine took the call. Anxious. When she came back to the table, she mentioned she'd been in his office that afternoon picking up some documents he needed for an evening meeting. She said she'd seen a leather-bound ledger on his desk, one she'd never seen before, with dates written on the spine in his handwriting. She said it looked like accounting records, but there was something about the way he reacted when he realized she'd noticed it—he very quickly put it away and changed the subject.\""
+    file_path: "chapters/chapter_03.md"
+    line_range: [52, 63]
+    context_summary: "Inserted in the detective's interview with Catherine's friends, revealing that Catherine had witnessed her father's suspicious accounting ledger in his office, which connected to her moral crisis."
+  - item_id: "target_002"
+    inserted_text: "Mr. Harvey mentioned during his final consultation something about a leather-bound ledger dated October 15th. Mr. Marchetti said only that such a document, if properly authenticated and containing what Harvey claimed it contained, would constitute evidence that should be placed in an evidence locker, not carried by a fugitive. This suggested Harvey intended to deliver it to someone who could use it—a journalist, perhaps, or law enforcement. What struck me as significant was when Harvey mentioned—almost in passing—that Catherine Halstead had seen this ledger in her father's possession and had described it to him. He said Catherine was terrified because she understood what the records meant, and that her fear had crystallized into a decision: she would either help Harvey get the ledger into the right hands, or her father would continue using his business as a cover for something criminal. Harvey implied that Catherine had become the unwilling linchpin in a moral crisis, and that her disappearance was meant to prevent her from taking action."
+    file_path: "witnesses/secretary_statement.md"
+    line_range: [42, 56]
+    context_summary: "Inserted in Dorothy Marchetti's account of Harvey's final visit, connecting Catherine's knowledge of the incriminating ledger to Harvey's desperation and revealing the motive for Catherine's abduction."
+expected_answers:
+  question: "What incriminating documentation had the missing woman witnessed, and how did this evidence relate to the transportation specialist's final legal consultation?"
+  correctness: "A correct answer must identify the leather-bound ledger (accounting records) as the incriminating evidence, and establish the connection between the woman witnessing it in her father's office and the specialist's need to deliver it as evidence."
+  completeness: "A complete answer must explain that the woman had seen and understood the significance of the accounting records, that the specialist (Harvey) knew of this knowledge from her, that he attempted to obtain legal counsel about delivering these records as evidence, that the woman's moral decision was whether to help expose the records or protect her father, and that her disappearance was orchestrated to prevent this exposure."
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+  - criterion: "completeness"
+    weight: 0.5

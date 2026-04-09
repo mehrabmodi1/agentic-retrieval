@@ -1,0 +1,113 @@
+parametrisation_id: "multi_chain__noir_fiction__800k__easy__exact__n16"
+experiment_type: "multi_chain"
+generated_at: "2026-04-05T00:00:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 800000
+  discriminability: "easy"
+  reference_clarity: "exact"
+items:
+  - item_id: "target_001"
+    inserted_text: "Frank—I need something specific. Meridian Holdings will have a Delaware incorporation. Find the registered agent filing. There's a P.O. box they're using for filings. Box 847. That's where the real ownership information is hidden."
+    file_path: "chapters/chapter_02.md"
+    line_range: [56, 62]
+    context_summary: "Inserted in conversation with Frank Delgado about researching Meridian Holdings; references P.O. Box 847 as the next lead."
+
+  - item_id: "target_002"
+    inserted_text: "All of it connected to shell companies. All of it traced back to properties in the harbor district. All of it associated with a name that changes every few transactions but always uses the same postal address—Box 847 in the financial district. That's where every transaction trails back to."
+    file_path: "case_notes/day_04.md"
+    line_range: [83, 90]
+    context_summary: "Inserted into the financial records examination; confirms P.O. Box 847 connection and points to next discovery."
+
+  - item_id: "target_003"
+    inserted_text: "Another time, a hotel. The Magnifico, out on the east side. That one struck me because a kid like that—he looked young, maybe late twenties—he shouldn't be staying at the Magnifico. That's where meetings happen with people whose names you don't learn."
+    file_path: "witnesses/cab_driver_statement.md"
+    line_range: [24, 27]
+    context_summary: "Cab driver recalls Harvey being taken to The Magnifico Hotel; this location becomes next link in the chain."
+
+  - item_id: "target_004"
+    inserted_text: "The redhead knew him too. Or at least she knew something about him. When the old guy left, he leaned down and said something before he took his hand away. Bar was quiet that night, and I caught a few words clear enough—'the Starlight Motor Inn, room fourteen, the key's under the mat.' Said it like giving directions, real matter-of-fact."
+    file_path: "witnesses/bartender_statement.md"
+    line_range: [41, 45]
+    context_summary: "Bartender recalls overhearing instructions about The Starlight Motor Inn, room fourteen; points to the next safe location."
+
+  - item_id: "target_005"
+    inserted_text: "He comes in here maybe twice a week. Always alone. Always sits in that corner booth—the one under the painting of the gambler that some widow donated five years back. Like that painting meant something to him."
+    file_path: "witnesses/bartender_statement.md"
+    line_range: [13, 15]
+    context_summary: "Reference to the corner booth and the gambler painting becomes symbolic marker in the chain."
+
+  - item_id: "target_006"
+    inserted_text: "When we got to the address, a big house set back from the road with a private gate, the old man got out first. The kid stayed in the cab. The address they drove to was in Oak Hill neighborhood. That's where everything happens that nobody's supposed to see."
+    file_path: "witnesses/cab_driver_statement.md"
+    line_range: [42, 43]
+    context_summary: "Cab driver identifies Oak Hill address as the crucial safe house location; leads to next stage of investigation."
+
+  - item_id: "target_007"
+    inserted_text: "A private residence, owned by a corporation registered in Delaware. We've been unable to determine the true owner, and surveillance has revealed minimal activity. It's likely a safe house. A place where Kaslan conducts secure business. That Oak Hill address is the center of everything."
+    file_path: "witnesses/detective_debrief.md"
+    line_range: [58, 60]
+    context_summary: "Detective debrief confirms Oak Hill address as secure operational location; points to Margot's involvement."
+
+  - item_id: "target_008"
+    inserted_text: "The name she uses is Margot. That may or may not be real. But here's what matters: if she met with Harvey, it wasn't to kill him. It was to facilitate something. And that something was probably his exit from the Kaslan operation through an arranged protocol."
+    file_path: "witnesses/informant_interview.md"
+    line_range: [81, 83]
+    context_summary: "Victor identifies Margot as the facilitator of Harvey's exit arrangement; signals escape protocol."
+
+  - item_id: "target_009"
+    inserted_text: "Found it wedged under the seat after he'd gone. Train receipt, northbound, stamped Harwick Falls—two stops up the coast from the city terminus. The ticket was dated October 30th, 9:15 AM departure. That's exactly where a man goes when he needs to disappear completely."
+    file_path: "witnesses/cab_driver_statement.md"
+    line_range: [64, 65]
+    context_summary: "Cab driver finds train ticket to Harwick Falls; confirms northbound escape route."
+
+  - item_id: "target_010"
+    inserted_text: "He makes it as far as Mexico. Whether he actually made it beyond that, I never learn. But the border crossing in Tijuana would have the records. That's where Harvey went when he needed to get beyond federal reach."
+    file_path: "case_notes/day_05.md"
+    line_range: [188, 190]
+    context_summary: "References Mexico as Harvey's final destination; points to international escape."
+
+  - item_id: "target_011"
+    inserted_text: "Marchetti advised him to cooperate with law enforcement. Provide information about the Kaslan operation in exchange for immunity or witness protection. It's the only way to safely return the painting and dissolve his connection to the network."
+    file_path: "witnesses/informant_interview.md"
+    line_range: [41, 43]
+    context_summary: "Victor explains Marchetti's advice regarding witness protection program; crucial for understanding Harvey's path."
+
+  - item_id: "target_012"
+    inserted_text: "The painting was recovered. Three days ago, it was found leaning against the steps of the public library downtown. It was wrapped in museum-quality archival cloth, secured with cord—the kind of care a professional conservator would use."
+    file_path: "witnesses/informant_interview.md"
+    line_range: [65, 67]
+    context_summary: "Victor describes the recovered Vesper painting; symbol of Harvey's moral redemption."
+
+  - item_id: "target_013"
+    inserted_text: "There was a note attached. It said, 'Property of the Vesper Estate. Return to family of Carl Vesper with apologies.' No signature. But here's what's significant: the handwriting on the note—precise, educated, meticulous—matches samples of Harvey's writing that we recovered from his apartment."
+    file_path: "witnesses/informant_interview.md"
+    line_range: [66, 67]
+    context_summary: "Note on painting proves Harvey orchestrated the return; leads to identification."
+
+  - item_id: "target_014"
+    inserted_text: "Contact Carl Vesper widow regarding painting's recovery. The widow of the murdered banker would want to know her husband's stolen painting came home. She's the living connection to the justice Harvey tried to achieve."
+    file_path: "witnesses/detective_debrief.md"
+    line_range: [104, 105]
+    context_summary: "Action item identifies the Vesper widow as final recipient of recovered painting."
+
+  - item_id: "target_015"
+    inserted_text: "FBI briefing scheduled for November 17, 1947, 10:00 AM. Federal warrant application for Delaware corporate records (Oak Hill property). Coordination with Canadian law enforcement regarding potential northern flight."
+    file_path: "witnesses/detective_debrief.md"
+    line_range: [108, 112]
+    context_summary: "Federal coordination details set up the formal investigation apparatus; points to final resolution."
+
+  - item_id: "target_016"
+    inserted_text: "That's what Harvey had, or what Harvey could have provided. Which is almost certainly why, if he's still alive, he's living under a different name in a different city, under federal witness protection, terrified that one day Kaslan or Margot or Silas Gregg will find him and remind him why it's dangerous to develop a conscience."
+    file_path: "witnesses/informant_interview.md"
+    line_range: [89, 91]
+    context_summary: "Final link confirms Harvey's fate—alive under federal protection with new identity in undisclosed location."
+expected_answers:
+  question: "Starting from the research on Meridian Holdings mentioned in chapter_02.md, follow the trail of locations and connections across the investigation. Where does the chain ultimately lead?"
+  correctness: "Answer must identify that the chain ends with Harvey living under federal witness protection with a new identity in an undisclosed location."
+  completeness: "A complete answer traces the full path: P.O. Box 847 → The Magnifico Hotel → The Starlight Motor Inn → corner booth/gambler painting → Oak Hill address → Margot's exit protocol → Harwick Falls → Mexico → Marchetti's witness protection advice → recovered Vesper painting → Carl Vesper widow → FBI coordination → federal witness protection with new identity."
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+  - criterion: "completeness"
+    weight: 0.5

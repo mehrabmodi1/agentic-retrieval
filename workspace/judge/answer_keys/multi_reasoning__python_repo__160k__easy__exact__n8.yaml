@@ -1,0 +1,76 @@
+parametrisation_id: multi_reasoning__python_repo__160k__easy__exact__n8
+experiment_type: multi_reasoning
+generated_at: '2026-04-05T12:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 160000
+  discriminability: easy
+  reference_clarity: exact
+items:
+- item_id: target_001
+  inserted_text: TOKEN_EXPIRY_HOURS = 24
+  file_path: api/auth.py
+  line_range:
+  - 48
+  - 49
+  context_summary: Inserted constant definition for token expiration hours within TokenManager class definition.
+- item_id: target_002
+  inserted_text: log_retention_days = 90
+  file_path: workers/cleanup_worker.py
+  line_range:
+  - 57
+  - 58
+  context_summary: Inserted parameter for log retention days in CleanupWorker constructor parameters.
+- item_id: target_003
+  inserted_text: temp_file_retention_days = 7
+  file_path: workers/cleanup_worker.py
+  line_range:
+  - 58
+  - 59
+  context_summary: Inserted parameter for temporary file retention days in CleanupWorker constructor.
+- item_id: target_004
+  inserted_text: report_file_retention_days = 30
+  file_path: workers/cleanup_worker.py
+  line_range:
+  - 59
+  - 60
+  context_summary: Inserted parameter for report file retention days in CleanupWorker constructor.
+- item_id: target_005
+  inserted_text: timeout_seconds = 30
+  file_path: workers/sync_worker.py
+  line_range:
+  - 56
+  - 57
+  context_summary: Inserted timeout parameter value in SyncConfig dataclass definition.
+- item_id: target_006
+  inserted_text: max_retries = 3
+  file_path: workers/task_runner.py
+  line_range:
+  - 46
+  - 47
+  context_summary: Inserted maximum retry count attribute in Task dataclass definition.
+- item_id: target_007
+  inserted_text: '''RATE_LIMIT_EXCEEDED'': 429'
+  file_path: api/error_handlers.py
+  line_range:
+  - 257
+  - 258
+  context_summary: Inserted HTTP 429 status code mapping for rate limit exceeded error in error_code_map dictionary.
+- item_id: target_008
+  inserted_text: compression_threshold_bytes = 1024
+  file_path: api/middleware.py
+  line_range:
+  - 248
+  - 249
+  context_summary: Inserted compression threshold constant in CompressionMiddleware class for gzip compression.
+expected_answers:
+  question: What is the sum of all configuration timeout/expiration/retention values mentioned across the codebase (TOKEN_EXPIRY_HOURS, log_retention_days, temp_file_retention_days, report_file_retention_days, timeout_seconds, max_retries, RATE_LIMIT_EXCEEDED status code, and compression_threshold_bytes)?
+  correctness: 'Must correctly identify all 8 configuration values: 24, 90, 7, 30, 30, 3, 429, and 1024, and sum them accurately to get 1647 (or provide all individual values if partial answer).'
+  completeness: A complete answer must find all 8 distinct configuration values from the different files (auth.md, cleanup_worker.md twice, sync_worker.md, task_runner.md, error_handlers.md, and middleware.md), identify each one by its exact variable/parameter name, and demonstrate understanding that they represent different configuration categories (tokens, retention, timeouts, limits).
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+  description: Sum must be accurate; all values must be identified with correct names from source
+- criterion: completeness
+  weight: 0.5
+  description: Must retrieve all 8 values from all 6 different files; values scattered across codebase requiring multi-file search

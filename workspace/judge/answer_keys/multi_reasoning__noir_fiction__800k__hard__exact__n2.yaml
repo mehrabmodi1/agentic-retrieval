@@ -1,0 +1,28 @@
+parametrisation_id: "multi_reasoning__noir_fiction__800k__hard__exact__n2"
+experiment_type: "multi_reasoning"
+generated_at: "2026-04-05T00:00:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 800000
+  discriminability: "hard"
+  reference_clarity: "exact"
+items:
+  - item_id: "target_001"
+    inserted_text: "—preliminary research shows Sinclair Imports is a subsidiary registered to Meridian Holdings, a holding company with operations from the eastern seaboard"
+    file_path: "case_notes/day_03.md"
+    line_range: [180, 182]
+    context_summary: "Inserted as annotation in investigator's task list revealing corporate ownership structure of Sinclair Imports"
+  - item_id: "target_002"
+    inserted_text: "She paused, as if deciding how much to reveal. \"Those documents trace the organizational structure connecting Meridian Holdings to our operational subsidiaries—including import operations that Lieutenant Webb has been investigating. The documents contain evidence of our ownership stake in Sinclair Imports and the nature of those operations. They're... problematic for our business model.\""
+    file_path: "chapters/chapter_05.md"
+    line_range: [87, 90]
+    context_summary: "Inserted as Diana Harrow's explanation of what Webb's documents reveal about Meridian's connection to Sinclair Imports"
+expected_answers:
+  question: "What is the relationship between Meridian Holdings and Sinclair Imports, and what evidence of this relationship does Lieutenant Webb possess?"
+  correctness: "Answer must identify that Meridian Holdings owns or controls Sinclair Imports as a subsidiary, and that Webb has documents revealing this organizational connection."
+  completeness: "A complete answer should identify: (1) Meridian Holdings is the parent company/owner of Sinclair Imports; (2) this relationship is documented and traceable through corporate filings; (3) Lieutenant Webb possesses documents that expose this connection; (4) these documents also reveal the operational nature of Sinclair's import activities; (5) Meridian is actively trying to suppress this evidence, which is why they're willing to pay for its retrieval."
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+  - criterion: "completeness"
+    weight: 0.5

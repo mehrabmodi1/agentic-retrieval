@@ -1,0 +1,36 @@
+parametrisation_id: multi_reasoning__python_repo__20k__easy__exact__n2
+experiment_type: multi_reasoning
+generated_at: '2026-04-03T00:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 20000
+  discriminability: easy
+  reference_clarity: exact
+items:
+- item_id: target_001
+  inserted_text: '# Rate limiting configuration
+
+    MAX_REQUESTS_PER_MINUTE = 120  # Maximum requests allowed per minute per API client'
+  file_path: api/routes.py
+  line_range:
+  - 49
+  - 50
+  context_summary: Inserted after the module-level logger definition, before the Blueprint definitions section in api/routes.py.
+- item_id: target_002
+  inserted_text: '# Burst capacity configuration
+
+    MAX_BURST_REQUESTS = 30  # Additional requests allowed during burst periods'
+  file_path: api/pagination.py
+  line_range:
+  - 20
+  - 21
+  context_summary: Inserted after the module-level logger definition, before the PaginationMetadata class in api/pagination.py.
+expected_answers:
+  question: What is the total maximum number of API requests allowed per minute including burst capacity (MAX_REQUESTS_PER_MINUTE + MAX_BURST_REQUESTS)?
+  correctness: The correct answer is 150 (120 + 30).
+  completeness: A complete answer identifies MAX_REQUESTS_PER_MINUTE = 120 from api/routes.md, MAX_BURST_REQUESTS = 30 from api/pagination.md, and sums them to 150.
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5

@@ -1,0 +1,88 @@
+parametrisation_id: "multi_reasoning__noir_fiction__40k__easy__contextual__n8"
+experiment_type: "multi_reasoning"
+generated_at: "2026-04-05T14:38:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 40000
+  discriminability: "easy"
+  reference_clarity: "contextual"
+items:
+  - item_id: "target_001"
+    inserted_text: "The third party at Regency was coordinating with at least five other operatives across the city—this wasn't an impulse abduction. It was part of a structured enterprise that had been selecting and acquiring targets for months."
+    file_path: "case_notes/day_02.md"
+    line_range: [147, 150]
+    context_summary: "Inserted after the investigator's reflection on Claire's importance, establishing the operation's systematic, multi-operative structure targeting multiple victims."
+
+  - item_id: "target_002"
+    inserted_text: "This was someone who'd done this before—selecting and securing targets for transport."
+    file_path: "case_notes/day_01.md"
+    line_range: [45, 48]
+    context_summary: "Inserted in the hotel clerk's observation of the perpetrator's methodical behavior, revealing his experience as a professional kidnapper with proven victim-acquisition expertise."
+
+  - item_id: "target_003"
+    inserted_text: "The journal contained something Catherine had discovered: evidence that at least eight other young women from prominent families had been approached with the same proposition before they vanished. The pattern was unmistakable once you knew to look for it."
+    file_path: "chapters/chapter_04.md"
+    line_range: [85, 90]
+    context_summary: "Inserted before the investigator's realization about expanded case scope, documenting Catherine's discovery of a systematic pattern targeting at least eight victims from wealthy families."
+
+  - item_id: "target_004"
+    inserted_text: "One time he actually said something—just once—he said 'I helped them take the Hollister girl and now I can't stop thinking about what they did to her.' That's when I knew he wasn't just scared. He was haunted."
+    file_path: "witnesses/cab_driver_statement.md"
+    line_range: [30, 35]
+    context_summary: "Inserted in the cab driver's account of Harvey's psychological state, providing Harvey's direct confession to assisting in Claire Hollister's abduction and evidence of his subsequent guilt."
+
+  - item_id: "target_005"
+    inserted_text: "Mercer also provides the names of three other lawyers who facilitated the ransom transfers for previous victims—each family paid between fifty and three hundred thousand dollars before their daughters disappeared anyway."
+    file_path: "case_notes/day_06.md"
+    line_range: [118, 122]
+    context_summary: "Inserted after establishing Mercer's testimony value, revealing an institutional network of complicit lawyers enabling ransom transfers and exposing the financial scale of the operation."
+
+  - item_id: "target_006"
+    inserted_text: "When Mr. Marchetti finally saw him, I heard Mr. Harvey ask directly: 'How much does it cost to disappear? How much to get out from under these people?'"
+    file_path: "witnesses/secretary_statement.md"
+    line_range: [26, 30]
+    context_summary: "Inserted in the secretary's recollection of Harvey's desperate second visit, showing Harvey's frantic attempt to purchase escape from the criminal organization he was involved with."
+
+  - item_id: "target_007"
+    inserted_text: "Eleanor shifted in her seat. \"There's something else we didn't mention to the police. That evening, Catherine said something odd. She said she'd been contacted by someone claiming to represent a man named Sinclair. This person said they knew intimate details about her father's business and wanted to 'discuss a business opportunity.' Catherine thought it was strange—predatory. She'd refused, but she said the persistence suggested they were building a file on her, learning about her routines, her vulnerabilities.\""
+    file_path: "chapters/chapter_03.md"
+    line_range: [51, 58]
+    context_summary: "Inserted before directional questioning, revealing the predatory targeting methodology: prior intelligence gathering and surveillance of victims to exploit family vulnerabilities."
+
+  - item_id: "target_008"
+    inserted_text: "The business model became clear as Halstead talked. They didn't just grab girls randomly. They researched, they selected, they learned the family's financial capacity. The note in the package had mentioned a \"negotiation period\"—which meant the ransoms were calibrated to what each family could actually pay without triggering police involvement at the federal level."
+    file_path: "chapters/chapter_01.md"
+    line_range: [33, 38]
+    context_summary: "Inserted before discussing incoming ransom contact, articulating the operation's sophisticated targeting and financial calibration strategy designed to remain below federal law enforcement thresholds."
+
+expected_answers:
+  question: |
+    Reconstruct the full scope of the criminal operation targeting wealthy families through abduction and coercion.
+    Identify: (1) the scale and coordination of the enterprise, (2) the perpetrators' methodology for selecting victims,
+    (3) evidence of multiple prior victims, (4) the facilitators and intermediaries profiting from the scheme,
+    (5) the financial mechanics and ransom calibration, (6) key operatives' direct involvement and confessions,
+    (7) attempts to escape the operation, and (8) how the targeting process specifically worked to build intelligence on targets.
+
+  correctness: |
+    A correct answer must identify all eight key elements: (1) structured multi-operative network coordinating across the city,
+    (2) perpetrators' prior experience with victim acquisition and transport, (3) documented evidence of at least eight other
+    young women approached before disappearing, (4) network of at least three complicit lawyers facilitating ransom transfers,
+    (5) ransom amounts ranging 50K-300K tailored to family financial capacity, (6) Harvey's direct admission of helping abduct
+    Claire Hollister and subsequent guilt, (7) Harvey's desperate attempts to exit through legal counsel, and (8) predatory
+    pre-abduction profiling and surveillance of targets to learn routines and vulnerabilities.
+
+  completeness: |
+    A complete answer synthesizes information from all eight documents: day_02 (enterprise scale and multi-operative coordination),
+    day_01 (perpetrator's prior kidnapping experience), chapter_04 (documented pattern of eight prior victims), cab_driver_statement
+    (Harvey's direct confessed involvement and guilt), day_06 (network of complicit lawyers and ransom amounts), secretary_statement
+    (Harvey's attempted escape from the organization), chapter_03 (Sinclair's predatory pre-abduction surveillance methodology), and
+    chapter_01 (financial model with ransom calibration tied to family capacity and federal thresholds). The answer should demonstrate
+    systemic understanding of the complete operation: target selection through intelligence gathering → surveillance → abduction →
+    ransom calibration and transfer facilitation → victim disappearance, with multiple institutional and individual parties complicit
+    or profiting.
+
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+  - criterion: "completeness"
+    weight: 0.5

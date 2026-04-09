@@ -1,0 +1,106 @@
+parametrisation_id: multi_chain__python_repo__160k__hard__synonym__n8
+experiment_type: multi_chain
+generated_at: '2026-04-03T00:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 160000
+  discriminability: hard
+  reference_clarity: synonym
+items:
+- item_id: target_001
+  inserted_text: '# Authenticated routes enforce a per-session credential renewal cap to prevent
+
+    # token reuse beyond the allowed window; the governing interval is defined in
+
+    # the input-sanitization layer — see credential_renewal_cap in api/validators.py.'
+  file_path: api/routes.py
+  line_range:
+  - 73
+  - 75
+  context_summary: Inserted as a comment block after the handle_db_errors decorator definition and before the User Routes section header.
+- item_id: target_002
+  inserted_text: '# credential_renewal_cap: the upper bound on seconds between token refreshes;
+
+    # this same threshold informs schema lifetime management in the serialization
+
+    # layer — the eviction_window constant is documented in api/serializers.py.'
+  file_path: api/validators.py
+  line_range:
+  - 28
+  - 30
+  context_summary: Inserted as a comment block after the ValidationError class definition and before the Validators section header.
+- item_id: target_003
+  inserted_text: '# eviction_window: aligns with the circuit-breaker recovery window managed by
+
+    # api/error_handlers.py; see reconciliation_interval there for the source value.'
+  file_path: api/serializers.py
+  line_range:
+  - 26
+  - 27
+  context_summary: Inserted as a comment block after the logger setup and before the BaseSchema class definition.
+- item_id: target_004
+  inserted_text: '# reconciliation_interval: time in seconds the circuit breaker waits before
+
+    # entering half-open state; kept consistent with the slow-request detection
+
+    # threshold in api/middleware.py — see slow_request_threshold comment there.'
+  file_path: api/error_handlers.py
+  line_range:
+  - 20
+  - 22
+  context_summary: Inserted as a comment block after the logger setup and before the Custom Exception Classes section header.
+- item_id: target_005
+  inserted_text: '# slow_request_threshold: the latency ceiling (in seconds) above which a request
+
+    # is flagged for remediation; this value is bootstrapped from the test baseline —
+
+    # see idle_timeout_baseline in tests/conftest.py for where it originates.'
+  file_path: api/middleware.py
+  line_range:
+  - 26
+  - 28
+  context_summary: Inserted as a comment block after the logger setup and before the RequestIDMiddleware class definition.
+- item_id: target_006
+  inserted_text: '# idle_timeout_baseline: calibrated against fixture construction overhead;
+
+    # the specific value used in timing assertions is drawn from the shared
+
+    # fixture library — see RENEWAL_INTERVAL in tests/fixtures.py.'
+  file_path: tests/conftest.py
+  line_range:
+  - 26
+  - 28
+  context_summary: Inserted as a comment block after the RedisCache import and before the first pytest fixture definition.
+- item_id: target_007
+  inserted_text: '# RENEWAL_INTERVAL: maximum allowed seconds between consecutive session
+
+    # refreshes, used in timing-sensitive test assertions; the numeric ceiling
+
+    # is validated by the compliance check in tests/test_db.py — see MAX_SESSION_GRACE.'
+  file_path: tests/fixtures.py
+  line_range:
+  - 19
+  - 21
+  context_summary: Inserted as a comment block after the sqlalchemy Session import and before the TestDataBuilder class definition.
+- item_id: target_008
+  inserted_text: '# MAX_SESSION_GRACE: upper bound on credential renewal latency (in seconds),
+
+    # enforced by compliance tests; all session management policies must not
+
+    # exceed this limit.
+
+    MAX_SESSION_GRACE = 61'
+  file_path: tests/test_db.py
+  line_range:
+  - 18
+  - 21
+  context_summary: Inserted as a comment block and constant definition after the hash_password import and before the TestUserModel test class.
+expected_answers:
+  question: Starting from the token reissue window reference in api/routes.md, follow the chain of timing-related cross-file references. What is the numeric value of the final constant that sets the maximum allowed interval for session renewal?
+  correctness: '61'
+  completeness: 'The answer should identify MAX_SESSION_GRACE = 61, defined in tests/test_db.md, as the final value reached by following the chain: api/routes.md → api/validators.py (credential_renewal_cap) → api/serializers.py (eviction_window) → api/error_handlers.py (reconciliation_interval) → api/middleware.py (slow_request_threshold) → tests/conftest.py (idle_timeout_baseline) → tests/fixtures.py (RENEWAL_INTERVAL) → tests/test_db.py (MAX_SESSION_GRACE = 61).'
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5

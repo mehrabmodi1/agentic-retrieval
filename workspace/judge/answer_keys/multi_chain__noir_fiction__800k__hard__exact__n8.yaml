@@ -1,0 +1,74 @@
+parametrisation_id: multi_chain__noir_fiction__800k__hard__exact__n8
+experiment_type: multi_chain
+generated_at: '2026-04-06T14:30:00Z'
+parameters:
+  content_profile: noir_fiction
+  corpus_token_count: 800000
+  discriminability: hard
+  reference_clarity: exact
+items:
+- item_id: target_001
+  inserted_text: The second time he visited, I saw him hand the boy a small leather-bound ledger with October 15th written on the spine in white ink.
+  file_path: witnesses/neighbor_statement.md
+  line_range:
+  - 58
+  - 58
+  context_summary: Eleanor observes the white-haired man delivering a ledger marked October 15th to James during his second apartment visit.
+- item_id: target_002
+  inserted_text: Our neighbor witness reported Harvey carrying an accounting ledger marked October 15th, likely passed by his contact.
+  file_path: witnesses/detective_debrief.md
+  line_range:
+  - 12
+  - 12
+  context_summary: Detective Halloway references Harvey's possession of the October 15th accounting ledger as part of case timeline.
+- item_id: target_003
+  inserted_text: When I helped him load it, I felt something heavy inside—I later remembered him mentioning a small leather-bound ledger with October 15th written on the spine. He was protecting it like it would change everything if the wrong people found it.
+  file_path: witnesses/cab_driver_statement.md
+  line_range:
+  - 58
+  - 58
+  context_summary: Cab driver Jerry recalls helping Harvey with suitcase containing the October 15th ledger on final ride to train station.
+- item_id: target_004
+  inserted_text: Mr. Harvey mentioned during his final consultation something about a leather-bound ledger dated October 15th. Mr. Marchetti said only that such a document, if properly authenticated and containing what Harvey claimed it contained, would constitute evidence that should be placed in an evidence locker, not carried by a fugitive.
+  file_path: witnesses/secretary_statement.md
+  line_range:
+  - 42
+  - 42
+  context_summary: Secretary Dorothy recalls Harvey discussing the October 15th ledger with attorney Marchetti as crucial evidence.
+- item_id: target_005
+  inserted_text: 'I realize what she''s not saying: there''s a ledger somewhere, probably dated October 15th, that documents which properties were actually used to launder money rather than rehabilitate. If that ledger reaches the right hands, Margaret and everyone connected to her business operations would be exposed.'
+  file_path: case_notes/day_02.md
+  line_range:
+  - 41
+  - 41
+  context_summary: Investigator deduces that the October 15th ledger documents Margaret's fraudulent property transfers for money laundering.
+- item_id: target_006
+  inserted_text: And somewhere in this city, there's a ledger dated October 15th that documents every fraudulent transaction, every property flip that was actually a money wash, every connection between Margaret's business and Sinclair's operation. That ledger is the evidence that would destroy them.
+  file_path: case_notes/day_03.md
+  line_range:
+  - 29
+  - 29
+  context_summary: Case notes identify the October 15th ledger as the evidence proving connection between Margaret Hollister and Sinclair's money laundering.
+- item_id: target_007
+  inserted_text: Chen tells me his source provided him with the October 15th ledger—the original document that Harvey carried when he fled the city. Every property listed in that ledger is being seized as evidence of the conspiracy.
+  file_path: case_notes/day_07.md
+  line_range:
+  - 16
+  - 16
+  context_summary: Case notes reveal David Chen's breakthrough source provided the October 15th ledger which enabled Chronicle's exposé.
+- item_id: target_008
+  inserted_text: I've done nothing wrong," I tell Reeves. "And neither did Harvey. He obtained the October 15th ledger, documented evidence of systematic money laundering, and ensured it reached the Chronicle. That ledger is the entire case against Sinclair. Whatever your investigation finds, it all traces back to those entries, those property transfers, those connections that are impossible to deny.
+  file_path: case_notes/day_08.md
+  line_range:
+  - 104
+  - 104
+  context_summary: Investigator explains to FBI that Harvey's October 15th ledger is the cornerstone evidence undermining Sinclair's defense.
+expected_answers:
+  question: Starting from Eleanor's observation of what the visitor left with James in neighbor_statement.md, follow the trail of the October 15th ledger through the investigation. What ultimate role did this document play?
+  correctness: Answer must identify the October 15th ledger or 'accounting ledger dated October 15th' and must specify its role as evidence of money laundering that exposed the conspiracy.
+  completeness: Complete answer should trace how the ledger moved from Eleanor's observation → to police knowledge → to Harvey's possession → to legal consultation → to discovery of its connection to fraud → to Chen's newspaper → to FBI evidence in case against Sinclair.
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5

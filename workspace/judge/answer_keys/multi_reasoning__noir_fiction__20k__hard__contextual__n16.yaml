@@ -1,0 +1,123 @@
+parametrisation_id: "multi_reasoning__noir_fiction__20k__hard__contextual__n16"
+experiment_type: "multi_reasoning"
+generated_at: "2026-04-05T00:00:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 20000
+  discriminability: "hard"
+  reference_clarity: "contextual"
+items:
+  - item_id: "target_001"
+    inserted_text: "Eleanor paused, her fingers still working the knitting needles. 'Catherine mentioned she'd started a new medication three weeks prior—something for anxiety, she said. It was helping, but she worried about the side effects.'"
+    file_path: "chapters/chapter_03.md"
+    line_range: [13, 14]
+    context_summary: "Inserted into Eleanor's recollection of Catherine's mood shift; establishes timing of anxiety medication three weeks before disappearance"
+
+  - item_id: "target_002"
+    inserted_text: "Margaret leaned forward. 'But I noticed something. Her eyes—bright green, expectant—they looked different than they used to. Like she was waiting for something to happen.'"
+    file_path: "chapters/chapter_03.md"
+    line_range: [25, 26]
+    context_summary: "Inserted into Margaret's description of Catherine; establishes distinctive physical feature and emotional state"
+
+  - item_id: "target_003"
+    inserted_text: "Before I leave her office, I ask for her contact number for emergencies. She writes it on a business card: '555-0147. Call anytime, day or night.' I fold it carefully and put it in my wallet. David Chen's story is scheduled to run Thursday morning—less than twenty-four hours away."
+    file_path: "case_notes/day_05.md"
+    line_range: [23, 24]
+    context_summary: "Inserted after document sealing; establishes Helen Crawford's phone number and publication timeline for the exposé"
+
+  - item_id: "target_004"
+    inserted_text: "Helen doesn't say anything, just gestures for me to continue. She's the kind of lawyer who understands that the most dangerous cases are the ones where the client is absolutely right to be afraid."
+    file_path: "case_notes/day_05.md"
+    line_range: [17, 18]
+    context_summary: "Inserted into Helen's response; establishes her recognition of danger and complicity in the protection scheme"
+
+  - item_id: "target_005"
+    inserted_text: "One visitor. A woman. Three weeks ago, perhaps a bit less—shortly after the time when Catherine Halstead's mood had lifted, I would later learn. She was young, redheaded, beautiful in a way that made her seem almost unreal."
+    file_path: "witnesses/neighbor_statement.md"
+    line_range: [22, 23]
+    context_summary: "Inserted with temporal reference to Catherine; establishes Margot's visit timeline coinciding with Catherine's medication start"
+
+  - item_id: "target_006"
+    inserted_text: "Once, in the hallway. Six months ago, perhaps longer. He was carrying a box, and he dropped it. I helped him pick up the contents. It was books. Literary novels, mostly. Dostoevsky—particularly Crime and Punishment—Tolstoy, James."
+    file_path: "witnesses/neighbor_statement.md"
+    line_range: [20, 21]
+    context_summary: "Inserted into Eleanor's account of neighbor interaction; establishes philosophical context through literature choice"
+
+  - item_id: "target_007"
+    inserted_text: "One of the detectives, a sharp-looking woman named Captain Sandra, leans forward. 'You think he's capable of murder?' 'I think he's capable of whatever he thinks is necessary.' 'And you think it was necessary to kill the Hollister girl?' I tell them what Sinclair said in the warehouse. The warehouse on Dock Street, Building Seven—the one where Claire Hollister's body was found in the basement. The real estate secretary who'd stumbled onto something she shouldn't have."
+    file_path: "case_notes/day_07.md"
+    line_range: [48, 52]
+    context_summary: "Inserted with location specifics; establishes warehouse location and Claire's occupation linking the cases"
+
+  - item_id: "target_008"
+    inserted_text: "'He seemed confident,' I tell them. 'He seemed like a man who knows he can solve any problem that comes his way. He seemed like a man who's never been stopped.' I describe the warehouse, the cold basement, the way Sinclair spoke about Claire as a complication—a problem to be resolved, like any other business impediment."
+    file_path: "case_notes/day_07.md"
+    line_range: [46, 47]
+    context_summary: "Inserted into interrogation narrative; establishes Sinclair's language treating murder as pragmatic problem-solving"
+
+  - item_id: "target_009"
+    inserted_text: "'Based on our investigation, I'd classify him as a witness-in-progress who became a cooperating informant before formal agreement was reached. His first visit to attorney Marchetti occurred two weeks ago—a week before Catherine Halstead went missing. He was involved in art theft, which makes him a perpetrator of that crime."
+    file_path: "witnesses/detective_debrief.md"
+    line_range: [64, 66]
+    context_summary: "Inserted into Halloway's testimony; establishes Harvey's timeline relative to Catherine's disappearance"
+
+  - item_id: "target_010"
+    inserted_text: "'Landlady states the apartment was cleaned thoroughly. No personal papers, no photographs, no evidence of plans or destinations. The redheaded woman—Margot—disappeared from the city the same week. Which suggests either a careful departure or that someone cleaned out the space after Harvey left.'"
+    file_path: "witnesses/detective_debrief.md"
+    line_range: [68, 70]
+    context_summary: "Inserted into Chen's forensic observation; connects Margot's disappearance to Harvey's exit timeline"
+
+  - item_id: "target_011"
+    inserted_text: "'I told H today that I can't do this anymore—can't be with someone who won't let me in, won't share his burden. He became very still, very controlled. Said, \"You know too much already, Catherine. And loving me is already dangerous. Please don't ask for more.\" His voice was quiet when he said it, but the words felt heavy—as if he was warning me about something specific, something he believed I'd already discovered. Then he left. I don't know if he's coming back.'"
+    file_path: "chapters/chapter_04.md"
+    line_range: [10, 20]
+    context_summary: "Inserted into Catherine's journal entry; establishes her dangerous knowledge and the lover's specific warning"
+
+  - item_id: "target_012"
+    inserted_text: "I closed the journal and sat on the bed, thinking. Catherine Halstead had been involved with someone—someone powerful, someone worried, someone who'd warned her about danger, someone who knew too much himself and was terrified of what she knew."
+    file_path: "chapters/chapter_04.md"
+    line_range: [24, 25]
+    context_summary: "Inserted into investigator's analysis; contextualizes mutual vulnerability in Catherine's relationship"
+
+  - item_id: "target_013"
+    inserted_text: "Her name is Catherine. Catherine Halstead. She's twenty-three years old. Beautiful girl—blonde hair, bright green eyes that could shift from despair to hope in seconds. She has a small crescent-shaped birthmark just below her left collarbone—barely visible unless you know to look for it, which I did."
+    file_path: "chapters/chapter_01.md"
+    line_range: [18, 19]
+    context_summary: "Inserted into Halstead's description; adds physical identification detail of birthmark linking to later evidence"
+
+  - item_id: "target_014"
+    inserted_text: "A package arrived this morning. No postage, no return address. Just left on the front step where anyone could see it—a deliberate message, not a secret communication. It contained a photograph. It was Catherine, but... she was frightened. Her crescent birthmark was visible in the photo. There was a note."
+    file_path: "chapters/chapter_01.md"
+    line_range: [28, 30]
+    context_summary: "Inserted into package description; confirms birthmark visibility in kidnapping photo as identification"
+
+  - item_id: "target_015"
+    inserted_text: "He said, 'Some people come to us expecting us to help them break the law legally. Others come to us in the hope that we'll help them avoid the consequences of having already broken it. The worst are the ones who come to ask us to help them do something that will break them entirely, but they do it anyway because they're already broken and they don't see how it matters anymore. That's where Harvey was by his third visit—past the point of return.' It was the kind of observation that haunted him."
+    file_path: "witnesses/secretary_statement.md"
+    line_range: [43, 50]
+    context_summary: "Inserted into Marchetti's philosophy on clients; establishes Harvey's moral deterioration by third visit"
+
+  - item_id: "target_016"
+    inserted_text: "'The next day, he came to my desk and said that if anyone asked about Harvey, I was to confirm nothing, admit nothing, verify nothing. When I pressed him about whether this was standard legal discretion, he said it was worse than that—it was a moral compromise. \"Sometimes the law and morality diverge,\" he told me. \"And sometimes protecting someone's secret becomes a betrayal of everything else.\"'"
+    file_path: "witnesses/secretary_statement.md"
+    line_range: [51, 57]
+    context_summary: "Inserted into Dorothy's testimony; establishes the ethical crisis driving Marchetti's cover-up"
+
+expected_answers:
+  question: "Based on all evidence collected across the investigation, construct the complete timeline connecting Catherine Halstead's disappearance to Claire Hollister's murder, identifying: (1) the medications and emotional state changes Catherine experienced, (2) who the mysterious redheaded visitor was and when she arrived, (3) what Catherine and her lover both knew that made them vulnerable, (4) where Claire's body was found and her occupation, (5) the parallel legal crisis that prompted Harvey's attorney visits, (6) how Margot's disappearance relates to Harvey's, (7) physical identifications that prove Catherine's identity in the kidnapping photo, and (8) the moral compromises made by legal professionals caught in these crimes."
+
+  correctness: "A correct answer must: identify medication timeline (3 weeks before disappearance), name Margot as the visitor with red hair, cite Catherine's dangerous knowledge and her lover's warning, specify Dock Street Building Seven warehouse and Claire's role as real estate secretary, establish Harvey's first legal visit 2 weeks before Catherine's disappearance, connect Margot's week-long disappearance to Harvey's exit, reference the crescent-shaped birthmark visible in both Eleanor's physical description and the kidnapping photo, and explain Marchetti's moral crisis regarding client secrecy vs. ethical responsibility. Must reference at least 12 of the 16 individual needles."
+
+  completeness: "A complete answer covers all eight dimensions: temporal markers (medication timeline, visitor timing, legal visit precedence, publication date), character identification (Margot as the visitor, Claire Hollister's occupation), location specifics (Dock Street, Building Seven), physical evidence (crescent birthmark as identifier), knowledge dynamics (what Catherine and her lover knew), parallel structures (Harvey/Margot's disappearance mirroring Catherine's), and institutional failure (lawyer's moral compromise). Demonstrates integration of scattered context clues into a coherent narrative of interconnected crimes and moral deterioration across multiple institutions."
+
+rubric_criteria:
+  - criterion: "Finds all 16 needles embedded in context"
+    weight: 1.0
+  - criterion: "Understands connections between scattered information"
+    weight: 0.8
+  - criterion: "Constructs accurate timeline across all cases"
+    weight: 0.9
+  - criterion: "Identifies characters through contextual clues"
+    weight: 0.7
+  - criterion: "Connects institutional/moral failures to outcomes"
+    weight: 0.6

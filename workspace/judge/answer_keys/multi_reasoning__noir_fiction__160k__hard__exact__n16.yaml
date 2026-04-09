@@ -1,0 +1,130 @@
+parametrisation_id: multi_reasoning__noir_fiction__160k__hard__exact__n16
+experiment_type: multi_reasoning
+generated_at: '2026-04-05T00:00:00Z'
+parameters:
+  content_profile: noir_fiction
+  corpus_token_count: 160000
+  discriminability: hard
+  reference_clarity: exact
+items:
+- item_id: target_001
+  inserted_text: Gregg's most distinctive feature is the thin vertical scar above his right eyebrow—barely visible in certain light, but visible nonetheless, a mark from a wire interrogation in Stockholm during the war years.
+  file_path: witnesses/detective_debrief.md
+  line_range:
+  - 12
+  - 15
+  context_summary: Inserted as identifying feature of Silas Gregg during Detective Morello's description of the suspect.
+- item_id: target_002
+  inserted_text: But I'll tell you something I know about people, Detective. The envelope had the kind of weight to it—the feel of documents, maybe currency. Thick paper, expensive. Not something you stuff with a single note. Whatever was in there, it was meant to set the kid up for something significant.
+  file_path: witnesses/bartender_statement.md
+  line_range:
+  - 46
+  - 49
+  context_summary: Inserted as Deke's observation about the envelope contents and significance.
+- item_id: target_003
+  inserted_text: He also requested something unusual—asked if I could have the apartment's front door lock changed to a deadbolt within the week. He said for security.
+  file_path: witnesses/landlady_statement.md
+  line_range:
+  - 23
+  - 24
+  context_summary: Inserted as detail of Harvey's lock-change request indicating preparation for departure.
+- item_id: target_004
+  inserted_text: Mr. Marchetti instructed me to file this under 'H-Confidential-Withdrawal.' Those were his exact words.
+  file_path: witnesses/secretary_statement.md
+  line_range:
+  - 82
+  - 83
+  context_summary: Inserted as Dorothy's reference to Marchetti's specific file instructions for Harvey's case.
+- item_id: target_005
+  inserted_text: Every transaction is routed through my private accounts. Accounts 7741-B and 7742-C at the Federal Trust, registered under corporate names.
+  file_path: case_notes/day_05.md
+  line_range:
+  - 35
+  - 37
+  context_summary: Inserted as Sinclair's confession of specific money-laundering accounts during confrontation.
+- item_id: target_006
+  inserted_text: His full name is Harrison—Harrison Webb. I finally wrote it down. The world is real now.
+  file_path: chapters/chapter_04.md
+  line_range:
+  - 61
+  - 62
+  context_summary: Inserted as Catherine's diary revelation of H's true identity as Harrison Webb.
+- item_id: target_007
+  inserted_text: 'Inside were copies of documents: police reports on Meridian Holdings, handwritten notes in Webb''s careful script, financial transaction records showing connections to Sinclair, dates and times and amounts. Everything Webb had been investigating.'
+  file_path: chapters/chapter_05.md
+  line_range:
+  - 21
+  - 23
+  context_summary: Inserted as contents of the dropped WEB-INVES-CONF folder containing Webb's investigation materials.
+- item_id: target_008
+  inserted_text: The manager that evening was Vincent Castellano—he always arranged the best table for us, in the corner near the window.
+  file_path: chapters/chapter_03.md
+  line_range:
+  - 18
+  - 19
+  context_summary: Inserted as identification of Park House manager and Vincent's role in facilitating the group's reservations.
+- item_id: target_009
+  inserted_text: Cross-reference to Margaret Hollister real estate holdings. FLAG-6847-KASLAN.
+  file_path: case_notes/day_02.md
+  line_range:
+  - 20
+  - 21
+  context_summary: Inserted as police system flag connecting Claire Hollister to Kaslan operation and Margaret's holdings.
+- item_id: target_010
+  inserted_text: The safe house where they keep acquisitions before moving them—it's somewhere in the residential district. Maybe Riverside, maybe Oak Hill. I heard Margot mention 'the place on Millbrook,' which might be a location.
+  file_path: witnesses/informant_interview.md
+  line_range:
+  - 35
+  - 37
+  context_summary: Inserted as Victor's intelligence about Kaslan's safe house location reference.
+- item_id: target_011
+  inserted_text: Below her left collarbone, barely visible, was a small crescent-shaped birthmark—the kind you'd only notice if you were looking for it, or if you were intimate with her.
+  file_path: chapters/chapter_02.md
+  line_range:
+  - 60
+  - 61
+  context_summary: Inserted as specific detail of Catherine's distinguishing birthmark visible in the kidnapping photo.
+- item_id: target_012
+  inserted_text: The alias 'James P. Whitmore' is notable because it matches the business card I found in a dead drop location—a card from a consulting firm that doesn't actually exist, with an address in the financial district.
+  file_path: case_notes/day_01.md
+  line_range:
+  - 38
+  - 39
+  context_summary: Inserted as investigator's connection between hotel alias and false identity infrastructure.
+- item_id: target_013
+  inserted_text: Before you go," Eleanor said, "I want to tell you one more thing. I live in apartment 3G, three floors above the boy.
+  file_path: witnesses/neighbor_statement.md
+  line_range:
+  - 39
+  - 40
+  context_summary: Inserted as Eleanor's apartment number providing location context for her surveillance observations.
+- item_id: target_014
+  inserted_text: It's a shell corporation registered through three layers of Delaware corporations, each one owning the other in a circle. The final ownership traces back to an investment group called Kaslan Enterprises, also registered out of Delaware.
+  file_path: case_notes/day_04.md
+  line_range:
+  - 10
+  - 11
+  context_summary: Inserted as explanation of Sinclair Holdings' corporate structure and Kaslan ownership chain.
+- item_id: target_015
+  inserted_text: He gave me an address for the Starlight Motor Inn, told me room fourteen, said the key would be under the mat.
+  file_path: witnesses/cab_driver_statement.md
+  line_range:
+  - 56
+  - 57
+  context_summary: Inserted as Jerry's recollection of Harvey's specific safe-house directions.
+- item_id: target_016
+  inserted_text: Sinclair came back the next day with papers. Documents of sale or transfer. He said the Paradise—the bar itself, the liquor license, everything—now belongs to him as compensation for the girl.
+  file_path: case_notes/day_03.md
+  line_range:
+  - 31
+  - 32
+  context_summary: Inserted as Sylvia's account of Sinclair's seizure of the Paradise bar as compensation for Claire.
+expected_answers:
+  question: Reconstruct the complete network connecting Harvey's disappearance, Catherine Halstead's kidnapping, and Claire Hollister's death by identifying the 16 specific details that link the operatives, their methods, and the evidence chain.
+  correctness: A correct answer must include identification of all 16 distinct details from the investigation and character statements that establish the connections between the three cases and expose the criminal infrastructure.
+  completeness: 'A complete answer covers: (1) Silas Gregg''s identifying scar, (2) envelope contents preparing Harvey, (3) lock change indicating exit preparation, (4) confidential file designation, (5) money-laundering accounts 7741-B and 7742-C, (6) Harrison Webb''s identity, (7) Webb''s investigation documentation, (8) Vincent Castellano''s Park House role, (9) Kaslan police flag code, (10) Millbrook safe house location, (11) Catherine''s birthmark, (12) James P. Whitmore alias, (13) Eleanor''s apartment 3G, (14) Kaslan Enterprises ownership structure, (15) Starlight Motor Inn room 14, and (16) Sinclair''s seizure of the Paradise bar.'
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5

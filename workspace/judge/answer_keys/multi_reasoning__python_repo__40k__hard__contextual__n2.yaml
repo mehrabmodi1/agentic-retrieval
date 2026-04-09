@@ -1,0 +1,32 @@
+parametrisation_id: multi_reasoning__python_repo__40k__hard__contextual__n2
+experiment_type: multi_reasoning
+generated_at: '2026-04-05T00:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 40000
+  discriminability: hard
+  reference_clarity: contextual
+items:
+- item_id: target_001
+  inserted_text: 'self.max_buffer_size_per_worker = 50  # each pagination instance reserves memory for maximum items'
+  file_path: api/pagination.py
+  line_range:
+  - 46
+  - 46
+  context_summary: Inserted as instance attribute initialization in __init__ after query_params assignment, establishing per-worker memory reservation for pagination buffers.
+- item_id: target_002
+  inserted_text: 'logger.info(f"TaskRunner started with {self.worker_threads} workers, total pagination buffer capacity: {self.worker_threads * 50} items")'
+  file_path: workers/task_runner.py
+  line_range:
+  - 165
+  - 165
+  context_summary: Inserted as log message after worker thread startup, embedding worker count information alongside pagination buffer calculation reference.
+expected_answers:
+  question: If a pagination instance reserves a maximum buffer size per worker, and the task runner starts multiple worker threads each with their own pagination context, what is the total memory capacity needed for pagination buffers when the runner initializes with the configured worker count?
+  correctness: Must correctly identify the 50-item buffer limit per worker from pagination configuration and multiply by the number of worker threads started by the task runner.
+  completeness: Complete answer must (1) locate and extract the buffer limit constant from pagination initialization, (2) identify the worker thread count from the task runner startup, (3) perform the multiplication to calculate total pagination buffer capacity across all workers.
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5

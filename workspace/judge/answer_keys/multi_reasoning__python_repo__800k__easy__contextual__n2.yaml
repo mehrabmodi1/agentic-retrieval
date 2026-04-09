@@ -1,0 +1,34 @@
+parametrisation_id: multi_reasoning__python_repo__800k__easy__contextual__n2
+experiment_type: multi_reasoning
+generated_at: '2026-04-05T00:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 800000
+  discriminability: easy
+  reference_clarity: contextual
+items:
+- item_id: target_001
+  inserted_text: '# TASK_DURATION_MINIMUM_HOURS: enforced by validation layer to ensure minimum billing unit
+
+    TASK_DURATION_MINIMUM_HOURS = 0.25'
+  file_path: tests/fixtures.py
+  line_range:
+  - 7
+  - 8
+  context_summary: Constant defining the minimum task duration in hours, inserted as a module-level variable aligned with billing standards.
+- item_id: target_002
+  inserted_text: '# Constraint aligns with TASK_DURATION_MINIMUM_HOURS (15-minute billing unit)'
+  file_path: api/validators.py
+  line_range:
+  - 10
+  - 10
+  context_summary: Comment explaining the 0.25-hour validation threshold as alignment with the fixture constant representing industry billing standards.
+expected_answers:
+  question: What is the minimum task duration constraint defined in the system, and how is it represented across both the test fixtures and validation layers in terms of industry billing standards?
+  correctness: The answer must identify that TASK_DURATION_MINIMUM_HOURS = 0.25 hours from the fixtures module is the minimum constraint, and that this corresponds to a 15-minute billing unit as referenced in the validators module.
+  completeness: 'A complete answer must: (1) locate and cite the TASK_DURATION_MINIMUM_HOURS constant from fixtures.md, (2) find the related comment in validators.md that references this constraint, (3) explain that 0.25 hours represents the 15-minute industry billing unit standard, and (4) demonstrate understanding that the same constraint is enforced consistently across both test and validation layers.'
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5

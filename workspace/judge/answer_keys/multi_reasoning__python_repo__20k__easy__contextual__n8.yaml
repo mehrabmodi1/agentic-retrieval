@@ -1,0 +1,74 @@
+parametrisation_id: multi_reasoning__python_repo__20k__easy__contextual__n8
+experiment_type: multi_reasoning
+generated_at: '2026-04-05T00:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 20000
+  discriminability: easy
+  reference_clarity: contextual
+items:
+- item_id: target_001
+  inserted_text: DEFAULT_RETRY_BACKOFF_SECONDS = 5
+  file_path: api/error_handlers.py
+  line_range:
+  - 22
+  - 22
+  context_summary: Configuration constant for error retry backoff time inserted in APIError class definition.
+- item_id: target_002
+  inserted_text: EXPORT_BATCH_SIZE = 100
+  file_path: workers/report_generator.py
+  line_range:
+  - 9
+  - 9
+  context_summary: Configuration constant for JSON export batch processing inserted in _export_json method.
+- item_id: target_003
+  inserted_text: TOKEN_CACHE_TTL_SECONDS = 300
+  file_path: api/auth.py
+  line_range:
+  - 4
+  - 4
+  context_summary: Configuration constant for authentication token cache time-to-live inserted at start of authentication logic.
+- item_id: target_004
+  inserted_text: TASK_REMINDER_LEAD_SECONDS = 86400
+  file_path: tests/test_services.py
+  line_range:
+  - 253
+  - 253
+  context_summary: Configuration constant for task reminder advance notice period inserted in test_send_task_reminder method.
+- item_id: target_005
+  inserted_text: WORKER_POLL_INTERVAL_SECONDS = 10
+  file_path: workers/task_runner.py
+  line_range:
+  - 214
+  - 214
+  context_summary: Configuration constant for worker polling interval inserted in _execute_task method.
+- item_id: target_006
+  inserted_text: CELERY_TASK_HARD_TIMEOUT_SECONDS = 600
+  file_path: tests/test_workers.py
+  line_range:
+  - 16
+  - 16
+  context_summary: Configuration constant for Celery task timeout inserted as module-level constant in worker tests.
+- item_id: target_007
+  inserted_text: DEFAULT_ASSERTION_TIMEOUT_SECONDS = 30
+  file_path: tests/fixtures.py
+  line_range:
+  - 125
+  - 125
+  context_summary: Configuration constant for test assertion timeout inserted in assert_response_success method.
+- item_id: target_008
+  inserted_text: PDF_RENDER_TIMEOUT_SECONDS = 45
+  file_path: workers/report_generator.py
+  line_range:
+  - 30
+  - 30
+  context_summary: Configuration constant for PDF rendering timeout inserted in _export_pdf method.
+expected_answers:
+  question: What is the sum of all timeout, interval, and configuration duration values (in seconds) defined across the system's authentication, error handling, report generation, task execution, worker polling, and test fixture modules?
+  correctness: 'The answer must identify and sum all eight numeric constants: 5 + 100 + 300 + 86400 + 10 + 600 + 30 + 45 = 87490 seconds. Alternatively, grouping by type (timeouts vs batch/interval sizes) and calculating subtotals demonstrates understanding of the system architecture.'
+  completeness: 'A complete answer must: (1) locate all eight constants across the six different files, (2) correctly identify their numeric values, (3) perform the arithmetic summation, (4) optionally explain the semantic meaning of each constant (retry backoff, token TTL, worker polling, etc.) to show contextual understanding of the distributed system.'
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5

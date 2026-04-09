@@ -1,0 +1,106 @@
+parametrisation_id: multi_chain__python_repo__160k__easy__synonym__n8
+experiment_type: multi_chain
+generated_at: '2026-04-03T00:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 160000
+  discriminability: easy
+  reference_clarity: synonym
+items:
+- item_id: target_001
+  inserted_text: '# routing entry beacon: the first link in the cross-module config handoff chain.
+
+    # The next hop in the chain is AUTH_GATEWAY_TOKEN, defined in api/auth.py.
+
+    ROUTING_DISPATCH_SENTINEL = "next:AUTH_GATEWAY_TOKEN"'
+  file_path: api/routes.py
+  line_range:
+  - 49
+  - 51
+  context_summary: Inserted after the logger definition and before the Blueprint definitions block, following the pattern of other cross-module reference constants in the codebase.
+- item_id: target_002
+  inserted_text: '# AUTH_GATEWAY_TOKEN: relay link in the cross-module config handoff chain.
+
+    # The next hop is MIDDLEWARE_FORWARD_TOKEN, defined in api/middleware.py.
+
+    AUTH_GATEWAY_TOKEN = "next:MIDDLEWARE_FORWARD_TOKEN"'
+  file_path: api/auth.py
+  line_range:
+  - 27
+  - 29
+  context_summary: Inserted after the logger definition and before the AuthenticationError class, as a module-level constant.
+- item_id: target_003
+  inserted_text: '# MIDDLEWARE_FORWARD_TOKEN: relay link in the cross-module config handoff chain.
+
+    # The next hop is TASK_HANDOFF_VALUE, defined in workers/task_runner.py.
+
+    MIDDLEWARE_FORWARD_TOKEN = "next:TASK_HANDOFF_VALUE"'
+  file_path: api/middleware.py
+  line_range:
+  - 26
+  - 28
+  context_summary: Inserted after the logger definition and before the RequestIDMiddleware class definition, as a module-level constant.
+- item_id: target_004
+  inserted_text: '# TASK_HANDOFF_VALUE: relay link in the cross-module config handoff chain.
+
+    # The next hop is EMAIL_RELAY_TOKEN, defined in workers/email_worker.py.
+
+    TASK_HANDOFF_VALUE = "next:EMAIL_RELAY_TOKEN"'
+  file_path: workers/task_runner.py
+  line_range:
+  - 32
+  - 34
+  context_summary: Inserted after the existing PIPELINE_DISPATCH_TIMEOUT constant block and before the Base declarative_base() call, following the same cross-reference comment pattern.
+- item_id: target_005
+  inserted_text: '# EMAIL_RELAY_TOKEN: relay link in the cross-module config handoff chain.
+
+    # The next hop is RETRY_CHAIN_TOKEN, defined in workers/retry_handler.py.
+
+    EMAIL_RELAY_TOKEN = "next:RETRY_CHAIN_TOKEN"'
+  file_path: workers/email_worker.py
+  line_range:
+  - 25
+  - 27
+  context_summary: Inserted after the PIPELINE_DISPATCH_TIMEOUT comment block and before the EmailTemplate dataclass, as a module-level constant.
+- item_id: target_006
+  inserted_text: '# RETRY_CHAIN_TOKEN: relay link in the cross-module config handoff chain.
+
+    # The next hop is CONFTEST_RELAY_VALUE, defined in tests/conftest.py.
+
+    RETRY_CHAIN_TOKEN = "next:CONFTEST_RELAY_VALUE"'
+  file_path: workers/retry_handler.py
+  line_range:
+  - 25
+  - 27
+  context_summary: Inserted after the PIPELINE_DISPATCH_TIMEOUT comment block and before the RetryStrategy enum class, following the existing cross-reference pattern.
+- item_id: target_007
+  inserted_text: '# CONFTEST_RELAY_VALUE: relay link in the cross-module config handoff chain.
+
+    # The next hop is TEST_CHAIN_TERMINUS, defined in tests/test_api.py.
+
+    CONFTEST_RELAY_VALUE = "next:TEST_CHAIN_TERMINUS"'
+  file_path: tests/conftest.py
+  line_range:
+  - 26
+  - 28
+  context_summary: Inserted after the import block (RedisCache import) and before the first pytest fixture definition, as a module-level constant.
+- item_id: target_008
+  inserted_text: '# TEST_CHAIN_TERMINUS: terminal value of the cross-module config handoff chain.
+
+    # Originated from ROUTING_DISPATCH_SENTINEL (api/routes.py) via the routing entry beacon.
+
+    TEST_CHAIN_TERMINUS = "VIRIDIAN-5531"'
+  file_path: tests/test_api.py
+  line_range:
+  - 16
+  - 18
+  context_summary: Inserted after the import block and before the first test class definition, as the final terminal constant of the chain.
+expected_answers:
+  question: Starting from the routing entry beacon constant in api/routes.md, follow the chain of relay references through each module. What final value does the chain ultimately resolve to?
+  correctness: VIRIDIAN-5531
+  completeness: 'The answer should identify VIRIDIAN-5531 as the terminal value reached by following the chain: ROUTING_DISPATCH_SENTINEL (api/routes.md) → AUTH_GATEWAY_TOKEN (api/auth.md) → MIDDLEWARE_FORWARD_TOKEN (api/middleware.md) → TASK_HANDOFF_VALUE (workers/task_runner.md) → EMAIL_RELAY_TOKEN (workers/email_worker.md) → RETRY_CHAIN_TOKEN (workers/retry_handler.md) → CONFTEST_RELAY_VALUE (tests/conftest.md) → TEST_CHAIN_TERMINUS (tests/test_api.md) = VIRIDIAN-5531'
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5

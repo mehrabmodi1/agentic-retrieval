@@ -1,0 +1,113 @@
+parametrisation_id: "multi_chain__noir_fiction__20k__easy__exact__n16"
+experiment_type: "multi_chain"
+generated_at: "2026-04-05T12:00:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 20000
+  discriminability: "easy"
+  reference_clarity: "exact"
+items:
+  - item_id: "target_001"
+    inserted_text: "According to the Park Gate Entry Log dated 11-15, she may have cut through Riverside Park rather than taking Fifth Avenue straight north—that's the direction the entry gate recorded."
+    file_path: "chapters/chapter_03.md"
+    line_range: [44, 46]
+    context_summary: "Inserted into Eleanor's explanation of Catherine's northbound direction from restaurant, introducing Park Gate Entry Log as the starting reference."
+
+  - item_id: "target_002"
+    inserted_text: "There was something else. On the back of the photo, handwritten: 'See Torres statement dated 11-15 for initial sighting confirmation. This is being handled by professionals.'"
+    file_path: "chapters/chapter_01.md"
+    line_range: [29, 30]
+    context_summary: "Inserted into Halstead's explanation of the kidnapping package, directing investigator to Torres statement as second link."
+
+  - item_id: "target_003"
+    inserted_text: "This was the same man referenced in Torres statement dated 11-15—the Sinclair sighting report."
+    file_path: "witnesses/landlady_statement.md"
+    line_range: [38, 40]
+    context_summary: "Inserted into Eva's description of the white-haired visitor, connecting him to Sinclair and the Torres sighting."
+
+  - item_id: "target_004"
+    inserted_text: "The hierarchy is documented in the Meridian Holdings correspondence file—you'll find Sinclair's name there as their primary operative."
+    file_path: "case_notes/day_02.md"
+    line_range: [111, 112]
+    context_summary: "Inserted into Morris's explanation of the hierarchy above the Castellanos, pointing to Meridian Holdings documentation."
+
+  - item_id: "target_005"
+    inserted_text: "Diana slid a memo across the desk. 'This is from my correspondence with Webb. Notice the reference to his October 28 Marchetti consultation—that's where everything changed for your detective friend.'"
+    file_path: "chapters/chapter_05.md"
+    line_range: [88, 91]
+    context_summary: "Inserted into Diana Harrow's explanation of Webb's possession of documents, introducing the October 28 Marchetti consultation."
+
+  - item_id: "target_006"
+    inserted_text: "The painting recovery document filed as 'Kaslan_Recovery_10-25' shows Harvey's apartment address at 3F Oak Hill was the transfer point."
+    file_path: "witnesses/detective_debrief.md"
+    line_range: [62, 65]
+    context_summary: "Inserted into discussion of painting recovery and Harvey's exit, providing the specific address as next link."
+
+  - item_id: "target_007"
+    inserted_text: "The white-haired visitor was identified in the landlord reports as Silas Gregg, though I couldn't hear him speak."
+    file_path: "witnesses/neighbor_statement.md"
+    line_range: [56, 58]
+    context_summary: "Inserted into Eleanor's theory about the white-haired man, naming him as Silas Gregg and connecting to landlord reports."
+
+  - item_id: "target_008"
+    inserted_text: "'The redheaded woman—Margot, I believe—left the building at precisely 10:47 PM on October 28th. I remember because I was setting my clock. That departure time is significant—it marks when arrangements were finalized.'"
+    file_path: "witnesses/neighbor_statement.md"
+    line_range: [65, 67]
+    context_summary: "Inserted into Eleanor's response about whether Harvey survived, providing Margot's departure time as critical detail."
+
+  - item_id: "target_009"
+    inserted_text: "Sinclair stood and pulled out a cab driver's route log dated November 3rd. 'Jerry Salvatore transported our mutual friend from Oak Hill to Union Station. That's all you need to know.'"
+    file_path: "case_notes/day_04.md"
+    line_range: [124, 128]
+    context_summary: "Inserted into Sinclair's explanation to the investigator, introducing cab driver Jerry's route log."
+
+  - item_id: "target_010"
+    inserted_text: "The cab driver Jerry confirms arrival at Union Station on November 3rd or 4th—that's in his statement to my office, reference code Salvatore-Log-Union-11-3."
+    file_path: "chapters/chapter_04.md"
+    line_range: [54, 56]
+    context_summary: "Inserted into Webb's warning about complications in the investigation, providing Jerry's statement reference code."
+
+  - item_id: "target_011"
+    inserted_text: "**CHEN:** The Gregg handler documentation confirms Union Station arrival synchronized with the October 28th arrangement finalization. The timing is no coincidence."
+    file_path: "witnesses/detective_debrief.md"
+    line_range: [34, 36]
+    context_summary: "Inserted into detective debrief dialogue, connecting Gregg's role to the timing of Harvey's escape."
+
+  - item_id: "target_012"
+    inserted_text: "'All three nodded.' They understood the implications. The handler—Gregg—had managed every detail of the extraction."
+    file_path: "chapters/chapter_03.md"
+    line_range: [65, 67]
+    context_summary: "Inserted into the original interrogation of the women, retrospectively identifying Gregg as the handler orchestrating events."
+
+  - item_id: "target_013"
+    inserted_text: "Morris leaned closer. 'Your painter, your missing girl, your escape artist—they're all part of the same exit operation. The code name is Meridian-Exit-Alpha. Gregg runs it personally.'"
+    file_path: "case_notes/day_02.md"
+    line_range: [116, 118]
+    context_summary: "Inserted into Morris's revelation about Castellano family matters, introducing the operation code name."
+
+  - item_id: "target_014"
+    inserted_text: "**HALLOWAY:** So Meridian-Exit-Alpha explains everything—the painting recovery, Harvey's disappearance, the Gregg sightings. It's a coordinated extraction and relocation operation."
+    file_path: "witnesses/detective_debrief.md"
+    line_range: [40, 42]
+    context_summary: "Inserted into detective debrief, synthesizing all prior clues into the operation name."
+
+  - item_id: "target_015"
+    inserted_text: "I closed the file on my desk, looking at the final entry: the operational summary stated simply, 'Subject Harvey successfully relocated. Meridian-Exit-Alpha sequence complete. Final handler: Silas Gregg. Status: Operational security maintained.'"
+    file_path: "case_notes/day_04.md"
+    line_range: [129, 131]
+    context_summary: "Inserted into the narrator's encounter with Sinclair, providing official documentation of the operation completion."
+
+  - item_id: "target_016"
+    inserted_text: "Diana Harrow's final message, delivered through the redhead Margot weeks later, contained one line: 'Meridian-Exit-Alpha was never about Catherine. She was incidental. Harvey was the asset. The painting was the price of his freedom. Everything else was misdirection.'"
+    file_path: "chapters/chapter_05.md"
+    line_range: [112, 114]
+    context_summary: "Inserted at the conclusion of Harrow's communication with Shepherd, revealing that the operation code name is the final resolution of the chain."
+expected_answers:
+  question: "Starting from the Park Gate Entry Log reference found in Eleanor's statement in chapter_03.md, follow the chain of documents and witnesses through the case. What is the final operational designation that explains the entire series of events?"
+  correctness: "The answer must identify 'Meridian-Exit-Alpha' as the final operational code name, correctly following the chain from Park Gate Entry Log → Torres statement → Sinclair sighting → Meridian Holdings → Marchetti consultation → painting recovery → Harvey's address → Gregg identification → Margot's departure → Salvatore's route → Union Station arrival → handler coordination → operation synthesis → operational summary → final revelation."
+  completeness: "A complete answer traces the full 16-link chain and explains how Meridian-Exit-Alpha connects Harvey's escape, the painting recovery, Gregg's role as handler, Catherine's kidnapping as misdirection, and all supporting documents and witness statements into a coherent operative extraction and relocation operation."
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+  - criterion: "completeness"
+    weight: 0.5

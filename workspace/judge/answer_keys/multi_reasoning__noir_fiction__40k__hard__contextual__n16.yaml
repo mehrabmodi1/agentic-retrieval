@@ -1,0 +1,145 @@
+parametrisation_id: "multi_reasoning__noir_fiction__40k__hard__contextual__n16"
+experiment_type: "multi_reasoning"
+generated_at: "2026-04-05T00:00:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 40000
+  discriminability: "hard"
+  reference_clarity: "contextual"
+
+items:
+  - item_id: "target_001"
+    inserted_text: "Mr. Marchetti emerged from his office at precisely 4:37 in the afternoon—I remember checking the clock because his timing was always exact. When he saw Mr. Harvey sitting in that chair, his face went pale."
+    file_path: "witnesses/secretary_statement.md"
+    line_range: [65, 70]
+    context_summary: "Documents the exact timing of Harvey's final meeting with his lawyer, indicating urgency and desperation"
+
+  - item_id: "target_002"
+    inserted_text: "Whatever Mr. Marchetti had told him—whether it was advice, a warning, or a final rejection—it had closed a door that Mr. Harvey had been hoping would remain open. The desperation in his eyes suggested he had nowhere else to go, no one else who could help him."
+    file_path: "witnesses/secretary_statement.md"
+    line_range: [85, 90]
+    context_summary: "Reveals Harvey's emotional state and isolation after legal consultation"
+
+  - item_id: "target_003"
+    inserted_text: "She started meeting with people who dealt in recovered art, people who lived in the margins of the law. I warned her, but Catherine believed that the painting's recovery was more important than the risk."
+    file_path: "chapters/chapter_02.md"
+    line_range: [28, 32]
+    context_summary: "Establishes Catherine's involvement with dangerous elements through art research"
+
+  - item_id: "target_004"
+    inserted_text: "Mercer received his diagnosis exactly six days ago—terminal cancer, six months at most. The doctors told him on Wednesday afternoon at Saint Michael's Hospital, during a routine checkup that revealed metastatic spread to his liver and lungs."
+    file_path: "case_notes/day_06.md"
+    line_range: [18, 22]
+    context_summary: "Provides timing for Mercer's willingness to testify based on terminal diagnosis"
+
+  - item_id: "target_005"
+    inserted_text: "Mercer will also testify that he was motivated by fear, not money, though he took the money too. And he'll testify that he prepared the legal cover for moving her body and disposing of evidence. On September 29th, Sinclair met with Mercer and two other operatives and explicitly ordered 'the elimination of the Castellano problem.' Mercer understood this to mean Claire, who had become a liability."
+    file_path: "case_notes/day_06.md"
+    line_range: [35, 41]
+    context_summary: "Identifies the specific date and nature of the order for Claire's elimination"
+
+  - item_id: "target_006"
+    inserted_text: "The first offer came in on July 14th—two million dollars for the entire operation. I laughed. It was insulting. By August 9th, they'd raised it to five million. By September 1st, they were at eight million. And then Catherine disappeared on September 17th, and I understood that the acquisition wasn't about business. It was about leverage."
+    file_path: "chapters/chapter_05.md"
+    line_range: [43, 48]
+    context_summary: "Establishes the escalating acquisition timeline and connection to Catherine's kidnapping"
+
+  - item_id: "target_007"
+    inserted_text: "They needed control of my company's financial infrastructure, its account access, its movement capabilities. They knew I could move money quietly and quickly, and they wanted to use me to do it for them."
+    file_path: "chapters/chapter_05.md"
+    line_range: [49, 52]
+    context_summary: "Reveals why the criminal organization specifically targeted Halstead Industries"
+
+  - item_id: "target_008"
+    inserted_text: "As of 3:45 PM this afternoon, I filed the official report with the FBI. Catherine Halstead is now a federal case, and anything you do from this point forward is interference with a federal investigation."
+    file_path: "chapters/chapter_04.md"
+    line_range: [31, 33]
+    context_summary: "Documents police department's federal involvement timeline"
+
+  - item_id: "target_009"
+    inserted_text: "Silas Gregg is the solution to problems that can't be solved any other way. I've heard stories about him from other staff members whose families had dealings with organized crime. Silas Gregg is the one who makes people disappear permanently. He was there at 2:43 PM on October 10th, and by 2:51 PM, James Patterson was no longer a patient at Saint Michael's."
+    file_path: "case_notes/day_05.md"
+    line_range: [20, 27]
+    context_summary: "Identifies Silas Gregg as the operative responsible for removals and establishes specific timing"
+
+  - item_id: "target_010"
+    inserted_text: "The Castellano kid came in Tuesday night. Brought a girl with him—young, pretty, nervous like she'd never been in a place like this before. The night of September 18th at 10:15 PM—I remember because the Paradise was having a slow evening—Vincent Castellano walked in with a young woman. By 11:30 PM, after she was introduced to Carmine Castellano in his private office, the entire tone of the evening changed. By 12:47 AM on September 19th, Claire was being physically removed from the building by Silas Gregg."
+    file_path: "case_notes/day_03.md"
+    line_range: [31, 43]
+    context_summary: "Provides precise timeline and location of Claire's capture and removal"
+
+  - item_id: "target_011"
+    inserted_text: "It started five years ago. A man came to my office and offered to make me very rich. All I had to do was buy certain properties and sell them to certain buyers. He said his name was Castellano. I assumed he was related to the family I was laundering for, but he said no, that was just a coincidence."
+    file_path: "case_notes/day_04.md"
+    line_range: [27, 33]
+    context_summary: "Establishes Margaret's five-year involvement in money laundering operation"
+
+  - item_id: "target_012"
+    inserted_text: "She wanted to go to the police. I begged her not to. She went to Vincent Castellano and told him what she knew. On September 18th, he agreed to meet with her at the Paradise club to discuss going to authorities together. That meeting was a trap. When Sinclair saw that Vincent was moving toward cooperation, he acted. He ordered Claire's removal immediately."
+    file_path: "case_notes/day_04.md"
+    line_range: [34, 42]
+    context_summary: "Reveals Claire's discovery of laundering and the trap that led to her elimination"
+
+  - item_id: "target_013"
+    inserted_text: "The man Catherine was seeing—from what little she told us—was in his early fifties. Wealthy enough to afford expensive restaurants, sophisticated enough to appreciate Catherine's intelligence. But there was something else. Catherine mentioned once that he had 'connections to business that operates beyond the law's reach.'"
+    file_path: "chapters/chapter_03.md"
+    line_range: [45, 50]
+    context_summary: "Describes Catherine's secret boyfriend and his criminal connections, establishing motive for kidnapping"
+
+  - item_id: "target_014"
+    inserted_text: "We left at approximately 10:45 PM. The restaurant was quiet by then, most of the crowd had cleared out. When we went outside, there were a few couples walking, a couple of cabs, but it was relatively calm. Catherine decided to walk home. North, toward her apartment."
+    file_path: "chapters/chapter_03.md"
+    line_range: [51, 57]
+    context_summary: "Establishes the exact time and direction Catherine was last seen alive"
+
+  - item_id: "target_015"
+    inserted_text: "Harvey consulted with her in late August. He was willing to provide testimony, willing to cooperate fully. Margot made an offer to Harvey. She would facilitate his exit, his entry into witness protection, a complete new identity. Harvey accepted on September 15th. Margot took payment—a substantial amount, maybe two hundred thousand dollars in liquidated assets."
+    file_path: "witnesses/informant_interview.md"
+    line_range: [24, 31]
+    context_summary: "Documents Harvey's agreement to exit facilitation and the financial terms"
+
+  - item_id: "target_016"
+    inserted_text: "Red hair. Beautiful in that cold way—the kind of beauty that walks in a room and makes every man remember he's got something to lose. Green eyes. Mid-thirties, though she could be older or younger. She dresses expensively but in a way that's designed not to be remembered. She's careful. Very careful. The kind of careful that comes from having made serious enemies."
+    file_path: "witnesses/informant_interview.md"
+    line_range: [33, 39]
+    context_summary: "Provides detailed description of Margot, the exit facilitator, establishing her capabilities"
+
+expected_answers:
+  question: |
+    Based on all available evidence, reconstruct the complete timeline and operational structure of the criminal organization from initial contact through the planned elimination of Claire Hollister. Identify: (1) the specific dates of all major events (acquisition attempts, kidnapping, elimination), (2) the key operatives and their roles (Sinclair, Gregg, Mercer, Ashford, Margot), (3) the criminal activities and their interconnections (money laundering, kidnapping, art theft, witness elimination), (4) the leverage points used to control individuals (terminal diagnosis, family pressure, financial desperation), and (5) the escape mechanisms that allowed Harvey to evade the organization.
+
+  correctness: |
+    A correct answer must identify all 16 pieces of information integrated into a coherent narrative showing:
+    - The September 8 to October 5 acquisition timeline with specific amounts and dates
+    - Mercer's September diagnosis and September 29 elimination order
+    - The September 18-19 Paradise club operation with exact times (10:15 PM arrival, 11:30 PM introduction, 12:47 AM removal)
+    - Silas Gregg's identity and removal operations with specific dates
+    - Catherine's kidnapping as leverage for financial infrastructure control
+    - Claire's death as result of discovered money laundering conspiracy
+    - Harvey's September 15 agreement with Margot for exit facilitation
+    - The connection between Meridian Holdings and the Sinclair organization
+    - The role of attorneys (Marchetti, Mercer) in facilitating or resisting the operation
+    - Federal law enforcement involvement through Webb's 3:45 PM filing
+
+  completeness: |
+    A complete answer must demonstrate that ALL 16 items work together to establish:
+    - A coherent timeline from July 14 to October 29
+    - The organizational hierarchy (Sinclair → Ashford → unknown superior)
+    - How Catherine and Claire's cases interconnect through the same criminal operation
+    - Why each operative (Harvey, Mercer, Margot, Gregg) took their specific actions
+    - How financial motivation, coercion, and conscience drove different people to cooperate or resist
+    - The role of geographic locations (Paradise club, Dock Street warehouse, Starlight Motor Inn)
+    - The evidence that would support prosecution (Mercer's testimony, Margot's facilitation records, hospital timing, financial records)
+
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+    description: "Answer accurately integrates all 16 key pieces of information"
+
+  - criterion: "completeness"
+    weight: 0.5
+    description: "Answer demonstrates how all pieces interconnect to form complete picture of criminal operation"
+
+  - criterion: "reasoning"
+    weight: 0.5
+    description: "Answer shows proper causal and temporal relationships between events across multiple threads of investigation"

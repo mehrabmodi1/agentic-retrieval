@@ -1,0 +1,52 @@
+parametrisation_id: multi_reasoning__python_repo__20k__hard__contextual__n2
+experiment_type: multi_reasoning
+generated_at: '2026-04-05T00:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 20000
+  discriminability: hard
+  reference_clarity: contextual
+items:
+- item_id: target_001
+  inserted_text: "# Auth endpoints apply stricter rate limiting to prevent brute force\n      # Password reset attempts are tracked per user email\n      if key.startswith('auth:reset:'):\n          limit = 5  # max password reset attempts allowed per window\n          window = 3600  # time window is one hour for reset attempts\n"
+  file_path: api/rate_limiting.py
+  line_range:
+  - 55
+  - 60
+  context_summary: Inserted rate limit configuration for password reset attempts (5 per hour) within the is_allowed() method logic, contextually embedded among other rate limit rules.
+- item_id: target_002
+  inserted_text: "def test_password_reset_at_rate_limit(\n      self, client, db: Session, test_user: User\n  ):\n      \"\"\"Test that 6th password reset attempt is rejected by rate limiter.\"\"\"\n      from app.security import create_password_reset_token\n\n      # Make 5 valid reset requests (at the limit)\n      for attempt in range(5):\n          response = client.post(\n              \"/api/auth/reset-password\",\n              json={\"token\": \"dummy\", \"password\": \"NewPass123!\"}\n          )\n          assert response.status_code == status.HTTP_200_OK\n\n      # 6th attempt should be rate limited\n      response = client.post(\n          \"/api/auth/reset-password\",\n          json={\"token\": \"dummy\", \"password\": \"NewPass123!\"}\n      )\n      assert response.status_code == status.HTTP_429_TOO_MANY_REQUESTS\n"
+  file_path: tests/test_auth.py
+  line_range:
+  - 265
+  - 290
+  context_summary: Inserted test method that validates the rate limit threshold for password reset—allowing 5 attempts but rejecting the 6th—embedded in the TestPasswordReset class context.
+expected_answers:
+  question: Given the rate limiting rules for authentication endpoints and the test coverage for password reset attempts, what is the maximum number of password reset requests a user can make within one hour before being blocked?
+  correctness: 'The answer must identify the specific limit of 5 attempts per 3600-second window for password reset endpoints, extracted from the rate_limiting.md configuration (target_001).
+
+    The answer must be grounded in evidence that the 6th attempt is rejected, as demonstrated by the test in test_auth.md (target_002).
+
+    The correct answer is: 5 password reset attempts per hour; the 6th attempt would be rejected with a 429 Too Many Requests response.
+
+    '
+  completeness: 'A complete answer must:
+
+    1. State the numerical limit (5 attempts)
+
+    2. Identify the time window (one hour / 3600 seconds)
+
+    3. Explain the consequence of exceeding the limit (rate limiter rejection / 429 response)
+
+    4. Cite or reference both the configuration and test evidence that validates this behavior
+
+    5. Clarify that this is context-specific to password reset endpoints
+
+    '
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+  description: Answer must identify the exact limit of 5 attempts and understand it applies to password reset specifically
+- criterion: completeness
+  weight: 0.5
+  description: Answer must integrate evidence from both the rate limiting config and the test to show full understanding of the constraint

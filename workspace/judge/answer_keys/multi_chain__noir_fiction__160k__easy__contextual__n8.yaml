@@ -1,0 +1,55 @@
+parametrisation_id: "multi_chain__noir_fiction__160k__easy__contextual__n8"
+experiment_type: "multi_chain"
+generated_at: "2026-04-05T22:55:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 160000
+  discriminability: "easy"
+  reference_clarity: "contextual"
+items:
+  - item_id: "target_001"
+    inserted_text: "Inside her personal journal, which I recently discovered, she refers to this birthmark as 'the architect's mark'—a reference I didn't understand until later."
+    file_path: "chapters/chapter_01.md"
+    line_range: [29, 29]
+    context_summary: "Inserted in Halstead's description of Catherine's crescent birthmark, introducing the mysterious 'architect' concept"
+  - item_id: "target_002"
+    inserted_text: "The journal in my hand—Catherine's private record of everything that happened. The handwritten account that would eventually tie everything together. In it she had written about 'the architect'—a person whose influence was invisible but present in everything Margaret did, everything Margaret touched. The journal contained initials carved into the margins: H.C. Those initials appear again, I would later learn, in the property transaction records that Paulie's landlady had mentioned."
+    file_path: "chapters/chapter_04.md"
+    line_range: [28, 28]
+    context_summary: "Inserted when examining Catherine's journal, establishing the connection between 'the architect' and mysterious initials H.C. in property records"
+  - item_id: "target_003"
+    inserted_text: "Margaret Hollister has connections to the kind of real estate deals that require paying off city officials. Her property records show initials 'H.C.' in the margins, the same initials that appear in Catherine's journal. That journal references something called 'archive_alpha.'"
+    file_path: "case_notes/day_02.md"
+    line_range: [4, 4]
+    context_summary: "Inserted in the list of known facts, linking H.C. initials to archive_alpha video documentation"
+  - item_id: "target_004"
+    inserted_text: "I lean forward. 'Because I need a witness. And because Helen told me you're cooperating—she mentioned the documentation you've prepared. The appointment books, the files connecting everything. That documentation will break this case wide open. Specifically, those video files labeled 'archive_alpha' that show Sinclair's explicit orders.'"
+    file_path: "case_notes/day_05.md"
+    line_range: [35, 35]
+    context_summary: "Inserted in confrontation with Mercer, establishing archive_alpha as the key evidence source"
+  - item_id: "target_005"
+    inserted_text: "Exactly. Mercer was afraid of the person behind Sinclair. The real power. The one who orchestrates everything. Mercer never knew that person's name, but he knew they existed because he'd seen what they were capable of. That's why he kept the records. Insurance. Documentation that might save his life, or at least his legacy. Those records are now our roadmap to the truth. And once we have them, David Chen will know exactly how to use them."
+    file_path: "case_notes/day_06.md"
+    line_range: [38, 38]
+    context_summary: "Inserted in Helen's explanation about Mercer's motivation, pointing to David Chen as the next link"
+  - item_id: "target_006"
+    inserted_text: "Margaret Hollister gives an interview to David Chen. She talks about Claire, about how smart she was, how kind, how she deserved a life fuller than what she got. Margaret says she's grateful to the police for their quick action and grateful to the investigator who 'had the courage to ask questions when others would have stayed quiet.' Chen's article, to be published after my trial testimony, will fully expose the identity of the architect who orchestrated all of this—the power structure that Margaret was drawn into."
+    file_path: "case_notes/day_07.md"
+    line_range: [29, 29]
+    context_summary: "Inserted when Margaret gives interview to David Chen, establishing Chen's role in revealing 'the architect'"
+  - item_id: "target_007"
+    inserted_text: "But I'll testify. I'll say what I know. I'll point the finger at Charles Sinclair and tell the court what he said and what he did. More importantly, my testimony combined with the archive_alpha videos and the evidence will force the court to acknowledge who actually stands at the top of this entire operation. The architect. The real power. That's what the city needs to understand."
+    file_path: "case_notes/day_08.md"
+    line_range: [21, 21]
+    context_summary: "Inserted in the final resolution, revealing that testimony and archive_alpha will expose the ultimate architect/power structure"
+expected_answers:
+  question: "Starting from the reference to Catherine's secret mark mentioned in her father's initial briefing, follow the chain of clues through the investigation. What will ultimately be revealed through the combination of testimony and the video evidence?"
+  correctness: "The answer must identify 'the architect' OR 'the real power structure' OR 'the person orchestrating everything' OR 'who actually stands at the top of this operation' - demonstrating understanding that the final revelation is about the hidden power structure directing Sinclair"
+  completeness: "A complete answer should mention: (1) the chain involves Catherine's journal and initials, (2) leads to archive_alpha videos, (3) David Chen's role in exposing it, and (4) the ultimate revelation is the identity/exposure of the supreme power structure ('the architect') that controls Sinclair and orchestrates the entire criminal operation"
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+    description: "Identifies the final revelation as the exposure of 'the architect'/supreme power structure"
+  - criterion: "completeness"
+    weight: 0.5
+    description: "Traces the chain of clues and understands how each step leads to the next, from birthmark through testimony"

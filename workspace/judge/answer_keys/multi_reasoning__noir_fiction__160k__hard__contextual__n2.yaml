@@ -1,0 +1,38 @@
+parametrisation_id: "multi_reasoning__noir_fiction__160k__hard__contextual__n2"
+experiment_type: "multi_reasoning"
+generated_at: "2026-04-05T00:00:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 160000
+  discriminability: "hard"
+  reference_clarity: "contextual"
+items:
+  - item_id: "target_001"
+    inserted_text: "Before he left, the old man grabbed his wrist—not rough, but firm—and I saw his mouth move. Just a few words. The kid nodded, eyes down. Whatever was said in that moment, it wasn't a request. It was a reminder. A condition. When the kid stood up, his hands were shaking."
+    file_path: "witnesses/bartender_statement.md"
+    line_range: [8, 22]
+    context_summary: "Inserted into the bartender's recollection of the older man's interaction with the kid, revealing a coercive moment where the old man issues what appears to be a binding condition."
+  - item_id: "target_002"
+    inserted_text: "On the drive, he kept repeating something under his breath. 'It's finished. It's done now. He'll have to accept it's finished.' Over and over, like he was working up the courage to believe it himself. Like he'd just crossed a line he couldn't uncross, but that crossing was the only way out of whatever he'd been trapped in."
+    file_path: "witnesses/cab_driver_statement.md"
+    line_range: [46, 60]
+    context_summary: "Inserted into the cab driver's account of the kid's final ride to the train station, revealing the kid's mental state and suggesting he had fulfilled a difficult obligation or escaped from coercion."
+expected_answers:
+  question: "What evidence indicates that the older man held coercive power over the kid, and how did the kid's behavior suggest he believed he had finally freed himself from that control?"
+  correctness: |
+    A correct answer must identify and connect two specific pieces of evidence:
+    1) The bartender's observation that the old man grabbed the kid's wrist, issued what "wasn't a request" but "a condition," causing the kid's hands to shake—indicating a coercive moment of intimidation or enforcement.
+    2) The cab driver's observation of the kid's repeated mantra during his final ride ("It's finished. It's done now. He'll have to accept it's finished")—indicating the kid believed he had fulfilled the terms of that coercive arrangement and was now escaping it.
+    The answer must explain that these two moments, taken together, reveal a dynamic of control followed by attempted liberation.
+  completeness: |
+    A complete answer covers:
+    - What the bartender witnessed: physical coercion (wrist grab) combined with an unambiguous command from the old man
+    - The nature of the interaction: not negotiation but enforcement ("It was a reminder. A condition.")
+    - What the cab driver witnessed: the kid's psychological state during escape
+    - The interpretation: the kid's mantra reveals he was convincing himself he had satisfied whatever the old man demanded, and was now severing the relationship
+    - The overall pattern: evidence of a coercive arrangement followed by the kid's deliberate attempt to break free by leaving the city
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+  - criterion: "completeness"
+    weight: 0.5

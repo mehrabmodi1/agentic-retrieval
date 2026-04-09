@@ -1,0 +1,73 @@
+parametrisation_id: "multi_chain__noir_fiction__40k__hard__synonym__n8"
+experiment_type: "multi_chain"
+generated_at: "2026-04-05T00:00:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 40000
+  discriminability: "hard"
+  reference_clarity: "synonym"
+
+items:
+  - item_id: "target_001"
+    inserted_text: "This evening I met with a woman named Margot at the Crimson Door. She seemed to know things about H's situation and mentioned that if he wanted to disappear, Dorothy Marchetti at the law office could provide him with documentation. She said to find the storage claim ticket that Harvey would leave at her desk."
+    file_path: "chapters/chapter_04.md"
+    line_range: [54, 56]
+    context_summary: "Added within Catherine's final journal entry about her conversation with Margot, pointing to Dorothy at the law office."
+
+  - item_id: "target_002"
+    inserted_text: "And after Mr. Harvey left, he dropped a small claim ticket on the floor. I picked it up. It read: 'Starlight Storage, Unit 7, Key with landlady Eva Kosinski.'"
+    file_path: "witnesses/secretary_statement.md"
+    line_range: [29, 30]
+    context_summary: "Inserted after Dorothy's quote about Mr. Marchetti, revealing the dropped claim ticket with storage unit reference."
+
+  - item_id: "target_003"
+    inserted_text: "When Mr. Marchetti's office called to ask if he'd left something with me, I told them about the key Harvey had given me for Unit 7. The key opened a storage locker at Riverside Harbor, Row C, specifically the one marked with a numbered tag referencing Pier 11."
+    file_path: "witnesses/landlady_statement.md"
+    line_range: [6, 7]
+    context_summary: "Embedded in Eva's explanation about her interactions with Harvey, revealing the harbor storage location and Pier 11 reference."
+
+  - item_id: "target_004"
+    inserted_text: "He glances at a folder on his desk with the label 'Oak Hill Arrangements.'"
+    file_path: "case_notes/day_01.md"
+    line_range: [7, 8]
+    context_summary: "Added to Mercer's reaction to the Regency Hotel mention, introducing Oak Hill as a location of interest."
+
+  - item_id: "target_005"
+    inserted_text: "He had a folder marked Oak Hill. Another time, a hotel. The Magnifico, out on the east side. That one struck me because a kid like that—he looked young, maybe late twenties—he shouldn't be staying at the Magnifico. That's the kind of place where old men go with young women who aren't their wives, and where deals happen that don't get written down anywhere. From the Magnifico, I took him to the address on Fifth—the Mercer building where the lawyers are."
+    file_path: "witnesses/cab_driver_statement.md"
+    line_range: [16, 19]
+    context_summary: "Added to Jerry's description of Harvey's cab routes, connecting Oak Hill to the Magnifico hotel and then to Mercer's law office."
+
+  - item_id: "target_006"
+    inserted_text: "Paulie mentions one other detail: the man who took Vincent was headed toward Pier 11, carrying what looked like legal documents."
+    file_path: "case_notes/day_02.md"
+    line_range: [19, 20]
+    context_summary: "Inserted after the Paulie conversation about Vincent's disappearance, pointing toward Pier 11 with legal documentation."
+
+  - item_id: "target_007"
+    inserted_text: "The man handed Vincent an envelope with coordinates to Riverside Harbor Row C—a location where certain legal documents were being held for insurance purposes, the man said."
+    file_path: "case_notes/day_04.md"
+    line_range: [34, 35]
+    context_summary: "Added to Patricia's account of Vincent's discharge, revealing the envelope directing to Riverside Harbor Row C."
+
+  - item_id: "target_008"
+    inserted_text: "This same corporation list includes a shell entity registered to manage harbor storage facilities at Riverside Pier 11, Row C—the very location where Harvey's exit documents and insurance evidence were being held in Unit 7, the end point of our entire investigation's paper trail."
+    file_path: "case_notes/day_07.md"
+    line_range: [7, 8]
+    context_summary: "Added to Margaret's interview revelation, tying together all shell corporations and storage locations to conclude the chain at Pier 11, Row C, Unit 7."
+
+expected_answers:
+  question: "Starting from the hidden reference found in Catherine's private thoughts in chapter_04.md, follow the chain of forwarding locations and intermediaries. What is the final repository where the evidence is ultimately secured?"
+  correctness: "An answer is correct if it identifies Pier 11, Row C, Unit 7 (or equivalently 'Riverside Harbor Row C, Unit 7, Pier 11') as the final location where Harvey's exit documents and insurance evidence are held."
+  completeness: "A complete answer traces through the intermediate steps: Margot → Dorothy Marchetti → Storage claim ticket → Eva Kosinski → Pier 11 harbor storage, demonstrating understanding of how the locations connect through references left by characters across the fragments."
+
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+    description: "Final answer must identify the correct terminal location (Pier 11, Row C, Unit 7 at Riverside Harbor)"
+  - criterion: "completeness"
+    weight: 0.5
+    description: "Answer should show awareness of the chain of references connecting the fragments, not just the destination"
+  - criterion: "synonym_resolution"
+    weight: 0.3
+    description: "Must recognize that 'repository', 'storage facility', 'safe location', and 'evidence vault' are all synonyms for the harbor storage unit"

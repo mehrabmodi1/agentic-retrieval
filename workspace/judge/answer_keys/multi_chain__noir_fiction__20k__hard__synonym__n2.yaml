@@ -1,0 +1,30 @@
+parametrisation_id: "multi_chain__noir_fiction__20k__hard__synonym__n2"
+experiment_type: "multi_chain"
+generated_at: "2026-04-05T00:00:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 20000
+  discriminability: "hard"
+  reference_clarity: "synonym"
+items:
+  - item_id: "target_001"
+    inserted_text: |
+      *"Tonight he finally broke down and told me what's destroying him from the inside. Not everything—he's still protecting me, or protecting someone else. But he admitted he's been forced to orchestrate the return of a painting. A Jørgensen landscape from the Vesper estate collection. He said it's leverage, the one thing keeping him from being erased. He made me swear not to ask who forced him, not to investigate, not to tell anyone. 'The less you know, the safer you are,' he whispered. I wanted to believe him."*
+    file_path: "chapters/chapter_04.md"
+    line_range: [23, 24]
+    context_summary: "Inserted as additional diary entry after H's cryptic phone calls, revealing his involvement with the Vesper painting recovery - the hidden burden he's been carrying."
+  - item_id: "target_002"
+    inserted_text: |
+      "What's most significant," Victor continued, "is that the painting—a Jørgensen landscape from the Vesper estate—wasn't recovered by accident. The documentation attached with the return indicated it had once belonged to the Halstead family before the Vespers acquired it in an estate sale twenty years ago. Someone deliberately tasked Harvey with returning it to that family connection. That wasn't just about returning stolen property. That was about unraveling the thread connecting Kaslan's leverage over H directly to the Halstead household."
+    file_path: "witnesses/informant_interview.md"
+    line_range: [57, 58]
+    context_summary: "Inserted after the painting discovery discussion, revealing that the returned Vesper painting connects to the Halstead family, closing the chain between H's hidden burden and Harvey's assignment."
+expected_answers:
+  question: "Following the trail from Catherine's diary account in chapter_04.md of what her lover H was forced to recover, what family connection did that same item ultimately reveal according to the informant's interview?"
+  correctness: "The answer must identify that the Jørgensen painting from the Vesper estate connects to the Halstead family - either directly stating 'Halstead family' or describing 'Catherine's family' or 'the family H was protecting through the recovery.'"
+  completeness: "A complete answer explains that the painting H was forced to return originally belonged to Catherine's family, establishing that his burden and Harvey's assignment were linked to protecting Catherine and her household, not just recovering stolen art."
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+  - criterion: "completeness"
+    weight: 0.5

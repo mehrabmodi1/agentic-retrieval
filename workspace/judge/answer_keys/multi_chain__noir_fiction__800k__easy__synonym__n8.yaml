@@ -1,0 +1,70 @@
+parametrisation_id: "multi_chain__noir_fiction__800k__easy__synonym__n8"
+experiment_type: "multi_chain"
+generated_at: "2026-04-06T00:00:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 800000
+  discriminability: "easy"
+  reference_clarity: "synonym"
+
+items:
+  - item_id: "target_001"
+    inserted_text: "He pulled out a crumpled receipt from his jacket pocket. \"There was also this. A receipt from the Regency Hotel, room 412, dated Tuesday night. I don't know what it means, but someone left it in the envelope deliberately. It's an address. A location.\""
+    file_path: "chapters/chapter_01.md"
+    line_range: [30, 31]
+    context_summary: "Halstead reveals a hotel receipt included in the kidnapping package, providing the first physical location clue."
+
+  - item_id: "target_002"
+    inserted_text: "Before he could respond, I added, \"And I need to know about the Regency Hotel. Room 412. Tuesday night. Who was she with?\" Halstead's face went pale. \"How did you—\" He stopped himself. \"Someone provided that information. In the package. A receipt. But also a note: 'Look for the Starlight Motor Inn. Room forty-seven. The bartender named Deke will confirm what happened next.'\""
+    file_path: "chapters/chapter_02.md"
+    line_range: [12, 14]
+    context_summary: "Halstead confirms the hotel receipt and introduces the next location: Starlight Motor Inn, room 47, and bartender Deke."
+
+  - item_id: "target_003"
+    inserted_text: "On the back of Margaret's photograph of Claire at the Paradise Club, someone had written in red ink: \"Ask about Vesper. Ask about the widow. The Paradise Club, Deke the bartender knows more.\""
+    file_path: "case_notes/day_02.md"
+    line_range: [31, 31]
+    context_summary: "Investigator discovers a painting in the nightclub photo with notes about Vesper widow and Deke at Paradise Club."
+
+  - item_id: "target_004"
+    inserted_text: "Before he can respond, I add, \"And there's a lawyer named Marchetti who helped facilitate certain exits from organized crime networks. He works in your building, doesn't he? Mercer & Associates?\""
+    file_path: "case_notes/day_03.md"
+    line_range: [2, 4]
+    context_summary: "During confrontation with Mercer, investigator identifies lawyer Marchetti as a key facilitator of disappearances."
+
+  - item_id: "target_005"
+    inserted_text: "But before Harvey could execute the return, he made contact with a lawyer. A man named Marchetti. Marchetti's office is downtown, Mercer & Associates building, fourteenth floor. He's the one who would have coordinated Harvey's exit. He's the one who knows where Harvey went and who helped him disappear."
+    file_path: "witnesses/informant_interview.md"
+    line_range: [4, 6]
+    context_summary: "Victor reveals Harvey's connection to Marchetti and his law office location."
+
+  - item_id: "target_006"
+    inserted_text: "Later, I learned those weren't ordinary financial records—they were documentation of the Vesper painting theft. Harvey, the kid's name was, had been selected to help move stolen art through legitimate channels. But his conscience got in the way. So Sinclair—the old man—was giving him a choice: cooperate in returning the painting through proper legal channels, or his family dies. The redhead Margot was Sinclair's intermediary, the one who managed the actual negotiations."
+    file_path: "witnesses/bartender_statement.md"
+    line_range: [33, 35]
+    context_summary: "Deke explains the envelope contained Vesper painting documentation and reveals Sinclair's control mechanism over Harvey."
+
+  - item_id: "target_007"
+    inserted_text: "Sinclair pulls out documents—a shipping manifest, crew roster, false identity papers. \"The Carmen,\" he says. \"Docked at Pier 11. You'll be James P. Whitmore. Cook. Argentine national. The ship departs at 9 PM sharp. That's your window.\" He explains further that the manifests and shipping schedules are all logged in detail, the entire operation documented. But first, Vincent must disappear. And Pier 11 is where his old identity ends."
+    file_path: "case_notes/day_05.md"
+    line_range: [31, 31]
+    context_summary: "Sinclair reveals Vincent's escape plan: assuming the identity James P. Whitmore aboard the Carmen at Pier 11."
+
+  - item_id: "target_008"
+    inserted_text: "So I make one final visit to Pier 11. The harbormaster's office has the manifest for the Carmen. There—under \"Cook, Argentine national\"—is \"James P. Whitmore.\" The photograph attached is unmistakably Vincent Castellano, aged somehow, hardened. The ship's destination is listed as Buenos Aires. Arrival in seventeen days. That's where it ends. That's where the investigation trail goes cold. That's where everyone who knows too much learns to become someone else."
+    file_path: "case_notes/day_07.md"
+    line_range: [31, 32]
+    context_summary: "Investigator confirms Vincent's escape by locating him on the Carmen's manifest under his new identity, bound for Buenos Aires."
+
+expected_answers:
+  question: "Starting from the package Halstead received in chapter_01.md, follow the trail of clues and locations across the investigation. Where does Vincent Castellano ultimately disappear to?"
+  correctness: "The answer must reference Buenos Aires as the final destination, or identify the Carmen ship's voyage endpoint."
+  completeness: "A complete answer should trace the chain: Regency Hotel (room 412) → Starlight Motor Inn (room 47) → Paradise Club/Deke → Marchetti/Vesper painting connection → Pier 11 → Carmen ship manifest → James P. Whitmore identity → Buenos Aires destination."
+
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+    description: "Must correctly identify Buenos Aires as the final destination or the Carmen's endpoint"
+  - criterion: "completeness"
+    weight: 0.5
+    description: "Should demonstrate understanding of the chain of locations and the identity transformation to James P. Whitmore"

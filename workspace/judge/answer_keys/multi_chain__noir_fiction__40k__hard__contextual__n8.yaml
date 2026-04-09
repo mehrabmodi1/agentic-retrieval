@@ -1,0 +1,63 @@
+parametrisation_id: "multi_chain__noir_fiction__40k__hard__contextual__n8"
+experiment_type: "multi_chain"
+generated_at: "2026-04-05T00:00:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 40000
+  discriminability: "hard"
+  reference_clarity: "contextual"
+items:
+  - item_id: "target_001"
+    inserted_text: "But I'll tell you this: the representative who handles the city operations—the one who reports up the chain—his name is Charles Sinclair. He's the public face. Look into Sinclair, and you'll find the thread that connects Vincent's disappearance to something bigger."
+    file_path: "case_notes/day_02.md"
+    line_range: [116, 119]
+    context_summary: "Morris reveals Charles Sinclair as the city operations representative in response to the detective's question about how high Vincent Castellano's disappearance reaches."
+  - item_id: "target_002"
+    inserted_text: "Sinclair's got a handler—someone who oversees all the city operations. That handler reports directly to the real power. That handler is a man named Silas Gregg. Find Gregg, and you find the chain that leads all the way up."
+    file_path: "case_notes/day_04.md"
+    line_range: [108, 112]
+    context_summary: "Paulie adds crucial information that Sinclair himself has a superior—Silas Gregg—who reports to the true power structure, establishing the first link in the chain of command."
+  - item_id: "target_003"
+    inserted_text: "That redhead—she's not just a girlfriend or a casual connection to the kid. She's part of the network. She's the one who helps people exit the organization. That's her role. That's what she does. And if she was meeting with the kid twice in two months, she was making him a choice: disappear clean, or disappear permanent."
+    file_path: "witnesses/bartender_statement.md"
+    line_range: [50, 55]
+    context_summary: "Deke reveals the redheaded woman's true function within the network as the person who facilitates escapes for members attempting to leave the organization."
+  - item_id: "target_004"
+    inserted_text: "And I think she was also his way out—the intermediary who would arrange safe passage if he agreed to disappear. She came to tell him that the option existed. That the network would let him go, if the price was right."
+    file_path: "witnesses/neighbor_statement.md"
+    line_range: [40, 42]
+    context_summary: "Eleanor interprets the redheaded woman's visit to James as offering him an escape route contingent on his willingness to completely disappear and remain silent."
+  - item_id: "target_005"
+    inserted_text: "The address in Oak Hill—that wasn't random. That house, that's where the network handles its sensitive conversations. That's where the kid was being presented with his options by the handler himself. That's where the real power makes its decisions."
+    file_path: "witnesses/cab_driver_statement.md"
+    line_range: [38, 42]
+    context_summary: "Jerry explains that the Oak Hill residence is the command center where the network's handler presents crucial decisions to members facing difficult choices about their involvement."
+  - item_id: "target_006"
+    inserted_text: "Whatever Mr. Harvey asked him to do on October 28th—whatever moral choice he presented—it had something to do with formalizing an arrangement. An arrangement to leave. To disappear. With assistance."
+    file_path: "witnesses/secretary_statement.md"
+    line_range: [41, 44]
+    context_summary: "Dorothy deduces that Harvey's final legal consultation involved formalizing paperwork to facilitate his disappearance with network assistance, explaining Marchetti's moral distress."
+  - item_id: "target_007"
+    inserted_text: "**MORELLO:** It fits. More than that—Gregg is the network's enforcer and negotiator. When someone needs to be pressured, it's Gregg. When someone needs to be offered a deal, it's also Gregg. He's the handler who reports to the real power. He's the man who connects the field operatives like Sinclair to whoever's actually running this entire operation."
+    file_path: "witnesses/detective_debrief.md"
+    line_range: [34, 37]
+    context_summary: "Morello confirms that Silas Gregg functions as both the enforcer and negotiator, serving as the critical intermediary between street-level operatives and the unknown real power controlling the network."
+  - item_id: "target_008"
+    inserted_text: "But here's what's important: Kaslan—the real Kaslan, the actual name, the actual person—he's not someone you find in databases or newspapers. He's someone who's been orchestrating acquisition operations across multiple cities for decades. He employs people like Sinclair and Gregg. He owns people like Margot. And nobody knows who he is because he never enters the city himself. He operates entirely through intermediaries. That's how the real power stays invisible."
+    file_path: "witnesses/informant_interview.md"
+    line_range: [87, 91]
+    context_summary: "Victor reveals the ultimate structure: Kaslan is the invisible orchestrator controlling the entire network through multiple city-level intermediaries, never appearing publicly or physically entering the city."
+expected_answers:
+  question: "Starting from Detective Morris's mention of 'someone important' above the Castellano family who ordered Vincent's disappearance, trace the chain of command and identify the ultimate source of power controlling the criminal network operations across the city."
+  correctness: "The answer must identify that the chain of command consists of: Sinclair (public representative) → Gregg (handler/enforcer) → the mysterious entity known as Kaslan (the true orchestrator). The answer must recognize that Kaslan is the ultimate power and operates entirely through intermediaries while remaining invisible and never entering the city."
+  completeness: "A complete answer covers: (1) Charles Sinclair as the city operations representative, (2) Silas Gregg as the handler/intermediary reporting to higher authority, (3) the redheaded woman (Margot) as the network's escape coordinator, (4) the Oak Hill address as the command center, (5) Harvey's attempt to formalize his exit, and (6) Kaslan as the invisible orchestrator who has controlled acquisition operations across multiple cities for decades through this intermediary network."
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+    description: "Answer must identify Kaslan as the ultimate power and trace the hierarchy from Sinclair through Gregg to Kaslan"
+  - criterion: "completeness"
+    weight: 0.5
+    description: "Answer should demonstrate understanding of the full chain: field operatives, handlers, escape facilitators, and the invisible orchestrator"
+  - criterion: "contextual_understanding"
+    weight: 0.5
+    description: "Answer should show comprehension that requires reading surrounding context to understand each clue's significance to the overall structure"

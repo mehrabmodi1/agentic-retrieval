@@ -1,0 +1,23 @@
+parametrisation_id: "single_needle__noir_fiction__800k__easy__exact"
+experiment_type: "single_needle"
+generated_at: "2026-04-03T15:39:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 800000
+  discriminability: "easy"
+  reference_clarity: "exact"
+items:
+  - item_id: "target_001"
+    inserted_text: "Paulie paused at the door and turned back. \"One more thing,\" he said. \"The man who left with the Castellano kid and the girl—he came in a dark blue Packard, plates starting TW-9. I didn't want to say it before, but everyone down here knows that car belongs to a man named Aldous Brent. He runs the syndicate's waterfront operations out of an office at Pier 22.\" He was gone before I could ask anything else."
+    file_path: "case_notes/day_02.md"
+    line_range: [96, 96]
+    context_summary: "Inserted as a final piece of information from the waterfront informant Paulie, just before the 'Detour: Cocaine and Corpses' section, adding a name and location to the mystery man connected to the Castellano disappearance."
+expected_answers:
+  question: "According to the waterfront informant Paulie, what is the name of the man whose dark blue Packard was used to take the Castellano kid and the girl, and where does he run his syndicate operations?"
+  correctness: "Aldous Brent; Pier 22"
+  completeness: "A complete answer names Aldous Brent as the owner of the dark blue Packard and states that he runs the syndicate's waterfront operations out of an office at Pier 22."
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+  - criterion: "completeness"
+    weight: 0.5

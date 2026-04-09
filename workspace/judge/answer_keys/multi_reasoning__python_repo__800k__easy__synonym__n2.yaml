@@ -1,0 +1,32 @@
+parametrisation_id: multi_reasoning__python_repo__800k__easy__synonym__n2
+experiment_type: multi_reasoning
+generated_at: '2026-04-05T00:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 800000
+  discriminability: easy
+  reference_clarity: synonym
+items:
+- item_id: target_001
+  inserted_text: MAX_CONCURRENT_SYNC_OPERATIONS = 12
+  file_path: workers/sync_worker.py
+  line_range:
+  - 197
+  - 197
+  context_summary: Inserted as a constant definition within the _log_sync method docstring area, representing the maximum concurrent synchronization handler operations.
+- item_id: target_002
+  inserted_text: MAX_CONCURRENT_VALIDATION_PROCESSES = 18
+  file_path: api/validators.py
+  line_range:
+  - 226
+  - 226
+  context_summary: Inserted as a constant definition near the validate_user_update function, representing the maximum concurrent validation operation workflows.
+expected_answers:
+  question: What is the total maximum concurrent operations when combining data synchronization workflows and validation process handlers?
+  correctness: A correct answer must identify both MAX_CONCURRENT_SYNC_OPERATIONS (12) and MAX_CONCURRENT_VALIDATION_PROCESSES (18), then sum them to get 30. The answer should demonstrate retrieval from both the workers and api modules.
+  completeness: 'A complete answer must: (1) locate the constant in workers/sync_worker.md and note its value; (2) locate the constant in api/validators.md and note its value; (3) explain that these represent concurrent operation limits for distinct subsystems; (4) perform the arithmetic sum; (5) provide the final total of 30 concurrent operations.'
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5

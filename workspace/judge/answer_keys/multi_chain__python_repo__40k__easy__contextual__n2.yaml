@@ -1,0 +1,38 @@
+parametrisation_id: multi_chain__python_repo__40k__easy__contextual__n2
+experiment_type: multi_chain
+generated_at: '2026-04-03T10:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 40000
+  discriminability: easy
+  reference_clarity: contextual
+items:
+- item_id: target_001
+  inserted_text: '# Maximum idle time (in seconds) before an in-progress export job is cancelled;
+
+    # the canonical EXPORT_JOB_IDLE_TIMEOUT_SECONDS value is in workers/cleanup_worker.py.
+
+    EXPORT_JOB_IDLE_TIMEOUT_SECONDS = 120'
+  file_path: workers/report_generator.py
+  line_range:
+  - 30
+  - 32
+  context_summary: Inserted as module-level constants after the PIPELINE_DISPATCH_TIMEOUT comment block, before the ReportFormat enum class, pointing to workers/cleanup_worker.py for the canonical value.
+- item_id: target_002
+  inserted_text: '# Canonical maximum idle timeout for export jobs across the worker pipeline (seconds).
+
+    EXPORT_JOB_IDLE_TIMEOUT_SECONDS = 300'
+  file_path: workers/cleanup_worker.py
+  line_range:
+  - 23
+  - 24
+  context_summary: Inserted as module-level constants after the PIPELINE_DISPATCH_TIMEOUT comment block, before the CleanupTask dataclass definition, defining the authoritative integer value.
+expected_answers:
+  question: Starting from `workers/report_generator.md`, follow the reference chain for the limit on how long an in-progress export job may remain idle before automatic cancellation. What is the canonical value of this timeout in seconds?
+  correctness: '300'
+  completeness: A complete answer identifies that EXPORT_JOB_IDLE_TIMEOUT_SECONDS is defined as 300 in workers/cleanup_worker.md, reached by following the cross-file reference in workers/report_generator.md which notes the canonical value lives in workers/cleanup_worker.py.
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5

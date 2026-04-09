@@ -1,0 +1,124 @@
+parametrisation_id: multi_reasoning__python_repo__800k__hard__synonym__n8
+experiment_type: multi_reasoning
+generated_at: '2026-04-05T14:30:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 800000
+  discriminability: hard
+  reference_clarity: synonym
+items:
+- item_id: target_001
+  inserted_text: '# System constraint: maximum 12 concurrent validation error checks'
+  file_path: tests/test_api.py
+  line_range:
+  - 275
+  - 276
+  context_summary: Embedded as inline comment after test_missing_required_fields validation assertion, explaining API validation concurrency limit.
+- item_id: target_002
+  inserted_text: '# Configuration: error batch aggregation limit is 18 per flush cycle'
+  file_path: api/error_handlers.py
+  line_range:
+  - 313
+  - 314
+  context_summary: Inserted as comment after error logging logic in handle_500_error function, documenting error batching configuration.
+- item_id: target_003
+  inserted_text: '# Task queue depth restriction: 8 simultaneous creations per user'
+  file_path: api/routes.py
+  line_range:
+  - 498
+  - 499
+  context_summary: Added as inline comment before TaskService.create_task call, specifying queuing constraint.
+- item_id: target_004
+  inserted_text: '# Burst rate limiter capacity: 10 tokens per window'
+  file_path: api/rate_limiting.py
+  line_range:
+  - 328
+  - 329
+  context_summary: Embedded as comment within burst_limit function implementation, documenting token capacity.
+- item_id: target_005
+  inserted_text: '# Page iteration limit during sync: 10 consecutive pages per batch'
+  file_path: workers/sync_worker.py
+  line_range:
+  - 331
+  - 332
+  context_summary: Placed as comment immediately after the for loop range(1, 11) in example_sync_handler, clarifying pagination limit.
+- item_id: target_006
+  inserted_text: '# Task queueing configuration: batch size of 5 tasks per submission'
+  file_path: tests/test_workers.py
+  line_range:
+  - 36
+  - 37
+  context_summary: Inserted as comment within test_send_email_task_with_kwargs, documenting batch processing size.
+- item_id: target_007
+  inserted_text: '# Report generation constraint: 1000 maximum rows per export'
+  file_path: workers/report_generator.py
+  line_range:
+  - 119
+  - 120
+  context_summary: Added as clarifying comment after max_rows_per_report check, explaining row limitation.
+- item_id: target_008
+  inserted_text: '# Retry policy configuration: 3 maximum retry attempts per failed task'
+  file_path: workers/retry_handler.py
+  line_range:
+  - 293
+  - 294
+  context_summary: Embedded as comment within failed_tasks query filter showing retry attempt threshold.
+expected_answers:
+  question: 'In this system, various subsystems enforce capacity and resource limits to prevent overload.
+
+    Calculate the total maximum throughput budget (sum of all configured limits) across:
+
+    (1) concurrent validation operations, (2) error batch aggregation, (3) simultaneous task creation,
+
+    (4) rate limit token capacity, (5) pages processed per sync batch, (6) task queue submission size,
+
+    (7) report row export limit, and (8) maximum task retry attempts.
+
+
+    What is the combined total of these eight configuration values?
+
+    '
+  correctness: 'The answer must identify and sum all eight numeric configuration limits found embedded
+
+    across the codebase:
+
+    - Validation concurrency: 12
+
+    - Error batch limit: 18
+
+    - Task creation queue: 8
+
+    - Rate limit capacity: 10
+
+    - Sync page batch: 10
+
+    - Task batch size: 5
+
+    - Report row limit: 1000
+
+    - Retry attempts: 3
+
+    Total: 1066
+
+    '
+  completeness: 'A complete answer must:
+
+    1. Locate all eight configuration values from their embedded context in different files
+
+    2. Understand what each limit represents (not exact string matches, but contextual understanding)
+
+    3. Sum all values correctly: 12+18+8+10+10+5+1000+3 = 1066
+
+    4. Demonstrate reasoning that these are distinct subsystem constraints being aggregated
+
+    '
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+  description: Answer must calculate the correct sum of all eight values
+- criterion: completeness
+  weight: 0.5
+  description: Answer must identify and reference all eight configuration values
+- criterion: reasoning
+  weight: 0.3
+  description: Answer should explain why these limits matter collectively

@@ -1,0 +1,32 @@
+parametrisation_id: multi_reasoning__python_repo__800k__hard__contextual__n2
+experiment_type: multi_reasoning
+generated_at: '2026-04-05T00:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 800000
+  discriminability: hard
+  reference_clarity: contextual
+items:
+- item_id: target_001
+  inserted_text: 'batch_size=25,  # Each worker accumulates 25 items per batch cycle'
+  file_path: workers/task_runner.py
+  line_range:
+  - 282
+  - 283
+  context_summary: Embedded as a configuration parameter in TaskRunner initialization, describing the batch size each worker processes per cycle.
+- item_id: target_002
+  inserted_text: 'MAX_ITEMS_PER_RESPONSE = 10  # API enforces maximum 10 items per paginated response'
+  file_path: api/serializers.py
+  line_range:
+  - 275
+  - 275
+  context_summary: Embedded as a class constant in PaginatedResponseSerializer, limiting the number of items serialized per paginated response.
+expected_answers:
+  question: If the task runner processes a batch of 100 items (4 workers × 25 items per batch), and these items must be serialized as paginated responses with a maximum of 10 items each, how many paginated API responses will be generated?
+  correctness: 'The answer must correctly calculate the total number of paginated responses: 100 items ÷ 10 items per response = 10 responses. The calculation must explicitly reference both the batch size (25 items per worker × 4 workers = 100) and the response limit (10 items per response).'
+  completeness: 'A complete answer must: (1) identify the total items being processed (100), (2) identify the pagination limit (10 items per response), (3) perform the division (100 ÷ 10), and (4) state the final count (10 responses). It must demonstrate understanding of how the two constraints interact to determine the number of API responses.'
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5

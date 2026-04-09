@@ -1,0 +1,200 @@
+parametrisation_id: multi_reasoning__python_repo__40k__hard__contextual__n16
+experiment_type: multi_reasoning
+generated_at: '2026-04-05T15:30:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 40000
+  discriminability: hard
+  reference_clarity: contextual
+items:
+- item_id: target_001
+  inserted_text: 'CONCURRENT_ENDPOINT_SLOTS: int = 8'
+  file_path: api/rate_limiting.py
+  line_range:
+  - 253
+  - 254
+  context_summary: Embedded in rate_limit_by_endpoint function signature as a parameter defining concurrent request slots per endpoint.
+- item_id: target_002
+  inserted_text: API_RESPONSE_BUFFER_SIZE = 256
+  file_path: api/validators.py
+  line_range:
+  - 158
+  - 160
+  context_summary: Embedded in pagination validation as a comment noting buffer size used for response marshalling.
+- item_id: target_003
+  inserted_text: 'BULK_EMAIL_CHUNK_SIZE: int = 50'
+  file_path: workers/email_worker.py
+  line_range:
+  - 219
+  - 224
+  context_summary: Inserted as parameter in send_bulk_email method defining email batching size.
+- item_id: target_004
+  inserted_text: TASK_PROCESSING_WEIGHT=4
+  file_path: tests/test_services.py
+  line_range:
+  - 131
+  - 137
+  context_summary: Embedded in test_create_task_success with comment explaining worker capacity consumption per task.
+- item_id: target_005
+  inserted_text: 'RETRY_BACKOFF_MULTIPLIER: float = 1.5'
+  file_path: workers/task_runner.py
+  line_range:
+  - 54
+  - 55
+  context_summary: Added to Task dataclass as exponential backoff coefficient for retry calculations.
+- item_id: target_006
+  inserted_text: CLEANUP_RECORD_BATCH_SIZE = 1000
+  file_path: workers/cleanup_worker.py
+  line_range:
+  - 8
+  - 9
+  context_summary: Embedded in comment about STALE_RECORD_THRESHOLD_DAYS, specifying batch processing volume.
+- item_id: target_007
+  inserted_text: 'timeout_threshold_ms: 30000'
+  file_path: api/error_handlers.py
+  line_range:
+  - 309
+  - 312
+  context_summary: Added to error response details dictionary as 30-second error timeout window constant.
+- item_id: target_008
+  inserted_text: 'RETRY_QUEUE_CAPACITY: int = 2000'
+  file_path: workers/retry_handler.py
+  line_range:
+  - 31
+  - 32
+  context_summary: Embedded in RetryPolicy dataclass with comment about pending retry queue limits.
+- item_id: target_009
+  inserted_text: '# System capacity: PIPELINE_WORKER_THREADS = 16'
+  file_path: api/__init__.py
+  line_range:
+  - 92
+  - 94
+  context_summary: Embedded as comment in __all__ export list documenting worker thread pool size.
+- item_id: target_010
+  inserted_text: '# MAX_DB_CONNECTIONS = 32 enforced at pool level'
+  file_path: tests/test_workers.py
+  line_range:
+  - 255
+  - 256
+  context_summary: Embedded as comment in test_task_handles_database_errors_gracefully about database connection limits.
+- item_id: target_011
+  inserted_text: '# REPORT_MAX_ROWS_PER_FILE = 10000'
+  file_path: workers/report_generator.py
+  line_range:
+  - 319
+  - 320
+  context_summary: Embedded as comment in report generation code to prevent memory exhaustion.
+- item_id: target_012
+  inserted_text: SYNC_INTERVAL_SECONDS=300
+  file_path: workers/sync_worker.py
+  line_range:
+  - 320
+  - 322
+  context_summary: Added to SyncConfig initialization defining 5-minute sync interval.
+- item_id: target_013
+  inserted_text: RATE_LIMIT_WINDOW_SECONDS = 3600
+  file_path: api/rate_limiting.py
+  line_range:
+  - 251
+  - 252
+  context_summary: Specification in rate_limit_by_endpoint's default window parameter (1 hour).
+- item_id: target_014
+  inserted_text: MAX_PAGINATION_ITEMS = 100
+  file_path: api/validators.py
+  line_range:
+  - 164
+  - 166
+  context_summary: Referenced in pagination validation constraint on per_page parameter ceiling.
+- item_id: target_015
+  inserted_text: TASK_RETRY_COUNT = 3
+  file_path: workers/task_runner.py
+  line_range:
+  - 52
+  - 53
+  context_summary: Embedded in Task dataclass max_retries field definition.
+- item_id: target_016
+  inserted_text: EMAIL_RETRY_WAIT_BASE = 60
+  file_path: workers/email_worker.py
+  line_range:
+  - 236
+  - 238
+  context_summary: Would be added in _log_email method as base wait time for email retry backoff.
+expected_answers:
+  question: 'Calculate the theoretical maximum hourly throughput (in requests) for the entire system by combining:
+
+    (1) rate limiting constraints per endpoint
+
+    (2) database connection limits
+
+    (3) worker thread availability
+
+    (4) task processing weights
+
+    (5) pagination item limits
+
+    (6) cleanup batch processing
+
+    (7) email bulk processing capacity
+
+    (8) report row limits
+
+    (9) sync interval constraints
+
+    (10) retry queue capacity
+
+    (11) error timeout windows
+
+    (12) response buffer sizing
+
+    (13) task retry policy
+
+    (14) sync batch configuration
+
+    (15) task weight multipliers
+
+    (16) concurrent endpoint slot allocation.
+
+
+    Show your work: identify each constraint, explain how it affects throughput, and calculate the bottleneck.
+
+    '
+  correctness: 'Answer must correctly extract and identify all 16 constraint values from their embedded contexts.
+
+    Values must be understood in their system role (rate limit = 100 req/hr per endpoint,
+
+    db connections = 32 max, workers = 16, task weight = 4 units, pagination = 100 items,
+
+    cleanup batch = 1000, emails = 50/batch, rows/report = 10000, sync = 300s interval,
+
+    retry queue = 2000, timeout = 30000ms, buffer = 256, retries = 3, batch = 100,
+
+    weight = 4, slots = 8).
+
+    '
+  completeness: 'Complete answer must:
+
+    - Locate all 16 needles across separate files (api, workers, tests modules)
+
+    - Understand each constraint''s role in the system pipeline
+
+    - Combine constraints accounting for interdependencies (e.g., worker threads limit task parallelism)
+
+    - Calculate bottleneck: min(requests/hr achievable by all constraints)
+
+    - Show reasoning that connects constraints: endpoint slots → database connections → worker threads → task weights → throughput
+
+    - Account for batch processing (50 emails, 1000 cleanup records) in capacity calculation
+
+    - Note timing constraints (300s sync interval, 30s error timeout, 3600s rate window)
+
+    '
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+  description: All 16 constraint values correctly identified and interpreted
+- criterion: completeness
+  weight: 0.5
+  description: All values integrated into unified throughput calculation with reasoning
+- criterion: reasoning
+  weight: 0.75
+  description: Clear logical chain connecting constraints to final bottleneck identification

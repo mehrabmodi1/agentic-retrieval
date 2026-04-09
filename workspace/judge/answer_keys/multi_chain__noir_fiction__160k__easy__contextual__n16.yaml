@@ -1,0 +1,115 @@
+parametrisation_id: "multi_chain__noir_fiction__160k__easy__contextual__n16"
+experiment_type: "multi_chain"
+generated_at: "2026-04-05T00:00:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 160000
+  discriminability: "easy"
+  reference_clarity: "contextual"
+items:
+  - item_id: "target_001"
+    inserted_text: "One thing, I said. Catherine was working on something before she disappeared. A project for you? She was transcribing financial records. Nothing sensitive—just ledger entries for the cultural foundation donation records. I need you to find that ledger she was working with. Find out where it is now."
+    file_path: "chapters/chapter_01.md"
+    line_range: [45, 52]
+    context_summary: "Shepherd asks Halstead about Catherine's ledger transcription work before her disappearance."
+
+  - item_id: "target_002"
+    inserted_text: "Before I leave, I ask if Margaret's daughter had been working on anything unusual. Margaret hesitates. Claire was helping me organize some documents. A financial ledger from a charitable acquisition. I asked her to keep it at home, to consolidate some records. She was good with numbers. That's interesting. A missing girl who knew her mother's business records."
+    file_path: "case_notes/day_01.md"
+    line_range: [33, 38]
+    context_summary: "Shepherd learns from Margaret that Claire had been organizing financial ledger documents."
+
+  - item_id: "target_003"
+    inserted_text: "The ledger she was organizing—what was in it? Margaret goes very still. How did you know about that? I didn't. But now I do. What was in it? Just... records. Property transfers. Account numbers for shell corporations. Nothing that should have interested Claire. But after she saw those numbers, everything changed. You think Castellano knew what she knew? I think whoever took her knew exactly what was in that ledger, and they knew Claire had seen it."
+    file_path: "case_notes/day_02.md"
+    line_range: [40, 52]
+    context_summary: "Investigation reveals the ledger contained account numbers that endangered Claire."
+
+  - item_id: "target_004"
+    inserted_text: "Before I go further, I check the real estate records—specifically the account numbers Margaret mentioned. There's a pattern. The shell corporations all use sequential account identifiers, all registered through a single intermediary. The intermediary is someone named Victor Ashford, import-export specialist."
+    file_path: "case_notes/day_03.md"
+    line_range: [22, 28]
+    context_summary: "Shepherd traces the account numbers from the ledger to Victor Ashford."
+
+  - item_id: "target_005"
+    inserted_text: "Did she ever mention what he did for work? His business? Margaret Chen and Eleanor exchanged glances. She said once that he worked in finance. In something legitimate-sounding, but she said he wasn't happy with it. She said he'd gotten involved with some people who made him uncomfortable. Did she ever discuss specific business concerns? Account numbers, anything like that? No. But we noticed she was anxious after her mother asked her to work on some kind of financial document. She seemed to be struggling with something."
+    file_path: "chapters/chapter_03.md"
+    line_range: [35, 50]
+    context_summary: "Catherine's friends reveal she was troubled after working with her mother's financial documents."
+
+  - item_id: "target_006"
+    inserted_text: "I made a mistake today. I was at Mother's office, looking at the ledger she asked me to organize, and I saw account numbers. Familiar numbers. The same numbers that H mentioned once when he thought I was asleep. The account transfers through the Paradise, through something called Castellano Holdings. Mother is connected to this. My lover is connected to this. I am trapped between two people I love, and they're on opposite sides of something terrible."
+    file_path: "chapters/chapter_04.md"
+    line_range: [23, 28]
+    context_summary: "Catherine's journal reveals she discovered connections between the ledger accounts and her lover H."
+
+  - item_id: "target_007"
+    inserted_text: "What company? I'm not sure. But what's strange is that they knew about the ledger Catherine was working on. They knew about the account numbers. How would they know that unless... He trailed off, but I finished the thought for him. Unless someone told them. Someone who knew what Catherine had seen."
+    file_path: "chapters/chapter_05.md"
+    line_range: [40, 50]
+    context_summary: "Shepherd deduces that someone revealed the ledger's contents to orchestrate Catherine's kidnapping."
+
+  - item_id: "target_008"
+    inserted_text: "Did he bring documents with him? Papers? Dorothy paused. The first meeting, yes. He brought a briefcase. But the second and third visits, he brought nothing. Nothing except... wait. The last visit, he had a small envelope. Very thin. It looked like it contained documents, but I never saw the contents. When he left, he wasn't carrying it anymore. Mr. Marchetti had it."
+    file_path: "witnesses/secretary_statement.md"
+    line_range: [20, 26]
+    context_summary: "Dorothy reveals Harvey delivered document-filled envelope to attorney Marchetti."
+
+  - item_id: "target_009"
+    inserted_text: "When the man visited him, the one with white hair—did he leave anything behind? Leave something? No. But he took something. Or gave something. When he came down from the apartment, his hands were empty, like he'd delivered a package. And Mr. Harvey, when I saw him the next day—he had papers. Ledger pages, I think. He was very careful with them, kept them in a folder."
+    file_path: "witnesses/landlady_statement.md"
+    line_range: [23, 31]
+    context_summary: "Eva confirms Harvey received and carefully kept ledger pages after the white-haired man's visit."
+
+  - item_id: "target_010"
+    inserted_text: "After that visitor, I noticed something else. He kept documents—ledger pages, I believe—carefully secured in his apartment. I would see him at night, arranging them, studying them under the lamp. As though he was preparing to share them with someone."
+    file_path: "witnesses/neighbor_statement.md"
+    line_range: [42, 45]
+    context_summary: "Eleanor observed Harvey methodically organizing ledger pages as preparation for distribution."
+
+  - item_id: "target_011"
+    inserted_text: "When the old guy left, he put his hand on the kid's shoulder. There was something in the gesture—something almost paternal, you know? But also something like a warning. Like a man putting his hand on a horse's neck before the race, trying to tell it to run but also knowing the horse might not come back. Before he stood up, the old man grabbed the kid's wrist—not rough, but firm—and I saw his mouth move. Just a few words. The kid nodded, eyes down. And then I saw what the old man had done—he'd left a folder on the table. Looked like it had papers in it. Ledger pages, or documents of some kind. The kid put the folder in his jacket without even looking at it. Like he knew exactly what it was and what he had to do with it."
+    file_path: "witnesses/bartender_statement.md"
+    line_range: [38, 45]
+    context_summary: "Deke witnesses the exchange of ledger-filled folder between old man and Harvey."
+
+  - item_id: "target_012"
+    inserted_text: "When we got to the address, a big house set back from the road, the old man got out first. The kid stayed in the cab. I thought he was going to ask me to wait, but he said, 'Just drive.' And his voice was different when he said it. Broken somehow. So I drove. Did the old man seem to be leaving something at the house? A package? That I can't say for sure. But when he came out of the cab, his jacket pocket looked empty. Heavy with intention, if you know what I mean. Like he'd delivered something important."
+    file_path: "witnesses/cab_driver_statement.md"
+    line_range: [42, 50]
+    context_summary: "Jerry confirms the documents were delivered to the Oak Hill address."
+
+  - item_id: "target_013"
+    inserted_text: "Possibly. The painting's recovery three days before Harvey's disappearance could be coincidental, or it could indicate that Harvey arranged its return as a condition of his exit. Return the stolen goods, clean your conscience, and in exchange Margot arranges your transportation out of the city. The Kaslan operation loses the painting but keeps Harvey quiet. But there's also the ledger documents he obtained through Marchetti. We should consider what he was trading—not just the painting, but information. The ledger pages Harvey collected contain evidence of the money laundering network. If he arranged for those to be delivered to someone trustworthy before he left, that would explain why he needed the lawyer's consultation—Marchetti likely advised him on how to legally position the evidence."
+    file_path: "witnesses/detective_debrief.md"
+    line_range: [48, 57]
+    context_summary: "Debrief analysis recognizes the ledger documents as crucial evidence Harvey obtained through legal consultation."
+
+  - item_id: "target_014"
+    inserted_text: "Before I call Eddie, I get a break. A package arrives at my office, no postage, no return address. Inside: a set of ledger pages. Photocopied financial records showing account transfers, shell corporations, the whole network. Attached to the envelope is a note: For Helen Crawford. These prove everything. I know immediately who sent them. Harvey. Before he left the city, he made sure the evidence found its way to someone who could use it. Someone trustworthy."
+    file_path: "case_notes/day_04.md"
+    line_range: [8, 18]
+    context_summary: "Shepherd receives the ledger documentation that Harvey arranged to distribute."
+
+  - item_id: "target_015"
+    inserted_text: "Chen says he's had a breakthrough. Someone finally willing to talk. A former Sinclair employee who's decided that loyalty's less valuable than truth. But the real breakthrough is the documentation. The ledger pages that prove the entire network. Chen has them. Someone sent him copies of the same documents that Helen received—the ones proving that Sinclair ordered Claire's death and covered it up through the organization's financial apparatus."
+    file_path: "case_notes/day_06.md"
+    line_range: [10, 16]
+    context_summary: "David Chen obtains the ledger documentation that proves Sinclair's guilt."
+
+  - item_id: "target_016"
+    inserted_text: "What makes this case different now is the ledger documentation. The financial records show that Sinclair ordered a complication removed—coded language for Claire's death. The account transfers that funded the operation. The names of the men who carried it out. All documented in meticulous accounting. When that evidence comes out—and Helen says the DA is using it as the foundation of the case—Sinclair goes from powerful businessman to documented murderer. The ledger is the thread that unravels everything."
+    file_path: "case_notes/day_07.md"
+    line_range: [8, 17]
+    context_summary: "The ledger documentation becomes the definitive evidence that convicts Sinclair of orchestrating Claire's murder."
+
+expected_answers:
+  question: "Starting from the financial ledger that Catherine was transcribing in chapter_01.md, follow the chain of documentation through the investigation. What is the final resolution?"
+  correctness: "The answer must identify that the ledger documentation ultimately leads to Charles Sinclair's conviction for orchestrating Claire Hollister's murder. The correct answer should trace the path: Catherine sees the ledger → accounts are dangerous → Harvey obtains copies → Harvey distributes to trusted intermediaries → evidence reaches journalists and prosecutors → Sinclair is convicted with documentary proof of the murder order and money trail."
+  completeness: "A complete answer acknowledges: (1) the ledger's origin with Catherine's transcription; (2) its dangerous content revealing criminal account networks; (3) Harvey's role in copying and distributing the evidence; (4) the chain of custody through Marchetti, Helen Crawford, and journalist David Chen; (5) the ledger's role as definitive proof that Sinclair ordered and funded Claire's death; (6) Sinclair's conviction as the ultimate outcome."
+
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+  - criterion: "completeness"
+    weight: 0.5

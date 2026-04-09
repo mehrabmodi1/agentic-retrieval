@@ -1,0 +1,68 @@
+parametrisation_id: "multi_chain__noir_fiction__160k__easy__exact__n8"
+experiment_type: "multi_chain"
+generated_at: "2026-04-05T00:00:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 160000
+  discriminability: "easy"
+  reference_clarity: "exact"
+
+items:
+  - item_id: "target_001"
+    inserted_text: "The old guy also said something about the key opening locker seven at Union Station, and the locker containing proof of everything. That part made the kid's face go even whiter, if that was possible."
+    file_path: "witnesses/bartender_statement.md"
+    line_range: [42, 42]
+    context_summary: "Bartender adds detail about the old man mentioning Union Station locker seven as containing proof."
+
+  - item_id: "target_002"
+    inserted_text: "I made a note on my pad: *Union Station locker 7*. Halstead had mentioned finding a key in Catherine's apartment with a locker number written on the back. If she'd been mixed up in whatever Catherine was involved in, the locker at Union Station might be where answers were waiting."
+    file_path: "chapters/chapter_01.md"
+    line_range: [57, 59]
+    context_summary: "Shepherd notes that Halstead found a key with Union Station locker number in Catherine's apartment."
+
+  - item_id: "target_003"
+    inserted_text: "As I was turning to leave, Eleanor grabbed my hand again. \"Wait. There's something else. Catherine mentioned once that she'd left something at Union Station. In a locker. She said if anything ever happened to her, I should know about it. I'd forgotten until just now. She said the key was hidden in—\" Eleanor paused, trying to remember. \"A photograph. A photograph taken at some nightclub.\""
+    file_path: "chapters/chapter_03.md"
+    line_range: [78, 80]
+    context_summary: "Eleanor reveals Catherine hid a locker key in a photograph from a nightclub."
+
+  - item_id: "target_004"
+    inserted_text: "What he didn't know was that I'd already seen the journal entry where Catherine mentioned hiding a photograph of herself with 'H' at the Paradise nightclub—the same photograph that contained the locker key number written on the back in tiny letters."
+    file_path: "chapters/chapter_04.md"
+    line_range: [75, 76]
+    context_summary: "Shepherd realizes the photograph is from the Paradise nightclub and contains the locker key."
+
+  - item_id: "target_005"
+    inserted_text: "One detail keeps nagging at me: the photograph Eleanor mentioned. If there's a photograph at the Paradise nightclub that Catherine hid—a photograph containing the locker key number—then the Paradise is where the trail really starts. That's where I need to be looking, not at police records or financial documents."
+    file_path: "case_notes/day_02.md"
+    line_range: [145, 147]
+    context_summary: "Investigation notes identify the Paradise nightclub as the starting point of the evidence trail."
+
+  - item_id: "target_006"
+    inserted_text: "Before I leave, I ask Sylvia about photographs. Does she remember anyone taking pictures at the Paradise? She nods. \"Yeah, actually. Some girl took a photograph here maybe six weeks ago. Posted it at the bulletin board by the bar—the one where people pin notes about jobs, lost items, that kind of thing. I remember because it was a pretty picture, her with some man, very formal-looking. But someone took it down after a few weeks. I figured it was the woman who posted it, getting tired of it being there.\" That photograph. That has to be the one."
+    file_path: "case_notes/day_03.md"
+    line_range: [90, 92]
+    context_summary: "Sylvia confirms a photograph with a hidden number was posted on the Paradise bulletin board."
+
+  - item_id: "target_007"
+    inserted_text: "## The Bulletin Board\n\nBefore I head to the harbor, I make a stop at the Paradise. The bulletin board by the bar is covered with notices—job listings, apartment rentals, handwritten ads for services. But there's one spot where a photograph was clearly posted. The pin holes are still there, and the surrounding notices show a slight discoloration where something was protected from light.\n\nI ask Sylvia again: \"That photograph that was posted here. Do you remember anything else about it? Anything that might help me find it?\"\n\nSylvia thinks. \"The girl who posted it. She came back once, maybe a week after putting it up. She read the number on the back very carefully—like she was making sure no one had copied it down. There was a number. Maybe a locker number, I don't know. When she left, she seemed satisfied, like the photograph was serving its purpose.\"\n\nThe locker number. It's written on the back of a photograph that was on this bulletin board, and that locker is at Union Station."
+    file_path: "case_notes/day_04.md"
+    line_range: [93, 94]
+    context_summary: "Investigation establishes that the photograph's locker number points to Union Station."
+
+  - item_id: "target_008"
+    inserted_text: "## The Locker\n\nBefore I head to the warehouse, I make one final stop. Union Station, late afternoon, almost empty. I find locker seven exactly where it should be—anonymous, unremarkable, the kind of place where people hide things they don't want found.\n\nUsing the key I'd recovered (the one that matched the number written on the back of that Paradise photograph), I open the locker.\n\nInside is a manila envelope, and inside the envelope are documents. Bank statements showing money transfers from a company called Meridian Holdings to Margaret Hollister's account. Property records connecting Vincent Castellano to warehouse operations in the harbor district. And most importantly, a handwritten letter from Claire Hollister, dated one week before her disappearance.\n\nThe letter is addressed to \"Anyone who finds this.\" In it, Claire details everything she knows about her mother's involvement in money laundering, about Sinclair, about the harbor warehouse where illegal goods are being stored. She signs it: \"If you're reading this, something has happened to me. Please tell my story.\"\n\nI pocket the letter. Now I have something real. Now I have proof."
+    file_path: "case_notes/day_05.md"
+    line_range: [104, 105]
+    context_summary: "The final discovery reveals Claire's letter and documents proving the entire conspiracy."
+
+expected_answers:
+  question: "Starting from the bartender's mention in witnesses/bartender_statement.md of the Starlight Motor Inn key opening Union Station locker seven, follow the chain of hidden evidence and locations. What final document does the detective discover that reveals the truth about what happened?"
+  correctness: "The answer must identify Claire Hollister's handwritten letter or the contents of Union Station locker seven (which includes the letter, bank statements, and property records). The letter must be identified as the key revelation."
+  completeness: "A complete answer should mention that Claire's letter details the money laundering operation, Sinclair's involvement, and the warehouse operations. It should explain that this letter was hidden in Union Station locker seven, accessed via a key hidden on a Paradise nightclub photograph."
+
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+  - criterion: "completeness"
+    weight: 0.5

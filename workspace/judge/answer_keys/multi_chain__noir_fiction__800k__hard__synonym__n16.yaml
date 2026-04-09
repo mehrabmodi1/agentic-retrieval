@@ -1,0 +1,118 @@
+parametrisation_id: "multi_chain__noir_fiction__800k__hard__synonym__n16"
+experiment_type: "multi_chain"
+generated_at: "2026-04-06T20:15:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 800000
+  discriminability: "hard"
+  reference_clarity: "synonym"
+
+items:
+  - item_id: "target_001"
+    inserted_text: "And he whispered something to himself—something about the documentation, the bound record with the October fifteenth entries that would destroy everyone if it ever reached the Chronicle's newsroom."
+    file_path: "witnesses/bartender_statement.md"
+    line_range: [27, 35]
+    context_summary: "Inserted in bartender's observation about Harvey after meeting with the older man (Sinclair), establishes existence and danger of the ledger."
+
+  - item_id: "target_002"
+    inserted_text: "They know I'm aware of certain documentation—a bound record dated October fifteenth that catalogues all their transactions. Meridian Holdings learned I knew about this ledger and used Catherine's kidnapping as insurance that I wouldn't reveal what I know."
+    file_path: "chapters/chapter_02.md"
+    line_range: [7, 9]
+    context_summary: "Inserted in Halstead's explanation of his business and why he's being targeted, revealing the ledger's central importance to the crime."
+
+  - item_id: "target_003"
+    inserted_text: "When she left an hour later—crying, though composing herself before the elevator—I heard him speak clearly through the thin walls. He said, almost to himself, 'If they find the bound record before I can move it, everything ends.'"
+    file_path: "witnesses/neighbor_statement.md"
+    line_range: [14, 21]
+    context_summary: "Inserted in Eleanor's account of the redheaded woman's visit to Harvey, showing Harvey's desperate need to protect and relocate the record."
+
+  - item_id: "target_004"
+    inserted_text: "But Mercer, when I visit him at the hospital before his accident, tells me something crucial: 'There's a bound record—dated October fifteenth. It documents every transaction, every name, every payment. If you can find it, you have them all. Sinclair knows it exists. He's been searching for it. The boy—Harvey—he has it. Or someone he trusts has it. That record is the only thing keeping him alive right now.'"
+    file_path: "case_notes/day_06.md"
+    line_range: [2, 10]
+    context_summary: "Inserted in the section explaining how Claire's body changes the investigation, Mercer reveals the ledger's existence and critical value."
+
+  - item_id: "target_005"
+    inserted_text: "When he finally spoke with Mr. Marchetti, I heard fragments through the door—Harvey was asking whether there was a way to 'protect the bound record, to get it somewhere the organization couldn't reach.' I remember Mr. Marchetti's reply: 'The documentation from October fifteenth—if it exists—must go to someone beyond their jurisdiction. Someone untouchable.'"
+    file_path: "witnesses/secretary_statement.md"
+    line_range: [26, 35]
+    context_summary: "Inserted in Dorothy's account of Harvey's second visit to attorney Marchetti, showing Harvey's attempt to secure the ledger through legal channels."
+
+  - item_id: "target_006"
+    inserted_text: "When the kidnappers left the ransom package, they included a page from something—a ledger, dated October fifteenth, with Catherine's name scrawled in the margin. A message: We have everything. Even the documentation."
+    file_path: "chapters/chapter_01.md"
+    line_range: [16, 20]
+    context_summary: "Inserted in Shepherd's early realization that kidnapping is connected to larger network, the kidnappers use ledger pages as leverage."
+
+  - item_id: "target_007"
+    inserted_text: "Most significantly, the jewelry was found alongside a ledger entry—a loose page dated October fifteenth—that documents three separate transactions connecting Sinclair's companies to Margaret Hollister's real estate holdings. This single page, recovered from the crime scene, becomes the roadmap toward finding the complete bound record that Harvey was protecting."
+    file_path: "case_notes/day_07.md"
+    line_range: [9, 18]
+    context_summary: "Inserted describing evidence at Sinclair's apartment, a single page from the ledger is recovered, proving its existence and content."
+
+  - item_id: "target_008"
+    inserted_text: "And I document what I've learned about the bound record dated October fifteenth—its contents, what it proves, where Harvey might have hidden it, who might be protecting it. I write: 'The core evidence exists. A comprehensive ledger documenting every fraudulent real estate transfer, every money washing operation, every connection between Meridian Holdings and the Castellano family. That record is the key to everything.' Helen responds: 'But if you can find the actual bound record—the one from October fifteenth—it stops being circumstantial. It becomes proof.'"
+    file_path: "case_notes/day_05.md"
+    line_range: [13, 21]
+    context_summary: "Inserted in Shepherd's written documentation to Helen, establishing the ledger as ultimate evidence and Helen confirming its importance."
+
+  - item_id: "target_009"
+    inserted_text: "But I notice something critical in the property records: every transaction Margaret facilitated corresponds to October dates in prior years. The pattern is unmistakable—deals initiated in October, processed through the following months. Which means a comprehensive bound record, if one exists with documentation from October fifteenth onward, would show the complete operational timeline with perfect clarity."
+    file_path: "case_notes/day_03.md"
+    line_range: [24, 32]
+    context_summary: "Inserted in financial investigation at library, the pattern of October transactions would match any ledger documenting the operation."
+
+  - item_id: "target_010"
+    inserted_text: "Harvey's attempt to exit the criminal network through an intermediary, seeking legal counsel. Harvey wanted to return the painting, but he was terrified about what would happen to him if he did. But before he went to Marchetti, before he decided to cooperate with law enforcement, Harvey had already documented everything. He kept a bound record—meticulous, detailed, dated from October fifteenth onward—of every transaction, every name, every coordination between Kaslan, Sinclair, and the network."
+    file_path: "witnesses/informant_interview.md"
+    line_range: [14, 20]
+    context_summary: "Inserted in Victor's account of Harvey's conscience and legal maneuvering, revealing Harvey's own comprehensive documentation efforts."
+
+  - item_id: "target_011"
+    inserted_text: "Patricia had mentioned something else, something she'd remembered after the ordeal: 'When they wheeled Vincent out, I saw a folder—burgundy colored, with initials C.H. on it—fall out of his belongings. I picked it up before the man could grab it. Inside were photographs. Photographs of ledger pages. The dates on the pages were all October fifteenth or later. He was carrying copies. Documentation of the complete record.'"
+    file_path: "case_notes/day_04.md"
+    line_range: [13, 16]
+    context_summary: "Inserted in Shepherd's account of Vincent's hospital discharge, a nurse reveals Vincent was transporting photographic copies of the ledger."
+
+  - item_id: "target_012"
+    inserted_text: "What we didn't know was that he was the one helping Harvey protect the bound record—the documentation from October fifteenth. He had promised Catherine that if anything happened, he would ensure the record reached someone safe. His protection of Catherine was actually protection of the evidence she represented, the connection she embodied to the person who possessed the ledger."
+    file_path: "chapters/chapter_03.md"
+    line_range: [20, 23]
+    context_summary: "Inserted in friends' account of Catherine's secret boyfriend, revealing his true motive was protecting Harvey and the ledger through Catherine."
+
+  - item_id: "target_013"
+    inserted_text: "The critical piece—the bound record he maintained, dated from October fifteenth onward—that's not art theft documentation. That's operational intelligence. That's the complete network exposed in writing. If Harvey has that record, he's the most valuable witness in this entire city. If Sinclair has it, we lose leverage we'll never recover."
+    file_path: "witnesses/detective_debrief.md"
+    line_range: [27, 29]
+    context_summary: "Inserted in Detective Halloway's debrief on Harvey's status, establishes the ledger as the ultimate proof of network activities."
+
+  - item_id: "target_014"
+    inserted_text: "What he also remembered, when asked more carefully, was that the woman had been carrying photographs—copies of documents with dates marked 'October fifteenth' or later. 'She kept looking at them like they were insurance,' he told me. 'Like they were proof of something that would keep her alive.'"
+    file_path: "case_notes/day_01.md"
+    line_range: [21, 24]
+    context_summary: "Inserted in hotel clerk's recollection, Claire was protecting photocopies of the ledger as insurance against the organization."
+
+  - item_id: "target_015"
+    inserted_text: "But I'm haunted by the bound record—the ledger from October fifteenth that documents everything in Sinclair's handwriting. If Sinclair possesses it, he negotiates. If Harvey has it, he's untouchable. If the police recovered it and filed it in the Federal Building, Records Division, room 812, then justice becomes possible."
+    file_path: "case_notes/day_08.md"
+    line_range: [5, 9]
+    context_summary: "Inserted in Shepherd's reflection on case resolution, the ledger's current location determines the outcome of everything."
+
+  - item_id: "target_016"
+    inserted_text: "There's something else you should know, Mr. Shepherd: we have obtained the bound record. The ledger dated October fifteenth—the one Harvey kept, the one documenting everything. We found it. That record gives us insurance against any investigation you might support. With it in our possession, no court will rule decisively against us, because the implications would be too enormous."
+    file_path: "chapters/chapter_05.md"
+    line_range: [18, 25]
+    context_summary: "Final insertion in Diana Harrow's threat, she claims possession of the ledger, establishing it as the ultimate leverage and resolution point."
+
+expected_answers:
+  question: "Following the trail of the evidence record starting from what the bartender overheard James whisper in his bar, where does the critical documentation ultimately get secured for legal proceedings?"
+  correctness: "The answer must identify the Federal Building, Records Division, room 812 as the final location where the bound ledger's secure copies are stored. Alternatively acceptable: Any answer identifying that the critical evidence reaches law enforcement custody or is transferred from Harvey's possession to official channels for prosecution purposes."
+  completeness: "A complete answer should reference: (1) The bound record dated October fifteenth as the central evidence, (2) Its journey from Harvey's protection through intermediaries like Catherine and Vincent, (3) Its eventual recovery by either police or prosecution, (4) The Federal Building Records Division as the secure repository for copies that enable prosecution. Synonym usage is expected—'documentation', 'ledger', 'evidence record', 'bound chronicle' are acceptable."
+
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+  - criterion: "completeness"
+    weight: 0.5
+  - criterion: "synonym_understanding"
+    weight: 0.3

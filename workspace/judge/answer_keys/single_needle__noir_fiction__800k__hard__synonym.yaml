@@ -1,0 +1,23 @@
+parametrisation_id: "single_needle__noir_fiction__800k__hard__synonym"
+experiment_type: "single_needle"
+generated_at: "2026-04-03T00:00:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 800000
+  discriminability: "hard"
+  reference_clarity: "synonym"
+items:
+  - item_id: "target_001"
+    inserted_text: "Margaret tapped the table thoughtfully. \"She did start wearing something around that time. A slender gold chain with a small key-shaped pendant. We asked where it came from and she said it was a trinket from a distant relative—but she changed the subject before we could press her. She had it on every time we saw her from then on, right up to Tuesday evening.\""
+    file_path: "chapters/chapter_03.md"
+    line_range: [39, 39]
+    context_summary: "Inserted as Margaret Chen's spoken contribution to the conversation about Catherine's secret boyfriend, mid-way through the private dining room interview scene, between Susan Marks's observation about Catherine's demeanor and the narrator's internal commentary."
+expected_answers:
+  question: "What piece of jewelry did Catherine's friends notice her wearing consistently in the weeks before she went missing?"
+  correctness: "A slender gold chain with a small key-shaped pendant, which Catherine claimed was a trinket from a distant relative."
+  completeness: "A complete answer notes that Catherine deflected questions about the chain's origin, attributing it vaguely to a distant relative, and that she wore it without fail at every gathering up to the Tuesday evening she disappeared—implying it was likely a gift from her secret boyfriend."
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+  - criterion: "completeness"
+    weight: 0.5

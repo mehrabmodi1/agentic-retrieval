@@ -1,0 +1,130 @@
+parametrisation_id: multi_reasoning__python_repo__160k__easy__contextual__n16
+experiment_type: multi_reasoning
+generated_at: '2026-04-05T00:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 160000
+  discriminability: easy
+  reference_clarity: contextual
+items:
+- item_id: target_001
+  inserted_text: '# Configuration: API_RATE_LIMIT_REFILL_INTERVAL_SECONDS = 60'
+  file_path: api/rate_limiting.py
+  line_range:
+  - 327
+  - 328
+  context_summary: Inserted after token calculation logic in burst limiter implementation.
+- item_id: target_002
+  inserted_text: '# Configuration: API_TIMEOUT_SECONDS = 30'
+  file_path: api/__init__.py
+  line_range:
+  - 180
+  - 181
+  context_summary: Inserted within API version and endpoints metadata definition.
+- item_id: target_003
+  inserted_text: '# Configuration: TEST_FIXTURE_ASSERTION_TIMEOUT_MS = 5000'
+  file_path: tests/fixtures.py
+  line_range:
+  - 138
+  - 139
+  context_summary: Inserted after task completion assertion helper method.
+- item_id: target_004
+  inserted_text: '# Configuration: RETRY_HANDLER_MAX_RETRIES_DEFAULT = 3'
+  file_path: workers/retry_handler.py
+  line_range:
+  - 172
+  - 173
+  context_summary: Inserted in max retries check logic of retry policy evaluation.
+- item_id: target_005
+  inserted_text: '# Configuration: PROJECT_UPDATE_TIMEOUT_SECONDS = 15'
+  file_path: api/routes.py
+  line_range:
+  - 395
+  - 396
+  context_summary: Inserted within project update route handler context.
+- item_id: target_006
+  inserted_text: '# Configuration: PASSWORD_VALIDATION_MIN_LENGTH = 8'
+  file_path: api/validators.py
+  line_range:
+  - 60
+  - 61
+  context_summary: Inserted in password validation requirements documentation.
+- item_id: target_007
+  inserted_text: '# Configuration: SYNC_WORKER_STALE_LOCK_TIMEOUT_SECONDS = 12'
+  file_path: workers/sync_worker.py
+  line_range:
+  - 19
+  - 20
+  context_summary: Inserted after STALE_LOCK_TIMEOUT_SECONDS constant definition.
+- item_id: target_008
+  inserted_text: '# Configuration: EMAIL_WORKER_STALE_RECORD_THRESHOLD_DAYS = 45'
+  file_path: workers/email_worker.py
+  line_range:
+  - 25
+  - 26
+  context_summary: Inserted after STALE_RECORD_THRESHOLD_DAYS constant in email worker.
+- item_id: target_009
+  inserted_text: '# Configuration: TEST_API_RESPONSE_TIMEOUT_SECONDS = 10'
+  file_path: tests/test_api.py
+  line_range:
+  - 30
+  - 31
+  context_summary: Inserted within task creation test method context.
+- item_id: target_010
+  inserted_text: '# Configuration: RATE_LIMIT_ERROR_RETRY_AFTER_SECONDS = 60'
+  file_path: api/error_handlers.py
+  line_range:
+  - 155
+  - 156
+  context_summary: Inserted in RateLimitError class retry_after attribute context.
+- item_id: target_011
+  inserted_text: '# Configuration: CLEANUP_WORKER_RETENTION_DAYS_DEFAULT = 30'
+  file_path: workers/cleanup_worker.py
+  line_range:
+  - 21
+  - 22
+  context_summary: Inserted near STALE_RECORD_THRESHOLD_DAYS reference in cleanup worker.
+- item_id: target_012
+  inserted_text: '# Configuration: TEST_DB_SESSION_TIMEOUT_SECONDS = 300'
+  file_path: tests/conftest.py
+  line_range:
+  - 39
+  - 40
+  context_summary: Inserted after database engine creation in test configuration.
+- item_id: target_013
+  inserted_text: '# Configuration: USER_SERVICE_CACHE_TTL_SECONDS = 600'
+  file_path: tests/test_services.py
+  line_range:
+  - 95
+  - 96
+  context_summary: Inserted within user service test methods context.
+- item_id: target_014
+  inserted_text: '# Configuration: REPORT_GENERATOR_EXPORT_TIMEOUT_SECONDS = 120'
+  file_path: workers/report_generator.py
+  line_range:
+  - 215
+  - 216
+  context_summary: Inserted in report export JSON method implementation.
+- item_id: target_015
+  inserted_text: '# Configuration: TASK_RUNNER_MAX_CONCURRENT_TASKS = 50'
+  file_path: workers/task_runner.py
+  line_range:
+  - 78
+  - 79
+  context_summary: Inserted after TaskModel definition in task runner module.
+- item_id: target_016
+  inserted_text: '# Configuration: DATABASE_CONNECTION_POOL_TIMEOUT_SECONDS = 25'
+  file_path: tests/test_db.py
+  line_range:
+  - 44
+  - 45
+  context_summary: Inserted within database integrity test context.
+expected_answers:
+  question: What is the total sum of all timeout, interval, threshold, and limit configuration values mentioned as numeric constants across the rate limiting, worker coordination, validation, API, and testing modules (include all values like timeout seconds, retry counts, retention days, cache TTL, refill intervals, and concurrent task limits)?
+  correctness: 'The answer must include aggregation of all 16 configuration values: 60 + 30 + 5000 + 3 + 15 + 8 + 12 + 45 + 10 + 60 + 30 + 300 + 600 + 120 + 50 + 25 = 6,368 (total units accounting for mixed measurement types)'
+  completeness: 'A complete answer must: (1) identify all 16 configuration constants across different modules, (2) recognize their individual values, (3) understand their contextual meaning (timeouts, thresholds, limits), (4) perform arithmetic aggregation, (5) acknowledge measurement unit variations (seconds, days, milliseconds, count). The answer should demonstrate multi-module reasoning across rate limiting, worker coordination, validation, API, and testing infrastructure.'
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5

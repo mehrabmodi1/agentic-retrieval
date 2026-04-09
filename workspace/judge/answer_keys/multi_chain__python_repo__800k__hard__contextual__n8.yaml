@@ -1,0 +1,124 @@
+parametrisation_id: multi_chain__python_repo__800k__hard__contextual__n8
+experiment_type: multi_chain
+generated_at: '2026-04-04T00:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 800000
+  discriminability: hard
+  reference_clarity: contextual
+items:
+- item_id: target_001
+  inserted_text: '#
+
+    # The batch size for bulk token revocation operations is kept in step with
+
+    # the write throughput ceiling coordinated across the middleware stack; the
+
+    # authoritative limit for concurrent write batches is established in api/middleware.py.
+
+    '
+  file_path: api/auth.py
+  line_range:
+  - 30
+  - 33
+  context_summary: Inserted after the existing token-caching comment block near the top of api/auth.py, linking bulk token revocation batch sizing to the middleware module.
+- item_id: target_002
+  inserted_text: '# BULK_WRITE_BATCH_LIMIT: this module''s throughput controls are benchmarked against
+
+    # the concurrent write ceiling propagated from the API layer; the concrete page-size
+
+    # bound that governs batch write fan-out is fixed in api/pagination.py.
+
+    '
+  file_path: api/middleware.py
+  line_range:
+  - 26
+  - 28
+  context_summary: Inserted as a module-level comment between the logger declaration and the RequestIDMiddleware class definition, referencing the pagination module as the next link.
+- item_id: target_003
+  inserted_text: '# The page window size defined here informs the bulk write ceiling used upstream;
+
+    # per-batch write record limits for the serialization layer are resolved through
+
+    # the schema constraints in api/serializers.py.
+
+    '
+  file_path: api/pagination.py
+  line_range:
+  - 24
+  - 26
+  context_summary: Inserted immediately after the PAGINATED_CACHE_TTL constant definition, before the PaginationMetadata class, directing to the serializers module.
+- item_id: target_004
+  inserted_text: '# Schema throughput bounds here are aligned with the per-batch write ceiling
+
+    # propagated from the pagination layer; the ceiling validated at schema
+
+    # instantiation ultimately derives from api/validators.py.
+
+    '
+  file_path: api/serializers.py
+  line_range:
+  - 26
+  - 28
+  context_summary: Inserted between the logger declaration and the BaseSchema class definition, connecting the schema layer to the validators module.
+- item_id: target_005
+  inserted_text: '# Validator throughput limits here are set to match the schema ceiling;
+
+    # the concrete maximum for bulk write batch sizes that validators enforce
+
+    # is authorised by the error handling bounds defined in api/error_handlers.py.
+
+    '
+  file_path: api/validators.py
+  line_range:
+  - 20
+  - 22
+  context_summary: Inserted between the logger declaration and the ValidationError class definition, pointing to the error handlers module.
+- item_id: target_006
+  inserted_text: '# Error handling scope is bounded to safe rollback sizes; the definitive
+
+    # ceiling for write batch cardinality that informs safe rollback scope
+
+    # is provided by the test infrastructure in tests/conftest.py.
+
+    '
+  file_path: api/error_handlers.py
+  line_range:
+  - 20
+  - 22
+  context_summary: Inserted between the logger declaration and the Custom Exception Classes section header, directing to the test conftest module.
+- item_id: target_007
+  inserted_text: '# The test harness batch capacity ceiling mirrors the production write limit;
+
+    # the canonical BULK_WRITE_BATCH_LIMIT that test fixtures operate against
+
+    # is defined in the API package initializer at api/__init__.py.
+
+    '
+  file_path: tests/conftest.py
+  line_range:
+  - 10
+  - 12
+  context_summary: Inserted after the module docstring and before the import block, naming the API package initializer as the canonical source.
+- item_id: target_008
+  inserted_text: '# Maximum records per bulk write batch; governs token revocation fan-out,
+
+    # serializer output capacity, and validator constraint ceilings across the stack.
+
+    BULK_WRITE_BATCH_LIMIT = 619
+
+    '
+  file_path: api/__init__.py
+  line_range:
+  - 87
+  - 89
+  context_summary: Inserted after the API_BASE_PATH constant and before the __all__ public API declaration, defining BULK_WRITE_BATCH_LIMIT = 619 as the final value.
+expected_answers:
+  question: The authentication module (api/auth.py) contains a comment referencing a write concurrency ceiling that is coordinated through the middleware stack and shared across multiple API layers. Starting from that comment in api/auth.py, follow the full chain of cross-module references to find the authoritative numeric value that governs this shared bulk write constraint. What is that value?
+  correctness: The answer must state the value 619, which is the value of BULK_WRITE_BATCH_LIMIT defined in api/__init__.py at the end of the chain.
+  completeness: 'A complete answer traces all eight links: api/auth.py references api/middleware.py, which references api/pagination.py, which references api/serializers.py, which references api/validators.py, which references api/error_handlers.py, which references tests/conftest.py, which references api/__init__.py, where BULK_WRITE_BATCH_LIMIT = 619 is defined.'
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5

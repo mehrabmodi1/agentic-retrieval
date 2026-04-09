@@ -1,0 +1,28 @@
+parametrisation_id: "multi_chain__noir_fiction__800k__easy__exact__n2"
+experiment_type: "multi_chain"
+generated_at: "2026-04-05T00:00:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 800000
+  discriminability: "easy"
+  reference_clarity: "exact"
+items:
+  - item_id: "target_001"
+    inserted_text: "The name that floated up from the darkness when you dug deep enough was always the same: Kaslan. That was the apex, the man whose face no one had seen and whose methods were surgical in their precision."
+    file_path: "chapters/chapter_02.md"
+    line_range: [32, 33]
+    context_summary: "Added to the final paragraph about the hierarchy above Sinclair, establishing Kaslan as the orchestrator to investigate."
+  - item_id: "target_002"
+    inserted_text: "Kaslan didn't work alone—he worked through a careful chain of command designed to keep him insulated from the operations themselves. His approach was to identify people with weaknesses—financial desperation, ambition, or dangerous secrets—and position them exactly where he needed them."
+    file_path: "witnesses/informant_interview.md"
+    line_range: [52, 53]
+    context_summary: "Added immediately after Victor's explanation of Kaslan, providing operational methodology that resolves the chain of inquiry."
+expected_answers:
+  question: "Starting from the mention of Kaslan as the orchestrating apex in chapter_02.md, what is Kaslan's operational methodology for maintaining control over his criminal network?"
+  correctness: "The answer must identify Kaslan's use of a chain of command, positioning of compromised individuals based on their weaknesses, and his strategic insulation from direct involvement in operations."
+  completeness: "A complete answer should reference: (1) Kaslan's organizational structure through intermediaries, (2) his exploitation of weaknesses (financial, ambition, secrets), (3) his deliberate distance from operational details, (4) the precision and strategic nature of his placement decisions."
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+  - criterion: "completeness"
+    weight: 0.5

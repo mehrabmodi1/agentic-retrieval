@@ -1,0 +1,28 @@
+parametrisation_id: "multi_chain__noir_fiction__800k__hard__exact__n2"
+experiment_type: "multi_chain"
+generated_at: "2026-04-06T00:00:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 800000
+  discriminability: "hard"
+  reference_clarity: "exact"
+items:
+  - item_id: "target_001"
+    inserted_text: "He lowers his voice. \"The operation runs through intermediaries. There's one woman they call Margot—she's the acquisition specialist. She identifies the targets, she plans the extractions, and she coordinates the removals. If you want to understand what happened to Claire and Vincent, you need to understand what role Margot played in bringing them to that warehouse.\""
+    file_path: "case_notes/day_03.md"
+    line_range: [25, 27]
+    context_summary: "Inserted after Mercer's explanation of why he's revealing information, introducing Margot as the key intermediary in the operation."
+  - item_id: "target_002"
+    inserted_text: "Victor's expression hardened. \"That woman I mentioned—Margot—she's the pivot point between targets and execution. Mercer wouldn't speak her name out of fear, but she's the intermediary. The one who decides who gets removed. She operates from Sinclair's warehouse, building seven on Dock Street. That's where all the acquired pieces flow through, and that's where she maintains the records of every person who's been extracted from the city. Every target. Every disappearance. It all connects through Margot.\""
+    file_path: "witnesses/informant_interview.md"
+    line_range: [23, 28]
+    context_summary: "Inserted after Victor's discussion of Harvey and the diamond, elaborating on Margot's role as the operation's central coordinator based at the warehouse."
+expected_answers:
+  question: "Starting from Mercer's reference to the acquisition specialist in the operation, where does Margot conduct her activities and what records does she maintain?"
+  correctness: "An answer must identify Margot as the intermediary/pivot point and specify building seven on Dock Street as her location."
+  completeness: "A complete answer should also mention that she maintains records of extracted/disappeared persons and that all pieces flow through her location."
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+  - criterion: "completeness"
+    weight: 0.5

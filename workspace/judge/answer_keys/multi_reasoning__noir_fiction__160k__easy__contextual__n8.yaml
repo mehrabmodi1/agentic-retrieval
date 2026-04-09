@@ -1,0 +1,91 @@
+parametrisation_id: "multi_reasoning__noir_fiction__160k__easy__contextual__n8"
+experiment_type: "multi_reasoning"
+generated_at: "2026-04-05T00:00:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 160000
+  discriminability: "easy"
+  reference_clarity: "contextual"
+
+items:
+  - item_id: "target_001"
+    inserted_text: "As I traced the northern path toward her apartment, I realized something that made my skin cold: the route passed directly adjacent to the harbor district. The warehouses. The importing operations. The places where money moved in and out without customs declarations. Catherine's walk home wasn't random. It was a route that went past the exact locations where the city's hidden economy operated. Someone had known she would walk this way. Someone had been waiting."
+    file_path: "chapters/chapter_03.md"
+    line_range: [82, 89]
+    context_summary: "Reveals that Catherine's northbound walking route passes directly by the harbor district warehouses, suggesting her kidnapping was geographically orchestrated."
+
+  - item_id: "target_002"
+    inserted_text: "I make a final note before sleep: Margaret mentioned that the company pursuing her real estate holdings—Meridian Holdings—has been trying to acquire her properties for months. The timing is significant. The acquisitions started three months ago. The payments they've offered her are far above market value. The offers became 'more aggressive' when she refused. Now Claire is missing, and Margaret is desperate enough to hire me. The missing girl is leverage. The leverage is designed to force the sale of properties that Meridian Holdings needs. The question is: why do they need specifically those properties? What's on Margaret's land that's valuable enough to engineer a kidnapping?"
+    file_path: "case_notes/day_02.md"
+    line_range: [174, 182]
+    context_summary: "Establishes that Meridian Holdings' aggressive acquisition attempts on Margaret's properties coincide temporally with Claire's disappearance, suggesting forced property transfer as the kidnapping's true motive."
+
+  - item_id: "target_003"
+    inserted_text: "Before he leaves, he presses something into my hand. 'The photographs,' he whispers. 'The ones I mentioned to Sinclair. They're real. They're from the Regency Hotel, Tuesday night, before he took her. They show everything—my face, her face, the room number. They show Sinclair arriving. You need these. They're the only physical evidence that connects all of this.' I pocket the photographs. They're exactly what I need: proof that Claire was alive with Vincent, proof that Sinclair was present, proof that the kidnapping was premeditated and coordinated."
+    file_path: "case_notes/day_05.md"
+    line_range: [186, 196]
+    context_summary: "Provides the critical physical evidence (photographs) that directly connects Sinclair to Claire's kidnapping at the Regency Hotel, establishing his personal involvement in the crime."
+
+  - item_id: "target_004"
+    inserted_text: "Before I could drink, Frank called back. 'I got something on Meridian Holdings,' he said. 'It's a shell corporation owned by another shell corporation. But I traced it back through corporate registration. The real ownership traces to a man named Charles Sinclair. Same Sinclair from the Castellano files, same Sinclair who apparently handles 'consulting.' Which means Meridian Holdings isn't a separate company at all. It's Sinclair's operation. He's using the kidnapping to force Margaret Hollister to sell him her real estate holdings. He's using Halstead's kidnapped daughter to force him into financial arrangements. He's consolidating control over key properties across the city. This isn't a crime. This is infrastructure.' I realized I was looking at something much bigger than a single kidnapping. I was looking at a man building an empire on fear."
+    file_path: "chapters/chapter_05.md"
+    line_range: [72, 87]
+    context_summary: "Reveals that Sinclair is the actual owner of Meridian Holdings, establishing that the kidnappings, acquisitions, and financial crimes are all orchestrated by a single actor as part of a larger infrastructure project."
+
+  - item_id: "target_005"
+    inserted_text: "The kind of beauty that concealed something cold underneath. She came to his door in the evening, and I saw her from my peephole just out of curiosity. He opened the door, and his face transformed. It was the same transformation I'd seen when he talked about books, but more extreme. Like he had been electrified. ... On her way to the elevator, she paused and looked at a painting on the hallway wall—a fifteen-century work, priceless, the kind of thing museums fight over. She studied it for a long moment, and her expression changed from sad to businesslike. I later learned that painting was stolen from the estate of a murdered man. The woman had the look of someone appraising inventory."
+    file_path: "witnesses/neighbor_statement.md"
+    line_range: [28, 32]
+    context_summary: "Connects the redheaded woman visitor to professional art theft and acquisition, suggesting she operates within criminal networks beyond personal relationships."
+
+  - item_id: "target_006"
+    inserted_text: "I call Eddie anyway. The license plate comes back registered to a consulting firm—Sinclair Private Consulting. The address on file is a suite of offices in the financial district. The ownership is hidden behind three layers of corporate registration. But the name is clear: Charles Sinclair. The same man who visited my apartment. The same man who showed Vincent Castellano something in the trunk of his car that made the kid's face go white. The same man who apparently has access to warehouses, legitimate business fronts, and enough power to make a missing girl disappear without anyone looking too hard."
+    file_path: "case_notes/day_03.md"
+    line_range: [156, 168]
+    context_summary: "Establishes the direct connection between Sinclair's identity and his business infrastructure, revealing layered corporate ownership designed to obscure his control."
+
+  - item_id: "target_007"
+    inserted_text: "And there's one more thing. The woman I mentioned—Margot. I found out more. She's the one who negotiated with Harvey. She's the one who arranged his exit. She's also the woman who visited his apartment, the one he was connected to romantically or emotionally. She came to say goodbye and to tell him he could leave, but only if he disappeared completely. She returned the painting as Harvey's final act of conscience. Which means Margot—the woman with red hair, the acquisition specialist for Kaslan—is operating above the Kaslan operation. She answers to someone bigger. Someone who can authorize withdrawals from criminal enterprises. Someone powerful enough that even Sinclair takes orders from them."
+    file_path: "witnesses/informant_interview.md"
+    line_range: [64, 73]
+    context_summary: "Identifies Margot (the redheaded woman) as operating above Kaslan's hierarchy and connected to someone more powerful than Sinclair, suggesting a command structure above the visible conspirators."
+
+  - item_id: "target_008"
+    inserted_text: "But I know what he was running from,' Eva continued, her accent thickening. 'The man who visited him—the white-haired man—he comes from an organization. I can tell by the way he moves, the way he catalogs everything. He comes to give Harvey a choice: cooperate and die quietly, or get protection and disappear. Harvey chooses disappearance. The man gives him documentation, money, information about safe routes out of the city. All arranged in advance. All planned. The visitor was facilitating an exit, not planning a murder. Harvey leaves with everything he needs to start a new life. But the visitor also leaves a message: Kaslan lets people go if they prove useful. Kaslan trades lives for information and silence. That is how the operation survives—not through killing everyone, but through strategic exits.'"
+    file_path: "witnesses/landlady_statement.md"
+    line_range: [64, 73]
+    context_summary: "Reveals Kaslan's operational security model: strategic exits in exchange for silence and cooperation, explaining how the conspiracy maintains control over multiple criminal operations."
+
+expected_answers:
+  question: "What eight pieces of evidence collectively demonstrate that the kidnappings of Catherine Halstead and Claire Hollister, the art theft from the Vesper estate, the money laundering through real estate, and the financial crimes targeting multiple businesses all form a single coordinated conspiracy orchestrated by Charles Sinclair and connected to a larger criminal organization (Kaslan) operating through intermediaries like Margot and Silas Gregg?"
+
+  correctness: |
+    A correct answer must identify and connect all eight distinct pieces of evidence:
+    1) The geographic coordination of Catherine's kidnapping (northern route past harbor warehouses)
+    2) The timing and purpose of Meridian Holdings' acquisition attempts on Margaret's real estate
+    3) The photographic evidence from the Regency Hotel directly implicating Sinclair
+    4) The revelation that Sinclair owns and controls Meridian Holdings
+    5) The connection between the redheaded woman, art theft, and professional acquisition
+    6) The license plate trace establishing Sinclair's corporate infrastructure
+    7) The identification of Margot as operating above both Harvey and Sinclair in the hierarchy
+    8) The revelation of Kaslan's strategic exit protocol and command structure
+
+    The answer must demonstrate that these pieces form a unified conspiracy with Sinclair as the primary orchestrator and Kaslan as the controlling organization above him.
+
+  completeness: |
+    A complete answer covers:
+    - All eight pieces of evidence explicitly
+    - The chronological connections between events (property acquisitions preceding kidnappings)
+    - The organizational hierarchy (Kaslan → Margot/intermediaries → Sinclair → subordinates)
+    - The multiple crime categories interconnected (kidnapping, theft, money laundering, extortion)
+    - The method of control (leverage, photographs, strategic exits, corporate obscuration)
+    - The ultimate motive (consolidating control over city properties and infrastructure for criminal use)
+
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+    definition: "All eight evidence pieces are accurately identified and their connection to the conspiracy is demonstrated."
+
+  - criterion: "completeness"
+    weight: 0.5
+    definition: "The answer addresses the organizational hierarchy, timing relationships, and unified purpose underlying all crimes."

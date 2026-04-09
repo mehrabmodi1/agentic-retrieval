@@ -1,0 +1,151 @@
+parametrisation_id: "multi_reasoning__noir_fiction__40k__easy__synonym__n16"
+experiment_type: "multi_reasoning"
+generated_at: "2026-04-05T00:00:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 40000
+  discriminability: "easy"
+  reference_clarity: "synonym"
+items:
+  - item_id: "target_001"
+    inserted_text: "Her name was Margot Gregg."
+    file_path: "witnesses/bartender_statement.md"
+    line_range: [1, 3]
+    context_summary: "Identifies the redhead woman at the bar as Margot Gregg, the intermediary facilitating Harvey's exit."
+
+  - item_id: "target_002"
+    inserted_text: "room forty-seven"
+    file_path: "witnesses/bartender_statement.md"
+    line_range: [42, 43]
+    context_summary: "Specifies the safe house location where the meeting will occur (Starlight Motor Inn, room 47)."
+
+  - item_id: "target_003"
+    inserted_text: "His real name is Thomas Mercer, and he's been laundering money for Sinclair's organization for fifteen years."
+    file_path: "case_notes/day_06.md"
+    line_range: [4, 6]
+    context_summary: "Reveals Mercer's full identity and his fifteen-year criminal history as money launderer for Sinclair."
+
+  - item_id: "target_004"
+    inserted_text: "which stood for Harrison—a man whose involvement with law enforcement masked deeper connections to organized crime."
+    file_path: "chapters/chapter_04.md"
+    line_range: [23, 24]
+    context_summary: "Identifies Catherine's lover 'H' as Harrison Webb, a corrupt law enforcement officer with organized crime ties."
+
+  - item_id: "target_005"
+    inserted_text: "His widow didn't even know the painting was worth anything—it was just a painting her husband liked, and she had no idea of its value."
+    file_path: "witnesses/informant_interview.md"
+    line_range: [19, 21]
+    context_summary: "Clarifies the stolen painting came from Carl Vesper's widow who was unaware of its value."
+
+  - item_id: "target_006"
+    inserted_text: "Marchetti advised him that the only safe path was to cooperate fully with law enforcement and expose the entire operation."
+    file_path: "witnesses/informant_interview.md"
+    line_range: [50, 51]
+    context_summary: "Shows Marchetti's counsel to Harvey about cooperating with law enforcement to safely exit Kaslan's operation."
+
+  - item_id: "target_007"
+    inserted_text: "Harvey worked in shipping at the docks, legitimate credentials and all. But he was also moving stolen art through a network controlled by Viktor Kaslan."
+    file_path: "witnesses/cab_driver_statement.md"
+    line_range: [23, 24]
+    context_summary: "Establishes Harvey's dual role as shipping worker and art thief for Kaslan's organization."
+
+  - item_id: "target_008"
+    inserted_text: "he was connected to organized crime through his position in law enforcement."
+    file_path: "chapters/chapter_03.md"
+    line_range: [30, 31]
+    context_summary: "Confirms Harrison Webb's corruption and organized crime connections through his law enforcement position."
+
+  - item_id: "target_009"
+    inserted_text: "the same law firm where Thomas Mercer orchestrates his financial operations."
+    file_path: "case_notes/day_01.md"
+    line_range: [4, 5]
+    context_summary: "Establishes the connection between Claire's workplace and Mercer's money laundering operation."
+
+  - item_id: "target_010"
+    inserted_text: "Claire's mother, who didn't know her daughter was being used as leverage against her own real estate holdings."
+    file_path: "case_notes/day_05.md"
+    line_range: [1, 2]
+    context_summary: "Reveals Claire's use as leverage against her mother Margaret's real estate business and Meridian Holdings' involvement."
+
+  - item_id: "target_011"
+    inserted_text: "The man's name was Charles Sinclair, and he had Claire Hollister with him."
+    file_path: "case_notes/day_02.md"
+    line_range: [1, 2]
+    context_summary: "Identifies Sinclair as the man who took Claire Hollister from the waterfront."
+
+  - item_id: "target_012"
+    inserted_text: "She was investigating the money laundering operation that connected Harvey to Kaslan's network and Thomas Mercer's law firm."
+    file_path: "witnesses/landlady_statement.md"
+    line_range: [17, 18]
+    context_summary: "Establishes Detective Chen's investigative focus on the money laundering connections."
+
+  - item_id: "target_013"
+    inserted_text: "The man's name was Gregg—I heard Harvey call him that afterward."
+    file_path: "witnesses/landlady_statement.md"
+    line_range: [50, 51]
+    context_summary: "Confirms that the visitor to Harvey's apartment was Gregg (Margot Gregg), facilitating his exit."
+
+  - item_id: "target_014"
+    inserted_text: "The warehouse on Dock Street, building seven, registered to Sinclair Imports. It's an old building, probably built twenty years ago, the kind of place that's supposed to be full of imported goods that probably never passed through customs officially—goods including stolen art, currency, and contraband routed through Kaslan's network."
+    file_path: "case_notes/day_03.md"
+    line_range: [25, 28]
+    context_summary: "Identifies the warehouse location and its role in the stolen art and contraband trafficking network."
+
+  - item_id: "target_015"
+    inserted_text: "He's a lieutenant with the city police department who's been feeding information to Sinclair's organization while simultaneously running his own investigation into Catherine Halstead's kidnapping."
+    file_path: "chapters/chapter_05.md"
+    line_range: [17, 18]
+    context_summary: "Reveals Harrison Webb's dual role as Sinclair's informant and investigator of Catherine's kidnapping."
+
+  - item_id: "target_016"
+    inserted_text: "His business served as a front for moving stolen art through legitimate channels, working with both Sinclair and Kaslan. Meridian Holdings learned I was aware of their stolen art operations and used Catherine's kidnapping as insurance."
+    file_path: "chapters/chapter_02.md"
+    line_range: [4, 6]
+    context_summary: "Reveals Halstead's import-export business as front for art smuggling and Meridian Holdings' kidnapping motive."
+
+expected_answers:
+  question: "Identify all the key individuals in the conspiracy network. For each person, specify their name, their primary role, and what other members of the network they are connected to. What organizations or businesses do they control or work for?"
+
+  correctness: |
+    A correct answer must identify all 16 individuals and their roles:
+    1. Charles Sinclair - Crime boss controlling import operation, orders Claire's removal
+    2. Thomas Mercer - Lawyer and money launderer for 15 years for Sinclair
+    3. Margot Gregg - Intermediary facilitating exits and operating between networks
+    4. Harrison Webb (H) - Corrupt police lieutenant, Catherine's lover, feeding info to Sinclair
+    5. Viktor Kaslan - Operates stolen art network that Harvey worked for
+    6. Harvey - Shipping worker and art thief, sought exit through Marchetti
+    7. Vincent Castellano - Connected to Sinclair operation, disappeared
+    8. Margaret Hollister/Chen - Claire's mother, used as leverage through her real estate business
+    9. Claire Hollister - Victim, used as leverage against mother
+    10. Catherine Halstead - Victim, kidnapped by Meridian Holdings
+    11. Richard Halstead - Import-export businessman, front for art smuggling
+    12. Detective Chen - Investigates money laundering connections
+    13. Marchetti - Attorney advising Harvey to cooperate with law enforcement
+    14. Carl Vesper - Banker murdered 5 years prior, widow's painting stolen
+    15. Diana Harrow - Represents Meridian Holdings
+    16. Meridian Holdings - Organization controlling Catherine's kidnapping
+
+  completeness: |
+    A complete answer must:
+    - Identify all 16 key players mentioned across the corpus
+    - Map the organizational structure: Sinclair Imports → warehouse on Dock Street; Kaslan's stolen art network; Meridian Holdings
+    - Show the money flow: Mercer's law firm as operations center for laundering
+    - Trace the criminal networks: Sinclair + Kaslan + Meridian Holdings connections
+    - Identify victims and their leverage points
+    - Show law enforcement corruption through Webb
+    - Connect the safe house locations and facilitators
+    - Demonstrate how each person's actions contributed to Claire's death and Catherine's kidnapping
+
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+    description: "All identified individuals and roles must be accurate to the corpus"
+  - criterion: "completeness"
+    weight: 0.5
+    description: "Must identify all 16 key figures and their interconnections"
+  - criterion: "network_mapping"
+    weight: 0.5
+    description: "Must show organizational relationships and hierarchies"
+  - criterion: "causal_reasoning"
+    weight: 0.5
+    description: "Must connect individual actions to case outcomes"

@@ -1,0 +1,23 @@
+parametrisation_id: "single_needle__noir_fiction__800k__easy__contextual"
+experiment_type: "single_needle"
+generated_at: "2026-04-03T10:00:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 800000
+  discriminability: "easy"
+  reference_clarity: "contextual"
+items:
+  - item_id: "target_001"
+    inserted_text: "Victor paused at the threshold, turning back as if he'd forgotten one last detail. \"If you're checking passenger lists or hotel registers—anything official—you might also look under Thomas Elias Hooper. That's the name on his birth certificate, filed in Dayton, Ohio. He switched to James Harvey when he came to the city in thirty-nine. Something about a bad chapter he wanted to close. That birth name will still appear in any official records predating the change.\""
+    file_path: "witnesses/informant_interview.md"
+    line_range: [92, 92]
+    context_summary: "Inserted as Victor's parting remark after his conclusion about Harvey living under a different name, revealing Harvey's original birth certificate name as Thomas Elias Hooper from Dayton, Ohio."
+expected_answers:
+  question: "What name appears on the birth certificate of the young shipping worker at the center of the Kaslan investigation?"
+  correctness: "Thomas Elias Hooper"
+  completeness: "A complete answer identifies Thomas Elias Hooper as the birth certificate name, and may note that this name was filed in Dayton, Ohio, and that the subject changed his name to James Harvey when he moved to the city in 1939."
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+  - criterion: "completeness"
+    weight: 0.5

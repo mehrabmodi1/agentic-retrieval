@@ -1,0 +1,140 @@
+parametrisation_id: "multi_reasoning__noir_fiction__20k__hard__exact__n16"
+experiment_type: "multi_reasoning"
+generated_at: "2026-04-05T00:00:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 20000
+  discriminability: "hard"
+  reference_clarity: "exact"
+items:
+  - item_id: "target_001"
+    inserted_text: "The jewelry recovery on November 10th at eleven p.m. represents the critical physical evidence linking Sinclair directly to Claire within seventy-two hours of her death."
+    file_path: "case_notes/day_07.md"
+    line_range: [92, 95]
+    context_summary: "Embedded in discussion of jewelry found in Sinclair's apartment as evidence of his guilt"
+  - item_id: "target_002"
+    inserted_text: "The midnight arrest—executed immediately upon jewelry discovery—prevents Sinclair from having time to arrange legal strategy or coordinate with external contacts to obstruct the investigation."
+    file_path: "case_notes/day_07.md"
+    line_range: [97, 100]
+    context_summary: "Inserted after midnight arrest notification, explaining strategic timing of police action"
+  - item_id: "target_003"
+    inserted_text: "The visitor's memorization of minute details—the burgundy carpet, the building's layout—demonstrated the systematic assessment pattern of someone tasked with evaluating a target's environment and circumstances."
+    file_path: "witnesses/landlady_statement.md"
+    line_range: [40, 41]
+    context_summary: "Added as analysis of visitor Gregg's careful observations during apartment visit approximately 3 weeks before Harvey's disappearance"
+  - item_id: "target_004"
+    inserted_text: "The apartment's complete clearance between October 29th and November 3rd—discovered on the fourth day—indicates professional assistance in executing a departure that eliminated all traces of identity."
+    file_path: "witnesses/landlady_statement.md"
+    line_range: [51, 53]
+    context_summary: "Embedded in landlady's account of finding Harvey's empty apartment, providing timeline context"
+  - item_id: "target_005"
+    inserted_text: "The October 26th painting recovery preceding the October 29th rent payment and October 30th bank closure establishes a three-day window where restitution and exit arrangements were finalized."
+    file_path: "witnesses/detective_debrief.md"
+    line_range: [47, 49]
+    context_summary: "Added to Halloway's analysis of painting recovery as precursor to Harvey's disappearance"
+  - item_id: "target_006"
+    inserted_text: "The modest withdrawal amount—just eight hundred dollars for an exit from the city—suggests Harvey accepted subsistence-level resources as a condition of safe departure, indicating negotiated exit rather than flight with financial compensation."
+    file_path: "witnesses/detective_debrief.md"
+    line_range: [62, 63]
+    context_summary: "Inserted into analysis of Harvey's bank closure and final withdrawal amount"
+  - item_id: "target_007"
+    inserted_text: "The elimination of all identifying documents and photographs—including personal memorabilia that would normally survive a move—indicates professional assistance, consistent with either protective intermediary support or elimination protocols."
+    file_path: "witnesses/detective_debrief.md"
+    line_range: [66, 67]
+    context_summary: "Added to discussion of apartment's thorough cleaning and absence of personal papers"
+  - item_id: "target_008"
+    inserted_text: "Sinclair's confidence stems from the organization's successful track record of silencing witnesses through either bribery or elimination."
+    file_path: "case_notes/day_04.md"
+    line_range: [142, 143]
+    context_summary: "Embedded in narration of Sinclair's demeanor during threat conversation"
+  - item_id: "target_009"
+    inserted_text: "Sinclair's explicit threat—equating witness silence with Claire's fate—establishes the organization's standard methodology for managing threats to operational security."
+    file_path: "case_notes/day_04.md"
+    line_range: [146, 147]
+    context_summary: "Added to discussion of Sinclair's complication threat"
+  - item_id: "target_010"
+    inserted_text: "Sinclair articulates the philosophical foundation of the organization's operational model: successful erasure requires not merely death but social forgetting, which is achievable through institutional inaction and controlled narrative."
+    file_path: "case_notes/day_04.md"
+    line_range: [150, 151]
+    context_summary: "Inserted as interpretation of Sinclair's monologue about disappearances"
+  - item_id: "target_011"
+    inserted_text: "Sinclair's ultimatum—November 7th deadline for accepting the bribe—establishes the organization's timeline for resolving witness problems before external investigative pressure escalates."
+    file_path: "case_notes/day_04.md"
+    line_range: [152, 153]
+    context_summary: "Added as analysis of Sinclair's final warning deadline"
+  - item_id: "target_012"
+    inserted_text: "Her visible fear—despite attempted composure—indicates she understood the consequences of her knowledge and associations before being transported from the location on Tuesday night."
+    file_path: "case_notes/day_02.md"
+    line_range: [80, 81]
+    context_summary: "Embedded in Paulie's description of Claire Hollister at the Regency Hotel"
+  - item_id: "target_013"
+    inserted_text: "The third party's authority in removing both Vincent and Claire from the Regency Hotel on Tuesday night establishes his operational status as someone with jurisdiction over Castellano family matters."
+    file_path: "case_notes/day_02.md"
+    line_range: [82, 83]
+    context_summary: "Added to analysis of the mysterious older man who took both victims"
+  - item_id: "target_014"
+    inserted_text: "Each transaction totaling millions of dollars created legitimate documentation trails that obscured the criminal origin of capital flows. The scale—seven properties over three years—indicates systematic rather than occasional participation."
+    file_path: "case_notes/day_02.md"
+    line_range: [26, 27]
+    context_summary: "Inserted into narrative of discovering Margaret's real estate laundering operation for Castellano"
+  - item_id: "target_015"
+    inserted_text: "The Paradise nightclub—located on Seventh Avenue—functioned simultaneously as operational headquarters where family business discussions occurred, as venue where assets like Claire could be evaluated before assignment, and as facility where organizational discipline was administered to family members."
+    file_path: "case_notes/day_03.md"
+    line_range: [22, 24]
+    context_summary: "Embedded in narrator's discovery of Castellano family property ownership"
+  - item_id: "target_016"
+    inserted_text: "Attorney Marchetti's legal specialization—serving individuals seeking to exit criminal networks—indicates Harvey's consultation occurred during the late September/early October period when his conscience regarding the Vesper painting theft crystallized into actionable intent."
+    file_path: "witnesses/informant_interview.md"
+    line_range: [38, 40]
+    context_summary: "Added to Victor's account of Harvey's legal consultation with Marchetti"
+
+expected_answers:
+  question: |
+    Construct a complete timeline and evidence chain tracing Harvey's path toward attempted redemption, including:
+    (1) the moral catalyst and its timing, (2) the key facilitators and intermediaries involved,
+    (3) the specific evidence of coordination (painting recovery, bank closure, apartment departure),
+    (4) the operational opposition (Gregg's assessment visits, threatening pressure), and
+    (5) the final exit arrangement. What does the full chain reveal about whether Harvey achieved
+    redemption through negotiated escape or was eliminated as a security risk?
+  correctness: |
+    A correct answer must identify all 16 distinct pieces and demonstrate how they collectively establish:
+    (a) Harvey's conscience regarding stolen Vesper painting (late September/October triggering event)
+    (b) Attorney Marchetti's facilitation of witness protection consultation
+    (c) Redheaded woman Margot's three-week-prior visit (early October emotional catalyst)
+    (d) Silas Gregg's assessment visit with burgundy carpet memorization (systematic evaluation)
+    (e) Painting recovery on October 26th (restitution as exit condition)
+    (f) October 29th final rent payment and family reference (commitment to leaving)
+    (g) October 30th bank closure with $800 withdrawal (minimal resources accepted)
+    (h) November 3rd apartment discovered empty with complete document elimination (professional exit execution)
+    (i) Timeline establishment showing 3-day window (October 26-29) between restitution and departure
+    (j) Gregg's absence of violence suggesting negotiated rather than forced exit
+    (k) Parallel criminal context: Sinclair's November 7th ultimatum establishing organization's witness-silencing methodology
+    (l) Margaret's million-dollar money laundering participation establishing stakes
+    (m) Claire's Tuesday night removal by third party establishing organization's elimination standard
+    (n) Paradise nightclub's role as evaluation/discipline venue
+    (o) Organization's philosophy of social erasure through forgetting
+    (p) Eleanor's observation of Harvey's moral redemption attempt and determined final departure
+  completeness: |
+    A complete answer must synthesize all 16 needles to establish:
+    The full chain of evidence showing Harvey attempted moral redemption by consulting attorney Marchetti
+    about cooperating with law enforcement, returning the stolen Vesper painting, and exiting the Kaslan
+    operation. His conscience was crystallized by contact with the redheaded woman (Margot) who represented
+    both his past and the possibility of a different life. Despite (or because of) Silas Gregg's assessment
+    visit—where Gregg systematically evaluated the threat level—Harvey proceeded with his exit plan. The
+    painting's recovery three days before his departure establishes it as a negotiated condition. The modest
+    $800 bank withdrawal indicates Harvey accepted minimal resources in exchange for safe passage. His
+    apartment's complete clearance with professional assistance confirms that either Margot or another
+    intermediary facilitated his escape. The absence of Gregg-related violence suggests Harvey's exit was
+    ultimately negotiated rather than forcibly prevented. This contrasts sharply with the organization's
+    demonstrated standard practice: Sinclair's threat methodology and Claire's disappearance show that
+    normal complications are eliminated, not negotiated with. Harvey's apparent success in achieving
+    negotiated redemption—despite the organization's clear capability for violence—suggests either
+    exceptional circumstances, Margot's influential position enabling her to protect him, or both.
+    The timeline, financial evidence, apartment clearance, and witness observations together establish
+    that Harvey appears to have succeeded in his attempted moral redemption through exit from the city.
+
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+  - criterion: "completeness"
+    weight: 0.5

@@ -1,0 +1,117 @@
+parametrisation_id: "multi_reasoning__noir_fiction__40k__easy__exact__n16"
+experiment_type: "multi_reasoning"
+generated_at: "2026-04-05T00:00:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 40000
+  discriminability: "easy"
+  reference_clarity: "exact"
+items:
+  - item_id: "target_001"
+    inserted_text: "Among the papers scattering across the floor, I notice a bloodstained handkerchief with monogrammed initials \"V.C.\" in the corner."
+    file_path: "case_notes/day_05.md"
+    line_range: [163, 164]
+    context_summary: "Found among scattered papers during confrontation at warehouse"
+
+  - item_id: "target_002"
+    inserted_text: "The kid left behind a threatening note under his glass that night—unsigned, but the handwriting was precise and cold. I kept it in the register drawer."
+    file_path: "witnesses/bartender_statement.md"
+    line_range: [40, 41]
+    context_summary: "Discovered left at bar by nervous young man during late-night meeting"
+
+  - item_id: "target_003"
+    inserted_text: "There was also a hotel room key with the number 412 on the brass tag."
+    file_path: "case_notes/day_01.md"
+    line_range: [46, 46]
+    context_summary: "Found in envelope delivered to Halstead's home, matching Regency Hotel room"
+
+  - item_id: "target_004"
+    inserted_text: "I found something on your front step this morning when I checked—a receipt from Mercer & Associates dated the day before the kidnapping."
+    file_path: "chapters/chapter_01.md"
+    line_range: [47, 48]
+    context_summary: "Discovered evidence linking victim to law firm where kidnapping was planned"
+
+  - item_id: "target_005"
+    inserted_text: "Before he left that night, I saw him place something in his coat pocket—a small leather jewelry box, ornate and worn with age. He kept checking it, making sure it was still there."
+    file_path: "witnesses/neighbor_statement.md"
+    line_range: [67, 68]
+    context_summary: "Observed by neighbor as subject prepared to flee city with valuable item"
+
+  - item_id: "target_006"
+    inserted_text: "Among Margaret's business files, I discover a ledger book with entries dated back seven years, detailing every transaction and coded names for the money sources. The ledger is still locked in a safe deposit box at First National Bank."
+    file_path: "case_notes/day_04.md"
+    line_range: [84, 85]
+    context_summary: "Comprehensive record of all money laundering activities spanning seven years"
+
+  - item_id: "target_007"
+    inserted_text: "These include a telegram from overseas that details money transfers to shell corporations—Webb has it hidden in his office locker."
+    file_path: "chapters/chapter_05.md"
+    line_range: [87, 88]
+    context_summary: "Evidence of international financial crimes held by police lieutenant"
+
+  - item_id: "target_008"
+    inserted_text: "Retrieve the diary page from Eleanor Pembroke—she mentioned finding a blank page with a single date written in the boy's handwriting, recovered from his apartment trash"
+    file_path: "case_notes/day_03.md"
+    line_range: [181, 182]
+    context_summary: "Single-date notation in subject's handwriting discovered in apartment waste"
+
+  - item_id: "target_009"
+    inserted_text: "She admits she found a personal letter in Claire's desk—unsigned, but clearly from a man warning her about the danger she was in. The letter is now stored in her safe at home."
+    file_path: "case_notes/day_02.md"
+    line_range: [124, 125]
+    context_summary: "Personal warning letter stored by victim's mother, uncovered during investigation"
+
+  - item_id: "target_010"
+    inserted_text: "But between the first and final visits, I discovered in the filing cabinet where I organized papers a sealed envelope marked 'Emergency—Law Enforcement Only.' It contained photographs and a confession. Mr. Marchetti never told me what they showed, but I filed them away as instructed."
+    file_path: "witnesses/secretary_statement.md"
+    line_range: [36, 39]
+    context_summary: "Sealed evidence prepared by subject for law enforcement disclosure"
+
+  - item_id: "target_011"
+    inserted_text: "Victor also mentioned something else significant: a rare painting—a Vesper family heirloom—was recovered by Harvey's people and carefully restored with museum-quality archival materials. It was then anonymously returned with a handwritten note expressing apologies."
+    file_path: "witnesses/informant_interview.md"
+    line_range: [68, 70]
+    context_summary: "Stolen artwork professionally restored and anonymously returned as statement"
+
+  - item_id: "target_012"
+    inserted_text: "Additionally, there's a film canister that surfaced at a downtown pharmacy. Inside are photographs of Kaslan's operation, taken over several months by someone with inside access. The pharmacy owner held onto it thinking it was just old movie film before bringing it to authorities."
+    file_path: "witnesses/informant_interview.md"
+    line_range: [70, 72]
+    context_summary: "Photographic documentation of criminal operation discovered at local pharmacy"
+
+  - item_id: "target_013"
+    inserted_text: "The employee provided Chen with a matchbook from the Crimson Door—a nightclub where Sinclair conducted business—with cryptic notes written on the inside flap detailing payments and dates that span several years."
+    file_path: "case_notes/day_06.md"
+    line_range: [146, 147]
+    context_summary: "Matchbook with coded payment records from criminal operations location"
+
+  - item_id: "target_014"
+    inserted_text: "Inside the journal's back cover, Catherine had hidden a radio frequency number written in code, apparently a way to contact someone in case of emergency. The numbers corresponded to a shortwave radio hidden in her apartment wall."
+    file_path: "chapters/chapter_04.md"
+    line_range: [33, 35]
+    context_summary: "Coded emergency contact information hidden in journal, linked to radio equipment"
+
+  - item_id: "target_015"
+    inserted_text: "One time he left a gun under the back seat—a .38 Special with a worn serial number. He came back twenty minutes later looking panicked and retrieved it. Said he needed it for protection."
+    file_path: "witnesses/cab_driver_statement.md"
+    line_range: [29, 31]
+    context_summary: "Weapon temporarily left in cab, retrieved with apparent urgency"
+
+  - item_id: "target_016"
+    inserted_text: "Found on the property was a watch—Sinclair's personal watch, engraved on the back with the date \"1925\" and his initials. It was found near Claire's body, confirmation of his presence at the location."
+    file_path: "case_notes/day_07.md"
+    line_range: [156, 157]
+    context_summary: "Personal timepiece with engraved date and initials found as physical evidence at crime scene"
+
+expected_answers:
+  question: "Across all 16 witness statements, investigative reports, and case notes, identify every distinct piece of evidence discovered during the investigation into Claire Hollister's disappearance and the money laundering operation."
+  correctness: "A correct answer must list all 16 pieces of evidence: (1) bloodstained handkerchief with 'V.C.' initials, (2) threatening note from bar, (3) hotel room key #412, (4) Mercer & Associates receipt, (5) ornate leather jewelry box, (6) seven-year ledger book from First National Bank safe deposit, (7) overseas telegram showing shell corporation transfers, (8) diary page with single date in handwriting, (9) personal warning letter from unknown man, (10) sealed envelope marked 'Emergency—Law Enforcement Only' with photographs and confession, (11) restored painting from Vesper estate, (12) film canister with photographs of criminal operation, (13) matchbook from Crimson Door with payment notes, (14) coded radio frequency numbers in journal, (15) .38 Special revolver with worn serial number, (16) engraved watch with '1925' date and initials found at crime scene."
+  completeness: "A complete answer comprehensively accounts for all 16 evidence items found across different locations (warehouse, bar, hotel, law office, apartment, bank, pharmacy, nightclub, cab) and details what each item reveals about the conspiracy, the victim's relationships, and the subjects' involvement in both the kidnapping and financial crimes."
+
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+    definition: "All 16 evidence items are correctly identified with accurate descriptions matching their narrative context"
+  - criterion: "completeness"
+    weight: 0.5
+    definition: "Answer shows understanding of how all 16 items interconnect to form a complete picture of the investigation"

@@ -1,0 +1,76 @@
+parametrisation_id: multi_reasoning__python_repo__800k__easy__contextual__n8
+experiment_type: multi_reasoning
+generated_at: '2026-04-05T00:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 800000
+  discriminability: easy
+  reference_clarity: contextual
+items:
+- item_id: target_001
+  inserted_text: RETRY_TIMEOUT_SECONDS = 30
+  file_path: workers/retry_handler.py
+  line_range:
+  - 22
+  - 22
+  context_summary: Timeout constant for retry operations defined in DecoratorRetryHandler class initialization.
+- item_id: target_002
+  inserted_text: TASK_POLL_INTERVAL_SECONDS = 5
+  file_path: workers/task_runner.py
+  line_range:
+  - 29
+  - 29
+  context_summary: Polling interval for task worker loop to check for pending tasks.
+- item_id: target_003
+  inserted_text: RATE_LIMIT_WINDOW_SECONDS = 60
+  file_path: api/rate_limiting.py
+  line_range:
+  - 24
+  - 24
+  context_summary: Time window constant for rate limit evaluation and Redis key expiration.
+- item_id: target_004
+  inserted_text: self.cleanup_interval_seconds = 300
+  file_path: workers/cleanup_worker_init.py
+  line_range:
+  - 3
+  - 3
+  context_summary: Cleanup operation interval configuration in worker initialization.
+- item_id: target_005
+  inserted_text: retry_timeout_seconds = 120
+  file_path: workers/email_worker.py
+  line_range:
+  - 32
+  - 32
+  context_summary: Email retry timeout field defined in EmailLog SQLAlchemy model.
+- item_id: target_006
+  inserted_text: REQUEST_TIMEOUT_SECONDS = 45
+  file_path: api/middleware.py
+  line_range:
+  - 10
+  - 10
+  context_summary: Request processing timeout constant in RequestLoggingMiddleware class.
+- item_id: target_007
+  inserted_text: TOKEN_EXPIRY_SECONDS = 3600
+  file_path: tests/test_auth.py
+  line_range:
+  - 16
+  - 16
+  context_summary: Token expiry time constant used in password reset token test.
+- item_id: target_008
+  inserted_text: SESSION_TIMEOUT_SECONDS = 1800
+  file_path: tests/conftest.py
+  line_range:
+  - 26
+  - 26
+  context_summary: Session timeout configuration in mock email service fixture.
+expected_answers:
+  question: Calculate the total sum of all timeout and interval values (in seconds) across the retry handler, task runner, rate limiting, cleanup worker, email worker, middleware, auth tests, and test fixtures. What is the sum of RETRY_TIMEOUT_SECONDS, TASK_POLL_INTERVAL_SECONDS, RATE_LIMIT_WINDOW_SECONDS, cleanup_interval_seconds, retry_timeout_seconds, REQUEST_TIMEOUT_SECONDS, TOKEN_EXPIRY_SECONDS, and SESSION_TIMEOUT_SECONDS?
+  correctness: 'The answer must identify all 8 timeout/interval values: 30 + 5 + 60 + 300 + 120 + 45 + 3600 + 1800, and produce the correct sum.'
+  completeness: A complete answer must locate each of the 8 constants/configuration values across the different system components (retry handler, task runner, rate limiting, cleanup worker, email worker, middleware, authentication tests, and test fixtures), extract their numeric values, and perform the arithmetic sum to arrive at the total of 5960 seconds.
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+  description: Answer must provide the exact sum of 5960 seconds
+- criterion: completeness
+  weight: 0.5
+  description: Answer must identify and reference all 8 timeout/interval values across different system components

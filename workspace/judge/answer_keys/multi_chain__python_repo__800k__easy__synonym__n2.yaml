@@ -1,0 +1,40 @@
+parametrisation_id: multi_chain__python_repo__800k__easy__synonym__n2
+experiment_type: multi_chain
+generated_at: '2026-04-03T00:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 800000
+  discriminability: easy
+  reference_clarity: synonym
+items:
+- item_id: target_001
+  inserted_text: '# Maximum records allowed in a single bulk import request; the authoritative
+
+    # ceiling is defined in workers/email_worker.py as BULK_IMPORT_MAX_ROWS.
+
+    BULK_IMPORT_ROW_LIMIT = None  # see workers/email_worker.py'
+  file_path: api/validators.py
+  line_range:
+  - 20
+  - 22
+  context_summary: Inserted after the logger initialisation at the module level in api/validators.py, introducing BULK_IMPORT_ROW_LIMIT with a pointer to the authoritative value in workers/email_worker.py.
+- item_id: target_002
+  inserted_text: '# Maximum records accepted per bulk import batch; referenced by api/validators.py
+
+    # as BULK_IMPORT_ROW_LIMIT.
+
+    BULK_IMPORT_MAX_ROWS = 750'
+  file_path: workers/email_worker.py
+  line_range:
+  - 22
+  - 24
+  context_summary: Inserted after Base = declarative_base() in workers/email_worker.py, defining the authoritative BULK_IMPORT_MAX_ROWS constant that the validators module delegates to.
+expected_answers:
+  question: In api/validators.md, BULK_IMPORT_ROW_LIMIT defers to workers/email_worker.py for its governing value. What is the maximum records per batch quota defined there?
+  correctness: '750'
+  completeness: The answer should identify that BULK_IMPORT_MAX_ROWS = 750 in workers/email_worker.py is the value that BULK_IMPORT_ROW_LIMIT in api/validators.py delegates to, and that 750 is the maximum records per bulk import batch.
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5

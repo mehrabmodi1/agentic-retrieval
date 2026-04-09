@@ -1,0 +1,23 @@
+parametrisation_id: "single_needle__noir_fiction__20k__hard__contextual"
+experiment_type: "single_needle"
+generated_at: "2026-04-03T00:00:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 20000
+  discriminability: "hard"
+  reference_clarity: "contextual"
+items:
+  - item_id: "target_001"
+    inserted_text: "I write it twice—once in my notebook, and once on the inside back cover of the Hammett paperback I keep on the shelf above my desk at home. Notebooks get taken. Books just look like books."
+    file_path: "case_notes/day_03.md"
+    line_range: [154, 154]
+    context_summary: "Inserted as a new paragraph immediately after the detective notes Sinclair's license plate during nighttime surveillance of the harbor warehouse, before the 'Home and Thinking' section header."
+expected_answers:
+  question: "When the detective recorded the identifying information from Sinclair's car during his nighttime watch at the warehouse, what secondary precaution did he take to preserve it, and what was his reasoning?"
+  correctness: "The detective wrote the license plate number a second time on the inside back cover of a Hammett paperback kept on his shelf at home, because notebooks can be seized or stolen whereas a book appears innocuous."
+  completeness: "A complete answer names both hiding places (notebook and the Hammett paperback's inside back cover), explains the logic (notebooks get taken; books just look like books), and connects this to the detective's awareness that his evidence could be confiscated."
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+  - criterion: "completeness"
+    weight: 0.5

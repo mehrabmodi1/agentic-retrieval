@@ -1,0 +1,28 @@
+parametrisation_id: "multi_chain__noir_fiction__800k__hard__synonym__n2"
+experiment_type: "multi_chain"
+generated_at: "2026-04-06T00:00:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 800000
+  discriminability: "hard"
+  reference_clarity: "synonym"
+items:
+  - item_id: "target_001"
+    inserted_text: "He told me the man had brought instructions. Written instructions. Papers with a destination carefully marked in black ink. The handwriting was precise, formal—the kind that does not invite questions, only obedience. Harvey said he had no choice but to follow them."
+    file_path: "witnesses/landlady_statement.md"
+    line_range: [33, 37]
+    context_summary: "Inserted into Eva's account of the visitor's impact on Harvey, embedded within her observation of his deteriorating state and the mysterious visitor's influence."
+  - item_id: "target_002"
+    inserted_text: "On the stub, written in that same precise, formal handwriting I'd glimpsed in Harvey's coat pocket weeks earlier—the handwriting he'd told me about, the handwriting of the man who'd changed everything—was a note: 'Destination confirmed. Harwick Falls. Do not return.'"
+    file_path: "witnesses/cab_driver_statement.md"
+    line_range: [58, 61]
+    context_summary: "Inserted into Jerry's discovery of the train ticket stub, connecting the formal instructions mentioned in the landlady's statement to Harvey's final destination."
+expected_answers:
+  question: "Starting from the formal directives the mysterious visitor delivered to Mr. Harvey, what was the specific destination written in that precise, commanding handwriting?"
+  correctness: "The answer must be 'Harwick Falls' or reference the northbound destination Harwick Falls that was written on the instructions."
+  completeness: "A complete answer should identify Harwick Falls as the destination that was (1) part of the formal written instructions from the visitor, (2) confirmed in the same handwriting on the train ticket stub, and (3) the place Harvey ultimately traveled to via the northbound train."
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+  - criterion: "completeness"
+    weight: 0.5

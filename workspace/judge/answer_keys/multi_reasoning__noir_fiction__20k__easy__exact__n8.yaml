@@ -1,0 +1,69 @@
+parametrisation_id: "multi_reasoning__noir_fiction__20k__easy__exact__n8"
+experiment_type: "multi_reasoning"
+generated_at: "2026-04-05T00:00:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 20000
+  discriminability: "easy"
+  reference_clarity: "exact"
+items:
+  - item_id: "target_001"
+    inserted_text: "She wore a silver locket around her neck, and when she left, she pressed it into his hands."
+    file_path: "witnesses/neighbor_statement.md"
+    line_range: [34, 37]
+    context_summary: "Eleanor describes the visiting woman handing Harvey a physical memento—a silver locket—suggesting finality and emotional closure."
+
+  - item_id: "target_002"
+    inserted_text: "He stopped pacing at night. Or maybe he paced quieter. And there was something in his eyes—a kind of resolution, as if a burden had been decided rather than lifted."
+    file_path: "witnesses/landlady_statement.md"
+    line_range: [36, 40]
+    context_summary: "Eva observes that Harvey's nighttime pacing ceased after the white-haired man's visit, indicating a definitive decision had been made."
+
+  - item_id: "target_003"
+    inserted_text: "October 29th. He brings the rent check, and he seems lighter, like a weight has been removed. We speak about the weather—it is turning cold—and he says he might spend Thanksgiving with family. Family! In three years, he has never mentioned family."
+    file_path: "witnesses/landlady_statement.md"
+    line_range: [41, 45]
+    context_summary: "Eva documents the critical date when Harvey mentions family for the first time, indicating mental and emotional preparation for departure."
+
+  - item_id: "target_004"
+    inserted_text: "The old man got out first. The kid stayed in the cab. I thought he was going to ask me to wait, but he said, 'Just drive.' And his voice was different when he said it. Broken somehow. It was the voice of someone saying goodbye to a place he might never see again."
+    file_path: "witnesses/cab_driver_statement.md"
+    line_range: [39, 44]
+    context_summary: "Jerry the cab driver notes a qualitative change in Harvey's tone and demeanor—brokenness consistent with final departure."
+
+  - item_id: "target_005"
+    inserted_text: "No. But I'll tell you something strange. Three days after that pickup, I'm driving down Fifth Avenue, and I see the old man coming out of a building. He flags me down and just hands me a hundred-dollar bill without a word, as if paying me to forget something that hadn't even cost him anything. That's when I knew Harvey was running for real."
+    file_path: "witnesses/cab_driver_statement.md"
+    line_range: [48, 51]
+    context_summary: "The cab driver receives an unusually large payment from the white-haired man, suggesting arrangements being finalized for Harvey's departure."
+
+  - item_id: "target_006"
+    inserted_text: "the way he moved when he got out of the cab... Detective, I'm telling you, he was leaving. Not for a few days. Leaving. He had a small suitcase with him—nothing else. Just what a man takes when he knows he won't be coming back to claim the rest."
+    file_path: "witnesses/cab_driver_statement.md"
+    line_range: [58, 61]
+    context_summary: "Jerry observes Harvey's minimal luggage and body language at Union Station, confirming permanent departure rather than temporary absence."
+
+  - item_id: "target_007"
+    inserted_text: "if she met with Harvey, it wasn't to kill him. It was to facilitate something. And that something was probably his exit from the Kaslan operation. For Margot, usually everything you have, and then your silence for the rest of your life. Your boy Harvey is either dead, or he's bought his freedom at the cost of his entire life."
+    file_path: "witnesses/informant_interview.md"
+    line_range: [83, 88]
+    context_summary: "Victor's informant account reveals that Margot arranged Harvey's safe passage out of the operation, confirming the deliberate nature of his departure."
+
+  - item_id: "target_008"
+    inserted_text: "October 28th is the critical date. That's the day he visits Marchetti for the final time. That's the day his visible dissolution accelerates into resolution. Within five days, the landlady discovers his apartment empty. Within six days, the cab driver takes him to the station. Within eight days, he's purchased a train ticket to nowhere."
+    file_path: "witnesses/detective_debrief.md"
+    line_range: [16, 21]
+    context_summary: "Detective Halloway documents the compressed timeline where legal consultation, physical departure, and permanent disappearance occur within one week."
+
+expected_answers:
+  question: "What are all eight distinct pieces of evidence that indicated Harvey had decided to permanently leave the city?"
+  correctness: "Answer must identify all eight evidence points: (1) the silver locket transfer from the visiting woman, (2) cessation of nighttime pacing indicating decision resolution, (3) Harvey mentioning family for the first time on October 29th, (4) qualitative change in Harvey's voice to 'broken' tone during the final cab ride, (5) the white-haired man paying the cab driver to ensure silence, (6) Harvey's minimal luggage and body language at the train station, (7) Margot's facilitation of safe passage out of the Kaslan operation, (8) the compressed timeline from legal consultation to permanent departure within eight days starting October 28th."
+  completeness: "A complete answer synthesizes all eight evidence points to demonstrate that Harvey's departure was: (a) emotionally/psychologically prepared (locket, pacing cessation, broken voice), (b) logistically arranged (safe passage negotiated, cab driver paid), (c) temporally deliberate (family mention, compressed timeline), and (d) operationally final (minimal luggage, train ticket purchased). The answer should reflect that these observations collectively prove Harvey consciously decided to permanently leave and executed that decision within a defined timeframe."
+
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+    description: "All eight items correctly identified and accurately described"
+  - criterion: "completeness"
+    weight: 0.5
+    description: "Answer synthesizes items into coherent narrative showing how evidence collectively proves deliberate permanent departure"

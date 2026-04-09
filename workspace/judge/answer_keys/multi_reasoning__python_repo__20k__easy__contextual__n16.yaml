@@ -1,0 +1,134 @@
+parametrisation_id: multi_reasoning__python_repo__20k__easy__contextual__n16
+experiment_type: multi_reasoning
+generated_at: '2026-04-05T00:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 20000
+  discriminability: easy
+  reference_clarity: contextual
+items:
+- item_id: target_001
+  inserted_text: AUDIT_LOG_RETENTION_DAYS = 730
+  file_path: tests/test_db.py
+  line_range:
+  - 299
+  - 306
+  context_summary: Audit log retention constant added to TestAuditLogModel class docstring area.
+- item_id: target_002
+  inserted_text: DB_CONNECTION_POOL_SIZE = 20
+  file_path: tests/test_db.py
+  line_range:
+  - 296
+  - 303
+  context_summary: Database connection pool size constant added before TestAuditLogModel class definition.
+- item_id: target_003
+  inserted_text: DEFAULT_PAGE_SIZE = 25
+  file_path: api/pagination.py
+  line_range:
+  - 395
+  - 404
+  context_summary: Default pagination size constant defined in PageBuilder __init__ method.
+- item_id: target_004
+  inserted_text: MAX_PAGE_SIZE = 100
+  file_path: api/pagination.py
+  line_range:
+  - 408
+  - 412
+  context_summary: Maximum page size limit constant defined in with_per_page method.
+- item_id: target_005
+  inserted_text: REQUEST_TIMEOUT_SECONDS = 30
+  file_path: api/middleware.py
+  line_range:
+  - 24
+  - 26
+  context_summary: HTTP request timeout constant defined after logger initialization.
+- item_id: target_006
+  inserted_text: MAX_REQUEST_SIZE_MB = 10
+  file_path: api/middleware.py
+  line_range:
+  - 27
+  - 29
+  context_summary: Maximum request payload size constant defined after REQUEST_TIMEOUT_SECONDS.
+- item_id: target_007
+  inserted_text: PASSWORD_RESET_TOKEN_EXPIRY_HOURS = 24
+  file_path: tests/test_auth.py
+  line_range:
+  - 254
+  - 257
+  context_summary: Password reset token expiry constant defined in TestPasswordReset class.
+- item_id: target_008
+  inserted_text: MIN_PASSWORD_LENGTH = 12
+  file_path: tests/test_auth.py
+  line_range:
+  - 256
+  - 260
+  context_summary: Minimum password length requirement defined in TestPasswordReset class.
+- item_id: target_009
+  inserted_text: PIPELINE_DISPATCH_TIMEOUT = 83
+  file_path: api/rate_limiting.py
+  line_range:
+  - 25
+  - 27
+  context_summary: Pipeline dispatch timeout constant already present in rate_limiting module.
+- item_id: target_010
+  inserted_text: MAX_REQUESTS_PER_MINUTE = 120
+  file_path: api/rate_limiting.py
+  line_range:
+  - 29
+  - 31
+  context_summary: Rate limit constant added after PIPELINE_DISPATCH_TIMEOUT.
+- item_id: target_011
+  inserted_text: RATE_LIMIT_WINDOW_SECONDS = 60
+  file_path: api/rate_limiting.py
+  line_range:
+  - 33
+  - 35
+  context_summary: Rate limiting window size constant added after MAX_REQUESTS_PER_MINUTE.
+- item_id: target_012
+  inserted_text: DEFAULT_API_RATE_LIMIT = 5000
+  file_path: tests/test_api.py
+  line_range:
+  - 208
+  - 216
+  context_summary: Default API rate limit constant defined in test_update_organization method.
+- item_id: target_013
+  inserted_text: ORG_MEMBER_INVITE_EXPIRY_DAYS = 7
+  file_path: tests/test_api.py
+  line_range:
+  - 235
+  - 241
+  context_summary: Organization member invitation expiry constant defined in test_invite_user_to_organization method.
+- item_id: target_014
+  inserted_text: MAX_RETRIES = 3
+  file_path: workers/retry_handler.py
+  line_range:
+  - 351
+  - 353
+  context_summary: Maximum retry attempts constant defined in DecoratorRetryHandler class.
+- item_id: target_015
+  inserted_text: INITIAL_BACKOFF_SECONDS = 2
+  file_path: workers/retry_handler.py
+  line_range:
+  - 353
+  - 355
+  context_summary: Initial backoff delay constant defined in DecoratorRetryHandler class.
+- item_id: target_016
+  inserted_text: MAX_BACKOFF_SECONDS = 300
+  file_path: workers/retry_handler.py
+  line_range:
+  - 355
+  - 357
+  context_summary: Maximum backoff delay constant defined in DecoratorRetryHandler class.
+expected_answers:
+  question: 'Across the entire Python API system, including the authentication system, database layer, API endpoints, rate limiting, pagination, and retry mechanisms, what is the total sum of all system configuration constants and numeric limits? Include the audit log retention days, database pool size, pagination sizes, request timeouts, request size limits, password reset expiry, password length requirements, pipeline timeout, rate limits, rate limit windows, default API rate limits, invitation expiry periods, and all retry-related constants.
+
+    '
+  correctness: 'The answer must sum all 16 numeric constants correctly: 730 + 20 + 25 + 100 + 30 + 10 + 24 + 12 + 83 + 120 + 60 + 5000 + 7 + 3 + 2 + 300 = 6526'
+  completeness: A complete answer must identify and locate all 16 configuration constants across the 6 different files (test_db.md, pagination.md, middleware.md, test_auth.md, rate_limiting.md, test_api.md, retry_handler.md), extract their numeric values, and perform the summation correctly. Each constant must be found through careful scanning of the code for configuration declarations, including those embedded in class definitions, module-level declarations, and within method implementations.
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+  description: Final sum matches 6526 exactly
+- criterion: completeness
+  weight: 0.5
+  description: All 16 constants are identified and accounted for in the reasoning

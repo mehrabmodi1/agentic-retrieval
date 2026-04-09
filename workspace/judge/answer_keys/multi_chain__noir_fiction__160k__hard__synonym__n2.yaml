@@ -1,0 +1,28 @@
+parametrisation_id: "multi_chain__noir_fiction__160k__hard__synonym__n2"
+experiment_type: "multi_chain"
+generated_at: "2026-04-05T00:00:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 160000
+  discriminability: "hard"
+  reference_clarity: "synonym"
+items:
+  - item_id: "target_001"
+    inserted_text: "When he leaves the building, I notice he carries a briefcase—the kind lawyers carry. I think to myself: this man is bringing Mr. Harvey documents. Official documents. The kind that contain instructions. [Later:] But more than that—I see something in Mr. Harvey's eyes afterward. He comes to pay rent the next day, and in his shirt pocket, I see the corner of a document. Just a glimpse. The letterhead says 'Ashton Haven Protocol'—I see those words clear before he adjusts his shirt. I never ask. Some knowledge is dangerous."
+    file_path: "witnesses/landlady_statement.md"
+    line_range: [33, 41]
+    context_summary: "Inserted into the landlady's description of the mysterious visitor, establishing that Harvey received official documents bearing the 'Ashton Haven Protocol' letterhead."
+  - item_id: "target_002"
+    inserted_text: "**CHEN:** What is the Ashton Haven Protocol?\n\n**HALLOWAY:** That's what I needed to confirm with Justice. I called them this morning. Ashton Haven is a federal relocation facility—a way station for witnesses in protective custody who are transitioning into the Witness Protection Program. It's located in the northern federal region, under Justice Department auspices. The protocol is the procedure for high-risk witnesses who need to disappear completely before they testify. If Harvey was handed a document with that letterhead, it means law enforcement—either federal or someone working with the feds—was preparing to extract him."
+    file_path: "witnesses/detective_debrief.md"
+    line_range: [48, 58]
+    context_summary: "Inserted into the debrief conversation where Detective Chen directly asks about the Ashton Haven Protocol, allowing Halloway to explain it as a federal relocation facility for witness protection."
+expected_answers:
+  question: "Following the landlady's account of the mysterious visitor's contact with Harvey, identify the federal facility Harvey was prepared to be relocated to."
+  correctness: "Answer must identify 'Ashton Haven' as a federal relocation facility or 'way station' for witnesses in protective custody/Witness Protection Program, located in the northern federal region."
+  completeness: "Complete answer should reference both that it is a federal facility AND its purpose as a way station for witness relocation/protection, showing understanding that Harvey was being prepared for federal extraction and protection."
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+  - criterion: "completeness"
+    weight: 0.5

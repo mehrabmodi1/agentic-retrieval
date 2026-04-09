@@ -1,0 +1,37 @@
+parametrisation_id: "multi_chain__noir_fiction__160k__easy__synonym__n2"
+experiment_type: "multi_chain"
+generated_at: "2026-04-05T00:00:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 160000
+  discriminability: "easy"
+  reference_clarity: "synonym"
+items:
+  - item_id: "target_001"
+    inserted_text: |
+      **From Secretary Dorothy Marchetti's supplemental statement:**
+
+      Detective Morello returned with a follow-up question about the final meeting. Dorothy recalled a detail she had not initially mentioned—something that had bothered her precisely because it seemed so small and so deliberate. As Mr. Harvey emerged from the lawyer's office that October afternoon, his face pale with some terrible decision made, Mr. Marchetti had walked him to the elevator and pressed something into his palm. Dorothy had been filing documents and caught only the motion—a small rectangular card, cream-colored, which Harvey immediately placed in his jacket pocket without looking at it. She had asked her brother-in-law what it was, and he had only said: "A contact. Someone who specializes in transitions. The card has a name on it—the contact who will arrange everything."
+    file_path: "witnesses/secretary_statement.md"
+    line_range: [37, 50]
+    context_summary: "Inserted after the landlady's apartment description, detailing the lawyer's final action of handing Harvey a contact card, establishing the entry point for the chain."
+
+  - item_id: "target_002"
+    inserted_text: |
+      **Detective Halloway's Analysis (continued):**
+
+      The contact card Dorothy Marchetti observed being handed to Harvey carries critical significance. Cross-referencing our informant Victor's intelligence, that card identified the contact as Margot—the same woman Victor identified as Kaslan's personal acquisition specialist and negotiator for secure exits. The evidence suggests Harvey's legal consultations were preludes to negotiations with Margot, who facilitated his disappearance through her network. By handing Harvey the contact card, the attorney effectively transferred Harvey from the legal system to the underworld's parallel extraction apparatus.
+    file_path: "witnesses/detective_debrief.md"
+    line_range: [68, 80]
+    context_summary: "Inserted after Detective Halloway's painting-recovery theory, connecting the contact card from the first needle to Margot's identity, resolving the chain."
+
+expected_answers:
+  question: "Starting from Dorothy Marchetti's account of Harvey's final legal consultation, identify the intermediary who arranges his safe passage out of the city."
+  correctness: "The answer must name Margot (or synonymous references like 'the acquisition specialist', 'the negotiator', or 'the woman on the contact card'). Acceptable variations include 'the contact who specializes in transitions' or 'Kaslan's personal facilitator'."
+  completeness: "A complete answer should identify Margot as the intermediary and optionally explain that she was obtained as a contact through the lawyer, representing the bridge between legal counsel and criminal network exit arrangements."
+
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+  - criterion: "completeness"
+    weight: 0.5

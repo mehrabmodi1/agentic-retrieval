@@ -1,0 +1,97 @@
+parametrisation_id: "multi_chain__noir_fiction__20k__hard__synonym__n16"
+experiment_type: "multi_chain"
+generated_at: "2026-04-05T00:00:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 20000
+  discriminability: "hard"
+  reference_clarity: "synonym"
+items:
+  - item_id: "target_001"
+    inserted_text: "I later found a note in the office trash—Mr. Marchetti had written down just two words: 'The Red Lantern. Thursday.' I'm not certain what it meant, but given the context of Mr. Harvey's visits, I suspect it was a location where Mr. Harvey might seek counsel or refuge."
+    file_path: "witnesses/secretary_statement.md"
+    line_range: [15, 85]
+    context_summary: "Dorothy references a note mentioning The Red Lantern, pointing to where Harvey sought refuge."
+
+  - item_id: "target_002"
+    inserted_text: "She whispered something that made him grab her wrist—just for a second, then let go. I caught three words: 'Silas knows everything.' That name—Silas—it hung in the air like cigarette smoke."
+    file_path: "witnesses/bartender_statement.md"
+    line_range: [13, 50]
+    context_summary: "Bartender overhears mention of Silas, a name that appears to threaten Harvey."
+
+  - item_id: "target_003"
+    inserted_text: "Later, I heard from another regular that this man—the old guy with white hair—he was known as someone who collected favors. The kind of man you don't say no to. And I remember he was reading a newspaper while waiting, and I caught a headline before he folded it: 'STOLEN MASTERPIECE FROM VESPER COLLECTION STILL MISSING.'"
+    file_path: "witnesses/bartender_statement.md"
+    line_range: [13, 130]
+    context_summary: "Bartender identifies the old man as someone powerful and mentions a stolen Vesper masterpiece."
+
+  - item_id: "target_004"
+    inserted_text: "Gregg operates out of a property called Oak Hill—it's registered to a Delaware corporation, but it's where Kaslan conducts his sensitive meetings. That's where Harvey was taken after his final visit to Marchetti. That's where he either made his deal or sealed his fate."
+    file_path: "witnesses/informant_interview.md"
+    line_range: [41, 72]
+    context_summary: "Victor reveals Silas Gregg operates from Oak Hill, where Harvey was taken for his final reckoning."
+
+  - item_id: "target_005"
+    inserted_text: "The painting was a Caravaggio—worth somewhere north of seven million. But here's what matters: it was left at the public library specifically because that building has a back entrance that connects to an underground passage. An old tunnel system that leads to several buildings downtown, including the historic courthouse and the administrative building. Those tunnels aren't on any public map."
+    file_path: "witnesses/informant_interview.md"
+    line_range: [41, 120]
+    context_summary: "Victor explains that the recovered Vesper painting was strategically left at the library due to underground tunnels connecting to official buildings."
+
+  - item_id: "target_006"
+    inserted_text: "When you're in real estate, you learn where the money flows. You learn which buildings are actually owned by which people. Claire found out things she shouldn't have. She discovered that several properties I'd been involved with were being used for purposes I wasn't aware of—storage facilities, meeting places, transfer points for merchandise. The kind of buildings where people conduct business that requires discretion."
+    file_path: "case_notes/day_02.md"
+    line_range: [24, 70]
+    context_summary: "Margaret reveals that Claire discovered her properties were being used as storage and transfer points for criminal operations."
+
+  - item_id: "target_007"
+    inserted_text: "One of them specifically—the intermediary who negotiated the use of my properties—he once mentioned a warehouse. He said it was 'where the work gets properly finished.' He used code names for everything, but I pieced together that it was called Pier Facility. Down by the harbor. Unit C."
+    file_path: "case_notes/day_02.md"
+    line_range: [24, 100]
+    context_summary: "Margaret identifies the final location as Pier Facility, Unit C, where operations are 'finished.'"
+
+  - item_id: "target_008"
+    inserted_text: "Behind him, I caught a glimpse of another man—older, with white hair. The way they moved together suggested coordination, not accident. The older man disappeared down the hallway before Webb fully entered, but not before I registered his face. It matched the description of Silas Gregg."
+    file_path: "chapters/chapter_04.md"
+    line_range: [31, 65]
+    context_summary: "Shepherd encounters Silas Gregg in the background, confirming Gregg's involvement in the larger conspiracy."
+
+  - item_id: "target_009"
+    inserted_text: "Catherine's disappearance isn't random, Shepherd. And it's not about ransom. It's about leverage. Someone wants her father to understand that his daughter's safety depends on his cooperation. The old man you just saw? He's the one enforcing that message."
+    file_path: "chapters/chapter_04.md"
+    line_range: [31, 100]
+    context_summary: "Webb reveals that Gregg is using Catherine as leverage against her father's cooperation."
+
+  - item_id: "target_010"
+    inserted_text: "However, we did find one item they apparently missed—a storage key, wooden tag numbered nineteen, hidden in a light fixture. It matches the key system used by Hargrove Storage, the facility on Seventh Avenue. We've obtained a warrant to search unit nineteen."
+    file_path: "witnesses/detective_debrief.md"
+    line_range: [53, 130]
+    context_summary: "Chen reveals discovery of a storage key for Hargrove Storage unit nineteen, connecting to evidence storage."
+
+  - item_id: "target_011"
+    inserted_text: "But I have a hunch about where this ends. If Harvey managed to negotiate his exit from Kaslan's organization, he would need to disappear completely. There's a particular method—relocation to a small town, new identity through someone with access to records. I know someone who did that kind of work. A woman named Margot Chen who operated out of a small law office downtown. She specialized in making people vanish cleanly. If Harvey found her, she'd have taken him north, probably to the Canadian border. There are safe houses along the route, but the final destination is always the same location: a private estate in Vermont called Whitmore House."
+    file_path: "witnesses/detective_debrief.md"
+    line_range: [53, 180]
+    context_summary: "Halloway theorizes Harvey's escape route leads to Whitmore House in Vermont as the final destination."
+
+  - item_id: "target_012"
+    inserted_text: "But when you're looking, remember this: the people who took her don't hurt leverage. Once I give them what they want, Catherine disappears to a place called Whitmore House in Vermont. That's what they told me when the second package arrived. They said if I cooperate, she'll be relocated there under protection. They said that's where people who are valuable to them get 'reborn.'"
+    file_path: "chapters/chapter_01.md"
+    line_range: [24, 80]
+    context_summary: "Halstead reveals that kidnapper communications reference Whitmore House as the relocation destination."
+
+  - item_id: "target_013"
+    inserted_text: "What stuck with me, though—he had an accent. Canadian. And when he signed the register, he added a reference number under the name. I remember it because it was unusual. He wrote 'WH Estate Vermont—Authorization Code 77.'"
+    file_path: "case_notes/day_01.md"
+    line_range: [42, 80]
+    context_summary: "Hotel clerk recalls that the mysterious guest signed in with reference to 'WH Estate Vermont,' confirming Whitmore House connection."
+
+expected_answers:
+  question: "Starting from the legal counsel that Dorothy mentioned Harvey sought at The Red Lantern, follow the trail through the witnesses and investigations. What is the name of the final sanctuary where people in the organization get reborn?"
+  correctness: "The answer must reference 'Whitmore House' or 'WH Estate' in Vermont, as the ultimate destination where Harvey and others are relocated."
+  completeness: "A complete answer should recognize that the chain spans from the secretary's note → bartender's sighting → informant's revelation about Silas Gregg → Margaret's warehouse → Detective Halloway's theory → Richard Halstead's kidnapper demands → and finally the hotel clerk's registration notation, all converging on the same location."
+
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+  - criterion: "completeness"
+    weight: 0.5

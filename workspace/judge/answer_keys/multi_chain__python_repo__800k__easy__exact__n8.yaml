@@ -1,0 +1,74 @@
+parametrisation_id: multi_chain__python_repo__800k__easy__exact__n8
+experiment_type: multi_chain
+generated_at: '2026-04-03T00:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 800000
+  discriminability: easy
+  reference_clarity: exact
+items:
+- item_id: target_001
+  inserted_text: 'ROUTE_CHAIN_START = get_config(''MIDDLEWARE_SECRET'')  # resolve in api/middleware.py'
+  file_path: api/routes.py
+  line_range:
+  - 49
+  - 49
+  context_summary: Inserted after the module-level logger definition, before the Blueprint definitions block.
+- item_id: target_002
+  inserted_text: 'MIDDLEWARE_SECRET = load_key(''VALIDATOR_SEED'')  # resolve in api/validators.py'
+  file_path: api/middleware.py
+  line_range:
+  - 26
+  - 26
+  context_summary: Inserted after the module-level logger definition, before the RequestIDMiddleware class.
+- item_id: target_003
+  inserted_text: 'VALIDATOR_SEED = get_setting(''PAGINATION_TOKEN'')  # resolve in api/pagination.py'
+  file_path: api/validators.py
+  line_range:
+  - 20
+  - 20
+  context_summary: Inserted after the module-level logger definition, before the ValidationError exception class.
+- item_id: target_004
+  inserted_text: 'PAGINATION_TOKEN = fetch_from(''SERIAL_ENDPOINT'')  # resolve in api/serializers.py'
+  file_path: api/pagination.py
+  line_range:
+  - 23
+  - 23
+  context_summary: Inserted directly after the PAGINATED_CACHE_TTL constant definition, before the PaginationMetadata class.
+- item_id: target_005
+  inserted_text: 'SERIAL_ENDPOINT = task_lookup(''TASK_ROUTE_KEY'')  # resolve in workers/task_runner.py'
+  file_path: api/serializers.py
+  line_range:
+  - 26
+  - 26
+  context_summary: Inserted after the module-level logger definition, before the BaseSchema class.
+- item_id: target_006
+  inserted_text: 'TASK_ROUTE_KEY = retry_config(''RETRY_BUCKET'')  # resolve in workers/retry_handler.py'
+  file_path: workers/task_runner.py
+  line_range:
+  - 26
+  - 26
+  context_summary: Inserted directly after the DEFAULT_TASK_QUEUE_TIMEOUT constant, before the PIPELINE_DISPATCH_TIMEOUT comment block.
+- item_id: target_007
+  inserted_text: 'RETRY_BUCKET = email_get(''EMAIL_DISPATCH_CODE'')  # resolve in workers/email_worker.py'
+  file_path: workers/retry_handler.py
+  line_range:
+  - 21
+  - 21
+  context_summary: Inserted after Base = declarative_base(), before the PIPELINE_DISPATCH_TIMEOUT comment block.
+- item_id: target_008
+  inserted_text: EMAIL_DISPATCH_CODE = 'XK-7734-FINAL'
+  file_path: workers/email_worker.py
+  line_range:
+  - 21
+  - 21
+  context_summary: Inserted after Base = declarative_base(), before the PIPELINE_DISPATCH_TIMEOUT comment block; this is the terminal value of the chain.
+expected_answers:
+  question: Starting from ROUTE_CHAIN_START in api/routes.md, follow the chain of config references through each file. What is the final value that the chain ultimately resolves to?
+  correctness: XK-7734-FINAL
+  completeness: A complete answer identifies 'XK-7734-FINAL' as the value of EMAIL_DISPATCH_CODE in workers/email_worker.md, which is the terminal link reached by following ROUTE_CHAIN_START → MIDDLEWARE_SECRET → VALIDATOR_SEED → PAGINATION_TOKEN → SERIAL_ENDPOINT → TASK_ROUTE_KEY → RETRY_BUCKET → EMAIL_DISPATCH_CODE.
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5

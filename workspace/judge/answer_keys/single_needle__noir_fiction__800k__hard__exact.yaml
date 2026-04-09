@@ -1,0 +1,23 @@
+parametrisation_id: "single_needle__noir_fiction__800k__hard__exact"
+experiment_type: "single_needle"
+generated_at: "2026-04-03T00:00:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 800000
+  discriminability: "hard"
+  reference_clarity: "exact"
+items:
+  - item_id: "target_001"
+    inserted_text: "\"As for the envelope—I caught a look at the front of it for maybe half a second when the old man first set it down on the table, before he pushed it across. Curiosity, you know. Thirty years behind a bar teaches you to see things quick. It was typed, not handwritten. Just one line, centered neat: *Locker 9, Sutton Street Station.* Nothing else. No name. The kid's hand came down over it fast when he realized I was looking, and he tucked it away without another word.\""
+    file_path: "witnesses/bartender_statement.md"
+    line_range: [38, 38]
+    context_summary: "Inserted as an additional paragraph from bartender Deke, between his existing account of the white-haired man sliding an envelope across to the young man and Morello's follow-up question, describing what Deke briefly glimpsed typed on the front of the envelope."
+expected_answers:
+  question: "According to the bartender Deke at The Crimson Door Lounge, what was typed on the front of the envelope that the older man slid across to the young man during their meeting?"
+  correctness: "A correct answer must state that the envelope had 'Locker 9, Sutton Street Station' typed on its front."
+  completeness: "A complete answer notes that the text on the envelope was typed (not handwritten), appeared as a single centered line, contained only 'Locker 9, Sutton Street Station' with no name, and that the young man quickly covered it when he noticed Deke looking."
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+  - criterion: "completeness"
+    weight: 0.5

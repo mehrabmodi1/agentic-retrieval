@@ -1,0 +1,36 @@
+parametrisation_id: multi_chain__python_repo__20k__easy__synonym__n2
+experiment_type: multi_chain
+generated_at: '2026-04-03T00:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 20000
+  discriminability: easy
+  reference_clarity: synonym
+items:
+- item_id: target_001
+  inserted_text: '# Worker connection timeout (in seconds) is sourced from the shared API default; see DEFAULT_REQUEST_TIMEOUT in api/middleware.py
+
+    WORKER_CONNECT_TIMEOUT = DEFAULT_REQUEST_TIMEOUT'
+  file_path: workers/sync_worker.py
+  line_range:
+  - 21
+  - 22
+  context_summary: Inserted after module-level setup (logger, Base) and before the SyncDirection enum class, as a module-level constant that references DEFAULT_REQUEST_TIMEOUT from api/middleware.py.
+- item_id: target_002
+  inserted_text: '# Default outbound request timeout (in seconds) applied to worker connections and API clients
+
+    DEFAULT_REQUEST_TIMEOUT = 42'
+  file_path: api/middleware.py
+  line_range:
+  - 26
+  - 27
+  context_summary: Inserted after the logger setup and before the RequestIDMiddleware class definition, as a module-level constant defining the numeric timeout value.
+expected_answers:
+  question: In workers/sync_worker.md, the network timeout setting for worker connections is sourced from a shared API-level constant. Following the reference to api/middleware.md, what is the numeric value that constant resolves to?
+  correctness: '42'
+  completeness: A complete answer identifies that WORKER_CONNECT_TIMEOUT references DEFAULT_REQUEST_TIMEOUT defined in api/middleware.md, and that DEFAULT_REQUEST_TIMEOUT = 42.
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5

@@ -1,0 +1,32 @@
+parametrisation_id: multi_reasoning__python_repo__160k__easy__synonym__n2
+experiment_type: multi_reasoning
+generated_at: '2026-04-05T00:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 160000
+  discriminability: easy
+  reference_clarity: synonym
+items:
+- item_id: target_001
+  inserted_text: MAX_RETRY_TIMEOUT_SECONDS = 300
+  file_path: workers/retry_handler.py
+  line_range:
+  - 105
+  - 105
+  context_summary: Constant defining maximum retry timeout in BackoffCalculator class, inserted after class definition and before calculate_delay method.
+- item_id: target_002
+  inserted_text: WORKER_SHUTDOWN_TIMEOUT_SECONDS = 60
+  file_path: workers/task_runner.py
+  line_range:
+  - 165
+  - 165
+  context_summary: Constant defining worker shutdown timeout in TaskRunner.start() method, inserted at beginning of method before thread initialization.
+expected_answers:
+  question: What is the total recovery time window (in seconds) when considering both the maximum retry timeout and worker shutdown grace period?
+  correctness: The answer must identify both timeout values (300 and 60) and correctly add them to get 360 seconds as the combined recovery window.
+  completeness: 'A complete answer must: (1) locate MAX_RETRY_TIMEOUT_SECONDS = 300 in the BackoffCalculator class, (2) locate WORKER_SHUTDOWN_TIMEOUT_SECONDS = 60 in the TaskRunner.start() method, (3) sum these values to determine the total recovery time window, (4) provide the numerical result with units (seconds).'
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5

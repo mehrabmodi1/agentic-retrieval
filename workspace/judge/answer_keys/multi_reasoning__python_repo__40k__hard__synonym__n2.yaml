@@ -1,0 +1,34 @@
+parametrisation_id: multi_reasoning__python_repo__40k__hard__synonym__n2
+experiment_type: multi_reasoning
+generated_at: '2026-04-05T00:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 40000
+  discriminability: hard
+  reference_clarity: synonym
+items:
+- item_id: target_001
+  inserted_text: self.default_policy = default_policy or RetryPolicy(max_delay_seconds=300)
+  file_path: workers/retry_handler.py
+  line_range:
+  - 141
+  - 141
+  context_summary: Embedded within RetryHandler.__init__ method configuration, specifying the timeout ceiling for exponential backoff retry mechanism.
+- item_id: target_002
+  inserted_text: batch_size_limit = 25
+  file_path: tests/test_services.py
+  line_range:
+  - 289
+  - 289
+  context_summary: Inserted in test_send_batch_notifications test method as a configuration variable representing the bulk message limit for batch notification operations.
+expected_answers:
+  question: What is the sum of the timeout ceiling for retry delays (in seconds) and the bulk message limit for batch notifications? These values are configured in the retry handler's default policy and the batch notification service respectively.
+  correctness: The answer must correctly identify the maximum delay value from the retry policy (300 seconds) and the batch size limit (25), then sum them to get 325.
+  completeness: A complete answer requires locating both the retry timeout configuration in the retry handler initialization AND the batch notification size limit in the service tests, demonstrating that both pieces of information are necessary to compute the final result.
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+  description: Answer must correctly sum 300 + 25 = 325
+- criterion: completeness
+  weight: 0.5
+  description: Answer must identify and use values from both items (retry timeout and batch limit)

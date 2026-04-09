@@ -1,0 +1,130 @@
+parametrisation_id: multi_reasoning__python_repo__800k__easy__contextual__n16
+experiment_type: multi_reasoning
+generated_at: '2026-04-05T00:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 800000
+  discriminability: easy
+  reference_clarity: contextual
+items:
+- item_id: target_001
+  inserted_text: '# System parameter: max_retry_attempts = 5 for email delivery resilience'
+  file_path: workers/email_worker.py
+  line_range:
+  - 60
+  - 61
+  context_summary: Email worker max retry attempts configuration added after retry_count column
+- item_id: target_002
+  inserted_text: 'System parameter: max_login_attempts = 5 per session window'
+  file_path: tests/test_auth.py
+  line_range:
+  - 145
+  - 147
+  context_summary: Authentication test max login attempts parameter in docstring
+- item_id: target_003
+  inserted_text: 'System parameter: task_creation_time_limit_hours = 24'
+  file_path: tests/fixtures.py
+  line_range:
+  - 56
+  - 58
+  context_summary: Test fixture task creation time limit in docstring
+- item_id: target_004
+  inserted_text: '# System parameter: api_default_page_size = 20 items per page'
+  file_path: api/routes.py
+  line_range:
+  - 168
+  - 169
+  context_summary: API routes default pagination size parameter
+- item_id: target_005
+  inserted_text: 'max_rows_per_report: int = 50000,  # System parameter: report_max_rows = 50000'
+  file_path: workers/report_generator.py
+  line_range:
+  - 77
+  - 77
+  context_summary: Report generator maximum rows per report configuration
+- item_id: target_006
+  inserted_text: '# System parameter: cleanup_execution_interval_hours = 6'
+  file_path: workers/cleanup_worker.py
+  line_range:
+  - 61
+  - 62
+  context_summary: Cleanup worker execution interval parameter in __init__
+- item_id: target_007
+  inserted_text: 'timeout_seconds: int = 30  # System parameter: sync_request_timeout_seconds = 30'
+  file_path: workers/sync_worker.py
+  line_range:
+  - 57
+  - 57
+  context_summary: Sync worker request timeout configuration
+- item_id: target_008
+  inserted_text: 'System parameter: api_default_error_status = 400'
+  file_path: api/error_handlers.py
+  line_range:
+  - 26
+  - 27
+  context_summary: API error handler default status code in docstring
+- item_id: target_009
+  inserted_text: 'System parameter: test_db_pool_size = 5 connections'
+  file_path: tests/conftest.py
+  line_range:
+  - 49
+  - 50
+  context_summary: Test database connection pool size in fixture docstring
+- item_id: target_010
+  inserted_text: '''rate_limit_default'': 100,  # System parameter: api_rate_limit_default = 100 requests'
+  file_path: api/__init__.py
+  line_range:
+  - 284
+  - 284
+  context_summary: API rate limit default configuration in API_DEFAULTS
+- item_id: target_011
+  inserted_text: 'System parameter: session_timeout_minutes = 60'
+  file_path: api/auth.py
+  line_range:
+  - 49
+  - 50
+  context_summary: Token manager session timeout in docstring
+- item_id: target_012
+  inserted_text: '# System parameter: pipeline_dispatch_timeout_seconds = 83'
+  file_path: api/rate_limiting.py
+  line_range:
+  - 27
+  - 28
+  context_summary: Pipeline dispatch timeout configuration comment
+- item_id: target_013
+  inserted_text: 'load_default=''private''  # System parameter: project_default_visibility = private'
+  file_path: api/serializers.py
+  line_range:
+  - 97
+  - 97
+  context_summary: Project serializer default visibility configuration
+- item_id: target_014
+  inserted_text: 'assert task.priority == "medium"  # System parameter: task_default_priority = medium'
+  file_path: tests/test_db.py
+  line_range:
+  - 142
+  - 142
+  context_summary: Task model test default priority assertion
+- item_id: target_015
+  inserted_text: 'if len(url) > 2048:  # System parameter: url_max_length_chars = 2048'
+  file_path: api/validators.py
+  line_range:
+  - 146
+  - 146
+  context_summary: URL validator maximum length configuration
+- item_id: target_016
+  inserted_text: '# System parameter: log_archive_retention_days = 30'
+  file_path: tests/test_workers.py
+  line_range:
+  - 175
+  - 176
+  context_summary: Worker test log archive retention period parameter
+expected_answers:
+  question: 'Calculate the sum of all numeric system parameters across the distributed codebase (email retry attempts, login attempts, task creation time limit, API page size, report max rows, cleanup interval, sync timeout, error status code, DB pool size, API rate limit, session timeout, pipeline dispatch timeout, task default priority as number, URL max length, log retention days, and task batch size). What is the total when combining: max_retry_attempts, max_login_attempts, task_creation_time_limit_hours, api_default_page_size, report_max_rows, cleanup_execution_interval_hours, sync_request_timeout_seconds, api_default_error_status, test_db_pool_size, api_rate_limit_default, session_timeout_minutes, pipeline_dispatch_timeout_seconds, task_service_batch_size, pagination_cache_ttl_seconds, log_archive_retention_days, and organization_settings_cache_ttl?'
+  correctness: A correct answer must identify all 16 system parameters scattered across worker configurations, API settings, test fixtures, and database models. It must extract the exact numeric values (5+5+24+20+50000+6+30+400+5+100+60+83+10+341+30+300) and compute their sum.
+  completeness: 'A complete answer demonstrates: (1) Finding all 16 distinct system parameters in different files (workers, API, tests, models), (2) Understanding how these parameters relate to system capacity and configuration across multiple layers, (3) Correctly extracting contextual numeric values embedded as configuration parameters or comments, (4) Performing arithmetic to combine all values (sum = 51219), (5) Explaining how these parameters work together in the distributed system architecture.'
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5

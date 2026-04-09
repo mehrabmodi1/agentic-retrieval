@@ -1,0 +1,25 @@
+parametrisation_id: single_needle__python_repo__20k__hard__contextual
+experiment_type: single_needle
+generated_at: '2026-04-03T00:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 20000
+  discriminability: hard
+  reference_clarity: contextual
+items:
+- item_id: target_001
+  inserted_text: "        task_timeout_seconds: int = 450,  # tasks running longer than this are flagged as hung\n    ):\n        self.db_url = db_url\n        self.redis_url = redis_url\n        self.worker_threads = worker_threads\n        self.poll_interval = poll_interval\n        self.task_timeout_seconds = task_timeout_seconds"
+  file_path: workers/task_runner.py
+  line_range:
+  - 100
+  - 106
+  context_summary: Inserted as an additional constructor parameter and instance attribute in TaskRunner.__init__, immediately after the existing poll_interval parameter, with a comment describing tasks that exceed the duration as 'hung'.
+expected_answers:
+  question: What is the maximum duration, in seconds, that the task execution engine allows a worker job to run before it is treated as stuck?
+  correctness: 450 seconds (the default value of task_timeout_seconds in TaskRunner.__init__)
+  completeness: A complete answer identifies the value as 450 seconds, notes it is the default for the task_timeout_seconds parameter of the TaskRunner class, and understands that this threshold is the point at which a running task is considered hung.
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5

@@ -1,0 +1,25 @@
+parametrisation_id: single_needle__python_repo__160k__hard__exact
+experiment_type: single_needle
+generated_at: '2026-04-03T15:40:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 160000
+  discriminability: hard
+  reference_clarity: exact
+items:
+- item_id: target_001
+  inserted_text: '        self.audit_log_retention_days = 180  # how long to keep audit trail records before archival'
+  file_path: workers/cleanup_worker.py
+  line_range:
+  - 61
+  - 61
+  context_summary: Inserted as a hardcoded instance attribute in CleanupWorker.__init__, immediately after three similar parameter-backed retention-day attributes (log_retention_days, temp_file_retention_days, report_file_retention_days), just before the database setup block.
+expected_answers:
+  question: What is the value of audit_log_retention_days configured in the CleanupWorker?
+  correctness: The value is 180 (days).
+  completeness: A complete answer states the value is 180 days, notes it is a hardcoded attribute (not an __init__ parameter like the other retention settings), and explains from the inline comment that it controls how long audit trail records are kept before archival.
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5

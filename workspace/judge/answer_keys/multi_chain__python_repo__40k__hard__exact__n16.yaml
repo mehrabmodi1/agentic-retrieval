@@ -1,0 +1,184 @@
+parametrisation_id: multi_chain__python_repo__40k__hard__exact__n16
+experiment_type: multi_chain
+generated_at: '2026-04-03T00:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 40000
+  discriminability: hard
+  reference_clarity: exact
+items:
+- item_id: target_001
+  inserted_text: "def _resolve_cipher_suite() -> str:\n    \"\"\"Resolve the active cipher suite name for JWT signing operations.\n\n    The function consults CIPHER_SUITE_REGISTRY for any registered override;\n    if none is present, the module-level JWT_ALGORITHM constant is returned\n    as the effective default algorithm for this deployment.\n    \"\"\"\n    return CIPHER_SUITE_REGISTRY.get(\"jwt_default\", JWT_ALGORITHM)\n"
+  file_path: api/auth.py
+  line_range:
+  - 462
+  - 469
+  context_summary: Appended after the is_authenticated() function near the end of the auth module, before the closing code fence; introduces _resolve_cipher_suite which reads CIPHER_SUITE_REGISTRY.
+- item_id: target_002
+  inserted_text: '# Maps cipher suite names to their backend handler identifiers; the active entry
+
+    # is resolved by get_crypto_backend() which reads from the task configuration store.
+
+    CIPHER_SUITE_REGISTRY: Dict[str, str] = get_crypto_backend()
+
+    '
+  file_path: workers/task_runner.py
+  line_range:
+  - 27
+  - 29
+  context_summary: Inserted after DEFAULT_TASK_QUEUE_TIMEOUT in the module-level constants block; defines CIPHER_SUITE_REGISTRY as the result of calling get_crypto_backend().
+- item_id: target_003
+  inserted_text: "def get_crypto_backend() -> Dict[str, Any]:\n    \"\"\"Return the active cryptographic backend configuration for request validation.\n\n    Reads CRYPTO_BACKEND_PROFILE for the runtime backend settings, which are\n    populated from the deployment environment at application startup and govern\n    which signing algorithms and key sizes are accepted in validated requests.\n    \"\"\"\n    return CRYPTO_BACKEND_PROFILE\n"
+  file_path: api/validators.py
+  line_range:
+  - 469
+  - 476
+  context_summary: Appended after sanitize_html() at the end of the validators module; defines get_crypto_backend() which returns CRYPTO_BACKEND_PROFILE.
+- item_id: target_004
+  inserted_text: '# Active cryptographic backend profile for serializer-layer signing and
+
+    # field-level encryption; the concrete settings are resolved via _fetch_hmac_config()
+
+    # at import time so that HMAC parameters are validated before any schema is used.
+
+    CRYPTO_BACKEND_PROFILE: Dict[str, Any] = _fetch_hmac_config()
+
+    '
+  file_path: api/serializers.py
+  line_range:
+  - 26
+  - 29
+  context_summary: Inserted immediately after the logger declaration in the serializers module; defines CRYPTO_BACKEND_PROFILE as the return value of _fetch_hmac_config().
+- item_id: target_005
+  inserted_text: "def _fetch_hmac_config() -> Dict[str, Any]:\n    \"\"\"Load the HMAC signing configuration for report exports.\n\n    The configuration is pulled from HMAC_CONFIG_STORE, which is populated\n    from environment variables during worker process startup and determines\n    which digest algorithm is applied when signing generated report files.\n    \"\"\"\n    return HMAC_CONFIG_STORE\n"
+  file_path: workers/report_generator.py
+  line_range:
+  - 31
+  - 38
+  context_summary: Inserted after the PIPELINE_DISPATCH_TIMEOUT comment block, before the ReportFormat enum; defines _fetch_hmac_config() which returns HMAC_CONFIG_STORE.
+- item_id: target_006
+  inserted_text: '# Module-level HMAC configuration store shared across auth tests; the store
+
+    # is resolved through _load_key_derivation so that fixture setup mirrors the
+
+    # same key derivation path exercised by the production authentication service.
+
+    HMAC_CONFIG_STORE: Dict[str, Any] = _load_key_derivation()
+
+    '
+  file_path: tests/test_auth.py
+  line_range:
+  - 21
+  - 24
+  context_summary: Inserted after the import block in the test_auth module; defines HMAC_CONFIG_STORE as the result of calling _load_key_derivation().
+- item_id: target_007
+  inserted_text: "def _load_key_derivation() -> Dict[str, Any]:\n    \"\"\"Load key derivation parameters used in paginated result cursor signing.\n\n    Returns the contents of KEY_DERIVATION_REGISTRY, which is updated at\n    application startup from the deployment configuration manifest and specifies\n    which KDF algorithm is used when generating signed pagination cursors.\n    \"\"\"\n    return KEY_DERIVATION_REGISTRY\n"
+  file_path: api/pagination.py
+  line_range:
+  - 21
+  - 28
+  context_summary: Inserted after the logger declaration and before PaginationMetadata class; defines _load_key_derivation() which returns KEY_DERIVATION_REGISTRY.
+- item_id: target_008
+  inserted_text: '# Registry of supported key derivation algorithms keyed by security policy name;
+
+    # the entry active for the current deployment environment is selected by get_key_schema().
+
+    KEY_DERIVATION_REGISTRY: Dict[str, Any] = get_key_schema()
+
+    '
+  file_path: workers/email_worker.py
+  line_range:
+  - 25
+  - 27
+  context_summary: Inserted after the PIPELINE_DISPATCH_TIMEOUT comment in the email_worker module; defines KEY_DERIVATION_REGISTRY as the result of get_key_schema().
+- item_id: target_009
+  inserted_text: "def get_key_schema() -> Dict[str, str]:\n    \"\"\"Return the active key schema for cleanup task credential validation.\n\n    The schema is read from KEY_SCHEMA_MAP, which defines permitted key sizes\n    and algorithm families for each category of credential used in cleanup\n    operations such as storage-backend access tokens and signed audit records.\n    \"\"\"\n    return KEY_SCHEMA_MAP\n"
+  file_path: workers/cleanup_worker.py
+  line_range:
+  - 24
+  - 31
+  context_summary: Inserted after the PIPELINE_DISPATCH_TIMEOUT comment, before the CleanupTask dataclass; defines get_key_schema() which returns KEY_SCHEMA_MAP.
+- item_id: target_010
+  inserted_text: '# Key schema map used in API integration tests to validate constraint enforcement;
+
+    # the authoritative schema is produced by _resolve_vault_entry at test session start
+
+    # to guarantee that test-time key constraints match the production vault policy.
+
+    KEY_SCHEMA_MAP: Dict[str, str] = _resolve_vault_entry()
+
+    '
+  file_path: tests/test_api.py
+  line_range:
+  - 16
+  - 19
+  context_summary: Inserted after the model imports in test_api; defines KEY_SCHEMA_MAP as the return value of _resolve_vault_entry().
+- item_id: target_011
+  inserted_text: "def _resolve_vault_entry() -> Dict[str, str]:\n    \"\"\"Resolve the vault entry used for error-handler signing secrets.\n\n    Falls back to VAULT_ENTRY_DEFAULT when no explicit environment override\n    is supplied, ensuring that a consistent signing configuration is available\n    to all error-handling contexts even before full application boot completes.\n    \"\"\"\n    return VAULT_ENTRY_DEFAULT\n"
+  file_path: api/error_handlers.py
+  line_range:
+  - 21
+  - 28
+  context_summary: Inserted after the logger declaration and before the Custom Exception Classes section; defines _resolve_vault_entry() which returns VAULT_ENTRY_DEFAULT.
+- item_id: target_012
+  inserted_text: '# Default vault entry identifier used for sync-worker credential lookups when no
+
+    # explicit environment override is configured; resolved at import time via _get_vault_profile.
+
+    VAULT_ENTRY_DEFAULT: str = _get_vault_profile()
+
+    '
+  file_path: workers/sync_worker.py
+  line_range:
+  - 26
+  - 28
+  context_summary: Inserted after STALE_LOCK_TIMEOUT_SECONDS in the module-level constants block; defines VAULT_ENTRY_DEFAULT as the return value of _get_vault_profile().
+- item_id: target_013
+  inserted_text: "def _get_vault_profile() -> str:\n    \"\"\"Return the vault profile key used by test data fixtures.\n\n    Delegates to VAULT_PROFILE_KEY so that fixture setup exercises the same\n    profile resolution path as the production sync configuration, ensuring\n    that integration tests catch any mismatch between test and production\n    vault profile identifiers before deployment.\n    \"\"\"\n    return VAULT_PROFILE_KEY\n"
+  file_path: tests/fixtures.py
+  line_range:
+  - 20
+  - 28
+  context_summary: Inserted after the import block and before the TestDataBuilder class; defines _get_vault_profile() which returns VAULT_PROFILE_KEY.
+- item_id: target_014
+  inserted_text: '# Vault profile key resolved once at module load to ensure all middleware
+
+    # components share a single consistent identifier; built by _build_vault_identifier.
+
+    VAULT_PROFILE_KEY: str = _build_vault_identifier()
+
+    '
+  file_path: api/middleware.py
+  line_range:
+  - 26
+  - 28
+  context_summary: Inserted after the logger declaration in middleware.md (a new file added to the corpus); defines VAULT_PROFILE_KEY as the return value of _build_vault_identifier().
+- item_id: target_015
+  inserted_text: "def _build_vault_identifier() -> str:\n    \"\"\"Build the canonical vault identifier string for retry-handler secrets.\n\n    Returns VAULT_ID_CONSTANT directly; this constant was selected during\n    initial deployment and is treated as immutable for the lifetime of the\n    current environment's key material.\n    \"\"\"\n    return VAULT_ID_CONSTANT\n"
+  file_path: workers/retry_handler.py
+  line_range:
+  - 25
+  - 32
+  context_summary: Inserted after the PIPELINE_DISPATCH_TIMEOUT comment in retry_handler.md (a new file added to the corpus); defines _build_vault_identifier() which returns VAULT_ID_CONSTANT.
+- item_id: target_016
+  inserted_text: '# Canonical vault identifier shared across all database test fixtures;
+
+    # must match the value provisioned in the production secrets manager.
+
+    VAULT_ID_CONSTANT = "HS512-HMAC-vault-primary"
+
+    '
+  file_path: tests/test_db.py
+  line_range:
+  - 18
+  - 20
+  context_summary: Inserted after the import block in test_db.md (a new file added to the corpus); defines VAULT_ID_CONSTANT as the literal string value that terminates the chain.
+expected_answers:
+  question: Starting from `_resolve_cipher_suite` in api/auth.md, follow the chain of configuration references through the codebase. What string value does the chain ultimately resolve to?
+  correctness: The answer must be the exact string "HS512-HMAC-vault-primary".
+  completeness: A complete answer identifies VAULT_ID_CONSTANT as the terminal constant in tests/test_db.md and gives its value as "HS512-HMAC-vault-primary"; a partial answer that gives only the string value without tracing the full chain is still acceptable for correctness.
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5

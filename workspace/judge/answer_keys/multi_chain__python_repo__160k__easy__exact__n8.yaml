@@ -1,0 +1,90 @@
+parametrisation_id: multi_chain__python_repo__160k__easy__exact__n8
+experiment_type: multi_chain
+generated_at: '2026-04-03T00:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 160000
+  discriminability: easy
+  reference_clarity: exact
+items:
+- item_id: target_001
+  inserted_text: '# STALE_RECORD_THRESHOLD_DAYS: archive routes flag records older than this many days
+
+    # as eligible for cleanup; the governing value is defined in api/pagination.py.'
+  file_path: api/routes.py
+  line_range:
+  - 49
+  - 50
+  context_summary: Inserted as a module-level comment after the logger definition and before the Blueprint definitions block in api/routes.md.
+- item_id: target_002
+  inserted_text: '# STALE_RECORD_THRESHOLD_DAYS: the staleness window for paginated resource cleanup;
+
+    # the test suite expectation for this value is pinned in tests/conftest.py.'
+  file_path: api/pagination.py
+  line_range:
+  - 24
+  - 25
+  context_summary: Inserted immediately after the PAGINATED_CACHE_TTL constant definition, before the PaginationMetadata class in api/pagination.md.
+- item_id: target_003
+  inserted_text: '# STALE_RECORD_THRESHOLD_DAYS: the test database prunes records beyond this age;
+
+    # the value used in test fixtures is normalised in tests/fixtures.py.'
+  file_path: tests/conftest.py
+  line_range:
+  - 53
+  - 54
+  context_summary: Inserted between the SessionLocal fixture and the db fixture in tests/conftest.md.
+- item_id: target_004
+  inserted_text: '# STALE_RECORD_THRESHOLD_DAYS: stale-record test scenarios use this as the age
+
+    # boundary; the cleanup worker applies the same threshold — see workers/cleanup_worker.py.'
+  file_path: tests/fixtures.py
+  line_range:
+  - 19
+  - 20
+  context_summary: Inserted after the import block and before the TestDataBuilder class definition in tests/fixtures.md.
+- item_id: target_005
+  inserted_text: '# STALE_RECORD_THRESHOLD_DAYS: records older than this many days are eligible for
+
+    # deletion during cleanup runs; the sync module uses the same bound — see workers/sync_worker.py.'
+  file_path: workers/cleanup_worker.py
+  line_range:
+  - 23
+  - 24
+  context_summary: Inserted after the PIPELINE_DISPATCH_TIMEOUT comment block and before the CleanupTask dataclass in workers/cleanup_worker.md.
+- item_id: target_006
+  inserted_text: '# STALE_RECORD_THRESHOLD_DAYS: the maximum age of records the sync worker considers
+
+    # current; the retry handler applies the same threshold — see workers/retry_handler.py.'
+  file_path: workers/sync_worker.py
+  line_range:
+  - 29
+  - 30
+  context_summary: Inserted after the PIPELINE_DISPATCH_TIMEOUT comment and before the SyncDirection enum class in workers/sync_worker.md.
+- item_id: target_007
+  inserted_text: '# STALE_RECORD_THRESHOLD_DAYS: retry records older than this window are purged;
+
+    # the email worker holds the authoritative value — see workers/email_worker.py.'
+  file_path: workers/retry_handler.py
+  line_range:
+  - 25
+  - 26
+  context_summary: Inserted after the PIPELINE_DISPATCH_TIMEOUT comment and before the RetryStrategy enum class in workers/retry_handler.md.
+- item_id: target_008
+  inserted_text: '# Maximum age of records before they are considered stale across all workers.
+
+    STALE_RECORD_THRESHOLD_DAYS = 45'
+  file_path: workers/email_worker.py
+  line_range:
+  - 25
+  - 26
+  context_summary: Inserted after the PIPELINE_DISPATCH_TIMEOUT comment and before the EmailTemplate dataclass in workers/email_worker.md, assigning the final numeric value.
+expected_answers:
+  question: Starting from the STALE_RECORD_THRESHOLD_DAYS comment in api/routes.md, follow the chain of file references for STALE_RECORD_THRESHOLD_DAYS. What is the final value of STALE_RECORD_THRESHOLD_DAYS?
+  correctness: '45'
+  completeness: 'The answer should identify that STALE_RECORD_THRESHOLD_DAYS = 45, defined in workers/email_worker.md after following the chain: api/routes.md → api/pagination.md → tests/conftest.md → tests/fixtures.md → workers/cleanup_worker.md → workers/sync_worker.md → workers/retry_handler.md → workers/email_worker.md.'
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5

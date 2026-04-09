@@ -1,0 +1,36 @@
+parametrisation_id: multi_reasoning__python_repo__40k__easy__synonym__n2
+experiment_type: multi_reasoning
+generated_at: '2026-04-05T00:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 40000
+  discriminability: easy
+  reference_clarity: synonym
+items:
+- item_id: target_001
+  inserted_text: '# Maximum exponential growth factor used in backoff timing calculations
+
+    MAX_BACKOFF_GROWTH_FACTOR = 3.2'
+  file_path: workers/retry_handler.py
+  line_range:
+  - 48
+  - 49
+  context_summary: Inserted before RetryLog class definition as a module-level constant defining maximum backoff multiplier.
+- item_id: target_002
+  inserted_text: '# Queue execution ceiling multiplier for timeout scaling
+
+    QUEUE_EXECUTION_CEILING_MULTIPLIER = 2.5'
+  file_path: workers/task_runner.py
+  line_range:
+  - 24
+  - 25
+  context_summary: Inserted after PIPELINE_DISPATCH_TIMEOUT definition as a related timeout scaling factor.
+expected_answers:
+  question: What is the sum of the maximum exponential growth factor and the queue execution ceiling multiplier?
+  correctness: Must identify both constants (MAX_BACKOFF_GROWTH_FACTOR = 3.2 from retry_handler.md and QUEUE_EXECUTION_CEILING_MULTIPLIER = 2.5 from task_runner.md) and add them together for a result of 5.7.
+  completeness: 'Complete answer must: (1) locate MAX_BACKOFF_GROWTH_FACTOR in workers/retry_handler.md, (2) locate QUEUE_EXECUTION_CEILING_MULTIPLIER in workers/task_runner.md, (3) extract both values, (4) perform arithmetic to combine them, (5) provide final sum of 5.7.'
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5

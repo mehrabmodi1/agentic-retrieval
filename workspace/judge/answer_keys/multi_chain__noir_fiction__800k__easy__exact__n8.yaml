@@ -1,0 +1,67 @@
+parametrisation_id: "multi_chain__noir_fiction__800k__easy__exact__n8"
+experiment_type: "multi_chain"
+generated_at: "2026-04-05T00:00:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 800000
+  discriminability: "easy"
+  reference_clarity: "exact"
+items:
+  - item_id: "target_001"
+    inserted_text: "The return location recorded on the archival cloth—'Vesper Estate'—matched the address Harvey had listed on his rental agreement for the Riverside Apartments, third floor."
+    file_path: "witnesses/detective_debrief.md"
+    line_range: [37, 75]
+    context_summary: "Inserted after HALLOWAY's analysis of the painting recovery, establishing the Riverside Apartments as the first link in the chain."
+
+  - item_id: "target_002"
+    inserted_text: "Eva had later mentioned that Harvey paid rent in person on October 29th, and that morning she'd seen an envelope on his desk addressed to 'Oak Hill Residential, unit pending confirmation.' She thought nothing of it then, but later understood it was his destination."
+    file_path: "witnesses/landlady_statement.md"
+    line_range: [36, 65]
+    context_summary: "Inserted in Eva's account of Harvey's final visit, linking the apartment to the Oak Hill address."
+
+  - item_id: "target_003"
+    inserted_text: "When we got to Oak Hill, the old man—Silas Gregg, we now know—exchanged words with someone outside a storage facility marked for 'temporary holdings, warehouse district retrieval.' The kid's face when he heard those words went even whiter."
+    file_path: "witnesses/cab_driver_statement.md"
+    line_range: [15, 50]
+    context_summary: "Inserted into Jerry's account of the Oak Hill pickup, introducing the warehouse district as the next location."
+
+  - item_id: "target_004"
+    inserted_text: "Eleanor pieced together later that the redhead—Margot—had whispered something to Harvey that day about 'the district operation coordinating your passage.' The pacing stopped because his path was now fixed: warehouse district, then out of the city."
+    file_path: "witnesses/neighbor_statement.md"
+    line_range: [17, 45]
+    context_summary: "Inserted into Eleanor's reflection on Harvey's transformation, confirming the warehouse district destination."
+
+  - item_id: "target_005"
+    inserted_text: "The warehouse itself was registered to Sinclair Imports, but we learned later that it was actually part of a larger network. The building on Dock Street, Building Seven specifically, was where Ashford coordinated the money flow."
+    file_path: "case_notes/day_03.md"
+    line_range: [121, 160]
+    context_summary: "Inserted after Mercer's directions to the warehouse, specifying the exact location and introducing Victor Ashford."
+
+  - item_id: "target_006"
+    inserted_text: "Victor Ashford wasn't merely running warehouse operations. The documentation I found showed wire transfers routed through multiple shell corporations, all ultimately controlled by Ashford's procurement division. But Ashford himself wasn't the top. The money trails climbed higher."
+    file_path: "case_notes/day_04.md"
+    line_range: [152, 180]
+    context_summary: "Inserted in the narrator's analysis section, establishing Ashford as the operational coordinator but not the final authority."
+
+  - item_id: "target_007"
+    inserted_text: "'Meridian Holdings,' Delgado had said when I asked about the company trying to acquire Halstead. 'That's the parent organization. Ashford works for them—he's their acquisition and logistics coordinator for the eastern seaboard. Everything goes through Meridian.'"
+    file_path: "chapters/chapter_05.md"
+    line_range: [27, 60]
+    context_summary: "Inserted into the phone call with Delgado, revealing Meridian Holdings as Ashford's superior organization."
+
+  - item_id: "target_008"
+    inserted_text: "Later research confirmed it: Meridian Holdings was the apex predator. Every network—Kaslan's operation, the Castellano family's interests, even the Ashford distribution channels—they were all subsidiaries or partners of Meridian. Meridian was who Sinclair answered to. Meridian was why Harvey disappeared. Meridian was everything."
+    file_path: "case_notes/day_01.md"
+    line_range: [50, 85]
+    context_summary: "Inserted as the final revelation in the day's notes, establishing Meridian Holdings as the ultimate answer and apex of the criminal hierarchy."
+
+expected_answers:
+  question: "Starting from the Vesper painting recovery mentioned in the detective debrief, follow the trail of locations and connections through the case files. Where does it ultimately lead, and what organization controls everything?"
+  correctness: "The answer must identify Meridian Holdings as the final, overarching organization that controls all the criminal networks in the case."
+  completeness: "A complete answer would trace the path: Vesper painting recovery → Riverside Apartments → Oak Hill address → warehouse district → Sinclair Imports/Dock Street Building Seven → Victor Ashford's coordination → Meridian Holdings as the apex."
+
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+  - criterion: "completeness"
+    weight: 0.5

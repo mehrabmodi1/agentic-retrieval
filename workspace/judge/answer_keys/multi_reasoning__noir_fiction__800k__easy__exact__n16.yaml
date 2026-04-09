@@ -1,0 +1,115 @@
+parametrisation_id: "multi_reasoning__noir_fiction__800k__easy__exact__n16"
+experiment_type: "multi_reasoning"
+generated_at: "2026-04-05T00:00:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 800000
+  discriminability: "easy"
+  reference_clarity: "exact"
+items:
+  - item_id: "target_001"
+    inserted_text: "One detail Morris mentioned in passing: the boy used to mention a place called the Riverside Apartments, Unit 4B, like it meant something to him. Could be nothing. Could be where he was planning to hole up."
+    file_path: "case_notes/day_01.md"
+    line_range: [48, 55]
+    context_summary: "Inserted as additional detail about safehouse location in Morris debriefing section"
+
+  - item_id: "target_002"
+    inserted_text: "He once mentioned he was working with someone named Michael Patterson on a textile import venture, something legitimate-sounding. Catherine said it was boring business talk."
+    file_path: "chapters/chapter_03.md"
+    line_range: [29, 45]
+    context_summary: "Added as dialogue detail about false identity name used in business cover"
+
+  - item_id: "target_003"
+    inserted_text: "The last ride I gave him was to Union Station, October 31st, in the evening. He was carrying a leather suitcase and looked like a man saying goodbye to his whole life."
+    file_path: "witnesses/cab_driver_statement.md"
+    line_range: [4, 40]
+    context_summary: "Inserted as final sighting detail confirming November 3rd departure date window"
+
+  - item_id: "target_004"
+    inserted_text: "We also found fibers consistent with a 1955 Cadillac Eldorado in the fabric of her clothing, which suggests she was transported in a specific model vehicle, but that doesn't prove who was driving."
+    file_path: "case_notes/day_08.md"
+    line_range: [14, 25]
+    context_summary: "Added as forensic evidence detail about specific escape vehicle type"
+
+  - item_id: "target_005"
+    inserted_text: "A loose paper fell from between the pages—not in Catherine's handwriting, but in a more careful, educated script. It contained only two lines: \"If things change, the code is 'The art is secure.' Only then will you know it's truly over.\" The handwriting resembled samples we later found attributed to James Harvey."
+    file_path: "chapters/chapter_04.md"
+    line_range: [29, 50]
+    context_summary: "Inserted as hidden message revealing code phrase for escape signal confirmation"
+
+  - item_id: "target_006"
+    inserted_text: "Later that night, when the place was empty, I found a receipt on the floor. Looked like someone had written a number on it—8000—like marking something important. I never found out who dropped it."
+    file_path: "witnesses/bartender_statement.md"
+    line_range: [32, 45]
+    context_summary: "Added as clue about escape fund amount (eight thousand dollars)"
+
+  - item_id: "target_007"
+    inserted_text: "Later, when I'm sorting through the papers, I find a Canadian passport issued to Michael Patterson with Harvey's photograph and a travel authorization dated November 3rd for departure to Portland, Oregon. The document was barely used."
+    file_path: "case_notes/day_05.md"
+    line_range: [126, 135]
+    context_summary: "Inserted as evidence of false identity documents and destination confirmation"
+
+  - item_id: "target_008"
+    inserted_text: "But there's one property transaction that stands out—a safe house in Seattle registered under a shell company name, with Margaret listed as the broker. The listing description mentions 'Safe Harbor Hotel' as a nearby landmark. The sale occurred October 20th, just weeks before everything fell apart."
+    file_path: "case_notes/day_03.md"
+    line_range: [10, 20]
+    context_summary: "Added as real estate transaction revealing backup location and facilitator identity"
+
+  - item_id: "target_009"
+    inserted_text: "When he finally met with Mr. Marchetti, he left behind a typed letter on Mr. Marchetti's desk—I saw it briefly when tidying. It was addressed to someone named Eleanor and mentioned gratitude and 'the window of opportunity closing.' I never found out where the letter went."
+    file_path: "witnesses/secretary_statement.md"
+    line_range: [5, 18]
+    context_summary: "Inserted as evidence of safehouse facilitator (Eleanor) and timeline urgency"
+
+  - item_id: "target_010"
+    inserted_text: "What I didn't tell Sinclair was that I'd already found the money trail. Eight thousand dollars in cash, withdrawn from Harvey's account on October 30th and hidden in the apartment ceiling—payment for silence or payment for passage, I still wasn't sure which."
+    file_path: "case_notes/day_04.md"
+    line_range: [126, 140]
+    context_summary: "Added as confirmation of escape fund location and withdrawal date"
+
+  - item_id: "target_011"
+    inserted_text: "And if you're contacted by anyone asking about messages left at The Crimson Door, that's your signal to reach out to me immediately. That's how you'll know things are changing."
+    file_path: "chapters/chapter_05.md"
+    line_range: [24, 35]
+    context_summary: "Inserted as communication protocol detail for escape signal transmission"
+
+  - item_id: "target_012"
+    inserted_text: "But after the woman visited—it was October 28th, I remember because I'd just received my pension check—the pacing stopped. It was replaced by... stillness. The kind of stillness that comes when a decision has been made. A terrible decision, but a made one nonetheless."
+    file_path: "witnesses/neighbor_statement.md"
+    line_range: [37, 50]
+    context_summary: "Added as precise timeline marker for decision-making moment before escape"
+
+  - item_id: "target_013"
+    inserted_text: "He also leaves a key—a small brass key—on the shelf by the mailbox. He says I should hold it for him, that he might need someone to know where it is. The key opens something in his apartment, something in the ceiling. I have not looked. But I have kept it safe, like he asked."
+    file_path: "witnesses/landlady_statement.md"
+    line_range: [19, 32]
+    context_summary: "Inserted as detail about money location access and safehouse facilitator Eleanor"
+
+  - item_id: "target_014"
+    inserted_text: "\"We handle legitimate merchandise for the most part—high-end fabrics, artisanal imports. But we've also been used as a cover for less legitimate operations by associates I didn't choose. That's the danger of being in this business and knowing the wrong people.\""
+    file_path: "chapters/chapter_02.md"
+    line_range: [40, 50]
+    context_summary: "Added as context about import-export business used as cover for operations"
+
+  - item_id: "target_015"
+    inserted_text: "But if I'm right about Harvey, he has a 48-hour window—October 31st through November 2nd—to get far enough away that the organization can't reach him. After that, they move on or they hunt him down permanently. Either way, the window closes."
+    file_path: "witnesses/informant_interview.md"
+    line_range: [48, 60]
+    context_summary: "Inserted as critical timeline constraint revealing extraction deadline logic"
+
+  - item_id: "target_016"
+    inserted_text: "Evidence suggests he may have worked with someone inside the organization—possibly someone named Silas Gregg's deputy or an associate—to facilitate his disappearance. The coordination suggests a network of facilitators, not just a solo escape attempt."
+    file_path: "witnesses/detective_debrief.md"
+    line_range: [58, 75]
+    context_summary: "Added as confirmation of network facilitators in escape operation"
+
+expected_answers:
+  question: "What were all the confirmed details about James Harvey's escape plan, including the safehouse address, the exact escape fund amount, the primary safehouse facilitator, the escape date deadline window, the alias name used, the destination city, the documents possessed, the vehicle model for transport, the code phrase confirmation signal, the communication protocol location, the backup safehouse location, the timeline marker for decision-making, the money storage location, the access method, and the network facilitators involved?"
+  correctness: "A complete answer must identify and list all 16 distinct pieces of information extracted from the different witness statements and case notes: Riverside Apartments Unit 4B (safehouse), eight thousand/8000 dollars (fund amount), Eleanor/Margaret (facilitators), October 31st-November 2nd (48-hour window), Michael Patterson (alias), Portland Oregon (destination), Canadian passport (documents), 1955 Cadillac Eldorado (vehicle), 'The art is secure' (code phrase), The Crimson Door (communication point), Safe Harbor Hotel/Seattle (backup location), October 28th (decision moment), ceiling (money location), brass key (access method), Silas Gregg's deputy (network facilitator)."
+  completeness: "A complete answer covers all 16 information elements and synthesizes them into a coherent narrative of the escape plan spanning dates (Oct 28 - Nov 2), locations (apartment, Seattle), people involved (Eleanor, Margaret, facilitators), financial details (8000 dollars hidden in ceiling), identity (Michael Patterson with Canadian passport), transportation (Cadillac Eldorado to Portland), communication methods (Crimson Door messages), confirmation signals (code phrase 'The art is secure'), and the critical 48-hour extraction window that defined the operation's viability."
+
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+  - criterion: "completeness"
+    weight: 0.5

@@ -1,0 +1,44 @@
+parametrisation_id: multi_chain__python_repo__20k__hard__synonym__n2
+experiment_type: multi_chain
+generated_at: '2026-04-03T00:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 20000
+  discriminability: hard
+  reference_clarity: synonym
+items:
+- item_id: target_001
+  inserted_text: '# When the failure rate exceeds 10%, a digest of undelivered messages is
+
+    # also forwarded to the infrastructure watchdog contact configured in the
+
+    # throttle subsystem; see ops_alert_recipient in api/rate_limiting.py
+
+    # for the specific destination address.
+
+    '
+  file_path: workers/email_worker.py
+  line_range:
+  - 277
+  - 280
+  context_summary: Inserted as a comment block inside the get_email_stats method, just before the return statement, describing failure-rate alerting and pointing to ops_alert_recipient in the rate limiting module.
+- item_id: target_002
+  inserted_text: '# Infrastructure watchdog contact for undelivered-message digests and abuse reports
+
+    ops_alert_recipient = "platform-ops@taskflow.internal"
+
+    '
+  file_path: api/rate_limiting.py
+  line_range:
+  - 26
+  - 27
+  context_summary: Inserted at module level in the rate limiting file, between the logger setup and the RateLimitError class definition, defining the ops_alert_recipient constant.
+expected_answers:
+  question: In the background mailer module, high delivery failure rates trigger a digest that is forwarded to a watchdog address referenced in the request throttling file. What is that destination email address?
+  correctness: platform-ops@taskflow.internal
+  completeness: A complete answer identifies the email address as platform-ops@taskflow.internal, which is the value of ops_alert_recipient defined in api/rate_limiting.py, reachable by following the reference in the get_email_stats failure-alert comment in workers/email_worker.md.
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5

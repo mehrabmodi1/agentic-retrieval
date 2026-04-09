@@ -1,0 +1,28 @@
+parametrisation_id: "multi_reasoning__noir_fiction__20k__hard__synonym__n2"
+experiment_type: "multi_reasoning"
+generated_at: "2026-04-05T12:00:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 20000
+  discriminability: "hard"
+  reference_clarity: "synonym"
+items:
+  - item_id: "target_001"
+    inserted_text: "When the kid stood up to leave, I found something on the floor under the stool where the old guy had been sitting—a silver cufflink, left side, monogrammed with intertwining initials, V and C. The kind of thing a man loses when he's tense, when his hands are making gestures he doesn't quite control. I kept it, figuring he'd come back asking. But he never did."
+    file_path: "witnesses/bartender_statement.md"
+    line_range: [43, 48]
+    context_summary: "Inserted after Deke describes the white-haired man's paternal warning gesture, embedding the physical evidence within his account of their interaction."
+  - item_id: "target_002"
+    inserted_text: "The silver cufflinks with those interlocking initials were a signature. In all her years watching people struggle with their choices, Eleanor had learned the symbols that distinguished the merely corrupt from the systematically connected. Men who wore them worked for the kind of organizations that didn't forgive, that sent representatives like the white-haired man to deliver terms and options. It was how the city truly worked—not through law, but through symbols only certain people recognized."
+    file_path: "witnesses/neighbor_statement.md"
+    line_range: [18, 23]
+    context_summary: "Inserted in Eleanor's reflection on the white-haired man's visit, embedding her recognition of what such markers signified about his organizational affiliation and authority."
+expected_answers:
+  question: "What material evidence suggested the distinguished visitor represented a powerful organization, and what did the elderly observer recognize about the significance of such markers?"
+  correctness: "Must identify both the silver cufflink with V and C initials (from bartender) and Eleanor's recognition that such cufflinks signal organizational affiliation and systematic power (from neighbor). Must explain how these pieces connect to understand the visitor's role."
+  completeness: "A complete answer synthesizes: (1) the specific physical detail—the monogrammed left-side cufflink lost during the emotional encounter; (2) Eleanor's interpretive framework—what such symbols meant in the city's underground power structure; (3) the inference that the white-haired man's visit was delivering not just personal options but organizational terms. Must demonstrate reading comprehension of both witnesses' perspectives and reasoning about how they illuminate each other."
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+  - criterion: "completeness"
+    weight: 0.5

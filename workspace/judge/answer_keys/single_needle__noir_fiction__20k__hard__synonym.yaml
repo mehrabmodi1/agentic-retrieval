@@ -1,0 +1,23 @@
+parametrisation_id: "single_needle__noir_fiction__20k__hard__synonym"
+experiment_type: "single_needle"
+generated_at: "2026-04-03T00:00:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 20000
+  discriminability: "hard"
+  reference_clarity: "synonym"
+items:
+  - item_id: "target_001"
+    inserted_text: "And he was wound up tight throughout the ride — every few minutes he'd reach into his vest and pull out a pocket watch, gold-cased, hunter-style, and snap it open to check the time before snapping it shut with a soft click. He did that four times in ten minutes. Whatever train he was catching, he was afraid of missing it."
+    file_path: "witnesses/cab_driver_statement.md"
+    line_range: [58, 58]
+    context_summary: "Inserted within the cab driver Jerry Salvatore's account of Harvey's final taxi ride to Union Station, woven into the paragraph describing Harvey's anxious demeanor before his apparent disappearance."
+expected_answers:
+  question: "What timepiece did Harvey repeatedly consult during his final cab ride to the train station?"
+  correctness: "A pocket watch — specifically described as gold-cased and hunter-style, which Harvey pulled from his vest and snapped open four times in ten minutes."
+  completeness: "A complete answer identifies the object as a pocket watch (not a wristwatch or clock), notes its gold case and hunter-style design, mentions it was kept in his vest pocket, and observes that he checked it approximately four times in ten minutes — details that together convey his extreme agitation during the ride."
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+  - criterion: "completeness"
+    weight: 0.5

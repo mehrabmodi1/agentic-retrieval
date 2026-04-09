@@ -1,0 +1,96 @@
+parametrisation_id: multi_chain__python_repo__40k__easy__contextual__n8
+experiment_type: multi_chain
+generated_at: '2026-04-03T00:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 40000
+  discriminability: easy
+  reference_clarity: contextual
+items:
+- item_id: target_001
+  inserted_text: '# Worker pipeline tests rely on PIPELINE_DISPATCH_TIMEOUT; the canonical value for
+
+    # this abort-timer constant is defined in workers/task_runner.py and propagated from there.'
+  file_path: tests/test_workers.py
+  line_range:
+  - 19
+  - 20
+  context_summary: Inserted as a module-level comment after the import block, just before the first pytest class, pointing to task_runner.py.
+- item_id: target_002
+  inserted_text: '# PIPELINE_DISPATCH_TIMEOUT: maximum seconds a dispatched pipeline task may remain
+
+    # unacknowledged before the runner aborts it; the governing ceiling comes from
+
+    # workers/retry_handler.py — see PIPELINE_DISPATCH_TIMEOUT there for the constraint.
+
+    PIPELINE_DISPATCH_TIMEOUT = None  # see workers/retry_handler.py for the authoritative value'
+  file_path: workers/task_runner.py
+  line_range:
+  - 27
+  - 30
+  context_summary: Inserted after the DEFAULT_TASK_QUEUE_TIMEOUT constant, before Base declaration, defining PIPELINE_DISPATCH_TIMEOUT as None and pointing to retry_handler.py.
+- item_id: target_003
+  inserted_text: '# PIPELINE_DISPATCH_TIMEOUT: the ceiling for pipeline dispatch waits is aligned with
+
+    # the maximum backoff delay; the reference value lives in workers/sync_worker.py.'
+  file_path: workers/retry_handler.py
+  line_range:
+  - 22
+  - 23
+  context_summary: Inserted after the Base declarative_base() setup, before the RetryStrategy enum, pointing to sync_worker.py.
+- item_id: target_004
+  inserted_text: '# PIPELINE_DISPATCH_TIMEOUT: the pipeline abort window used in this module is bounded
+
+    # by the cleanup coordination interval; see PIPELINE_DISPATCH_TIMEOUT in workers/cleanup_worker.py.'
+  file_path: workers/sync_worker.py
+  line_range:
+  - 26
+  - 27
+  context_summary: Inserted after the STALE_LOCK_TIMEOUT_SECONDS constant, before the SyncDirection enum, pointing to cleanup_worker.py.
+- item_id: target_005
+  inserted_text: '# PIPELINE_DISPATCH_TIMEOUT: the cleanup grace period feeds into the
+
+    # pipeline dispatch timeout chain; the next link is in workers/email_worker.py.'
+  file_path: workers/cleanup_worker.py
+  line_range:
+  - 20
+  - 21
+  context_summary: Inserted after the Base declarative_base() setup, before the CleanupTask dataclass, pointing to email_worker.py.
+- item_id: target_006
+  inserted_text: '# PIPELINE_DISPATCH_TIMEOUT: the email delivery window is part of the pipeline
+
+    # timeout chain; the next reference is in workers/report_generator.py.'
+  file_path: workers/email_worker.py
+  line_range:
+  - 22
+  - 23
+  context_summary: Inserted after the Base declarative_base() setup, before the EmailTemplate dataclass, pointing to report_generator.py.
+- item_id: target_007
+  inserted_text: '# PIPELINE_DISPATCH_TIMEOUT: the report export timeout feeds into the API
+
+    # layer; the authoritative value is defined in api/rate_limiting.py.'
+  file_path: workers/report_generator.py
+  line_range:
+  - 27
+  - 28
+  context_summary: Inserted after the Base declarative_base() setup, before the ReportFormat enum, pointing to api/rate_limiting.py.
+- item_id: target_008
+  inserted_text: '# Authoritative pipeline dispatch timeout (seconds): maximum wait for any worker
+
+    # in the dispatch chain before the pipeline considers a task aborted.
+
+    PIPELINE_DISPATCH_TIMEOUT = 83'
+  file_path: api/rate_limiting.py
+  line_range:
+  - 26
+  - 28
+  context_summary: Inserted after the logger setup, before the RateLimitError class, defining the final authoritative value PIPELINE_DISPATCH_TIMEOUT = 83.
+expected_answers:
+  question: Starting from the test file for background workers (`tests/test_workers.py`), there is a note linking a pipeline abort-timer constant to another module. Follow the chain of cross-file references for this constant—each module points to the next—until you reach the file where the authoritative integer value is defined. What is that final value?
+  correctness: '83'
+  completeness: 'A complete answer identifies that PIPELINE_DISPATCH_TIMEOUT resolves to 83, defined in api/rate_limiting.py, reached by following the chain: tests/test_workers.py → workers/task_runner.py → workers/retry_handler.py → workers/sync_worker.py → workers/cleanup_worker.py → workers/email_worker.py → workers/report_generator.py → api/rate_limiting.py.'
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5

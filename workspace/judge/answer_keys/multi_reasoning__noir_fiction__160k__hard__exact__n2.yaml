@@ -1,0 +1,38 @@
+parametrisation_id: "multi_reasoning__noir_fiction__160k__hard__exact__n2"
+experiment_type: "multi_reasoning"
+generated_at: "2026-04-05T00:00:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 160000
+  discriminability: "hard"
+  reference_clarity: "exact"
+items:
+  - item_id: "target_001"
+    inserted_text: "Did he say anything about his plans? Chen pressed carefully. Not in words. But that day—I think it was three days after the man in the suit visited—he brought an envelope to my office. Inside was four hundred dollars in cash. I asked what this was for. He said, 'A favor, Mrs. Kosinski. A personal favor.' Then he told me very specifically that when he left, I should destroy all his maintenance records, the lock installation receipt, anything with his signature or photograph in the building files. He said if anyone came asking about him later, I should say I never had such documents—that they had been lost years ago in a fire. He was very clear about this. Very specific. He made me promise. And did you? I am telling you this now because he is gone and it no longer matters. But yes, I destroyed the records. He paid me to forget about parts of my own business. You understand what that means, Detective? That a young man is willing to pay a stranger to erase his presence from this building entirely? That is the action of someone who believes his survival depends on disappearing completely."
+    file_path: "witnesses/landlady_statement.md"
+    line_range: [45, 62]
+    context_summary: "Eva reveals Harvey paid her $400 cash to destroy all building records with his signature/photograph and explicitly instructed her to claim documents were lost in a fire—showing deliberate, comprehensive erasure of his presence."
+  - item_id: "target_002"
+    inserted_text: "There's something else. We've been looking at Harvey's withdrawal patterns more carefully. For the two months before his disappearance, he made weekly cash withdrawals of exactly one hundred dollars each. That's unusual. Most people don't withdraw money in such precise increments unless they're accumulating funds for a specific purpose. Eight weeks at a hundred dollars per week puts him at eight hundred dollars total—which matches the final withdrawal from his account on October 30th. But that's not the interesting part. What is? The landlady's ledger shows Harvey paid an additional four hundred dollars in cash as a 'special arrangement fee' three days before the final withdrawal. We didn't know what that payment was for until we started correlating her statement with the financial timeline. Combined with the weekly withdrawals, Harvey had accumulated approximately twelve hundred dollars in liquid cash during that two-month window. That's not insignificant money for a man earning a modest salary. And it's exactly the kind of preparation you'd undertake if you were planning to disappear and needed funds for documentation, transportation, and shelter under an assumed identity. So he didn't run at the last minute. He planned this. He knew months in advance that he needed to exit. The math suggests he began accumulating funds as soon as he decided to approach Marchetti in late September. He was methodical about it. Disciplined. That's not panic—that's strategy."
+    file_path: "witnesses/detective_debrief.md"
+    line_range: [69, 95]
+    context_summary: "Detectives analyze Harvey's systematic financial preparation: 8 weeks of $100 weekly withdrawals plus the $400 landlady payment, totaling ~$1,200 in accumulated cash for planned disappearance with false documentation and shelter."
+expected_answers:
+  question: "What specific evidence from Harvey's interactions with the landlady and his financial records demonstrates that his disappearance was a carefully planned operation rather than a panicked flight?"
+  correctness: |
+    A complete answer must reference:
+    1. From Needle 1 (landlady): The $400 payment as a "special arrangement fee" and Harvey's explicit instructions to destroy all records, signature documentation, and building files—claiming they were lost in a fire
+    2. From Needle 2 (detective analysis): Eight weeks of systematic $100 weekly cash withdrawals plus the $400 landlady payment totaling approximately $1,200 in accumulated liquid funds for identity documents, transportation, and shelter
+    3. The connection between the two pieces: The $400 payment mentioned in the landlady's testimony is the same "special arrangement fee" the detectives reference when analyzing accumulated funds, confirming Harvey's methodical 2+ month planning window
+  completeness: |
+    A complete multi-reasoning answer must:
+    - Identify both the erasure strategy (destroying building records) AND the financial preparation (accumulated ~$1,200)
+    - Explain HOW these work together: methodical cash accumulation funded the secure departure arrangements
+    - Recognize the timing correlation: 2-month planning window across both witness and financial evidence
+    - Conclude that this represents strategic preparation (not panic): the precision of withdrawals, advance payment for services, deliberate record destruction
+    - Acknowledge the evidence trail: detective analysis explicitly connected the landlady's payment to the larger financial timeline
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+  - criterion: "completeness"
+    weight: 0.5

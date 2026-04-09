@@ -1,0 +1,28 @@
+parametrisation_id: "multi_chain__noir_fiction__800k__easy__synonym__n2"
+experiment_type: "multi_chain"
+generated_at: "2026-04-05T00:00:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 800000
+  discriminability: "easy"
+  reference_clarity: "synonym"
+items:
+  - item_id: "target_001"
+    inserted_text: "What most people don't realize is that Chen's breakthrough on this connection came from a single source: the bartender at The Velvet Corner. The man named Deke had witnessed something crucial that night—something that gave Chen the confidence to pull all these threads together."
+    file_path: "case_notes/day_07.md"
+    line_range: [10, 15]
+    context_summary: "Inserted after description of Chen's article details, establishing that the journalist's key information source was the bartender at The Velvet Corner."
+  - item_id: "target_002"
+    inserted_text: "I remember when David Chen came to The Velvet Corner asking questions. I told him what I'd seen that night—the old man, the envelope, the exchange. I never thought my simple observations would become the foundation of his article, the spark that would expose the entire money laundering operation. But Chen understood something I didn't: I had witnessed the exact moment when the pieces all connected, when Sinclair's network revealed itself through the hands of the men who were trying to hold it together."
+    file_path: "witnesses/bartender_statement.md"
+    line_range: [22, 30]
+    context_summary: "Inserted after bartender's account of witnessing the old man and envelope exchange, with the bartender (Deke) confirming he was the source that Chen interviewed."
+expected_answers:
+  question: "Following the trail from the journalist's key source location, what crucial observations did the bartender provide that became the foundation of the investigative article?"
+  correctness: "The answer must identify that the bartender at The Velvet Corner (Deke) was the source who provided Chen with observations about the envelope exchange and the old man, which became the basis for the article exposing the money laundering operation."
+  completeness: "A complete answer should mention: (1) the location (The Velvet Corner), (2) the bartender's name (Deke), (3) what he witnessed (the envelope exchange with the old man), and (4) how this information led to Chen's article about the financial connections."
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+  - criterion: "completeness"
+    weight: 0.5

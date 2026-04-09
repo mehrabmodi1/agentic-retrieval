@@ -1,0 +1,36 @@
+parametrisation_id: multi_reasoning__python_repo__800k__hard__exact__n2
+experiment_type: multi_reasoning
+generated_at: '2026-04-05T00:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 800000
+  discriminability: hard
+  reference_clarity: exact
+items:
+- item_id: target_001
+  inserted_text: '# Production rate limiter configuration for API sync operations
+
+    # Ensures consistent request pacing to prevent server overload
+
+    default_sync_limiter = RateLimiter(requests_per_second=4)'
+  file_path: workers/sync_worker.py
+  line_range:
+  - 35
+  - 37
+  context_summary: Embedded configuration using RateLimiter with 4 requests_per_second after the RateLimiter class definition in the sync worker module.
+- item_id: target_002
+  inserted_text: "capacity: int = 15,\n    refill_rate: float = 2.0,"
+  file_path: api/rate_limiting.py
+  line_range:
+  - 60
+  - 61
+  context_summary: Modified burst_limit function signature with capacity=15 and refill_rate=2.0 parameters within the rate limiting decorator implementation.
+expected_answers:
+  question: In the production API rate limiting system, what is the total number of requests that can be processed over a 60-second period when both the default_sync_limiter and the burst_limit decorator are used together?
+  correctness: Must identify requests_per_second=4 from default_sync_limiter in workers/sync_worker.md and capacity=15 from burst_limit in api/rate_limiting.md, then calculate total sustained plus burst capacity.
+  completeness: 'A complete answer must: (1) locate default_sync_limiter with requests_per_second=4, (2) locate burst_limit with capacity=15 and refill_rate=2.0, (3) calculate sustained requests over 60 seconds (4 * 60 = 240), (4) add burst capacity (240 + 15 = 255 total possible requests per 60-second window).'
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5

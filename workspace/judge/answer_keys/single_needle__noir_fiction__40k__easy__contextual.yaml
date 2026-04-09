@@ -1,0 +1,23 @@
+parametrisation_id: "single_needle__noir_fiction__40k__easy__contextual"
+experiment_type: "single_needle"
+generated_at: "2026-04-03T00:00:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 40000
+  discriminability: "easy"
+  reference_clarity: "contextual"
+items:
+  - item_id: "target_001"
+    inserted_text: "Rosie's never closed before four in the morning, which made it one of the only honest refuges in the neighborhood for anyone with business that couldn't wait until a decent hour."
+    file_path: "chapters/chapter_02.md"
+    line_range: [5, 5]
+    context_summary: "Inserted as a standalone paragraph between the opening description of Rosie's Diner and the arrival of Richard Halstead, expanding on the diner's late-night operating hours."
+expected_answers:
+  question: "Until what time did the diner where Shepherd arranged his early-morning meeting with Halstead stay open?"
+  correctness: "Four in the morning (4 AM)"
+  completeness: "The answer states that Rosie's Diner never closed before four in the morning, making it a reliable late-night refuge for people with after-hours business."
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+  - criterion: "completeness"
+    weight: 0.5

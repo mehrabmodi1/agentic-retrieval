@@ -1,0 +1,74 @@
+parametrisation_id: "multi_chain__noir_fiction__160k__hard__contextual__n8"
+experiment_type: "multi_chain"
+generated_at: "2026-04-05T00:00:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 160000
+  discriminability: "hard"
+  reference_clarity: "contextual"
+
+items:
+  - item_id: "target_001"
+    inserted_text: "And then, after a long pause, he added something strange: 'If James contacts you, tell him the redheaded woman will deliver the package to the Chronicle office by Thursday morning. David Chen will know what to do with it. The painting must reach the library steps exactly as discussed.'"
+    file_path: "witnesses/secretary_statement.md"
+    line_range: [50, 50]
+    context_summary: "Marchetti's cryptic instructions to Dorothy about Harvey's escape arrangement involving a painting delivery to Chronicle reporter David Chen."
+
+  - item_id: "target_002"
+    inserted_text: "But something nags at me about this detail—the careful observation, the professional manner. The kind of training you see in men who operate outside normal society. I make a note: possibly related to David Chen's investigation into the Hollister family art connections—a stolen Rembrandt that the reporter's been tracking for months."
+    file_path: "case_notes/day_01.md"
+    line_range: [47, 47]
+    context_summary: "Investigator connects the careful man at the Regency Hotel to David Chen's ongoing investigation of stolen art and the Hollister family."
+
+  - item_id: "target_003"
+    inserted_text: "\"There's someone,\" Helen says. \"A reporter named David Chen at the Chronicle. He's been trying to expose corruption in this city for ten years. He's beaten two bribery attempts and survived a car accident that was probably not an accident. If you want the truth to come out, Chen's your man. In fact, Chen's already working on a related story—about a young man named James who's been trying to return a stolen painting as evidence of his exit from a criminal organization. The painting's appearance will be the final proof that James made it to safety.\""
+    file_path: "case_notes/day_05.md"
+    line_range: [41, 41]
+    context_summary: "Helen's lawyer reveals that David Chen is investigating James Harvey's use of the stolen painting as evidence of his escape from the criminal organization."
+
+  - item_id: "target_004"
+    inserted_text: "She was carrying something wrapped in brown paper—something rectangular, carefully handled. Later, I learned from Mrs. Kosinski downstairs that James mentioned he was preparing to move, that a decision had been made about his departure. The redheaded woman was clearly instrumental in that decision—she was facilitating his escape through the recovery and delivery of something valuable."
+    file_path: "witnesses/neighbor_statement.md"
+    line_range: [29, 29]
+    context_summary: "Eleanor witnesses the redheaded woman delivering the wrapped painting package to Harvey, confirming his planned departure."
+
+  - item_id: "target_005"
+    inserted_text: "October 29th. He brings the rent check, and he seems lighter, like a weight has been removed. We speak about the weather—it is turning cold—and he says he might spend Thanksgiving with family. Family! In three years, he has never mentioned family. I don't even know if he has family. But that day he mentions it like he is making a promise to himself. He also says something cryptic: 'Mrs. Kosinski, if anyone asks, tell them the package is being delivered as arranged. Tell them the library steps by Saturday. Tell them everything will be resolved by then.' Then he leaves."
+    file_path: "witnesses/landlady_statement.md"
+    line_range: [48, 48]
+    context_summary: "Eva records Harvey's cryptic instruction about the package delivery to the library steps by Saturday, confirming his escape plan is imminent."
+
+  - item_id: "target_006"
+    inserted_text: "\"I'm telling you that the case is already finished. The sooner you accept that, the longer your life continues to be interesting.\" And before he leaves, almost as an afterthought, he adds: \"You should know that James Harvey's arrangement with the organization is being honored. The painting will surface this weekend, exactly as promised. His passage north is confirmed. Tell David Chen at the Chronicle that the story about the stolen Rembrandt will verify our good faith.\""
+    file_path: "case_notes/day_02.md"
+    line_range: [159, 159]
+    context_summary: "The midnight visitor confirms that Harvey's escape arrangement has been honored, that the painting will appear to verify his safe passage north."
+
+  - item_id: "target_007"
+    inserted_text: "The autopsy shows that she was strangled. There are ligature marks on her neck that suggest the weapon was something synthetic, probably a scarf or a rope. But that doesn't tell us who did it. That just tells us how. What's interesting is the evidence timeline. The stolen Rembrandt painting—the one from the Vesper estate that James Harvey was forced to move for Kaslan's operation—surfaced three days ago on the library steps with a note indicating Harvey had successfully exited the network and reached safe passage north. That painting's reappearance is more evidence than we have on the murder itself."
+    file_path: "case_notes/day_08.md"
+    line_range: [32, 32]
+    context_summary: "The DA reveals that the stolen Rembrandt's appearance confirms Harvey's successful escape north from the criminal network."
+
+  - item_id: "target_008"
+    inserted_text: "And I need to know why Thomas Mercer's eyes betrayed him.\n\nLater, three days after I begin this case, the Chronicle will report that a priceless Rembrandt painting—stolen from the widow of a murdered banker—has been recovered and left on the library steps with a handwritten note reading simply: \"For justice. James is safe.\" This recovery will become the linchpin of understanding what really happened: that a young man named James Harvey worked his way out of a criminal organization through a carefully orchestrated exchange involving art, conscience, and a newspaper that would finally tell the truth."
+    file_path: "case_notes/day_01.md"
+    line_range: [98, 98]
+    context_summary: "Final revelation: The Rembrandt painting found on the library steps with note confirms James Harvey successfully escaped to safety north."
+
+expected_answers:
+  question: "Starting from lawyer Marchetti's cryptic instructions to his secretary Dorothy about the redheaded woman and the painting delivery to David Chen, trace through the chain of evidence that reveals James Harvey's final destination."
+  correctness: |
+    A correct answer must identify that James Harvey successfully escaped to safety in the north. The answer should demonstrate understanding that:
+    1. The stolen Rembrandt painting was the mechanism for Harvey's escape
+    2. The redheaded woman (Margot) was the intermediary facilitating the escape
+    3. David Chen and the Chronicle reported the painting's recovery as evidence
+    4. The painting's appearance on the library steps with the note confirmed Harvey's safe passage
+  completeness: |
+    A complete answer covers: (1) how Marchetti's instructions set the escape in motion, (2) the chain of intermediaries (redheaded woman, David Chen, Eleanor, Eva), (3) the painting as proof of arrangement, (4) the confirmed destination (north/safe passage), and (5) the final confirmation via the painted recovered on the library steps with the note "For justice. James is safe."
+
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+  - criterion: "completeness"
+    weight: 0.5

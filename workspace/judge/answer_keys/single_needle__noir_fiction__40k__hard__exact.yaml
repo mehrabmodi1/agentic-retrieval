@@ -1,0 +1,23 @@
+parametrisation_id: "single_needle__noir_fiction__40k__hard__exact"
+experiment_type: "single_needle"
+generated_at: "2026-04-03T15:44:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 40000
+  discriminability: "hard"
+  reference_clarity: "exact"
+items:
+  - item_id: "target_001"
+    inserted_text: "\"One other thing about the old man. Before he walked out, he settled the tab in cash—peeled the bills from a money clip, not a wallet. Dark leather bill case, slim, the kind a man carries when he doesn't want anything unnecessary on him. When he set it flat on the bar to count out what he owed, I got a clear look at the lower corner. Two letters, pressed in gold, the color gone a little dull from years of handling. W.F. I only had it for a second before he pocketed it again, but you spend thirty years behind a bar, you learn to read the small details. Details are the only truth in a place like this.\""
+    file_path: "witnesses/bartender_statement.md"
+    line_range: [44, 44]
+    context_summary: "Inserted as a new paragraph of Deke the bartender's testimony, between his account of the older man's parting words to the kid and Detective Morello's follow-up question about the envelope the older man had slid across the table."
+expected_answers:
+  question: "According to Deke the bartender, what initials did he notice pressed in gold on the older man's bill case?"
+  correctness: "The answer must identify the initials as W.F."
+  completeness: "A complete answer identifies the initials as W.F., notes they were pressed in gold on a dark leather bill case, and places the observation within Deke's account of the older man paying for drinks before leaving The Crimson Door Lounge."
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+  - criterion: "completeness"
+    weight: 0.5

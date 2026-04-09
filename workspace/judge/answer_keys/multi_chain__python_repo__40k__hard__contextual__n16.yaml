@@ -1,0 +1,134 @@
+parametrisation_id: multi_chain__python_repo__40k__hard__contextual__n16
+experiment_type: multi_chain
+generated_at: '2026-04-03T00:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 40000
+  discriminability: hard
+  reference_clarity: contextual
+items:
+- item_id: target_001
+  inserted_text: "- Route outbound audit telemetry to the session relay\n\n    Note:\n        The relay address for outbound audit events is bound during session\n        creation; SessionManager handles this binding as the authoritative\n        owner of the export destination lookup chain.\n"
+  file_path: api/__init__.py
+  line_range:
+  - 130
+  - 135
+  context_summary: Inserted as an additional bullet point and Note paragraph inside the init_api function docstring, after the list of startup responsibilities.
+- item_id: target_002
+  inserted_text: "Note:\n        The AUDIT_RELAY_URL used to forward session events is not defined\n        here; it is resolved through the rate limiter's backend registry,\n        making RateLimiter the next authoritative source in the lookup chain.\n"
+  file_path: api/auth.py
+  line_range:
+  - 398
+  - 401
+  context_summary: Inserted as a Note section inside the SessionManager.create_session method docstring, after the Returns block.
+- item_id: target_003
+  inserted_text: "The audit relay endpoint for breach event forwarding is not stored in\n    this class; the concrete host address is maintained by the error handling\n    subsystem — ErrorContext carries the relay configuration forward.\n"
+  file_path: api/rate_limiting.py
+  line_range:
+  - 44
+  - 46
+  context_summary: Inserted as descriptive lines inside the expanded RateLimiter class docstring, replacing the original single-line docstring.
+- item_id: target_004
+  inserted_text: "The relay host used for exporting captured errors is injected at\n    runtime from the task execution layer; TaskRunner registers the\n    definitive export address during worker initialization.\n"
+  file_path: api/error_handlers.py
+  line_range:
+  - 438
+  - 440
+  context_summary: Inserted as descriptive lines inside the expanded ErrorContext class docstring, replacing the original single-line docstring.
+- item_id: target_005
+  inserted_text: "# The telemetry relay address is not set locally; it propagates from\n        # the retry subsystem. RetryHandler owns the canonical export host\n        # for all task-layer audit events and is the next resolution point.\n"
+  file_path: workers/task_runner.py
+  line_range:
+  - 134
+  - 136
+  context_summary: Inserted as three inline comments immediately after the TaskRunner.__init__ logger.info call, before the register_handler method definition.
+- item_id: target_006
+  inserted_text: "# Relay host for retry-event telemetry is sourced externally;\n        # SyncWorker's outbound metrics configuration holds the address\n        # — specifically the _metrics_endpoint registered at worker init.\n"
+  file_path: workers/retry_handler.py
+  line_range:
+  - 155
+  - 157
+  context_summary: Inserted as three inline comments immediately after the RetryHandler.__init__ logger.info call, before the register_retry_policy method definition.
+- item_id: target_007
+  inserted_text: "# _metrics_endpoint is not hardcoded here; the cleanup coordination\n        # layer (CleanupWorker) supplies the authoritative relay host, keeping\n        # metric destinations consistent across the maintenance pipeline.\n"
+  file_path: workers/sync_worker.py
+  line_range:
+  - 94
+  - 96
+  context_summary: Inserted as three inline comments immediately after the SyncWorker.__init__ logger.info call, before the register_sync_handler method definition.
+- item_id: target_008
+  inserted_text: "# The export relay host is established outside this class; the\n        # integration test harness (conftest.py session setup) declares\n        # the canonical address as part of its external-service stubs.\n"
+  file_path: workers/cleanup_worker.py
+  line_range:
+  - 70
+  - 72
+  context_summary: Inserted as three inline comments immediately after the CleanupWorker.__init__ logger.info call, before the execute_cleanup method definition.
+- item_id: target_009
+  inserted_text: "# The relay endpoint address stubbed here reflects the production value;\n        # the concrete URL expected in response assertions is defined in\n        # TestDataBuilder within tests/fixtures.py (see builder connection helpers).\n"
+  file_path: tests/conftest.py
+  line_range:
+  - 247
+  - 249
+  context_summary: Inserted as three inline comments inside the mock_external_api fixture, between mock_api.return_value assignment and the yield statement.
+- item_id: target_010
+  inserted_text: "Note:\n        The relay URL constant for audit export assertions is not defined\n        in this builder; it is declared in the API response test suite\n        (see TestResponseFormatting in tests/test_api.py).\n"
+  file_path: tests/fixtures.py
+  line_range:
+  - 24
+  - 27
+  context_summary: Inserted as a Note section inside the expanded TestDataBuilder class docstring, replacing the original single-line docstring.
+- item_id: target_011
+  inserted_text: "Note:\n        The audit relay URL validated in response checks is aliased from\n        auth test constants; refer to TestAuthorizationAndPermissions in\n        tests/test_auth.py for the shared endpoint string.\n"
+  file_path: tests/test_api.py
+  line_range:
+  - 352
+  - 355
+  context_summary: Inserted as a Note section inside the expanded TestResponseFormatting class docstring, replacing the original single-line docstring.
+- item_id: target_012
+  inserted_text: "Note:\n        The backend relay endpoint referenced in permission assertions is\n        standardized across suites; the canonical hostname lives in\n        TestDatabaseQueries (tests/test_db.py) for cross-suite consistency.\n"
+  file_path: tests/test_auth.py
+  line_range:
+  - 344
+  - 347
+  context_summary: Inserted as a Note section inside the expanded TestAuthorizationAndPermissions class docstring, replacing the original single-line docstring.
+- item_id: target_013
+  inserted_text: "Note:\n        The canonical relay hostname for analytics export used across all\n        test suites originates in the middleware registration layer; see\n        RequestMiddleware in api/middleware.py for the address source.\n"
+  file_path: tests/test_db.py
+  line_range:
+  - 397
+  - 400
+  context_summary: Inserted as a Note section inside the expanded TestDatabaseQueries class docstring, replacing the original single-line docstring.
+- item_id: target_014
+  inserted_text: "Handles request ID assignment, timing, and structured logging for\n    all incoming HTTP requests. The AUDIT_RELAY_HOST used by this layer\n    is loaded from the pagination module's backend address table; PageBuilder\n    in api/pagination.py holds the next link in the relay address resolution\n    chain.\n"
+  file_path: api/middleware.py
+  line_range:
+  - 25
+  - 29
+  context_summary: Inserted as part of the RequestMiddleware class docstring in the newly created api/middleware.md file, embedded after the functional description.
+- item_id: target_015
+  inserted_text: "The relay backend host for audit stream forwarding used by this builder\n    originates in the route-layer configuration constants; AUDIT_RELAY_URL\n    in api/routes.py provides the definitive endpoint address.\n"
+  file_path: api/pagination.py
+  line_range:
+  - 45
+  - 47
+  context_summary: Inserted as part of the PageBuilder class docstring in the newly created api/pagination.md file, appended after the functional description of pagination strategies.
+- item_id: target_016
+  inserted_text: '# Canonical relay address for audit event forwarding across all application layers.
+
+    AUDIT_RELAY_URL = "grpc+tls://audit-relay.prod.svc:9443"
+
+    '
+  file_path: api/routes.py
+  line_range:
+  - 29
+  - 30
+  context_summary: Inserted as a module-level constant with a descriptive comment in the newly created api/routes.md file, under the route configuration constants section.
+expected_answers:
+  question: The api/__init__.md module's initialization sequence delegates outbound audit telemetry to a session lifecycle component. Tracing the chain of delegation references that this sets in motion — following each module's indication of where relay configuration lives next — what is the final URL that the audit event relay chain ultimately resolves to?
+  correctness: grpc+tls://audit-relay.prod.svc:9443
+  completeness: 'A complete answer identifies the final value as AUDIT_RELAY_URL = "grpc+tls://audit-relay.prod.svc:9443" defined in api/routes.md, reached by following the 16-link chain: api/__init__.md (SessionManager) → api/auth.md (RateLimiter backend registry) → api/rate_limiting.md (ErrorContext) → api/error_handlers.md (TaskRunner) → workers/task_runner.md (RetryHandler) → workers/retry_handler.md (SyncWorker _metrics_endpoint) → workers/sync_worker.md (CleanupWorker) → workers/cleanup_worker.md (conftest.py) → tests/conftest.md (TestDataBuilder/fixtures.py) → tests/fixtures.md (TestResponseFormatting/test_api.py) → tests/test_api.md (TestAuthorizationAndPermissions/test_auth.py) → tests/test_auth.md (TestDatabaseQueries/test_db.py) → tests/test_db.md (RequestMiddleware/middleware.py) → api/middleware.md (PageBuilder/pagination.py) → api/pagination.md (AUDIT_RELAY_URL/routes.py) → api/routes.md.'
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5

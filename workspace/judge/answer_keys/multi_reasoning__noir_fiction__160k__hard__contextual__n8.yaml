@@ -1,0 +1,129 @@
+parametrisation_id: "multi_reasoning__noir_fiction__160k__hard__contextual__n8"
+experiment_type: "multi_reasoning"
+generated_at: "2026-04-05T00:00:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 160000
+  discriminability: "hard"
+  reference_clarity: "contextual"
+
+items:
+  - item_id: "target_001"
+    inserted_text: "This would have been around October 26th. I remember because he received a telephone call that day at precisely 4:15 in the afternoon—I noted the time because I was organizing his calendar—and when he hung up after exactly three minutes of listening without speaking, he immediately cleared his schedule for the next five days. He told me he might be unavailable for meetings without explanation."
+    file_path: "witnesses/secretary_statement.md"
+    line_range: [40, 50]
+    context_summary: "Dorothy notes Marchetti received a mysterious 3-minute call at 4:15 PM on October 26th, after which he cleared his entire schedule, indicating external pressure on the attorney."
+
+  - item_id: "target_002"
+    inserted_text: "October 6th, I had marked it on my calendar for the carpet order. The visitor arrived at 7:30 in the evening, and he carried a leather attaché case that seemed to contain something heavy. I remember because he gripped it so carefully, like it was more valuable than his own life. When he left forty minutes later, the case was no longer with him. Like he had delivered something or received something that required Mr. Harvey to keep it."
+    file_path: "witnesses/landlady_statement.md"
+    line_range: [38, 45]
+    context_summary: "Eva identifies the white-haired visitor as arriving on October 6th at 7:30 PM with a heavy attaché case, which he left with Harvey—suggesting delivery of documents or materials."
+
+  - item_id: "target_003"
+    inserted_text: "October 15th or 16th, I believe. She was young, redheaded, beautiful in a way that made her seem almost unreal. She came to his door in the evening at about 8:45 PM, and I saw her from my peephole just out of curiosity. He opened the door, and his face transformed. It was the same transformation I'd seen when he talked about books, but more extreme. Like he had been electrified. She arrived carrying a small package wrapped in brown paper, and when she left, she had nothing with her."
+    file_path: "witnesses/neighbor_statement.md"
+    line_range: [26, 33]
+    context_summary: "Eleanor witnesses Margot's visit to Harvey on October 15-16 at 8:45 PM, arriving with a package and leaving empty-handed, suggesting she delivered instructions or documentation."
+
+  - item_id: "target_004"
+    inserted_text: "my sources indicate she was seen meeting with Harvey about two weeks before he disappeared—that would put it around October 14th or 15th, possibly October 16th. She was photographed by a street vendor entering a hotel on Harbor Street at 8:40 PM."
+    file_path: "witnesses/informant_interview.md"
+    line_range: [70, 78]
+    context_summary: "Victor's sources document Margot meeting Harvey on October 14-16 at a Harbor Street hotel at 8:40 PM, confirming Eleanor's observation with precise timing."
+
+  - item_id: "target_005"
+    inserted_text: "She arrived at 2:43 PM, exactly twenty-six minutes after Halstead had hung up from describing his kidnapper's call. That kind of precision timing meant someone had been listening to Halstead's phone conversations."
+    file_path: "chapters/chapter_05.md"
+    line_range: [74, 79]
+    context_summary: "Diana Harrow appears at Shepherd's office at 2:43 PM on November 6th, just 26 minutes after Halstead's call, revealing real-time surveillance of the Halstead investigation."
+
+  - item_id: "target_006"
+    inserted_text: "Vincent's listed as being released Thursday morning at 9:00 AM sharp, but Patricia doesn't think he was actually released. She says the discharge was processed at 8:57 AM, which is an unusual time. Most discharges happen at the normal day-shift hours."
+    file_path: "case_notes/day_04.md"
+    line_range: [32, 39]
+    context_summary: "Vincent's hospital discharge on November 6th is processed at the unusual time of 8:57 AM, suggesting coordinated extraction rather than standard medical discharge."
+
+  - item_id: "target_007"
+    inserted_text: "The man I've been looking for—Mr. Sinclair—gets out of the driver's seat at 8:12 PM precisely. He's carrying a briefcase, and he's wearing expensive cologne—the same cologne that had lingered in the Regency Hotel room. He moves with the deliberate authority of someone accustomed to command."
+    file_path: "case_notes/day_03.md"
+    line_range: [137, 145]
+    context_summary: "Sinclair appears at the harbor warehouse on November 6th at 8:12 PM wearing the same European cologne found in the Regency Hotel, establishing his connection to Catherine's disappearance."
+
+  - item_id: "target_008"
+    inserted_text: "I note it as Italian, possibly Acqua di Parma or similar—the kind of scent that suggests European training or European time spent recently. I take a towel and sniff it. Yeah. That's the same cologne. The same scent that clung to the expensive coat worn by the man the desk clerk described as \"fortyish\" and \"methodical.\""
+    file_path: "case_notes/day_01.md"
+    line_range: [53, 58]
+    context_summary: "Shepherd identifies the Regency Hotel cologne as Italian-origin Acqua di Parma, connecting Claire's abductor to Sinclair through a signature scent and behavioral pattern."
+
+expected_answers:
+  question: "What evidence across the investigations reveals a coordinated operational network where temporal synchronization, asset transfer, behavioral consistency, and real-time surveillance coordination demonstrate a hierarchical command structure orchestrating multiple crimes simultaneously?"
+
+  correctness: |
+    A correct answer must identify:
+    1. The October 6th visit (Target 002) - Silas Gregg delivering documents/materials to Harvey
+    2. The October 14-16 meeting (Targets 003, 004) - Margot meeting Harvey with instructions
+    3. The October 26th pressure call (Target 001) - External command authorizing Marchetti's cooperation
+    4. The shared cologne signature (Targets 007, 008) - Connecting Claire's abductor to Sinclair
+    5. The precise timing of November 6th (Targets 005, 006, 007) - Simultaneous operations on the same date
+    6. The chain of custody pattern - Package delivery → Instructions from Margot → Pressure on Marchetti → Real-time surveillance of new investigation → Coordinated extraction
+
+    The answer should demonstrate that:
+    - Multiple operatives (Gregg, Margot, Marchetti, Sinclair) are coordinated by a single command structure
+    - Events across different investigations (Harvey/Kaslan, Catherine/Meridian, Claire/Ashford) are synchronized
+    - Temporal precision (exact times: 4:15 PM, 7:30 PM, 8:45 PM, 8:57 AM, 8:12 PM) indicates centralized command
+    - The scent signature proves identity continuity despite name changes and operational compartmentalization
+
+  completeness: |
+    A complete answer should cover:
+    1. TIMELINE COORDINATION: October timeline (6th, 14-16, 26) establishing Harvey's attempted exit and the pressure applied to his attorney
+    2. OPERATIONAL HIERARCHY: Gregg as field operative, Margot as negotiator, Marchetti as legal facilitator, Sinclair as regional commander
+    3. SURVEILLANCE INTEGRATION: Real-time monitoring of Halstead's calls and immediate response (26-minute lag between call and office visit)
+    4. ASSET SYNCHRONIZATION: Hospital discharge timing (8:57 AM) coordinated with other operational movements on November 6th
+    5. IDENTITY CONTINUITY: The Italian cologne as a signature linking Claire's abduction to the broader network
+    6. COMMAND STRUCTURE: The October 26th pressure call represents escalation from operational level to strategic command
+    7. DUAL TARGETS: Suggests Kaslan network and Meridian/Ashford organization may be the same entity or closely coordinated
+
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+    description: "Answer identifies the core temporal synchronization and command hierarchy demonstrated by the evidence"
+
+  - criterion: "completeness"
+    weight: 0.5
+    description: "Answer traces the full chain from document delivery through surveillance coordination and simultaneous operations"
+
+  - criterion: "integration"
+    weight: 0.3
+    description: "Answer synthesizes evidence across three separate investigation threads into a unified operational picture"
+
+contextual_discriminability_notes: |
+  These needles demonstrate hard discriminability because:
+
+  1. NO EXACT STRING MATCHES: Searching for "October 6" or "8:57 AM" individually yields only one result each, but their significance is invisible without reading surrounding narrative.
+
+  2. EMBEDDED SIGNIFICANCE: Each temporal detail appears buried in witness statements and investigator notes. The October 6th date is mentioned casually in Eva's recollection of carpet ordering. The connection to Gregg's delivery emerges only through narrative context.
+
+  3. REQUIRES COMPREHENSION: Simply finding "8:57 AM" does not answer the question. The reader must understand that:
+     - Hospital discharge times are normally scheduled
+     - 8:57 AM is unusual and artificial
+     - This timing on November 6th matters because of simultaneous events
+     - The Sinclair appearance at 8:12 PM on the same day is not coincidental
+
+  4. CROSS-CORPUS REASONING: Answer requires connecting evidence across 8 separate fragments. No single fragment contains enough information. The October 26 call, the October 6 delivery, the October 15-16 Margot meeting, the cologne, the Regency connection, the real-time surveillance, and the synchronized extraction all point to the same operation only when synthesized.
+
+  5. CONTEXTUAL REFERENCE: The question uses "coordinated operational network" and "hierarchical command structure"—concepts not explicitly stated in any single needle. The reader must infer these from the pattern of temporal precision and simultaneous action across geographically separated operations.
+
+synthetic_reasoning_requirement: |
+  This question demands multi-reasoning across three distinct narrative threads:
+
+  - THREAD 1 (Harvey/Legal): Secretary statement → Landlady statement → Neighbor statement → Informant interview
+    Shows: Document delivery → Instructions → Pressure on attorney → Professional negotiation
+
+  - THREAD 2 (Catherine): Chapter 5 → Day 4
+    Shows: Real-time surveillance → Coordinated hospital extraction
+
+  - THREAD 3 (Claire): Day 1 → Day 3
+    Shows: Signature scent connecting abductor to regional command
+
+  The answer must recognize that these threads represent a single operational event (November 6th) and a single escalating command sequence (October 6 - October 26 - November 6) executed by coordinated actors under unified control.

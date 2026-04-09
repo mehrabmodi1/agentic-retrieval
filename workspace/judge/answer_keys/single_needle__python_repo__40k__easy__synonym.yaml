@@ -1,0 +1,27 @@
+parametrisation_id: single_needle__python_repo__40k__easy__synonym
+experiment_type: single_needle
+generated_at: '2026-04-03T00:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 40000
+  discriminability: easy
+  reference_clarity: synonym
+items:
+- item_id: target_001
+  inserted_text: '# Maximum number of tasks that can be held in the in-memory queue
+
+    TASK_QUEUE_MAX_SIZE = 2500'
+  file_path: workers/task_runner.py
+  line_range:
+  - 27
+  - 28
+  context_summary: Inserted as a module-level constant after the SQLAlchemy Base declaration, just before the TaskStatus enum definition in the task runner worker.
+expected_answers:
+  question: What is the maximum number of jobs that can be stored in the background worker's internal buffer?
+  correctness: '2500'
+  completeness: 2500, configured as TASK_QUEUE_MAX_SIZE in workers/task_runner.md
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5

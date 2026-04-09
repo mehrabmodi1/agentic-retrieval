@@ -1,0 +1,74 @@
+parametrisation_id: multi_chain__python_repo__20k__easy__contextual__n8
+experiment_type: multi_chain
+generated_at: '2026-04-03T10:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 20000
+  discriminability: easy
+  reference_clarity: contextual
+items:
+- item_id: target_001
+  inserted_text: 'AUDIT_WRITE_BATCH = None  # batch size for audit writes; see REPORT_WRITE_BATCH in workers/report_generator.py'
+  file_path: api/validators.py
+  line_range:
+  - 20
+  - 20
+  context_summary: Inserted after the logger definition, before the blank line preceding the ValidationError class in api/validators.py.
+- item_id: target_002
+  inserted_text: 'REPORT_WRITE_BATCH = None  # report audit write batch; see RETRY_WRITE_BATCH in workers/retry_handler.py'
+  file_path: workers/report_generator.py
+  line_range:
+  - 27
+  - 27
+  context_summary: Inserted after Base = declarative_base(), before the blank line preceding the ReportFormat enum in workers/report_generator.py.
+- item_id: target_003
+  inserted_text: 'RETRY_WRITE_BATCH = None  # retry audit write batch; see TASK_WRITE_BATCH in workers/task_runner.py'
+  file_path: workers/retry_handler.py
+  line_range:
+  - 22
+  - 22
+  context_summary: Inserted after Base = declarative_base(), before the blank line preceding the RetryStrategy enum in workers/retry_handler.py.
+- item_id: target_004
+  inserted_text: 'TASK_WRITE_BATCH = None  # task write batch size; see CONFTEST_WRITE_BATCH in tests/conftest.py'
+  file_path: workers/task_runner.py
+  line_range:
+  - 27
+  - 27
+  context_summary: Inserted after DEFAULT_TASK_QUEUE_TIMEOUT = 457, before Base = declarative_base() in workers/task_runner.py.
+- item_id: target_005
+  inserted_text: 'CONFTEST_WRITE_BATCH = None  # conftest audit write batch; see API_WRITE_BATCH in tests/test_api.py'
+  file_path: tests/conftest.py
+  line_range:
+  - 26
+  - 26
+  context_summary: Inserted after the RedisCache import block, before the first pytest fixture definition in tests/conftest.py.
+- item_id: target_006
+  inserted_text: 'API_WRITE_BATCH = None  # API test write batch; see DB_WRITE_BATCH in tests/test_db.py'
+  file_path: tests/test_api.py
+  line_range:
+  - 16
+  - 16
+  context_summary: Inserted after the app.models import, before the blank line preceding the TestTaskAPI test class in tests/test_api.py.
+- item_id: target_007
+  inserted_text: 'DB_WRITE_BATCH = None  # DB test write batch; see FINAL_WRITE_BATCH in workers/report_generator.py'
+  file_path: tests/test_db.py
+  line_range:
+  - 18
+  - 18
+  context_summary: Inserted after the app.security import, before the blank line preceding the TestUserModel test class in tests/test_db.py.
+- item_id: target_008
+  inserted_text: 'FINAL_WRITE_BATCH = 128  # maximum items written per audit log batch'
+  file_path: workers/report_generator.py
+  line_range:
+  - 368
+  - 368
+  context_summary: 'Inserted before the if __name__ == ''__main__'': block near the end of workers/report_generator.py, defining the terminal value of the chain.'
+expected_answers:
+  question: In api/validators.py, there is a placeholder constant for the audit write batch size with a comment pointing to workers/report_generator.py. Following the chain of write batch references across files in this codebase, what is the final maximum number of items written per audit log batch?
+  correctness: The correct answer is 128.
+  completeness: 'A complete answer traces the full 8-link chain: AUDIT_WRITE_BATCH (api/validators.md) -> REPORT_WRITE_BATCH (workers/report_generator.md) -> RETRY_WRITE_BATCH (workers/retry_handler.md) -> TASK_WRITE_BATCH (workers/task_runner.md) -> CONFTEST_WRITE_BATCH (tests/conftest.md) -> API_WRITE_BATCH (tests/test_api.md) -> DB_WRITE_BATCH (tests/test_db.md) -> FINAL_WRITE_BATCH = 128 (workers/report_generator.md), and reports the final value as 128.'
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5

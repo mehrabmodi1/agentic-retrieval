@@ -1,0 +1,23 @@
+parametrisation_id: "single_needle__noir_fiction__160k__hard__contextual"
+experiment_type: "single_needle"
+generated_at: "2026-04-03T12:00:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 160000
+  discriminability: "hard"
+  reference_clarity: "contextual"
+items:
+  - item_id: "target_001"
+    inserted_text: "Before I stood up, I checked the waste basket beside Catherine's desk—habit more than hope. Mostly what you find in waste baskets are the things people almost said, the drafts that didn't survive the gap between feeling and articulation. There was a crumpled bank envelope, a torn magazine page about an art exhibition, and, at the very bottom, a small envelope that had been opened carefully and then folded twice. I unfolded it. Inside was a card on cream-colored hotel stationery, heavy stock, from somewhere called the Emerson Club. On the back, in fountain pen: *Whatever happens next, none of it is your fault. I'm sorry I couldn't keep you out of this. —H.* The date written in the upper corner was October 28th—three days before Catherine disappeared."
+    file_path: "chapters/chapter_04.md"
+    line_range: [39, 39]
+    context_summary: "Inserted as a new paragraph after Shepherd finishes reading Catherine's journal and reflects on the possible explanations for her disappearance, immediately before he is interrupted by a knock at the apartment door."
+expected_answers:
+  question: "What did Shepherd find in Catherine's apartment that suggested her secretive companion had anticipated the danger she was about to face?"
+  correctness: "Shepherd found a discarded card in Catherine's waste basket, written by 'H' on Emerson Club stationery, dated October 28th—three days before her disappearance—in which H apologized and told Catherine that whatever happened next was not her fault and that he was sorry he could not keep her out of it, implying he knew trouble was coming."
+  completeness: "A complete answer identifies the physical location of the card (waste basket), its origin (Emerson Club stationery), the author's signature (H), the key content of the message (absolution of Catherine's fault and an apology for failing to protect her), the date (October 28th), and explains how the date relative to the disappearance establishes foreknowledge—the message was written three days before Catherine went missing, and its language implies awareness of an imminent harmful event."
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+  - criterion: "completeness"
+    weight: 0.5

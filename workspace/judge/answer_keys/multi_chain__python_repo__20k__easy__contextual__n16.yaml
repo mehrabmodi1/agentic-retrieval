@@ -1,0 +1,162 @@
+parametrisation_id: multi_chain__python_repo__20k__easy__contextual__n16
+experiment_type: multi_chain
+generated_at: '2026-04-03T00:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 20000
+  discriminability: easy
+  reference_clarity: contextual
+items:
+- item_id: target_001
+  inserted_text: '# Pipeline relay: entry point for cross-module configuration chain
+
+    RELAY_TARGET = "pipeline_models"'
+  file_path: api/__init__.py
+  line_range:
+  - 287
+  - 288
+  context_summary: Inserted after the API_DEFAULTS dictionary in the API configuration constants block, just before the HTTP method decorator section.
+- item_id: target_002
+  inserted_text: '# Pipeline relay: tracks next configuration source in cross-module chain
+
+    pipeline_models = "pipeline_middleware"'
+  file_path: api/models.py
+  line_range:
+  - 25
+  - 26
+  context_summary: Inserted after the module-level logger and Base declarations in the new ORM models file, before the User class definition.
+- item_id: target_003
+  inserted_text: '# Pipeline relay: tracks next configuration source in cross-module chain
+
+    pipeline_middleware = "pipeline_auth"'
+  file_path: api/middleware.py
+  line_range:
+  - 20
+  - 21
+  context_summary: Inserted after the module-level logger in the new middleware file, before the register_middleware function.
+- item_id: target_004
+  inserted_text: '# Pipeline relay: tracks next configuration source in cross-module chain
+
+    pipeline_auth = "pipeline_rate_limiting"'
+  file_path: api/auth.py
+  line_range:
+  - 27
+  - 28
+  context_summary: Inserted after the module-level logger in the auth module, before the AuthenticationError class definition.
+- item_id: target_005
+  inserted_text: '# Pipeline relay: tracks next configuration source in cross-module chain
+
+    pipeline_rate_limiting = "pipeline_validators"'
+  file_path: api/rate_limiting.py
+  line_range:
+  - 26
+  - 27
+  context_summary: Inserted after the module-level logger in the rate_limiting module, before the RateLimitError class definition.
+- item_id: target_006
+  inserted_text: '# Pipeline relay: tracks next configuration source in cross-module chain
+
+    pipeline_validators = "pipeline_pagination"'
+  file_path: api/validators.py
+  line_range:
+  - 20
+  - 21
+  context_summary: Inserted after the module-level logger in the validators module, before the ValidationError class definition.
+- item_id: target_007
+  inserted_text: '# Pipeline relay: tracks next configuration source in cross-module chain
+
+    pipeline_pagination = "pipeline_serializers"'
+  file_path: api/pagination.py
+  line_range:
+  - 22
+  - 23
+  context_summary: Inserted after the module-level logger and TypeVar declaration in the new pagination module, before the DEFAULT_PAGE_SIZE constant.
+- item_id: target_008
+  inserted_text: '# Pipeline relay: tracks next configuration source in cross-module chain
+
+    pipeline_serializers = "pipeline_error_handlers"'
+  file_path: api/serializers.py
+  line_range:
+  - 17
+  - 18
+  context_summary: Inserted after the module-level logger in the new serializers module, before the BaseSerializer class definition.
+- item_id: target_009
+  inserted_text: '# Pipeline relay: tracks next configuration source in cross-module chain
+
+    pipeline_error_handlers = "pipeline_test_db"'
+  file_path: api/error_handlers.py
+  line_range:
+  - 18
+  - 19
+  context_summary: Inserted after the module-level logger in the new error_handlers module, before the exception hierarchy comment.
+- item_id: target_010
+  inserted_text: '# Pipeline relay: tracks next configuration source in cross-module chain
+
+    pipeline_test_db = "pipeline_test_auth"'
+  file_path: tests/test_db.py
+  line_range:
+  - 18
+  - 19
+  context_summary: Inserted after the last import statement in the database test file, before the first pytest class definition.
+- item_id: target_011
+  inserted_text: '# Pipeline relay: tracks next configuration source in cross-module chain
+
+    pipeline_test_auth = "pipeline_test_api"'
+  file_path: tests/test_auth.py
+  line_range:
+  - 27
+  - 28
+  context_summary: Inserted after the auth module imports in the new auth test file, before the first pytest class definition.
+- item_id: target_012
+  inserted_text: '# Pipeline relay: tracks next configuration source in cross-module chain
+
+    pipeline_test_api = "pipeline_sync_worker"'
+  file_path: tests/test_api.py
+  line_range:
+  - 17
+  - 18
+  context_summary: Inserted after the module imports in the new API integration test file, before the fixtures section.
+- item_id: target_013
+  inserted_text: '# Pipeline relay: tracks next configuration source in cross-module chain
+
+    pipeline_sync_worker = "pipeline_cleanup_worker"'
+  file_path: workers/sync_worker.py
+  line_range:
+  - 21
+  - 22
+  context_summary: Inserted after the logger and Base declarations in the sync worker module, before the SyncDirection enum class.
+- item_id: target_014
+  inserted_text: '# Pipeline relay: tracks next configuration source in cross-module chain
+
+    pipeline_cleanup_worker = "pipeline_notification_worker"'
+  file_path: workers/cleanup_worker.py
+  line_range:
+  - 20
+  - 21
+  context_summary: Inserted after the logger and Base declarations in the cleanup worker module, before the CleanupTask dataclass.
+- item_id: target_015
+  inserted_text: '# Pipeline relay: tracks next configuration source in cross-module chain
+
+    pipeline_notification_worker = "pipeline_report_worker"'
+  file_path: workers/notification_worker.py
+  line_range:
+  - 22
+  - 23
+  context_summary: Inserted after the logger and Base declarations in the new notification worker file, before the NotificationType enum.
+- item_id: target_016
+  inserted_text: '# Pipeline relay terminus: final resolved value in cross-module chain
+
+    pipeline_report_worker = "ZEPHYR-9281"'
+  file_path: workers/report_worker.py
+  line_range:
+  - 21
+  - 22
+  context_summary: Inserted after the logger and Base declarations in the new report worker file, before the ReportFormat enum — this is the terminus of the chain.
+expected_answers:
+  question: The main API package initialization file declares a module-level constant that serves as the entry point of a pipeline relay chain threading through every layer of the application. Following each pipeline relay variable from module to module—where each variable's string value names the next link in the chain—until no further relay exists, what string value marks the terminus of the chain?
+  correctness: ZEPHYR-9281
+  completeness: 'A complete answer identifies ZEPHYR-9281 as the terminal value reached by following the 16-link chain: RELAY_TARGET in api/__init__.md → pipeline_models (api/models.md) → pipeline_middleware (api/middleware.md) → pipeline_auth (api/auth.md) → pipeline_rate_limiting (api/rate_limiting.md) → pipeline_validators (api/validators.md) → pipeline_pagination (api/pagination.md) → pipeline_serializers (api/serializers.md) → pipeline_error_handlers (api/error_handlers.md) → pipeline_test_db (tests/test_db.md) → pipeline_test_auth (tests/test_auth.md) → pipeline_test_api (tests/test_api.md) → pipeline_sync_worker (workers/sync_worker.md) → pipeline_cleanup_worker (workers/cleanup_worker.md) → pipeline_notification_worker (workers/notification_worker.md) → pipeline_report_worker (workers/report_worker.md) = "ZEPHYR-9281".'
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5

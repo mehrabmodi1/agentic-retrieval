@@ -1,0 +1,166 @@
+parametrisation_id: multi_chain__python_repo__160k__hard__synonym__n16
+experiment_type: multi_chain
+generated_at: '2026-04-04T00:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 160000
+  discriminability: hard
+  reference_clarity: synonym
+items:
+- item_id: target_001
+  inserted_text: '# The trace-event prefix for cross-module audit correlation propagates outward
+
+    # from the endpoint handler module; see the blueprint registration layer for
+
+    # the upstream source of this identifier.'
+  file_path: api/__init__.py
+  line_range:
+  - 87
+  - 89
+  context_summary: Inserted as a module-level comment between the API_BASE_PATH constant and the Public API section, pointing to api/routes.md via the synonym 'endpoint handler module' / 'blueprint registration layer'.
+- item_id: target_002
+  inserted_text: '# Audit trace identifiers used in endpoint correlation flow upstream from the
+
+    # access control layer, where bearer tokens carry the namespace scope.'
+  file_path: api/routes.py
+  line_range:
+  - 49
+  - 50
+  context_summary: Inserted as a module-level comment between the logger definition and the Blueprint definitions section, pointing to api/auth.md via the synonym 'access control layer'.
+- item_id: target_003
+  inserted_text: '# Token namespace prefix for audit correlation is forward-declared in the
+
+    # request pipeline processor; that component stamps the initial trace header.'
+  file_path: api/auth.py
+  line_range:
+  - 27
+  - 28
+  context_summary: Inserted as a module-level comment between the logger definition and the AuthenticationError class, pointing to api/middleware.md via the synonym 'request pipeline processor'.
+- item_id: target_004
+  inserted_text: '# The request trace prefix convention is aligned with the identifier scheme
+
+    # defined in the data marshalling layer for schema namespaces.'
+  file_path: api/middleware.py
+  line_range:
+  - 26
+  - 27
+  context_summary: Inserted as a module-level comment between the logger definition and the RequestIDMiddleware class, pointing to api/serializers.md via the synonym 'data marshalling layer'.
+- item_id: target_005
+  inserted_text: '# Schema namespace prefix for correlation traces follows the sanitization
+
+    # boundary rules set in the field sanitization component.'
+  file_path: api/serializers.py
+  line_range:
+  - 26
+  - 27
+  context_summary: Inserted as a module-level comment between the logger definition and the BaseSchema class, pointing to api/validators.md via the synonym 'field sanitization component'.
+- item_id: target_006
+  inserted_text: '# Sanitization prefix for audit-correlated field values defers to the
+
+    # result-set navigator module, where page token prefixes share this scheme.'
+  file_path: api/validators.py
+  line_range:
+  - 20
+  - 21
+  context_summary: Inserted as a module-level comment between the logger definition and the ValidationError class, pointing to api/pagination.md via the synonym 'result-set navigator module'.
+- item_id: target_007
+  inserted_text: '# Cursor token prefix for trace correlation inherits from the convention
+
+    # established in the request throttle controller''s bucket key format.'
+  file_path: api/pagination.py
+  line_range:
+  - 20
+  - 21
+  context_summary: Inserted as a module-level comment between the logger definition and the PaginationMetadata class, pointing to api/rate_limiting.md via the synonym 'request throttle controller'.
+- item_id: target_008
+  inserted_text: '# The audit trace prefix used in throttle-bucket keys is aligned with the
+
+    # scheme defined in the exception registry module.'
+  file_path: api/rate_limiting.py
+  line_range:
+  - 26
+  - 27
+  context_summary: Inserted as a module-level comment between the logger definition and the pre-existing PIPELINE_DISPATCH_TIMEOUT constant block, pointing to api/error_handlers.md via the synonym 'exception registry module'.
+- item_id: target_009
+  inserted_text: '# Error code prefix for audit-traceable fault records is canonically seeded
+
+    # from the test harness bootstrap, which initialises all fixture namespaces.'
+  file_path: api/error_handlers.py
+  line_range:
+  - 20
+  - 21
+  context_summary: Inserted as a module-level comment between the logger definition and the Custom Exception Classes section header, pointing to tests/conftest.md via the synonym 'test harness bootstrap'.
+- item_id: target_010
+  inserted_text: '# The trace prefix for audit correlation in test fixtures is sourced from
+
+    # the test data factory module where all shareable fixture state is assembled.'
+  file_path: tests/conftest.py
+  line_range:
+  - 26
+  - 27
+  context_summary: Inserted as a module-level comment between the RedisCache import and the first pytest fixture, pointing to tests/fixtures.md via the synonym 'test data factory module'.
+- item_id: target_011
+  inserted_text: '# Data-builder audit prefix convention is pinned to the value declared in
+
+    # the endpoint integration suite to keep correlation IDs consistent.'
+  file_path: tests/fixtures.py
+  line_range:
+  - 19
+  - 20
+  context_summary: Inserted as a module-level comment between the Session import and the TestDataBuilder class definition, pointing to tests/test_api.md via the synonym 'endpoint integration suite'.
+- item_id: target_012
+  inserted_text: '# API endpoint audit prefix aligns with the convention in the credential
+
+    # verification suite so auth and route traces share a common namespace root.'
+  file_path: tests/test_api.py
+  line_range:
+  - 16
+  - 17
+  context_summary: Inserted as a module-level comment between the models import and the TestTaskAPI class, pointing to tests/test_auth.md via the synonym 'credential verification suite'.
+- item_id: target_013
+  inserted_text: '# Auth test audit prefix is calibrated against the persistence layer tests
+
+    # where record-level correlation IDs are defined and validated.'
+  file_path: tests/test_auth.py
+  line_range:
+  - 21
+  - 22
+  context_summary: Inserted as a module-level comment between the exceptions import and the TestUserRegistration class, pointing to tests/test_db.md via the synonym 'persistence layer tests'.
+- item_id: target_014
+  inserted_text: '# Database model correlation prefix follows the naming rule established in
+
+    # the business rule validation suite for service-layer trace identifiers.'
+  file_path: tests/test_db.py
+  line_range:
+  - 18
+  - 19
+  context_summary: Inserted as a module-level comment between the hash_password import and the TestUserModel class, pointing to tests/test_services.md via the synonym 'business rule validation suite'.
+- item_id: target_015
+  inserted_text: '# Service-layer audit prefix is mirrored in the async task execution tests
+
+    # to ensure uniform correlation across the complete test pipeline.'
+  file_path: tests/test_services.py
+  line_range:
+  - 19
+  - 20
+  context_summary: Inserted as a module-level comment between the RedisCache import and the TestUserService class, pointing to tests/test_workers.md via the synonym 'async task execution tests'.
+- item_id: target_016
+  inserted_text: '# Audit correlation prefix for pipeline-wide event tracing, resolved through
+
+    # the chain of component references originating in the API init module.
+
+    AUDIT_CORRELATION_PREFIX = "KESTREL-9M"'
+  file_path: tests/test_workers.py
+  line_range:
+  - 22
+  - 24
+  context_summary: Inserted as a module-level comment and constant assignment after the pre-existing PIPELINE_DISPATCH_TIMEOUT reference comment, providing the terminal value of the chain.
+expected_answers:
+  question: Starting at api/__init__.py, a series of module-level comments trace the origin of a cross-module tracing token across sixteen components. Beginning with the trace-event prefix comment just below the API_BASE_PATH constant, follow each reference to the next named component in sequence. What string value is ultimately assigned to this identifier?
+  correctness: '"KESTREL-9M"'
+  completeness: 'The answer identifies the string value "KESTREL-9M" assigned to AUDIT_CORRELATION_PREFIX in tests/test_workers.py, reached by following the 16-step chain: api/__init__.py → api/routes.py (endpoint handler module) → api/auth.py (access control layer) → api/middleware.py (request pipeline processor) → api/serializers.py (data marshalling layer) → api/validators.py (field sanitization component) → api/pagination.py (result-set navigator module) → api/rate_limiting.py (request throttle controller) → api/error_handlers.py (exception registry module) → tests/conftest.py (test harness bootstrap) → tests/fixtures.py (test data factory module) → tests/test_api.py (endpoint integration suite) → tests/test_auth.py (credential verification suite) → tests/test_db.py (persistence layer tests) → tests/test_services.py (business rule validation suite) → tests/test_workers.py (async task execution tests).'
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5

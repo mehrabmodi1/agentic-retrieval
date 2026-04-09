@@ -1,0 +1,204 @@
+parametrisation_id: multi_reasoning__python_repo__20k__hard__exact__n16
+experiment_type: multi_reasoning
+generated_at: '2026-04-05T00:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 20000
+  discriminability: hard
+  reference_clarity: exact
+items:
+- item_id: target_001
+  inserted_text: factory.batch_size = 256
+  file_path: tests/fixtures.py
+  line_range:
+  - 40
+  - 41
+  context_summary: BulkDataFactory batch size embedded in fixture configuration
+  needle_value: 256
+  category: batch_size
+- item_id: target_002
+  inserted_text: factory.max_items_per_batch = 512
+  file_path: tests/fixtures.py
+  line_range:
+  - 48
+  - 48
+  context_summary: JSONTestDataFactory max items per batch in test fixture
+  needle_value: 512
+  category: batch_size
+- item_id: target_003
+  inserted_text: self.max_body_size_mb = 512
+  file_path: api/middleware.py
+  line_range:
+  - 14
+  - 14
+  context_summary: Content negotiation middleware maximum body size in MB
+  needle_value: 512
+  category: size_limit
+- item_id: target_004
+  inserted_text: self.request_timeout_seconds = 30
+  file_path: api/middleware.py
+  line_range:
+  - 15
+  - 15
+  context_summary: Request timeout configuration in ContentNegotiationMiddleware
+  needle_value: 30
+  category: timeout
+- item_id: target_005
+  inserted_text: self.max_header_size_bytes = 8192
+  file_path: api/middleware.py
+  line_range:
+  - 37
+  - 37
+  context_summary: Maximum header size limit in RequestValidationMiddleware
+  needle_value: 8192
+  category: size_limit
+- item_id: target_006
+  inserted_text: self.max_concurrent_requests = 50
+  file_path: api/middleware.py
+  line_range:
+  - 38
+  - 38
+  context_summary: Maximum concurrent requests allowed by RequestValidationMiddleware
+  needle_value: 50
+  category: concurrency_limit
+- item_id: target_007
+  inserted_text: self.max_rows_per_report = 10000
+  file_path: workers/report_generator.py
+  line_range:
+  - 24
+  - 24
+  context_summary: ReportGenerator maximum rows limit embedded in __init__ method
+  needle_value: 10000
+  category: data_limit
+- item_id: target_008
+  inserted_text: self.csv_batch_size = 1000
+  file_path: workers/report_generator.py
+  line_range:
+  - 25
+  - 25
+  context_summary: CSV export batch size in ReportGenerator configuration
+  needle_value: 1000
+  category: batch_size
+- item_id: target_009
+  inserted_text: self.json_batch_size = 500
+  file_path: workers/report_generator.py
+  line_range:
+  - 26
+  - 26
+  context_summary: JSON export batch size in ReportGenerator configuration
+  needle_value: 500
+  category: batch_size
+- item_id: target_010
+  inserted_text: validate=Range(min=1, max=999999)
+  file_path: api/serializers.py
+  line_range:
+  - 23
+  - 23
+  context_summary: ID field maximum validation range in BaseSchema definition
+  needle_value: 999999
+  category: validation_limit
+- item_id: target_011
+  inserted_text: validate=Length(min=12, max=255)
+  file_path: api/serializers.py
+  line_range:
+  - 32
+  - 32
+  context_summary: Password field length validation with minimum 12 characters in UserSchema
+  needle_value: 12
+  category: validation_limit
+- item_id: target_012
+  inserted_text: self.max_retries = 5
+  file_path: workers/retry_handler.py
+  line_range:
+  - 16
+  - 16
+  context_summary: RetryPolicy maximum retry attempts defined in __init__
+  needle_value: 5
+  category: retry_limit
+- item_id: target_013
+  inserted_text: self.initial_backoff_seconds = 2
+  file_path: workers/retry_handler.py
+  line_range:
+  - 17
+  - 17
+  context_summary: Initial backoff duration in seconds for retry mechanism
+  needle_value: 2
+  category: backoff_time
+- item_id: target_014
+  inserted_text: self.max_backoff_seconds = 300
+  file_path: workers/retry_handler.py
+  line_range:
+  - 18
+  - 18
+  context_summary: Maximum backoff duration in seconds for exponential retry
+  needle_value: 300
+  category: backoff_time
+- item_id: target_015
+  inserted_text: 'capacity: int = 10,'
+  file_path: api/rate_limiting.py
+  line_range:
+  - 28
+  - 28
+  context_summary: Burst limiter default capacity of 10 tokens in decorator signature
+  needle_value: 10
+  category: rate_limit
+- item_id: target_016
+  inserted_text: '"api_rate_limit": 5000,'
+  file_path: tests/test_api.py
+  line_range:
+  - 17
+  - 17
+  context_summary: Organization API rate limit setting of 5000 requests in test
+  needle_value: 5000
+  category: rate_limit
+expected_answers:
+  question: 'What is the total sum of all numeric configuration limits and settings across the system
+
+    (factory batch sizes, middleware size limits, request limits, report row limits,
+
+    retry policies, rate limits, and field validations)?
+
+    '
+  answer_components:
+    batch_sizes: 256 + 512 + 1000 + 500 = 2268
+    size_limits: 512 + 8192 = 8704
+    concurrency_and_request: 50 + 30 = 80
+    data_limits: '10000'
+    validation_limits: 999999 + 12 = 1000011
+    retry_limits: 5 + 2 + 300 = 307
+    rate_limits: 10 + 5000 = 5010
+    total_sum: 1026380
+  correctness: 'A correct answer must identify and sum all 16 distinct numeric values scattered
+
+    across the configuration system. The final sum must equal 1026380. The answer must
+
+    demonstrate that all values were found and correctly extracted from their embedded
+
+    contexts.
+
+    '
+  completeness: 'A complete answer covers: (1) identification of all 16 configuration values across
+
+    batch sizes, size limits, timeouts, concurrency, data limits, validation constraints,
+
+    retry settings, and rate limiting; (2) proper extraction of each value from its
+
+    specific file context; (3) correct arithmetic calculation of the total sum;
+
+    (4) demonstration that values were understood in their proper context (e.g., understanding
+
+    that password_min_length=12 and id_max=999999 are from different schemas but both contribute
+
+    to the total).
+
+    '
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+  description: Final sum matches 1026380 and all values are properly identified
+- criterion: completeness
+  weight: 0.5
+  description: All 16 values identified with contextual understanding of where each appears
+- criterion: reasoning
+  weight: 0.3
+  description: Shows logical breakdown by category and demonstrates multi-file reasoning

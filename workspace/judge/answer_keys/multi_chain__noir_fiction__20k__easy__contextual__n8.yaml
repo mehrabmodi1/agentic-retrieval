@@ -1,0 +1,68 @@
+parametrisation_id: "multi_chain__noir_fiction__20k__easy__contextual__n8"
+experiment_type: "multi_chain"
+generated_at: "2026-04-05T00:00:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 20000
+  discriminability: "easy"
+  reference_clarity: "contextual"
+
+items:
+  - item_id: "target_001"
+    inserted_text: "**Note to self:** The Park House server logs show a redhead in the vicinity the night Catherine—or was it Claire?—disappeared. Find out who served them that evening. Cross-reference with restaurant staff."
+    file_path: "case_notes/day_01.md"
+    line_range: [97, 101]
+    context_summary: "Inserted as a note in Shepherd's initial investigation notes, establishing the redhead as the first clue."
+
+  - item_id: "target_002"
+    inserted_text: "And behind her, barely visible in the shadows, was another figure. Just enough to know someone was there. Just enough to know they were watching her. The figure wore what might have been a red dress—the color barely discernible in the darkness, but there was something distinctly feminine about the silhouette. A woman. Watching. Waiting."
+    file_path: "chapters/chapter_02.md"
+    line_range: [31, 32]
+    context_summary: "Added detail to the kidnapping photograph showing a red-dressed woman in the background, providing visual confirmation."
+
+  - item_id: "target_003"
+    inserted_text: "Eleanor suddenly looked up. \"There was a woman at the restaurant that night. The bartender mentioned her afterward. Red hair, striking. She was watching the dining room from the bar area. I remember thinking it was odd—the way she kept glancing over at our table, specifically at Catherine.\""
+    file_path: "chapters/chapter_03.md"
+    line_range: [26, 27]
+    context_summary: "Eleanor Walsh recalls the red-haired woman observing from the bar at the Park House restaurant."
+
+  - item_id: "target_004"
+    inserted_text: "\"There was a red-haired woman,\" I press. \"She might have been present when things went wrong. At the Paradise, or connected to whoever brought the girl in.\"\n\nSylvia's hands stop moving. \"The redhead. That's a whole different story. But you need to talk to Patricia at Saint Michael's first. She'll tell you who came to pick Vincent up. And that'll lead you to the woman.\""
+    file_path: "case_notes/day_03.md"
+    line_range: [62, 63]
+    context_summary: "Sylvia at the nightclub directs investigation to Saint Michael's Hospital for information about the redhead."
+
+  - item_id: "target_005"
+    inserted_text: "\"Was there anyone else?\" I ask, remembering Eleanor's detail about the red-haired woman at the Park House.\n\nPatricia nods slowly. \"There was a woman with him. Red hair, very striking. She didn't say anything, but she was the one who really seemed to be in charge. The man deferred to her. She signed Vincent's discharge papers as a relative—said her name was Margaret. But it wasn't Margaret Hollister, I don't think. Different woman entirely.\""
+    file_path: "case_notes/day_04.md"
+    line_range: [40, 41]
+    context_summary: "Patricia at the hospital identifies the redhead as the woman in authority who discharged Vincent Castellano."
+
+  - item_id: "target_006"
+    inserted_text: "Helen tells me that David Chen is accelerating his story. It's going to run in two days, not two weeks. It's going to expose Ashford, Sinclair, and the money laundering operation. It's going to force the authorities to take action.\n\nChen says he's had a breakthrough. Someone finally willing to talk. A former Sinclair employee who's decided that loyalty's less valuable than truth. Helen describes her briefly—red hair, elegant, the kind of woman who seems comfortable operating at the edges of criminal networks.\n\nThis person has also given Chen something else: the location of Claire Hollister's body. She told Chen that she'd been present when the decision was made to dispose of the girl, and she'd finally decided she couldn't live with knowing where they put her and saying nothing."
+    file_path: "case_notes/day_06.md"
+    line_range: [144, 148]
+    context_summary: "Helen reveals that a red-haired woman is Chen's breakthrough source providing the body location and testimony."
+
+  - item_id: "target_007"
+    inserted_text: "I sit beside his bed for about an hour, and Mercer drifts in and out of consciousness. A nurse passes by—red-haired, efficient, barely glancing at us. She's one of the day shift, Patricia mentions. Mercer's eyes follow her briefly, with an odd mixture of recognition and sadness, before he closes them again. When he wakes up, he grabs my arm."
+    file_path: "case_notes/day_07.md"
+    line_range: [70, 72]
+    context_summary: "A red-haired nurse at the hospital is glimpsed, suggesting her employment and connection to Mercer."
+
+  - item_id: "target_008"
+    inserted_text: "**CHEN:** We may have another angle. There's a nurse at Saint Michael's Hospital who matches Margot's description. Works the day shift in the trauma ward. She was present during the Castellano case and apparently witnessed elements of the Sinclair operation's internal organization. She's also the one who reached out to David Chen about the Hollister body location."
+    file_path: "witnesses/detective_debrief.md"
+    line_range: [92, 92]
+    context_summary: "Detective Chen's statement formally identifies Margot as the red-haired nurse and key informant in the case."
+
+expected_answers:
+  question: "Starting from the investigator's initial case notes in day_01.md that reference tracing a redhead first observed near the Park House, follow the chain of clues through the case files. Who is ultimately identified as the key witness that provided crucial testimony about the Sinclair operation and the location of Claire Hollister's body?"
+  correctness: "The answer must identify the person as 'Margot' or describe her as 'the red-haired woman' / 'the redhead' / 'a nurse at Saint Michael's Hospital' who worked with or against the Sinclair operation."
+  completeness: "A complete answer should trace the discovery from: (1) the initial Park House sighting, (2) the photograph evidence, (3) Eleanor's eyewitness account, (4) Sylvia's direction to the hospital, (5) Patricia's identification of her authority, (6) David Chen's informant breakthrough, (7) her appearance at the hospital, and (8) the formal identification as Margot, and conclude that she was the ultimately decisive witness."
+
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+  - criterion: "completeness"
+    weight: 0.5

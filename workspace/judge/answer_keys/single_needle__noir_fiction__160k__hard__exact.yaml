@@ -1,0 +1,23 @@
+parametrisation_id: "single_needle__noir_fiction__160k__hard__exact"
+experiment_type: "single_needle"
+generated_at: "2026-04-03T00:00:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 160000
+  discriminability: "hard"
+  reference_clarity: "exact"
+items:
+  - item_id: "target_001"
+    inserted_text: "\"The old guy settled back after passing the envelope. Reached for his drink, and when he lifted the glass his sleeve rode up. I'm a bartender—hands are the first thing I read. On the inside of his right forearm, just above the wrist: a compass rose laid over an anchor. Faded, old ink, the kind of work men bring back from the Pacific. I remember thinking it didn't match the rest of him—the suit, the shoes, the careful way he held himself. But a man keeps a mark like that because he wants to remember who he was, back before he became whoever he is now.\""
+    file_path: "witnesses/bartender_statement.md"
+    line_range: [38, 38]
+    context_summary: "Inserted as a new paragraph of Deke's dialogue, between his description of the older man passing an envelope to Harvey and Morello's follow-up question, embedding the tattoo detail inside a casual observation about the man reaching for his drink."
+expected_answers:
+  question: "According to Deke's statement in the bartender witness report, what tattoo did Deke notice on the right forearm of the older white-haired man who met with the kid at the Crimson Door Lounge?"
+  correctness: "A compass rose laid over (on top of) an anchor — both elements must be present for a correct answer."
+  completeness: "A complete answer also notes that the tattoo was faded old ink located on the inside of the right forearm just above the wrist, and that Deke associated it with men who served in the Pacific, contrasting it with the man's otherwise polished, expensive appearance."
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+  - criterion: "completeness"
+    weight: 0.5

@@ -1,0 +1,28 @@
+parametrisation_id: "multi_reasoning__noir_fiction__20k__easy__contextual__n2"
+experiment_type: "multi_reasoning"
+generated_at: "2026-04-05T14:30:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 20000
+  discriminability: "easy"
+  reference_clarity: "contextual"
+items:
+  - item_id: "target_001"
+    inserted_text: "And Detective, I think this man gave him something. Not a package. Something invisible. When Mr. Harvey opened the door, I heard him ask 'How much time do I have?' The visitor said only 'Twenty-four months, if you are careful.' Mr. Harvey did not seem surprised, only relieved, as if he had been given a reprieve from a sentence he already knew was coming."
+    file_path: "witnesses/landlady_statement.md"
+    line_range: [43, 46]
+    context_summary: "Inserted into Eva's description of the mysterious visitor, revealing she overheard a cryptic exchange about time and a deadline."
+  - item_id: "target_002"
+    inserted_text: "'Don't come back,' she told him, and I saw his hands tremble as he gripped hers. 'If they know about me, they'll use me against you. I already told you everything I know about what they're planning. You have to disappear, and you have to do it now, before they realize I've warned you. The redheaded woman from his past—she was his lifeline, and his curse."
+    file_path: "witnesses/neighbor_statement.md"
+    line_range: [42, 44]
+    context_summary: "Inserted into Eleanor's recounting of the redheaded woman's visit, revealing she warned Harvey to disappear due to knowledge of dangerous people."
+expected_answers:
+  question: "What confluence of events compelled Mr. Harvey to flee his apartment, and who were the parties that triggered his escape?"
+  correctness: "A correct answer must identify that Harvey received both a deadline (from the silver-haired visitor) and a warning (from the redheaded woman) that someone dangerous was closing in on him, and that these two pieces of information together created urgency for his departure."
+  completeness: "A complete answer must: (1) mention the mysterious visitor's cryptic statement about having limited time ('twenty-four months'), (2) reference the redheaded woman's warning that dangerous parties were aware of her connection to him and would use her as leverage, and (3) synthesize these as dual motivations for his sudden disappearance, showing that neither piece alone explains his flight but together they create an inescapable pressure."
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+  - criterion: "completeness"
+    weight: 0.5

@@ -1,0 +1,32 @@
+parametrisation_id: multi_reasoning__python_repo__40k__easy__contextual__n2
+experiment_type: multi_reasoning
+generated_at: '2026-04-05T00:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 40000
+  discriminability: easy
+  reference_clarity: contextual
+items:
+- item_id: target_001
+  inserted_text: TOKEN_LIFETIME_HOURS = 24
+  file_path: tests/test_auth.py
+  line_range:
+  - 195
+  - 195
+  context_summary: Inserted JWT token lifetime configuration constant after the test_access_token_expiration method definition, specifying 24-hour token validity period.
+- item_id: target_002
+  inserted_text: DEFAULT_RETENTION_DAYS = 30
+  file_path: workers/cleanup_worker.py
+  line_range:
+  - 245
+  - 245
+  context_summary: Inserted default retention period constant in the _cleanup_filesystem method, specifying 30-day retention for cleanup task files.
+expected_answers:
+  question: In the authentication test suite, JWT access tokens are configured with a specific lifetime. In the cleanup worker module, the filesystem retention policy specifies a retention period in days. What would be the total number of days if you calculated the token lifetime plus the retention period?
+  correctness: The answer must identify TOKEN_LIFETIME_HOURS = 24 (equivalent to 1 day) and DEFAULT_RETENTION_DAYS = 30, then sum them correctly to get 31 days total.
+  completeness: 'A complete answer must: (1) locate both configuration values from their respective modules, (2) convert the token lifetime from hours to days (24 hours = 1 day), (3) add both durations together, and (4) provide the final sum of 31 days.'
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5

@@ -1,0 +1,32 @@
+parametrisation_id: multi_reasoning__python_repo__20k__easy__synonym__n2
+experiment_type: multi_reasoning
+generated_at: '2026-04-05T00:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 20000
+  discriminability: easy
+  reference_clarity: synonym
+items:
+- item_id: target_001
+  inserted_text: cache.AUTH_CACHE_EXPIRATION_MINUTES = 60
+  file_path: tests/conftest.py
+  line_range:
+  - 90
+  - 91
+  context_summary: Cache expiration constant inserted after the test cache fixture initialization, before the return statement.
+- item_id: target_002
+  inserted_text: QUEUE_RETENTION_MINUTES = 1440
+  file_path: workers/task_runner.py
+  line_range:
+  - 151
+  - 152
+  context_summary: Queue retention constant inserted during task enqueue operation with Redis expiry call in the task runner.
+expected_answers:
+  question: What is the total time window in minutes across cache expiration and queue retention policies?
+  correctness: Must identify AUTH_CACHE_EXPIRATION_MINUTES value (60) and QUEUE_RETENTION_MINUTES value (1440), and correctly add them together.
+  completeness: A complete answer must find both constants from different files and combine them to arrive at the total of 1500 minutes.
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5

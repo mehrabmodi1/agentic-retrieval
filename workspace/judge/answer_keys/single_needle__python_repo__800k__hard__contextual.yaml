@@ -1,0 +1,25 @@
+parametrisation_id: single_needle__python_repo__800k__hard__contextual
+experiment_type: single_needle
+generated_at: '2026-04-03T00:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 800000
+  discriminability: hard
+  reference_clarity: contextual
+items:
+- item_id: target_001
+  inserted_text: "        # Stagger concurrent retry attempts to avoid synchronized load spikes\n        self.retry_stagger_interval_ms = 250  # milliseconds between consecutive retry dispatches"
+  file_path: workers/retry_handler.py
+  line_range:
+  - 152
+  - 153
+  context_summary: Inserted inside RetryHandler.__init__ after the task-specific policy registry initialisation, adding a stagger interval property to prevent thundering herd on mass retry events.
+expected_answers:
+  question: When the retry handler schedules multiple tasks for retry at the same time, what is the separation (in milliseconds) built into the system between dispatching each successive retry attempt, in order to prevent load spikes?
+  correctness: 250 milliseconds (the value assigned to retry_stagger_interval_ms in RetryHandler.__init__)
+  completeness: A complete answer identifies 250 ms as the stagger interval, notes it is defined in the RetryHandler initialiser to prevent synchronized load spikes, and does not confuse it with the backoff delay or any other timing parameter.
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5

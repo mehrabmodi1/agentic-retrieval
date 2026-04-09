@@ -1,0 +1,44 @@
+parametrisation_id: multi_chain__python_repo__40k__easy__exact__n2
+experiment_type: multi_chain
+generated_at: '2026-04-03T00:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 40000
+  discriminability: easy
+  reference_clarity: exact
+items:
+- item_id: target_001
+  inserted_text: '# AUDIT_LOG_BACKEND_DSN: connection string for the task audit log sink.
+
+    # The canonical value is defined in api/middleware.py — see AUDIT_LOG_BACKEND_DSN
+
+    # there for the authoritative DSN.
+
+    AUDIT_LOG_BACKEND_DSN = None  # see api/middleware.py for the authoritative value
+
+    '
+  file_path: workers/task_runner.py
+  line_range:
+  - 32
+  - 35
+  context_summary: Inserted after the PIPELINE_DISPATCH_TIMEOUT constant block, following the same cross-file reference comment style already used in the file.
+- item_id: target_002
+  inserted_text: '# Audit log backend connection string used by the task runner audit sink.
+
+    AUDIT_LOG_BACKEND_DSN = "postgresql://audit-db-prod-12.internal:5432/auditlogs"
+
+    '
+  file_path: api/middleware.py
+  line_range:
+  - 26
+  - 27
+  context_summary: Inserted after the module-level logger definition, as a module-level configuration constant before the first middleware class.
+expected_answers:
+  question: Starting from AUDIT_LOG_BACKEND_DSN in workers/task_runner.py, follow the reference to api/middleware.py. What is the value of AUDIT_LOG_BACKEND_DSN defined there?
+  correctness: postgresql://audit-db-prod-12.internal:5432/auditlogs
+  completeness: The answer must trace the chain from the placeholder AUDIT_LOG_BACKEND_DSN = None in workers/task_runner.py (which directs the reader to api/middleware.py) to the concrete DSN value postgresql://audit-db-prod-12.internal:5432/auditlogs defined in api/middleware.py.
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5

@@ -1,0 +1,44 @@
+parametrisation_id: multi_chain__python_repo__40k__hard__synonym__n2
+experiment_type: multi_chain
+generated_at: '2026-04-03T00:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 40000
+  discriminability: hard
+  reference_clarity: synonym
+items:
+- item_id: target_001
+  inserted_text: '# File attachments tied to this task are subject to an upload size cap;
+
+    # the governing limit is recorded in api/validators.py as MAX_ATTACHMENT_BYTES
+
+    # and applies uniformly to all task-related binary payloads.
+
+    '
+  file_path: api/routes.py
+  line_range:
+  - 483
+  - 485
+  context_summary: Inserted as a comment block inside the create_task route handler, between the input validation block and the project-access check, pointing to MAX_ATTACHMENT_BYTES in api/validators.py.
+- item_id: target_002
+  inserted_text: '# Maximum byte count for task-related file attachments; enforced consistently
+
+    # across both upload handlers and schema validation to prevent large-object injection.
+
+    MAX_ATTACHMENT_BYTES = 10485760  # 10 MB
+
+    '
+  file_path: api/validators.py
+  line_range:
+  - 21
+  - 23
+  context_summary: Inserted at module level in the validators file, between the logger setup and the ValidationError class definition, defining the MAX_ATTACHMENT_BYTES constant.
+expected_answers:
+  question: The task creation endpoint in the route handler module contains a reference to a byte-level size ceiling for binary file uploads, with the authoritative value stored in the input-checking module. What is that limit in bytes?
+  correctness: '10485760'
+  completeness: A complete answer identifies the limit as 10485760 bytes (10 MB), which is the value of MAX_ATTACHMENT_BYTES defined in api/validators.md, reachable by following the reference inside the create_task route handler in api/routes.md.
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5

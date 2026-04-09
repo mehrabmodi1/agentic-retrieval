@@ -1,0 +1,120 @@
+parametrisation_id: multi_chain__python_repo__160k__hard__contextual__n8
+experiment_type: multi_chain
+generated_at: '2026-04-04T00:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 160000
+  discriminability: hard
+  reference_clarity: contextual
+items:
+- item_id: target_001
+  inserted_text: '# Session expiry policy: idle sessions older than the inactivity threshold are
+
+    # invalidated on the next request; the controlling duration is documented in
+
+    # api/serializers.py alongside its use in session-bearing response schemas.
+
+    '
+  file_path: api/__init__.py
+  line_range:
+  - 87
+  - 89
+  context_summary: Inserted between the API_BASE_PATH constant and the __all__ declaration, as a module-level policy comment about session expiry that points forward to api/serializers.py.
+- item_id: target_002
+  inserted_text: '# The field lifetime for session-bearing schemas mirrors the idle inactivity window;
+
+    # the governing duration that schemas use to validate session token age comes from
+
+    # the test contract specified in tests/test_api.py.
+
+    '
+  file_path: api/serializers.py
+  line_range:
+  - 26
+  - 28
+  context_summary: Inserted after the module-level logger declaration and before the BaseSchema class definition, as a cross-module comment linking session schema lifetime to the test_api module.
+- item_id: target_003
+  inserted_text: '# Session-scoped test boundaries match the idle threshold enforced by the
+
+    # production layer; the specific duration constant used for session expiry
+
+    # assertions is declared in tests/fixtures.py.
+
+    '
+  file_path: tests/test_api.py
+  line_range:
+  - 40
+  - 42
+  context_summary: Inserted as an inline comment inside the TestTaskAPI class, just before the test_create_task_invalid_priority method, pointing to tests/fixtures.py for the session expiry constant.
+- item_id: target_004
+  inserted_text: '# The aging window applied when constructing time-shifted test records is aligned
+
+    # with the production idle session timeout; the reference constant establishing
+
+    # this boundary is initialized in tests/conftest.py.
+
+    '
+  file_path: tests/fixtures.py
+  line_range:
+  - 19
+  - 21
+  context_summary: Inserted after the SQLAlchemy Session import and before the TestDataBuilder class, as a module-level comment linking test record age windows to the session timeout constant in conftest.
+- item_id: target_005
+  inserted_text: '# The cache TTL applied to idle session tokens in tests matches production bounds;
+
+    # the inactivity threshold that drives session expiry is managed in api/error_handlers.py.
+
+    '
+  file_path: tests/conftest.py
+  line_range:
+  - 26
+  - 27
+  context_summary: Inserted after the RedisCache import and before the first pytest fixture, as a module-level comment directing the reader to api/error_handlers.py for the session inactivity threshold.
+- item_id: target_006
+  inserted_text: '# The timeout window for wrapping session-related exceptions aligns with the
+
+    # idle session threshold; the base duration governing reauthentication prompts
+
+    # is maintained in workers/task_runner.py.
+
+    '
+  file_path: api/error_handlers.py
+  line_range:
+  - 437
+  - 439
+  context_summary: Inserted inside the ErrorContext class body, between the class docstring and the __init__ method, as an inline comment connecting session-related error handling to the task_runner module.
+- item_id: target_007
+  inserted_text: '# Idle session cutoff for task ownership: tasks submitted by a session must complete
+
+    # before the session''s idle window lapses; the canonical idle threshold is the
+
+    # authoritative value declared in workers/cleanup_worker.py.
+
+    '
+  file_path: workers/task_runner.py
+  line_range:
+  - 27
+  - 29
+  context_summary: Inserted after the DEFAULT_TASK_QUEUE_TIMEOUT constant and before the PIPELINE_DISPATCH_TIMEOUT comment, as a comment about session ownership expiry pointing to cleanup_worker.py.
+- item_id: target_008
+  inserted_text: '# Idle sessions are purged during each cleanup pass when their inactivity exceeds
+
+    # this threshold; this is the authoritative value for the session timeout chain.
+
+    IDLE_SESSION_TIMEOUT_SECONDS = 1800
+
+    '
+  file_path: workers/cleanup_worker.py
+  line_range:
+  - 23
+  - 25
+  context_summary: Inserted after the PIPELINE_DISPATCH_TIMEOUT comment block and before the CleanupTask dataclass definition, declaring the authoritative IDLE_SESSION_TIMEOUT_SECONDS constant as 1800 seconds.
+expected_answers:
+  question: Beginning in the API package initialization module, follow the cross-module references that document how long an authenticated user session may remain idle before it is invalidated. What is the maximum idle duration in seconds?
+  correctness: '1800'
+  completeness: 'A complete answer traces the 8-link chain: api/__init__.py comments point to api/serializers.py, which references tests/test_api.py, which references tests/fixtures.py, which references tests/conftest.py, which references api/error_handlers.py, which references workers/task_runner.py, which references workers/cleanup_worker.py, where IDLE_SESSION_TIMEOUT_SECONDS = 1800 is declared as the authoritative value.'
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5

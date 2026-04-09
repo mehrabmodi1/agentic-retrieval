@@ -1,0 +1,25 @@
+parametrisation_id: single_needle__python_repo__40k__hard__synonym
+experiment_type: single_needle
+generated_at: '2026-04-03T00:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 40000
+  discriminability: hard
+  reference_clarity: synonym
+items:
+- item_id: target_001
+  inserted_text: '    staleness_window_hours: int = 48  # records not updated within this window are re-queued for sync'
+  file_path: workers/sync_worker.py
+  line_range:
+  - 48
+  - 48
+  context_summary: Inserted as a new field in the SyncConfig dataclass between timeout_seconds and rate_limit_requests_per_second, specifying the threshold after which records are considered stale.
+expected_answers:
+  question: How many hours must pass without an update before a record is considered outdated and re-queued for synchronization?
+  correctness: 48 hours
+  completeness: The answer should state 48 hours, note it is configured via staleness_window_hours in SyncConfig, and explain that records not updated within this window are re-queued for sync.
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5

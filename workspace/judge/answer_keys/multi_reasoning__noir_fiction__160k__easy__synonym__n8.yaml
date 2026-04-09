@@ -1,0 +1,58 @@
+parametrisation_id: "multi_reasoning__noir_fiction__160k__easy__synonym__n8"
+experiment_type: "multi_reasoning"
+generated_at: "2026-04-05T12:00:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 160000
+  discriminability: "easy"
+  reference_clarity: "synonym"
+items:
+  - item_id: "target_001"
+    inserted_text: "She also left behind a sealed envelope with him—I saw him placing it in his desk drawer very carefully. He treated it like it contained something precious, or something that could destroy him."
+    file_path: "witnesses/neighbor_statement.md"
+    line_range: [44, 46]
+    context_summary: "Neighbor observes redheaded woman leaving sealed envelope with instructions during her emotional goodbye visit."
+  - item_id: "target_002"
+    inserted_text: "He nodded carefully and said, 'December is too long. But the window closes in three weeks. That's when I'll need to be gone.' Three weeks exactly—he was very precise about that timeline."
+    file_path: "witnesses/landlady_statement.md"
+    line_range: [28, 29]
+    context_summary: "Landlord records Harvey explicitly stating three-week deadline for his departure from the apartment."
+  - item_id: "target_003"
+    inserted_text: "But before he left, the old man had slipped a piece of paper into the kid's shirt pocket—quick, professional. I only saw it because I was watching in the mirror. Probably a dead drop location or coordinates or something equally sinister. The kind of thing you don't ask about."
+    file_path: "witnesses/cab_driver_statement.md"
+    line_range: [58, 62]
+    context_summary: "Cab driver witnesses silver-haired man covertly passing coordinates or instructions to Harvey at the safe house."
+  - item_id: "target_004"
+    inserted_text: "And you tell them something else—Sinclair told me before he hit me that the boy, Harvey, was told his mother would face consequences if he ever returned to the city. That's how they controlled him. Through family. That's how you keep someone silent forever."
+    file_path: "case_notes/day_07.md"
+    line_range: [62, 66]
+    context_summary: "Mercer reveals Harvey was threatened with his mother's safety to ensure permanent silence about the criminal operation."
+  - item_id: "target_005"
+    inserted_text: "As for Harvey, he has three days left in the city before the transfer window closes. After that, he disappears, and you'll never find him. Neither will the police. He'll be on a boat with new papers, and the harbor route is already arranged. The best thing you can do is let him go and pray he keeps his mouth shut about what he knows."
+    file_path: "case_notes/day_05.md"
+    line_range: [121, 127]
+    context_summary: "Sinclair explicitly confirms Harvey's maritime escape route and the three-day final window before transfer."
+  - item_id: "target_006"
+    inserted_text: "There's also the matter of the boy, Harvey. We facilitated his extraction through a woman named Margot, who specializes in making problems disappear. She was quite professional about it. Very expensive. But very thorough. If you continue investigating, we'll ask her to make you disappear as professionally as she made Harvey vanish."
+    file_path: "chapters/chapter_05.md"
+    line_range: [93, 101]
+    context_summary: "Diana Harrow identifies Margot as the professional intermediary who arranged Harvey's complete disappearance."
+  - item_id: "target_007"
+    inserted_text: "By the way—we found something interesting. Harbor records show a shipment was arranged to depart October 31st, just two days after Harvey disappeared. The manifest lists general cargo, but there's a passenger manifest we haven't accessed yet. Guess who chartered the vessel? A shell company out of Delaware. Same corporate structure as that safe house address. They didn't just want him gone. They wanted him transported internationally, completely untraceable."
+    file_path: "case_notes/day_08.md"
+    line_range: [78, 87]
+    context_summary: "Detective Morris reveals Harvey was transported on international vessel chartered through Delaware shell company."
+  - item_id: "target_008"
+    inserted_text: "Halstead's hands shook as he showed me the second photograph—a painting, classical, depicting a merchant ship at twilight. \"This is what they want,\" he said quietly. \"The Vesper painting. It disappeared from the Castellano collection six months ago. They say if I help them recover it, they'll release Catherine. The boy who stole it—Harvey—that's who I need you to find. He's the only one who knows where it is. And they want him found before he sails.\""
+    file_path: "chapters/chapter_02.md"
+    line_range: [29, 39]
+    context_summary: "Halstead reveals the Vesper painting was Harvey's theft and its recovery is the condition for Catherine's release before Harvey's maritime departure."
+expected_answers:
+  question: "Based on all available witness statements and detective notes, reconstruct the complete plan for the suspect's escape: What were the key timeline markers, the methods of control used against him, the people who facilitated his departure, and the actual means of his extraction from the city?"
+  correctness: "Must identify Harvey as the subject, the three-week/three-day timeline, the threat to his mother, Margot as the facilitator, the sealed envelope with instructions, the coordinates/dead drop, and the maritime transport via charter vessel."
+  completeness: "A complete answer covers all eight elements: (1) the compressed three-week timeline with three-day final window, (2) family leverage (mother's safety) as control mechanism, (3) sealed instructions from the redheaded woman, (4) coordinates passed by silver-haired man at safe house, (5) Margot's role as professional intermediary, (6) maritime escape route on chartered vessel departing October 31st, (7) international transport via Delaware shell company, (8) the Vesper painting as underlying catalyst for the entire situation."
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+  - criterion: "completeness"
+    weight: 0.5

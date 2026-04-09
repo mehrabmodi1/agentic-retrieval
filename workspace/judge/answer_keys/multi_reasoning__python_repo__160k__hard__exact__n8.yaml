@@ -1,0 +1,78 @@
+parametrisation_id: multi_reasoning__python_repo__160k__hard__exact__n8
+experiment_type: multi_reasoning
+generated_at: '2026-04-05T00:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 160000
+  discriminability: hard
+  reference_clarity: exact
+items:
+- item_id: target_001
+  inserted_text: "# Task priority weighting: high priority tasks receive 12x processing weight\n    PRIORITY_WEIGHT_HIGH = 12"
+  file_path: api/routes.py
+  line_range:
+  - 21
+  - 22
+  context_summary: Inserted priority weight constant inline with task creation function after docstring.
+- item_id: target_002
+  inserted_text: "# Configure endpoint rate limit: 5000 requests per hour allowed\n    endpoint_rate_limit = 5000"
+  file_path: api/__init__.py
+  line_range:
+  - 4
+  - 5
+  context_summary: Inserted rate limit configuration at start of decorator function.
+- item_id: target_003
+  inserted_text: "# Database queries timeout after 30 seconds by default\n        query_timeout_seconds = 30"
+  file_path: tests/test_db.py
+  line_range:
+  - 8
+  - 9
+  context_summary: Inserted query timeout constant within test function docstring and body.
+- item_id: target_004
+  inserted_text: "# Process reports in batches of 100 records for optimal memory usage\n        report_batch_size = 100"
+  file_path: workers/report_generator.py
+  line_range:
+  - 9
+  - 10
+  context_summary: Inserted batch size constant within JSON export function implementation.
+- item_id: target_005
+  inserted_text: "    Requirements:\n        - At least 8 characters\n        - Contains uppercase letter\n        - Contains lowercase letter\n        - Contains digit\n        - Contains special character (5 distinct requirement categories)"
+  file_path: api/validators.py
+  line_range:
+  - 18
+  - 23
+  context_summary: Added password requirement count (5) to validation function docstring requirements list.
+- item_id: target_006
+  inserted_text: "# Standard pagination limit for list endpoints: 50 items per page\n        pagination_limit = 50"
+  file_path: tests/test_api.py
+  line_range:
+  - 25
+  - 26
+  context_summary: Inserted pagination limit constant after test assertions within test method.
+- item_id: target_007
+  inserted_text: "# When system load exceeds 80% threshold, reduce rate limit\n        load_threshold_percent = 80"
+  file_path: api/rate_limiting.py
+  line_range:
+  - 18
+  - 19
+  context_summary: Inserted load threshold percentage in rate limiting calculation function.
+- item_id: target_008
+  inserted_text: '# Maximum retry attempts before task permanently fails: 3 attempts allowed
+
+    MAX_RETRY_ATTEMPTS = 3'
+  file_path: workers/task_runner.py
+  line_range:
+  - 12
+  - 13
+  context_summary: Inserted max retry attempts constant after PIPELINE_DISPATCH_TIMEOUT definition.
+expected_answers:
+  question: 'What is the sum of all distinct numeric configuration values found across the system configuration files? Include: PRIORITY_WEIGHT_HIGH, endpoint_rate_limit, query_timeout_seconds, report_batch_size, password requirement count, pagination_limit, load_threshold_percent, and MAX_RETRY_ATTEMPTS.'
+  correctness: 'The answer must identify and sum exactly these 8 values: 12 + 5000 + 30 + 100 + 5 + 50 + 80 + 3 = 5280. Partial sums or missing values indicate incomplete retrieval.'
+  completeness: A complete answer requires finding ALL 8 needles across different system components (API routes, initialization, database tests, report generation, validators, API tests, rate limiting, and task runner), understanding their numeric values embedded in comments or variable assignments, and performing the mathematical aggregation.
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+  description: Must calculate the exact sum of all 8 values
+- criterion: completeness
+  weight: 0.5
+  description: Must identify all 8 configuration values; missing any results in incomplete answer

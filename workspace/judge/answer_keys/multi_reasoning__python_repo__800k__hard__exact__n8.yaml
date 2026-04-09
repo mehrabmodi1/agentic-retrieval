@@ -1,0 +1,87 @@
+parametrisation_id: multi_reasoning__python_repo__800k__hard__exact__n8
+experiment_type: multi_reasoning
+generated_at: '2026-04-05T15:30:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 800000
+  discriminability: hard
+  reference_clarity: exact
+items:
+- item_id: target_001
+  inserted_text: estimated_hours = fields.Float(allow_none=True, validate=Range(min=0.25, max=160))
+  file_path: api/serializers.py
+  line_range:
+  - 150
+  - 150
+  context_summary: Task serializer field validation extended with maximum 160-hour limit embedded in Range validator
+  needle_value: 160
+- item_id: target_002
+  inserted_text: '# Maximum page size enforced at 100 items per API request'
+  file_path: api/pagination.py
+  line_range:
+  - 405
+  - 405
+  context_summary: Comment added to pagination builder explaining max per-page constraint
+  needle_value: 100
+- item_id: target_003
+  inserted_text: retention_days=90,
+  file_path: workers/cleanup_worker.py
+  line_range:
+  - 99
+  - 99
+  context_summary: New cleanup task added for audit logs with 90-day retention period
+  needle_value: 90
+- item_id: target_004
+  inserted_text: 'response.headers[''Access-Control-Max-Age''] = ''3600''  # 60 minutes cache'
+  file_path: api/middleware.py
+  line_range:
+  - 133
+  - 133
+  context_summary: CORS middleware header assignment with inline comment explaining 3600 second timeout
+  needle_value: 3600
+- item_id: target_005
+  inserted_text: '''default_expiry_hours'': 24  # Default token lifetime'
+  file_path: api/auth.py
+  line_range:
+  - 62
+  - 62
+  context_summary: JWT payload extended with explicit default expiry hours field set to 24
+  needle_value: 24
+- item_id: target_006
+  inserted_text: 'capacity: int = 10,'
+  file_path: api/rate_limiting.py
+  line_range:
+  - 342
+  - 342
+  context_summary: Burst limit decorator parameter showing default capacity of 10 tokens
+  needle_value: 10
+- item_id: target_007
+  inserted_text: 'per_page = int(args.get(''per_page'', 20))  # Default page size is 20 items'
+  file_path: api/routes.py
+  line_range:
+  - 349
+  - 349
+  context_summary: List projects endpoint with default pagination size of 20 embedded in code comment
+  needle_value: 20
+- item_id: target_008
+  inserted_text: '# Project name character limits: minimum 1, maximum 200 characters'
+  file_path: api/validators.py
+  line_range:
+  - 300
+  - 300
+  context_summary: Project update validator with inline comment documenting maximum name length of 200
+  needle_value: 200
+expected_answers:
+  question: 'Calculate the total system configuration sum by adding the following values found across the codebase: estimated_hours maximum field validation limit + CORS max-age in seconds / 60 + audit logs retention days + token default expiry hours + rate limit burst capacity * 2 + list projects default page size * 5 + project name maximum character length / 2 + pagination maximum per-page items / 5'
+  correctness: 'Answer must correctly identify all 8 configuration values (160, 100, 90, 3600, 24, 10, 20, 200) and compute: 160 + (3600/60) + 90 + 24 + (10*2) + (20*5) + (200/2) + (100/5) = 160 + 60 + 90 + 24 + 20 + 100 + 100 + 20 = 574'
+  completeness: Complete answer must locate configuration values in all 8 files, extract exact numeric values, apply arithmetic operations in correct order, and provide the final sum of 574
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+  description: Final numeric answer must be exactly 574
+- criterion: completeness
+  weight: 0.5
+  description: Must identify and extract all 8 configuration values from different files
+- criterion: reasoning
+  weight: 0.5
+  description: Must demonstrate understanding of where each value appears in context and why calculations were applied

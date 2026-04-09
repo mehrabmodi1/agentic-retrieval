@@ -1,0 +1,32 @@
+parametrisation_id: multi_reasoning__python_repo__800k__easy__exact__n2
+experiment_type: multi_reasoning
+generated_at: '2026-04-05T00:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 800000
+  discriminability: easy
+  reference_clarity: exact
+items:
+- item_id: target_001
+  inserted_text: CLEANUP_COORDINATION_INTERVAL_SECONDS = 18
+  file_path: workers/sync_worker.py
+  line_range:
+  - 15
+  - 15
+  context_summary: Constant defining cleanup coordination interval inserted after STALE_LOCK_TIMEOUT_SECONDS in module-level timeout configuration section.
+- item_id: target_002
+  inserted_text: WORKER_SHUTDOWN_BUFFER_SECONDS = 7
+  file_path: tests/test_workers.py
+  line_range:
+  - 12
+  - 12
+  context_summary: Constant defining worker shutdown buffer timeout inserted as class variable in TestWorkerMonitoring test class for monitoring timeout calculations.
+expected_answers:
+  question: What is the total timeout duration in seconds when combining CLEANUP_COORDINATION_INTERVAL_SECONDS and WORKER_SHUTDOWN_BUFFER_SECONDS?
+  correctness: 'Answer must sum both constants correctly: 18 + 7 = 25 seconds. Must reference both exact constant names and show the arithmetic.'
+  completeness: A complete answer must locate both constants in their respective files, extract their numeric values, perform the addition, and state the final result in seconds.
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5

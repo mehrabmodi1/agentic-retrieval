@@ -1,0 +1,28 @@
+parametrisation_id: "multi_reasoning__noir_fiction__40k__easy__contextual__n2"
+experiment_type: "multi_reasoning"
+generated_at: "2026-04-05T15:30:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 40000
+  discriminability: "easy"
+  reference_clarity: "contextual"
+items:
+  - item_id: "target_001"
+    inserted_text: "silver locket with her mother's initials engraved inside"
+    file_path: "chapters/chapter_01.md"
+    line_range: [66, 67]
+    context_summary: "Added to the notebook description of Catherine Halstead as a distinctive identifying feature she possesses."
+  - item_id: "target_002"
+    inserted_text: "Also known as Catherine Halstead—possibly an alias or middle name combination. She wears a distinctive silver locket. Same man who was spotted near the Starlight Motor Inn."
+    file_path: "case_notes/day_02.md"
+    line_range: [121, 122]
+    context_summary: "Added to the evening theory section, linking Claire/Catherine's identity and the location of interest through the locket detail."
+expected_answers:
+  question: "What identifying feature did Catherine Halstead possess, and what location was connected to the man who took her?"
+  correctness: "Must identify the silver locket with engraved initials as Catherine's distinguishing feature AND the Starlight Motor Inn as the connected location."
+  completeness: "A complete answer combines information from both the initial case notebook (identifying the locket) and the evening theory section (linking the locket wearer to the Starlight Motor Inn location and the dangerous man)."
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+  - criterion: "completeness"
+    weight: 0.5

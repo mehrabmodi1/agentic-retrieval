@@ -1,0 +1,68 @@
+parametrisation_id: "multi_chain__noir_fiction__40k__easy__synonym__n8"
+experiment_type: "multi_chain"
+generated_at: "2026-04-05T00:00:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 40000
+  discriminability: "easy"
+  reference_clarity: "synonym"
+
+items:
+  - item_id: "target_001"
+    inserted_text: "I think after that visit, he went to see a man named Marchetti—a lawyer downtown, someone who helps people when they need to disappear with their conscience intact."
+    file_path: "witnesses/landlady_statement.md"
+    line_range: [42, 44]
+    context_summary: "Eva Kosinski references Marchetti by name as the attorney Harvey consulted after Silas Gregg's visit."
+
+  - item_id: "target_002"
+    inserted_text: "I found a folder on his desk after Mr. Harvey left—travel documents, the kind you need when you want to vanish entirely. I didn't open it, but I suspect those papers were intended for Mr. Harvey to facilitate his safe departure from the city."
+    file_path: "witnesses/secretary_statement.md"
+    line_range: [42, 43]
+    context_summary: "Dorothy notes travel documents prepared by Marchetti for Harvey's departure."
+
+  - item_id: "target_003"
+    inserted_text: "But Marchetti also connected him with a handler, someone named Gregg, who could arrange an interim safe house while the legal arrangements were being formalized—a location in the residential district where Harvey could lay low until the moment came to disappear permanently."
+    file_path: "witnesses/informant_interview.md"
+    line_range: [42, 43]
+    context_summary: "Victor's informant account reveals Marchetti connected Harvey with Gregg and a safe house in the residential district."
+
+  - item_id: "target_004"
+    inserted_text: "When we got to the address, a big house set back from the road in Oak Hill—217 Elderwood Lane, I remember because I had to repeat it back—the old man got out first."
+    file_path: "witnesses/cab_driver_statement.md"
+    line_range: [40, 42]
+    context_summary: "Jerry the cab driver specifies the exact safe house address (217 Elderwood Lane in Oak Hill) where Harvey was transported with Gregg."
+
+  - item_id: "target_005"
+    inserted_text: "What I didn't mention is that Sinclair also maintains a private residence—217 Elderwood Lane in Oak Hill. It's where he keeps people who are temporarily inconvenient. It's also where Harvey was taken by Gregg before being moved again."
+    file_path: "case_notes/day_03.md"
+    line_range: [131, 133]
+    context_summary: "Mercer confirms the Oak Hill address as Sinclair's safe house and notes Harvey's temporary detention there before final movement."
+
+  - item_id: "target_006"
+    inserted_text: "Patricia adds one more detail: \"The man also left behind a train ticket stub. I almost threw it away, but I kept it. It was for northbound service—Harvey was supposed to take the noon train from Union Station, destination somewhere up the coast. I don't remember where exactly, but it was far enough away that nobody would think to look for him.\""
+    file_path: "case_notes/day_05.md"
+    line_range: [62, 63]
+    context_summary: "Patricia reveals the northbound train ticket from Union Station as Harvey's escape method."
+
+  - item_id: "target_007"
+    inserted_text: "The cab driver's receipt and hospital records place him on the 9:15 AM northbound train from Union Station on October 30th, bound for Harwick Falls—a small coastal town where he could disappear into relative obscurity while retaining his conscience."
+    file_path: "witnesses/detective_debrief.md"
+    line_range: [30, 31]
+    context_summary: "The official detective debrief specifies Harwick Falls as Harvey's confirmed northbound destination."
+
+  - item_id: "target_008"
+    inserted_text: "The irony struck me then: somewhere in this city, a young man named James Harvey had figured out the same thing. And he'd chosen conscience over survival, choosing to disappear into the anonymity of Harwick Falls rather than compromise his soul for money or power. He was alive, probably, but he was gone in every way that mattered to the city and to himself."
+    file_path: "chapters/chapter_02.md"
+    line_range: [40, 42]
+    context_summary: "Narrator reflects on Harvey's ultimate destination and choice to vanish to Harwick Falls."
+
+expected_answers:
+  question: "Starting from the landlady's observation of Harvey consulting with an attorney, follow the chain of references that documents his escape plan. Where does Harvey ultimately disappear to?"
+  correctness: "The answer must identify Harwick Falls as Harvey's final destination. Acceptable variations include 'Harwick Falls' or descriptions that indicate this small coastal town north of the city."
+  completeness: "A complete answer should trace the chain through: Marchetti (attorney) → travel documents → safe house at 217 Elderwood Lane in Oak Hill → northbound train ticket from Union Station → Harwick Falls. The chain demonstrates Harvey's deliberate, step-by-step escape orchestrated through legal counsel and intermediaries."
+
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+  - criterion: "completeness"
+    weight: 0.5

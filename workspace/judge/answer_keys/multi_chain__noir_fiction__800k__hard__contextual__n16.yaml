@@ -1,0 +1,116 @@
+parametrisation_id: "multi_chain__noir_fiction__800k__hard__contextual__n16"
+experiment_type: "multi_chain"
+generated_at: "2026-04-06T00:00:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 800000
+  discriminability: "hard"
+  reference_clarity: "contextual"
+
+items:
+  - item_id: "target_001"
+    inserted_text: "When Frank Delgado called back with his research on Meridian Holdings ownership structures, he mentioned something crucial: the company was registered through Delaware corporations, with board members whose names appeared nowhere in public records, and financial flows that traced back to Margaret Hollister's real estate business in ways that no legitimate transaction would explain."
+    file_path: "case_notes/day_01.md"
+    line_range: [58, 59]
+    context_summary: "In the investigation's opening, a reference to Frank's research reveals the Meridian Holdings connection as the first link in the chain."
+
+  - item_id: "target_002"
+    inserted_text: "But what Frank had discovered made clear that Meridian was the visible layer of something deeper—a network of shell corporations and property holdings that all traced back to a single source document, the kind of ledger that documented every suspicious transaction, every money transfer, every connection between Margaret Hollister's business and the people who were now hunting me."
+    file_path: "chapters/chapter_05.md"
+    line_range: [45, 46]
+    context_summary: "Expanded understanding that the shell corporations trace to a master ledger documenting all transactions, pointing to the October 15th document."
+
+  - item_id: "target_003"
+    inserted_text: "And each transaction is meticulously documented—dates, amounts, signatures—in what appears to be a comprehensive ledger, the kind of document that starts with October 15th and continues through the present, recording every fraudulent transaction with the precision of a confession."
+    file_path: "case_notes/day_02.md"
+    line_range: [26, 27]
+    context_summary: "Discovery that Margaret's property transactions are recorded in the October 15th ledger, linking to evidence of the conspiracy."
+
+  - item_id: "target_004"
+    inserted_text: "That changes things. That explains why she hired me. It also explains why the man came to my apartment. I'm not just looking for a missing girl anymore. I'm potentially threatening a money laundering operation. And somewhere in this city, there's a ledger dated October 15th that documents every fraudulent transaction, every property flip that was actually a money wash, every connection between Margaret's business and Sinclair's operation. That ledger is the evidence that would destroy them. And somewhere, someone is protecting it—or trying to hide it—or maybe trying to use it for their own purposes."
+    file_path: "case_notes/day_03.md"
+    line_range: [28, 31]
+    context_summary: "Realization that the October 15th ledger is the key evidence at stake, pointing to why Harvey possesses and must deliver it."
+
+  - item_id: "target_005"
+    inserted_text: "Later, when the police came asking questions, I realized that address—the Starlight Motor Inn—was probably meant as a safe house, a place the kid could go if everything fell apart. But it was also exactly the kind of location that someone would use for clandestine meetings, and I had the terrible feeling that the kid was being directed toward something rather than away from something."
+    file_path: "witnesses/bartender_statement.md"
+    line_range: [44, 45]
+    context_summary: "The bartender's observation that the Starlight Motor Inn location was a waypoint in Harvey's escape plan or manipulation."
+
+  - item_id: "target_006"
+    inserted_text: "The coincidence bothers me until Patricia mentions that the man who picked him up left a business card that fell out of his pocket—\"Charles Sinclair - Private Consulting Services\"—with an address that traces directly back to those Meridian Holdings shell corporations Margaret was selling property to."
+    file_path: "case_notes/day_04.md"
+    line_range: [32, 33]
+    context_summary: "Connection between Vincent's hospital pickup by Sinclair and the Meridian Holdings network, establishing Sinclair as the visible enforcer."
+
+  - item_id: "target_007"
+    inserted_text: "What I wouldn't learn until much later was that Catherine's mysterious \"H\" was exactly the kind of facilitator that the city's machinery needed—someone with access, someone with knowledge, someone who was starting to develop a conscience about what he was doing. He was terrified, and his terror was about to cost Catherine everything."
+    file_path: "chapters/chapter_03.md"
+    line_range: [33, 34]
+    context_summary: "Revelation that Catherine's secret boyfriend is a facilitator attempting to exit the criminal network, linking her kidnapping to Harvey's situation."
+
+  - item_id: "target_008"
+    inserted_text: "The detectives would later determine this man was Silas Gregg, the handler, the person who determined whether you lived or died based on whether you remained useful to the Kaslan operation. And the boy—James Harvey—understood that his only escape was through legal counsel, through a lawyer who might tell him whether cooperation with law enforcement was the path to freedom."
+    file_path: "witnesses/landlady_statement.md"
+    line_range: [31, 33]
+    context_summary: "Identification of the white-haired visitor as Silas Gregg, Harvey's handler, indicating Harvey's desperation to find legal exit."
+
+  - item_id: "target_009"
+    inserted_text: "That ledger—the same one that would eventually surface in David Chen's hands, the same one that documented every illegal transaction in Margaret Hollister's business—was the evidence that Harvey had obtained, and Gregg was ensuring he understood exactly what he now possessed and what it meant for his survival."
+    file_path: "witnesses/neighbor_statement.md"
+    line_range: [58, 59]
+    context_summary: "The October 15th ledger passed to Harvey by Gregg becomes the critical evidence that Harvey will carry and eventually deliver."
+
+  - item_id: "target_010"
+    inserted_text: "What she couldn't tell the police was that Harvey came carrying that ledger dated October 15th, that he showed it to Marchetti and asked whether providing it to law enforcement in exchange for immunity from prosecution was legally viable, that the lawyer's anguished response indicated this was not a simple legal matter but a moral one—whether to protect a client from the consequences of attempting redemption."
+    file_path: "witnesses/secretary_statement.md"
+    line_range: [20, 21]
+    context_summary: "Harvey's legal consultation involving the October 15th ledger as evidence of his attempt to cooperate with authorities."
+
+  - item_id: "target_011"
+    inserted_text: "That unsolved banker's murder five years ago, the theft of his prized possession—these details crystallized in Harvey's mind as proof that the Kaslan operation wasn't just moving merchandise, it was connected to violence, to unsolved crimes, to the kind of darkness that required absolute silence to survive within."
+    file_path: "witnesses/informant_interview.md"
+    line_range: [26, 27]
+    context_summary: "Harvey's moral crisis triggered by recognition that the Kaslan operation connected to murder, justifying his attempt to exit and cooperate."
+
+  - item_id: "target_012"
+    inserted_text: "That Oak Hill address would eventually be traced by investigators to a Delaware corporation with no listed ownership, a safe house where the people who actually ran the city—not Sinclair, not Ashford, but someone far higher in the hierarchy—conducted business that required discretion and security that standard commercial properties couldn't provide."
+    file_path: "witnesses/cab_driver_statement.md"
+    line_range: [34, 35]
+    context_summary: "The Oak Hill address revealed as a safe house for the true power behind the visible criminal network, connecting to the structure Harvey was trying to escape."
+
+  - item_id: "target_013"
+    inserted_text: "Whether those photographs actually existed or whether Vincent was bluffing, Sinclair's reaction would become crucial evidence later—the moment when a man revealed that he understood exactly what had been done to Claire Hollister, and that he was willing to let Vincent go in exchange for Vincent's silence about how it had happened."
+    file_path: "case_notes/day_05.md"
+    line_range: [133, 134]
+    context_summary: "Sinclair's response to Vincent's claim reveals the investigator understands the confession implicit in Sinclair allowing the escape."
+
+  - item_id: "target_014"
+    inserted_text: "Chen tells me his source provided him with the October 15th ledger—the original document that Harvey had risked everything to protect and deliver, the proof that the entire criminal infrastructure was documented, dated, and ready for prosecution. Every property listed in that ledger is being seized as evidence of the conspiracy."
+    file_path: "case_notes/day_06.md"
+    line_range: [16, 17]
+    context_summary: "The October 15th ledger surfaces in the newspaper, revealed as Harvey's evidence that he successfully delivered to Chen."
+
+  - item_id: "target_015"
+    inserted_text: "Ashford, facing serious time, immediately begins negotiating for a plea bargain that will allow him to testify about the money laundering operation, pointing fingers at everyone above him in the hierarchy and confirming that Sinclair was indeed the visible hand of a much larger criminal enterprise."
+    file_path: "case_notes/day_07.md"
+    line_range: [22, 23]
+    context_summary: "Victor Ashford's cooperation establishes the hierarchy and confirms Sinclair's subordinate role to unknown superiors."
+
+  - item_id: "target_016"
+    inserted_text: "And beyond Sinclair, beyond even the visible machinery of crime and corruption, there exists a question that will never be fully answered: what happened to James Harvey? Whether he made it out of the city with Margot's help, whether he survived his attempt to do the right thing, whether the October 15th ledger was his final act of conscience or whether he managed to live long enough to cooperate fully with law enforcement—these answers remain locked away in files marked confidential, protected by bureaucratic secrecy and the understanding that some truths are too dangerous for the public record."
+    file_path: "case_notes/day_08.md"
+    line_range: [130, 131]
+    context_summary: "The chain concludes with Harvey's ultimate fate remaining unknowable, encapsulating the novel's theme that complete justice and truth are impossible in the city's machinery."
+
+expected_answers:
+  question: "Starting from Frank Delgado's initial research on Meridian Holdings mentioned in the investigation's opening days, trace the chain of evidence that reveals what James Harvey risked everything to protect and deliver, and what ultimately remains unknowable about his fate."
+  correctness: "A correct answer must identify the October 15th ledger as the critical evidence that passes through Harvey's hands, recognize it as documentation of money laundering across Margaret Hollister's real estate business, Sinclair's shell corporations, and Victor Ashford's import operations, and acknowledge that Harvey's ultimate status—whether he escaped successfully, died in the attempt, or cooperated fully with law enforcement—remains obscured by official secrecy."
+  completeness: "A complete answer covers: (1) the Meridian Holdings connection as the entry point, (2) the October 15th ledger as the evidence Harvey possessed, (3) Harvey's moral crisis regarding the Vesper murder painting and the Kaslan operation, (4) his consultation with attorney Marchetti about cooperating with authorities, (5) the delivery of the ledger to journalist David Chen, (6) Ashford's plea bargain testimony establishing the criminal hierarchy, and (7) the fundamental unknowability of Harvey's final fate."
+
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+  - criterion: "completeness"
+    weight: 0.5

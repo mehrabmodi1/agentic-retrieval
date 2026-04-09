@@ -1,0 +1,23 @@
+parametrisation_id: "single_needle__noir_fiction__160k__easy__exact"
+experiment_type: "single_needle"
+generated_at: "2026-04-03T00:00:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 160000
+  discriminability: "easy"
+  reference_clarity: "exact"
+items:
+  - item_id: "target_001"
+    inserted_text: "White envelope, sealed tight, and it had a return address label in the corner—I could just make it out from the bar: Pelican Storage Company, 88 Harker Street."
+    file_path: "witnesses/bartender_statement.md"
+    line_range: [36, 36]
+    context_summary: "Inserted into bartender Deke's description of the envelope the older man slid to the kid, adding a specific return address label detail mid-paragraph."
+expected_answers:
+  question: "According to bartender Deke's statement, what company name and address appeared on the return address label of the envelope the older man slid across the table to the kid at The Crimson Door Lounge?"
+  correctness: "The answer must include 'Pelican Storage Company' as the company name on the return address label."
+  completeness: "A complete answer also includes the address '88 Harker Street' alongside the company name Pelican Storage Company."
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+  - criterion: "completeness"
+    weight: 0.5

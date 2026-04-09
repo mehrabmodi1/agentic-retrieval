@@ -1,0 +1,115 @@
+parametrisation_id: "multi_reasoning__noir_fiction__20k__easy__synonym__n16"
+experiment_type: "multi_reasoning"
+generated_at: "2026-04-05T00:00:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 20000
+  discriminability: "easy"
+  reference_clarity: "synonym"
+items:
+  - item_id: "target_001"
+    inserted_text: "The Oak Hill address operated as a broker's meeting point for arranging peaceful exits from criminal enterprises."
+    file_path: "witnesses/detective_debrief.md"
+    line_range: [59, 62]
+    context_summary: "Inserted after discussion of Oak Hill safe house, establishing it as a transition point for negotiating departures."
+
+  - item_id: "target_002"
+    inserted_text: "Silas Gregg handled the financial arrangements for individuals seeking to vanish from the organization's reach."
+    file_path: "witnesses/detective_debrief.md"
+    line_range: [74, 76]
+    context_summary: "Added to money laundering section, identifying Gregg's role as financial facilitator for disappearances."
+
+  - item_id: "target_003"
+    inserted_text: "She paid her tab with deliberation, her hand trembling slightly—the gesture of someone delivering a message that would reshape a man's fate."
+    file_path: "witnesses/bartender_statement.md"
+    line_range: [27, 30]
+    context_summary: "Enhanced the moment when the redhead delivers news to the kid, emphasizing the pivotal nature of the message."
+
+  - item_id: "target_004"
+    inserted_text: "The white envelope contained instructions for the Starlight Motor Inn—coordinates for a man planning his disappearance."
+    file_path: "witnesses/bartender_statement.md"
+    line_range: [52, 55]
+    context_summary: "Inserted after envelope exchange, clarifying the envelope's role in enabling someone's removal."
+
+  - item_id: "target_005"
+    inserted_text: "A kidnapping meant Catherine had been removed from the city entirely—not just hidden, but transported across state lines where local authorities held no power."
+    file_path: "chapters/chapter_01.md"
+    line_range: [40, 43]
+    context_summary: "Added to kidnapping discussion, establishing Catherine's cross-state removal by abductors."
+
+  - item_id: "target_006"
+    inserted_text: "The green eyes and blonde hair made her an easy mark—a woman whose disappearance would attract the kind of attention that made people nervous."
+    file_path: "chapters/chapter_01.md"
+    line_range: [61, 64]
+    context_summary: "Inserted in notebook entry, linking Catherine's physical description to her vulnerability for removal."
+
+  - item_id: "target_007"
+    inserted_text: "Catherine's secret older suitor wielded the kind of power that enabled a woman to simply vanish from her family's life without warning or explanation."
+    file_path: "chapters/chapter_03.md"
+    line_range: [49, 52]
+    context_summary: "Added after Eleanor's description, establishing the boyfriend as a potential agent in Catherine's disappearance."
+
+  - item_id: "target_008"
+    inserted_text: "Walking alone at night on her own terms—a choice that would prove to be the decision that made her vanishable, vulnerable to anyone watching from the shadows."
+    file_path: "chapters/chapter_03.md"
+    line_range: [73, 75]
+    context_summary: "Inserted after Catherine's choice to walk home, highlighting how her autonomy set conditions for her removal."
+
+  - item_id: "target_009"
+    inserted_text: "David Chen's breakthrough came from a Sinclair employee—an intermediary who had seen too much and finally decided that exposure mattered more than loyalty to the organization handling disappearances."
+    file_path: "case_notes/day_05.md"
+    line_range: [42, 45]
+    context_summary: "Added to Chen's story section, identifying the whistleblower as someone with knowledge of removal operations."
+
+  - item_id: "target_010"
+    inserted_text: "Charles Sinclair's business card represented more than private consulting—it was a calling card for the man who made problems vanish permanently or made people disappear quietly."
+    file_path: "case_notes/day_05.md"
+    line_range: [60, 63]
+    context_summary: "Inserted after the business card discovery, clarifying Sinclair's dual role as facilitator of both murders and disappearances."
+
+  - item_id: "target_011"
+    inserted_text: "Margot possessed the skills to eliminate complications permanently, but her meeting with Harvey suggested she was equally adept at negotiating peaceful removals from active networks."
+    file_path: "witnesses/informant_interview.md"
+    line_range: [83, 86]
+    context_summary: "Added to Margot's description, establishing her as facilitator of both eliminations and orchestrated exits."
+
+  - item_id: "target_012"
+    inserted_text: "For Margot, the price of arranging someone's removal was always total—your money, your identity, your past, and your eternal silence about the arrangement."
+    file_path: "witnesses/informant_interview.md"
+    line_range: [98, 101]
+    context_summary: "Inserted in discussion of exit costs, specifying the totalizing nature of her role as removal broker."
+
+  - item_id: "target_013"
+    inserted_text: "The older man with white hair and cataloging eyes served as the liaison—the handler who facilitated contact between desperate men and the networks that could erase them from existence."
+    file_path: "witnesses/landlady_statement.md"
+    line_range: [49, 52]
+    context_summary: "Added to description of Harvey's visitor, identifying him as intermediary between Harvey and removal apparatus."
+
+  - item_id: "target_014"
+    inserted_text: "Harvey's mention of family on the day before his vanishing was not nostalgia but preparation—a way of acknowledging a life he was about to exit completely."
+    file_path: "witnesses/landlady_statement.md"
+    line_range: [64, 67]
+    context_summary: "Inserted after family comment, reframing his words as evidence of planned departure."
+
+  - item_id: "target_015"
+    inserted_text: "Robert Marchetti faced the impossible choice—compromise professional ethics to help a client vanish legitimately, or refuse and bear moral responsibility for the consequences that would follow."
+    file_path: "witnesses/secretary_statement.md"
+    line_range: [57, 60]
+    context_summary: "Added to Marchetti's ethical dilemma, establishing his role as legal facilitator of disappearance."
+
+  - item_id: "target_016"
+    inserted_text: "The abandoned Harbor Avenue building became the final location where removal operations were disposed of—where complications weren't just eliminated but hidden from investigation completely."
+    file_path: "case_notes/day_06.md"
+    line_range: [155, 158]
+    context_summary: "Inserted after Claire's body discovery, establishing the location as key facility in removal/disposal network."
+
+expected_answers:
+  question: "Identify all the key enablers, handlers, and brokers who facilitated the vanishing or removal of people from the city. For each intermediary, describe their specific function in enabling disappearances or eliminations."
+  correctness: "Answer must name at least 6 distinct facilitators: Margot (negotiation/orchestrated exit), Silas Gregg (financial arrangements), Charles Sinclair (permanent removal), Robert Marchetti (legal facilitation), the older white-haired man (liaison/handler), and David Chen's Sinclair employee whistleblower. Must identify their core functions in the removal apparatus."
+  completeness: "A complete answer accounts for all intermediaries across multiple domains: criminal (Margot, Gregg), corporate (Sinclair), legal (Marchetti), liaison (white-haired man), and informant (whistleblower). Must show how they collectively formed an operational network enabling people to vanish, be removed, or be eliminated. Must connect at least 3 specific people (Harvey, Catherine, Claire) to their respective intermediaries."
+
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+  - criterion: "completeness"
+    weight: 0.5

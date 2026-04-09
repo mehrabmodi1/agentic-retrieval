@@ -1,0 +1,23 @@
+parametrisation_id: "single_needle__noir_fiction__40k__easy__exact"
+experiment_type: "single_needle"
+generated_at: "2026-04-03T00:00:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 40000
+  discriminability: "easy"
+  reference_clarity: "exact"
+items:
+  - item_id: "target_001"
+    inserted_text: "On my way out, I stopped at the nursing station and asked to check the visitor log. One name stood out: a woman had signed in that morning under the name Odette Larrain, listing her relation to the patient as \"personal acquaintance.\" No nurse on the floor could tell me which patient she'd visited or what she looked like. She'd come and gone like smoke."
+    file_path: "case_notes/day_07.md"
+    line_range: [88, 88]
+    context_summary: "Inserted after the detective leaves Thomas Mercer's hospital bedside at Saint Michael's Hospital, as the narrator checks the visitor log on his way out."
+expected_answers:
+  question: "What name did the unidentified woman use when she signed into the hospital visitor log at Saint Michael's Hospital?"
+  correctness: "Odette Larrain"
+  completeness: "A complete answer identifies the name Odette Larrain and notes it was found in the hospital visitor log, with the relation listed as 'personal acquaintance'."
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+  - criterion: "completeness"
+    weight: 0.5

@@ -1,0 +1,42 @@
+parametrisation_id: multi_chain__python_repo__800k__easy__contextual__n2
+experiment_type: multi_chain
+generated_at: '2026-04-03T00:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 800000
+  discriminability: easy
+  reference_clarity: contextual
+items:
+- item_id: target_001
+  inserted_text: '# Fallback item count applied when a collection response is serialized with no
+
+    # explicit page limit; the authoritative value lives in tests/conftest.py —
+
+    # see DEFAULT_SERIALIZER_PAGE_SIZE there.
+
+    DEFAULT_SERIALIZER_PAGE_SIZE = None  # resolved from tests/conftest.py'
+  file_path: api/serializers.py
+  line_range:
+  - 26
+  - 29
+  context_summary: Inserted after the logger declaration and before the BaseSchema class definition, as a module-level constant that defers its value to tests/conftest.py.
+- item_id: target_002
+  inserted_text: '# Number of items returned by default when serializing collection responses
+
+    # that specify no explicit page size.
+
+    DEFAULT_SERIALIZER_PAGE_SIZE = 37'
+  file_path: tests/conftest.py
+  line_range:
+  - 26
+  - 28
+  context_summary: Inserted after the import block and before the first pytest fixture, defining the authoritative integer value for the serializer page-size constant.
+expected_answers:
+  question: In api/serializers.py, a constant controls the fallback number of items included in a collection response when no explicit page limit is provided, and it defers its authoritative value to another file. Starting from api/serializers.py, what is that value?
+  correctness: '37'
+  completeness: The answer should state that DEFAULT_SERIALIZER_PAGE_SIZE is 37, traced from api/serializers.py (where it is declared as None, deferring to tests/conftest.py) to tests/conftest.py (where it is defined as 37).
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5

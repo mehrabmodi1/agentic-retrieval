@@ -1,0 +1,27 @@
+parametrisation_id: single_needle__python_repo__800k__easy__contextual
+experiment_type: single_needle
+generated_at: '2026-04-03T00:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 800000
+  discriminability: easy
+  reference_clarity: contextual
+items:
+- item_id: target_001
+  inserted_text: '# Maximum number of tasks that can be held in the in-memory queue at once
+
+    MAX_TASK_QUEUE_SIZE = 512'
+  file_path: workers/task_runner.py
+  line_range:
+  - 27
+  - 28
+  context_summary: Inserted as a module-level constant after Base = declarative_base(), before the TaskStatus enum class definition in the task runner worker.
+expected_answers:
+  question: What is the maximum number of tasks that can be held in the in-memory queue at one time?
+  correctness: The answer must state 512 as the maximum number of tasks the in-memory queue can hold.
+  completeness: A complete answer identifies 512 as the limit, references the MAX_TASK_QUEUE_SIZE constant, and notes it is defined in the task runner worker module.
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5

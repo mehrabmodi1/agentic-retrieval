@@ -1,0 +1,38 @@
+parametrisation_id: "multi_reasoning__noir_fiction__20k__hard__contextual__n2"
+experiment_type: "multi_reasoning"
+generated_at: "2026-04-05T00:00:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 20000
+  discriminability: "hard"
+  reference_clarity: "contextual"
+items:
+  - item_id: "target_001"
+    inserted_text: |
+      The precision of the message struck me more than its brevity. Not a word wasted. And in the second phone call he'd mentioned—the one where the kidnapper asked about employees with account access—they'd used a phrase that stuck with me: "someone with access to your accounts." Not someone who worked in accounting. Not the comptroller. Just "access." Which meant whoever was orchestrating this understood that Halstead's business had multiple people capable of moving money, and they'd left the selection open. That kind of operational flexibility came from intelligence work, from knowing the target organization's structure intimately.
+    file_path: "chapters/chapter_02.md"
+    line_range: [36, 44]
+    context_summary: "Inserted after the kidnapper's letter to reveal professional operational knowledge of Halstead's business structure and internal organization."
+  - item_id: "target_002"
+    inserted_text: |
+      I leaned forward. "When did the acquisition inquiries start?"
+
+      "Three months ago, give or take. The first email came in mid-January, very polite, very formal. An initial offer that was thirty percent below market value. When I declined, they increased it by fifteen percent within a week."
+
+      Three months. Catherine had disappeared Tuesday night, which would have been late February. Which meant Meridian had been escalating their pressure during the entire period leading up to the kidnapping—timing their most aggressive offers for exactly when they knew they'd be making their personal play. It wasn't coincidence. It was orchestration.
+    file_path: "chapters/chapter_05.md"
+    line_range: [45, 55]
+    context_summary: "Inserted after Meridian Holdings is introduced to establish the temporal coordination between acquisition pressure and the kidnapping timeline."
+expected_answers:
+  question: "What evidence from the investigation indicates that Meridian Holdings orchestrated Catherine's kidnapping as part of a coordinated business acquisition strategy?"
+  correctness: |
+    A correct answer must identify that the kidnappers demonstrated professional, detailed knowledge of Halstead's internal business structure—specifically, they understood which employees had account access and deliberately left the selection open, suggesting intelligence work. Additionally, it must establish the timeline coordination: Meridian's acquisition inquiries began three months before the kidnapping, with increasingly aggressive offers that escalated precisely during the period leading up to Catherine's disappearance. The answer must explicitly connect these two pieces of evidence to conclude that the timing and operational sophistication indicate intentional coordination rather than separate, unrelated incidents.
+  completeness: |
+    A complete answer covers all four evidentiary elements: (1) the kidnapper's use of the vague phrase "someone with access" showing knowledge of organizational structure; (2) the implication that this knowledge came from intelligence work, not guesswork; (3) Meridian's three-month acquisition timeline beginning in January; (4) the deliberate escalation of offers that coincided with the kidnapping in late February. The answer should demonstrate understanding that both the professional sophistication of the kidnapping operation and the coordinated timing of the acquisition pressure are necessary to establish the conspiracy, and that neither piece alone is sufficient.
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+    description: "Answer identifies the operational knowledge evidence from chapter_02 and the timeline coordination evidence from chapter_05, and explicitly connects both to establish orchestration."
+  - criterion: "completeness"
+    weight: 0.5
+    description: "Answer includes all four evidentiary components and demonstrates that combining both needles reveals the conspiracy pattern."

@@ -1,0 +1,132 @@
+parametrisation_id: multi_reasoning__python_repo__40k__hard__synonym__n16
+experiment_type: multi_reasoning
+generated_at: '2026-04-05T00:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 40000
+  discriminability: hard
+  reference_clarity: synonym
+items:
+- item_id: target_001
+  inserted_text: 'pool_size=10  # DB_CONNECTION_POOL_SIZE'
+  file_path: tests/conftest.py
+  line_range:
+  - 259
+  - 260
+  context_summary: Database connection pool configuration embedded in SessionLocal factory within test fixture setup.
+- item_id: target_002
+  inserted_text: 'max_overflow=5  # DB_CONNECTION_TIMEOUT_SECONDS'
+  file_path: tests/conftest.py
+  line_range:
+  - 261
+  - 262
+  context_summary: Database overflow capacity setting alongside pool_size parameter in fixture.
+- item_id: target_003
+  inserted_text: 'max_attempts = 5  # AUTH_MAX_LOGIN_ATTEMPTS'
+  file_path: tests/test_auth.py
+  line_range:
+  - 32
+  - 33
+  context_summary: Maximum login attempts constant embedded in user registration test suite class.
+- item_id: target_004
+  inserted_text: 'timeout_ms = 300000  # REPORT_GENERATION_TIMEOUT_MILLISECONDS'
+  file_path: workers/report_generator.py
+  line_range:
+  - 139
+  - 140
+  context_summary: Report generation timeout configuration set before duration calculation in worker method.
+- item_id: target_005
+  inserted_text: 'max_file_size_bytes = 10485760  # REPORT_MAX_FILE_SIZE_BYTES'
+  file_path: workers/report_generator.py
+  line_range:
+  - 155
+  - 156
+  context_summary: Maximum report file size constraint logged with report metadata.
+- item_id: target_006
+  inserted_text: 'first_name_max_length = 100  # USER_FIELD_MAX_LENGTH'
+  file_path: api/serializers.py
+  line_range:
+  - 39
+  - 40
+  context_summary: Field validation max length for user name serialization in UserSerializer.
+- item_id: target_007
+  inserted_text: 'email_min_length = 5  # USER_EMAIL_MIN_LENGTH'
+  file_path: api/serializers.py
+  line_range:
+  - 36
+  - 37
+  context_summary: Email field minimum length constraint in UserSerializer validation.
+- item_id: target_008
+  inserted_text: 'DEFAULT_PAGE_SIZE = 50  # PAGINATION_DEFAULT_SIZE'
+  file_path: api/pagination.py
+  line_range:
+  - 328
+  - 329
+  context_summary: Default pagination items-per-page parameter used in response formatting.
+- item_id: target_009
+  inserted_text: 'title_max_length = 300  # TASK_TITLE_MAX_LENGTH'
+  file_path: api/validators.py
+  line_range:
+  - 349
+  - 350
+  context_summary: Task title field constraint validation embedded in task validation schema.
+- item_id: target_010
+  inserted_text: 'description_max_length = 5000  # TASK_DESCRIPTION_MAX_LENGTH'
+  file_path: api/validators.py
+  line_range:
+  - 356
+  - 357
+  context_summary: Task description maximum character limit validation in field validation logic.
+- item_id: target_011
+  inserted_text: 'initial_delay = 2  # RETRY_INITIAL_DELAY_SECONDS'
+  file_path: workers/retry_handler.py
+  line_range:
+  - 102
+  - 103
+  context_summary: Base delay configuration for retry backoff strategy calculation.
+- item_id: target_012
+  inserted_text: 'cache_ttl_seconds = 3600  # TASK_CACHE_TTL_SECONDS'
+  file_path: api/routes.py
+  line_range:
+  - 503
+  - 504
+  context_summary: Cache time-to-live value embedded in task retrieval endpoint logic.
+- item_id: target_013
+  inserted_text: 'max_error_detail_length = 500  # ERROR_MESSAGE_MAX_LENGTH'
+  file_path: api/error_handlers.py
+  line_range:
+  - 356
+  - 357
+  context_summary: Error response detail truncation limit configured in error utility function.
+- item_id: target_014
+  inserted_text: 'task_queue_timeout_seconds = 60  # WORKER_TASK_TIMEOUT_SECONDS'
+  file_path: tests/test_workers.py
+  line_range:
+  - 98
+  - 99
+  context_summary: Task queue processing timeout setting in data processing worker test.
+- item_id: target_015
+  inserted_text: 'session_timeout_seconds = 1800  # SESSION_TIMEOUT_SECONDS'
+  file_path: tests/test_db.py
+  line_range:
+  - 366
+  - 367
+  context_summary: Database session timeout configuration in relationship testing fixture.
+- item_id: target_016
+  inserted_text: 'max_filter_params = 20  # MAX_FILTER_PARAMETERS'
+  file_path: api/middleware.py
+  line_range:
+  - 294
+  - 295
+  context_summary: Maximum allowable filter parameters constraint in request middleware parsing.
+expected_answers:
+  question: Calculate the total sum of all configurable capacity, timeout, and size limits across the authentication, database, caching, task processing, and API validation systems. Include pool sizes, timeout values (in seconds), field length constraints, and processing limits, but exclude duration-based metrics like session timeouts. What is this aggregate value?
+  correctness: 'Must identify all 14 relevant numeric configuration values (excluding session_timeout and task_queue_timeout which are duration-based): 10 + 5 + 5 + 300 + 10485760 + 100 + 5 + 50 + 300 + 5000 + 2 + 3600 + 500 + 20 = 10,495,257. Explanation must trace through at least 8 different files/modules.'
+  completeness: 'A complete answer must: (1) locate all 14 configuration constants across the fragments, (2) distinguish between capacity/limit values vs. duration metrics, (3) show arithmetic calculation step-by-step, (4) reference the specific context where each value was found (fixture setup, serializer, validation, middleware, etc.), (5) justify why certain timeout values were excluded from the sum.'
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5
+- criterion: cross_file_reasoning
+  weight: 0.75

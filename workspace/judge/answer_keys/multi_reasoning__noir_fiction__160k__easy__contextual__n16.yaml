@@ -1,0 +1,98 @@
+parametrisation_id: "multi_reasoning__noir_fiction__160k__easy__contextual__n16"
+experiment_type: "multi_reasoning"
+generated_at: "2026-04-05T00:00:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 160000
+  discriminability: "easy"
+  reference_clarity: "contextual"
+items:
+  - item_id: "target_001"
+    inserted_text: "Charles Sinclair's bail hearing is set for November 11"
+    file_path: "case_notes/day_07.md"
+    line_range: [130, 135]
+    context_summary: "Identifies the full name of the antagonist - Charles Sinclair - in the context of legal proceedings."
+  - item_id: "target_002"
+    inserted_text: "North, toward her apartment on Oak Hill."
+    file_path: "chapters/chapter_03.md"
+    line_range: [48, 53]
+    context_summary: "Establishes Oak Hill residential district as Catherine's location and safe house location."
+  - item_id: "target_003"
+    inserted_text: "By noon I'm at the Regency Hotel on Fifth Street,"
+    file_path: "case_notes/day_01.md"
+    line_range: [42, 47]
+    context_summary: "Identifies the Regency Hotel location on Fifth Street where Claire met Sinclair."
+  - item_id: "target_004"
+    inserted_text: "I ask about Margaret's father. Dead twelve years from a heart attack, which meant Claire's father never knew about his daughter's fate."
+    file_path: "case_notes/day_02.md"
+    line_range: [34, 40]
+    context_summary: "Clarifies Margaret Hollister is Claire's mother and establishes her family background."
+  - item_id: "target_005"
+    inserted_text: "That kid was James Harvey. That's what I learned later. Never saw him again after that night."
+    file_path: "witnesses/bartender_statement.md"
+    line_range: [56, 61]
+    context_summary: "Identifies James Harvey as the young man who frequented the Crimson Door bar."
+  - item_id: "target_006"
+    inserted_text: "When they put the coffin in the crematory, Margaret stands very still. She doesn't cry. She just stands there and watches the body of Claire Hollister disappear into heat and ash."
+    file_path: "case_notes/day_08.md"
+    line_range: [70, 75]
+    context_summary: "Confirms Claire Hollister's death and connects victim to Margaret as mother."
+  - item_id: "target_007"
+    inserted_text: "Testimony from someone like James Harvey,"
+    file_path: "witnesses/informant_interview.md"
+    line_range: [90, 95]
+    context_summary: "Identifies James Harvey as a key informant who could dismantle the Kaslan operation."
+  - item_id: "target_008"
+    inserted_text: "By two p.m., I'm meeting journalist David Chen at a coffee shop far enough from downtown to not be obvious."
+    file_path: "case_notes/day_06.md"
+    line_range: [69, 74]
+    context_summary: "Introduces David Chen, a journalist involved in publishing the conspiracy story."
+  - item_id: "target_009"
+    inserted_text: "Maybe two weeks ago. Three at most. He called for a pickup from his apartment building in the residential district, and I drove him to Union Station downtown."
+    file_path: "witnesses/cab_driver_statement.md"
+    line_range: [48, 53]
+    context_summary: "Documents James Harvey's departure from the city via Union Station train."
+  - item_id: "target_010"
+    inserted_text: "I think James Harvey was involved in something—an art theft operation, I later learned—that he didn't want to be involved in."
+    file_path: "witnesses/neighbor_statement.md"
+    line_range: [42, 47]
+    context_summary: "Identifies James Harvey's involvement in art theft and his moral conflict about it."
+  - item_id: "target_011"
+    inserted_text: "Import-export. Primarily from South America and Europe. Textiles, some specialty goods—and money laundering through shell corporations."
+    file_path: "chapters/chapter_02.md"
+    line_range: [35, 40]
+    context_summary: "Reveals that import-export business is a front for money laundering operations."
+  - item_id: "target_012"
+    inserted_text: "Sinclair's voice, when he speaks, is very still. \"You have photographs of the Vesper painting and the money transfers, I assume.\""
+    file_path: "case_notes/day_05.md"
+    line_range: [140, 145]
+    context_summary: "Connects Sinclair to both the Vesper painting theft and financial crimes."
+  - item_id: "target_013"
+    inserted_text: "Margaret gives me a description that matches, word for word, the description of the man who's been visiting me in the night. Heavy-set, white hair, fifties—the man called Charles Sinclair."
+    file_path: "case_notes/day_04.md"
+    line_range: [73, 78]
+    context_summary: "Confirms Charles Sinclair's description and his connection to Margaret's money laundering."
+  - item_id: "target_014"
+    inserted_text: "Now, the redhead. We have multiple witnesses placing a young red-haired woman named Margot in connection with Harvey."
+    file_path: "witnesses/detective_debrief.md"
+    line_range: [45, 50]
+    context_summary: "Identifies Margot as the redhead and Kaslan's operative connected to James Harvey."
+  - item_id: "target_015"
+    inserted_text: "Eva adjusted her glasses, fastened with a delicate chain. She spoke of Mr. Harvey with the careful observation of someone who understood that Vincent Castellano's disappearance and James Harvey's departure were connected through grief and guilt."
+    file_path: "witnesses/landlady_statement.md"
+    line_range: [25, 30]
+    context_summary: "Connects James Harvey's departure to Vincent Castellano's disappearance through emotional understanding."
+  - item_id: "target_016"
+    inserted_text: "He said, 'Some people like Thomas Mercer's client James Harvey come to us expecting us to help them break the law legally."
+    file_path: "witnesses/secretary_statement.md"
+    line_range: [46, 51]
+    context_summary: "Identifies Thomas Mercer as Harvey's lawyer and links him to the conspiracy."
+expected_answers:
+  question: "Based on the complete investigation records, identify all the key individuals involved in the conspiracy, specify their roles and locations, establish the timeline of critical events, name the crimes committed, and explain the chain of evidence connecting Charles Sinclair to the murder of Claire Hollister and the larger criminal network."
+  correctness: "A correct answer must identify Charles Sinclair as the primary antagonist, Margaret Hollister as Claire's mother who laundered money, James Harvey as the art theft operative who sought escape, David Chen as the journalist, Margot as Kaslan's operative, Vincent Castellano as a connected victim, Thomas Mercer as lawyer, and must connect the Vesper painting theft to money laundering to the murder."
+  completeness: "A complete answer must include: (1) All 16 identified individuals and their specific roles in the conspiracy; (2) Key locations including the Regency Hotel on Fifth Street, Oak Hill residential district, Union Station, The Crimson Door bar, the Paradise nightclub on Seventh Street, and Starlight Motor Inn; (3) Timeline events including James Harvey's departure via train from Union Station, Charles Sinclair's bail hearing on November 11, Claire's disappearance and death, the recovery of the Vesper painting; (4) The three main crimes: art theft, money laundering through import-export, and Claire's murder; (5) How the evidence chain connects import-export shell corporations to Sinclair to the murder."
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+  - criterion: "completeness"
+    weight: 0.5

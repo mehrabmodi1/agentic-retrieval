@@ -1,0 +1,38 @@
+parametrisation_id: multi_chain__python_repo__20k__easy__exact__n2
+experiment_type: multi_chain
+generated_at: '2026-04-03T10:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 20000
+  discriminability: easy
+  reference_clarity: exact
+items:
+- item_id: target_001
+  inserted_text: '# Maximum rows returned in bulk fetch requests; mirrors BULK_FETCH_LIMIT in api/auth.py
+
+    from app.api.auth import BULK_FETCH_LIMIT
+
+    BULK_REQUEST_LIMIT = BULK_FETCH_LIMIT'
+  file_path: api/pagination.py
+  line_range:
+  - 20
+  - 22
+  context_summary: Inserted after the module-level logger definition, before the PaginationMetadata class in api/pagination.py, establishing BULK_REQUEST_LIMIT as a reference to BULK_FETCH_LIMIT from api/auth.py.
+- item_id: target_002
+  inserted_text: '# Maximum number of rows allowed in bulk fetch operations
+
+    BULK_FETCH_LIMIT = 250'
+  file_path: api/auth.py
+  line_range:
+  - 27
+  - 28
+  context_summary: Inserted after the module-level logger definition, before the AuthenticationError class in api/auth.py, defining the BULK_FETCH_LIMIT constant as 250.
+expected_answers:
+  question: In api/pagination.py, BULK_REQUEST_LIMIT is assigned the value of BULK_FETCH_LIMIT imported from api/auth.py. What is the value of BULK_FETCH_LIMIT?
+  correctness: The correct answer is 250.
+  completeness: A complete answer identifies BULK_REQUEST_LIMIT in api/pagination.md which delegates to BULK_FETCH_LIMIT in api/auth.md, and reports that BULK_FETCH_LIMIT = 250.
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5

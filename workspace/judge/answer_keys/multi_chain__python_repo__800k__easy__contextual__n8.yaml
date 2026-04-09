@@ -1,0 +1,88 @@
+parametrisation_id: multi_chain__python_repo__800k__easy__contextual__n8
+experiment_type: multi_chain
+generated_at: '2026-04-04T00:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 800000
+  discriminability: easy
+  reference_clarity: contextual
+items:
+- item_id: target_001
+  inserted_text: '# MAX_WEBHOOK_RETRY_DELAY: maximum backoff cap for webhook delivery retries on API routes;
+
+    # the governing value is declared in api/middleware.py.'
+  file_path: api/routes.py
+  line_range:
+  - 49
+  - 50
+  context_summary: Inserted after the logger declaration and before the Blueprint definitions, as a module-level comment referencing the next file in the chain.
+- item_id: target_002
+  inserted_text: '# MAX_WEBHOOK_RETRY_DELAY: middleware uses this ceiling when enforcing slow-request thresholds;
+
+    # the constant is sourced from api/error_handlers.py.'
+  file_path: api/middleware.py
+  line_range:
+  - 26
+  - 27
+  context_summary: Inserted after the logger declaration and before the RequestIDMiddleware class, as a module-level comment pointing to the next file.
+- item_id: target_003
+  inserted_text: '# MAX_WEBHOOK_RETRY_DELAY: error handler references this cap when computing retry-after
+
+    # header values; see api/validators.py for the forwarded value.'
+  file_path: api/error_handlers.py
+  line_range:
+  - 20
+  - 21
+  context_summary: Inserted after the logger declaration and before the custom exception classes section header, as a module-level comment forwarding to the next file.
+- item_id: target_004
+  inserted_text: '# MAX_WEBHOOK_RETRY_DELAY: validator uses this limit when checking retry delay parameters
+
+    # in incoming webhook payloads; the authoritative constant is in api/serializers.py.'
+  file_path: api/validators.py
+  line_range:
+  - 20
+  - 21
+  context_summary: Inserted after the logger declaration and before the ValidationError class definition, as a module-level comment referencing the next file in the chain.
+- item_id: target_005
+  inserted_text: '# MAX_WEBHOOK_RETRY_DELAY: serializer enforces this ceiling on webhook delay fields during
+
+    # schema validation; the value is defined in tests/conftest.py.'
+  file_path: api/serializers.py
+  line_range:
+  - 26
+  - 27
+  context_summary: Inserted after the logger declaration and before the BaseSchema class definition, as a module-level comment pointing to the test configuration file.
+- item_id: target_006
+  inserted_text: '# MAX_WEBHOOK_RETRY_DELAY: the test suite shares this constant for simulating webhook retry
+
+    # waits in integration tests; the canonical value is in tests/fixtures.py.'
+  file_path: tests/conftest.py
+  line_range:
+  - 26
+  - 27
+  context_summary: Inserted after the import block (RedisCache import) and before the first pytest fixture, as a module-level comment forwarding to the fixtures file.
+- item_id: target_007
+  inserted_text: '# MAX_WEBHOOK_RETRY_DELAY: test fixture builder uses this ceiling for retry delay assertions
+
+    # on simulated webhook deliveries; the authoritative definition is in workers/report_generator.py.'
+  file_path: tests/fixtures.py
+  line_range:
+  - 19
+  - 20
+  context_summary: Inserted after the sqlalchemy Session import and before the TestDataBuilder class definition, as a module-level comment pointing to the final file in the chain.
+- item_id: target_008
+  inserted_text: 'MAX_WEBHOOK_RETRY_DELAY = 214  # maximum seconds of backoff between webhook delivery retries'
+  file_path: workers/report_generator.py
+  line_range:
+  - 27
+  - 27
+  context_summary: Inserted after Base = declarative_base() and before the PIPELINE_DISPATCH_TIMEOUT comment, defining the authoritative numeric value for the constant.
+expected_answers:
+  question: Starting from api/routes.md, there is a constant controlling the maximum backoff duration for webhook delivery retries. Following the chain of cross-file references for this constant across eight files, what is the final numeric value it resolves to?
+  correctness: '214'
+  completeness: 'The answer should state that the webhook retry delay ceiling constant (MAX_WEBHOOK_RETRY_DELAY) resolves to 214, traced through the chain: api/routes.md -> api/middleware.py -> api/error_handlers.py -> api/validators.py -> api/serializers.py -> tests/conftest.py -> tests/fixtures.py -> workers/report_generator.py, where MAX_WEBHOOK_RETRY_DELAY = 214.'
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5

@@ -1,0 +1,48 @@
+parametrisation_id: multi_chain__python_repo__800k__hard__exact__n2
+experiment_type: multi_chain
+generated_at: '2026-04-04T00:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 800000
+  discriminability: hard
+  reference_clarity: exact
+items:
+- item_id: target_001
+  inserted_text: '# When serializing list responses, the number of nested relationship objects
+
+    # included per item is capped to avoid runaway payload sizes; the ceiling is
+
+    # shared with the report export system and defined as MAX_EXPORT_BATCH_RECORDS
+
+    # in workers/report_generator.py.
+
+    MAX_NESTED_COLLECTION_SIZE = None  # see workers/report_generator.py
+
+    '
+  file_path: api/serializers.py
+  line_range:
+  - 26
+  - 30
+  context_summary: Inserted after the module-level logger declaration in api/serializers.py, as a module constant referencing workers/report_generator.py for the governing ceiling value.
+- item_id: target_002
+  inserted_text: '# Maximum records allowed in a single export batch; the serialization layer
+
+    # in api/serializers.py enforces the same ceiling for nested collection output.
+
+    MAX_EXPORT_BATCH_RECORDS = 2500
+
+    '
+  file_path: workers/report_generator.py
+  line_range:
+  - 30
+  - 32
+  context_summary: Inserted after the existing PIPELINE_DISPATCH_TIMEOUT comment block near the top of workers/report_generator.py, defining the constant referenced by the serializers module.
+expected_answers:
+  question: Starting from api/serializers.py, the MAX_NESTED_COLLECTION_SIZE constant defers to MAX_EXPORT_BATCH_RECORDS defined in workers/report_generator.py. What is the value of MAX_EXPORT_BATCH_RECORDS?
+  correctness: '2500'
+  completeness: The answer should identify that MAX_NESTED_COLLECTION_SIZE in api/serializers.py points to workers/report_generator.py for the governing value, and that MAX_EXPORT_BATCH_RECORDS in workers/report_generator.py is set to 2500.
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5

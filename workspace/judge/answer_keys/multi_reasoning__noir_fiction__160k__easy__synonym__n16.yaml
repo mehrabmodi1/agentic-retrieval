@@ -1,0 +1,117 @@
+parametrisation_id: "multi_reasoning__noir_fiction__160k__easy__synonym__n16"
+experiment_type: "multi_reasoning"
+generated_at: "2026-04-06T00:00:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 160000
+  discriminability: "easy"
+  reference_clarity: "synonym"
+items:
+  - item_id: "target_001"
+    inserted_text: "But I can tell you this much: the organization operates under the name Meridian Holdings when it needs to move money through legitimate channels."
+    file_path: "case_notes/day_04.md"
+    line_range: [108, 109]
+    context_summary: "Identifies Meridian Holdings as the overarching criminal organization above Sinclair and Ashford."
+
+  - item_id: "target_002"
+    inserted_text: "We've identified her as Margot Delacroix, and she has a documented history of facilitating extractions for high-value targets."
+    file_path: "witnesses/detective_debrief.md"
+    line_range: [90, 91]
+    context_summary: "Names Margot Delacroix as Kaslan's preferred agent for sensitive extractions and target assists."
+
+  - item_id: "target_003"
+    inserted_text: "We've been tracking a man named Silas Gregg who appears to be an executive-level operator—the kind who handles delicate assignments directly for whoever controls the whole apparatus."
+    file_path: "case_notes/day_02.md"
+    line_range: [116, 117]
+    context_summary: "Identifies Silas Gregg as executive-level facilitator between command and street operations."
+
+  - item_id: "target_004"
+    inserted_text: "The key to their operation is the false-provenance system—they acquire stolen pieces and create fabricated documentation that makes them appear to be legitimate estate sales or private transfers."
+    file_path: "witnesses/informant_interview.md"
+    line_range: [18, 19]
+    context_summary: "Explains Kaslan's specific methodology for moving stolen artwork through legitimate markets."
+
+  - item_id: "target_005"
+    inserted_text: "The Castellano family operation—gambling, protection, some drug distribution—was small-time compared to Meridian Holdings, but they had access to street-level intelligence that made them useful. Claire's death demonstrated that Meridian Holdings viewed the family as expendable once they had become a liability."
+    file_path: "case_notes/day_03.md"
+    line_range: [70, 74]
+    context_summary: "Shows how Meridian Holdings used Castellano family and eliminated them when they became liabilities."
+
+  - item_id: "target_006"
+    inserted_text: "And Halstead's real estate development business, it turned out, was the perfect vehicle for Meridian Holdings to move laundered money—property transfers with inflated valuations, cash payments disguised as legitimate acquisitions."
+    file_path: "chapters/chapter_02.md"
+    line_range: [41, 42]
+    context_summary: "Reveals Halstead's direct role as primary money laundering facilitator through real estate."
+
+  - item_id: "target_007"
+    inserted_text: "The shell corporations—Sinclair Imports, Ashford Ventures, and three others we haven't fully mapped—form a deliberately opaque network where money enters as legitimate goods and emerges from shell accounts as investment capital."
+    file_path: "case_notes/day_06.md"
+    line_range: [52, 53]
+    context_summary: "Details the shell corporation infrastructure used to layer and obscure criminal proceeds."
+
+  - item_id: "target_008"
+    inserted_text: "Harbor Road turned out to be the primary distribution hub where artwork from the Kaslan network was temporarily stored before international shipment through legitimate freight channels."
+    file_path: "witnesses/cab_driver_statement.md"
+    line_range: [54, 55]
+    context_summary: "Identifies Harbor Road warehouse as Kaslan's primary logistics and distribution center."
+
+  - item_id: "target_009"
+    inserted_text: "The evidence suggested that Catherine Halstead's kidnapping was leverage specifically designed to keep Richard Halstead cooperative in his role as the primary real estate facilitator for money laundering through property acquisitions and transfers."
+    file_path: "chapters/chapter_05.md"
+    line_range: [97, 98]
+    context_summary: "Establishes that Catherine's kidnapping was operational leverage against Halstead's cooperation."
+
+  - item_id: "target_010"
+    inserted_text: "The ledger documented approximately thirty-seven transactions over eighteen months, each involving inflated valuations that allowed Meridian Holdings to layer illegal proceeds through legitimate real estate deals—the core mechanism of their entire operation."
+    file_path: "case_notes/day_07.md"
+    line_range: [16, 17]
+    context_summary: "Quantifies and describes the October 15th ledger as the evidentiary backbone of Meridian's operation."
+
+  - item_id: "target_011"
+    inserted_text: "Later investigation identified the older man as Silas Gregg, who operated as an intermediary between Meridian Holdings' command structure and street-level facilitators like Harvey, delivering both instructions and offers of protection for continued loyalty."
+    file_path: "witnesses/bartender_statement.md"
+    line_range: [42, 43]
+    context_summary: "Confirms Silas Gregg's role as handler maintaining control over operatives like Harvey."
+
+  - item_id: "target_012"
+    inserted_text: "Her mystery lover, \"H,\" was later identified as Harvey, the shipping facilitator for the Kaslan art distribution network who had grown a conscience about moving paintings stolen from the widow of Carl Vesper, a murdered banker."
+    file_path: "chapters/chapter_04.md"
+    line_range: [33, 34]
+    context_summary: "Identifies Harvey as both Catherine's lover and reveals his role in Kaslan's operation."
+
+  - item_id: "target_013"
+    inserted_text: "Harvey's decision to become a cooperating witness against the entire Kaslan-Meridian Holdings conspiracy originated from his moral crisis over the Vesper painting—the realization that he was facilitating the theft from a widow connected to an unsolved murder case."
+    file_path: "case_notes/day_08.md"
+    line_range: [104, 105]
+    context_summary: "Explains Harvey's specific motivation for cooperation and exit from the criminal network."
+
+  - item_id: "target_014"
+    inserted_text: "Delgado also mentioned that Halstead's legal counsel, Thomas Mercer, had been involved in structuring the real estate transactions that formed the backbone of the money laundering operation—though Mercer likely operated without fully understanding the criminal nature of what he was facilitating."
+    file_path: "chapters/chapter_01.md"
+    line_range: [21, 22]
+    context_summary: "Identifies Mercer's structural role in facilitating property-based money laundering."
+
+  - item_id: "target_015"
+    inserted_text: "That first meeting established the legal framework for Harvey's cooperation with federal authorities—witness protection, immunity negotiations, and the transfer of evidence documentation that would become the October 15th ledger."
+    file_path: "witnesses/secretary_statement.md"
+    line_range: [24, 25]
+    context_summary: "Details Marchetti's legal facilitation of Harvey's cooperation and evidence transfer."
+
+  - item_id: "target_016"
+    inserted_text: "The redheaded woman—Margot—who visited him multiple times represented the extraction network that eventually helped Harvey disappear from the city with his identity protected and his evidence secured in the hands of federal prosecutors."
+    file_path: "witnesses/neighbor_statement.md"
+    line_range: [78, 79]
+    context_summary: "Confirms Margot's role as extraction facilitator enabling Harvey's safe departure."
+
+expected_answers:
+  question: "Reconstruct the complete criminal infrastructure by identifying: 1) The overarching criminal organization and its corporate front, 2) The operational network tiers and their key facilitators, 3) The specific methodologies used for money laundering and asset theft, 4) The physical infrastructure and distribution hubs, 5) The leverage mechanisms used for control, 6) The evidence documentation that exposed the conspiracy, and 7) The exit mechanisms employed by cooperating witnesses."
+
+  correctness: "A correct answer must identify: (1) Meridian Holdings as the apex organization, (2) Sinclair as field operator, Silas Gregg as intermediary handler, (3) Kaslan operation using false-provenance system for art theft and distribution, (4) Halstead's real estate business as primary money laundering mechanism through inflated valuations, (5) Shell corporation network (Sinclair Imports, Ashford Ventures, and others) for layering proceeds, (6) Harbor Road warehouse as primary distribution hub, (7) Catherine Halstead's kidnapping as leverage against Halstead's cooperation, (8) October 15th ledger documenting 37 transactions as evidentiary cornerstone, (9) Harvey as Kaslan facilitator motivated to exit due to moral crisis over Vesper painting, (10) Margot Delacroix as extraction facilitator, (11) Marchetti's legal framework for cooperation and witness protection, (12) Silas Gregg's intermediary role between command and operatives."
+
+  completeness: "A complete answer covers: all three operational tiers (Meridian Holdings corporate apex → Sinclair/Ashford field operators → Harvey/Margot street facilitators), both criminogenic systems (money laundering through real estate + art theft through Kaslan), the control mechanisms (kidnapping of Catherine, financial leverage through Mercer), the exposure evidence (October 15th ledger with 37 documented transactions), and the exit methodology (Margot's extraction network enabling Harvey's safe departure with evidence). The answer should demonstrate that all 16 pieces are necessary to reconstruct the complete operational structure and understand the hierarchy, methodologies, infrastructure, and coordination mechanisms."
+
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+  - criterion: "completeness"
+    weight: 0.5

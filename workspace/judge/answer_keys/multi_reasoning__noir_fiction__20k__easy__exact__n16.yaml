@@ -1,0 +1,125 @@
+parametrisation_id: "multi_reasoning__noir_fiction__20k__easy__exact__n16"
+experiment_type: "multi_reasoning"
+generated_at: "2026-04-05T00:00:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 20000
+  discriminability: "easy"
+  reference_clarity: "exact"
+
+items:
+  - item_id: "target_001"
+    inserted_text: "The recovery of the Kaslan painting three days before Harvey's disappearance was the turning point—it signaled his commitment to resolve his debts with the organization before departure."
+    file_path: "witnesses/detective_debrief.md"
+    line_range: [47, 47]
+    context_summary: "Inserted into discussion of Harvey's exit strategy and the painting's significance as a negotiation token."
+
+  - item_id: "target_002"
+    inserted_text: "She noted Harvey had paid extra to change his locks one hundred days prior, indicating escalating security concerns."
+    file_path: "witnesses/detective_debrief.md"
+    line_range: [59, 59]
+    context_summary: "Inserted into landlady's statement about Harvey's apartment security measures."
+
+  - item_id: "target_003"
+    inserted_text: "Victor Ashford controlled most of the city's import business through the harbor, but he was merely the visible component of a larger operation run by someone even more powerful and hidden from public scrutiny."
+    file_path: "case_notes/day_04.md"
+    line_range: [37, 37]
+    context_summary: "Inserted into Paulie's revelation about Ashford's true position in the hierarchy."
+
+  - item_id: "target_004"
+    inserted_text: "Sinclair served as Victor Ashford's financial advisor and direct representative, managing the flow of laundered money through shell companies connected to harbor-district properties."
+    file_path: "case_notes/day_04.md"
+    line_range: [56, 56]
+    context_summary: "Inserted into investigator's notes about Sinclair's role in the organization."
+
+  - item_id: "target_005"
+    inserted_text: "The autopsy showed Claire Hollister was strangled with a synthetic ligature, possibly a scarf or rope, but the forensic evidence alone could not definitively establish Sinclair's presence at her death."
+    file_path: "case_notes/day_08.md"
+    line_range: [21, 21]
+    context_summary: "Inserted into DA's discussion of forensic limitations in the murder case."
+
+  - item_id: "target_006"
+    inserted_text: "Ashford is going to testify about his involvement in the money laundering operation and explain how money moved through shell companies via P.O. box addresses, but his knowledge of Claire Hollister's murder was nonexistent, as he had never visited the warehouse where she was killed."
+    file_path: "case_notes/day_08.md"
+    line_range: [35, 35]
+    context_summary: "Inserted into discussion of Ashford's cooperation and the limits of his knowledge."
+
+  - item_id: "target_007"
+    inserted_text: "Vincent Castellano brought Claire Hollister to the Paradise nightclub and introduced her to his father, Carmine Castellano, setting in motion the events that would lead to her murder."
+    file_path: "case_notes/day_03.md"
+    line_range: [4, 4]
+    context_summary: "Inserted into bartender's account of how Claire met the Castellano family."
+
+  - item_id: "target_008"
+    inserted_text: "Carmine Castellano recognized something in Claire Hollister that made her valuable or dangerous enough to justify her elimination, and the well-dressed visitor represented the force authorized to carry out that decision."
+    file_path: "case_notes/day_03.md"
+    line_range: [36, 36]
+    context_summary: "Inserted into explanation of why Claire was targeted and by whom."
+
+  - item_id: "target_009"
+    inserted_text: "Mr. Halstead's wealth and position made Catherine an attractive target for kidnapping, a leverage point against a man with the resources to pay but without police protection due to his reluctance to involve law enforcement."
+    file_path: "chapters/chapter_01.md"
+    line_range: [34, 34]
+    context_summary: "Inserted into analysis of why Catherine was chosen as a kidnapping victim."
+
+  - item_id: "target_010"
+    inserted_text: "The kidnappers' communication protocol—no police involvement, maintain normalcy, await further contact—indicated a professional operation designed to maximize psychological control and minimize interference from law enforcement during negotiations for her release."
+    file_path: "chapters/chapter_01.md"
+    line_range: [53, 53]
+    context_summary: "Inserted into explanation of the sophistication of the kidnapping operation."
+
+  - item_id: "target_011"
+    inserted_text: "Harvey's nightly pacing demonstrated the psychological toll of his entanglement with the criminal organization and his internal conflict regarding his potential betrayal of the Kaslan operation's interests."
+    file_path: "witnesses/landlady_statement.md"
+    line_range: [28, 28]
+    context_summary: "Inserted into landlady's observation of Harvey's mental state and internal struggle."
+
+  - item_id: "target_012"
+    inserted_text: "The visitor to Harvey's apartment appeared to be a senior operative delivering instructions or documentation critical to Harvey's plan to exit the criminal network, a meeting that likely established the terms of his departure."
+    file_path: "witnesses/landlady_statement.md"
+    line_range: [60, 60]
+    context_summary: "Inserted into landlady's account of the mysterious visitor's significance."
+
+  - item_id: "target_013"
+    inserted_text: "Harvey's psychological state revealed a man trapped between loyalty to the criminal enterprise and his desperate desire for escape, a tension that manifested as constant anxiety and hypervigilance."
+    file_path: "witnesses/cab_driver_statement.md"
+    line_range: [14, 14]
+    context_summary: "Inserted into cab driver's assessment of Harvey's internal state during rides."
+
+  - item_id: "target_014"
+    inserted_text: "The Oak Hill address served as a secure location for the Kaslan organization's sensitive business operations, and the meeting between Harvey and the senior operative appeared to mark a critical juncture in Harvey's exit negotiations."
+    file_path: "witnesses/cab_driver_statement.md"
+    line_range: [42, 42]
+    context_summary: "Inserted into cab driver's account of the Oak Hill meeting's significance."
+
+  - item_id: "target_015"
+    inserted_text: "Claire Hollister likely learned or witnessed something that made her a liability to the criminal enterprise, triggering a decision at the highest organizational levels to eliminate her and prevent information leakage."
+    file_path: "case_notes/day_02.md"
+    line_range: [29, 29]
+    context_summary: "Inserted into investigator's analysis of why Claire was targeted."
+
+  - item_id: "target_016"
+    inserted_text: "The visitor's calm certainty and implicit threats indicated he represented the organization's enforcement apparatus—individuals authorized to ensure silence and prevent investigation into matters deemed sensitive by the criminal hierarchy."
+    file_path: "case_notes/day_02.md"
+    line_range: [45, 45]
+    context_summary: "Inserted into interpretation of the threatening visitor's role and authority."
+
+expected_answers:
+  question: "Based on all documents, identify the complete organizational structure, the key incidents involving three victims (Harvey, Claire Hollister, and Catherine Halstead), the roles of Victor Ashford and Charles Sinclair, the significance of the Kaslan painting and Oak Hill address, and explain what each victim's situation reveals about the criminal enterprise's operations, security concerns, and elimination protocols."
+
+  correctness: "A correct answer must accurately identify: (1) Victor Ashford as the visible harbor-import magnate; (2) Charles Sinclair as Ashford's financial advisor managing money laundering; (3) A hidden superior organization above Ashford; (4) Harvey's exit strategy involving painting recovery and negotiation; (5) Claire Hollister's elimination due to liability; (6) Catherine Halstead's kidnapping as leverage against her wealthy father; (7) The Oak Hill address as a secure operational location; (8) Professional kidnapping protocols; (9) Forensic limitations in proving Sinclair's guilt; (10) Ashford's testimony regarding money laundering but not murder."
+
+  completeness: "A complete answer must cover all three victims and their distinct situations, explain the hierarchical structure of the criminal organization, identify both Ashford and Sinclair's specific roles, reference the painting and Oak Hill address as operational elements, connect the money laundering operation to harbor-district real estate, and discuss how each incident (exit negotiation, elimination for liability, kidnapping for leverage) reveals different aspects of how the organization operates and protects itself from investigation."
+
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+    description: "All factual details must be accurate and directly supported by evidence from the corpus."
+
+  - criterion: "completeness"
+    weight: 0.5
+    description: "Answer must synthesize information across all 16 items to form coherent understanding of organization, operations, and all three cases."
+
+  - criterion: "integration"
+    weight: 0.3
+    description: "Must connect details from multiple documents to show how individual items form complete picture."

@@ -1,0 +1,67 @@
+parametrisation_id: "multi_chain__noir_fiction__800k__easy__contextual__n8"
+experiment_type: "multi_chain"
+generated_at: "2026-04-06T00:00:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 800000
+  discriminability: "easy"
+  reference_clarity: "contextual"
+items:
+  - item_id: "target_001"
+    inserted_text: "There's something else. The man who made contact mentioned that the person coordinating her capture used intermediaries. A cab driver who goes by Jerry—he's part of the chain. Find out where Jerry has been taking people, and you'll find the next piece."
+    file_path: "chapters/chapter_01.md"
+    line_range: [21, 23]
+    context_summary: "Halstead reveals that Jerry the cab driver is part of the operational chain coordinating Catherine's kidnapping."
+
+  - item_id: "target_002"
+    inserted_text: "Before that last ride, though, he kept referencing something—'the landlady knows about the key.' He said the woman who owned his apartment building would have information about where he needed to go next, something about a registry she'd heard him mention."
+    file_path: "witnesses/cab_driver_statement.md"
+    line_range: [55, 58]
+    context_summary: "Jerry mentions that Harvey referenced his landlady Eva as having information about a registry and a key for his next destination."
+
+  - item_id: "target_003"
+    inserted_text: "Before he left, he told me if anyone asked, to direct them to speak with his attorney. He said the attorney who helped him, Mr. Marchetti, would have the documents—the Starlight Registry—locked in his office safe. That was the insurance, he said. The proof that couldn't disappear."
+    file_path: "witnesses/landlady_statement.md"
+    line_range: [25, 28]
+    context_summary: "Eva reveals that Harvey instructed her to direct investigators to his attorney Marchetti, who holds the Starlight Registry documents in his office safe."
+
+  - item_id: "target_004"
+    inserted_text: "After the final meeting, Mr. Marchetti spoke to me only once about the matter. He said, \"Dorothy, if Mr. Harvey ever asks for his files, if anyone ever inquires about him, you tell them to speak with the bartender at The Crimson Door. His name is Deke. Deke will know where Harvey's insurance is hidden, because the redhead—the woman named Margot—made sure Deke knew exactly what insurance Mr. Harvey had arranged.\""
+    file_path: "witnesses/secretary_statement.md"
+    line_range: [27, 30]
+    context_summary: "Dorothy reveals Marchetti's instruction to direct inquiries to Deke at The Crimson Door, indicating that Margot coordinated with Deke about Harvey's insurance."
+
+  - item_id: "target_005"
+    inserted_text: "Deke paused. \"The woman—Margot—she left something with me. An instruction, basically. She said if anyone ever came asking about the kid, I was to tell them to contact an informant called Victor. Victor would explain the real details about the Kaslan operation and the painting—the fifteenth-century painting stolen from Carl Vesper's widow. She said Victor worked with the police already and would provide testimony about the entire network.\""
+    file_path: "witnesses/bartender_statement.md"
+    line_range: [38, 41]
+    context_summary: "Deke reveals that Margot instructed him to direct inquiries to Victor, who holds information about Kaslan and the stolen Vesper painting."
+
+  - item_id: "target_006"
+    inserted_text: "What matters now is knowing that Charles Sinclair—the man who operates the Kaslan distribution system—he warehouses everything on Dock Street. That's where the stolen merchandise waits before being shipped out of the city. The painting, if it's still in active operation, would be there. And anything Sinclair wants to keep hidden would be in the back office of that facility."
+    file_path: "witnesses/informant_interview.md"
+    line_range: [28, 31]
+    context_summary: "Victor reveals that Sinclair operates the Kaslan system from a warehouse on Dock Street, where stolen merchandise and evidence are stored in the back office."
+
+  - item_id: "target_007"
+    inserted_text: "I finally find what I'm looking for in an old newspaper article from three years ago. A story about a shipping magnate named Victor Ashford. Ashford supposedly controls most of the import business coming into the city, though the article is careful to note that this is merely alleged.\n\nBut the article mentions someone working with Ashford: a man named Charles Sinclair, described as Ashford's \"financial advisor and representative.\"\n\nThat's the name. Charles Sinclair. The same name on the car registration. The same man who's been visiting me and threatening me and moving girls into warehouses. The article also includes a business address—a warehouse facility on Dock Street in the harbor district. That's where Sinclair operates his real business, the article hints. And if Harvey's evidence exists anywhere, if the painting was brought somewhere for storage or evaluation, that warehouse would be the logical location. Everything points to Dock Street."
+    file_path: "case_notes/day_04.md"
+    line_range: [88, 93]
+    context_summary: "The detective confirms Sinclair's Dock Street warehouse address from newspaper records, identifying it as the operational location for the entire network."
+
+  - item_id: "target_008"
+    inserted_text: "The inside of the warehouse is what you'd expect: rows of crates, the smell of import and possibility, the sense of a place designed to move things across borders without too many questions. I know the back office contains the records—transaction logs, payment documentation, shipment manifests, and storage inventories. The climate-controlled room holds the merchandise: the fifteenth-century painting from the Vesper estate, other stolen antiquities, all the evidence of Kaslan's operations waiting to be distributed internationally."
+    file_path: "case_notes/day_05.md"
+    line_range: [113, 115]
+    context_summary: "Final location: the Dock Street warehouse back office and climate-controlled storage room containing the stolen Vesper painting and evidence of Kaslan operations."
+
+expected_answers:
+  question: "Starting from the cab driver named Jerry mentioned in chapter_01.md, follow the chain of contacts through each person who knows where to find the next piece of information. What location and what evidence does this trail ultimately lead to?"
+  correctness: "The correct answer must identify the final location as the Dock Street warehouse and specify that it contains the climate-controlled storage room with the stolen fifteenth-century Vesper painting and the back office with transaction records and operational evidence."
+  completeness: "A complete answer must trace the full chain: Halstead → Jerry → Eva (landlady) → Marchetti → Deke → Margot → Victor → Sinclair's Dock Street warehouse, and identify both the final location and the types of evidence stored there."
+
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+  - criterion: "completeness"
+    weight: 0.5

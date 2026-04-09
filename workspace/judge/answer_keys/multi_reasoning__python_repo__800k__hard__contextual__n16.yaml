@@ -1,0 +1,162 @@
+parametrisation_id: multi_reasoning__python_repo__800k__hard__contextual__n16
+experiment_type: multi_reasoning
+generated_at: '2026-04-06T00:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 800000
+  discriminability: hard
+  reference_clarity: contextual
+items:
+- item_id: target_001
+  inserted_text: 'max_retry_limit: 5'
+  file_path: workers/email_worker.py
+  line_range:
+  - 288
+  - 288
+  context_summary: Email worker metrics returns maximum 5 retry attempts for failed messages
+- item_id: target_002
+  inserted_text: assert tasks.send_email.default_retry_delay == 2
+  file_path: tests/test_workers.py
+  line_range:
+  - 213
+  - 214
+  context_summary: Task retry configuration specifies 2-second base delay for exponential backoff
+- item_id: target_003
+  inserted_text: JWT token-based authentication (expires in 86400 seconds)
+  file_path: api/__init__.py
+  line_range:
+  - 23
+  - 23
+  context_summary: API features documentation mentions 86400-second (24-hour) token expiration window
+- item_id: target_004
+  inserted_text: self.production_rate = 10
+  file_path: workers/sync_worker.py
+  line_range:
+  - 290
+  - 290
+  context_summary: Rate limiter production configuration set to 10 requests per second
+- item_id: target_005
+  inserted_text: jitter = delay * 0.1 * random.random()
+  file_path: workers/retry_handler.py
+  line_range:
+  - 132
+  - 132
+  context_summary: Retry handler applies 10% random jitter to backoff delays for thundering herd prevention
+- item_id: target_006
+  inserted_text: self.params['per_page'] = min(limit, 100)
+  file_path: tests/fixtures.py
+  line_range:
+  - 355
+  - 357
+  context_summary: Test fixtures enforce maximum 100 items per page limit in pagination setup
+- item_id: target_007
+  inserted_text: Cleanup runs daily (1440 minutes) to remove old files and database records
+  file_path: workers/cleanup_worker.py
+  line_range:
+  - 247
+  - 250
+  context_summary: Cleanup worker documentation specifies 1440-minute (24-hour) daily cleanup frequency
+- item_id: target_008
+  inserted_text: 'if per_page > 100: per_page = 100'
+  file_path: api/pagination.py
+  line_range:
+  - 284
+  - 285
+  context_summary: Pagination validation enforces 100-item maximum per page to prevent abuse
+- item_id: target_009
+  inserted_text: 'retention_days: int = 30'
+  file_path: workers/report_generator.py
+  line_range:
+  - 338
+  - 338
+  context_summary: Report logging function includes 30-day retention parameter for report archival
+- item_id: target_010
+  inserted_text: UNAUTHORIZED = 401
+  file_path: api/error_handlers.py
+  line_range:
+  - 27
+  - 28
+  context_summary: APIError class defines 401 status code constant for authentication failures
+- item_id: target_011
+  inserted_text: Audit logs are retained for 90 days before automatic cleanup
+  file_path: tests/conftest.py
+  line_range:
+  - 206
+  - 209
+  context_summary: Test fixture documentation specifies 90-day retention window for audit log entries
+- item_id: target_012
+  inserted_text: CompressionMiddleware(app, compression_level=6, min_size=1024)
+  file_path: api/middleware.py
+  line_range:
+  - 264
+  - 264
+  context_summary: Compression middleware configured with level 6 and 1024-byte minimum threshold
+- item_id: target_013
+  inserted_text: Default window is 3600 seconds (1 hour) for rate limit tracking
+  file_path: api/rate_limiting.py
+  line_range:
+  - 181
+  - 182
+  context_summary: Rate limiting decorator documentation specifies 3600-second default window period
+- item_id: target_014
+  inserted_text: SESSION_TIMEOUT_MINUTES = 60
+  file_path: api/auth.py
+  line_range:
+  - 393
+  - 394
+  context_summary: SessionManager class defines 60-minute session timeout for user inactivity
+- item_id: target_015
+  inserted_text: Test deleting a task within timeout of 30 seconds
+  file_path: tests/test_api.py
+  line_range:
+  - 155
+  - 155
+  context_summary: API test documents 30-second timeout requirement for task deletion operations
+- item_id: target_016
+  inserted_text: batch_query_limit = 1000
+  file_path: tests/test_db.py
+  line_range:
+  - 329
+  - 329
+  context_summary: Audit log test specifies 1000-record batch limit to prevent memory issues during queries
+expected_answers:
+  question: 'Analyze the system''s task retry mechanism in the context of production constraints.
+
+    Given that the system processes email tasks with a maximum of 5 retry attempts using exponential backoff
+
+    with a 2-second base delay and 10% jitter applied, a rate limiter capped at 10 requests per second,
+
+    pagination limited to 100 items per page, session timeouts of 60 minutes, task execution timeouts of
+
+    30 seconds, daily cleanup cycles of 1440 minutes, and JWT tokens expiring every 86400 seconds:
+
+
+    What is the theoretical maximum cumulative delay in seconds across all retry attempts for a single
+
+    failed task, accounting for exponential backoff but excluding jitter randomness? Also explain how
+
+    this maximum delay compares to the task execution timeout constraint and the session timeout window,
+
+    then identify which system configuration parameters (rate limiting, pagination, cleanup frequency,
+
+    retention windows) would need coordination to prevent cascading failures when retrying failed operations
+
+    at the rate limiter''s maximum throughput.
+
+    '
+  correctness: "A correct answer must:\n1. Calculate exponential backoff delays: 2^1=2, 2^2=4, 2^3=8, 2^4=16, 2^5=32 seconds per attempt\n2. Sum delays (excluding attempt 0): 2 + 4 + 8 + 16 + 32 = 62 seconds maximum\n3. Verify this fits within the 30-second task timeout (noting the conflict)\n4. Compare against 60-minute (3600-second) session timeout window\n5. Note the rate limiter allows 10 requests/second = 100 requests per 10-second window\n6. Identify pagination (100 items) and batch limits (1000 records) as relevant to query scaling\n7. Recognize that 90-day audit retention + 30-day report retention + daily 1440-minute cleanup\n   create a maintenance schedule that must not block retry operations\n8. Note that 401 unauthorized status code requires token validation against 24-hour expiration window\n"
+  completeness: "A complete answer covers:\n- The specific exponential backoff formula and calculated delays for all 5 retry attempts\n- The mathematical sum of cumulative delay (62 seconds without jitter)\n- Comparison of this delay to the 30-second task execution timeout (identifying a constraint violation)\n- Analysis of how the 60-minute session timeout provides a broader window\n- The rate limiter's throughput (10 req/sec) and its implications for retry queue processing\n- The interaction between pagination limits (100 items) and batch query limits (1000 records)\n- The maintenance windows (daily cleanup at 1440 minutes) and retention periods (90 days audit, 30 days reports)\n- Token expiration (86400 seconds) and its interaction with session timeout (3600 seconds)\n- Identification of which parameters constrain each other (compression threshold 1024 bytes affects payload size,\n  which affects pagination effectiveness)\n- Recommendations for coordinating these parameters to prevent\
+    \ cascading failures\n"
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+  description: Mathematical accuracy of backoff calculations and identification of constraint violations
+- criterion: completeness
+  weight: 0.5
+  description: Coverage of all 16 configuration parameters and their system-wide interactions
+- criterion: reasoning
+  weight: 0.75
+  description: Quality of synthesis showing how parameters constrain and interact with each other
+- criterion: constraint_identification
+  weight: 0.6
+  description: Recognition of conflicts (e.g., 62-second retry delay vs. 30-second timeout) and coordination needs

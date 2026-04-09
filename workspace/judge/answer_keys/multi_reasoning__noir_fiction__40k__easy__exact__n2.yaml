@@ -1,0 +1,28 @@
+parametrisation_id: "multi_reasoning__noir_fiction__40k__easy__exact__n2"
+experiment_type: "multi_reasoning"
+generated_at: "2026-04-05T00:00:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 40000
+  discriminability: "easy"
+  reference_clarity: "exact"
+items:
+  - item_id: "target_001"
+    inserted_text: "Her company, Hallmark Properties, listed buildings at deliberately inflated prices, allowing the Castellanos to convert raw cash into documented real estate transactions across three states."
+    file_path: "case_notes/day_03.md"
+    line_range: [27, 28]
+    context_summary: "Inserted immediately after establishing Margaret's role in the Castellano family money laundering operation, specifying her company's mechanism for asset conversion."
+  - item_id: "target_002"
+    inserted_text: "The Castellano family groomed him since childhood to manage operations in the territories they're expanding into. Mexico was supposed to be his first independent posting as a junior operations manager."
+    file_path: "case_notes/day_05.md"
+    line_range: [182, 183]
+    context_summary: "Inserted during the interrogation scene where Sinclair reveals Vincent's planned role, connecting Vincent's escape to his designated position in the organization's hierarchy."
+expected_answers:
+  question: "How did Margaret's Hallmark Properties facilitate the Castellano family's money laundering, and what was Vincent Castellano's planned role in the organization?"
+  correctness: "A correct answer must identify (1) Hallmark Properties' use of deliberately inflated real estate prices to convert cash into documented transactions across three states, AND (2) Vincent's role as a groomed junior operations manager assigned to manage territorial expansion operations in Mexico."
+  completeness: "A complete answer covers both the mechanism of the money laundering operation (inflated property prices creating paper trails) and Vincent's specific position as a pre-planned manager of expansion territories, demonstrating how the two components work together in the criminal enterprise."
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+  - criterion: "completeness"
+    weight: 0.5

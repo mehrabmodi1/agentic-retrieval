@@ -1,0 +1,132 @@
+parametrisation_id: multi_chain__noir_fiction__160k__hard__synonym__n16
+experiment_type: multi_chain
+generated_at: '2026-04-05T00:00:00Z'
+parameters:
+  content_profile: noir_fiction
+  corpus_token_count: 160000
+  discriminability: hard
+  reference_clarity: synonym
+items:
+- item_id: target_001
+  inserted_text: The warehouse building address stuck with me—Harbor Road. The old man had mentioned it specifically, said the vehicle he arrived in was registered somewhere. I found out later that someone had run a license plate check with a man named Eddie. That would be the first real lead in understanding who was actually directing operations.
+  file_path: witnesses/cab_driver_statement.md
+  line_range:
+  - 50
+  - 56
+  context_summary: Inserted at end of cab driver's statement, providing pointer to Eddie's vehicle registration lookup that leads to discovering Sinclair Holdings Limited.
+- item_id: target_002
+  inserted_text: This ghost of a man had left something concrete behind—a business card—which Patricia found at the hospital when the injured kid was brought in. That card would become physical evidence of Sinclair's existence, even if Sinclair himself seemed to exist only in records.
+  file_path: case_notes/day_04.md
+  line_range:
+  - 19
+  - 24
+  context_summary: Added after Eddie's confirmation that Sinclair exists only on paper, pointing to the physical business card as evidence.
+- item_id: target_003
+  inserted_text: Sinclair's name appears everywhere—in the vehicle registration, on this card—yet nobody can find him. Mercer, the lawyer, would later refuse to tell me anything about who Sinclair really is. That refusal itself was an answer.
+  file_path: case_notes/day_05.md
+  line_range:
+  - 62
+  - 66
+  context_summary: Appended to Patricia's business card discovery, establishing the connection to Mercer's refusal and Sinclair's mysterious identity.
+- item_id: target_004
+  inserted_text: But Mercer's fear and silence told me enough. Sinclair was someone so powerful that even a lawyer couldn't speak his name aloud without fear. The truth about Sinclair lay in understanding the Kaslan operation—the art theft network that Harvey had been involved with, which distributed stolen goods through channels nobody could trace.
+  file_path: case_notes/day_03.md
+  line_range:
+  - 110
+  - 115
+  context_summary: Expanded Mercer's refusal to speak, directing investigation toward the Kaslan art theft network.
+- item_id: target_005
+  inserted_text: That was the question—what made Harvey try to leave the network? The bartender had seen a mysterious redheaded woman hand Harvey what looked like a critical message, something that drained the color from his face.
+  file_path: witnesses/informant_interview.md
+  line_range:
+  - 23
+  - 27
+  context_summary: Inserted after explaining Harvey's role in Kaslan, pointing to the bartender's witness account of the redheaded woman.
+- item_id: target_006
+  inserted_text: The redhead knew him too," Deke said. "Or at least she knew something about him. Catherine Halstead—that was the girl's name, the one who came with the older man—she seemed to be connected to the kid somehow. They'd met before, I'm sure of it. The way her hand lingered on his spoke of shared history.
+  file_path: witnesses/bartender_statement.md
+  line_range:
+  - 37
+  - 42
+  context_summary: Expanded bartender's testimony to establish Catherine Halstead's connection to Harvey/the kid, pointing to Catherine's journal.
+- item_id: target_007
+  inserted_text: The pages that followed were blank, but I understood. Catherine Halstead was not just a victim of a random kidnapping. She was connected to someone inside the criminal network—someone who had wanted to get out, just like Harvey. Her disappearance was no accident. It was leverage, a way to keep H in line. The note in the kidnapping package—"Don't call the police"—made sense only if the kidnappers wanted H to remain silent.
+  file_path: chapters/chapter_04.md
+  line_range:
+  - 35
+  - 43
+  context_summary: Added after Catherine's final journal entry about her breakup with H, connecting her kidnapping to leverage and the police warning.
+- item_id: target_008
+  inserted_text: The ransom didn't ask for money. That meant they wanted something else—compliance, silence, or leverage over someone. Halstead himself was involved in business dealings that required "paying off city officials," suggesting he was part of the same system that took his daughter. There was a hierarchy above the Castellano family, Halstead had mentioned. And Catherine's kidnapping was meant to control someone inside that hierarchy.
+  file_path: chapters/chapter_01.md
+  line_range:
+  - 43
+  - 49
+  context_summary: Expanded after the initial kidnapping analysis, connecting the ransom to leverage and the hierarchy Halstead mentioned.
+- item_id: target_009
+  inserted_text: He hesitated, and I realized that question had more weight than he wanted to admit. "Real estate," he said. "Development, mostly. Large projects that require coordination with city officials, with planning boards, with people who have the authority to approve or deny projects worth millions of dollars." In other words, his business required him to operate at the interface between legitimate money and the kind of money that didn't ask questions. And Catherine being taken meant someone wanted to ensure he remained cooperative, that he continued to funnel what needed to be funneled. The hierarchy above the Castellano family wasn't just a rumor—it was a system where men like Halstead, and lawyers like Mercer, and facilitators like Harvey, all played their assigned roles.
+  file_path: chapters/chapter_02.md
+  line_range:
+  - 37
+  - 51
+  context_summary: Inserted after Catherine description, revealing Halstead's real estate business and its connection to the criminal hierarchy system.
+- item_id: target_010
+  inserted_text: 'But I would later learn that Catherine''s secret boyfriend—"H" from her journal—was exactly the kind of person the city''s machinery used and discarded. He was a facilitator like Harvey, someone with access to shipping networks and dock facilities. He had met Catherine and wanted out. Her kidnapping was the mechanism used to keep him from leaving, to keep him obedient to Sinclair. But there was another layer to this investigation: the detective debrief sessions that consolidated what we knew about the network''s structure.'
+  file_path: chapters/chapter_03.md
+  line_range:
+  - 37
+  - 45
+  context_summary: Expanded the secret boyfriend revelation, connecting it to Harvey and pointing toward the detective debrief consolidation.
+- item_id: target_011
+  inserted_text: Unless she was telling him something his superiors wanted him to know. Someone like Silas Gregg doesn't operate independently—there's always someone above him giving orders. Gregg was the enforcer, the handler who ensured compliance. But who was Gregg working for? That's where we find whoever is actually running things.
+  file_path: witnesses/detective_debrief.md
+  line_range:
+  - 42
+  - 47
+  context_summary: Added after Margot's role discussion, pointing upward from Gregg to the true power structure above him.
+- item_id: target_012
+  inserted_text: There was the man. The one I mentioned. He came several times, maybe four times in the last few months. Always between eight and midnight. Always took the stairs, never the elevator—like he didn't want to be seen. The boy, he was clearly afraid of this man, but he also seemed to respect him. Like the man represented something important, someone important. That man was definitely connected to whatever was eating the boy from inside. That man represented the people above the local criminals, the ones with real power. And when the boy finally left, he left because that man told him to leave, or allowed him to leave, or arranged for his leaving.
+  file_path: witnesses/landlady_statement.md
+  line_range:
+  - 24
+  - 32
+  context_summary: Inserted to establish the landlady's observation of the mysterious white-haired man as representative of higher authority.
+- item_id: target_013
+  inserted_text: 'That man was definitely Sinclair. And Sinclair takes orders from someone above him. The thing that troubles me most: if Claire is gone with someone important enough to disappear the Castellano family''s golden boy, then she''s either extremely valuable or extremely dangerous. Or maybe both. But the real question isn''t who took her. It''s who told Sinclair to take her. There''s a whole level of the city''s machinery that operates above Sinclair, above the Castellano family, above all the visible criminal infrastructure. That''s what I need to find.'
+  file_path: case_notes/day_02.md
+  line_range:
+  - 141
+  - 152
+  context_summary: Modified list to identify Sinclair and expanded analysis to emphasize the hierarchy above him.
+- item_id: target_014
+  inserted_text: The man who signed himself as Whitmore is Sinclair—I'll confirm this later. But Sinclair's presence at the Regency Hotel, his careful observation of exits and hallways, all of it suggests he was following orders from someone. He took Claire and Vincent somewhere north, toward the financial district. There was a company headquarters somewhere in that direction—Meridian Holdings. And Meridian Holdings had people willing to pay fifty thousand dollars for information about police investigations.
+  file_path: case_notes/day_01.md
+  line_range:
+  - 54
+  - 60
+  context_summary: Expanded cologne detail to identify the man as Sinclair and point toward Meridian Holdings as the next level of authority.
+- item_id: target_015
+  inserted_text: 'But before she left, I understood something crucial: she wasn''t running things either. Diana Harrow was like Sinclair—a tool of Meridian Holdings. And Meridian Holdings answered to someone. The investigation had reached its final destination: understanding the mechanics of the city''s machinery itself, the way it crushed people and reconstructed society according to rules nobody could see.'
+  file_path: chapters/chapter_05.md
+  line_range:
+  - 91
+  - 98
+  context_summary: Inserted after declining Diana's job offer, establishing that Meridian Holdings itself answers to unseen powers.
+- item_id: target_016
+  inserted_text: 'The investigation has shown me that Sinclair answers to Meridian Holdings, which answers to people whose names I''ll never know. The city isn''t run by the Castellano family or even by Sinclair. It''s run by something much larger—a machinery of corporate entities, hidden ownership structures registered in Delaware, boards of directors that exist only on paper, and people like Diana Harrow who carry out orders while keeping their own identities concealed. That is the final truth: the real power in the city operates through layers of indirection. Sinclair was just the visible face. The true answer to who controls the city is nobody. The machinery runs itself.'
+  file_path: case_notes/day_08.md
+  line_range:
+  - 156
+  - 172
+  context_summary: Final revelation appended to case notes, resolving the chain by identifying the impersonal machinery as the true power structure.
+expected_answers:
+  question: Starting from the cab driver's account of dropping off the kid at a warehouse district building, follow the chain of evidence about who is actually directing the criminal operations in the city. What does the investigation ultimately reveal about the true nature of power and control in the city?
+  correctness: A correct answer must identify that the investigation traces from Sinclair → Meridian Holdings → an impersonal machinery of corporate entities and hidden structures. It must recognize that no single person or family runs the city, but rather it operates through layers of indirection and hidden ownership.
+  completeness: 'A complete answer should: (1) identify that Sinclair is taking orders from above; (2) recognize Meridian Holdings as one level of this structure; (3) conclude that the real power operates through hidden corporate structures registered in Delaware and exists only on paper; (4) understand that the city''s power structure is impersonal and self-sustaining rather than controlled by identifiable individuals.'
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+  description: Answer correctly identifies the machinery/impersonal system as the resolution
+- criterion: completeness
+  weight: 0.5
+  description: Answer traces multiple levels of hierarchy and recognizes the hidden corporate structure

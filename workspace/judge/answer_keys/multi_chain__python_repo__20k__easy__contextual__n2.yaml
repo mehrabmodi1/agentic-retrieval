@@ -1,0 +1,34 @@
+parametrisation_id: multi_chain__python_repo__20k__easy__contextual__n2
+experiment_type: multi_chain
+generated_at: '2026-04-03T00:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 20000
+  discriminability: easy
+  reference_clarity: contextual
+items:
+- item_id: target_001
+  inserted_text: '# Premium subscriber rate limit window is governed by PREMIUM_RATE_WINDOW_SECONDS
+
+    # defined in workers/email_worker.py; reference it during initialization for consistency.'
+  file_path: api/rate_limiting.py
+  line_range:
+  - 26
+  - 27
+  context_summary: Inserted as a module-level comment just after the logger declaration, before the RateLimitError class definition, pointing to the constant in the email worker module.
+- item_id: target_002
+  inserted_text: 'PREMIUM_RATE_WINDOW_SECONDS = 86400  # 24-hour rolling window applied to premium subscriber accounts'
+  file_path: workers/email_worker.py
+  line_range:
+  - 21
+  - 21
+  context_summary: Inserted as a module-level constant just after the logger declaration and before the Base declarative_base() call in the email worker module.
+expected_answers:
+  question: The rate limiting module contains a comment referencing a time window constant that governs premium subscriber accounts, defined in the email worker. What is the numeric value of that constant?
+  correctness: '86400'
+  completeness: The answer should state 86400 (seconds), which represents a 24-hour rolling window. A complete answer may also note the constant name PREMIUM_RATE_WINDOW_SECONDS and that it lives in workers/email_worker.py.
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5

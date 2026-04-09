@@ -1,0 +1,84 @@
+parametrisation_id: multi_reasoning__python_repo__160k__easy__contextual__n8
+experiment_type: multi_reasoning
+generated_at: '2026-04-05T00:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 160000
+  discriminability: easy
+  reference_clarity: contextual
+items:
+- item_id: target_001
+  inserted_text: STALE_RECORD_THRESHOLD_DAYS = 45
+  file_path: workers/email_worker.py
+  line_range:
+  - 27
+  - 28
+  context_summary: Email worker defines record staleness threshold for data lifecycle management.
+- item_id: target_002
+  inserted_text: self.log_retention_days = log_retention_days
+  file_path: workers/cleanup_worker.py
+  line_range:
+  - 60
+  - 61
+  context_summary: Cleanup worker constructor stores log retention period configuration.
+- item_id: target_003
+  inserted_text: self.temp_file_retention_days = temp_file_retention_days
+  file_path: workers/cleanup_worker.py
+  line_range:
+  - 61
+  - 62
+  context_summary: Cleanup worker tracks temporary file retention period in days.
+- item_id: target_004
+  inserted_text: self.report_file_retention_days = report_file_retention_days
+  file_path: workers/cleanup_worker.py
+  line_range:
+  - 62
+  - 63
+  context_summary: Cleanup worker maintains report file retention threshold for archival.
+- item_id: target_005
+  inserted_text: '# SYNC_DATA_RETENTION_DAYS: synchronized records older than 14 days are automatically purged
+
+    SYNC_DATA_RETENTION_DAYS = 14'
+  file_path: workers/sync_worker.py
+  line_range:
+  - 149
+  - 151
+  context_summary: Sync worker defines retention period for synchronized data records.
+- item_id: target_006
+  inserted_text: '# TASK_HISTORY_RETENTION_DAYS: historical task executions retained for 21 days
+
+    TASK_HISTORY_RETENTION_DAYS = 21'
+  file_path: workers/task_runner.py
+  line_range:
+  - 225
+  - 227
+  context_summary: Task runner establishes retention window for execution history tracking.
+- item_id: target_007
+  inserted_text: '# ARCHIVED_PROJECT_RETENTION_DAYS: archived projects are retained for 5 days before final deletion
+
+    ARCHIVED_PROJECT_RETENTION_DAYS = 5'
+  file_path: api/routes.py
+  line_range:
+  - 381
+  - 383
+  context_summary: Project routes define grace period for archived project deletion.
+- item_id: target_008
+  inserted_text: '# AUDIT_LOG_RETENTION_DAYS: audit logs maintained for 3 days for compliance and debugging
+
+    AUDIT_LOG_RETENTION_DAYS = 3'
+  file_path: tests/test_workers.py
+  line_range:
+  - 315
+  - 317
+  context_summary: Worker tests document audit log retention requirement for system compliance.
+expected_answers:
+  question: What is the total maximum retention period in days across all system data lifecycle management settings, considering the email record staleness threshold, log retention window, temporary file cleanup period, report file archival retention, synchronized data retention, task history preservation period, archived project grace period, and audit log retention requirement?
+  correctness: 'The answer must correctly identify all eight retention period values: 45 (email records), 90 (logs), 7 (temp files), 30 (reports), 14 (sync data), 21 (task history), 5 (archived projects), and 3 (audit logs), then sum them to 215 days.'
+  completeness: A complete answer must locate all eight distinct retention thresholds across different worker modules and API routes, recognize they all represent data lifecycle retention periods (despite being scattered across the codebase), and correctly aggregate them into a single total.
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+  description: All eight values correctly identified and summed to 215 days
+- criterion: completeness
+  weight: 0.5
+  description: All eight needles found; none omitted from final calculation

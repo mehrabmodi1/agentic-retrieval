@@ -1,0 +1,98 @@
+parametrisation_id: "multi_chain__noir_fiction__20k__easy__contextual__n16"
+experiment_type: "multi_chain"
+generated_at: "2026-04-05T00:00:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 20000
+  discriminability: "easy"
+  reference_clarity: "contextual"
+items:
+  - item_id: "target_001"
+    inserted_text: "Her file should be in my records—cross-reference with Tuesday's entry about the secretary who went missing from the office."
+    file_path: "chapters/chapter_01.md"
+    line_range: [210, 215]
+    context_summary: "Inserted as Halstead's comment about finding information on the missing secretary Claire, pointing toward day_01.md"
+  - item_id: "target_002"
+    inserted_text: "She had been asking questions about the Regency Hotel, about who really owned it and who stayed there. Thomas Mercer knew, and that knowledge is what got her disappeared—look to the case notes from Tuesday."
+    file_path: "case_notes/day_01.md"
+    line_range: [120, 125]
+    context_summary: "Inserted revealing Claire's investigation pointing forward to day_03.md details"
+  - item_id: "target_003"
+    inserted_text: "The girl Claire was asking about—the one Thomas Mercer wanted kept quiet—was brought to the Paradise for a reason. She caught someone's eye, someone important."
+    file_path: "case_notes/day_03.md"
+    line_range: [95, 100]
+    context_summary: "Inserted connecting the murdered girl to the Paradise club, pointing to chapter_04.md"
+  - item_id: "target_004"
+    inserted_text: "Catherine's meetings with H at restaurants was how she learned about the family's business interests—the kind of business that required discretion and made people disappear."
+    file_path: "chapters/chapter_04.md"
+    line_range: [190, 195]
+    context_summary: "Inserted revealing Catherine's knowledge of dangerous business, directing to witness accounts"
+  - item_id: "target_005"
+    inserted_text: "Eleanor couldn't know it yet, but the boy next door—Harvey—was the one who had made the arrangements. He was extracting himself from the Kaslan organization, and that extraction was being monitored."
+    file_path: "witnesses/neighbor_statement.md"
+    line_range: [255, 260]
+    context_summary: "Inserted connecting the neighbor's observations to Harvey specifically, pointing to detective_debrief.md"
+  - item_id: "target_006"
+    inserted_text: "Harvey's attempted exit required him to consult with someone—a man with federal connections, someone who could broker a disappearance and guarantee silence. Thomas Mercer was that intermediary."
+    file_path: "witnesses/detective_debrief.md"
+    line_range: [185, 190]
+    context_summary: "Inserted revealing Mercer's role in Harvey's arrangement, pointing back to legal documentation"
+  - item_id: "target_007"
+    inserted_text: "The landlady had seen the white-haired man—the one Eva described as moving with the precision of someone from dangerous places. That man's name wasn't in any official record, but he answered directly to someone higher."
+    file_path: "witnesses/landlady_statement.md"
+    line_range: [255, 260]
+    context_summary: "Inserted identifying the mysterious visitor as representing the true power, pointing toward final resolution"
+  - item_id: "target_008"
+    inserted_text: "By the time Sinclair took the fall, the real orchestrator had already moved funds and connections beyond reach. The white-haired man—the one who visited Harvey, the one who brokered Mercer's involvement—he was the architect."
+    file_path: "case_notes/day_08.md"
+    line_range: [220, 225]
+    context_summary: "Inserted revealing the true conspirator was the intermediary figure, the white-haired man from the landlady's account"
+  - item_id: "target_009"
+    inserted_text: "The woman who visited the boy—Catherine perhaps, or someone like her—she represented redemption that Mercer could never actually offer because he was already compromised by the same organization."
+    file_path: "witnesses/neighbor_statement.md"
+    line_range: [145, 150]
+    context_summary: "Second insertion in neighbor_statement connecting Eleanor's theory to Mercer's corruption"
+  - item_id: "target_010"
+    inserted_text: "Carmine Castellano's mistake was letting Sinclair see Claire at the Paradise. Sinclair reported what he saw—a girl asking questions—and that set the entire sequence of eliminations in motion."
+    file_path: "case_notes/day_03.md"
+    line_range: [145, 150]
+    context_summary: "Second insertion in day_03.md explaining the causation chain"
+  - item_id: "target_011"
+    inserted_text: "The diary entries showed Catherine was aware of H's business troubles but not the extent. She knew enough to be dangerous, which is why H tried to isolate her—not from love, but from necessity."
+    file_path: "chapters/chapter_04.md"
+    line_range: [280, 285]
+    context_summary: "Second insertion in chapter_04.md clarifying H's motivations"
+  - item_id: "target_012"
+    inserted_text: "Thomas Mercer's law practice specialized in exactly this sort of extraction—arranging clean exits for organization members who wanted out. He knew everyone's leverage points because he'd handled their divorces, their property disputes, their quiet arrangements."
+    file_path: "case_notes/day_01.md"
+    line_range: [195, 200]
+    context_summary: "Second insertion in day_01.md revealing Mercer's professional specialty"
+  - item_id: "target_013"
+    inserted_text: "The man Eva described—the one with the silver hair and the catalogue-precise way of observing everything—bore all the marks of someone who had spent his career in foreign intelligence operations. He was the man above Sinclair."
+    file_path: "witnesses/landlady_statement.md"
+    line_range: [340, 345]
+    context_summary: "Second insertion in landlady_statement identifying the true power structure"
+  - item_id: "target_014"
+    inserted_text: "Harvey's closeness to the investigation, his knowledge of how the merchandise moved and where it went—this made him invaluable to the federal case. The white-haired man ensured he disappeared before he could testify against anyone that mattered."
+    file_path: "witnesses/detective_debrief.md"
+    line_range: [265, 270]
+    context_summary: "Second insertion in detective_debrief explaining Harvey's strategic disappearance"
+  - item_id: "target_015"
+    inserted_text: "Sinclair's conviction satisfied the public need for justice, but the man who had orchestrated everything—who had used Mercer as a tool, Sinclair as a public face, and Harvey as a convenient loose end—that man remained untouched and unknown."
+    file_path: "case_notes/day_08.md"
+    line_range: [290, 295]
+    context_summary: "Second insertion in day_08.md confirming the true architect's escape"
+  - item_id: "target_016"
+    inserted_text: "The white-haired man never appeared in the trial transcript. His name was never recorded in any statement. He was the ghost behind Sinclair, and his identity remained the only mystery the city could not solve."
+    file_path: "chapters/chapter_01.md"
+    line_range: [385, 390]
+    context_summary: "Second insertion in chapter_01.md providing final answer to the chain"
+expected_answers:
+  question: "Starting from the neighbor's observations in witness_statement.md, follow the trail of the white-haired visitor's connections. Who was he ultimately working for, and did he face justice?"
+  correctness: "The answer must identify the white-haired man as the true orchestrator operating above Sinclair, note his intelligence background and methods of compartmentalization, and confirm he remained unprosecuted and vanished from record."
+  completeness: "A complete answer connects: neighbor's theory → Harvey's extraction → landlady's observations of the visitor → detective notes on Mercer's role → day_08 revelation that Sinclair was the public face while the white-haired man was the architect. Must explain how the conspiracy operated through intermediaries and why the true leader escaped justice."
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+  - criterion: "completeness"
+    weight: 0.5

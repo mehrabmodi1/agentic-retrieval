@@ -1,0 +1,100 @@
+parametrisation_id: "multi_reasoning__noir_fiction__160k__easy__exact__n16"
+experiment_type: "multi_reasoning"
+generated_at: "2026-04-05T00:00:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 160000
+  discriminability: "easy"
+  reference_clarity: "exact"
+items:
+  - item_id: "target_001"
+    inserted_text: "The girl's name was Claire Hollister, and Vincent Castellano knew her death was his failure to prevent it."
+    file_path: "case_notes/day_02.md"
+    line_range: [112, 113]
+    context_summary: "Establishes Claire Hollister as the victim and Vincent's knowledge of her death while discussing the Castellano family crisis."
+  - item_id: "target_002"
+    inserted_text: "He's willing to testify that Charles Sinclair personally ordered the removal of the girl, knowing it will probably get him killed faster."
+    file_path: "case_notes/day_06.md"
+    line_range: [112, 113]
+    context_summary: "Identifies Sinclair as the person who ordered Claire's elimination and establishes Mercer as the key witness."
+  - item_id: "target_003"
+    inserted_text: "She ran the Paradise, where Carmine Castellano first saw Claire Hollister and decided she had to die."
+    file_path: "case_notes/day_03.md"
+    line_range: [58, 59]
+    context_summary: "Reveals Sylvia's role as Paradise owner and where Carmine first encountered Claire, setting in motion her death sentence."
+  - item_id: "target_004"
+    inserted_text: "Webb was investigating Catherine Halstead's disappearance alongside Detective Chen, who worked the harder angles of the case."
+    file_path: "chapters/chapter_04.md"
+    line_range: [43, 44]
+    context_summary: "Identifies Detective Webb and Detective Chen as investigators on interconnected cases."
+  - item_id: "target_005"
+    inserted_text: "James Harvey had finally escaped the Kaslan operation, fleeing before Silas Gregg could find him."
+    file_path: "witnesses/cab_driver_statement.md"
+    line_range: [58, 59]
+    context_summary: "Identifies Harvey and Gregg, and establishes Harvey's successful escape from Kaslan's organization."
+  - item_id: "target_006"
+    inserted_text: "Sinclair wielded power that came from above the Castellano family—from Kaslan's organization itself."
+    file_path: "case_notes/day_05.md"
+    line_range: [114, 115]
+    context_summary: "Establishes Sinclair's connection to and subordination to Kaslan's higher-level criminal organization."
+  - item_id: "target_007"
+    inserted_text: "She had watched James Harvey live in constant fear, pacing at night, until a redheaded woman visited and changed everything."
+    file_path: "witnesses/landlady_statement.md"
+    line_range: [12, 13]
+    context_summary: "Shows landlady Eva's observation of Harvey's distress and the intervention of the redheaded woman."
+  - item_id: "target_008"
+    inserted_text: "Kaslan's reach extended even into the Castellano family's business and into police contracts through Victor Ashford's money pipeline."
+    file_path: "witnesses/informant_interview.md"
+    line_range: [54, 55]
+    context_summary: "Reveals Kaslan's extensive network including Victor Ashford's role as money launderer connecting police and organized crime."
+  - item_id: "target_009"
+    inserted_text: "Detective Morello had coordinated with Detective Chen to bring down the entire operation, starting with Sinclair's arrest for Claire Hollister's murder."
+    file_path: "case_notes/day_07.md"
+    line_range: [98, 99]
+    context_summary: "Identifies Detective Morello's role in coordinating the takedown and Sinclair's arrest for Claire's death."
+  - item_id: "target_010"
+    inserted_text: "Margaret Chen, who worked as a nurse and happened to share the surname of Detective Sarah Chen investigating the harbor district crimes."
+    file_path: "chapters/chapter_03.md"
+    line_range: [11, 12]
+    context_summary: "Establishes Detective Sarah Chen as an investigator working harbor district crimes including the Kaslan operation."
+  - item_id: "target_011"
+    inserted_text: "The redheaded woman, later identified as Margot, served as Kaslan's personal acquisition specialist for sensitive operations."
+    file_path: "witnesses/bartender_statement.md"
+    line_range: [24, 25]
+    context_summary: "Identifies the redheaded woman as Margot, Kaslan's acquisition specialist responsible for securing or eliminating targets."
+  - item_id: "target_012"
+    inserted_text: "Margaret Hollister, the girl's mother, had been unknowingly funneling money through her real estate business as part of Victor Ashford's pipeline to Sinclair's operations."
+    file_path: "case_notes/day_04.md"
+    line_range: [134, 135]
+    context_summary: "Reveals Margaret Hollister's unwitting role in the money laundering pipeline through Victor Ashford."
+  - item_id: "target_013"
+    inserted_text: "What Halstead didn't mention was that his daughter Catherine had become entangled with someone connected to the larger criminal operation that stretched beyond the Castellanos into Sinclair's upper echelon."
+    file_path: "chapters/chapter_02.md"
+    line_range: [45, 46]
+    context_summary: "Establishes connection between Halstead's daughter Catherine and the larger Sinclair-Kaslan criminal network."
+  - item_id: "target_014"
+    inserted_text: "Code for: something changed in the girl, and that change ended when Sinclair decided she was a complication to be eliminated."
+    file_path: "case_notes/day_01.md"
+    line_range: [29, 30]
+    context_summary: "Confirms Sinclair's decision to eliminate Claire Hollister as a threatening complication."
+  - item_id: "target_015"
+    inserted_text: "Harvey's disappearance, potentially with Margot's assistance, was an escape from an organization that had successfully eliminated Claire Hollister and nearly silenced Vincent Castellano."
+    file_path: "witnesses/detective_debrief.md"
+    line_range: [84, 85]
+    context_summary: "Connects Harvey's escape to Margot's possible assistance and frames it against the organization's other crimes."
+  - item_id: "target_016"
+    inserted_text: "He had been consulted by Harvey in a last desperate attempt to find legal protection from Kaslan's organization before attempting to flee."
+    file_path: "witnesses/secretary_statement.md"
+    line_range: [42, 43]
+    context_summary: "Identifies attorney Marchetti's consultation with Harvey and his conflict over providing assistance against Kaslan."
+
+expected_answers:
+  question: "Map the complete criminal hierarchy and network involved in Claire Hollister's death, identifying each person's role and how the organization's reach extended from street-level facilitators to the top-level decision makers."
+  correctness: "Answer must identify all 16 key individuals (Claire Hollister, Vincent Castellano, Carmine Castellano, Charles Sinclair, Thomas Mercer, James Harvey, Silas Gregg, Kaslan, Margot, Victor Ashford, Margaret Hollister, Detective Webb, Detective Chen, Detective Morello, Sylvia, and attorney Marchetti) and their specific roles in the crime network."
+  completeness: "Complete answer must demonstrate how the network operated from Kaslan at the apex through Sinclair as operational manager, Victor Ashford's money laundering, Margot's enforcement, down to street-level facilitators like Harvey, and how this network directly led to Claire's elimination by Sinclair's order channeled through Carmine Castellano's organization."
+
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+  - criterion: "completeness"
+    weight: 0.5

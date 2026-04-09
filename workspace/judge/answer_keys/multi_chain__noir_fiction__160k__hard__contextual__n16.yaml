@@ -1,0 +1,118 @@
+parametrisation_id: "multi_chain__noir_fiction__160k__hard__contextual__n16"
+experiment_type: "multi_chain"
+generated_at: "2026-04-05T16:30:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 160000
+  discriminability: "hard"
+  reference_clarity: "contextual"
+
+items:
+  - item_id: "target_001"
+    inserted_text: "But before she disappeared, she told her mother something odd—mentioned a place she'd heard about called the Starlight. Said a friend had recommended it."
+    file_path: "chapters/chapter_01.md"
+    line_range: [31, 31]
+    context_summary: "Added contextual detail about Catherine mentioning the Starlight location in Richard Halstead's initial description, requiring inference to connect to subsequent references."
+
+  - item_id: "target_002"
+    inserted_text: "Did Catherine mention anyone named Mercer? A lawyer she worked for? The name stuck in my mind because of something I'd heard."
+    file_path: "chapters/chapter_02.md"
+    line_range: [39, 39]
+    context_summary: "Embedded reference to Mercer as the lawyer's name, hidden within investigator's internal reasoning about the photograph."
+
+  - item_id: "target_003"
+    inserted_text: "I wrote those words down later, on a scrap of paper. I don't know why. Something told me they'd matter. The old man who said them—he looked like the kind of man who'd been to the library, cataloging things. Everything about him suggested precision and planning."
+    file_path: "witnesses/bartender_statement.md"
+    line_range: [44, 44]
+    context_summary: "Added reference to the Starlight Motor Inn address and connection to library cataloging behavior, contextually embedded in bartender's observation."
+
+  - item_id: "target_004"
+    inserted_text: "Before he left, I heard Mr. Harvey mention something about needing documentation at the library—the kind that would be necessary for disappearing. The library downtown. Section 7."
+    file_path: "witnesses/landlady_statement.md"
+    line_range: [35, 35]
+    context_summary: "Inserted context about Harvey's library reference hidden within landlady's account of the visitor, requiring understanding of Harvey's situation to extract meaning."
+
+  - item_id: "target_005"
+    inserted_text: "Underneath the painting, someone had scrawled an address: 'The truth lives at Mercer & Associates, floor three.' That's the next place you need to look."
+    file_path: "witnesses/informant_interview.md"
+    line_range: [66, 66]
+    context_summary: "Added connection point to Mercer & Associates location embedded within the painting discovery narrative, linking physical location to investigative path."
+
+  - item_id: "target_006"
+    inserted_text: "I also notice he's holding a briefcase—leather, expensive, the kind that suggests documents of importance. I make a mental note: Thomas Mercer is keeping something. And when I check the building directory later, I notice there's another attorney at the office—Marchetti. That name will become important."
+    file_path: "case_notes/day_01.md"
+    line_range: [73, 73]
+    context_summary: "Subtle insertion connecting Mercer's behavior to the presence of Marchetti, contextually implied through observation rather than explicit statement."
+
+  - item_id: "target_007"
+    inserted_text: "And before he leaves, he'll need to contact his neighbor—the woman in 3G—because she's the one who'll know what comes next."
+    file_path: "witnesses/secretary_statement.md"
+    line_range: [50, 50]
+    context_summary: "Embedded reference to Harvey's neighbor Eleanor hidden within Marchetti's guidance dialogue, requiring reading comprehension to extract the pointer."
+
+  - item_id: "target_008"
+    inserted_text: "She did mention once that he was involved in 'complex decisions,' and that his neighbor—an older woman—had given him advice about moral choices."
+    file_path: "chapters/chapter_03.md"
+    line_range: [37, 37]
+    context_summary: "Added contextual hint about Catherine's mysterious boyfriend H consulting with a neighbor about moral choices, linking to Eleanor character."
+
+  - item_id: "target_009"
+    inserted_text: "Said, 'You know too much already, Catherine. And loving me is already dangerous. Please don't ask for more. And don't go asking my neighbor Eleanor about what she knows—she's been kind to me, and I won't have her dragged into this.'"
+    file_path: "chapters/chapter_04.md"
+    line_range: [31, 31]
+    context_summary: "Inserted explicit name of Eleanor within H's warning to Catherine, contextually framed as a warning rather than a pointer."
+
+  - item_id: "target_010"
+    inserted_text: "One visitor, a man with white hair, mentioned something about a cab ride they would take together to a location called Oak Hill—a safe place where he could be protected."
+    file_path: "witnesses/neighbor_statement.md"
+    line_range: [50, 50]
+    context_summary: "Embedded reference to Oak Hill location within Eleanor's testimony about Harvey's visitors, requiring inference about the safe house purpose."
+
+  - item_id: "target_011"
+    inserted_text: "Before we left, the old man handed the kid a note—I could see it in the rearview mirror. The kid read it and nodded. It looked like coordinates or an address, something that needed to be memorized."
+    file_path: "witnesses/cab_driver_statement.md"
+    line_range: [34, 34]
+    context_summary: "Added detail about note exchange subtly referencing the Oak Hill address transmission, contextually implied through observation."
+
+  - item_id: "target_012"
+    inserted_text: "What's interesting is that someone left a note at that address—according to initial surveillance. The note mentioned a location near the harbor where certain operations originate. We should investigate the harbor district connections."
+    file_path: "witnesses/detective_debrief.md"
+    line_range: [58, 58]
+    context_summary: "Inserted reference to harbor connections embedded within debrief dialogue, requiring understanding of operational geography to follow the trail."
+
+  - item_id: "target_013"
+    inserted_text: "And what's important is that Vincent's probably in a warehouse somewhere—a place where imported goods are stored, where money moves, where complications get resolved. A place connected to the harbor."
+    file_path: "case_notes/day_02.md"
+    line_range: [66, 66]
+    context_summary: "Embedded warehouse and harbor reference within investigator's reasoning about Vincent's location, contextually implied from earlier deductions."
+
+  - item_id: "target_014"
+    inserted_text: "I drive to the warehouse on Dock Street—the same warehouse mentioned in the note that Silas Gregg had passed to Harvey in the cab ride to Oak Hill."
+    file_path: "case_notes/day_05.md"
+    line_range: [107, 107]
+    context_summary: "Added connection linking Dock Street warehouse to earlier Oak Hill cab ride through Silas Gregg's note, contextually embedded in location description."
+
+  - item_id: "target_015"
+    inserted_text: "He's also confirming that Harvey came to him—and to his associate Marchetti—seeking moral guidance about cooperation with law enforcement. The lawyers have agreed to corroborate Harvey's testimony if needed."
+    file_path: "case_notes/day_06.md"
+    line_range: [104, 104]
+    context_summary: "Inserted reference to Harvey's lawyer visits contextually embedded within Helen's dialogue, connecting to earlier Marchetti references."
+
+  - item_id: "target_016"
+    inserted_text: "The body of Claire Hollister, found in a basement on Harbor Avenue—two blocks from the warehouse on Dock Street where Vincent Castellano was being held, and not far from where Silas Gregg first encountered Harvey—can't be explained away as a business misunderstanding. The location is the final link. Everything connects back to the harbor, the warehouse operations, and Sinclair's control over all of it."
+    file_path: "case_notes/day_07.md"
+    line_range: [40, 40]
+    context_summary: "Final needle providing resolution, explicitly connecting all previous locations (Harbor Avenue, Dock Street warehouse, Oak Hill safe house) to reveal the convergence point."
+
+expected_answers:
+  question: "In Richard Halstead's initial phone call to Jack Shepherd, Catherine is described as a young woman with specific identifying features. Follow the trail of contextual clues embedded throughout witness statements, lawyer consultations, and investigative notes—starting from the location Catherine mentions to her mother before disappearing—to identify the final geographic location where all the evidence converges and the truth about the criminal operation emerges."
+
+  correctness: "A correct answer must identify Harbor Avenue as the final location and demonstrate understanding that this location represents the convergence of multiple investigative threads: the warehouse on Dock Street where Vincent Castellano is held, the harbor district operations referenced in detective notes, and the location where Claire Hollister's body is discovered, which serves as the ultimate piece of evidence connecting Sinclair to the murder and the broader criminal conspiracy."
+
+  completeness: "A complete answer should trace the chain through at least 8-10 key locations or references (Starlight place, Mercer & Associates, library, Eleanor neighbor, Oak Hill safe house, Silas Gregg's cab ride, harbor connections, Dock Street warehouse, Marchetti lawyer, and finally Harbor Avenue) and explain how each point logically leads to the next. The answer should demonstrate comprehension of how contextual clues were embedded in witness statements requiring reading between the lines rather than appearing as explicit directives."
+
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+  - criterion: "completeness"
+    weight: 0.5

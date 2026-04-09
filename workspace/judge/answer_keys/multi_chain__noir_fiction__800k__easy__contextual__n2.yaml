@@ -1,0 +1,35 @@
+parametrisation_id: "multi_chain__noir_fiction__800k__easy__contextual__n2"
+experiment_type: "multi_chain"
+generated_at: "2026-04-05T00:00:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 800000
+  discriminability: "easy"
+  reference_clarity: "contextual"
+items:
+  - item_id: "target_001"
+    inserted_text: "The centerpiece, I realize, is Pier 11 Warehouse C. Every major transaction flows through that facility—it's where Ashford consolidates shipments before distribution across the city."
+    file_path: "case_notes/day_04.md"
+    line_range: [90, 91]
+    context_summary: "Inserted into The Money Trail section, immediately after identifying Ashford and before finding newspaper article, to establish Pier 11 Warehouse C as the key distribution hub."
+  - item_id: "target_002"
+    inserted_text: "The news from Pier 11 Warehouse C has shaken everyone. When the teams finally cracked open the sealed storage areas, they found something bigger than organized crime—they found evidence that the city council members themselves had been taking cuts. The facility wasn't just a distribution hub; it was a depository for bribes."
+    file_path: "case_notes/day_07.md"
+    line_range: [30, 32]
+    context_summary: "Inserted at beginning of The Investigation Intensifies section, revealing what police discover when they seize Pier 11 Warehouse C and its significance to corrupt city officials."
+expected_answers:
+  question: "Starting from the financial facility identified in the day_04 case notes as central to Ashford's operation, what evidence does the police seizure in day_07 reveal about the corruption network?"
+  correctness: "The answer must specifically identify that city council members had been taking bribes, or that the facility was a depository for bribes, or that the evidence implicated city officials."
+  completeness: "A complete answer encompasses both the location (Pier 11 Warehouse C) and what was found there (evidence of city council corruption/bribes). Following the chain from facility identifier to its true purpose constitutes a complete resolution."
+chain_structure:
+  entry_point: "case_notes/day_04.md references Pier 11 Warehouse C as the centerpiece distribution hub"
+  intermediate_link: "The facility name 'Pier 11 Warehouse C' is the connector between needles"
+  resolution: "case_notes/day_07.md reveals the facility contains evidence of city council bribery"
+  final_answer: "City council members had been taking bribes; the warehouse was a depository for corruption payments"
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+    description: "Answer correctly identifies the corruption/bribery evidence found at the facility"
+  - criterion: "completeness"
+    weight: 0.5
+    description: "Answer traces the full chain from facility identification to revelation of its true purpose"

@@ -1,0 +1,94 @@
+parametrisation_id: multi_chain__python_repo__160k__easy__contextual__n8
+experiment_type: multi_chain
+generated_at: '2026-04-03T00:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 160000
+  discriminability: easy
+  reference_clarity: contextual
+items:
+- item_id: target_001
+  inserted_text: '# WEBHOOK_DELIVERY_TIMEOUT: outbound webhook delivery ceiling used by the
+
+    # notification subsystem; the governing value defers to the pagination
+
+    # cache TTL layer — see api/pagination.py for the next reference.
+
+    WEBHOOK_DELIVERY_TIMEOUT = None  # resolved in api/pagination.py'
+  file_path: api/__init__.py
+  line_range:
+  - 87
+  - 90
+  context_summary: Inserted after API_BASE_PATH constant and before the __all__ public API block, introducing WEBHOOK_DELIVERY_TIMEOUT as a chain entry point that points to api/pagination.py.
+- item_id: target_002
+  inserted_text: '# WEBHOOK_DELIVERY_TIMEOUT: aligns with the cache TTL window above; the
+
+    # next reference in the delivery timeout chain is in api/middleware.py.'
+  file_path: api/pagination.py
+  line_range:
+  - 24
+  - 25
+  context_summary: Inserted after the PAGINATED_CACHE_TTL constant definition, continuing the chain by pointing to api/middleware.py.
+- item_id: target_003
+  inserted_text: '# WEBHOOK_DELIVERY_TIMEOUT: the slow-request logging threshold feeds into
+
+    # the webhook delivery window; the validation ceiling is set in api/validators.py.'
+  file_path: api/middleware.py
+  line_range:
+  - 26
+  - 27
+  context_summary: Inserted after the module-level logger declaration, continuing the chain by pointing to api/validators.py.
+- item_id: target_004
+  inserted_text: '# WEBHOOK_DELIVERY_TIMEOUT: payload validation timeout for inbound webhook
+
+    # requests; the serialization-layer coordination is documented in api/serializers.py.'
+  file_path: api/validators.py
+  line_range:
+  - 20
+  - 21
+  context_summary: Inserted after the module-level logger declaration, continuing the chain by pointing to api/serializers.py.
+- item_id: target_005
+  inserted_text: '# WEBHOOK_DELIVERY_TIMEOUT: serialization deadline before a webhook payload
+
+    # is considered stale; the canonical ceiling value is tracked in api/error_handlers.py.'
+  file_path: api/serializers.py
+  line_range:
+  - 26
+  - 27
+  context_summary: Inserted after the module-level logger declaration, continuing the chain by pointing to api/error_handlers.py.
+- item_id: target_006
+  inserted_text: '# WEBHOOK_DELIVERY_TIMEOUT: deadline after which a webhook delivery attempt
+
+    # raises a timeout error; the test-time reference value resides in tests/conftest.py.'
+  file_path: api/error_handlers.py
+  line_range:
+  - 20
+  - 21
+  context_summary: Inserted after the module-level logger declaration and before the custom exception section header, continuing the chain by pointing to tests/conftest.py.
+- item_id: target_007
+  inserted_text: '# WEBHOOK_DELIVERY_TIMEOUT: the test-session timeout for webhook delivery
+
+    # assertions is provided by the shared fixture definitions in tests/fixtures.py.'
+  file_path: tests/conftest.py
+  line_range:
+  - 26
+  - 27
+  context_summary: Inserted after the last import statement (RedisCache) and before the first pytest fixture, continuing the chain by pointing to tests/fixtures.py.
+- item_id: target_008
+  inserted_text: '# Authoritative webhook delivery timeout (seconds) used across all webhook test scenarios.
+
+    WEBHOOK_DELIVERY_TIMEOUT = 61'
+  file_path: tests/fixtures.py
+  line_range:
+  - 19
+  - 20
+  context_summary: Inserted after the last import statement and before the TestDataBuilder class definition, providing the terminal numeric value of the chain.
+expected_answers:
+  question: Starting at the API package initializer (api/__init__.md), there is a comment chain for a constant that governs outbound webhook delivery. Following the cross-file references from that starting point through the codebase, what is the final numeric value that this timeout constant resolves to?
+  correctness: '61'
+  completeness: 'The answer must identify 61 as the final value of WEBHOOK_DELIVERY_TIMEOUT, reached by following the chain: api/__init__.md → api/pagination.md → api/middleware.md → api/validators.md → api/serializers.md → api/error_handlers.md → tests/conftest.md → tests/fixtures.md.'
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5

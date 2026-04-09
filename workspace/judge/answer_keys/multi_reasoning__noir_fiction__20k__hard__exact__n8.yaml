@@ -1,0 +1,85 @@
+parametrisation_id: "multi_reasoning__noir_fiction__20k__hard__exact__n8"
+experiment_type: "multi_reasoning"
+generated_at: "2026-04-05T12:00:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 20000
+  discriminability: "hard"
+  reference_clarity: "exact"
+items:
+  - item_id: "target_001"
+    inserted_text: "The Marchetti office records show Harvey spent exactly forty-seven minutes in consultation on October 28th, and his demeanor afterward suggested he had experienced a profound emotional reckoning—the receptionist noted traces of tears, though he attempted to conceal them."
+    file_path: "witnesses/detective_debrief.md"
+    line_range: [36, 37]
+    context_summary: "Detective Morello provides corroborating evidence of Harvey's emotional state during his critical October 28th legal consultation with Marchetti."
+
+  - item_id: "target_002"
+    inserted_text: "He was carrying that small suitcase, and his face was determined—but not desperate. There was a quality of intention in his movement, as though every action was deliberate, purposeful. He packed that suitcase not like someone fleeing in panic, but like someone executing a carefully considered plan."
+    file_path: "witnesses/neighbor_statement.md"
+    line_range: [76, 79]
+    context_summary: "Eleanor Pembroke's final observation of Harvey emphasizes that his departure was planned and intentional, not reactive panic."
+
+  - item_id: "target_003"
+    inserted_text: "It was wrapped in museum-quality archival cloth, secured with cord—the kind of care a professional conservator would use. There was a note attached. It said, 'Property of the Vesper Estate. Return to family of Carl Vesper with apologies.' No signature. But here's what's significant: the handwriting on the note—precise, educated, meticulous—matches samples of Harvey's writing that we recovered from his apartment. It wasn't just the painting being returned. It was Harvey making a statement through the act of return itself."
+    file_path: "witnesses/informant_interview.md"
+    line_range: [67, 71]
+    context_summary: "Victor reveals that the painting's return was handled with professional care and that the note's handwriting matches Harvey's samples, confirming Harvey's personal involvement in returning the stolen artwork."
+
+  - item_id: "target_004"
+    inserted_text: "The moral choice you're forcing—silence for safety, or truth for death—that's not a legitimate choice. That's coercion masquerading as an offer."
+    file_path: "case_notes/day_04.md"
+    line_range: [148, 149]
+    context_summary: "The investigator articulates the moral dilemma at the heart of Sinclair's ultimatum, highlighting the corrupting nature of the 'choice' being offered."
+
+  - item_id: "target_005"
+    inserted_text: "The men I've dealt with—they're not acting independently. There's a structure, a hierarchy. Someone above Sinclair, someone orchestrating these operations. Someone who makes decisions that people like Sinclair execute. That's the real power in this city."
+    file_path: "chapters/chapter_02.md"
+    line_range: [39, 41]
+    context_summary: "Halstead reveals his understanding of the organizational hierarchy above Sinclair, indicating a larger power structure controlling the criminal operations."
+
+  - item_id: "target_006"
+    inserted_text: "Not nervous—calculated. The kind of careful observation you see in someone trained to be aware of their surroundings and routes of egress."
+    file_path: "case_notes/day_01.md"
+    line_range: [45, 46]
+    context_summary: "The hotel clerk's observation of the man accompanying Claire shows trained, methodical behavior consistent with a professional operative."
+
+  - item_id: "target_007"
+    inserted_text: "Wire transfers routed through shell corporations in three countries, with dates that align precisely with Harvey's involvement in the art theft network—he was facilitating sales and moving proceeds through the import-export infrastructure."
+    file_path: "case_notes/day_06.md"
+    line_range: [62, 65]
+    context_summary: "The investigator identifies financial documentation that directly links Harvey's timeline to the international movement of stolen artwork proceeds."
+
+  - item_id: "target_008"
+    inserted_text: "Harvey understood something critical before he disappeared: the organization was deeper and more layered than he could ever fully escape. Even if he severed contact with Kaslan, even if he tried to cooperate with authorities, the network extended beyond any single person or operation. He was trying to exit not just a criminal enterprise, but an entire infrastructure of power and control."
+    file_path: "case_notes/day_08.md"
+    line_range: [131, 136]
+    context_summary: "The investigator reflects on Harvey's realization that the criminal network was too deeply entrenched to escape through conventional cooperation with authorities."
+
+expected_answers:
+  question: "Based on all witness accounts and evidence, what sequence of events and decisions led to Harvey's disappearance, and what can be determined about his intent and final actions?"
+  correctness: |
+    A correct answer must synthesize information from multiple items to establish:
+    1. The October 28th date as the critical turning point (emotional consultation with Marchetti)
+    2. Harvey's intention to exit the criminal organization and return stolen property
+    3. The planning and deliberateness of his departure (not panic-driven)
+    4. The painting's return as evidence of Harvey's follow-through on his moral decision
+    5. His understanding that the organization was too layered to escape through normal channels
+    6. The presence of handlers/operatives (Silas Gregg, the hotel man) monitoring him
+    7. The financial infrastructure connecting his facilitation role to international operations
+  completeness: |
+    A complete answer must incorporate findings from all 8 items to construct a coherent narrative:
+    - His emotional crisis and legal consultation (items 1, 4)
+    - His deliberate planning and execution (items 2, 6)
+    - His follow-through on moral redemption via the painting (item 3)
+    - The financial scope of his involvement (item 7)
+    - The organizational complexity he faced (items 5, 8)
+
+    The answer demonstrates that Harvey made a conscious, planned decision to exit the criminal network by returning stolen property and attempting cooperation with authorities, despite understanding the deep organizational risks involved.
+
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+    description: "Answer accurately synthesizes the evidence to establish Harvey's timeline, intent, and actions"
+  - criterion: "completeness"
+    weight: 0.5
+    description: "Answer incorporates findings from all 8 needles to provide a comprehensive understanding of Harvey's situation and decision-making"

@@ -1,0 +1,28 @@
+parametrisation_id: "multi_reasoning__noir_fiction__40k__hard__contextual__n2"
+experiment_type: "multi_reasoning"
+generated_at: "2026-04-05T00:00:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 40000
+  discriminability: "hard"
+  reference_clarity: "contextual"
+items:
+  - item_id: "target_001"
+    inserted_text: "*\"I found his appointment book today. The margins filled with notes in his handwriting, initials I couldn't decipher: 'SC' underlined multiple times, 'VC' with dates and dollar amounts. When I asked who SC was, his face went white. He said only, 'Catherine, that man controls everything in this city. If he knows you know his name, that alone makes you a liability. That's why I need to keep you away from everything.' SC. The initials feel like a death sentence written in shorthand.\"*"
+    file_path: "chapters/chapter_04.md"
+    line_range: [32, 36]
+    context_summary: "Inserted as new journal entry after Catherine's last dated reflection, revealing H's connection to SC (Charles Sinclair) and showing that knowing SC's identity is dangerous."
+  - item_id: "target_002"
+    inserted_text: "I lean forward. \"Which girl?\" \"Catherine Halstead. Cultural foundation, works with artists and exhibitions. Smart as hell. But more importantly, she was involved with someone connected to SC. When SC found out Vincent had been seeing her, had been talking to her—\" Morris trails off, shaking his head. \"That's when Carmine started looking like he'd lost something valuable. Because Vincent was already marked. The girl was just collateral.\""
+    file_path: "case_notes/day_02.md"
+    line_range: [113, 118]
+    context_summary: "Inserted as continuation of Morris's dialogue, explicitly identifying Catherine Halstead as the girl involved with Vincent Castellano and connecting her to SC through a dangerous relationship."
+expected_answers:
+  question: "Why was Catherine Halstead specifically targeted for kidnapping, based on the connections between different people the investigation reveals?"
+  correctness: "A correct answer must establish the chain of connections: (1) Catherine was romantically involved with H/H's associate (from chapter_04), (2) H/this person is connected to Charles Sinclair (SC), a major criminal figure, (3) Catherine was also connected to Vincent Castellano's disappearance through knowing dangerous information about SC, (4) SC used her kidnapping as leverage against the people connected to both Vincent and H because she knew too much about the criminal hierarchy."
+  completeness: "A complete answer covers all items and shows understanding that Catherine became collateral damage/leverage in a criminal power struggle because she was connected—through her boyfriend and through other contacts—to multiple players in SC's criminal organization, and her knowledge of SC's existence and identity made her a liability that SC needed to control."
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+  - criterion: "completeness"
+    weight: 0.5

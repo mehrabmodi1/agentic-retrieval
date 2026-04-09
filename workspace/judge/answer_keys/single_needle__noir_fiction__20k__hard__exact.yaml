@@ -1,0 +1,25 @@
+parametrisation_id: single_needle__noir_fiction__20k__hard__exact
+experiment_type: single_needle
+generated_at: '2026-04-03T00:00:00Z'
+parameters:
+  content_profile: noir_fiction
+  corpus_token_count: 20000
+  discriminability: hard
+  reference_clarity: exact
+items:
+- item_id: target_001
+  inserted_text: '"One more thing about Gregg," Victor added. "He wears a signet ring on his right hand. Old gold, heavy, the kind of piece that suggests family money or a claim to it. The crest has been polished so smooth you can see the shape of the thing but not the design anymore. I only bring it up because a man like Gregg doesn''t wear jewelry for sentiment. He wears it so the right people recognize him without him having to say a word."'
+  file_path: witnesses/informant_interview.md
+  line_range:
+  - 60
+  - 60
+  context_summary: Inserted as an additional quote from informant Victor, immediately after his physical description of Silas Gregg, embedded naturally within the dialogue before Detective Halloway's narrative reaction.
+expected_answers:
+  question: According to Victor, what does Silas Gregg wear that helps the right people recognize him?
+  correctness: A correct answer must identify that Silas Gregg wears a signet ring on his right hand.
+  completeness: A complete answer notes that the ring is old gold and heavy, that its crest has been polished so smooth the design is no longer visible, and that Victor explains Gregg wears it not for sentiment but so that the right people recognize him without words.
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5

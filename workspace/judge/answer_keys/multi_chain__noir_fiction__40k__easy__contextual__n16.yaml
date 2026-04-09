@@ -1,0 +1,116 @@
+parametrisation_id: "multi_chain__noir_fiction__40k__easy__contextual__n16"
+experiment_type: "multi_chain"
+generated_at: "2026-04-05T15:30:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 40000
+  discriminability: "easy"
+  reference_clarity: "contextual"
+
+items:
+  - item_id: "target_001"
+    inserted_text: "**NEEDLE 1:** The Regency Hotel clerk Everett mentioned a precise detail about the man's demeanor and his notation of exits. This behavior is consistent with someone trained in security operations. The connection to Margaret Hollister's real estate operations through the emerald theft becomes clear in day_02.md, where Morris reveals the coordinated timing of Meridian Holdings' extraction operation."
+    file_path: "case_notes/day_01.md"
+    line_range: [27, 28]
+    context_summary: "Inserted after description of the man's careful behavior at the hotel, linking to the next location in the investigative chain."
+
+  - item_id: "target_002"
+    inserted_text: "**NEEDLE 2:** The timeline for the emerald recovery is documented in Richard Halstead's confession in chapter_02.md. Check there for the connection to Catherine's kidnapping and when Meridian Holdings first made contact about acquiring his business."
+    file_path: "case_notes/day_02.md"
+    line_range: [42, 43]
+    context_summary: "Inserted after Morris's explanation of the emerald's role, pointing to chapter_02.md for corporate acquisition details."
+
+  - item_id: "target_003"
+    inserted_text: "**NEEDLE 3:** When Halstead mentioned the old visitor who delivered documents in advance, he was referring to the man Eleanor Pembroke saw entering the building—check her statement in neighbor_statement.md to identify this man and his significance to the network."
+    file_path: "chapters/chapter_02.md"
+    line_range: [28, 29]
+    context_summary: "Inserted after discussion of Catherine's disappearance, directing reader to neighbor's observations of a mysterious visitor."
+
+  - item_id: "target_004"
+    inserted_text: "**NEEDLE 4:** Margot Gregg is the key contact person. To understand her role in the extraction, examine the bartender's account in bartender_statement.md—he observed her interactions and can confirm the coordinates of her movements that night."
+    file_path: "chapters/chapter_03.md"
+    line_range: [29, 30]
+    context_summary: "Inserted after Eleanor's description of the red-haired woman in the black sedan, pointing to bartender's evidence."
+
+  - item_id: "target_005"
+    inserted_text: "**NEEDLE 5:** Sector 14 is the operational heart. To understand what activities were coordinated there, check the landlady's statement in landlady_statement.md for the visit from the man named Gregg and what he revealed about the envelope's contents and Harvey's assignment."
+    file_path: "witnesses/bartender_statement.md"
+    line_range: [34, 35]
+    context_summary: "Inserted after mention of Sector 14 threat, directing to landlady's observations of the operative named Gregg."
+
+  - item_id: "target_006"
+    inserted_text: "**NEEDLE 6:** The woman in the green coat was connected to Margot Gregg's operation. To trace this connection further and understand the legal framework they operated within, consult secretary_statement.md for the attorney's records and what James Harvey revealed to his lawyer about the scope of the organization."
+    file_path: "witnesses/neighbor_statement.md"
+    line_range: [31, 32]
+    context_summary: "Inserted after discussion of the woman visitor's significance, pointing to secretary's knowledge of Harvey's legal proceedings."
+
+  - item_id: "target_007"
+    inserted_text: "**NEEDLE 7:** Marchetti's case files contained detailed documentation of Harvey's confession regarding his role in the art trafficking network. To understand the full scope of what Harvey revealed, cross-reference with day_03.md where Thomas Mercer provides the warehouse code that catalogs all seized evidence and documentation."
+    file_path: "witnesses/secretary_statement.md"
+    line_range: [7, 8]
+    context_summary: "Inserted after statement begins, pointing to Mercer's warehouse inventory system and its connection to Harvey's revelations."
+
+  - item_id: "target_008"
+    inserted_text: "**NEEDLE 8:** The code 12-B-HG links to the inventory in Sinclair's warehouse. But the true evidence—the photographs Claire took and the ledgers she documented—are hidden in the burgundy folder Margaret Hollister kept. Find that folder, described in detail in day_04.md, where Margaret finally reveals what Claire discovered about Meridian Holdings' operations."
+    file_path: "case_notes/day_03.md"
+    line_range: [27, 28]
+    context_summary: "Inserted after Mercer provides the inventory code, pointing to Margaret's final confession about Claire's documentary evidence."
+
+  - item_id: "target_009"
+    inserted_text: "**NEEDLE 9:** The mystery man Catherine Halstead was involved with is revealed in chapter_04.md through her journal entry. His connection to law enforcement and his mysterious business activities explain how he had access to sensitive information about Meridian Holdings' operations and why he was so determined to protect Catherine from the organization's reach."
+    file_path: "case_notes/day_04.md"
+    line_range: [39, 40]
+    context_summary: "Inserted after Margaret's revelation about the burgundy folder, pointing to Catherine's journal entries revealing 'H's true identity."
+
+  - item_id: "target_010"
+    inserted_text: "**NEEDLE 10:** Catherine's lover 'H' (Harrison Webb) was a police lieutenant conducting parallel investigations. His law enforcement position gave him knowledge of Meridian Holdings' operations. To understand how he maintained his cover while gathering evidence, see chapter_05.md where Diana Harrow from Meridian Holdings herself acknowledges his investigation and the documents he possessed regarding their activities."
+    file_path: "chapters/chapter_04.md"
+    line_range: [27, 28]
+    context_summary: "Inserted after journal analysis, pointing to Diana Harrow's acknowledgment of Webb's investigation."
+
+  - item_id: "target_011"
+    inserted_text: "**NEEDLE 11:** Webb's possession of these documents connects directly to the informant's testimony. For the full accounting of how these documents were obtained and what they reveal about Kaslan's larger operation, see the informant_interview.md where Victor details the Vesper painting network and Harvey's attempt to exfiltrate the evidence."
+    file_path: "chapters/chapter_05.md"
+    line_range: [25, 26]
+    context_summary: "Inserted after Diana Harrow's disclosure of Webb's intelligence, pointing to informant's detailed account of the art trafficking network."
+
+  - item_id: "target_012"
+    inserted_text: "**NEEDLE 12:** Victor Kaslan is the architect of this network. But the question remains: who operates above Kaslan? The answer lies in the landlady's statement in landlady_statement.md, where she reports on the visitor named Gregg and the diplomatic plates he carried—plates that connected to high-level government operations and international trade delegations."
+    file_path: "witnesses/informant_interview.md"
+    line_range: [36, 37]
+    context_summary: "Inserted after Victor confirms the painting and diamond recovery plans, pointing to landlady's observations of international operatives."
+
+  - item_id: "target_013"
+    inserted_text: "**NEEDLE 13:** The diplomatic plates and the Sinclair symbol on the folder indicate international coordination. The investigation into how these elements connect requires examining David Chen's research in day_06.md, where the reporter pieces together the connections between Sinclair, Ashford, and the larger Meridian Holdings operation that extends across multiple states and countries."
+    file_path: "witnesses/landlady_statement.md"
+    line_range: [25, 26]
+    context_summary: "Inserted after landlady's description of Gregg's diplomatic credentials, pointing to Chen's investigation of the broader network."
+
+  - item_id: "target_014"
+    inserted_text: "**NEEDLE 14:** David Chen's investigation connects the financial records through Meridian Holdings' corporate structure. To understand the complete scope of how Sinclair operates within this framework and what drives his decisions, examine day_07.md where Captain Sandra's interrogation explores the psychological and operational dynamics of his relationship with higher management."
+    file_path: "case_notes/day_06.md"
+    line_range: [43, 44]
+    context_summary: "Inserted after investigator's decision to decline Meridian's offer, pointing to police interrogation of Sinclair's relationships and motivations."
+
+  - item_id: "target_015"
+    inserted_text: "**NEEDLE 15:** Sinclair's conviction that he operates with impunity comes from his position within a larger structure. The evidence of this structure—the monogrammed scarf, the financial records, the witness testimonies—all point to systematic operations rather than isolated criminal acts. This systematic nature is documented in detail in day_08.md, where Helen Crawford's analysis explains how the network distributes responsibility across multiple entities and jurisdictions."
+    file_path: "case_notes/day_07.md"
+    line_range: [42, 43]
+    context_summary: "Inserted after Captain Sandra's question about murder capability, explaining systemic rather than individual criminal organization."
+
+  - item_id: "target_016"
+    inserted_text: "**NEEDLE 16:** The final answer emerges not as the identity of a single person, but as the recognition of a system. The power above Sinclair is not a person but a corporate structure—Meridian Holdings—which itself operates through multiple subsidiaries, legal fronts, and international coordinated activities. The answer to who runs the city is: the network itself, designed to survive the removal of any single operative. The infrastructure extends beyond individual personalities into institutional mechanisms."
+    file_path: "case_notes/day_08.md"
+    line_range: [5, 6]
+    context_summary: "Inserted at the beginning of Helen's analysis, resolving the chain with the systemic understanding of distributed power and organizational infrastructure."
+
+expected_answers:
+  question: "Starting from Margaret Hollister's description of the man at the Regency Hotel in case_notes/day_01.md, follow the chain of references through witnesses, law enforcement investigations, and corporate operations. What ultimately does the investigation reveal about who controls Sinclair's operations and how they maintain power?"
+  correctness: "The correct answer must identify that the ultimate power is not a single person but a networked organizational structure (Meridian Holdings) that distributes responsibility through multiple subsidiaries, legal entities, and international operations. The answer should reference Helen Crawford's analysis about the system being 'deeper and more layered' than any individual."
+  completeness: "A complete answer covers: (1) the chain of evidence from the hotel to warehouse operations, (2) identification of Meridian Holdings as the corporate structure, (3) recognition that intermediaries like Sinclair execute for a faceless system, (4) understanding that the network survives individual removals through institutional design, (5) the international and multi-jurisdictional scope of operations that prevents single-point accountability."
+
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+  - criterion: "completeness"
+    weight: 0.5

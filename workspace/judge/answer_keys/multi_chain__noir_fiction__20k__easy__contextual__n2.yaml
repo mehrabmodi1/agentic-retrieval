@@ -1,0 +1,28 @@
+parametrisation_id: "multi_chain__noir_fiction__20k__easy__contextual__n2"
+experiment_type: "multi_chain"
+generated_at: "2026-04-04T00:00:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 20000
+  discriminability: "easy"
+  reference_clarity: "contextual"
+items:
+  - item_id: "target_001"
+    inserted_text: "Patricia also mentions that when she found the card, there was a small folded slip of paper tucked beneath it with a handwritten address. She'd already turned the original over to the ward's duty secretary for logging—that woman filed everything with the formal witness interview records."
+    file_path: "case_notes/day_05.md"
+    line_range: [65, 65]
+    context_summary: "Inserted after the investigator pockets Sinclair's business card in The Hospital Visit section of Day Five, indicating a slip with a handwritten address was forwarded to the ward's duty secretary for filing."
+  - item_id: "target_002"
+    inserted_text: "**Supplementary Note - November 12, 1947 (Saint Michael's Hospital, Duty Secretary Log)**\n\nItem received from ward nurse and filed with formal witness documentation per standard protocol: one handwritten slip of paper recovered alongside a business card belonging to Charles Sinclair in the patient discharge area. The address written on the slip reads: Coldwater Warehouse, Unit 9, Pelham Wharf."
+    file_path: "witnesses/secretary_statement.md"
+    line_range: [82, 84]
+    context_summary: "Appended as a new supplementary log entry at the end of the secretary statement file, recording the address from the slip forwarded by the hospital nurse."
+expected_answers:
+  question: "Starting from the investigator's notes on the day he returns to Saint Michael's Hospital, a medical worker produces a calling card alongside a slip of paper she'd forwarded for official filing. What address is ultimately recorded in the formal witness documentation?"
+  correctness: "Coldwater Warehouse, Unit 9, Pelham Wharf"
+  completeness: "A complete answer identifies the full address: Coldwater Warehouse, Unit 9, Pelham Wharf, and may note it was found filed in the Saint Michael's Hospital Duty Secretary Log within the formal witness documentation."
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+  - criterion: "completeness"
+    weight: 0.5

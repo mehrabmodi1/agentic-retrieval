@@ -1,0 +1,28 @@
+parametrisation_id: "multi_chain__noir_fiction__20k__hard__contextual__n2"
+experiment_type: "multi_chain"
+generated_at: "2026-04-05T00:00:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 20000
+  discriminability: "hard"
+  reference_clarity: "contextual"
+items:
+  - item_id: "target_001"
+    inserted_text: "He reaches into his desk and produces a property filing, worn at the edges. \"The warehouse maintains an internal inventory system. All evidence recovered there gets logged under code 12-B-HG. When you find what's there, that's what it will be marked as. That's your thread back to here.\""
+    file_path: "case_notes/day_03.md"
+    line_range: [35, 37]
+    context_summary: "Mercer provides the narrator with a property filing and references inventory code 12-B-HG as the key identifier for warehouse evidence."
+  - item_id: "target_002"
+    inserted_text: "The evidence inventory log cross-references them with code 12-B-HG—the precise marking Mercer had mentioned, the code that tied the warehouse discovery to everything else."
+    file_path: "case_notes/day_07.md"
+    line_range: [19, 19]
+    context_summary: "The jewelry evidence found in Sinclair's apartment is marked with the same code 12-B-HG, creating the implicit chain linking Mercer's guidance to the physical proof."
+expected_answers:
+  question: "Starting from what Mercer provides to the narrator in his office, what physical evidence ultimately becomes the key to proving Sinclair's guilt?"
+  correctness: "Answer must identify the jewelry (bracelet and ring found in Sinclair's apartment) as the evidence, and must trace its connection back through the inventory code 12-B-HG to Mercer's original guidance about the warehouse."
+  completeness: "A complete answer must demonstrate understanding of the chain: (1) Mercer's property filing reference (code 12-B-HG) as the entry point, (2) the jewelry discovered in Sinclair's apartment marked with that same code, (3) the implicit connection that this evidence chain validates Mercer's initial direction and proves Sinclair's involvement in Claire's death."
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+  - criterion: "completeness"
+    weight: 0.5

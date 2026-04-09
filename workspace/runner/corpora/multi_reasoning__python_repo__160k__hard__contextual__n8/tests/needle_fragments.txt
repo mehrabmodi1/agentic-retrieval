@@ -1,0 +1,31 @@
+FRAGMENT 1: workers/report_generator.md
+- Processing capacity: 250 rows per second
+- Inserted after "logger.info" about registered report type
+
+FRAGMENT 2: tests/conftest.md  
+- Database constraint: 8 concurrent sessions max
+- Inserted as comment about connection pool
+
+FRAGMENT 3: api/__init__.md
+- Default batch size: 500 for cleanup operations
+- Inserted in docstring
+
+FRAGMENT 4: workers/sync_worker.md
+- Cleanup cycle: 3600 seconds (1 hour)
+- Inserted as CLEANUP_CYCLE_SECONDS constant
+
+FRAGMENT 5: api/auth.md
+- Access token expiry: 1 hour
+- Inserted in function docstring
+
+FRAGMENT 6: workers/retry_handler.md
+- Max retry delay exponential base: 2
+- Inserted in retry logic
+
+FRAGMENT 7: tests/test_workers.md
+- Cleanup runs every 1800 seconds (30 minutes)
+- Inserted in test configuration
+
+FRAGMENT 8: api/rate_limiting.md
+- Cache entry TTL: 3600 seconds per token
+- Inserted in RateLimiter initialization

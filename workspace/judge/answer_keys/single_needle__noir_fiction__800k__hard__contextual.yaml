@@ -1,0 +1,23 @@
+parametrisation_id: "single_needle__noir_fiction__800k__hard__contextual"
+experiment_type: "single_needle"
+generated_at: "2026-04-03T00:00:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 800000
+  discriminability: "hard"
+  reference_clarity: "contextual"
+items:
+  - item_id: "target_001"
+    inserted_text: "Eva tapped her fingers once against the ledger, as though a detail had surfaced that she had almost let slip away. \"One thing I should mention. When I go through the rooms, I am checking carefully—sometimes tenants leave behind someone sleeping, a friend who does not know he must also go. I check the bathroom last. Behind the radiator, where the old pipe goes down into the floor, I find an envelope. Brown paper, not large, but thick—heavy when I pick it up—and sealed many times over with tape, the kind of person who does not want what is inside to come out easily. I take it to the kitchen counter. I think, maybe he forgot this, maybe it is something important he will want returned. But I come back the next morning to begin the cleaning, and the envelope is gone. No note. Nothing moved except that envelope.\""
+    file_path: "witnesses/landlady_statement.md"
+    line_range: [54, 54]
+    context_summary: "Inserted as an additional observation by Eva Kosinski (Harvey's landlady) immediately after she describes finding Harvey's apartment empty, placed before the detective's follow-up question about a forwarding address."
+expected_answers:
+  question: "What evidence did the person responsible for maintaining Harvey's apartment building discover that suggested someone secretly returned to his room after he had vacated it?"
+  correctness: "A correct answer must identify that the landlady (Eva Kosinski) found a sealed brown envelope hidden behind the bathroom radiator/pipe, moved it to the kitchen counter, and returned the next morning to find the envelope gone—implying someone re-entered the apartment covertly to retrieve it."
+  completeness: "A complete answer covers: (1) the envelope was concealed behind the radiator pipe in the bathroom; (2) it was thick and heavily sealed with tape; (3) Eva placed it on the kitchen counter intending to return it; (4) she found it missing the following morning with no note or other disturbance; (5) the only explanation is that someone came back secretly to take it."
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+  - criterion: "completeness"
+    weight: 0.5

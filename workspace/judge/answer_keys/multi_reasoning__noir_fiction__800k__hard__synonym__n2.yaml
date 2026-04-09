@@ -1,0 +1,30 @@
+parametrisation_id: "multi_reasoning__noir_fiction__800k__hard__synonym__n2"
+experiment_type: "multi_reasoning"
+generated_at: "2026-04-05T00:00:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 800000
+  discriminability: "hard"
+  reference_clarity: "synonym"
+items:
+  - item_id: "target_001"
+    inserted_text: "I pressed Eleanor further. \"The decisions she mentioned—did she give any hint about what kind of decisions?\"\n\nEleanor exchanged glances with the others before answering. \"Not directly. But she had mentioned before that her gentleman friend was involved in property and development. Real estate circles. She seemed impressed by his business acumen, though she was also... cautious about certain aspects of his work. She said once that he knew 'important people who made money flow,' whatever that meant. We didn't pry.\""
+    file_path: "chapters/chapter_03.md"
+    line_range: [51, 60]
+    context_summary: "Inserted Eleanor's revelation about Catherine's boyfriend's involvement in property development and his connections to powerful financial operators, embedded within the interview with Catherine's friends."
+  - item_id: "target_002"
+    inserted_text: "I dig deeper into Margaret Hollister's client list. The properties she sold to Castellano shell companies—I cross-reference them with property records and ownership documents. One name appears in the deeds repeatedly as a secondary party: Hollister Realty handled sales to properties tied to a woman listed as \"K. Halstead.\" Catherine Halstead. The dates align perfectly. Three months ago, Margaret Hollister sold a penthouse in the Castellano Tower to a shell company, with a note in the file about \"arrangements being made for a young woman's residence.\" The payment came from a Castellano intermediary. Catherine hadn't been kidnapped as randomly as Halstead claimed. She'd been placed there deliberately."
+    file_path: "case_notes/day_03.md"
+    line_range: [31, 42]
+    context_summary: "Inserted discovery of Margaret Hollister's real estate transactions connecting Catherine Halstead to Castellano properties, revealing her placement within the criminal organization's operations."
+expected_answers:
+  question: "What evidence indicated that the young woman at the center of this investigation was romantically entangled with someone embedded in organized crime's financial infrastructure?"
+  correctness: "A complete answer must identify: (1) that Catherine's secret boyfriend was involved in property and real estate development; (2) that he had connections to powerful figures in financial operations; (3) that Margaret Hollister's real estate company facilitated property sales to Castellano shell companies; (4) that Catherine Halstead was specifically placed in a Castellano-controlled property through these transactions; (5) the logical connection that her 'gentleman friend' was involved in or connected to the Castellano family's money laundering operations."
+  completeness: "A complete answer synthesizes both needles to establish that Catherine's relationship with a 'successful businessman' in real estate was actually a placement within Castellano's criminal enterprise, where her boyfriend was positioned as an intermediary or operative. The answer should explain how the property transfers and her residence in a Castellano tower reveal the deliberate nature of her integration into the organization."
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+    definition: "Answer correctly identifies the connection between Catherine's romantic interest and criminal financial operations using information from both sources."
+  - criterion: "completeness"
+    weight: 0.5
+    definition: "Answer synthesizes both the boyfriend's business connections AND the property transaction evidence to draw the integrated conclusion about Catherine's position within the criminal network."

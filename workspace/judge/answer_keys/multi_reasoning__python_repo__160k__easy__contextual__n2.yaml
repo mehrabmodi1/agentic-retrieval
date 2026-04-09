@@ -1,0 +1,46 @@
+parametrisation_id: multi_reasoning__python_repo__160k__easy__contextual__n2
+experiment_type: multi_reasoning
+generated_at: '2026-04-06T00:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 160000
+  discriminability: easy
+  reference_clarity: contextual
+items:
+- item_id: target_001
+  inserted_text: '# Task constraints for batch processing
+
+    TASK_TITLE_MAX_LENGTH = 256
+
+    TASK_BATCH_PROCESSING_LIMIT = 100
+
+    '
+  file_path: api/validators.py
+  line_range:
+  - 151
+  - 154
+  context_summary: Task title length constraints and batch processing limits inserted before pagination validation function
+- item_id: target_002
+  inserted_text: '# Task batch processing configuration
+
+    # Each batch can contain up to 100 tasks with string fields
+
+    self.task_batch_size = 100
+
+    '
+  file_path: workers/report_generator.py
+  line_range:
+  - 80
+  - 82
+  context_summary: Task batch size configuration added in ReportGenerator __init__ method alongside max_rows_per_report
+expected_answers:
+  question: In a task reporting system, what is the maximum total character storage needed to allocate for an entire batch of task titles, considering standard task constraints and batch processing limits?
+  correctness: Answer must calculate the product of maximum task title length (256 characters) and the batch processing limit (100 tasks), accounting for the fact that each task in a batch can have a title up to the maximum allowed length.
+  completeness: A complete answer must identify both the per-task title length constraint from the validators module and the batch size constraint from the report generator configuration, then correctly multiply these values to determine total storage allocation (256 × 100 = 25,600 characters).
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+  description: Identifies TASK_TITLE_MAX_LENGTH = 256 and batch size = 100, correctly calculates 25,600
+- criterion: completeness
+  weight: 0.5
+  description: References both source locations (validators.md and report_generator.md) and explains the reasoning for storage calculation

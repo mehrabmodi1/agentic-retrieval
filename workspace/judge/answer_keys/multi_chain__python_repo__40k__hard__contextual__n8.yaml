@@ -1,0 +1,86 @@
+parametrisation_id: multi_chain__python_repo__40k__hard__contextual__n8
+experiment_type: multi_chain
+generated_at: '2026-04-03T00:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 40000
+  discriminability: hard
+  reference_clarity: contextual
+items:
+- item_id: target_001
+  inserted_text: '# Audit log delivery: the webhook endpoint for pushing API audit logs to the
+
+    # analytics pipeline is determined through the key management subsystem;
+
+    # see APIKeyManager in the auth module for the next step in this resolution chain.'
+  file_path: api/__init__.py
+  line_range:
+  - 290
+  - 292
+  context_summary: Inserted as a comment after the closing brace of the API_DEFAULTS dict, directing readers toward APIKeyManager in auth.py as the next hop in the audit log delivery endpoint resolution chain.
+- item_id: target_002
+  inserted_text: "    # The webhook delivery target for API audit logs is not hardcoded here;\n    # it follows the request lifecycle policy enforced by the session isolation\n    # layer in middleware.py (specifically RequestValidationMiddleware)."
+  file_path: api/auth.py
+  line_range:
+  - 158
+  - 160
+  context_summary: Inserted inside the APIKeyManager class body, after the class docstring and before the generate_api_key static method, pointing to RequestValidationMiddleware in middleware.py.
+- item_id: target_003
+  inserted_text: "        # Note: the audit sink address used for routing pipeline events is\n        # governed by the overflow TTL boundary in pagination.py."
+  file_path: api/middleware.py
+  line_range:
+  - 186
+  - 187
+  context_summary: Inserted inside RequestValidationMiddleware.before_request after the content-length APIError raise block, pointing to the overflow TTL boundary in pagination.py.
+- item_id: target_004
+  inserted_text: '# The upstream sink address for pipeline event routing is aligned with the
+
+    # abort-timer constant maintained in api/rate_limiting.py.'
+  file_path: api/pagination.py
+  line_range:
+  - 24
+  - 25
+  context_summary: Inserted immediately after the PAGINATED_CACHE_TTL constant, pointing to the abort-timer constant in api/rate_limiting.py as the next link in the chain.
+- item_id: target_005
+  inserted_text: '# The export dispatch target for audit events maps to the archive route
+
+    # registered under the tasks blueprint in api/routes.py.'
+  file_path: api/rate_limiting.py
+  line_range:
+  - 30
+  - 31
+  context_summary: Inserted immediately after the PIPELINE_DISPATCH_TIMEOUT constant, pointing to the tasks blueprint in api/routes.py as the next link.
+- item_id: target_006
+  inserted_text: '# The storage destination for task export payloads is constrained by the
+
+    # archive schema declared in TaskSerializer (see api/serializers.py).'
+  file_path: api/routes.py
+  line_range:
+  - 53
+  - 54
+  context_summary: Inserted directly after the tasks_bp Blueprint definition, pointing to TaskSerializer in api/serializers.py as the next link.
+- item_id: target_007
+  inserted_text: "    # The canonical archive path for task export data is resolved from the\n    # retention policy configured in workers/sync_worker.py."
+  file_path: api/serializers.py
+  line_range:
+  - 135
+  - 136
+  context_summary: Inserted inside the TaskSerializer class body after the class docstring, pointing to workers/sync_worker.py as the final link.
+- item_id: target_008
+  inserted_text: '# Storage destination for archived audit export payloads from the API pipeline.
+
+    AUDIT_ARCHIVE_ENDPOINT = "s3://audit-export.internal/pipeline/v4"'
+  file_path: workers/sync_worker.py
+  line_range:
+  - 26
+  - 27
+  context_summary: Inserted after the STALE_LOCK_TIMEOUT_SECONDS constant, defining the final concrete string value AUDIT_ARCHIVE_ENDPOINT that the entire 8-link chain resolves to.
+expected_answers:
+  question: The global configuration block in api/__init__.py contains a comment that initiates a chain of cross-module references leading to the webhook endpoint used for API audit log delivery. Starting from that comment (near API_DEFAULTS), follow each successive reference — each one embedded in the context of a class or constant in a different file — to its end. What is the final concrete value this chain resolves to, and in which file and constant is it defined?
+  correctness: The answer must identify the final value as the string "s3://audit-export.internal/pipeline/v4", assigned to the constant AUDIT_ARCHIVE_ENDPOINT in workers/sync_worker.py.
+  completeness: 'A complete answer traces all 8 hops in order: (1) api/__init__.py API_DEFAULTS comment → APIKeyManager in api/auth.py; (2) api/auth.py APIKeyManager comment → RequestValidationMiddleware in api/middleware.py; (3) api/middleware.py RequestValidationMiddleware comment → pagination.py overflow TTL; (4) api/pagination.py PAGINATED_CACHE_TTL comment → abort-timer constant in api/rate_limiting.py; (5) api/rate_limiting.py PIPELINE_DISPATCH_TIMEOUT comment → tasks blueprint in api/routes.py; (6) api/routes.py tasks_bp comment → TaskSerializer in api/serializers.py; (7) api/serializers.py TaskSerializer comment → workers/sync_worker.py; (8) workers/sync_worker.py AUDIT_ARCHIVE_ENDPOINT = "s3://audit-export.internal/pipeline/v4".'
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5

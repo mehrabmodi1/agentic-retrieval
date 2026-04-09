@@ -1,0 +1,25 @@
+parametrisation_id: single_needle__python_repo__20k__hard__exact
+experiment_type: single_needle
+generated_at: '2026-04-03T00:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 20000
+  discriminability: hard
+  reference_clarity: exact
+items:
+- item_id: target_001
+  inserted_text: '    stale_task_hours: int = 48  # tasks idle longer than this are treated as stale and skipped'
+  file_path: workers/retry_handler.py
+  line_range:
+  - 51
+  - 51
+  context_summary: Inserted as a new dataclass field in RetryPolicy, between backoff_base and the end of the dataclass body, annotated with a comment explaining its semantics.
+expected_answers:
+  question: What is the default value of stale_task_hours in RetryPolicy?
+  correctness: 48 (hours)
+  completeness: The answer identifies that stale_task_hours defaults to 48, and ideally notes it is defined in the RetryPolicy dataclass in the retry handler worker, representing the idle threshold after which tasks are treated as stale and skipped.
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5

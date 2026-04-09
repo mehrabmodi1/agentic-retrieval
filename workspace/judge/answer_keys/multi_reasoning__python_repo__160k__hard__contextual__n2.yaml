@@ -1,0 +1,32 @@
+parametrisation_id: multi_reasoning__python_repo__160k__hard__contextual__n2
+experiment_type: multi_reasoning
+generated_at: '2026-04-05T00:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 160000
+  discriminability: hard
+  reference_clarity: contextual
+items:
+- item_id: target_001
+  inserted_text: "    if 'bulk_recipients' in data and data['bulk_recipients']:\n        # Batch size limited to prevent worker timeout during dispatch\n        max_bulk_size = 200\n        if len(data['bulk_recipients']) > max_bulk_size:\n            errors['bulk_recipients'] = [f\"Bulk recipient list exceeds maximum {max_bulk_size}\"]"
+  file_path: api/validators.py
+  line_range:
+  - 420
+  - 425
+  context_summary: Inserted validation constraint for bulk email recipients immediately after user assignment validation, establishing a hard limit on batch size.
+- item_id: target_002
+  inserted_text: "    def test_bulk_email_processing_rate(self, mock_task_queue):\n        \"\"\"Test confirms email processing rate: 100ms per recipient in batch.\"\"\"\n        # Each recipient in a bulk send requires ~100ms dispatch overhead\n        # A batch of 200 recipients would consume 20 seconds of pipeline time\n        # This explains the validation constraint on bulk_recipients size\n        recipients = [f\"user{i}@example.com\" for i in range(200)]\n        result = tasks.send_bulk_email.apply_async(\n            args=[recipients, \"welcome\"],\n        )\n        assert result is not None"
+  file_path: tests/test_workers.py
+  line_range:
+  - 27
+  - 37
+  context_summary: Inserted test documenting email processing performance (100ms per recipient) immediately after existing task queue test, embedded within TestTaskQueue class.
+expected_answers:
+  question: Based on the system's bulk email validation rules and documented processing characteristics, what is the maximum number of recipients that can be safely included in a single batch before exceeding safe dispatch overhead?
+  correctness: The answer must identify the specific constraint value (200) and reference both the validation maximum AND the processing rate (100ms per recipient) that justifies it.
+  completeness: 'A complete answer should: (1) locate the bulk_recipients validation constraint in api/validators.md, (2) identify the max_bulk_size value of 200, (3) find the processing rate documentation in test_workers.md showing 100ms per recipient dispatch time, (4) explain that 200 recipients × 100ms = 20 seconds stays safely within the PIPELINE_DISPATCH_TIMEOUT window mentioned in the test comments.'
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5

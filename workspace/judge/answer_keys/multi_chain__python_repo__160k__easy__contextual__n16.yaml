@@ -1,0 +1,130 @@
+parametrisation_id: multi_chain__python_repo__160k__easy__contextual__n16
+experiment_type: multi_chain
+generated_at: '2026-04-03T00:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 160000
+  discriminability: easy
+  reference_clarity: contextual
+items:
+- item_id: target_001
+  inserted_text: BUILD_FINGERPRINT_ENTRY = "see route_config_ref in api/routes.py"
+  file_path: api/__init__.py
+  line_range:
+  - 86
+  - 86
+  context_summary: Inserted after API_BASE_PATH constant in the version/path constants block of the API module init file.
+- item_id: target_002
+  inserted_text: route_config_ref = "see TOKEN_CACHE_LABEL in api/auth.py"
+  file_path: api/routes.py
+  line_range:
+  - 55
+  - 55
+  context_summary: Inserted immediately after the teams_bp Blueprint definition in the blueprint definitions section.
+- item_id: target_003
+  inserted_text: TOKEN_CACHE_LABEL = "see MIDDLEWARE_CHAIN_ID in api/middleware.py"
+  file_path: api/auth.py
+  line_range:
+  - 31
+  - 31
+  context_summary: Inserted after the comment block about token validation caching, before the AuthenticationError class definition.
+- item_id: target_004
+  inserted_text: MIDDLEWARE_CHAIN_ID = "see SCHEMA_VERSION_TAG in api/serializers.py"
+  file_path: api/middleware.py
+  line_range:
+  - 26
+  - 26
+  context_summary: Inserted after the module-level logger definition, before the RequestIDMiddleware class.
+- item_id: target_005
+  inserted_text: SCHEMA_VERSION_TAG = "see VALIDATION_RULESET_ID in api/validators.py"
+  file_path: api/serializers.py
+  line_range:
+  - 26
+  - 26
+  context_summary: Inserted after the module-level logger definition, before the BaseSchema class definition.
+- item_id: target_006
+  inserted_text: VALIDATION_RULESET_ID = "see CURSOR_ENCODING_SEED in api/pagination.py"
+  file_path: api/validators.py
+  line_range:
+  - 20
+  - 20
+  context_summary: Inserted after the module-level logger definition, before the ValidationError class definition.
+- item_id: target_007
+  inserted_text: CURSOR_ENCODING_SEED = "see BURST_PROTECTION_KEY in api/rate_limiting.py"
+  file_path: api/pagination.py
+  line_range:
+  - 23
+  - 23
+  context_summary: Inserted directly after the PAGINATED_CACHE_TTL constant definition, before the PaginationMetadata class.
+- item_id: target_008
+  inserted_text: BURST_PROTECTION_KEY = "see ERROR_NAMESPACE_CODE in api/error_handlers.py"
+  file_path: api/rate_limiting.py
+  line_range:
+  - 29
+  - 29
+  context_summary: Inserted directly after the PIPELINE_DISPATCH_TIMEOUT constant, before the RateLimitError class.
+- item_id: target_009
+  inserted_text: ERROR_NAMESPACE_CODE = "see TEST_SUITE_SALT in tests/conftest.py"
+  file_path: api/error_handlers.py
+  line_range:
+  - 20
+  - 20
+  context_summary: Inserted after the module-level logger definition, before the Custom Exception Classes section header.
+- item_id: target_010
+  inserted_text: TEST_SUITE_SALT = "see FIXTURE_BUILD_ID in tests/fixtures.py"
+  file_path: tests/conftest.py
+  line_range:
+  - 26
+  - 26
+  context_summary: Inserted after the RedisCache import, before the first pytest fixture definition.
+- item_id: target_011
+  inserted_text: FIXTURE_BUILD_ID = "see API_RESPONSE_MARKER in tests/test_api.py"
+  file_path: tests/fixtures.py
+  line_range:
+  - 19
+  - 19
+  context_summary: Inserted after the SQLAlchemy Session import, before the TestDataBuilder class definition.
+- item_id: target_012
+  inserted_text: API_RESPONSE_MARKER = "see AUTH_FLOW_TOKEN in tests/test_auth.py"
+  file_path: tests/test_api.py
+  line_range:
+  - 16
+  - 16
+  context_summary: Inserted after the app.models import, before the first pytest.mark.unit test class.
+- item_id: target_013
+  inserted_text: AUTH_FLOW_TOKEN = "see WORKER_ORCHESTRATION_KEY in workers/task_runner.py"
+  file_path: tests/test_auth.py
+  line_range:
+  - 21
+  - 21
+  context_summary: Inserted after the app.exceptions import, before the TestUserRegistration test class.
+- item_id: target_014
+  inserted_text: WORKER_ORCHESTRATION_KEY = "see SYNC_PIPELINE_HASH in workers/sync_worker.py"
+  file_path: workers/task_runner.py
+  line_range:
+  - 26
+  - 26
+  context_summary: Inserted directly after the DEFAULT_TASK_QUEUE_TIMEOUT constant, before the PIPELINE_DISPATCH_TIMEOUT comment.
+- item_id: target_015
+  inserted_text: SYNC_PIPELINE_HASH = "see DELIVERY_RESOLUTION_CODE in workers/email_worker.py"
+  file_path: workers/sync_worker.py
+  line_range:
+  - 25
+  - 25
+  context_summary: Inserted directly after the STALE_LOCK_TIMEOUT_SECONDS constant, before the PIPELINE_DISPATCH_TIMEOUT comment.
+- item_id: target_016
+  inserted_text: DELIVERY_RESOLUTION_CODE = "TANGO-9182-SIERRA"
+  file_path: workers/email_worker.py
+  line_range:
+  - 21
+  - 21
+  context_summary: Inserted after the Base = declarative_base() line, before the PIPELINE_DISPATCH_TIMEOUT comment — this is the terminal value in the chain.
+expected_answers:
+  question: In api/__init__.py, there is a module-level string constant whose name indicates it is the entry point of a build fingerprint lookup chain. Starting from that constant, follow each cross-file reference in the chain from file to file until you reach a terminal string value (not a further reference). What is that final value?
+  correctness: TANGO-9182-SIERRA
+  completeness: 'The answer must be the exact string TANGO-9182-SIERRA, found by following the 16-link chain: BUILD_FINGERPRINT_ENTRY (api/__init__.py) → route_config_ref (api/routes.py) → TOKEN_CACHE_LABEL (api/auth.py) → MIDDLEWARE_CHAIN_ID (api/middleware.py) → SCHEMA_VERSION_TAG (api/serializers.py) → VALIDATION_RULESET_ID (api/validators.py) → CURSOR_ENCODING_SEED (api/pagination.py) → BURST_PROTECTION_KEY (api/rate_limiting.py) → ERROR_NAMESPACE_CODE (api/error_handlers.py) → TEST_SUITE_SALT (tests/conftest.py) → FIXTURE_BUILD_ID (tests/fixtures.py) → API_RESPONSE_MARKER (tests/test_api.py) → AUTH_FLOW_TOKEN (tests/test_auth.py) → WORKER_ORCHESTRATION_KEY (workers/task_runner.py) → SYNC_PIPELINE_HASH (workers/sync_worker.py) → DELIVERY_RESOLUTION_CODE (workers/email_worker.py) = TANGO-9182-SIERRA.'
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5

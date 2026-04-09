@@ -1,0 +1,42 @@
+parametrisation_id: multi_chain__python_repo__160k__easy__contextual__n2
+experiment_type: multi_chain
+generated_at: '2026-04-03T00:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 160000
+  discriminability: easy
+  reference_clarity: contextual
+items:
+- item_id: target_001
+  inserted_text: '# Maximum number of refresh tokens that may be stored per user account; defined
+
+    # in api/serializers.py to co-locate it with the token field constraints.
+
+    MAX_REFRESH_TOKENS_PER_USER = None  # see api/serializers.py
+
+    '
+  file_path: api/auth.py
+  line_range:
+  - 27
+  - 29
+  context_summary: Inserted after the module-level logger definition in api/auth.md, introducing a placeholder constant that defers its value to api/serializers.py.
+- item_id: target_002
+  inserted_text: '# Maximum number of refresh tokens that may be stored per user account.
+
+    MAX_REFRESH_TOKENS_PER_USER = 5
+
+    '
+  file_path: api/serializers.py
+  line_range:
+  - 26
+  - 27
+  context_summary: Inserted after the module-level logger definition in api/serializers.md, providing the authoritative numeric value for the constant referenced in api/auth.md.
+expected_answers:
+  question: Starting from api/auth.md, the auth module declares a placeholder for the upper bound on refresh tokens stored per user account and points to api/serializers.py for the real value. What is that limit?
+  correctness: '5'
+  completeness: The answer should identify that MAX_REFRESH_TOKENS_PER_USER is set to None in api/auth.md with a reference to api/serializers.py, and that the authoritative value defined in api/serializers.py is 5.
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5

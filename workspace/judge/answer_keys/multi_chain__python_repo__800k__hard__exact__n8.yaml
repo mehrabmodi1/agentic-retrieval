@@ -1,0 +1,102 @@
+parametrisation_id: multi_chain__python_repo__800k__hard__exact__n8
+experiment_type: multi_chain
+generated_at: '2026-04-04T00:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 800000
+  discriminability: hard
+  reference_clarity: exact
+items:
+- item_id: target_001
+  inserted_text: '# REPORT_SINK_ENDPOINT: completed report exports are forwarded to a storage
+
+    # sink whose host is not configured locally — ArchiveDispatcher in api/serializers.py
+
+    # assembles the final destination at dispatch time.
+
+    '
+  file_path: api/routes.py
+  line_range:
+  - 49
+  - 51
+  context_summary: Inserted as a module-level comment after the logger definition in api/routes.md, referencing REPORT_SINK_ENDPOINT and pointing to ArchiveDispatcher in api/serializers.py.
+- item_id: target_002
+  inserted_text: "class ArchiveDispatcher:\n    \"\"\"Routes finalized report payloads to the configured archive sink.\n\n    The resolved destination hostname is not held in this class; instead,\n    it is obtained at dispatch time via _resolve_sink_host in api/auth.py.\n    \"\"\"\n\n    @staticmethod\n    def dispatch(payload: dict) -> bool:\n        from app.api.auth import _resolve_sink_host\n        host = _resolve_sink_host()\n        logger.info(\"Dispatching archive payload to %s\", host)\n        return True\n"
+  file_path: api/serializers.py
+  line_range:
+  - 27
+  - 39
+  context_summary: Inserted as a new class before BaseSchema in api/serializers.md; the docstring points to _resolve_sink_host in api/auth.py as the source of the hostname.
+- item_id: target_003
+  inserted_text: "def _resolve_sink_host() -> str:\n    \"\"\"Return the outbound hostname for the report archive sink.\n\n    The host string is sourced from the middleware layer's host registry;\n    consult SINK_HOST_CONFIG in api/middleware.py for the concrete mapping.\n    \"\"\"\n    from app.api.middleware import SINK_HOST_CONFIG\n    return SINK_HOST_CONFIG.get('report_archive', 'localhost')\n"
+  file_path: api/auth.py
+  line_range:
+  - 28
+  - 35
+  context_summary: Inserted as a module-level function after the logger definition in api/auth.md; the docstring and import point to SINK_HOST_CONFIG in api/middleware.py.
+- item_id: target_004
+  inserted_text: "# SINK_HOST_CONFIG: maps logical archive sink names to resolved network hostnames.\n# The 'report_archive' entry is populated at startup from ARCHIVE_RELAY_HOST\n# in workers/task_runner.py.\nSINK_HOST_CONFIG = {\n    'report_archive': None,  # set at init from workers.task_runner.ARCHIVE_RELAY_HOST\n}\n"
+  file_path: api/middleware.py
+  line_range:
+  - 26
+  - 31
+  context_summary: Inserted as a module-level constant after the logger definition in api/middleware.md, with a comment pointing to ARCHIVE_RELAY_HOST in workers/task_runner.py.
+- item_id: target_005
+  inserted_text: '# ARCHIVE_RELAY_HOST: hostname of the archive relay node used for cold-storage
+
+    # offload. The set of permitted values is enforced by ARCHIVE_ALLOWED_HOSTS
+
+    # in workers/cleanup_worker.py.
+
+    ARCHIVE_RELAY_HOST = None  # authoritative allowed-values list: workers/cleanup_worker.py
+
+    '
+  file_path: workers/task_runner.py
+  line_range:
+  - 27
+  - 30
+  context_summary: Inserted after DEFAULT_TASK_QUEUE_TIMEOUT in workers/task_runner.md; the comment names ARCHIVE_ALLOWED_HOSTS in workers/cleanup_worker.py as the authority.
+- item_id: target_006
+  inserted_text: '# ARCHIVE_ALLOWED_HOSTS: the approved relay hostnames for archive offloading.
+
+    # The primary host entry is sourced from the outbound host registry of the
+
+    # email worker; see OUTBOUND_HOST_MAP in workers/email_worker.py.
+
+    ARCHIVE_ALLOWED_HOSTS = None  # primary value: workers.email_worker.OUTBOUND_HOST_MAP[''archive'']
+
+    '
+  file_path: workers/cleanup_worker.py
+  line_range:
+  - 23
+  - 26
+  context_summary: Inserted after the PIPELINE_DISPATCH_TIMEOUT comment block in workers/cleanup_worker.md; points to OUTBOUND_HOST_MAP in workers/email_worker.py.
+- item_id: target_007
+  inserted_text: "# OUTBOUND_HOST_MAP: maps logical outbound channel names to their network hostnames.\n# The 'archive' channel host is taken from the report generation pipeline;\n# see COLD_ARCHIVE_HOST in workers/report_generator.py for the resolved value.\nOUTBOUND_HOST_MAP = {\n    'archive': None,  # value derived from workers.report_generator.COLD_ARCHIVE_HOST\n}\n"
+  file_path: workers/email_worker.py
+  line_range:
+  - 22
+  - 27
+  context_summary: Inserted after Base declarative_base() in workers/email_worker.md; the comment and inline annotation point to COLD_ARCHIVE_HOST in workers/report_generator.py.
+- item_id: target_008
+  inserted_text: '# COLD_ARCHIVE_HOST: the network hostname of the primary cold-storage archive node
+
+    # that receives all completed report exports.
+
+    COLD_ARCHIVE_HOST = ''archive-node-12.internal''
+
+    '
+  file_path: workers/report_generator.py
+  line_range:
+  - 27
+  - 29
+  context_summary: Inserted after Base declarative_base() in workers/report_generator.md; defines the final resolved hostname value for the archive chain.
+expected_answers:
+  question: In api/routes.md, the REPORT_SINK_ENDPOINT comment says that ArchiveDispatcher in api/serializers.py assembles the final destination. Follow the full chain of references starting from REPORT_SINK_ENDPOINT until you reach the final concrete hostname value. What is that hostname?
+  correctness: archive-node-12.internal
+  completeness: 'A complete answer identifies ''archive-node-12.internal'' as the value of COLD_ARCHIVE_HOST in workers/report_generator.md, which is reached by following: REPORT_SINK_ENDPOINT (api/routes.md) → ArchiveDispatcher (api/serializers.md) → _resolve_sink_host (api/auth.md) → SINK_HOST_CONFIG (api/middleware.md) → ARCHIVE_RELAY_HOST (workers/task_runner.md) → ARCHIVE_ALLOWED_HOSTS (workers/cleanup_worker.md) → OUTBOUND_HOST_MAP (workers/email_worker.md) → COLD_ARCHIVE_HOST (workers/report_generator.md).'
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5

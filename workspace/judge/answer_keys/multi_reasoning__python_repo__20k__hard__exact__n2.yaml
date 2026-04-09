@@ -1,0 +1,44 @@
+parametrisation_id: multi_reasoning__python_repo__20k__hard__exact__n2
+experiment_type: multi_reasoning
+generated_at: '2026-04-05T00:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 20000
+  discriminability: hard
+  reference_clarity: exact
+items:
+- item_id: target_001
+  inserted_text: '# Cleanup batch configuration constants
+
+    MAX_RECORDS_DELETABLE_PER_BATCH = 25000
+
+    MAX_DISK_FREED_BYTES_PER_OPERATION = 536870912  # 512 MB in bytes
+
+    '
+  file_path: workers/cleanup_worker.py
+  line_range:
+  - 316
+  - 318
+  context_summary: Configuration constants for cleanup batch limits embedded within the _log_cleanup method docstring and initialization section.
+- item_id: target_002
+  inserted_text: '# Test expectations for cleanup operations with batch constraints
+
+    EXPECTED_CLEANUP_BATCH_COUNT = 4  # For 100,000 records with 25,000 per batch
+
+    EXPECTED_TOTAL_DISK_FREED_MB = 2048  # Total across all cleanup operations
+
+    '
+  file_path: tests/conftest.py
+  line_range:
+  - 146
+  - 148
+  context_summary: Test fixture constants for cleanup operation expectations embedded within the test_api_key fixture implementation.
+expected_answers:
+  question: According to the test fixtures, if cleanup operations process records in batches with EXPECTED_CLEANUP_BATCH_COUNT of 4, and the maximum records per batch is MAX_RECORDS_DELETABLE_PER_BATCH, what is the total number of records that can be cleaned? Additionally, what is the EXPECTED_TOTAL_DISK_FREED_MB across all these cleanup batches?
+  correctness: 'A correct answer must: (1) identify MAX_RECORDS_DELETABLE_PER_BATCH = 25000 from the cleanup_worker.md file, (2) identify EXPECTED_CLEANUP_BATCH_COUNT = 4 from the conftest.md file, (3) calculate total records = 25000 × 4 = 100,000 records, (4) identify EXPECTED_TOTAL_DISK_FREED_MB = 2048 from the conftest.md file, and (5) provide both values as the complete answer.'
+  completeness: 'A complete answer must include: the total capacity calculation (100,000 records), the per-batch record limit (25,000), the batch count (4), and the expected total disk space freed (2048 MB). Answer must demonstrate understanding of how the batch configuration and test expectations relate to the overall cleanup operation capability.'
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5

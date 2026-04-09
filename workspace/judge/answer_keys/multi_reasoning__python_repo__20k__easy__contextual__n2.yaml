@@ -1,0 +1,57 @@
+parametrisation_id: multi_reasoning__python_repo__20k__easy__contextual__n2
+experiment_type: multi_reasoning
+generated_at: '2026-04-05T00:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 20000
+  discriminability: easy
+  reference_clarity: contextual
+items:
+- item_id: target_001
+  inserted_text: '    timeout_seconds = Column(Integer, default=300)'
+  file_path: workers/task_runner.py
+  line_range:
+  - 74
+  - 74
+  context_summary: Added task timeout configuration field to the Task model, placed after max_retries column definition.
+- item_id: target_002
+  inserted_text: '    MAX_EXPONENTIAL_BACKOFF_SECONDS = 60'
+  file_path: workers/retry_handler.py
+  line_range:
+  - 101
+  - 101
+  context_summary: Added maximum backoff constant to BackoffCalculator class, placed before calculate_delay method definition.
+expected_answers:
+  question: In a system where tasks have a timeout window of 300 seconds and exponential backoff delays can extend up to 60 seconds between consecutive retry attempts, what is the theoretical maximum number of times a task can be retried before the timeout window is exhausted?
+  correctness: 'The answer must identify both configuration values:
+
+    - Task timeout: 300 seconds (from timeout_seconds = 300 in task_runner.md)
+
+    - Maximum backoff delay: 60 seconds (from MAX_EXPONENTIAL_BACKOFF_SECONDS = 60 in retry_handler.md)
+
+
+    The answer must correctly calculate or reason about retry attempts:
+
+    - With 60-second maximum backoff intervals and 300-second timeout, at minimum approximately 5 retry windows are available (0s, 60s, 120s, 180s, 240s before exceeding 300s)
+
+    - Or: 300 seconds ÷ 60 seconds per backoff = 5 maximum retry intervals
+
+    '
+  completeness: 'A complete answer must:
+
+    1. Reference the task timeout value (300 seconds)
+
+    2. Reference the maximum backoff delay value (60 seconds)
+
+    3. Explain how these two constraints interact to limit retries
+
+    4. Provide the quantitative result (approximately 5 retry windows/attempts possible)
+
+    5. Show reasoning connecting both pieces of information
+
+    '
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5

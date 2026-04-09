@@ -1,0 +1,74 @@
+parametrisation_id: multi_reasoning__python_repo__40k__easy__synonym__n8
+experiment_type: multi_reasoning
+generated_at: '2026-04-05T00:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 40000
+  discriminability: easy
+  reference_clarity: synonym
+items:
+- item_id: target_001
+  inserted_text: STALE_RECORD_THRESHOLD_DAYS = 90
+  file_path: api/routes.py
+  line_range:
+  - 50
+  - 51
+  context_summary: Added constant for records older than this many days eligible for cleanup
+- item_id: target_002
+  inserted_text: TOKEN_EXPIRATION_SECONDS = 3600
+  file_path: tests/test_auth.py
+  line_range:
+  - 232
+  - 233
+  context_summary: Added constant defining access token validity duration in seconds
+- item_id: target_003
+  inserted_text: MAX_URL_LENGTH_CHARS = 2048
+  file_path: api/validators.py
+  line_range:
+  - 146
+  - 147
+  context_summary: Added constant for maximum URL character length validation
+- item_id: target_004
+  inserted_text: LOG_RETENTION_DAYS = 60
+  file_path: workers/cleanup_worker.py
+  line_range:
+  - 61
+  - 62
+  context_summary: Added constant for application log retention threshold in days
+- item_id: target_005
+  inserted_text: ARCHIVE_LOGS_THRESHOLD_DAYS = 30
+  file_path: tests/test_workers.py
+  line_range:
+  - 176
+  - 177
+  context_summary: Added constant for audit log archival threshold in days
+- item_id: target_006
+  inserted_text: INACTIVE_USER_THRESHOLD_DAYS = 90
+  file_path: tests/test_workers.py
+  line_range:
+  - 185
+  - 186
+  context_summary: Added constant for user inactivity period before marking inactive in days
+- item_id: target_007
+  inserted_text: RATE_LIMIT_WINDOW_SECONDS = 3600
+  file_path: api/__init__.py
+  line_range:
+  - 281
+  - 282
+  context_summary: Added constant for rate limiting time window duration in seconds
+- item_id: target_008
+  inserted_text: MAX_RETRY_DELAY_SECONDS = 3600
+  file_path: workers/retry_handler.py
+  line_range:
+  - 51
+  - 52
+  context_summary: Added constant for maximum backoff delay between task retry attempts in seconds
+expected_answers:
+  question: 'What is the total of all configured system timeouts and retention periods across the application? Sum these values: stale record cleanup threshold (days), access token expiration (seconds), audit log archive threshold (days), inactive user marking threshold (days), rate limiting window (seconds), and maximum retry backoff delay (seconds). Convert all days to hours by multiplying by 24, and keep seconds as-is before summing.'
+  correctness: 'Must accurately identify all 8 numeric configuration values and apply correct unit conversions. Days×24=hours; seconds remain unchanged. Final sum should equal: (90×24) + 3600 + (30×24) + (90×24) + 3600 + 3600 = 2160 + 3600 + 720 + 2160 + 3600 + 3600 = 15,840 hours (or provide equivalent calculation)'
+  completeness: Must find and cite all 8 configuration constants by their exact names or synonyms (e.g., 'stale record threshold' for STALE_RECORD_THRESHOLD_DAYS, 'token validity' for TOKEN_EXPIRATION_SECONDS, 'log retention' or 'archived logs' for cleanup thresholds, 'inactive period' for user inactivity threshold, 'rate limit window' for API throttling config, 'maximum backoff' or 'retry delay cap' for retry handler). Must show unit conversions. Must show arithmetic calculation steps.
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5

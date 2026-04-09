@@ -1,0 +1,27 @@
+parametrisation_id: single_needle__python_repo__20k__easy__contextual
+experiment_type: single_needle
+generated_at: '2026-04-03T00:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 20000
+  discriminability: easy
+  reference_clarity: contextual
+items:
+- item_id: target_001
+  inserted_text: '# Maximum number of records allowed in a single bulk import request
+
+    MAX_BULK_IMPORT_RECORDS = 500'
+  file_path: api/validators.py
+  line_range:
+  - 20
+  - 21
+  context_summary: Inserted as a module-level constant immediately after the logger definition in the validators module, before the ValidationError class.
+expected_answers:
+  question: What is the upper limit on how many records can be submitted in a single bulk import request?
+  correctness: The correct answer is 500 records (MAX_BULK_IMPORT_RECORDS = 500).
+  completeness: A complete answer notes that this limit is defined by the constant MAX_BULK_IMPORT_RECORDS set to 500, located in api/validators.py.
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5

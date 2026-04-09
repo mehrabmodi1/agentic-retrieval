@@ -1,0 +1,116 @@
+parametrisation_id: multi_reasoning__python_repo__40k__hard__exact__n8
+experiment_type: multi_reasoning
+generated_at: '2026-04-05T00:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 40000
+  discriminability: hard
+  reference_clarity: exact
+items:
+- item_id: target_001
+  inserted_text: LOG_RETENTION_DAYS = 30
+  file_path: api/error_handlers.py
+  line_range:
+  - 420
+  - 421
+  context_summary: Embedded in ErrorContext class docstring as a database retention constant for application error logs.
+- item_id: target_002
+  inserted_text: EMAIL_LOG_RETENTION_DAYS = 14
+  file_path: workers/email_worker.py
+  line_range:
+  - 240
+  - 241
+  context_summary: Inserted in _log_email method as a configuration constant for email log retention policy.
+- item_id: target_003
+  inserted_text: TASK_HISTORY_RETENTION_DAYS = 90
+  file_path: workers/task_runner.py
+  line_range:
+  - 280
+  - 281
+  context_summary: Added to _update_task_status method as retention policy for completed task records.
+- item_id: target_004
+  inserted_text: TEMP_FILE_RETENTION_DAYS = 7
+  file_path: workers/cleanup_worker.py
+  line_range:
+  - 75
+  - 76
+  context_summary: Embedded in CleanupWorker initialization alongside other retention period assignments.
+- item_id: target_005
+  inserted_text: REPORT_FILE_RETENTION_DAYS = 60
+  file_path: workers/cleanup_worker.py
+  line_range:
+  - 77
+  - 78
+  context_summary: Added in cleanup_tasks definition as retention requirement for generated reports.
+- item_id: target_006
+  inserted_text: REQUEST_LOG_RETENTION_DAYS = 21
+  file_path: api/middleware.py
+  line_range:
+  - 72
+  - 73
+  context_summary: Inserted in logging section of before_request middleware as request history retention policy.
+- item_id: target_007
+  inserted_text: AUDIT_LOG_RETENTION_DAYS = 180
+  file_path: api/validators.py
+  line_range:
+  - 195
+  - 196
+  context_summary: Added in validate_user_creation function as audit trail retention requirement.
+- item_id: target_008
+  inserted_text: SESSION_LOG_RETENTION_DAYS = 5
+  file_path: tests/conftest.py
+  line_range:
+  - 188
+  - 189
+  context_summary: Embedded in test fixture setup as test session cleanup retention period.
+expected_answers:
+  question: What is the total number of days across all database and file retention policies in the system (log retention, email log retention, task history retention, temp file retention, report file retention, request log retention, audit log retention, and session log retention)?
+  correctness: 'The answer must sum all eight retention period values:
+
+    30 + 14 + 90 + 7 + 60 + 21 + 180 + 5 = 407 days
+
+    A correct answer includes:
+
+    - The final sum of 407 days
+
+    - Identification of all 8 retention period constants
+
+    - Arithmetic verification showing the addition of all values
+
+    '
+  completeness: 'A complete answer must:
+
+    1. Locate all 8 retention period constants across different files (error handlers, email worker, task runner, cleanup worker - both temp and report files, middleware, validators, and conftest)
+
+    2. Extract exact values: LOG_RETENTION_DAYS (30), EMAIL_LOG_RETENTION_DAYS (14), TASK_HISTORY_RETENTION_DAYS (90), TEMP_FILE_RETENTION_DAYS (7), REPORT_FILE_RETENTION_DAYS (60), REQUEST_LOG_RETENTION_DAYS (21), AUDIT_LOG_RETENTION_DAYS (180), SESSION_LOG_RETENTION_DAYS (5)
+
+    3. Understand that all values must be combined despite being scattered across different modules and retention contexts
+
+    4. Perform correct arithmetic summation
+
+    5. Provide the comprehensive total with supporting evidence from the code
+
+    '
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+  description: Final numerical answer is exactly 407 days with all 8 values properly identified and summed
+- criterion: completeness
+  weight: 0.5
+  description: Response demonstrates finding all 8 constants across different files and understanding their interdependency in the retention policy system
+- criterion: reasoning
+  weight: 0.5
+  description: Answer shows how scattered retention policies across error handling, email, task management, file cleanup, middleware, validation, and testing all contribute to the total system retention time
+notes: 'This is a hard-discriminability, exact-reference needle set requiring:
+
+  - Multi-file navigation (8 different source files)
+
+  - Context comprehension (understanding each constant is part of broader retention policy)
+
+  - Implicit information extraction (retention values are embedded in class initialization, method signatures, and fixture setups)
+
+  - Arithmetic reasoning across domains (logs, emails, tasks, files, requests, audits, sessions)
+
+  - No single file or search term reveals all 8 values - all must be found and combined
+
+  '

@@ -1,0 +1,58 @@
+parametrisation_id: "multi_reasoning__noir_fiction__20k__easy__synonym__n8"
+experiment_type: "multi_reasoning"
+generated_at: "2026-04-05T00:00:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 20000
+  discriminability: "easy"
+  reference_clarity: "synonym"
+items:
+  - item_id: "target_001"
+    inserted_text: "She has a small crescent-shaped birthmark just below her left collarbone—barely visible unless you know to look for it."
+    file_path: "chapters/chapter_01.md"
+    line_range: [31, 31]
+    context_summary: "Inserted as distinguishing physical mark on Catherine Halstead in her father's description."
+  - item_id: "target_002"
+    inserted_text: "The bracelet is gold with three small pearls, and the ring is a sapphire in a silver setting."
+    file_path: "case_notes/day_07.md"
+    line_range: [92, 92]
+    context_summary: "Inserted as specific descriptive details of Claire Hollister's jewelry found as evidence."
+  - item_id: "target_003"
+    inserted_text: "The ticket was dated October 30th, 9:15 AM departure."
+    file_path: "witnesses/cab_driver_statement.md"
+    line_range: [64, 64]
+    context_summary: "Inserted as specific temporal and operational detail of the fugitive's train departure."
+  - item_id: "target_004"
+    inserted_text: "Cash. In unmarked bills."
+    file_path: "case_notes/day_05.md"
+    line_range: [129, 129]
+    context_summary: "Inserted as specification of payment method and form given to Vincent Castellano."
+  - item_id: "target_005"
+    inserted_text: "Three hundred seventy-five dollars for the apartment."
+    file_path: "witnesses/landlady_statement.md"
+    line_range: [24, 24]
+    context_summary: "Inserted as specific rent amount Harvey paid consistently for three years."
+  - item_id: "target_006"
+    inserted_text: "According to hospital records, he was in their facility for exactly three years prior to this incident as well."
+    file_path: "case_notes/day_04.md"
+    line_range: [32, 32]
+    context_summary: "Inserted as historical timeline detail about Vincent Castellano's medical connection to the hospital."
+  - item_id: "target_007"
+    inserted_text: "advanced degrees in literature and philosophy, both honors"
+    file_path: "chapters/chapter_02.md"
+    line_range: [19, 19]
+    context_summary: "Inserted as specific educational credentials of Catherine Halstead."
+  - item_id: "target_008"
+    inserted_text: "the key's under the mat"
+    file_path: "witnesses/bartender_statement.md"
+    line_range: [42, 42]
+    context_summary: "Inserted as operational instruction given by older man to the fugitive at bar."
+expected_answers:
+  question: "What are all the specific distinguishing features and operational particulars that emerge when examining the witness statements and case notes concerning the missing persons and related investigations?"
+  correctness: "Answer must identify all eight distinct identifying marks, monetary amounts, temporal details, location specifics, educational credentials, and coded instructions found across the eight witness statements and case notes. Correct answers will synthesize information from multiple sources to create a complete profile."
+  completeness: "A complete answer will include: (1) physical identifying mark on Catherine Halstead; (2) description of recovered jewelry; (3) date and time of train departure; (4) form and specification of payment given to Vincent; (5) the monthly rent amount; (6) the prior timeline detail about hospital facility; (7) Catherine's specific degree credentials; (8) the access instruction regarding the motor inn. The answer demonstrates that all eight items together form an interconnected web of details that establishes identity, motive, timeline, and operational logistics of the criminal enterprise."
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+  - criterion: "completeness"
+    weight: 0.5

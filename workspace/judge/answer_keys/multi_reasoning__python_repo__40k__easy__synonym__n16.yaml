@@ -1,0 +1,135 @@
+parametrisation_id: multi_reasoning__python_repo__40k__easy__synonym__n16
+experiment_type: multi_reasoning
+generated_at: '2026-04-05T00:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 40000
+  discriminability: easy
+  reference_clarity: synonym
+items:
+- item_id: target_001
+  inserted_text: DEFAULT_PAGE_SIZE = 20
+  file_path: api/serializers.py
+  line_range:
+  - 285
+  - 285
+  context_summary: Configuration constant for default pagination page size inserted after PaginationMetadataSerializer class definition.
+- item_id: target_002
+  inserted_text: MAX_PAGE_SIZE = 100
+  file_path: api/serializers.py
+  line_range:
+  - 286
+  - 286
+  context_summary: Configuration constant for maximum pagination page size inserted alongside pagination defaults.
+- item_id: target_003
+  inserted_text: REQUEST_TIMEOUT_SECONDS = 30
+  file_path: api/serializers.py
+  line_range:
+  - 287
+  - 287
+  context_summary: API request timeout configuration constant inserted in serializers module.
+- item_id: target_004
+  inserted_text: POLL_INTERVAL_SECONDS = 5
+  file_path: tests/test_api.py
+  line_range:
+  - 312
+  - 312
+  context_summary: Worker polling interval constant inserted in test pagination section.
+- item_id: target_005
+  inserted_text: STALE_LOCK_TIMEOUT_SECONDS = 60
+  file_path: tests/test_api.py
+  line_range:
+  - 313
+  - 313
+  context_summary: Lock timeout constant inserted after pagination test methods.
+- item_id: target_006
+  inserted_text: MAX_RETRIES = 3
+  file_path: workers/report_generator.py
+  line_range:
+  - 65
+  - 65
+  context_summary: Maximum retry count constant inserted in ReportLog model definition.
+- item_id: target_007
+  inserted_text: CACHE_DURATION_SECONDS = 300
+  file_path: workers/report_generator.py
+  line_range:
+  - 66
+  - 66
+  context_summary: Report caching duration constant inserted alongside table model definitions.
+- item_id: target_008
+  inserted_text: SESSION_TIMEOUT_MINUTES = 30
+  file_path: tests/test_workers.py
+  line_range:
+  - 263
+  - 263
+  context_summary: Session timeout configuration constant inserted in worker exception handling test section.
+- item_id: target_009
+  inserted_text: PASSWORD_RESET_EXPIRES_HOURS = 24
+  file_path: tests/conftest.py
+  line_range:
+  - 165
+  - 165
+  context_summary: Password reset token expiration configuration inserted after API key fixture creation.
+- item_id: target_010
+  inserted_text: SLOW_REQUEST_THRESHOLD_MS = 1000
+  file_path: api/middleware.py
+  line_range:
+  - 105
+  - 105
+  context_summary: Slow request detection threshold constant inserted in response logging middleware.
+- item_id: target_011
+  inserted_text: API_KEY_MIN_LENGTH = 32
+  file_path: tests/test_auth.py
+  line_range:
+  - 254
+  - 254
+  context_summary: API key minimum length validation constant inserted in token validation test section.
+- item_id: target_012
+  inserted_text: MAX_FILE_SIZE_MB = 50
+  file_path: workers/task_runner.py
+  line_range:
+  - 220
+  - 220
+  context_summary: Maximum file upload size limit constant inserted in task execution logic section.
+- item_id: target_013
+  inserted_text: DB_POOL_SIZE = 20
+  file_path: api/routes.py
+  line_range:
+  - 345
+  - 345
+  context_summary: Database connection pool size configuration constant inserted in project listing endpoint.
+- item_id: target_014
+  inserted_text: WORKER_QUEUE_SIZE = 1000
+  file_path: tests/fixtures.py
+  line_range:
+  - 225
+  - 225
+  context_summary: Worker task queue capacity constant inserted in test fixture creation utilities.
+- item_id: target_015
+  inserted_text: BATCH_SIZE = 50
+  file_path: api/__init__.py
+  line_range:
+  - 210
+  - 210
+  context_summary: Batch processing size configuration constant inserted in API initialization error response handling.
+- item_id: target_016
+  inserted_text: RATE_LIMIT_RPS = 10
+  file_path: api/auth.py
+  line_range:
+  - 205
+  - 205
+  context_summary: Rate limiting requests-per-second constant inserted in API key validation module.
+expected_answers:
+  question: What is the sum of all system timeout intervals, polling periods, and rate control parameters (in seconds and requests-per-second equivalents where applicable)? Include REQUEST_TIMEOUT_SECONDS, POLL_INTERVAL_SECONDS, STALE_LOCK_TIMEOUT_SECONDS, CACHE_DURATION_SECONDS, SESSION_TIMEOUT_MINUTES (converted to seconds), PASSWORD_RESET_EXPIRES_HOURS (converted to seconds), SLOW_REQUEST_THRESHOLD_MS (converted to seconds), and RATE_LIMIT_RPS. For compound calculations, express timeout-based values in seconds and rate limits in their native units. What is the total in seconds for time-based parameters only?
+  correctness: 'The answer must correctly identify and extract all 8 time-based configuration constants (REQUEST_TIMEOUT_SECONDS=30, POLL_INTERVAL_SECONDS=5, STALE_LOCK_TIMEOUT_SECONDS=60, CACHE_DURATION_SECONDS=300, SESSION_TIMEOUT_MINUTES=30→1800 seconds, PASSWORD_RESET_EXPIRES_HOURS=24→86400 seconds, SLOW_REQUEST_THRESHOLD_MS=1000→1 second, RATE_LIMIT_RPS=10). Conversions must be accurate: 30 minutes = 1800 seconds, 24 hours = 86400 seconds, 1000 milliseconds = 1 second. Final sum must be 88596 seconds.'
+  completeness: 'A complete answer must: (1) locate all 8 time-based configuration constants across their respective modules, (2) correctly convert all non-second values (minutes to seconds, hours to seconds, milliseconds to seconds), (3) exclude non-time-based parameters (MAX_PAGE_SIZE, DEFAULT_PAGE_SIZE, MAX_RETRIES, API_KEY_MIN_LENGTH, MAX_FILE_SIZE_MB, DB_POOL_SIZE, WORKER_QUEUE_SIZE, BATCH_SIZE, RATE_LIMIT_RPS from the final sum per question interpretation), (4) show work for unit conversions, (5) provide the final aggregated total of 88596 seconds.'
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+  description: Accurately identifies and extracts all needle values with correct unit conversions.
+- criterion: completeness
+  weight: 0.5
+  description: Finds all 8 required time-based configuration parameters and performs comprehensive aggregation.
+- criterion: reasoning
+  weight: 0.3
+  description: Demonstrates clear reasoning about which parameters to include and explicit unit conversion steps.

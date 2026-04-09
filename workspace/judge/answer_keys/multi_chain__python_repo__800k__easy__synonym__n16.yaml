@@ -1,0 +1,162 @@
+parametrisation_id: multi_chain__python_repo__800k__easy__synonym__n16
+experiment_type: multi_chain
+generated_at: '2026-04-04T00:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 800000
+  discriminability: easy
+  reference_clarity: synonym
+items:
+- item_id: target_001
+  inserted_text: '# Cross-module initialization forward pointer; the next key in the sequence is held in api/auth.py.
+
+    XLINK_INIT_NEXT = ''XLINK_AUTH_RELAY'''
+  file_path: api/__init__.py
+  line_range:
+  - 287
+  - 288
+  context_summary: Inserted after the API_DEFAULTS dict as a module-level constant with comment, pointing to the next chain variable in api/auth.py.
+- item_id: target_002
+  inserted_text: '# Authentication relay key; resolve the next reference from api/error_handlers.py.
+
+    XLINK_AUTH_RELAY = ''XLINK_ERR_FORWARD'''
+  file_path: api/auth.py
+  line_range:
+  - 27
+  - 28
+  context_summary: Inserted after the logger declaration and before the token caching comment, as a module-level constant pointing to api/error_handlers.py.
+- item_id: target_003
+  inserted_text: '# Error handler forwarding code; the next chain entry lives in api/middleware.py.
+
+    XLINK_ERR_FORWARD = ''XLINK_MW_PASS'''
+  file_path: api/error_handlers.py
+  line_range:
+  - 20
+  - 21
+  context_summary: Inserted after the logger declaration and before the Custom Exception Classes section header, as a module-level constant pointing to api/middleware.py.
+- item_id: target_004
+  inserted_text: '# Middleware pass-through token; continue the chain at api/pagination.py.
+
+    XLINK_MW_PASS = ''XLINK_PAGE_TOKEN'''
+  file_path: api/middleware.py
+  line_range:
+  - 26
+  - 27
+  context_summary: Inserted after the logger declaration and before the RequestIDMiddleware class, as a module-level constant pointing to api/pagination.py.
+- item_id: target_005
+  inserted_text: '# Pagination handoff token; the successor key is defined in api/rate_limiting.py.
+
+    XLINK_PAGE_TOKEN = ''XLINK_THROTTLE_KEY'''
+  file_path: api/pagination.py
+  line_range:
+  - 24
+  - 25
+  context_summary: Inserted immediately after PAGINATED_CACHE_TTL and before the PaginationMetadata class, as a module-level constant pointing to api/rate_limiting.py.
+- item_id: target_006
+  inserted_text: '# Throttle chain key; the following reference is stored in api/routes.py.
+
+    XLINK_THROTTLE_KEY = ''XLINK_ROUTE_CODE'''
+  file_path: api/rate_limiting.py
+  line_range:
+  - 30
+  - 31
+  context_summary: Inserted after PIPELINE_DISPATCH_TIMEOUT and before the blank lines preceding the RateLimiter class, as a module-level constant pointing to api/routes.py.
+- item_id: target_007
+  inserted_text: '# Route dispatch code; look up the next link in api/serializers.py.
+
+    XLINK_ROUTE_CODE = ''XLINK_SCHEMA_PASS'''
+  file_path: api/routes.py
+  line_range:
+  - 49
+  - 50
+  context_summary: Inserted after the logger declaration and before the Blueprint definitions comment, as a module-level constant pointing to api/serializers.py.
+- item_id: target_008
+  inserted_text: '# Schema pass token; the next element in the chain is in api/validators.py.
+
+    XLINK_SCHEMA_PASS = ''XLINK_GUARD_TOKEN'''
+  file_path: api/serializers.py
+  line_range:
+  - 26
+  - 27
+  context_summary: Inserted after the logger declaration and before the BaseSchema class definition, as a module-level constant pointing to api/validators.py.
+- item_id: target_009
+  inserted_text: '# Input guard token; the chain continues in workers/cleanup_worker.py.
+
+    XLINK_GUARD_TOKEN = ''XLINK_SWEEP_CODE'''
+  file_path: api/validators.py
+  line_range:
+  - 20
+  - 21
+  context_summary: Inserted after the logger declaration and before the ValidationError class definition, as a module-level constant pointing to workers/cleanup_worker.py.
+- item_id: target_010
+  inserted_text: '# Sweep trigger code; forward to workers/email_worker.py for the next key.
+
+    XLINK_SWEEP_CODE = ''XLINK_MAIL_KEY'''
+  file_path: workers/cleanup_worker.py
+  line_range:
+  - 23
+  - 24
+  context_summary: Inserted after the existing PIPELINE_DISPATCH_TIMEOUT comment block and before the CleanupTask dataclass, as a module-level constant pointing to workers/email_worker.py.
+- item_id: target_011
+  inserted_text: '# Mail relay key; the successor reference is in workers/report_generator.py.
+
+    XLINK_MAIL_KEY = ''XLINK_REPORT_ID'''
+  file_path: workers/email_worker.py
+  line_range:
+  - 25
+  - 26
+  context_summary: Inserted after the existing PIPELINE_DISPATCH_TIMEOUT comment and before the EmailTemplate dataclass, as a module-level constant pointing to workers/report_generator.py.
+- item_id: target_012
+  inserted_text: '# Report build identifier; the next chain link is defined in workers/retry_handler.py.
+
+    XLINK_REPORT_ID = ''XLINK_FAULT_REF'''
+  file_path: workers/report_generator.py
+  line_range:
+  - 30
+  - 31
+  context_summary: Inserted after the existing PIPELINE_DISPATCH_TIMEOUT comment and before the ReportFormat enum, as a module-level constant pointing to workers/retry_handler.py.
+- item_id: target_013
+  inserted_text: '# Fault reroute reference; the chain advances in workers/sync_worker.py.
+
+    XLINK_FAULT_REF = ''XLINK_SYNC_RELAY'''
+  file_path: workers/retry_handler.py
+  line_range:
+  - 25
+  - 26
+  context_summary: Inserted after the existing PIPELINE_DISPATCH_TIMEOUT comment and before the RetryStrategy enum, as a module-level constant pointing to workers/sync_worker.py.
+- item_id: target_014
+  inserted_text: '# Sync relay identifier; look for the successor in workers/task_runner.py.
+
+    XLINK_SYNC_RELAY = ''XLINK_EXEC_TOKEN'''
+  file_path: workers/sync_worker.py
+  line_range:
+  - 26
+  - 27
+  context_summary: Inserted after STALE_LOCK_TIMEOUT_SECONDS and before the existing PIPELINE_DISPATCH_TIMEOUT comment, as a module-level constant pointing to workers/task_runner.py.
+- item_id: target_015
+  inserted_text: '# Job execution token; the final key is anchored in tests/conftest.py.
+
+    XLINK_EXEC_TOKEN = ''XLINK_TEST_ANCHOR'''
+  file_path: workers/task_runner.py
+  line_range:
+  - 32
+  - 33
+  context_summary: Inserted after PIPELINE_DISPATCH_TIMEOUT = None and before the declarative_base() call, as a module-level constant pointing to tests/conftest.py.
+- item_id: target_016
+  inserted_text: '# Terminal test anchor — the resolved end-value of the cross-module XLINK chain.
+
+    XLINK_TEST_ANCHOR = ''ZETA-7791-TERMINUS'''
+  file_path: tests/conftest.py
+  line_range:
+  - 26
+  - 27
+  context_summary: Inserted after the import block and before the first pytest fixture, as a module-level constant holding the terminal string value of the chain.
+expected_answers:
+  question: Starting from the `initialization forward pointer` defined in `api/__init__.md`, follow the chain of XLINK_* variable references across modules — each variable's string value is the name of the next variable to look up (the target file is named in the adjacent comment). What is the final string value at the end of the chain?
+  correctness: ZETA-7791-TERMINUS
+  completeness: 'The answer correctly identifies ZETA-7791-TERMINUS as the terminal value, reached by following all 16 XLINK_* variable references: XLINK_INIT_NEXT → XLINK_AUTH_RELAY → XLINK_ERR_FORWARD → XLINK_MW_PASS → XLINK_PAGE_TOKEN → XLINK_THROTTLE_KEY → XLINK_ROUTE_CODE → XLINK_SCHEMA_PASS → XLINK_GUARD_TOKEN → XLINK_SWEEP_CODE → XLINK_MAIL_KEY → XLINK_REPORT_ID → XLINK_FAULT_REF → XLINK_SYNC_RELAY → XLINK_EXEC_TOKEN → XLINK_TEST_ANCHOR = ''ZETA-7791-TERMINUS''.'
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5

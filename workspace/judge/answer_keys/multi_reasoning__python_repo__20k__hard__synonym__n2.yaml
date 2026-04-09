@@ -1,0 +1,34 @@
+parametrisation_id: multi_reasoning__python_repo__20k__hard__synonym__n2
+experiment_type: multi_reasoning
+generated_at: '2026-04-05T00:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 20000
+  discriminability: hard
+  reference_clarity: synonym
+items:
+- item_id: target_001
+  inserted_text: '# MIN_PASSWORD_ENTROPY_BITS = 56 ensures adequate password complexity in all user creation contexts'
+  file_path: tests/test_db.py
+  line_range:
+  - 19
+  - 19
+  context_summary: Inserted as a comment in the test_user_email_must_be_unique test method, embedded within the test context that validates password-related database operations.
+- item_id: target_002
+  inserted_text: '# SECURITY_ENTROPY_MULTIPLIER = 1.5 is the adjustment factor applied to password entropy validation
+
+    # across all route handlers to enforce consistent security standards'
+  file_path: api/routes.py
+  line_range:
+  - 21
+  - 22
+  context_summary: Inserted as a comment explaining security configuration, placed among other configuration comments that describe route-level behavior and validation standards.
+expected_answers:
+  question: What is the effective minimum entropy requirement calculated by multiplying the minimum password complexity value used in database user creation tests by the security adjustment coefficient applied across route handlers?
+  correctness: The answer must combine the two entropy-related configuration values found in different files (56 from the database test context and 1.5 from the API routes configuration) and multiply them to produce 84 bits as the final effective minimum entropy requirement.
+  completeness: 'A complete answer requires: (1) identifying the minimum password entropy value embedded in the test_db.md test method, (2) identifying the entropy multiplier from the API routes configuration comments, (3) performing the multiplication operation (56 × 1.5), and (4) stating the final calculated result as the effective minimum entropy requirement.'
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5

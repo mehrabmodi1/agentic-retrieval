@@ -1,0 +1,97 @@
+parametrisation_id: "multi_chain__noir_fiction__40k__hard__contextual__n16"
+experiment_type: "multi_chain"
+generated_at: "2026-04-05T15:30:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 40000
+  discriminability: "hard"
+  reference_clarity: "contextual"
+items:
+  - item_id: "target_001"
+    inserted_text: "There's something else, Mr. Shepherd. A woman came to my office last week, said her name was Diana Harrow. She mentioned Meridian Holdings like it was the most important thing I'd ever heard. Find out what connection Catherine had to that company."
+    file_path: "chapters/chapter_01.md"
+    line_range: [19, 20]
+    context_summary: "Halstead adds cryptic warning about Diana Harrow and Meridian Holdings to initial missing person report."
+
+  - item_id: "target_002"
+    inserted_text: "I think about what he said: someone above Sinclair, orchestrating everything. Someone who makes decisions that people like Sinclair execute. That person doesn't announce themselves with violence. That person works through organizations, through layers of separation. That person looks like a woman in a navy suit."
+    file_path: "chapters/chapter_02.md"
+    line_range: [40, 42]
+    context_summary: "Shepherd connects the concept of hidden orchestration to a specific persona."
+
+  - item_id: "target_003"
+    inserted_text: "I told the detective, \"The envelope had writing on it. Not visible to me, but the kid's eyes went to one spot on it. One word or number. Whatever was in that envelope came from someone the kid didn't want to answer to anymore. Someone who'd given him directions he couldn't refuse.\""
+    file_path: "witnesses/bartender_statement.md"
+    line_range: [36, 37]
+    context_summary: "Bartender reveals the envelope contained hidden directions that implied control over the subject."
+
+  - item_id: "target_004"
+    inserted_text: "But understand this: the warehouse isn't the end of the chain. It's just the place where the chain becomes visible. The real operation extends beyond Dock Street. It extends beyond Sinclair. The question you should be asking isn't who killed Claire. It's who wanted Claire dead badly enough to order it."
+    file_path: "case_notes/day_03.md"
+    line_range: [128, 130]
+    context_summary: "Mercer hints that power structure extends beyond visible criminals to higher orchestration."
+
+  - item_id: "target_005"
+    inserted_text: "Let's just say the kind of high where you don't ask questions, and you're still too high to get answers. The kind of high that comes from having money you can move without banks noticing. The kind of high that comes from having people in positions where they have to cooperate. That's the real power structure. Money and people in the right places. Sinclair's just a middle manager."
+    file_path: "case_notes/day_02.md"
+    line_range: [120, 122]
+    context_summary: "Detective Morris reveals that Sinclair is subordinate to someone with infrastructure control."
+
+  - item_id: "target_006"
+    inserted_text: "That was the kind of detail that changed everything. A secret boyfriend was either completely innocent or the key to the entire puzzle. An older man, someone successful. Someone her friends described as taking care of her. Someone who would have known about her father's business. Someone who might have used her to get close to Halstead."
+    file_path: "chapters/chapter_03.md"
+    line_range: [34, 36]
+    context_summary: "Shepherd realizes Catherine's secret boyfriend may have been placed to access her father's company."
+
+  - item_id: "target_007"
+    inserted_text: "Eleanor picked up her knitting again. \"Find him, if you can. And if you do, tell him that Mrs. Pembroke in 3G thinks he made the right choice. And tell him to be careful. The redheaded woman—Margot or whoever she is—she seemed like someone with power. The kind of power that doesn't come from being beautiful. The kind of power that comes from representing someone even more dangerous.\""
+    file_path: "witnesses/neighbor_statement.md"
+    line_range: [77, 78]
+    context_summary: "Neighbor warns that the redhead has power derived from representing a superior authority."
+
+  - item_id: "target_008"
+    inserted_text: "But here's what matters most: Kaslan doesn't operate independently. Nobody gets to that level of power without protection from above. There's someone behind Kaslan. Someone who uses organizations like Kaslan's to move assets and eliminate problems. Someone whose name you'll never know because that person doesn't exist in the official record."
+    file_path: "witnesses/informant_interview.md"
+    line_range: [90, 91]
+    context_summary: "Victor reveals that criminal networks operate under a hidden superior who leaves no official trace."
+
+  - item_id: "target_009"
+    inserted_text: "Professional. Calculated. The kind of careful observation you see in someone trained to operate without leaving traces. He knew the exits. He knew how to conduct himself. He wasn't there by accident. He was there because he was sent there to acquire something or someone for someone else's purposes."
+    file_path: "case_notes/day_01.md"
+    line_range: [47, 48]
+    context_summary: "Shepherd recognizes that the Regency Hotel client was operating under explicit orders from above."
+
+  - item_id: "target_010"
+    inserted_text: "But here's what troubles me: the coordination of all these elements—Margot's appearance, Gregg's visits, the painting's return—suggests someone is orchestrating Harvey's exit. Not Kaslan. Someone above Kaslan. Someone who has the authority to authorize safe passage out of a criminal network. That kind of power doesn't come from theft operations. That comes from having infrastructure. From having money flows. From having people placed in positions of authority."
+    file_path: "witnesses/detective_debrief.md"
+    line_range: [54, 55]
+    context_summary: "Halloway identifies that coordinated sophistication indicates a controlling authority above Kaslan."
+
+  - item_id: "target_011"
+    inserted_text: "But here's what nobody's asking: why did Sinclair kill Claire? Financial crimes don't usually lead to murders unless there's a strategic reason. Unless someone decided that Claire was a problem that needed to be removed. Unless someone gave Sinclair an order and Sinclair followed it because that's how the hierarchy works. Sinclair wasn't the decision maker. He was the executor of someone else's will."
+    file_path: "case_notes/day_07.md"
+    line_range: [107, 109]
+    context_summary: "Shepherd realizes Sinclair is executing orders from a superior who decided Claire's fate."
+
+  - item_id: "target_012"
+    inserted_text: "I think about what Webb warned me about. I think about Diana Harrow sitting in my office, speaking about Catherine like she was property. I think about Meridian Holdings and a name that doesn't appear in newspapers. That's where the real power is. Not in Sinclair's hands, but in the hands of organizations that operate from behind corporate veils, that move money through channels nobody can trace, that have people placed in positions to protect their interests."
+    file_path: "case_notes/day_08.md"
+    line_range: [129, 131]
+    context_summary: "Shepherd connects all evidence to Meridian Holdings as the true orchestrating power."
+
+  - item_id: "target_013"
+    inserted_text: "Vincent will run, but he'll be running from Sinclair. He'll never understand that Sinclair was just carrying out orders. Orders from the people who really control this city. Orders from the infrastructure that Sinclair works for. Vincent's escape isn't freedom. It's just a longer version of the same trap."
+    file_path: "case_notes/day_05.md"
+    line_range: [176, 178]
+    context_summary: "Shepherd understands that Sinclair is merely an executor in a larger control infrastructure."
+
+expected_answers:
+  question: "Following from Halstead's cryptic warning about Diana Harrow in his initial missing person call, trace the chain of evidence through what each investigation reveals about the true power structure controlling the city. What organization ultimately orchestrates the kidnapping, the money laundering, and the criminal operations that the detective uncovers?"
+  correctness: "A complete and correct answer must identify Meridian Holdings as the ultimate controlling organization, recognize that it operates through corporate veils and placed operatives (like Diana Harrow), controls institutional positions (police, government, financial), and uses multiple leverage points (Catherine's kidnapping, Halstead's company, suppress Webb's investigation)."
+  completeness: "A complete answer covers: (1) the chain of recognition from Halstead's initial mention through successive investigations, (2) the hierarchical structure with Sinclair as executor beneath superior authority, (3) identification of Meridian Holdings and Diana Harrow, (4) the mechanism of control through kidnapping and institutional placement, (5) how the infrastructure extends across police, government, and financial systems."
+
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+  - criterion: "completeness"
+    weight: 0.5

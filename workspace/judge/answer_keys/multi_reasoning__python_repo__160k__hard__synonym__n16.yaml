@@ -1,0 +1,189 @@
+parametrisation_id: multi_reasoning__python_repo__160k__hard__synonym__n16
+experiment_type: multi_reasoning
+generated_at: '2026-04-05T00:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 160000
+  discriminability: hard
+  reference_clarity: synonym
+items:
+- item_id: target_001
+  inserted_text: backoff_multiplier=1.8,
+  file_path: workers/retry_handler.py
+  line_range:
+  - 403
+  - 405
+  context_summary: Exponential backoff multiplier for retry delay calculations embedded in RetryPolicy configuration.
+- item_id: target_002
+  inserted_text: max_concurrent_retries=12,
+  file_path: workers/retry_handler.py
+  line_range:
+  - 410
+  - 411
+  context_summary: Maximum parallel retry attempts constraint added to handler initialization.
+- item_id: target_003
+  inserted_text: '''X-RateLimit-Window'': 3600,'
+  file_path: api/rate_limiting.py
+  line_range:
+  - 115
+  - 117
+  context_summary: Request window duration in seconds embedded in rate limit headers dictionary.
+- item_id: target_004
+  inserted_text: '''X-RateLimit-Burst-Capacity'': 50,'
+  file_path: api/rate_limiting.py
+  line_range:
+  - 117
+  - 118
+  context_summary: Burst allowance threshold added to rate limiting header generation.
+- item_id: target_005
+  inserted_text: '"api_rate_limit": 1000,'
+  file_path: tests/conftest.py
+  line_range:
+  - 108
+  - 109
+  context_summary: Request quota per organization embedded in test organization settings.
+- item_id: target_006
+  inserted_text: '"max_api_calls_per_minute": 100,'
+  file_path: tests/conftest.py
+  line_range:
+  - 109
+  - 110
+  context_summary: Throttle limit for API calls per minute in organization configuration.
+- item_id: target_007
+  inserted_text: max_allowed_fields=75,
+  file_path: api/serializers.py
+  line_range:
+  - 70
+  - 71
+  context_summary: Field count limit for user serialization schema validation.
+- item_id: target_008
+  inserted_text: retention_days=60,
+  file_path: workers/cleanup_worker.py
+  line_range:
+  - 116
+  - 117
+  context_summary: Data retention period for old failed tasks in cleanup configuration.
+- item_id: target_009
+  inserted_text: '''Access-Control-Max-Age'': ''3600'','
+  file_path: api/middleware.py
+  line_range:
+  - 125
+  - 126
+  context_summary: CORS preflight cache duration in seconds added to response headers.
+- item_id: target_010
+  inserted_text: max_url_length=2048,
+  file_path: api/validators.py
+  line_range:
+  - 138
+  - 139
+  context_summary: URL character limit constraint embedded in URL validation function.
+- item_id: target_011
+  inserted_text: min_username_length=3,
+  file_path: api/validators.py
+  line_range:
+  - 120
+  - 121
+  context_summary: Minimum character requirement for username validation embedded in validator.
+- item_id: target_012
+  inserted_text: STALE_RECORD_THRESHOLD_DAYS = 45
+  file_path: workers/email_worker.py
+  line_range:
+  - 15
+  - 16
+  context_summary: Global staleness threshold for email worker records before cleanup.
+- item_id: target_013
+  inserted_text: 'worker_threads: int = 5,'
+  file_path: workers/task_runner.py
+  line_range:
+  - 103
+  - 104
+  context_summary: Default worker thread pool size embedded in TaskRunner initialization.
+- item_id: target_014
+  inserted_text: 'poll_interval: float = 1.0,'
+  file_path: workers/task_runner.py
+  line_range:
+  - 104
+  - 105
+  context_summary: Task queue polling frequency in seconds in TaskRunner configuration.
+- item_id: target_015
+  inserted_text: max_report_records=5000,
+  file_path: workers/report_generator.py
+  line_range:
+  - 265
+  - 266
+  context_summary: Maximum records per report embedded in report generation constraints.
+- item_id: target_016
+  inserted_text: sync_timeout_seconds=300,
+  file_path: workers/sync_worker.py
+  line_range:
+  - 160
+  - 161
+  context_summary: External sync operation timeout threshold in seconds.
+expected_answers:
+  question: 'Calculate the total system request allowance across configured limits, polling intervals, and work queue constraints. What is the sum of (max API calls per minute + rate limit window seconds + burst capacity + API rate limit per organization + worker threads + report record capacity + max concurrent retries)? Also identify the data retention windows (in days) and multiplier factors for exponential backoff calculations used throughout the worker pipeline.
+
+    '
+  correctness: 'The answer must identify all seven numeric components that combine to form the primary sum:
+
+    - max_api_calls_per_minute: 100
+
+    - X-RateLimit-Window: 3600
+
+    - X-RateLimit-Burst-Capacity: 50
+
+    - api_rate_limit: 1000
+
+    - worker_threads: 5
+
+    - max_report_records: 5000
+
+    - max_concurrent_retries: 12
+
+    Total: 7767
+
+
+    Additionally must note the retention/timeout values:
+
+    - retention_days for failed tasks: 60
+
+    - STALE_RECORD_THRESHOLD_DAYS: 45
+
+    - sync_timeout_seconds: 300
+
+    - backoff_multiplier: 1.8
+
+    - poll_interval: 1.0
+
+    - URL max length: 2048
+
+    - min username length: 3
+
+    - max allowed fields: 75
+
+    - URL max length constraint: 2048
+
+    '
+  completeness: 'A complete answer must:
+
+    1. Extract all 16 configuration values from their embedded contexts
+
+    2. Distinguish between the primary sum components vs. secondary constraints
+
+    3. Calculate the total correctly as 7767
+
+    4. Identify all temporal constraints (60 days, 45 days, 300 seconds)
+
+    5. Note the multiplier factors (1.8 for backoff)
+
+    6. Explain how these values relate to system capacity, resilience, and validation
+
+    7. Recognize that understanding context is necessary because values are embedded in different data structures (dicts, function parameters, class attributes)
+
+    '
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5
+- criterion: context_comprehension
+  weight: 0.75

@@ -1,0 +1,116 @@
+parametrisation_id: "multi_reasoning__noir_fiction__160k__hard__contextual__n16"
+experiment_type: "multi_reasoning"
+generated_at: "2026-04-05T00:00:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 160000
+  discriminability: "hard"
+  reference_clarity: "contextual"
+items:
+  - item_id: "target_001"
+    inserted_text: "The widow, she had no family money—Harvey checked. She was struggling to keep the house. A quarter million dollars would have changed everything for her, and it was hanging on Kaslan's wall like a trophy nobody even wanted to look at."
+    file_path: "witnesses/informant_interview.md"
+    line_range: [124, 127]
+    context_summary: "Victor reveals Harvey's specific knowledge that the stolen painting's return could save the widow financially, establishing Harvey's detailed moral understanding."
+
+  - item_id: "target_002"
+    inserted_text: "The timing is critical—the painting was recovered exactly seventy-two hours before he abandoned his apartment. Someone knew he was about to make a move that would expose the operation."
+    file_path: "witnesses/detective_debrief.md"
+    line_range: [58, 60]
+    context_summary: "Detective Chen identifies the temporal link between painting recovery and Harvey's disappearance as a critical pressure point."
+
+  - item_id: "target_003"
+    inserted_text: "What I notice most is the fear when I tell him he must give two months' notice. For the first time, I see relief on his face—like he has been given a reprieve from making an impossible choice."
+    file_path: "witnesses/landlady_statement.md"
+    line_range: [89, 92]
+    context_summary: "Landlady observes Harvey's emotional shift upon learning the lease requirements, showing his internal conflict about staying versus leaving."
+
+  - item_id: "target_004"
+    inserted_text: "She was talking about arrangements—I could read that much from her lips. About getting him out. About the cost of freedom."
+    file_path: "witnesses/bartender_statement.md"
+    line_range: [112, 114]
+    context_summary: "Deke interprets Margot's conversation with Harvey as facilitating his escape, establishing the quid pro quo arrangement."
+
+  - item_id: "target_005"
+    inserted_text: "I believe he was waiting for permission to do something he knew was wrong but necessary."
+    file_path: "witnesses/secretary_statement.md"
+    line_range: [110, 111]
+    context_summary: "Dorothy's interpretation of Harvey's final lawyer visit suggests his moral reckoning and search for legal/ethical guidance before disappearing."
+
+  - item_id: "target_006"
+    inserted_text: "As she waited for the elevator, I saw her mouth move—she was repeating something to herself. It looked like she was saying 'I'm sorry, I'm sorry.' Over and over."
+    file_path: "witnesses/neighbor_statement.md"
+    line_range: [97, 99]
+    context_summary: "Eleanor observes Margot's emotional state after her farewell visit to Harvey, revealing the cost of the arrangement to her personally."
+
+  - item_id: "target_007"
+    inserted_text: "The way he said it, though—it wasn't a request. It was a guarantee. A guarantee that the kid was going to disappear, and people shouldn't remember seeing him leave."
+    file_path: "witnesses/cab_driver_statement.md"
+    line_range: [187, 189]
+    context_summary: "Jerry recognizes the man's threat as establishing external pressure forcing Harvey's disappearance, not a voluntary choice."
+
+  - item_id: "target_008"
+    inserted_text: "The kind where you don't ask too many questions about who has an interest in which properties. The kind where connections between people matter more than the legality of transactions. The kind where someone like my daughter might become aware of things she shouldn't be aware of, and that awareness might make her a liability rather than an asset."
+    file_path: "case_notes/day_02.md"
+    line_range: [130, 134]
+    context_summary: "Margaret Hollister explains how the city's corruption system creates liabilities of people with knowledge, establishing the operational framework that endangers Harvey."
+
+  - item_id: "target_009"
+    inserted_text: "The people who took her, they were very clear about that. They said if I involve police, if I involve anyone who might ask questions about my business connections, Catherine would be eliminated. They knew things about my operations. Specific things. Which means they've been watching. Which means they know everyone who works for me or with me."
+    file_path: "chapters/chapter_01.md"
+    line_range: [76, 80]
+    context_summary: "Halstead's revelation of the threatening intelligence about his operations shows how the criminal network monitors and controls young facilitators like Harvey."
+
+  - item_id: "target_010"
+    inserted_text: "But the detail Everett mentions—the cataloging of exits, the awareness of routes of egress—that detail matters. That's the signature of someone trained to think about escape routes, about contingencies. That's the signature of someone who helps people disappear."
+    file_path: "case_notes/day_01.md"
+    line_range: [206, 209]
+    context_summary: "Shepherd identifies the mysterious man's professional expertise in facilitating escapes, establishing Silas Gregg's operational capability."
+
+  - item_id: "target_011"
+    inserted_text: "Chen's been investigating Sinclair's operation for six months. He has sources in the warehouse district who've been documenting shipments, personnel changes, anything unusual. And about three weeks ago, one of his sources mentioned a young man who worked shipping—desperate to get out, asking about routes, about safe passage. Chen didn't know the name then. But he's been watching."
+    file_path: "case_notes/day_06.md"
+    line_range: [142, 148]
+    context_summary: "Helen's introduction of Chen reveals external pressure on Harvey as other interested parties tracked his movements and state of desperation."
+
+  - item_id: "target_012"
+    inserted_text: "I notice something I should have caught earlier: there's a side exit, unmarked, the kind that suggests people need to leave quickly and without being seen. The kind of exit someone would use if they were running."
+    file_path: "case_notes/day_03.md"
+    line_range: [105, 108]
+    context_summary: "Shepherd's observation of the warehouse infrastructure reveals pre-planned escape routes, supporting evidence of coordinated exit arrangement."
+
+  - item_id: "target_013"
+    inserted_text: "There's also the matter of a young man named James Harvey. We know he was about to talk to the police. We know he was about to expose operations that would be very inconvenient for very powerful people. And we know that his decision to leave the city was facilitated by people who understand the value of cooperation."
+    file_path: "chapters/chapter_05.md"
+    line_range: [200, 204]
+    context_summary: "Diana Harrow's threat directly connects Harvey's disappearance to his imminent betrayal, establishing it as a necessary escape to avoid being silenced permanently."
+
+  - item_id: "target_014"
+    inserted_text: "I told him that yes, silence is complicity, and yes, his hands were dirty. And I told him that the only way to become clean was to stop. To take the exit Margot was offering."
+    file_path: "case_notes/day_07.md"
+    line_range: [211, 214]
+    context_summary: "Mercer's advice to Harvey crystallizes the moral decision framework that pushed him toward accepting Margot's escape arrangement."
+
+  - item_id: "target_015"
+    inserted_text: "And behind that look is the unspoken knowledge that Harvey got away. That Harvey is somewhere out there, alive, free, having made the choice that Sinclair couldn't make—the choice to stop being complicit. The choice to leave everything behind."
+    file_path: "case_notes/day_08.md"
+    line_range: [165, 168]
+    context_summary: "Shepherd's interpretation of Sinclair's look acknowledges Harvey's successful escape as a contrast to Sinclair's inability to break free from his criminal role."
+
+  - item_id: "target_016"
+    inserted_text: "People who also have young men working for them—men who help move those goods, men who eventually develop consciences about what they're doing. When those men want to leave, when they want to go to the authorities, those people have to stop them. One way or another."
+    file_path: "chapters/chapter_02.md"
+    line_range: [118, 121]
+    context_summary: "Shepherd's reflection on Halstead's situation reveals the systemic pattern of handlers controlling young facilitators who develop moral doubts."
+
+expected_answers:
+  question: "Based on all evidence from witness interviews and case notes, reconstruct the complete timeline and interconnected factors that led to James Harvey's decision to leave the city. What specific moral crisis, external pressures, facilitation arrangements, and timelines converged to make his disappearance necessary for both survival and conscience?"
+  correctness: "A correct answer must identify that Harvey's departure resulted from: (1) his moral crisis regarding the stolen painting from Carl Vesper's widow; (2) his awareness of the widow's financial struggle; (3) his consultation with lawyer Marchetti seeking ethical guidance; (4) the painting's recovery triggering heightened surveillance; (5) Margot's role as both romantic connection and escape facilitator; (6) the explicit threat from an older handler (Silas Gregg) warning witnesses into silence; (7) his attempts to secure legal/moral permission; (8) Mercer's legal validation that his conscience required escape; (9) the seventy-two hour window between painting recovery and apartment abandonment; (10) external monitoring by reporter Chen and the mysterious man cataloging exits; (11) Harvey's documented desperation in multiple interviews; (12) the systemic pressure on facilitators who develop consciences; and (13) the coordinated arrangement with Margot as the cost of his freedom."
+  completeness: "A complete answer covers: the moral foundation (widow, painting, conscience); the decision-making process (lawyer consultations, internal struggle); the facilitation network (Margot, Silas Gregg, mysterious handler); the external pressures (surveillance, financial threat, imminent police exposure); the temporal compression (72-hour window); the emotional toll on facilitators (Margot's goodbye tears); the systemic corruption framework making his conscience dangerous; and the outcome (successful escape to preserve both his life and moral integrity). It should explain why Harvey could not simply go to police (would compromise others, would expose larger operations) and why his departure was the only available path that honored both survival and conscience."
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+    description: "All 16 needles must be identified and correctly contextualized; answer must accurately synthesize evidence from multiple sources to establish causality."
+  - criterion: "completeness"
+    weight: 0.5
+    description: "Answer must address all major categories of influence on Harvey's decision: moral framework, external pressures, facilitation network, timeline compression, and systemic context."

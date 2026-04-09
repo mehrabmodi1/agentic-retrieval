@@ -1,0 +1,25 @@
+parametrisation_id: single_needle__python_repo__160k__easy__exact
+experiment_type: single_needle
+generated_at: '2026-04-03T00:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 160000
+  discriminability: easy
+  reference_clarity: exact
+items:
+- item_id: target_001
+  inserted_text: MAX_RATE_LIMIT_WINDOW = 86400
+  file_path: api/rate_limiting.py
+  line_range:
+  - 26
+  - 26
+  context_summary: Inserted as a module-level constant after the logger definition in the rate limiting module, between the logger setup and the RateLimitError class definition.
+expected_answers:
+  question: What is the value of MAX_RATE_LIMIT_WINDOW defined in api/rate_limiting.py?
+  correctness: '86400'
+  completeness: The answer should state that MAX_RATE_LIMIT_WINDOW is set to 86400, which represents the maximum rate limit window in seconds (24 hours).
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5

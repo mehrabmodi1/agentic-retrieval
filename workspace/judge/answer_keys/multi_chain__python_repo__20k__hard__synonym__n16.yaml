@@ -1,0 +1,259 @@
+parametrisation_id: multi_chain__python_repo__20k__hard__synonym__n16
+experiment_type: multi_chain
+generated_at: '2026-04-03T00:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 20000
+  discriminability: hard
+  reference_clarity: synonym
+items:
+- item_id: target_001
+  inserted_text: '# The new organization record is enqueued for archival storage before this
+
+    # handler returns; the storage root for the archive job is configured by
+
+    # app.config.ARCHIVE_PREFIX, which determines the base directory applied to
+
+    # all long-term writes scoped to freshly provisioned organizations.
+
+    '
+  file_path: api/routes.py
+  line_range:
+  - 583
+  - 586
+  context_summary: Comment inserted in the create_organization endpoint body after db.session.commit(), referencing app.config.ARCHIVE_PREFIX as the archival storage root.
+- item_id: target_002
+  inserted_text: '# ARCHIVE_PREFIX is the root path prefix prepended to every key when writing
+
+    # organization exports and backup snapshots to long-term storage.  Its value
+
+    # is sourced from StorageSettings.base_path (app.models), which resolves the
+
+    # canonical archive root from the active environment''s storage catalog at
+
+    # import time rather than at each call site.
+
+    ARCHIVE_PREFIX: str = StorageSettings.base_path
+
+    '
+  file_path: app/config.py
+  line_range:
+  - 55
+  - 60
+  context_summary: New application config file; needle is the ARCHIVE_PREFIX constant assignment with comment pointing to StorageSettings.base_path in app.models.
+- item_id: target_003
+  inserted_text: '# base_path is the canonical root prefix for all archived objects managed
+
+    # by this service.  Its value is drawn from _STORAGE_CATALOG["archive"]
+
+    # ["path_prefix"], which app.database populates during application
+
+    # bootstrap from the active environment''s storage backend configuration.
+
+    base_path: str = _STORAGE_CATALOG["archive"]["path_prefix"]
+
+    '
+  file_path: app/models.py
+  line_range:
+  - 69
+  - 73
+  context_summary: New models file; needle is the StorageSettings.base_path class attribute with comment referencing _STORAGE_CATALOG from app.database.
+- item_id: target_004
+  inserted_text: "# _STORAGE_CATALOG holds per-backend path and bucket configuration for all\n# managed storage tiers.  The \"archive\" entry's path_prefix field is sourced\n# from ArchiveStorageConfig.target_prefix (app.security) so that the archive\n# layer always inherits the security-validated root path, avoiding drift\n# between the security module's notion of a safe root and the catalog used\n# by storage helpers and serialisers throughout the application.\n_STORAGE_CATALOG: Dict[str, Dict[str, str]] = {\n    \"archive\": {\n        \"path_prefix\": ArchiveStorageConfig.target_prefix,\n"
+  file_path: app/database.py
+  line_range:
+  - 70
+  - 78
+  context_summary: New database module file; needle is the _STORAGE_CATALOG dict definition with comment pointing to ArchiveStorageConfig.target_prefix from app.security.
+- item_id: target_005
+  inserted_text: '# target_prefix is the root path component prepended to every key written
+
+    # into the archive backend.  Its value is driven by
+
+    # SECURE_STORAGE_PARAMS["prefix"] from app.cache, which is assembled by
+
+    # the cache layer from the environment''s validated path registry on startup,
+
+    # ensuring the prefix passes all security checks before reaching this class.
+
+    target_prefix: str = SECURE_STORAGE_PARAMS["prefix"]
+
+    '
+  file_path: app/security.py
+  line_range:
+  - 43
+  - 48
+  context_summary: New security module file; needle is the ArchiveStorageConfig.target_prefix class attribute pointing to SECURE_STORAGE_PARAMS['prefix'] from app.cache.
+- item_id: target_006
+  inserted_text: "# SECURE_STORAGE_PARAMS bundles path and credential configuration for the\n# secure storage layer accessed by ArchiveStorageConfig in app.security.\n# The \"prefix\" key holds PathRegistry.ARCHIVE_ROOT from app.api.validators,\n# where path constants for the archive subsystem are formally registered and\n# validated before being consumed by the storage and security layers.\nSECURE_STORAGE_PARAMS: Dict[str, str] = {\n    \"prefix\": PathRegistry.ARCHIVE_ROOT,\n"
+  file_path: app/cache.py
+  line_range:
+  - 40
+  - 46
+  context_summary: New cache module file; needle is the SECURE_STORAGE_PARAMS dict definition with comment pointing to PathRegistry.ARCHIVE_ROOT from api/validators.
+- item_id: target_007
+  inserted_text: '# ARCHIVE_ROOT holds the base path for all archived content managed by
+
+    # the API.  It is set to ArchivePathValidator.BASE_PATH from
+
+    # app.api.serializers, which derives the value from the serialiser''s
+
+    # canonical path constants table and validates it at class-load time.
+
+    ARCHIVE_ROOT: str = ArchivePathValidator.BASE_PATH
+
+    '
+  file_path: api/validators.py
+  line_range:
+  - 29
+  - 33
+  context_summary: New validators file; needle is PathRegistry.ARCHIVE_ROOT class attribute with comment pointing to ArchivePathValidator.BASE_PATH from api/serializers.
+- item_id: target_008
+  inserted_text: '# BASE_PATH is the root path constant used when constructing archive object
+
+    # keys in serialised API responses.  Its value is drawn from
+
+    # SERIALIZER_PATH_CONSTANTS["archive_root"] in app.api.error_handlers,
+
+    # where cross-module path constants are centralised so that error-recovery
+
+    # handlers and serialisers always reference the same storage root.
+
+    BASE_PATH: str = SERIALIZER_PATH_CONSTANTS["archive_root"]
+
+    '
+  file_path: api/serializers.py
+  line_range:
+  - 31
+  - 36
+  context_summary: New serializers file; needle is ArchivePathValidator.BASE_PATH class attribute with comment pointing to SERIALIZER_PATH_CONSTANTS['archive_root'] from api/error_handlers.
+- item_id: target_009
+  inserted_text: "# SERIALIZER_PATH_CONSTANTS maps logical path labels to their resolved values\n# for use across serialisers, validators, and error-recovery handlers.  Keeping\n# these in error_handlers.py ensures that both the serialisation layer and the\n# recovery logic always reference the same storage root without introducing a\n# circular dependency between the two subsystems.\n# The \"archive_root\" entry holds ErrorRecoveryPaths.ARCHIVE from\n# app.workers.tasks, which defines the canonical archive path for task\n# failures and dead-letter routing across all worker modules.\nSERIALIZER_PATH_CONSTANTS: Dict[str, str] = {\n    \"archive_root\": ErrorRecoveryPaths.ARCHIVE,\n"
+  file_path: api/error_handlers.py
+  line_range:
+  - 26
+  - 35
+  context_summary: New error handlers file; needle is the SERIALIZER_PATH_CONSTANTS dict definition with comment pointing to ErrorRecoveryPaths.ARCHIVE from workers/tasks.
+- item_id: target_010
+  inserted_text: '# ARCHIVE is the destination path for tasks that exhaust all retry attempts
+
+    # without completing successfully.  Its value is sourced from
+
+    # TASK_FAILURE_CONFIG["archive_prefix"] in workers.email_worker, where
+
+    # failure-handling defaults for all Celery workers in this application are
+
+    # centralised to avoid per-worker divergence in dead-letter routing.
+
+    ARCHIVE: str = TASK_FAILURE_CONFIG["archive_prefix"]
+
+    '
+  file_path: workers/tasks.py
+  line_range:
+  - 37
+  - 42
+  context_summary: New Celery tasks file; needle is ErrorRecoveryPaths.ARCHIVE class attribute with comment pointing to TASK_FAILURE_CONFIG['archive_prefix'] in workers/email_worker.
+- item_id: target_011
+  inserted_text: '# BASE_PATH defines where undeliverable message payloads are written when
+
+    # all retry attempts have been exhausted.  It is sourced from
+
+    # CleanupWorker.DEFAULT_ARCHIVE_PATH in workers.cleanup_worker so that the
+
+    # email dead-letter store and the cleanup worker''s garbage-collection scope
+
+    # always target the same root directory, preventing orphaned payloads.
+
+    BASE_PATH: str = CleanupWorker.DEFAULT_ARCHIVE_PATH
+
+    '
+  file_path: workers/email_worker.py
+  line_range:
+  - 31
+  - 36
+  context_summary: New email worker file; needle is EmailArchiveConfig.BASE_PATH class attribute with comment pointing to CleanupWorker.DEFAULT_ARCHIVE_PATH in workers/cleanup_worker.
+- item_id: target_012
+  inserted_text: "@pytest.fixture(scope=\"session\")\ndef expected_archive_root() -> str:\n    \"\"\"Return the expected archive storage root for cross-module test assertions.\n\n    Validates that the email worker's dead-letter configuration is aligned\n    with the canonical path constant tracked by the fixture registry.  Reads\n    EmailArchiveConfig.BASE_PATH from workers.email_worker and confirms it\n    equals EXPECTED_ARCHIVE_ROOT from tests.fixtures, which chains through\n    several path registries to derive the value used by the production worker.\n    \"\"\"\n    from workers.email_worker import EmailArchiveConfig\n    from tests.fixtures import EXPECTED_ARCHIVE_ROOT\n    assert EmailArchiveConfig.BASE_PATH == EXPECTED_ARCHIVE_ROOT\n    return EXPECTED_ARCHIVE_ROOT\n"
+  file_path: tests/conftest.py
+  line_range:
+  - 250
+  - 263
+  context_summary: Inserted session-scoped fixture in conftest that validates EmailArchiveConfig.BASE_PATH against EXPECTED_ARCHIVE_ROOT imported from tests.fixtures.
+- item_id: target_013
+  inserted_text: 'from tests.test_api import API_TEST_STORAGE_ROOTS
+
+
+    # EXPECTED_ARCHIVE_ROOT is the canonical archive base path used across fixture
+
+    # helpers, conftest fixtures, and direct archive assertions throughout the test
+
+    # suite.  Its value is sourced from API_TEST_STORAGE_ROOTS["cold_archive"]
+
+    # in tests/test_api.py, which chains through the worker configuration to
+
+    # derive the path currently used by the production cleanup worker.
+
+    EXPECTED_ARCHIVE_ROOT: str = API_TEST_STORAGE_ROOTS["cold_archive"]
+
+    '
+  file_path: tests/fixtures.py
+  line_range:
+  - 18
+  - 25
+  context_summary: Import and constant inserted near the top of fixtures module; EXPECTED_ARCHIVE_ROOT is set from API_TEST_STORAGE_ROOTS['cold_archive'] imported from tests/test_api.
+- item_id: target_014
+  inserted_text: "from typing import Dict\nfrom tests.test_workers import WORKER_COLD_STORAGE_PATH\n\n# API_TEST_STORAGE_ROOTS maps test-environment storage labels to their resolved\n# paths for assertions in this module.  The \"cold_archive\" key is sourced from\n# WORKER_COLD_STORAGE_PATH in tests/test_workers.py so that API tests and\n# worker tests always target the same cold-storage backend path, preventing\n# false-positive passes caused by path divergence between the two test suites.\nAPI_TEST_STORAGE_ROOTS: Dict[str, str] = {\n    \"cold_archive\": WORKER_COLD_STORAGE_PATH,\n    \"temp\": \"test-tmp/api\",\n    \"reports\": \"test-reports/api\",\n}\n"
+  file_path: tests/test_api.py
+  line_range:
+  - 15
+  - 27
+  context_summary: Import and dict constant inserted after the app models import in test_api; API_TEST_STORAGE_ROOTS['cold_archive'] is set from WORKER_COLD_STORAGE_PATH imported from tests/test_workers.
+- item_id: target_015
+  inserted_text: 'from workers.cleanup_worker import CleanupWorker
+
+
+    # WORKER_COLD_STORAGE_PATH is the archive base path constant shared across all
+
+    # worker integration test assertions.  It is aligned with
+
+    # CleanupWorker.DEFAULT_ARCHIVE_PATH from workers/cleanup_worker.py to ensure
+
+    # that test assertions always target the same storage root as the production
+
+    # cleanup job, catching any divergence between the two at test time.
+
+    WORKER_COLD_STORAGE_PATH: str = CleanupWorker.DEFAULT_ARCHIVE_PATH
+
+    '
+  file_path: tests/test_workers.py
+  line_range:
+  - 18
+  - 25
+  context_summary: Import and constant inserted after existing imports in test_workers; WORKER_COLD_STORAGE_PATH is set from CleanupWorker.DEFAULT_ARCHIVE_PATH imported from workers/cleanup_worker.
+- item_id: target_016
+  inserted_text: '# DEFAULT_ARCHIVE_PATH defines the canonical root directory for all files
+
+    # managed by this cleanup worker.  Every periodic cleanup run targets objects
+
+    # whose storage path begins with this prefix, ensuring consistent garbage
+
+    # collection behavior across all deployment environments.
+
+    DEFAULT_ARCHIVE_PATH: str = "cold-store/v2/archive"
+
+    '
+  file_path: workers/cleanup_worker.py
+  line_range:
+  - 50
+  - 54
+  context_summary: Class attribute inserted inside CleanupWorker class body immediately after the docstring, defining DEFAULT_ARCHIVE_PATH as the literal terminal string value.
+expected_answers:
+  question: In api/routes.md, the handler for creating a new organization contains a comment referencing a storage path configuration. Following the complete chain of definitions for that storage destination prefix through the codebase, what string literal does the archival storage path ultimately resolve to?
+  correctness: The answer must be the string "cold-store/v2/archive" (exact value, with or without surrounding quotes).
+  completeness: 'A complete answer traces the full 16-link chain: ARCHIVE_PREFIX in app/config.md is set from StorageSettings.base_path; StorageSettings.base_path comes from _STORAGE_CATALOG[''archive''][''path_prefix''] in app/database.md; that is ArchiveStorageConfig.target_prefix from app/security.md; which is SECURE_STORAGE_PARAMS[''prefix''] from app/cache.md; which is PathRegistry.ARCHIVE_ROOT from api/validators.md; which is ArchivePathValidator.BASE_PATH from api/serializers.md; which is SERIALIZER_PATH_CONSTANTS[''archive_root''] from api/error_handlers.md; which is ErrorRecoveryPaths.ARCHIVE from workers/tasks.md; which is TASK_FAILURE_CONFIG[''archive_prefix''] from workers/email_worker.md; which is EmailArchiveConfig.BASE_PATH, itself set to CleanupWorker.DEFAULT_ARCHIVE_PATH; the conftest fixture in tests/conftest.md validates this equals EXPECTED_ARCHIVE_ROOT from tests/fixtures.md; EXPECTED_ARCHIVE_ROOT comes from API_TEST_STORAGE_ROOTS[''cold_archive''] in tests/test_api.md;
+    which is WORKER_COLD_STORAGE_PATH from tests/test_workers.md; which is CleanupWorker.DEFAULT_ARCHIVE_PATH = ''cold-store/v2/archive'' in workers/cleanup_worker.md.'
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5

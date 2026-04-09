@@ -1,0 +1,185 @@
+parametrisation_id: multi_reasoning__python_repo__40k__easy__contextual__n16
+experiment_type: multi_reasoning
+generated_at: '2026-04-05T00:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 40000
+  discriminability: easy
+  reference_clarity: contextual
+items:
+- item_id: target_001
+  inserted_text: TEST_REQUEST_TIMEOUT_SECONDS = 30
+  file_path: tests/conftest.py
+  line_range:
+  - 277
+  - 278
+  context_summary: Test timeout configuration inserted in authenticated_client fixture setup.
+- item_id: target_002
+  inserted_text: MAX_REPORT_ROWS = 50000
+  file_path: workers/report_generator.py
+  line_range:
+  - 162
+  - 163
+  context_summary: Maximum rows per report constraint inserted after report metadata logging.
+- item_id: target_003
+  inserted_text: EMAIL_BATCH_SIZE = 100
+  file_path: workers/email_worker.py
+  line_range:
+  - 119
+  - 120
+  context_summary: Email batch processing size constant inserted before send_email method definition.
+- item_id: target_004
+  inserted_text: MAX_PAGE_SIZE = 100
+  file_path: api/validators.py
+  line_range:
+  - 170
+  - 171
+  context_summary: Maximum pagination page size constraint inserted in pagination validation logic.
+- item_id: target_005
+  inserted_text: MAX_RETRY_ATTEMPTS = 5
+  file_path: workers/retry_handler.py
+  line_range:
+  - 24
+  - 25
+  context_summary: Maximum retry attempts threshold inserted in retry strategy configuration module.
+- item_id: target_006
+  inserted_text: DEFAULT_REQUEST_TIMEOUT = 15
+  file_path: tests/fixtures.py
+  line_range:
+  - 372
+  - 373
+  context_summary: Default request timeout inserted in RequestBuilder fixture class.
+- item_id: target_007
+  inserted_text: MAX_BIO_LENGTH = 500
+  file_path: api/serializers.py
+  line_range:
+  - 44
+  - 45
+  context_summary: User bio field length constraint inserted in UserSerializer field definitions.
+- item_id: target_008
+  inserted_text: TASK_EXECUTION_TIMEOUT = 60
+  file_path: tests/test_workers.py
+  line_range:
+  - 42
+  - 43
+  context_summary: Task execution timeout constant inserted in test task scheduling.
+- item_id: target_009
+  inserted_text: DEFAULT_PAGE_SIZE = 20
+  file_path: api/routes.py
+  line_range:
+  - 164
+  - 165
+  context_summary: Default pagination page size inserted in list_users endpoint pagination defaults.
+- item_id: target_010
+  inserted_text: REMINDER_LEAD_TIME_HOURS = 24
+  file_path: tests/test_services.py
+  line_range:
+  - 271
+  - 272
+  context_summary: Task reminder lead time inserted in notification service test.
+- item_id: target_011
+  inserted_text: DEFAULT_ITEMS_PER_PAGE = 10
+  file_path: api/pagination.py
+  line_range:
+  - 165
+  - 166
+  context_summary: Default items per page constant inserted in PaginationMetadata to_dict method.
+- item_id: target_012
+  inserted_text: API_VERSION = "1.0.0"
+  file_path: api/__init__.py
+  line_range:
+  - 143
+  - 144
+  context_summary: API version constant inserted in health check endpoint response.
+- item_id: target_013
+  inserted_text: ERROR_ID_LENGTH = 16
+  file_path: api/error_handlers.py
+  line_range:
+  - 168
+  - 169
+  context_summary: Error ID length specification inserted in InternalServerError exception class.
+- item_id: target_014
+  inserted_text: RATE_LIMIT_WINDOW_SECONDS = 60
+  file_path: api/rate_limiting.py
+  line_range:
+  - 263
+  - 264
+  context_summary: Rate limiting window duration inserted in per-endpoint rate limiting function.
+- item_id: target_015
+  inserted_text: WORKER_POOL_SIZE = 4
+  file_path: workers/retry_handler.py
+  line_range:
+  - 26
+  - 27
+  context_summary: Worker pool size configuration inserted alongside retry strategy definitions.
+- item_id: target_016
+  inserted_text: CACHE_TTL_SECONDS = 3600
+  file_path: api/__init__.py
+  line_range:
+  - 157
+  - 158
+  context_summary: Cache time-to-live duration inserted in API documentation endpoint.
+expected_answers:
+  question: 'A system has the following configuration constraints:
+
+    - Maximum retry attempts per task: TARGET_005
+
+    - Email batch size: TARGET_003
+
+    - Maximum report rows per generation: TARGET_002
+
+    - Request timeout for tests: TARGET_001
+
+    - Default page size for API responses: TARGET_009
+
+    - Maximum page size allowed by validator: TARGET_004
+
+    - Default items per page in pagination: TARGET_011
+
+    - Task execution timeout: TARGET_008
+
+    - Task reminder lead time: TARGET_010
+
+    - Worker pool size: TARGET_015
+
+    - API version: TARGET_012
+
+    - Cache TTL: TARGET_016
+
+    - Rate limit window: TARGET_014
+
+    - Error ID length: TARGET_013
+
+    - Default request timeout in fixtures: TARGET_006
+
+    - User bio field max length: TARGET_007
+
+
+    Calculate: (MAX_RETRY_ATTEMPTS × EMAIL_BATCH_SIZE × DEFAULT_PAGE_SIZE) + (MAX_REPORT_ROWS / TASK_EXECUTION_TIMEOUT) + (CACHE_TTL_SECONDS / RATE_LIMIT_WINDOW_SECONDS) = ?
+
+    '
+  correctness: 'The answer must correctly identify and extract all 16 configuration values from their respective
+
+    locations in the code fragments. Each value must be found by exact string search for the named
+
+    constant. The calculation is: (5 × 100 × 20) + (50000 / 60) + (3600 / 60) = 10000 + 833.33 + 60 = 10893.33
+
+    '
+  completeness: 'A complete answer must:
+
+    1. Identify all 16 configuration constants and their exact numeric values
+
+    2. Locate each value in the correct fragment file
+
+    3. Show the arithmetic calculation step-by-step
+
+    4. Provide the final numerical result rounded to appropriate precision
+
+    5. Demonstrate understanding of why these values appear in context (retry strategy, email batch processing, pagination, timeouts, caching, etc.)
+
+    '
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5

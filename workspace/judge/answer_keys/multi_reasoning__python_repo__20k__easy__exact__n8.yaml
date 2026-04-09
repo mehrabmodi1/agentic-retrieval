@@ -1,0 +1,74 @@
+parametrisation_id: multi_reasoning__python_repo__20k__easy__exact__n8
+experiment_type: multi_reasoning
+generated_at: '2026-04-03T00:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 20000
+  discriminability: easy
+  reference_clarity: exact
+items:
+- item_id: target_001
+  inserted_text: 'AUTH_CONNECTION_POOL_SIZE = 15  # Max DB connections allocated to auth module'
+  file_path: api/auth.py
+  line_range:
+  - 27
+  - 27
+  context_summary: Inserted after the module-level logger definition, before the AuthenticationError class in api/auth.md.
+- item_id: target_002
+  inserted_text: 'VALIDATOR_CONNECTION_POOL_SIZE = 8  # Max DB connections allocated to validator module'
+  file_path: api/validators.py
+  line_range:
+  - 20
+  - 20
+  context_summary: Inserted after the module-level logger definition, before the ValidationError class in api/validators.md.
+- item_id: target_003
+  inserted_text: 'FIXTURE_CONNECTION_POOL_SIZE = 5  # Max DB connections allocated to test fixtures'
+  file_path: tests/fixtures.py
+  line_range:
+  - 19
+  - 19
+  context_summary: Inserted after the sqlalchemy Session import, before the TestDataBuilder class in tests/fixtures.md.
+- item_id: target_004
+  inserted_text: 'TEST_AUTH_CONNECTION_POOL_SIZE = 3  # Max DB connections allocated to auth test suite'
+  file_path: tests/test_auth.py
+  line_range:
+  - 21
+  - 21
+  context_summary: Inserted after the app.exceptions imports, before the first @pytest.mark.unit class in tests/test_auth.md.
+- item_id: target_005
+  inserted_text: 'TEST_WORKERS_CONNECTION_POOL_SIZE = 4  # Max DB connections allocated to worker test suite'
+  file_path: tests/test_workers.py
+  line_range:
+  - 19
+  - 19
+  context_summary: Inserted after the sqlalchemy Session import, before the first @pytest.mark.unit class in tests/test_workers.md.
+- item_id: target_006
+  inserted_text: 'SYNC_WORKER_CONNECTION_POOL_SIZE = 20  # Max DB connections allocated to sync worker'
+  file_path: workers/sync_worker.py
+  line_range:
+  - 21
+  - 21
+  context_summary: Inserted after the Base = declarative_base() statement, before the SyncDirection enum in workers/sync_worker.md.
+- item_id: target_007
+  inserted_text: 'TASK_RUNNER_CONNECTION_POOL_SIZE = 12  # Max DB connections allocated to task runner'
+  file_path: workers/task_runner.py
+  line_range:
+  - 27
+  - 27
+  context_summary: Inserted after the Base = declarative_base() statement, before the TaskStatus enum in workers/task_runner.md.
+- item_id: target_008
+  inserted_text: 'FIXTURE_TEARDOWN_POOL_SIZE = 7  # Max DB connections held during fixture teardown'
+  file_path: tests/fixtures.py
+  line_range:
+  - 312
+  - 312
+  context_summary: Inserted before the @pytest.fixture def data_builder block, well into the fixtures section of tests/fixtures.md.
+expected_answers:
+  question: 'What is the total maximum DB connection pool capacity across all modules? Sum the values of these eight constants: AUTH_CONNECTION_POOL_SIZE, VALIDATOR_CONNECTION_POOL_SIZE, FIXTURE_CONNECTION_POOL_SIZE, TEST_AUTH_CONNECTION_POOL_SIZE, TEST_WORKERS_CONNECTION_POOL_SIZE, SYNC_WORKER_CONNECTION_POOL_SIZE, TASK_RUNNER_CONNECTION_POOL_SIZE, and FIXTURE_TEARDOWN_POOL_SIZE.'
+  correctness: The correct answer is 74 (15 + 8 + 5 + 3 + 4 + 20 + 12 + 7).
+  completeness: 'A complete answer identifies all eight constants: AUTH_CONNECTION_POOL_SIZE=15 (api/auth.md), VALIDATOR_CONNECTION_POOL_SIZE=8 (api/validators.md), FIXTURE_CONNECTION_POOL_SIZE=5 (tests/fixtures.md), TEST_AUTH_CONNECTION_POOL_SIZE=3 (tests/test_auth.md), TEST_WORKERS_CONNECTION_POOL_SIZE=4 (tests/test_workers.md), SYNC_WORKER_CONNECTION_POOL_SIZE=20 (workers/sync_worker.md), TASK_RUNNER_CONNECTION_POOL_SIZE=12 (workers/task_runner.md), and FIXTURE_TEARDOWN_POOL_SIZE=7 (tests/fixtures.md), and sums them to 74.'
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5

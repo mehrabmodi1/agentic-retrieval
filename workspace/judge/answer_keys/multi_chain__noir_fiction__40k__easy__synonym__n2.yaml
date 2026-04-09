@@ -1,0 +1,28 @@
+parametrisation_id: "multi_chain__noir_fiction__40k__easy__synonym__n2"
+experiment_type: "multi_chain"
+generated_at: "2026-04-05T00:00:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 40000
+  discriminability: "easy"
+  reference_clarity: "synonym"
+items:
+  - item_id: "target_001"
+    inserted_text: "Then, almost like an afterthought, he added: 'If anyone traces the photographs back to Sector 14 at the harbor facility, everyone dies. Everyone.'"
+    file_path: "witnesses/bartender_statement.md"
+    line_range: [30, 30]
+    context_summary: "The old man's cryptic warning to the young man about Sector 14 at the harbor facility and the danger of the photographs being traced there."
+  - item_id: "target_002"
+    inserted_text: "Sector 14 at the harbor facility—that's the real operation. That's where they processed everything. That's where they took Claire to ensure her silence. That's where Vincent was supposed to deliver the photographs, but he never made it past the first checkpoint."
+    file_path: "case_notes/day_04.md"
+    line_range: [35, 35]
+    context_summary: "Margaret's revelation explaining what Sector 14 at the harbor facility is—Sinclair's actual operation headquarters where Claire was taken and killed."
+expected_answers:
+  question: "Starting from the bartender's account of the old man's warning about Sector 14, what does Margaret reveal is the significance of that location?"
+  correctness: "The answer must identify Sector 14 at the harbor facility as the place where Sinclair operates, where Claire was taken, and where she was killed to ensure her silence."
+  completeness: "A complete answer covers: (1) that it's the real operation/headquarters, (2) that it's where they processed evidence, (3) that Claire was taken there, and (4) its connection to the murder/silencing of Claire."
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+  - criterion: "completeness"
+    weight: 0.5

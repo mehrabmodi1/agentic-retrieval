@@ -1,0 +1,111 @@
+parametrisation_id: multi_reasoning__python_repo__40k__hard__synonym__n8
+experiment_type: multi_reasoning
+generated_at: '2026-04-05T00:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 40000
+  discriminability: hard
+  reference_clarity: synonym
+items:
+- item_id: target_001
+  inserted_text: '# Cache TTL: 3600 seconds (1 hour) for task responses'
+  file_path: tests/test_api.py
+  line_range:
+  - 124
+  - 124
+  context_summary: Cache configuration comment inserted after task retrieval test, specifying temporal constraint for response caching.
+- item_id: target_002
+  inserted_text: 'capacity: 1000,  # Maximum burst token capacity'
+  file_path: api/rate_limiting.py
+  line_range:
+  - 304
+  - 304
+  context_summary: Burst capacity parameter embedded in token bucket configuration documentation.
+- item_id: target_003
+  inserted_text: 'MAX_RETRY_ATTEMPTS = 3  # Maximum automatic retry count before marking task failed'
+  file_path: workers/retry_handler.py
+  line_range:
+  - 301
+  - 301
+  context_summary: Retry limit constant inserted in statistics calculation logic referencing attempt thresholds.
+- item_id: target_004
+  inserted_text: 'retention_days: 30,  # Data retention period before cleanup'
+  file_path: workers/cleanup_worker.py
+  line_range:
+  - 246
+  - 246
+  context_summary: Retention policy parameter embedded in filesystem cleanup method configuration.
+- item_id: target_005
+  inserted_text: 'max_length=3000  # Maximum comment content size to prevent unbounded storage'
+  file_path: api/serializers.py
+  line_range:
+  - 175
+  - 175
+  context_summary: Content size constraint inserted in comment serializer validation rule.
+- item_id: target_006
+  inserted_text: '"api_rate_limit": 1000,  # Maximum requests per time window'
+  file_path: tests/conftest.py
+  line_range:
+  - 119
+  - 119
+  context_summary: Rate limit setting embedded in organization configuration fixture under settings dictionary.
+- item_id: target_007
+  inserted_text: 'timeout_seconds=3600  # Maximum duration before sync operation is terminated'
+  file_path: workers/sync_worker.py
+  line_range:
+  - 124
+  - 124
+  context_summary: Sync timeout parameter embedded in sync operation execution logic.
+- item_id: target_008
+  inserted_text: 'username_char_limit = 32  # Upper bound for username field length validation'
+  file_path: api/validators.py
+  line_range:
+  - 118
+  - 118
+  context_summary: Username length constraint inserted in username validation function requirements documentation.
+expected_answers:
+  question: Identify all the system-wide configuration constraints and validation limits (temporal caches, rate limiting capacities, failure thresholds, data retention periods, content size boundaries, request quotas, operation timeouts, and field length restrictions) that are enforced across the authentication, API, worker, and data persistence layers. Calculate the sum of all numeric constraint values.
+  correctness: 'A correct answer must identify and extract all 8 distinct numeric constraint values:
+
+    - Cache TTL: 3600 seconds
+
+    - Burst token capacity: 1000 tokens
+
+    - Max retry attempts: 3 attempts
+
+    - Data retention: 30 days
+
+    - Comment max length: 3000 characters
+
+    - API rate limit: 1000 requests
+
+    - Sync timeout: 3600 seconds
+
+    - Username max length: 32 characters
+
+
+    The sum must be calculated correctly: 3600 + 1000 + 3 + 30 + 3000 + 1000 + 3600 + 32 = 12,265
+
+    '
+  completeness: 'A complete answer must:
+
+    1. Locate all 8 configuration parameters across 8 different files
+
+    2. Interpret each parameter''s semantic context (temporal, capacity, validation, retention)
+
+    3. Correctly extract and convert all numeric values
+
+    4. Perform multi-step arithmetic to compute the final sum
+
+    5. Understand that parameters are embedded within code comments, configuration dictionaries, and function signatures, requiring comprehension of surrounding context to identify them as constraints
+
+    6. Recognize that parameters use synonymous terminology: "TTL" (temporal cache), "capacity" (rate limit), "attempts" (failure handling), "days" (retention), "max_length" (size boundary), "rate_limit" (quota), "timeout" (operation duration), "char_limit" (field validation)
+
+    '
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+  description: All 8 values correctly identified and sum is accurate
+- criterion: completeness
+  weight: 0.5
+  description: All 8 files searched, all constraints found, all reasoning steps shown

@@ -1,0 +1,111 @@
+parametrisation_id: multi_reasoning__python_repo__20k__hard__contextual__n8
+experiment_type: multi_reasoning
+generated_at: '2026-04-05T00:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 20000
+  discriminability: hard
+  reference_clarity: contextual
+items:
+- item_id: target_001
+  inserted_text: "# Bulk user imports process in batches of MAX_BATCH_SIZE = 150 records per operation\n        # This ensures audit log tracking remains performant under high volume"
+  file_path: tests/test_db.py
+  line_range:
+  - 410
+  - 412
+  context_summary: Inserted batch size constraint for user import operations within database query test context
+- item_id: target_002
+  inserted_text: '# Each user record created must have at least one audit_log entry tracking creation'
+  file_path: tests/test_db.py
+  line_range:
+  - 391
+  - 391
+  context_summary: Inserted audit log requirement after audit_logs assertion in database test
+- item_id: target_003
+  inserted_text: '"""Cache must be cleared whenever a user record is updated or created."""'
+  file_path: tests/test_services.py
+  line_range:
+  - 367
+  - 367
+  context_summary: Inserted cache invalidation requirement within cached service test method
+- item_id: target_004
+  inserted_text: '# Export structure must include user object and associated tasks collection'
+  file_path: tests/test_services.py
+  line_range:
+  - 345
+  - 345
+  context_summary: Inserted export data structure requirements after assertion checks in service test
+- item_id: target_005
+  inserted_text: '# API validation errors should return status 422 (HTTP_422_UNPROCESSABLE_ENTITY)'
+  file_path: tests/test_api.py
+  line_range:
+  - 31
+  - 31
+  context_summary: Inserted validation error status code requirement within API endpoint test
+- item_id: target_006
+  inserted_text: '# Each error response must include request_id for operational diagnostics and debugging'
+  file_path: api/error_handlers.py
+  line_range:
+  - 400
+  - 400
+  context_summary: Inserted request_id tracking requirement after response construction in error handler
+- item_id: target_007
+  inserted_text: '# Each validation failure must return (False, error_message_string) for client error handling'
+  file_path: api/validators.py
+  line_range:
+  - 89
+  - 89
+  context_summary: Inserted validation failure return format requirement within password validation function
+- item_id: target_008
+  inserted_text: '# The records_failed count must be tracked to correlate with error_response generation'
+  file_path: workers/sync_worker.py
+  line_range:
+  - 133
+  - 133
+  context_summary: Inserted failed record correlation requirement within sync result dictionary construction
+expected_answers:
+  question: When the system processes a maximum-capacity batch user import with validation failures, describe how the system ensures complete operational traceability. What six system components or data elements must be coordinated, and what constraint governs batch processing throughput?
+  correctness: 'A correct answer must identify and explain the interdependencies between:
+
+    1. Batch size limit (MAX_BATCH_SIZE = 150) that governs throughput
+
+    2. Password validation mechanism that returns failure messages
+
+    3. Error response format that includes request_id for diagnostics
+
+    4. Audit log creation that tracks each user record
+
+    5. Cache invalidation that occurs on user creation/update
+
+    6. Sync result tracking that counts records_failed
+
+    The answer should explain how each component connects to enable end-to-end failure correlation.
+
+    '
+  completeness: 'A complete answer covers:
+
+    - The maximum batch size constraint and its performance implications
+
+    - Validation failure detection through password validator return tuples
+
+    - Diagnostic correlation via request_id field in error responses
+
+    - Audit trail creation for record provenance
+
+    - Cache management requirements on data mutations
+
+    - Failed record quantification in sync results
+
+    - How these six elements work together to reconstruct failure chains during operational debugging
+
+    '
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+  description: Answer correctly identifies all six system components and the batch size constraint
+- criterion: completeness
+  weight: 0.8
+  description: Answer explains how each component contributes to traceability and their interdependencies
+- criterion: reasoning
+  weight: 0.9
+  description: Answer demonstrates understanding that multiple file contexts must be synthesized to answer

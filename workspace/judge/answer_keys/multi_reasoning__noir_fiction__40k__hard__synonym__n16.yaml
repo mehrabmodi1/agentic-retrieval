@@ -1,0 +1,213 @@
+parametrisation_id: multi_reasoning__noir_fiction__40k__hard__synonym__n16
+experiment_type: multi_reasoning
+generated_at: '2026-04-05T15:30:00Z'
+parameters:
+  content_profile: noir_fiction
+  corpus_token_count: 40000
+  discriminability: hard
+  reference_clarity: synonym
+items:
+- item_id: target_001
+  inserted_text: I told him that the lease, it required two months' notice, which was legally binding. Which was true. And I told him the apartment upstairs would be available in December, but not before—a full eight weeks away.
+  file_path: witnesses/landlady_statement.md
+  line_range:
+  - 26
+  - 28
+  context_summary: Landlady reveals the lease requirement of two months' notice that prevented Harvey's immediate departure and gave him a reprieve until December.
+- item_id: target_002
+  inserted_text: According to hospital records, he was in their facility for exactly three years prior to this incident as well—same calendar period as Shepherd's Halstead contract.
+  file_path: case_notes/day_04.md
+  line_range:
+  - 32
+  - 32
+  context_summary: Hospital records establish Vincent Castellano's three-year institutional history coinciding with the Halstead case timeline.
+- item_id: target_003
+  inserted_text: The bracelet with three small pearls and the sapphire ring in silver setting form a chain connecting him directly to her.
+  file_path: case_notes/day_07.md
+  line_range:
+  - 90
+  - 90
+  context_summary: Physical jewelry evidence—bracelet with three small pearls and sapphire in silver setting—directly connects Sinclair to Claire Hollister through possession.
+- item_id: target_004
+  inserted_text: Meridian Holdings. A consortium out of the eastern seaboard, they claim—though their actual base of operations is deliberately obscured.
+  file_path: chapters/chapter_05.md
+  line_range:
+  - 45
+  - 45
+  context_summary: Meridian Holdings identified as eastern seaboard consortium with obscured operations attempting to acquire Halstead's business.
+- item_id: target_005
+  inserted_text: The Castellano kid was in here Tuesday night," Paulie tells me after the second drink. "Before he disappeared. Tuesday—same night Halstead's daughter was taken.
+  file_path: case_notes/day_02.md
+  line_range:
+  - 74
+  - 74
+  context_summary: 'Temporal connection established: both Claire Hollister and Vincent Castellano disappeared the same Tuesday night as Catherine Halstead.'
+- item_id: target_006
+  inserted_text: She graduated from university at twenty with advanced degrees in literature and philosophy, both honors—exceptionally young for such achievement.
+  file_path: chapters/chapter_02.md
+  line_range:
+  - 19
+  - 19
+  context_summary: Catherine Halstead's exceptional academic achievement—graduation at age twenty with advanced honors degrees—established as background.
+- item_id: target_007
+  inserted_text: Then, about three weeks ago—precisely when the landlady observed the mysterious visitor ascending to Harvey's apartment—something shifted in Catherine's entries.
+  file_path: chapters/chapter_04.md
+  line_range:
+  - 23
+  - 23
+  context_summary: 'Critical temporal marker: three weeks prior coincides with the mysterious visitor''s warehouse visit and Catherine''s behavioral shift in her journal.'
+- item_id: target_008
+  inserted_text: 'Last Seen: Tuesday, Nov 2, 1947, approximately 9:30 PM, Regency Hotel, Room 412
+
+    - **Note:** Disappeared same evening as Catherine Halstead from different location'
+  file_path: case_notes/day_01.md
+  line_range:
+  - 19
+  - 21
+  context_summary: Exact date established as Tuesday, November 2, 1947—same evening as Catherine Halstead's disappearance from different location.
+- item_id: target_009
+  inserted_text: I was thinking fifty thousand dollars in unmarked bills would provide adequate incentive for silence.
+  file_path: case_notes/day_05.md
+  line_range:
+  - 128
+  - 128
+  context_summary: Vincent Castellano negotiates fifty thousand dollars in cash as insurance payment from Sinclair, establishing the precise financial transaction.
+- item_id: target_010
+  inserted_text: It's an old building on Dock Street, building seven specifically, probably built twenty years ago, the kind of place that's supposed to be full of imported goods that probably never passed through customs officially.
+  file_path: case_notes/day_03.md
+  line_range:
+  - 136
+  - 136
+  context_summary: Warehouse location specified precisely as Dock Street, building seven, identified through investigation as Sinclair's operational base.
+- item_id: target_011
+  inserted_text: He files to suppress the physical evidence—specifically the fiber evidence—claiming it was improperly obtained.
+  file_path: case_notes/day_06.md
+  line_range:
+  - 71
+  - 71
+  context_summary: Defense strategy targets fiber evidence as improperly obtained, indicating its vulnerability and importance to the prosecution's case.
+- item_id: target_012
+  inserted_text: The man came to my hotel room without knocking, suggesting he has resources beyond typical federal reach. He doesn't have a warrant, but he has a federal badge, and he tells me he needs to ask some questions about my connection to the sapphire evidence.
+  file_path: case_notes/day_08.md
+  line_range:
+  - 82
+  - 82
+  context_summary: FBI agent Reeves specifically interrogates about sapphire evidence, indicating its centrality and Sinclair's pressure campaign.
+- item_id: target_013
+  inserted_text: '''the Starlight Motor Inn, room fourteen, the key''s under the mat. Go when you can.'' Said it like giving directions that meant the difference between living and dying, real matter-of-fact, urgent.'
+  file_path: witnesses/bartender_statement.md
+  line_range:
+  - 42
+  - 42
+  context_summary: 'Safe house location revealed: Starlight Motor Inn, room fourteen, with emergency key placement—escape route prepared by mysterious handler.'
+- item_id: target_014
+  inserted_text: When we got to the address in Oak Hill, a big house set back from the road with wrought-iron gates and a long driveway disappearing into trees, the old man got out first with deliberate slowness.
+  file_path: witnesses/cab_driver_statement.md
+  line_range:
+  - 42
+  - 42
+  context_summary: Residential destination identified as Oak Hill with significant architecture—wrought-iron gates and long driveway—suggesting property of importance.
+- item_id: target_015
+  inserted_text: She has a small crescent-shaped birthmark just below her left collarbone—barely visible unless you know to look for it, which her mother pointed out to me when I asked for distinguishing features.
+  file_path: chapters/chapter_01.md
+  line_range:
+  - 31
+  - 31
+  context_summary: Catherine Halstead's distinguishing feature—crescent-shaped birthmark below left collarbone—confirmed as identifying characteristic mentioned by parents.
+- item_id: target_016
+  inserted_text: She lives—lived, you understand—in the residential district, about ten blocks away from the Park House. It's a pleasant walk normally. Safe, we thought. But it should have taken her maybe twenty-five minutes.
+  file_path: chapters/chapter_03.md
+  line_range:
+  - 55
+  - 55
+  context_summary: Walking route distance established as approximately ten blocks from Park House restaurant, estimated at twenty-five minute walk duration.
+expected_answers:
+  question: 'Construct a comprehensive timeline and network diagram of the interconnected crimes and movements across the city.
+
+
+    Specifically identify:
+
+    (1) The exact date and what triggered multiple disappearances that evening,
+
+    (2) The specific timeline markers that connect the landlady''s observations to Catherine''s journal entries,
+
+    (3) The physical evidence chain (jewelry descriptions, fiber evidence) that links perpetrators to victims,
+
+    (4) The precise locations involved (warehouse address, residential addresses, hotels, restaurants, safe houses),
+
+    (5) The financial arrangements and amounts involved in coercion and escape,
+
+    (6) The distinguishing characteristics that identify victims and witnesses across locations,
+
+    (7) The investigation methods and evidence vulnerabilities,
+
+    (8) How the external pressure (Meridian Holdings) and internal criminal operations (Sinclair/Castellano) intersect.
+
+    '
+  correctness: 'A correct answer must include:
+
+    - The specific date: Tuesday, November 2, 1947
+
+    - All three disappearances that occurred that night: Catherine Halstead, Claire Hollister, and Vincent Castellano
+
+    - The connection between the three-week marker and the landlady''s visitor observation
+
+    - The bracelet (three small pearls), sapphire ring (silver setting), and fiber evidence as physical proof
+
+    - Dock Street building seven as the warehouse location
+
+    - Oak Hill residential address and Starlight Motor Inn room fourteen as secondary locations
+
+    - The Park House restaurant (approximately ten blocks from Catherine''s residence, twenty-five minute walk)
+
+    - The fifty thousand dollar payment negotiated between Sinclair and Vincent Castellano
+
+    - The two months'' notice lease requirement and December availability window
+
+    - Meridian Holdings as the external pressure source from the eastern seaboard
+
+    - The crescent-shaped birthmark as Catherine''s identifying feature
+
+    - The hospital records covering a three-year period
+
+    - The vulnerability of fiber evidence to legal challenge
+
+    '
+  completeness: 'A complete answer covers:
+
+    - All 16 pieces of information working together to form a complete picture
+
+    - The interconnection between the Halstead kidnapping and the Hollister murder
+
+    - The timeline of Harvey''s anxiety (three weeks prior escalation)
+
+    - Multiple witness perspectives (landlady, bartender, cab driver, restaurant friends)
+
+    - Physical evidence chain from crime scene to perpetrator
+
+    - Geographic distribution of locations (warehouse, restaurants, apartments, residential estates)
+
+    - Financial flows and negotiations
+
+    - Investigator methodology (DMV trace, hospital records, witness interviews)
+
+    - Defense strategy vulnerabilities and pressure campaigns
+
+    - How external corporate interests (Meridian Holdings) connect to street-level criminal operations
+
+    '
+rubric_criteria:
+- criterion: Correctness of core facts
+  weight: 1.0
+- criterion: Identification of all 16 items
+  weight: 1.0
+- criterion: Temporal sequencing accuracy
+  weight: 0.8
+- criterion: Geographic accuracy of locations
+  weight: 0.8
+- criterion: Understanding of interconnections
+  weight: 1.0
+- criterion: Physical evidence chain integrity
+  weight: 0.9
+- criterion: Integration of multiple witness perspectives
+  weight: 0.7

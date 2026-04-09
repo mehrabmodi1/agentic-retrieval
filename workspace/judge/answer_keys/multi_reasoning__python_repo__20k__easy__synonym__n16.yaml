@@ -1,0 +1,130 @@
+parametrisation_id: multi_reasoning__python_repo__20k__easy__synonym__n16
+experiment_type: multi_reasoning
+generated_at: '2026-04-05T00:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 20000
+  discriminability: easy
+  reference_clarity: synonym
+items:
+- item_id: target_001
+  inserted_text: MAX_RETRY_ATTEMPTS = 5
+  file_path: workers/retry_handler.py
+  line_range:
+  - 200
+  - 203
+  context_summary: Inserted as configuration constant defining maximum times a task can be retried before failing.
+- item_id: target_002
+  inserted_text: RETRY_BACKOFF_MULTIPLIER = 2.0
+  file_path: workers/retry_handler.py
+  line_range:
+  - 200
+  - 203
+  context_summary: Inserted as exponential backoff multiplier for successive retry delay calculations.
+- item_id: target_003
+  inserted_text: INITIAL_RETRY_DELAY_SECONDS = 1
+  file_path: workers/retry_handler.py
+  line_range:
+  - 200
+  - 203
+  context_summary: Inserted as base delay in seconds before first retry attempt.
+- item_id: target_004
+  inserted_text: MAX_CONCURRENT_RETRIES = 100
+  file_path: workers/retry_handler.py
+  line_range:
+  - 200
+  - 203
+  context_summary: Inserted as maximum number of concurrent retry operations allowed in the system.
+- item_id: target_005
+  inserted_text: MAX_ERROR_LOG_BUFFER = 1000
+  file_path: api/error_handlers.py
+  line_range:
+  - 325
+  - 326
+  context_summary: Inserted as capacity limit for error logging buffer across API handlers.
+- item_id: target_006
+  inserted_text: ERROR_HANDLER_QUEUE_SIZE = 500
+  file_path: api/error_handlers.py
+  line_range:
+  - 325
+  - 326
+  context_summary: Inserted as maximum queue depth for error handler processing queue.
+- item_id: target_007
+  inserted_text: CLEANUP_BATCH_SIZE = 10000
+  file_path: workers/cleanup_worker.py
+  line_range:
+  - 189
+  - 192
+  context_summary: Inserted as batch size for cleanup operations processing database records.
+- item_id: target_008
+  inserted_text: DEFAULT_RETENTION_DAYS = 90
+  file_path: workers/cleanup_worker.py
+  line_range:
+  - 189
+  - 192
+  context_summary: Inserted as default record retention period in days before cleanup.
+- item_id: target_009
+  inserted_text: MAX_CONCURRENT_REPORTS = 50
+  file_path: workers/report_generator.py
+  line_range:
+  - 73
+  - 75
+  context_summary: Inserted as maximum number of concurrent report generation processes.
+- item_id: target_010
+  inserted_text: REPORT_GENERATION_TIMEOUT_SECONDS = 3600
+  file_path: workers/report_generator.py
+  line_range:
+  - 73
+  - 75
+  context_summary: Inserted as timeout limit in seconds for report generation operations.
+- item_id: target_011
+  inserted_text: MAX_VALIDATION_QUEUE_SIZE = 5000
+  file_path: api/validators.py
+  line_range:
+  - 128
+  - 129
+  context_summary: Inserted as maximum queue capacity for pending validation tasks.
+- item_id: target_012
+  inserted_text: BULK_VALIDATION_BATCH_SIZE = 100
+  file_path: api/validators.py
+  line_range:
+  - 128
+  - 129
+  context_summary: Inserted as batch size for bulk validation operations processing multiple items.
+- item_id: target_013
+  inserted_text: MAX_TEST_CONCURRENT_REQUESTS = 1000
+  file_path: tests/test_auth.py
+  line_range:
+  - 26
+  - 28
+  context_summary: Inserted as maximum number of concurrent test requests the system can handle.
+- item_id: target_014
+  inserted_text: TEST_USER_BATCH_SIZE = 100
+  file_path: tests/test_auth.py
+  line_range:
+  - 26
+  - 28
+  context_summary: Inserted as number of test users created per batch in test scenarios.
+- item_id: target_015
+  inserted_text: MAX_EMAIL_BATCH_SIZE = 500
+  file_path: workers/email_worker.py
+  line_range:
+  - 293
+  - 294
+  context_summary: Inserted as maximum number of emails that can be sent in a single batch operation.
+- item_id: target_016
+  inserted_text: MAX_CONCURRENT_EMAIL_SENDS = 200
+  file_path: workers/email_worker.py
+  line_range:
+  - 293
+  - 294
+  context_summary: Inserted as maximum number of concurrent email sending operations.
+expected_answers:
+  question: 'Calculate the total maximum concurrent operation capacity across all worker and API systems by summing: maximum concurrent retries, concurrent reports, concurrent email operations, concurrent test requests, error handler queue capacity, and maximum validation queue size. What is this sum?'
+  correctness: 'The answer must accurately sum all six concurrent capacity values: 100 + 50 + 200 + 1000 + 500 + 5000 = 6850'
+  completeness: A complete answer must identify and retrieve all six configuration limits related to concurrent/queue capacity (using synonyms like 'concurrent operations', 'maximum queue', 'capacity'), then demonstrate the arithmetic sum showing the work.
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5

@@ -1,0 +1,125 @@
+parametrisation_id: multi_reasoning__python_repo__20k__hard__synonym__n8
+experiment_type: multi_reasoning
+generated_at: '2026-04-05T00:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 20000
+  discriminability: hard
+  reference_clarity: synonym
+items:
+- item_id: target_001
+  inserted_text: '# Email delivery events must be archived after this window for compliance
+
+    EMAIL_EVENT_ARCHIVE_WINDOW_DAYS = 90'
+  file_path: workers/email_worker.py
+  line_range:
+  - 20
+  - 21
+  context_summary: Inserted as a new constant after the existing STALE_RECORD_THRESHOLD_DAYS, establishing email archive retention policy.
+- item_id: target_002
+  inserted_text: '# Maximum days to retain generated reports before deletion
+
+    REPORT_RETENTION_WINDOW_DAYS = 180'
+  file_path: workers/report_generator.py
+  line_range:
+  - 204
+  - 205
+  context_summary: Inserted before the _export_json method, specifying how long exported reports are preserved.
+- item_id: target_003
+  inserted_text: '# Lifecycle duration for test user records in the database
+
+    TEST_USER_DATA_PRESERVATION_DAYS = 14'
+  file_path: tests/fixtures.py
+  line_range:
+  - 24
+  - 25
+  context_summary: Inserted at the beginning of TestDataBuilder class to indicate test data retention policy.
+- item_id: target_004
+  inserted_text: '# Cached test fixtures expire after this duration to prevent stale state contamination
+
+    FIXTURE_CACHE_EXPIRY_HOURS = 2'
+  file_path: tests/conftest.py
+  line_range:
+  - 288
+  - 289
+  context_summary: Inserted before reset_settings fixture, defining how long pytest fixture cache persists between test runs.
+- item_id: target_005
+  inserted_text: '# Task execution records are retained for audit purposes during this window
+
+    TASK_EXECUTION_RECORD_DAYS = 30'
+  file_path: tests/test_workers.py
+  line_range:
+  - 187
+  - 188
+  context_summary: Inserted at the start of TestTaskRetry class, specifying task history retention duration.
+- item_id: target_006
+  inserted_text: '# User session records are purged after exceeding this archival window
+
+    USER_SESSION_EXPIRY_DAYS = 60'
+  file_path: workers/cleanup_worker.py
+  line_range:
+  - 185
+  - 186
+  context_summary: Inserted before _cleanup_database_records method, establishing session data lifecycle policy for deletion operations.
+- item_id: target_007
+  inserted_text: '# Application logs are permanently removed after this preservation period
+
+    APPLICATION_LOG_ARCHIVE_DAYS = 120'
+  file_path: workers/cleanup_worker.py
+  line_range:
+  - 195
+  - 196
+  context_summary: Inserted within _cleanup_database_records where application_logs table deletion is handled, defining log retention span.
+- item_id: target_008
+  inserted_text: '# User passwords must be changed within this number of days for security compliance
+
+    PASSWORD_LIFECYCLE_DAYS = 45'
+  file_path: api/validators.py
+  line_range:
+  - 217
+  - 218
+  context_summary: Inserted before validate_user_update function, establishing password rotation requirement as part of validation policies.
+expected_answers:
+  question: 'What is the total combined preservation window (in days) across all data archival and lifecycle policies configured in the email delivery system, report generation, test fixtures, task execution, user sessions, application logs, and password management subsystems?
+
+    '
+  correctness: 'A correct answer must identify and extract all eight retention/archival/preservation/expiry periods from their embedded locations within the code fragments:
+
+    - EMAIL_EVENT_ARCHIVE_WINDOW_DAYS = 90 days
+
+    - REPORT_RETENTION_WINDOW_DAYS = 180 days
+
+    - TEST_USER_DATA_PRESERVATION_DAYS = 14 days
+
+    - FIXTURE_CACHE_EXPIRY_HOURS = 2 hours (≈ 0.083 days, or note separately)
+
+    - TASK_EXECUTION_RECORD_DAYS = 30 days
+
+    - USER_SESSION_EXPIRY_DAYS = 60 days
+
+    - APPLICATION_LOG_ARCHIVE_DAYS = 120 days
+
+    - PASSWORD_LIFECYCLE_DAYS = 45 days
+
+
+    The numerical answer is: 90 + 180 + 14 + 30 + 60 + 120 + 45 = 539 days (excluding the fixture cache in hours, or 539.083 days if converting the 2 hours)
+
+    '
+  completeness: 'A complete answer must:
+
+    1. Identify all eight distinct data retention configurations scattered across different files and code contexts
+
+    2. Recognize that similar-sounding variable names (e.g., ARCHIVE, RETENTION, EXPIRY, PRESERVATION, LIFECYCLE, WINDOW) are synonyms for the same concept
+
+    3. Extract values embedded within method signatures, class definitions, and conditional logic (not isolated as a simple list)
+
+    4. Perform arithmetic aggregation to produce the final sum
+
+    5. Note the presence of FIXTURE_CACHE_EXPIRY_HOURS and either convert it to days or acknowledge it requires unit conversion
+
+    '
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5

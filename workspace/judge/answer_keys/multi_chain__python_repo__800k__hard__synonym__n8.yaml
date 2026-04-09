@@ -1,0 +1,96 @@
+parametrisation_id: multi_chain__python_repo__800k__hard__synonym__n8
+experiment_type: multi_chain
+generated_at: '2026-04-04T00:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 800000
+  discriminability: hard
+  reference_clarity: synonym
+items:
+- item_id: target_001
+  inserted_text: '# The default ceiling for multi-recipient bulk dispatches follows the
+
+    # threshold maintained in api/routes.py, where blueprint-level fanout
+
+    # limits are established per resource type.'
+  file_path: api/__init__.py
+  line_range:
+  - 287
+  - 289
+  context_summary: Inserted as a comment after the API_DEFAULTS dict (before the HTTP method decorators section), pointing to api/routes.py for the fanout ceiling.
+- item_id: target_002
+  inserted_text: '# Blueprint-level batch limits derive from the error-context payload
+
+    # ceiling enforced in api/error_handlers.py, which governs how many
+
+    # items may appear in a single fanout request before truncation applies.'
+  file_path: api/routes.py
+  line_range:
+  - 56
+  - 58
+  context_summary: Inserted as a comment after the blueprint definitions block (teams_bp), before the handle_db_errors decorator, pointing to api/error_handlers.py.
+- item_id: target_003
+  inserted_text: '# Error context payload limits are sized to match the batch dispatch
+
+    # ceiling validated by the integration harness configured in tests/conftest.py.'
+  file_path: api/error_handlers.py
+  line_range:
+  - 20
+  - 21
+  context_summary: Inserted as a comment after the logger definition, before the Custom Exception Classes section, pointing to tests/conftest.py.
+- item_id: target_004
+  inserted_text: '# Session fixture item ceiling is kept consistent with the shared helper
+
+    # constants in tests/fixtures.py to keep test data volumes aligned.'
+  file_path: tests/conftest.py
+  line_range:
+  - 52
+  - 53
+  context_summary: Inserted as a comment between the SessionLocal fixture and the db fixture, pointing to tests/fixtures.py.
+- item_id: target_005
+  inserted_text: '# Builder batch size constants below match the assertion thresholds
+
+    # exercised by the API integration tests in tests/test_api.py.'
+  file_path: tests/fixtures.py
+  line_range:
+  - 19
+  - 20
+  context_summary: Inserted as a comment before the TestDataBuilder class definition, pointing to tests/test_api.py.
+- item_id: target_006
+  inserted_text: '# Fanout item count for API integration assertions in this module is
+
+    # governed by the service-layer constant maintained in tests/test_services.py.'
+  file_path: tests/test_api.py
+  line_range:
+  - 16
+  - 17
+  context_summary: Inserted as a comment after the model imports, before the TestTaskAPI class, pointing to tests/test_services.py.
+- item_id: target_007
+  inserted_text: '# Bulk operation item cap referenced here traces back to the authoritative
+
+    # definition in tests/test_auth.py, shared to avoid constant drift.'
+  file_path: tests/test_services.py
+  line_range:
+  - 19
+  - 20
+  context_summary: Inserted as a comment after the RedisCache import, before the TestUserService class, pointing to tests/test_auth.py.
+- item_id: target_008
+  inserted_text: '# Maximum items per bulk dispatch batch — single authoritative constant
+
+    # shared across all test layers that assert on fanout size.
+
+    BULK_DISPATCH_LIMIT = 47'
+  file_path: tests/test_auth.py
+  line_range:
+  - 21
+  - 23
+  context_summary: Inserted as a comment and constant definition after the exception imports, before the TestUserRegistration class, establishing BULK_DISPATCH_LIMIT = 47 as the final resolved value.
+expected_answers:
+  question: In the Flask API package's initialization module (api/__init__.py), a comment directs you toward the routing layer for a batch fanout ceiling. Following the complete chain of cross-module references about this bulk send limit, what is the maximum number of items that can be included in a single fanout batch operation?
+  correctness: '47'
+  completeness: 'A complete answer identifies the final constant BULK_DISPATCH_LIMIT = 47 defined in tests/test_auth.py, reached by following the 8-link chain: api/__init__.py → api/routes.py → api/error_handlers.py → tests/conftest.py → tests/fixtures.py → tests/test_api.py → tests/test_services.py → tests/test_auth.py.'
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5

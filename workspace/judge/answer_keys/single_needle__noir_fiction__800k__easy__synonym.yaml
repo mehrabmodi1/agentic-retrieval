@@ -1,0 +1,23 @@
+parametrisation_id: "single_needle__noir_fiction__800k__easy__synonym"
+experiment_type: "single_needle"
+generated_at: "2026-04-03T15:45:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 800000
+  discriminability: "easy"
+  reference_clarity: "synonym"
+items:
+  - item_id: "target_001"
+    inserted_text: "Deke paused, turning the glass over in his hands. \"Though the redhead—I did catch a name, just the once. She paid her tab in full that last night, and the name she'd put down was Iris Marlowe. I remember because it was a pretty name. The kind that belongs on a theater marquee, not a bar stool.\""
+    file_path: "witnesses/bartender_statement.md"
+    line_range: [56, 56]
+    context_summary: "Inserted after Deke's speech about never asking for names, as a natural exception where he admits he caught the auburn-haired woman's name from her bar tab at The Crimson Door Lounge."
+expected_answers:
+  question: "What name did the auburn-haired woman give on her bar tab at The Crimson Door?"
+  correctness: "Iris Marlowe"
+  completeness: "The answer should identify the name as Iris Marlowe, which the redhead put down on her bar tab when she paid in full on her last visit to The Crimson Door Lounge."
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+  - criterion: "completeness"
+    weight: 0.5

@@ -1,0 +1,28 @@
+parametrisation_id: "multi_chain__noir_fiction__800k__hard__contextual__n2"
+experiment_type: "multi_chain"
+generated_at: "2026-04-06T00:00:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 800000
+  discriminability: "hard"
+  reference_clarity: "contextual"
+items:
+  - item_id: "target_001"
+    inserted_text: "Harvey had been specific about one detail—he said the ledger documented that all the kidnapping operations in the city, including Catherine Halstead's abduction, traced back to a single coordinator whose real name appeared nowhere else in the organization's records. He called her only by a code name in daily correspondence: Magpie."
+    file_path: "witnesses/secretary_statement.md"
+    line_range: [38, 40]
+    context_summary: "Dorothy reveals Harvey's claim that the ledger identifies the mastermind behind all kidnapping operations by a code name: Magpie."
+  - item_id: "target_002"
+    inserted_text: "He paused. \"There was something else. Just before he hung up, I heard another voice in the background—a woman's voice saying something about 'Magpie wants the transfer approved by midnight.' The man on the phone said something back, called her Patricia. Patricia Magpie. That's who orchestrated this.\""
+    file_path: "chapters/chapter_05.md"
+    line_range: [20, 22]
+    context_summary: "Halstead reports overhearing a phone conversation that identifies Magpie's real name as Patricia, revealing the orchestrator's identity."
+expected_answers:
+  question: "Beginning with Dorothy's account of Harvey's claims regarding the ledger and its documentation of the kidnapping network's hierarchy, what is ultimately revealed to be the true identity of the individual orchestrating all the abduction operations?"
+  correctness: "The answer must identify Patricia (or Patricia's full identity as the person codenamed Magpie) as the orchestrator, tracing from the secretary's statement about the ledger through to Halstead's revelation of the overheard phone conversation."
+  completeness: "A complete answer should connect the chain: (1) the ledger documents operations traced to a single coordinator known by code name Magpie, (2) the name Magpie is heard in an intercepted conversation as the authority figure, (3) Magpie is identified as Patricia. The answer resolves to Patricia's identity."
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+  - criterion: "completeness"
+    weight: 0.5

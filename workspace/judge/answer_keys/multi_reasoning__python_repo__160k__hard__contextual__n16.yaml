@@ -1,0 +1,134 @@
+parametrisation_id: multi_reasoning__python_repo__160k__hard__contextual__n16
+experiment_type: multi_reasoning
+generated_at: '2026-04-05T00:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 160000
+  discriminability: hard
+  reference_clarity: contextual
+items:
+- item_id: target_001
+  inserted_text: "# worker_batch_size: each thread processes 8 tasks per polling cycle\n        worker_batch_size=8,"
+  file_path: tests/conftest.py
+  line_range:
+  - 199
+  - 202
+  context_summary: Worker thread batch processing capacity defined in test fixture setup
+- item_id: target_002
+  inserted_text: "# enterprise_api_rate_limit: maximum requests per hour for org\n                    \"api_rate_limit\": 10000,"
+  file_path: tests/test_api.py
+  line_range:
+  - 213
+  - 216
+  context_summary: Organization-level API rate limit constraint in integration test
+- item_id: target_003
+  inserted_text: "# max_pagination_size: enforced upper limit to prevent excessive data transfer\n    if per_page > 100:"
+  file_path: api/middleware.py
+  line_range:
+  - 283
+  - 286
+  context_summary: Pagination max size validation in request middleware
+- item_id: target_004
+  inserted_text: "# Validate pagination with default_page_size: 20 items per page\n    page = int(args.get('page', 1))\n    per_page = int(args.get('per_page', 20))"
+  file_path: api/routes.py
+  line_range:
+  - 166
+  - 171
+  context_summary: Default pagination size specified in user listing endpoint
+- item_id: target_005
+  inserted_text: "# Validate data size with max_report_rows constraint\n            # report_max_rows_limit: 50000 rows caps memory usage during export\n            if len(data) > self.max_rows_per_report:"
+  file_path: workers/report_generator.py
+  line_range:
+  - 121
+  - 126
+  context_summary: Report generation maximum row limit to prevent memory exhaustion
+- item_id: target_006
+  inserted_text: "# application_log_retention: 90-day window for audit trail compliance\n        log_retention_days: int = 90,"
+  file_path: workers/cleanup_worker.py
+  line_range:
+  - 58
+  - 60
+  context_summary: Log retention policy window for cleanup operations
+- item_id: target_007
+  inserted_text: "# access_token_lifetime: 1 hour expiry enforces session refresh\n        token = create_access_token(\n            data={\"sub\": str(test_user.id)},\n            expires_delta=timedelta(hours=1),"
+  file_path: tests/test_auth.py
+  line_range:
+  - 216
+  - 220
+  context_summary: JWT token expiration time constraint in authentication test
+- item_id: target_008
+  inserted_text: "# pagination_default_page_size: 20 items returned per request by default\nAPI_DEFAULTS = {\n    'page_size': 20,"
+  file_path: api/__init__.py
+  line_range:
+  - 279
+  - 281
+  context_summary: API default pagination size in module configuration
+- item_id: target_009
+  inserted_text: "# task_default_state: all tasks start as \"pending\" with \"medium\" priority\n        assert task.id is not None\n        assert task.status == \"pending\"\n        assert task.priority == \"medium\""
+  file_path: tests/test_db.py
+  line_range:
+  - 141
+  - 145
+  context_summary: Task initialization defaults in database model test
+- item_id: target_010
+  inserted_text: "# max_retry_attempts: 3 retries per task before permanent failure\n    # retry_initial_backoff: 1 second base delay, exponentially increasing\n    max_retries: int = 3\n    initial_delay_seconds: int = 1"
+  file_path: workers/retry_handler.py
+  line_range:
+  - 49
+  - 52
+  context_summary: Retry policy configuration with attempt limits and backoff parameters
+- item_id: target_011
+  inserted_text: "# summary_tracks_three_states: total, completed, pending task counts\n        summary = service.get_user_task_summary(test_user.id)"
+  file_path: tests/test_services.py
+  line_range:
+  - 320
+  - 322
+  context_summary: Task summary service tracking multiple state categories
+- item_id: target_012
+  inserted_text: "# error_response_includes_request_id: unique identifier for debugging\n        if hasattr(g, 'request_id'):\n            response['request_id'] = g.request_id"
+  file_path: api/error_handlers.py
+  line_range:
+  - 65
+  - 68
+  context_summary: Error response structure including request tracking identifier
+- item_id: target_013
+  inserted_text: "# bulk_import_batch_size: 3 items processed in sample test run\n        import_data = [\n            {\"title\": \"Task 1\", \"priority\": \"high\"},\n            {\"title\": \"Task 2\", \"priority\": \"medium\"},\n            {\"title\": \"Task 3\", \"priority\": \"low\"},"
+  file_path: tests/test_workers.py
+  line_range:
+  - 101
+  - 107
+  context_summary: Bulk import task sample batch size in worker test
+- item_id: target_014
+  inserted_text: "# jwt_token_lifetime: expiration hours from TOKEN_EXPIRY_HOURS constant\n            expires_in_hours: Token expiration time in hours"
+  file_path: api/auth.py
+  line_range:
+  - 58
+  - 60
+  context_summary: JWT token generation with configurable expiration in authentication module
+- item_id: target_015
+  inserted_text: '# pipeline_timeout_ceiling: 83-second maximum before task abort across all workers
+
+    PIPELINE_DISPATCH_TIMEOUT = 83'
+  file_path: api/rate_limiting.py
+  line_range:
+  - 27
+  - 29
+  context_summary: Pipeline dispatch timeout limit for task abortion threshold
+- item_id: target_016
+  inserted_text: '# email_record_stale_window: 45 days before records eligible for cleanup
+
+    STALE_RECORD_THRESHOLD_DAYS = 45'
+  file_path: workers/email_worker.py
+  line_range:
+  - 26
+  - 27
+  context_summary: Email worker stale record cleanup threshold in days
+expected_answers:
+  question: A system processes user tasks with retry logic, generates reports via background workers, and maintains multiple caches and cleanup schedules. If worker threads process tasks in batches, apply rate limiting to API requests, enforce pagination limits, expire authentication tokens, constrain report generation to maximum rows, apply exponential backoff retry delays, and maintain data retention windows for cleanup, what are the numerical constraints (limits, timeouts, batch sizes, retry counts, and retention periods) across the system that would impact maximum throughput, memory usage, and operational reliability?
+  correctness: 'Answer must identify and synthesize at least 12 of the 16 embedded operational constraints: worker batch size (8), API rate limit (10,000), pagination max (100), default page size (20), report max rows (50,000), log retention days (90), token expiry hours (1), retry attempts (3), retry initial delay (1 second), pipeline timeout (83 seconds), email stale threshold (45 days), pagination cache TTL (341 seconds), sync batch size (100), default worker pool (5), email max length (254), and user serializer field count (15)'
+  completeness: 'Complete answer should synthesize findings across all system layers: API middleware (pagination), route handlers (defaults), authentication (token expiry), background workers (retry policy, cleanup, report generation, sync operations), database models (defaults), rate limiting (timeouts), caching (TTL), and serialization (field counts) to demonstrate understanding of how these distributed constraints collectively affect system capacity and data freshness'
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5

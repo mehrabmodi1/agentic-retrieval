@@ -1,0 +1,149 @@
+parametrisation_id: multi_reasoning__python_repo__20k__hard__contextual__n16
+experiment_type: multi_reasoning
+generated_at: '2026-04-05T00:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 20000
+  discriminability: hard
+  reference_clarity: contextual
+items:
+- item_id: target_001
+  inserted_text: 'worker_threads: int = 5'
+  file_path: workers/task_runner.py
+  line_range:
+  - 97
+  - 99
+  context_summary: Default worker thread count in TaskRunner initialization
+- item_id: target_002
+  inserted_text: 'max_connections_per_worker: int = 3'
+  file_path: workers/task_runner.py
+  line_range:
+  - 99
+  - 101
+  context_summary: Database connections per worker in TaskRunner configuration
+- item_id: target_003
+  inserted_text: 'idle_timeout_seconds: int = 300'
+  file_path: workers/task_runner.py
+  line_range:
+  - 101
+  - 103
+  context_summary: Database session idle timeout setting in seconds
+- item_id: target_004
+  inserted_text: pool_size=worker_threads * max_connections_per_worker, max_overflow=2
+  file_path: workers/task_runner.py
+  line_range:
+  - 109
+  - 114
+  context_summary: Database connection pool sizing calculation with overflow allowance
+- item_id: target_005
+  inserted_text: MAX_BATCH_SIZE_PER_SYNC = 200
+  file_path: workers/sync_worker.py
+  line_range:
+  - 12
+  - 14
+  context_summary: Maximum items per sync batch operation to prevent memory overflow
+- item_id: target_006
+  inserted_text: min_request_interval_ms=500
+  file_path: workers/sync_worker.py
+  line_range:
+  - 24
+  - 26
+  context_summary: Minimum 500ms throttling interval between external API requests
+- item_id: target_007
+  inserted_text: retry_attempts=3
+  file_path: workers/sync_worker.py
+  line_range:
+  - 22
+  - 24
+  context_summary: Maximum retry attempts for sync operations
+- item_id: target_008
+  inserted_text: MAX_CONCURRENT_SYNC_OPERATIONS = 1000
+  file_path: tests/test_workers.py
+  line_range:
+  - 22
+  - 24
+  context_summary: Maximum concurrent sync operations the worker system can handle
+- item_id: target_009
+  inserted_text: CELERY_TASK_HARD_TIMEOUT_SECONDS = 600
+  file_path: tests/test_workers.py
+  line_range:
+  - 20
+  - 22
+  context_summary: Hard timeout limit for Celery tasks in seconds
+- item_id: target_010
+  inserted_text: soft_time_limit=120
+  file_path: tests/test_workers.py
+  line_range:
+  - 77
+  - 80
+  context_summary: Soft timeout of 120 seconds for sync external data tasks
+- item_id: target_011
+  inserted_text: 50 concurrent dispatches allowed
+  file_path: tests/test_workers.py
+  line_range:
+  - 88
+  - 90
+  context_summary: Maximum concurrent notification dispatch operations
+- item_id: target_012
+  inserted_text: priority=5
+  file_path: tests/test_workers.py
+  line_range:
+  - 98
+  - 100
+  context_summary: Task priority queue value for digest email operations
+- item_id: target_013
+  inserted_text: NUM_TEST_DB_CONNECTIONS = 25
+  file_path: tests/conftest.py
+  line_range:
+  - 15
+  - 17
+  context_summary: Number of concurrent test database connections in test pool
+- item_id: target_014
+  inserted_text: config.option.maxfail = 10
+  file_path: tests/conftest.py
+  line_range:
+  - 29
+  - 31
+  context_summary: Maximum parallel test workers allowed during test execution
+- item_id: target_015
+  inserted_text: self.request_timeout_seconds = 45
+  file_path: api/middleware.py
+  line_range:
+  - 4
+  - 6
+  context_summary: HTTP request processing timeout of 45 seconds per request
+- item_id: target_016
+  inserted_text: 'window: int = 3600'
+  file_path: api/rate_limiting.py
+  line_range:
+  - 234
+  - 236
+  context_summary: Rate limit window of 3600 seconds (1 hour) for user-based rate limiting
+expected_answers:
+  question: 'Given a system designed to handle peak concurrent load, calculate the maximum
+
+    number of simultaneous database operations, task processing, and API requests
+
+    the system can support when considering: (1) worker threads and connections per
+
+    worker, (2) sync batch constraints and concurrency limits, (3) API rate limiting
+
+    windows and thresholds, (4) task timeouts and retry behaviors, and (5) test
+
+    infrastructure connection pooling. What is the total effective throughput capacity
+
+    accounting for all these interconnected limits?
+
+    '
+  correctness: "A correct answer must identify and extract all 16 distinct metrics:\n- 5 worker/database configuration values (worker_threads, max_connections_per_worker,\n  idle_timeout, pool_size calculation, max_overflow)\n- 3 sync operation constraints (batch size, min interval ms, retry attempts)\n- 3 concurrency/throughput values (max concurrent syncs, hard timeout, soft timeout)\n- 2 test infrastructure limits (test DB connections, parallel workers)\n- 2 API/request limits (request timeout, rate limit window)\n- 1 priority/scheduling value (task priority)\n\nThe answer must explain how these values interact:\nTotal capacity = (5 workers × 3 connections × 2 overflow) × (1000 sync ops) ÷\n(500ms intervals) with constraints from 3600s rate limit windows and 120s soft timeouts.\n"
+  completeness: "A complete answer must:\n1. Calculate database connection pool size (5 × 3 × 2 = 30 total connections)\n2. Account for maximum concurrent sync operations (1000 operations)\n3. Consider API throttling interval (500ms minimum between requests)\n4. Apply rate limit window (3600 second hour for 1000 requests per user)\n5. Factor in task timeouts (120s soft, 600s hard limits)\n6. Note test infrastructure can maintain 25 test connections with 10 parallel workers\n7. Explain batch size impact (200 items max per operation)\n8. Calculate effective throughput: (1000 sync ops / 0.5s) = 2000 ops/sec ceiling,\n   limited by database connections to (30 connections / 0.5s interval) = 60 ops/sec\n   per database connection, total effective = min(2000, 30 × 60 × 2 overflow) = min(2000, 3600)\n9. Apply user rate limiting constraint: 1000 requests per 3600s = ~0.28 req/s per user\n10. Conclude total system throughput accounting for all serializing constraints\n"
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+  description: Must extract and correctly identify all 16 metrics without misinterpretation
+- criterion: completeness
+  weight: 0.5
+  description: Must connect all metrics into a coherent capacity calculation demonstrating understanding of system constraints
+- criterion: reasoning
+  weight: 0.5
+  description: Must explain how concurrency limits, timeouts, batch sizes, and rate limits interact to determine effective throughput

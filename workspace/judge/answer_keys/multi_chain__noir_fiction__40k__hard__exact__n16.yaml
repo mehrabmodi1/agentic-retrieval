@@ -1,0 +1,115 @@
+parametrisation_id: "multi_chain__noir_fiction__40k__hard__exact__n16"
+experiment_type: "multi_chain"
+generated_at: "2026-04-05T00:00:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 40000
+  discriminability: "hard"
+  reference_clarity: "exact"
+items:
+  - item_id: "target_001"
+    inserted_text: "Later, I found a letter in his study—addressed to someone at Hargrove Associates in the financial district. His handwriting was unmistakable. That's when I understood: H is Richard Halstead, and he's far more connected to dangerous business than I ever imagined."
+    file_path: "chapters/chapter_04.md"
+    line_range: [31, 32]
+    context_summary: "Inserted into Catherine's diary to reveal H's true identity as her father, Richard Halstead, beginning the trail of business connections."
+
+  - item_id: "target_002"
+    inserted_text: "\"I saw him once,\" Margaret said quietly. \"At a harbor-district import company. I was downtown, passing by an office building on Dock Street. He was coming out. I didn't know who he was then, but I recognized him from photographs Catherine had hidden in her room. His name appeared on the building directory—Charles Sinclair, Meridian Holdings.\""
+    file_path: "chapters/chapter_03.md"
+    line_range: [33, 35]
+    context_summary: "Inserted into Park House friends' interview to identify Catherine's lover as Charles Sinclair of Meridian Holdings, linking to harbor operations."
+
+  - item_id: "target_003"
+    inserted_text: "my major dealings involve Meridian Holdings—they control most of the import-export operations in the harbor district, particularly the operations on Dock Street."
+    file_path: "chapters/chapter_02.md"
+    line_range: [49, 50]
+    context_summary: "Inserted into Halstead's explanation of his business dealings to confirm his ownership/involvement with Meridian Holdings operations."
+
+  - item_id: "target_004"
+    inserted_text: "Meridian Holdings owns the Sinclair warehouse on Dock Street, building seven. Everything that passes through that facility is documented in ledgers stored in the basement. Every transaction. Every name. Every destination."
+    file_path: "chapters/chapter_05.md"
+    line_range: [97, 98]
+    context_summary: "Inserted into Diana Harrow's threat to reveal the warehouse location and its comprehensive documentation system."
+
+  - item_id: "target_005"
+    inserted_text: "He brought both of them there. Claire Hollister and Vincent Castellano. They went into that warehouse on Wednesday night, and neither one came out the same."
+    file_path: "case_notes/day_02.md"
+    line_range: [82, 84]
+    context_summary: "Inserted into Paulie's testimony to connect Claire and Vincent to the Dock Street warehouse and Sinclair."
+
+  - item_id: "target_006"
+    inserted_text: "The building has multiple levels—ground floor for receiving, second floor for processing. But it's the basement—Level B—that matters. That's where the real inventory is kept. Storage units line the walls, each marked with codes. Unit 7-South is where they keep the manifests. Every item that comes through Sinclair's operation is catalogued there. Every destination. Every price. Every criminal hand it passes through."
+    file_path: "case_notes/day_03.md"
+    line_range: [138, 139]
+    context_summary: "Inserted into warehouse observation to detail the basement structure and Unit 7-South where records are kept."
+
+  - item_id: "target_007"
+    inserted_text: "His operations are connected to something bigger: the Kaslan distribution network. Art, antiquities, items moving illegally through international channels... The Kaslan operation had a facilitator—a man named Harvey who worked shipping. He's the key to understanding the whole network. Find Harvey, and you find out where everything goes."
+    file_path: "case_notes/day_04.md"
+    line_range: [20, 24]
+    context_summary: "Inserted into Eddie's report about Sinclair Holdings to reveal the Kaslan operation and identify Harvey as the facilitator."
+
+  - item_id: "target_008"
+    inserted_text: "I found his address: Riverside Apartments, 1247 Harbor Road, Unit 3F. That's where the next piece of this puzzle leads."
+    file_path: "case_notes/day_06.md"
+    line_range: [62, 63]
+    context_summary: "Inserted into reporter Chen's meeting to identify Harvey's residence location."
+
+  - item_id: "target_009"
+    inserted_text: "Here's what matters now: the painting never left the city. It's being held locally. I know because Harvey made contact with an older man—a handler for Meridian Holdings. That man gave Harvey new instructions. Where to take it. How to move it. The location was a safe house."
+    file_path: "witnesses/informant_interview.md"
+    line_range: [34, 35]
+    context_summary: "Inserted into Victor's informant testimony about Harvey receiving instructions for the Vesper painting's location."
+
+  - item_id: "target_010"
+    inserted_text: "I see, from where I stand, he puts a piece of paper in Mr. Harvey's hand. Mr. Harvey reads it, and his hand trembles. The address on that paper—I never see it, but I know it changes everything for him. After that visit, he is no longer the man I know. He is someone haunted."
+    file_path: "witnesses/landlady_statement.md"
+    line_range: [32, 33]
+    context_summary: "Inserted into landlady Eva's statement about the mysterious visitor giving Harvey a critical address."
+
+  - item_id: "target_011"
+    inserted_text: "During Harvey's final visit, I heard Marchetti mention something about 'temporary relocation paperwork.' He used the word 'Starlight' once. And 'room.' I couldn't hear the full context, but it was about transferring custody of property to a secure holding location."
+    file_path: "witnesses/secretary_statement.md"
+    line_range: [50, 51]
+    context_summary: "Inserted into Dorothy's statement about Marchetti's cryptic comments regarding Starlight and property relocation."
+
+  - item_id: "target_012"
+    inserted_text: "He muttered about 'the room' and 'the key'—kept saying once he delivered the key to Starlight Motor Inn, he'd finally be free. That's what he said. Starlight Motor Inn. Like that was the place where everything ends and begins."
+    file_path: "witnesses/cab_driver_statement.md"
+    line_range: [54, 55]
+    context_summary: "Inserted into Jerry's final ride testimony to reveal Harvey's destination as Starlight Motor Inn."
+
+  - item_id: "target_013"
+    inserted_text: "The manifests show one final destination for high-value items awaiting transfer: Starlight Motor Inn, Room 14."
+    file_path: "case_notes/day_07.md"
+    line_range: [66, 67]
+    context_summary: "Inserted into evidence discussion to specify Room 14 of Starlight Motor Inn as the final holding location."
+
+  - item_id: "target_014"
+    inserted_text: "The machinery moved the Vesper painting—that fifteenth-century masterpiece stolen from a widow—through Sinclair's warehouse and into temporary storage. Room 14 of the Starlight Motor Inn became the holding point. That's where stolen art waits for the next hand to move it further down the international pipeline. The machinery doesn't distinguish between objects and people. It moves them all. Some get crushed. Some get hidden. Some end up in small motel rooms, waiting."
+    file_path: "case_notes/day_08.md"
+    line_range: [168, 169]
+    context_summary: "Inserted into epilogue to reveal the painting's final location and the machinery's indiscriminate nature."
+
+  - item_id: "target_015"
+    inserted_text: "And I didn't know, not yet, that Catherine's disappearance would connect to Meridian Holdings, to a warehouse on Dock Street, to a facilitator named Harvey, to stolen artwork, and ultimately to a small motor inn room where valuable things wait in the dark for their next transaction."
+    file_path: "chapters/chapter_01.md"
+    line_range: [35, 36]
+    context_summary: "Inserted into opening call to foreshadow the full chain of connections from Catherine's case."
+
+  - item_id: "target_016"
+    inserted_text: "This old guy—he had an accent, cultured, the kind that suggests wealth and international travel. He was someone significant. Someone with authority over operations that reach from the harbor all the way to safe houses in the city. Someone orchestrating the movement of very valuable things."
+    file_path: "witnesses/bartender_statement.md"
+    line_range: [42, 43]
+    context_summary: "Inserted into Deke's observation to identify the handler as a high-level operative managing international art movements through Starlight."
+
+expected_answers:
+  question: "Starting from Catherine Halstead's secret diary in chapter_04.md, where she refers to her lover as 'H,' follow the trail through her father's business connections to Meridian Holdings, the Kaslan art theft network, and the facilitator Harvey. What is the final location where stolen artwork is held before transfer to international buyers?"
+  correctness: "Must identify the Starlight Motor Inn, Room 14 as the final destination. Correct answers include: 'Starlight Motor Inn Room 14,' 'Room 14 of the Starlight Motor Inn,' 'Starlight Motor Inn (Room 14),' or equivalent identifying the location explicitly."
+  completeness: "A complete answer should acknowledge the multi-link chain: (1) H's connection to Meridian Holdings through harbor business dealings, (2) Sinclair's warehouse operation on Dock Street, (3) the Kaslan distribution network and Unit 7-South manifests, (4) Harvey as the art facilitator, (5) the mysterious address from the visitor/handler, and (6) the final endpoint at Starlight Motor Inn Room 14. Answers may reference one or more intermediate steps but must correctly identify the final location."
+
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+  - criterion: "completeness"
+    weight: 0.5

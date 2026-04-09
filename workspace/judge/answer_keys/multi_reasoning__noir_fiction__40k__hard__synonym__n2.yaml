@@ -1,0 +1,30 @@
+parametrisation_id: "multi_reasoning__noir_fiction__40k__hard__synonym__n2"
+experiment_type: "multi_reasoning"
+generated_at: "2026-04-05T00:00:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 40000
+  discriminability: "hard"
+  reference_clarity: "synonym"
+items:
+  - item_id: "target_001"
+    inserted_text: "But there's something else. About a week after that street corner meeting, the kid calls for a pickup again. He gets in the back, and he's different—his hands are steady for once, but his eyes are empty. I drive him, and halfway through the ride, he just says out loud, like he's talking to himself, 'Seventy-two hours. He said seventy-two hours, and then it all goes away.' I didn't ask what goes away. I learned not to ask."
+    file_path: "witnesses/cab_driver_statement.md"
+    line_range: [28, 35]
+    context_summary: "Inserted into the cab driver's recollection, embedded within his conversation with Detective Rossi about the young man's cryptic statement revealing a specific time constraint given by the older man."
+  - item_id: "target_002"
+    inserted_text: "Eva leaned forward slightly, her voice dropping. \"When he comes down from that apartment, I am changing a lightbulb on the third-floor landing. I hear him on the stairs, and I move to the side. As he passes me, I hear him say—to himself, I think—'Seventy-two hours is what I told him. That's all the time he gets.' His voice is like ice water. Professional. The voice of a man who gives orders and expects them to be obeyed without question.\""
+    file_path: "witnesses/landlady_statement.md"
+    line_range: [24, 26]
+    context_summary: "Inserted into the landlady's description of the visitor Gregg, embedded as an overheard statement that reveals he issued a time-based directive to Mr. Harvey."
+expected_answers:
+  question: "What specific timeframe did the authority figure communicate as a directive to depart, and how do the two witness accounts corroborate this deadline?"
+  correctness: "The answer must identify the seventy-two hour (or three-day) timeframe as the critical deadline mentioned by both witnesses. It must connect the cab driver's account of the young man repeating 'seventy-two hours' with the landlady's account of overhearing the visitor state the same timeframe to Mr. Harvey."
+  completeness: "A complete answer must synthesize information from both sources: (1) the cab driver's observation that the young man cited 'seventy-two hours' as the timeframe given by the older man, and (2) the landlady's direct observation of the visitor (Gregg) stating he gave Mr. Harvey 'seventy-two hours.' This demonstrates that the same authority figure delivered identical ultimatums to multiple individuals, establishing a coordinated timeline for disappearance."
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+    description: "Must accurately identify the seventy-two hour deadline from both witness accounts"
+  - criterion: "completeness"
+    weight: 0.5
+    description: "Must connect and synthesize information from both the cab driver and landlady statements to demonstrate coordination"

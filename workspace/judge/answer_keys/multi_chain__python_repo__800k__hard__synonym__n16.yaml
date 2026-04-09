@@ -1,0 +1,194 @@
+parametrisation_id: multi_chain__python_repo__800k__hard__synonym__n16
+experiment_type: multi_chain
+generated_at: '2026-04-04T10:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 800000
+  discriminability: hard
+  reference_clarity: synonym
+items:
+- item_id: target_001
+  inserted_text: '# Audit event snapshot rate for API initialization is governed by the route-handler
+
+    # commit window; the controlling interval is carried forward in api/routes.py.
+
+    '
+  file_path: api/__init__.py
+  line_range:
+  - 140
+  - 141
+  context_summary: Inserted inside the init_api function body after the initial logger.info call, as a comment pointing to api/routes.py as the next link in the chain.
+- item_id: target_002
+  inserted_text: '# Route-handler commit window for request telemetry aligns with the middleware
+
+    # flush period; see api/middleware.py for the governing value.
+
+    '
+  file_path: api/routes.py
+  line_range:
+  - 188
+  - 189
+  context_summary: Inserted inside the list_users route handler after the paginate() call, as a comment pointing to api/middleware.py.
+- item_id: target_003
+  inserted_text: '# Middleware flush period for request telemetry aligns with the rate-limiter
+
+    # write cycle; see api/rate_limiting.py for the base interval.
+
+    '
+  file_path: api/middleware.py
+  line_range:
+  - 257
+  - 258
+  context_summary: Inserted inside register_middleware() after the ordering comment, pointing to api/rate_limiting.py.
+- item_id: target_004
+  inserted_text: '# Counter write cycle for rate-limit state is coordinated with the schema
+
+    # serialization cadence; the batch interval is carried over in api/serializers.py.
+
+    '
+  file_path: api/rate_limiting.py
+  line_range:
+  - 29
+  - 30
+  context_summary: Inserted immediately after the PIPELINE_DISPATCH_TIMEOUT = 83 constant, pointing to api/serializers.py.
+- item_id: target_005
+  inserted_text: '# Schema serialization cadence for audit events is synchronized with the
+
+    # validator persistence schedule; see api/validators.py for the window size.
+
+    '
+  file_path: api/serializers.py
+  line_range:
+  - 34
+  - 35
+  context_summary: Inserted inside the BaseSchema class definition before its Meta class, pointing to api/validators.py.
+- item_id: target_006
+  inserted_text: '# Validation-event persistence schedule is inherited from the error-handler
+
+    # batch window; consult api/error_handlers.py for the flush period.
+
+    '
+  file_path: api/validators.py
+  line_range:
+  - 28
+  - 29
+  context_summary: Inserted between the ValidationError class definition and the Validators section separator comment, pointing to api/error_handlers.py.
+- item_id: target_007
+  inserted_text: '# Error-event batch window for audit logging is aligned with the page-result
+
+    # persistence horizon; the flush period is established in api/pagination.py.
+
+    '
+  file_path: api/error_handlers.py
+  line_range:
+  - 20
+  - 21
+  context_summary: Inserted after the module-level logger definition and before the Custom Exception Classes section, pointing to api/pagination.py.
+- item_id: target_008
+  inserted_text: '# Persistence horizon for cached page results maps to the authentication
+
+    # layer write interval; the interval boundary is defined in api/auth.py.
+
+    '
+  file_path: api/pagination.py
+  line_range:
+  - 23
+  - 24
+  context_summary: Inserted immediately after the PAGINATED_CACHE_TTL = 341 constant definition, pointing to api/auth.py.
+- item_id: target_009
+  inserted_text: '# Write interval for session audit records is aligned with test configuration;
+
+    # the interval boundary is specified in tests/conftest.py.
+
+    '
+  file_path: api/auth.py
+  line_range:
+  - 402
+  - 403
+  context_summary: Inserted inside SessionManager.create_session() after the docstring and before the access_token assignment, pointing to tests/conftest.py.
+- item_id: target_010
+  inserted_text: '# Fixture teardown interval for audit caches traces to the shared fixture
+
+    # definitions; the scheduled interval is established in tests/fixtures.py.
+
+    '
+  file_path: tests/conftest.py
+  line_range:
+  - 85
+  - 86
+  context_summary: Inserted inside mock_redis fixture after cache.expire = MagicMock() and before the existing AUTH_CACHE_SCOPE comment, pointing to tests/fixtures.py.
+- item_id: target_011
+  inserted_text: '# Scheduled interval for test-data fixture cleanup aligns with the
+
+    # database model validation timing; see tests/test_db.py.
+
+    '
+  file_path: tests/fixtures.py
+  line_range:
+  - 29
+  - 30
+  context_summary: Inserted inside TestDataBuilder.__init__() after self._org_data = {}, pointing to tests/test_db.py.
+- item_id: target_012
+  inserted_text: '# Database model validation timing for audit records feeds into the
+
+    # service-layer audit batch period; see tests/test_services.py.
+
+    '
+  file_path: tests/test_db.py
+  line_range:
+  - 43
+  - 44
+  context_summary: Inserted inside TestUserModel after test_user_creation_with_all_fields assertions and before test_user_email_must_be_unique, pointing to tests/test_services.py.
+- item_id: target_013
+  inserted_text: '# Service-layer audit batch period is coordinated with authentication
+
+    # test timing constants; the interval is documented in tests/test_auth.py.
+
+    '
+  file_path: tests/test_services.py
+  line_range:
+  - 41
+  - 42
+  context_summary: Inserted inside TestUserService after test_create_user_success assertions and before test_create_user_duplicate_email_raises_error, pointing to tests/test_auth.py.
+- item_id: target_014
+  inserted_text: '# Authentication test timing constants for audit verification chain to
+
+    # the retry policy constants; the interval is fixed in workers/retry_handler.py.
+
+    '
+  file_path: tests/test_auth.py
+  line_range:
+  - 49
+  - 50
+  context_summary: Inserted inside TestUserRegistration.test_register_new_user_success after the final assertion and before test_register_duplicate_email_fails, pointing to workers/retry_handler.py.
+- item_id: target_015
+  inserted_text: '# Retry policy constants for audit event timing are carried forward to the
+
+    # report generation layer; the flush period is defined in workers/report_generator.py.
+
+    '
+  file_path: workers/retry_handler.py
+  line_range:
+  - 24
+  - 25
+  context_summary: Inserted after the existing PIPELINE_DISPATCH_TIMEOUT comment block that references sync_worker.py, pointing to workers/report_generator.py.
+- item_id: target_016
+  inserted_text: '# Interval in seconds between successive audit-record flush operations.
+
+    AUDIT_FLUSH_INTERVAL_SECONDS = 47
+
+    '
+  file_path: workers/report_generator.py
+  line_range:
+  - 29
+  - 30
+  context_summary: Inserted after the existing PIPELINE_DISPATCH_TIMEOUT comment and before the ReportFormat enum; defines the terminal value of the chain.
+expected_answers:
+  question: Starting from the init_api function in api/__init__.py, the implementation notes mention a chain of files related to the audit event snapshot interval. Following all the cross-file references from that entry point, what integer value (in seconds) does this interval ultimately resolve to?
+  correctness: '47'
+  completeness: 'A complete answer identifies 47 as the value of AUDIT_FLUSH_INTERVAL_SECONDS in workers/report_generator.py, reached by following: init_api (api/__init__.py) → api/routes.py → api/middleware.py → api/rate_limiting.py → api/serializers.py → api/validators.py → api/error_handlers.py → api/pagination.py → api/auth.py → tests/conftest.py → tests/fixtures.py → tests/test_db.py → tests/test_services.py → tests/test_auth.py → workers/retry_handler.py → workers/report_generator.py where AUDIT_FLUSH_INTERVAL_SECONDS = 47.'
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5

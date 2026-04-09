@@ -1,0 +1,28 @@
+parametrisation_id: "multi_reasoning__noir_fiction__800k__easy__exact__n2"
+experiment_type: "multi_reasoning"
+generated_at: "2026-04-05T00:00:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 800000
+  discriminability: "easy"
+  reference_clarity: "exact"
+items:
+  - item_id: "target_001"
+    inserted_text: "This woman—the one who visited—she wore a black leather coat and carried a portfolio under her arm. Professional. The kind of woman who didn't belong anywhere near a basement apartment, and yet there she was."
+    file_path: "witnesses/neighbor_statement.md"
+    line_range: [54, 56]
+    context_summary: "Eleanor Pembroke's physical description of the mysterious redheaded woman visitor, inserted after her observation about the tension in James's face when discussing books, providing specific details about the woman's appearance and accessories."
+  - item_id: "target_002"
+    inserted_text: "The name she uses is Margot. Two weeks ago, my sources placed her at a basement apartment downtown, wearing a black leather coat, carrying a portfolio. She was there to negotiate with someone named James—or Harvey, depending on which identity he was using that day."
+    file_path: "witnesses/informant_interview.md"
+    line_range: [78, 80]
+    context_summary: "The informant's confirmation that Margot was the redheaded woman at the basement apartment, including the matching physical details (black leather coat, portfolio) and revealing James is Harvey's alias, inserted after the description of her role as acquisition specialist."
+expected_answers:
+  question: "Who was the young redheaded woman who visited James at his basement apartment three weeks ago, and what was her role in the larger criminal operation?"
+  correctness: "Must identify the woman as Margot, describe her appearance as young, redheaded, beautiful, wearing a black leather coat with a portfolio, and explain her role as Kaslan's personal acquisition specialist responsible for identifying and extracting valuable items."
+  completeness: "A complete answer requires combining both sources: Eleanor's eyewitness account from the neighbor statement provides physical description and the emotional impact of her visit, while the informant interview reveals Margot's identity, her position in the criminal hierarchy, and the significance of her meeting with Harvey/James for negotiating his exit from the operation."
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+  - criterion: "completeness"
+    weight: 0.5

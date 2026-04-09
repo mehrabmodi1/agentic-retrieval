@@ -1,0 +1,74 @@
+parametrisation_id: multi_reasoning__python_repo__20k__hard__exact__n8
+experiment_type: multi_reasoning
+generated_at: '2026-04-05T00:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 20000
+  discriminability: hard
+  reference_clarity: exact
+items:
+- item_id: target_001
+  inserted_text: '# Configuration: MAX_CONCURRENT_WORKERS = 24'
+  file_path: tests/test_workers.py
+  line_range:
+  - 214
+  - 214
+  context_summary: Embedded in test_chain_email_and_notification test as inline configuration comment.
+- item_id: target_002
+  inserted_text: '# Configuration: TASK_BATCH_SIZE = 32'
+  file_path: workers/task_runner.py
+  line_range:
+  - 183
+  - 183
+  context_summary: Added as comment before task fetching logic in _worker_loop method.
+- item_id: target_003
+  inserted_text: '# Configuration: REQUESTS_PER_MINUTE = 180'
+  file_path: api/rate_limiting.py
+  line_range:
+  - 100
+  - 100
+  context_summary: Inserted in exception handler after rate limiter error logging.
+- item_id: target_004
+  inserted_text: MAX_EMAIL_LENGTH = 254
+  file_path: api/validators.py
+  line_range:
+  - 139
+  - 142
+  context_summary: Added new validate_email function with email length limit embedded in docstring.
+- item_id: target_005
+  inserted_text: '# Configuration: REPORT_BATCH_SIZE = 512'
+  file_path: workers/report_generator.py
+  line_range:
+  - 314
+  - 314
+  context_summary: Inserted before DataFrame creation in export_to_html method.
+- item_id: target_006
+  inserted_text: '# Configuration: DEFAULT_PAGE_LIMIT = 10'
+  file_path: tests/test_api.py
+  line_range:
+  - 304
+  - 304
+  context_summary: Added as inline comment after pagination test assertion.
+- item_id: target_007
+  inserted_text: '# Configuration: MAX_PROFILE_CACHE_SIZE = 128'
+  file_path: tests/test_services.py
+  line_range:
+  - 103
+  - 103
+  context_summary: Appended to end of test_get_user_with_organization test method.
+- item_id: target_008
+  inserted_text: TASK_TIMEOUT_SECONDS = 45
+  file_path: api/validators.py
+  line_range:
+  - 139
+  - 145
+  context_summary: Embedded in validate_email function definition as configuration value.
+expected_answers:
+  question: 'What is the sum of all system configuration parameters: MAX_CONCURRENT_WORKERS, TASK_BATCH_SIZE, REQUESTS_PER_MINUTE, MAX_EMAIL_LENGTH, REPORT_BATCH_SIZE, DEFAULT_PAGE_LIMIT, MAX_PROFILE_CACHE_SIZE, and TASK_TIMEOUT_SECONDS?'
+  correctness: The answer must be a single numeric value that is the arithmetic sum of all 8 configuration parameters found across the codebase.
+  completeness: 'A complete answer must locate all 8 distinct configuration values embedded in different files (test files, worker modules, and API modules), extract each value correctly, and sum them to produce the final result: 24 + 32 + 180 + 254 + 512 + 10 + 128 + 45 = 1185.'
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5

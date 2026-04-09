@@ -1,0 +1,158 @@
+parametrisation_id: multi_reasoning__python_repo__160k__easy__exact__n16
+experiment_type: multi_reasoning
+generated_at: '2026-04-05T00:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 160000
+  discriminability: easy
+  reference_clarity: exact
+items:
+- item_id: target_001
+  inserted_text: max_concurrent_syncs=50,
+  file_path: workers/sync_worker.py
+  line_range:
+  - 325
+  - 328
+  context_summary: Added max_concurrent_syncs configuration parameter to SyncWorker initialization.
+- item_id: target_002
+  inserted_text: 'queue_depth_limit: int = 100'
+  file_path: workers/task_runner.py
+  line_range:
+  - 56
+  - 57
+  context_summary: Added queue_depth_limit field to task dataclass for queue management capacity.
+- item_id: target_003
+  inserted_text: bucket_capacity_maximum = 500
+  file_path: api/rate_limiting.py
+  line_range:
+  - 324
+  - 326
+  context_summary: Added token bucket capacity limit constant in rate limiting logic.
+- item_id: target_004
+  inserted_text: default_task_rate_limit = 75
+  file_path: tests/test_workers.py
+  line_range:
+  - 281
+  - 282
+  context_summary: Added default task rate limit threshold in worker scheduling test.
+- item_id: target_005
+  inserted_text: user.fixture_batch_size = 25
+  file_path: tests/fixtures.py
+  line_range:
+  - 423
+  - 424
+  context_summary: Added fixture batch size attribute to test user object.
+- item_id: target_006
+  inserted_text: token_validity_hours = 24
+  file_path: tests/test_auth.py
+  line_range:
+  - 190
+  - 191
+  context_summary: Added token validity duration in hours for JWT token test.
+- item_id: target_007
+  inserted_text: batch_priority_weight=15,
+  file_path: api/routes.py
+  line_range:
+  - 495
+  - 496
+  context_summary: Added batch priority weight parameter to task creation service call.
+- item_id: target_008
+  inserted_text: '"concurrent_requests_limit": 40,'
+  file_path: tests/conftest.py
+  line_range:
+  - 117
+  - 118
+  context_summary: Added concurrent requests limit to test organization settings.
+- item_id: target_009
+  inserted_text: service_timeout_seconds = 60
+  file_path: tests/test_services.py
+  line_range:
+  - 245
+  - 246
+  context_summary: Added service configuration timeout in task service test.
+- item_id: target_010
+  inserted_text: global_page_size_cap = 100
+  file_path: api/validators.py
+  line_range:
+  - 176
+  - 178
+  context_summary: Added global pagination size limit constant in validator module.
+- item_id: target_011
+  inserted_text: default_page_limit = 10
+  file_path: tests/test_api.py
+  line_range:
+  - 283
+  - 284
+  context_summary: Added default page limit constant in API pagination test.
+- item_id: target_012
+  inserted_text: key_rotation_interval_days = 90
+  file_path: tests/test_db.py
+  line_range:
+  - 288
+  - 290
+  context_summary: Added API key rotation interval configuration in database test.
+- item_id: target_013
+  inserted_text: max_report_file_size_mb = 500
+  file_path: workers/report_generator.py
+  line_range:
+  - 355
+  - 356
+  context_summary: Added maximum report file size limit in report generation error handling.
+- item_id: target_014
+  inserted_text: error_response_timeout_ms = 30000
+  file_path: api/error_handlers.py
+  line_range:
+  - 48
+  - 49
+  context_summary: Added error response timeout constant in error handler conversion method.
+- item_id: target_015
+  inserted_text: max_comment_length = 3000
+  file_path: api/serializers.py
+  line_range:
+  - 168
+  - 169
+  context_summary: Added maximum comment length constant in CommentSerializer definition.
+- item_id: target_016
+  inserted_text: 'max_backoff_window_seconds: int = 3600'
+  file_path: workers/retry_handler.py
+  line_range:
+  - 48
+  - 49
+  context_summary: Added maximum retry backoff window configuration to RetryPolicy dataclass.
+expected_answers:
+  question: 'What is the total sum of all numeric capacity and limit values found across the system configuration files?
+
+    Include: max_concurrent_syncs, queue_depth_limit, bucket_capacity_maximum, default_task_rate_limit,
+
+    fixture_batch_size, token_validity_hours, batch_priority_weight, concurrent_requests_limit,
+
+    service_timeout_seconds, global_page_size_cap, default_page_limit, key_rotation_interval_days,
+
+    max_report_file_size_mb, error_response_timeout_ms (convert to seconds), max_comment_length,
+
+    and max_backoff_window_seconds. Calculate the aggregate sum.
+
+    '
+  correctness: 'Must identify all 16 numeric values from their respective configuration locations using exact
+
+    identifier names. Must correctly convert error_response_timeout_ms (30000 ms) to seconds (30).
+
+    Must perform accurate arithmetic summation of all values.
+
+    '
+  completeness: 'Must include all 16 identified values in the final calculation. Must show working/itemization
+
+    of each value retrieved. Must demonstrate understanding of unit conversions where applicable
+
+    (milliseconds to seconds). Answer should show: 50 + 100 + 500 + 75 + 25 + 24 + 15 + 40 + 60 +
+
+    100 + 10 + 90 + 500 + 30 + 3000 + 3600 = 8,619 (total of all system configuration limits).
+
+    '
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+  description: All 16 values must be correctly identified and summed with proper unit conversion
+- criterion: completeness
+  weight: 0.5
+  description: All items must be found and included; no missing configuration values

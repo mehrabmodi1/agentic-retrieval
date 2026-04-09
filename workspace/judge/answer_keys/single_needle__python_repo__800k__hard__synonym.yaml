@@ -1,0 +1,31 @@
+parametrisation_id: single_needle__python_repo__800k__hard__synonym
+experiment_type: single_needle
+generated_at: '2026-04-03T00:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 800000
+  discriminability: hard
+  reference_clarity: synonym
+items:
+- item_id: target_001
+  inserted_text: '# Skip retry records that were created more than 36 hours ago; processing
+
+    # entries older than this risks executing work that is no longer relevant.
+
+    max_record_age = datetime.utcnow() - timedelta(hours=36)
+
+    '
+  file_path: workers/retry_handler.py
+  line_range:
+  - 255
+  - 257
+  context_summary: Inserted inside the get_pending_retries method of RetryHandler, as a staleness filter that silently drops retry records older than 36 hours before querying the database.
+expected_answers:
+  question: What is the maximum age (in hours) that a retry record can have before it is excluded from pending retry processing?
+  correctness: 36 hours
+  completeness: A complete answer states 36 hours, notes that this cutoff is applied inside the get_pending_retries method via a created_at filter (max_record_age), and explains that records older than this threshold are not returned so that stale/irrelevant work is not re-executed.
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5

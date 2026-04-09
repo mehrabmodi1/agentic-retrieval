@@ -1,0 +1,130 @@
+parametrisation_id: multi_reasoning__python_repo__800k__hard__synonym__n16
+experiment_type: multi_reasoning
+generated_at: '2026-04-05T12:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 800000
+  discriminability: hard
+  reference_clarity: synonym
+items:
+- item_id: target_001
+  inserted_text: MONITORING_BATCH_SIZE = 50
+  file_path: tests/test_workers.py
+  line_range:
+  - 301
+  - 301
+  context_summary: Configuration constant embedded in worker monitoring test suite comment describing batch window size.
+- item_id: target_002
+  inserted_text: REQUEST_RATE_LIMIT = 5
+  file_path: workers/sync_worker.py
+  line_range:
+  - 60
+  - 60
+  context_summary: API throughput throttle parameter defined in SyncConfig dataclass to prevent overwhelming external services.
+- item_id: target_003
+  inserted_text: EXPONENTIAL_RETRY_CEILING = 8
+  file_path: workers/retry_handler.py
+  line_range:
+  - 57
+  - 57
+  context_summary: Maximum cumulative retry seconds embedded as dataclass constant in RetryPolicy configuration.
+- item_id: target_004
+  inserted_text: EMAIL_DELIVERY_TIMEOUT_SECONDS = 18
+  file_path: workers/email_worker.py
+  line_range:
+  - 27
+  - 27
+  context_summary: Single message delivery timeout bound defined alongside STALE_RECORD_THRESHOLD in email worker module comments.
+- item_id: target_005
+  inserted_text: MAX_BURST_TOKENS = 25
+  file_path: api/rate_limiting.py
+  line_range:
+  - 30
+  - 30
+  context_summary: Concurrent request allowance ceiling defined after authoritative PIPELINE_DISPATCH_TIMEOUT constant.
+- item_id: target_006
+  inserted_text: '"resource_quota": 200'
+  file_path: tests/conftest.py
+  line_range:
+  - 125
+  - 125
+  context_summary: Organization allocation unit count embedded in test_organization fixture settings dictionary.
+- item_id: target_007
+  inserted_text: USER_PROFILE_SYNC_INTERVAL_HOURS = 6
+  file_path: api/serializers.py
+  line_range:
+  - 57
+  - 57
+  context_summary: Profile refresh frequency specification defined after DateTime field in UserSerializer class.
+- item_id: target_008
+  inserted_text: '"member_limit": 15'
+  file_path: tests/fixtures.py
+  line_range:
+  - 78
+  - 78
+  context_summary: Maximum members in test organizations embedded in TestDataBuilder's organization configuration dictionary.
+- item_id: target_009
+  inserted_text: PAGE_PRELOAD_BUFFER = 2
+  file_path: api/pagination.py
+  line_range:
+  - 24
+  - 24
+  context_summary: Next-page prefetch count for performance defined after PAGINATED_CACHE_TTL in pagination module.
+- item_id: target_010
+  inserted_text: PAGINATION_SIZE_MINIMUM = 4
+  file_path: api/validators.py
+  line_range:
+  - 176
+  - 176
+  context_summary: Minimum viable page size threshold embedded in validate_pagination function for API consistency.
+- item_id: target_011
+  inserted_text: self.compression_level = 9
+  file_path: workers/report_generator.py
+  line_range:
+  - 82
+  - 82
+  context_summary: Zlib compression setting for exported files defined in ReportGenerator __init__ method.
+- item_id: target_012
+  inserted_text: self.batch_delete_size = 11
+  file_path: workers/cleanup_worker.py
+  line_range:
+  - 65
+  - 65
+  context_summary: Records-per-transaction delete batch size defined in CleanupWorker initialization.
+- item_id: target_013
+  inserted_text: AUTH_TOKEN_REFRESH_THRESHOLD_SECONDS = 14
+  file_path: api/auth.py
+  line_range:
+  - 30
+  - 30
+  context_summary: Token remaining-time threshold for auto-refresh embedded in module-level comment after cache TTL note.
+- item_id: target_014
+  inserted_text: '''request_timeout_seconds'': 16'
+  file_path: api/__init__.py
+  line_range:
+  - 285
+  - 285
+  context_summary: Upstream service wait duration defined in API_DEFAULTS configuration dictionary.
+- item_id: target_015
+  inserted_text: self.backoff_seconds = 7
+  file_path: api/error_handlers.py
+  line_range:
+  - 165
+  - 165
+  context_summary: Minimum wait after rate limit error defined as instance variable in RateLimitError class.
+- item_id: target_016
+  inserted_text: ROUTE_RESPONSE_CACHE_DURATION_SECONDS = 3
+  file_path: api/routes.py
+  line_range:
+  - 50
+  - 50
+  context_summary: HTTP caching directive for read-only endpoints defined in module-level comment after STALE_RECORD_THRESHOLD reference.
+expected_answers:
+  question: What is the sum of all configuration thresholds, limits, and timing intervals across the system's worker, API, and test layers (e.g., batch sizes, timeouts, retention windows, rate limits, and caching durations)?
+  correctness: 'Answer must sum all 16 configuration values: 50 + 5 + 8 + 18 + 25 + 200 + 6 + 15 + 2 + 4 + 9 + 11 + 14 + 16 + 7 + 3 = 393'
+  completeness: Complete answer requires identifying and locating all 16 distinct numeric configuration constants embedded across different files and architectural layers, then performing arithmetic summation. Must account for configuration values appearing in different syntactic forms (variable assignments, dictionary entries, instance attributes, dataclass constants).
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5

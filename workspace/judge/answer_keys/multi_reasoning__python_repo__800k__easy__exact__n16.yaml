@@ -1,0 +1,130 @@
+parametrisation_id: multi_reasoning__python_repo__800k__easy__exact__n16
+experiment_type: multi_reasoning
+generated_at: '2026-04-05T00:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 800000
+  discriminability: easy
+  reference_clarity: exact
+items:
+- item_id: target_001
+  inserted_text: AUTHENTICATED_USER_LIMIT = 500
+  file_path: api/rate_limiting.py
+  line_range:
+  - 236
+  - 240
+  context_summary: Inserted at module level in rate_limiting.md before the rate_limit_by_user function definition.
+- item_id: target_002
+  inserted_text: ENDPOINT_LIMIT = 200
+  file_path: api/rate_limiting.py
+  line_range:
+  - 254
+  - 258
+  context_summary: Inserted at module level in rate_limiting.md before the rate_limit_by_endpoint function definition.
+- item_id: target_003
+  inserted_text: DEFAULT_RATE_LIMIT = 150
+  file_path: tests/test_api.py
+  line_range:
+  - 324
+  - 327
+  context_summary: Inserted at module level in test_api.md before the TestResponseFormatting class definition.
+- item_id: target_004
+  inserted_text: CORS_RATE_LIMIT = 100
+  file_path: api/middleware.py
+  line_range:
+  - 130
+  - 135
+  context_summary: Inserted at module level in middleware.md before the ContentNegotiationMiddleware class definition.
+- item_id: target_005
+  inserted_text: PROJECT_ENDPOINT_LIMIT = 300
+  file_path: api/routes.py
+  line_range:
+  - 297
+  - 302
+  context_summary: Inserted at module level in routes.md before the get_project function definition.
+- item_id: target_006
+  inserted_text: PAGINATION_MAX_LIMIT = 250
+  file_path: api/pagination.py
+  line_range:
+  - 94
+  - 97
+  context_summary: Inserted within a class as a class variable before the prev_url property definition.
+- item_id: target_007
+  inserted_text: TASK_RUNNER_LIMIT = 75
+  file_path: workers/task_runner.py
+  line_range:
+  - 267
+  - 272
+  context_summary: Inserted within a class method before the _update_task_status method definition.
+- item_id: target_008
+  inserted_text: SYNC_WORKER_LIMIT = 125
+  file_path: workers/sync_worker.py
+  line_range:
+  - 139
+  - 143
+  context_summary: Inserted in function body before logging statement in sync completion block.
+- item_id: target_009
+  inserted_text: EMAIL_WORKER_LIMIT = 50
+  file_path: workers/email_worker.py
+  line_range:
+  - 88
+  - 92
+  context_summary: Inserted in __init__ method before Jinja2 environment initialization.
+- item_id: target_010
+  inserted_text: CLEANUP_WORKER_LIMIT = 25
+  file_path: workers/cleanup_worker.py
+  line_range:
+  - 16
+  - 19
+  context_summary: Inserted at module level before CleanupTask dataclass definition.
+- item_id: target_011
+  inserted_text: RETRY_LIMIT = 60
+  file_path: workers/retry_handler.py
+  line_range:
+  - 320
+  - 324
+  context_summary: Inserted within a class method before the _log_retry method definition.
+- item_id: target_012
+  inserted_text: SERIALIZER_LIMIT = 80
+  file_path: api/serializers.py
+  line_range:
+  - 158
+  - 162
+  context_summary: Inserted within TaskSerializer class before the get_comment_count static method.
+- item_id: target_013
+  inserted_text: TEST_DB_LIMIT = 40
+  file_path: tests/test_db.py
+  line_range:
+  - 199
+  - 203
+  context_summary: Inserted at module level in test_db.md before the TestOrganizationModel class definition.
+- item_id: target_014
+  inserted_text: SERVICE_LIMIT = 90
+  file_path: tests/test_services.py
+  line_range:
+  - 227
+  - 232
+  context_summary: Inserted in test method body before future task creation in test_get_overdue_tasks.
+- item_id: target_015
+  inserted_text: WORKER_TEST_LIMIT = 55
+  file_path: tests/test_workers.py
+  line_range:
+  - 237
+  - 241
+  context_summary: Inserted at module level in test_workers.md before the TestWorkerExceptionHandling class definition.
+- item_id: target_016
+  inserted_text: AUTH_ENDPOINT_LIMIT = 180
+  file_path: api/auth.py
+  line_range:
+  - 44
+  - 48
+  context_summary: Inserted within TokenManager class as a class variable before the generate_token method.
+expected_answers:
+  question: 'What is the sum of all rate limit constants across the codebase: AUTHENTICATED_USER_LIMIT + ENDPOINT_LIMIT + DEFAULT_RATE_LIMIT + CORS_RATE_LIMIT + PROJECT_ENDPOINT_LIMIT + PAGINATION_MAX_LIMIT + TASK_RUNNER_LIMIT + SYNC_WORKER_LIMIT + EMAIL_WORKER_LIMIT + CLEANUP_WORKER_LIMIT + RETRY_LIMIT + SERIALIZER_LIMIT + TEST_DB_LIMIT + SERVICE_LIMIT + WORKER_TEST_LIMIT + AUTH_ENDPOINT_LIMIT?'
+  correctness: 'The answer must identify all 16 rate limit constants by name and compute the correct arithmetic sum: 500 + 200 + 150 + 100 + 300 + 250 + 75 + 125 + 50 + 25 + 60 + 80 + 40 + 90 + 55 + 180 = 2,280'
+  completeness: 'A complete answer must: (1) locate all 16 distinct rate limit constants across different files, (2) extract their numeric values, (3) verify they are all unique identifiers, (4) perform accurate arithmetic summation, and (5) provide the final total of 2,280'
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5

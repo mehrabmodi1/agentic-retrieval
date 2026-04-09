@@ -1,0 +1,118 @@
+parametrisation_id: "multi_reasoning__noir_fiction__800k__hard__synonym__n16"
+experiment_type: "multi_reasoning"
+generated_at: "2026-04-05T00:00:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 800000
+  discriminability: "hard"
+  reference_clarity: "synonym"
+
+items:
+  - item_id: "target_001"
+    inserted_text: "He mentioned during the first consultation that he'd been involved in moving stolen antiquities through a distribution network called Kaslan, and that he wanted to understand his legal exposure if he voluntarily reported the theft of a fifteenth-century painting to the original owner's widow."
+    file_path: "witnesses/secretary_statement.md"
+    line_range: [26, 27]
+    context_summary: "Dorothy describes Harvey's first legal consultation on September 8th, revealing his involvement in the Kaslan art theft operation and his desire to return a stolen fifteenth-century painting."
+
+  - item_id: "target_002"
+    inserted_text: "This evening I met with a woman named Margot at the Crimson Door. She seemed to know things about H's situation—about his involvement in moving valuable artworks through channels that bypass legal ownership registries. She said that if H wanted out, there might be a way, but it would require him to return something or provide information about where items were being stored. She mentioned the Starlight Motor Inn, room fourteen, as a location where H could find instructions."
+    file_path: "chapters/chapter_04.md"
+    line_range: [11, 13]
+    context_summary: "Catherine's journal reveals her knowledge of Harvey's involvement in illegal artwork distribution and Margot's offer of an escape route through the Starlight Motor Inn."
+
+  - item_id: "target_003"
+    inserted_text: "He handed Harvey an envelope and said, 'The Starlight Motor Inn has the room reserved under the name Reeves. The key is secured as promised. You have until November 6th to decide.'"
+    file_path: "witnesses/landlady_statement.md"
+    line_range: [31, 31]
+    context_summary: "Eva witnesses the mysterious white-haired man delivering specific instructions to Harvey about a room reservation and an escape deadline."
+
+  - item_id: "target_004"
+    inserted_text: "I'm aware that the death of a woman named Claire Hollister in late October was connected to the Castellano organization, which operates under Meridian Holdings, the same corporate structure that was tracking Catherine Halstead's movements."
+    file_path: "case_notes/day_03.md"
+    line_range: [5, 5]
+    context_summary: "The morgue records reveal Claire Hollister's death was orchestrated by Meridian Holdings, the organization kidnapping Catherine."
+
+  - item_id: "target_005"
+    inserted_text: "Within days, he began moving boxes. Small boxes at first, then larger ones. He was systematic about it—organized. The way a man packs when he's decided to leave permanently. I heard him on October 28th making a train reservation to an undisclosed destination—something in his voice suggested it was likely a Canadian border town."
+    file_path: "witnesses/neighbor_statement.md"
+    line_range: [22, 23]
+    context_summary: "Eleanor observes Harvey's preparation for departure after the red-haired woman's visit, confirming his decision to flee by October 28th."
+
+  - item_id: "target_006"
+    inserted_text: "These documents concern the operations of Kaslan and the movement of stolen antiquities through our subsidiary corporations."
+    file_path: "chapters/chapter_05.md"
+    line_range: [9, 9]
+    context_summary: "Diana Harrow reveals that Meridian Holdings is seeking police documents about Kaslan operations, establishing the connection between the criminal networks."
+
+  - item_id: "target_007"
+    inserted_text: "The envelope felt heavy, and I heard the older man say it contained travel documents and a substantial sum in currency—fifty thousand dollars at least—for guaranteed passage through the Starlight Motor Inn arrangement."
+    file_path: "witnesses/bartender_statement.md"
+    line_range: [30, 30]
+    context_summary: "The bartender identifies the envelope containing $50K and travel documents for Harvey's organized escape via the Motor Inn."
+
+  - item_id: "target_008"
+    inserted_text: "A man in an expensive overcoat was seated on a bench across the street. He appeared to be reading a newspaper, but his attention seemed fixed on the restaurant entrance. He had white hair and wore a silver pocket watch on a chain."
+    file_path: "chapters/chapter_03.md"
+    line_range: [18, 19]
+    context_summary: "The witness describes the white-haired man (Silas Gregg) surveilling Catherine at the restaurant where she has her final evening with friends before disappearance."
+
+  - item_id: "target_009"
+    inserted_text: "I also have documentation connecting you to Catherine Halstead's current location and the negotiation payments made from Meridian Holdings' accounts."
+    file_path: "case_notes/day_05.md"
+    line_range: [23, 23]
+    context_summary: "The detective reveals evidence documenting Meridian Holdings' direct payments related to Catherine's kidnapping."
+
+  - item_id: "target_010"
+    inserted_text: "Margaret also reveals in her interview that she has provided police with documentation of payments totaling $175,000 that were transferred from her real estate company accounts to shell corporations controlled by Meridian Holdings between October 2nd and October 28th—the exact window when both Harvey's legal consultations were occurring and when Catherine Halstead was being tracked."
+    file_path: "case_notes/day_07.md"
+    line_range: [12, 13]
+    context_summary: "Margaret Hollister discloses $175K in suspicious payments to Meridian Holdings during the critical October period when both Harvey's situation and Catherine's tracking intensified."
+
+  - item_id: "target_011"
+    inserted_text: "In late July, Harvey expressed doubts about an acquisition. He'd learned through his network contacts that a valuable painting from the late medieval period had sentimental significance to the widow of Carl Vesper, a banking executive killed in an unsolved homicide five years prior."
+    file_path: "witnesses/informant_interview.md"
+    line_range: [35, 35]
+    context_summary: "The informant Victor explains Harvey's moral crisis when he discovers the painting belonged to Vesper's widow, triggering his conscience about stolen artifacts."
+
+  - item_id: "target_012"
+    inserted_text: "Police also agree to provide Catherine Halstead's safe release once testimony begins, an arrangement brokered by Detective Webb who had his own intelligence about Meridian Holdings' operations and wanted their criminal enterprise dismantled."
+    file_path: "case_notes/day_06.md"
+    line_range: [13, 13]
+    context_summary: "Detective Webb's secret arrangement reveals his knowledge of Meridian Holdings' crimes and motivation to use the trial to expose the organization."
+
+  - item_id: "target_013"
+    inserted_text: "Mercer's response encouraged him toward full disclosure and witness cooperation. His lips tighten slightly, and his breathing becomes shallow, suggesting that the Regency Hotel connects to something he was trying to conceal—perhaps awareness that the Castellano organization used the hotel as a meeting ground for extracting information from vulnerable individuals, or that Claire had been taken there specifically because of her connection to his law office and knowledge of client confidences."
+    file_path: "case_notes/day_01.md"
+    line_range: [13, 14]
+    context_summary: "Thomas Mercer's reaction to the Regency Hotel reveals his knowledge of the Castellano organization's use of the location and Claire's vulnerability due to office connections."
+
+  - item_id: "target_014"
+    inserted_text: "The cab driver's compensation from the individual Gregg (fifty-seven years old, silver-white hair, approximately 220 pounds) for forgetting this encounter strongly suggests external pressure to facilitate the subject's exit rather than random intimidation."
+    file_path: "witnesses/detective_debrief.md"
+    line_range: [13, 13]
+    context_summary: "Detective Rossi identifies Silas Gregg as the operative who paid the cab driver to ensure Harvey's transportation was untraceable."
+
+  - item_id: "target_015"
+    inserted_text: "She mentioned family pressure, romantic complications, the feeling of being trapped between obligations."
+    file_path: "case_notes/day_01.md"
+    line_range: [7, 7]
+    context_summary: "Mercer reveals Claire mentioned family pressure and romantic complications, suggesting she was being coerced by Castellano through Margaret."
+
+  - item_id: "target_016"
+    inserted_text: "She mentioned that a gentleman—whom she identified only as 'H'—had warned her about the dangers of being close to someone involved in 'complex matters.'"
+    file_path: "chapters/chapter_01.md"
+    line_range: [35, 35]
+    context_summary: "Richard Halstead reveals that Catherine mentioned her mysterious lover 'H' (Harvey) had warned her about dangers, indicating their romantic and conspiratorial connection."
+
+expected_answers:
+  question: "Using all witness accounts, investigative notes, and financial records, explain how the three criminal networks (the Kaslan art distribution operation, Meridian Holdings' corporate infrastructure, and the Castellano family organization) converged to create the kidnapping of Catherine Halstead. What specific decision by James Harvey triggered the crisis, who facilitated his escape, what was the deadline for his departure, and what financial and behavioral evidence proves the involvement of all parties?"
+
+  correctness: "A complete answer must identify: (1) the Kaslan art theft network and Harvey's role as a facilitator; (2) his moral crisis regarding the fifteenth-century painting stolen from Vesper's widow; (3) his October 28th legal consultation with Marchetti about voluntary disclosure; (4) Meridian Holdings as the organization behind Catherine's kidnapping; (5) Silas Gregg as the operative handler who offered escape; (6) the Starlight Motor Inn room 14 as the safe house location; (7) the November 6th deadline for Harvey's decision; (8) $50,000 in travel funds and documents provided by Gregg; (9) Margot as the negotiator facilitating Harvey's exit through the Kaslan organization; (10) the $175,000 in suspicious payments from Margaret Hollister's accounts to Meridian Holdings shell corporations between October 2-28; (11) Detective Webb's secret cooperation with prosecutors regarding Meridian Holdings; (12) Thomas Mercer's knowledge of the Castellano organization's use of the Regency Hotel; (13) Claire Hollister's death as Meridian's retaliation; (14) the timeline correlation between Harvey's escalating legal crisis and Catherine's disappearance and tracking; (15) the connection between Harvey's anticipated testimony against Kaslan and Catherine's kidnapping as leverage; (16) Catherine's awareness through her mysterious lover Harvey of his involvement in both the art theft network and the larger conspiracy."
+
+  completeness: "A complete answer synthesizes information from all 16 sources to construct: (A) a coherent timeline spanning September 8th through November 6th showing the progression from Harvey's initial legal consultation to his organized escape; (B) the organizational structure linking Kaslan (art theft), Meridian Holdings (corporate cover), and Castellano (enforcement); (C) the trigger event (Harvey's conscience regarding the Vesper painting) that set the kidnapping in motion; (D) the specific escape mechanism (Motor Inn reservation, travel documents, $50K payment, November deadline); (E) the financial evidence ($175K transfers during the critical period); (F) the behavioral observations (Harvey's deterioration, moving boxes, train reservation, Catherine's final warning about danger); (G) the connecting individuals (Gregg as handler, Margot as negotiator, Webb as turncoat police officer, Mercer as legal/organizational insider); (H) the dual victimization pattern (Claire Hollister's murder serving as warning while Catherine's kidnapping served as leverage); (I) the broader criminal conspiracy spanning multiple networks and city institutions. The answer must demonstrate comprehension of how each piece of information, when combined with all others, reveals a complex web of criminal coordination, moral compromise, and institutional corruption."
+
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+  - criterion: "completeness"
+    weight: 0.5

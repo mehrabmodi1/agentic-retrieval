@@ -1,0 +1,40 @@
+parametrisation_id: "multi_reasoning__noir_fiction__160k__easy__synonym__n2"
+experiment_type: "multi_reasoning"
+generated_at: "2026-04-05T00:00:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 160000
+  discriminability: "easy"
+  reference_clarity: "synonym"
+items:
+  - item_id: "target_001"
+    inserted_text: |
+      "The emerald," Morris said quietly. "The one Vincent took from Ashford's collection on Monday night. That's what really set this in motion. Not the girl, not the love affair. The emerald. A nineteenth-century cut stone, flawless, worth half a million to the right buyer. Vincent thought he was clever taking it. He thought Ashford would just write it off as an insurance claim. But Ashford's not the kind of man who accepts losses. He's connected to the people who sent Sinclair. That's why Vincent's already dead, whether his heart's still beating or not."
+    file_path: "case_notes/day_02.md"
+    line_range: [39, 52]
+    context_summary: "Morris reveals to the narrator that Vincent Castellano stole a nineteenth-century emerald from Ashford's collection, which triggered the series of disappearances and death."
+  - item_id: "target_002"
+    inserted_text: |
+      "There's something else," he said, changing the subject slightly. "Something that happened in parallel with the Vesper painting. While Harvey was processing the painting, he also came across a diamond—a stone from the Ashford collection that had been routed through the network by another facilitator named Vincent. The diamond was supposed to disappear into legitimate channels, a 'found' stone being sold through certified dealers. But Harvey was supposed to help coordinate its recovery and return it to the original owner as part of his atonement. He never got the chance." [...] "The diamond and the painting," Halloway said. "Both were being returned." "If they'd had time," Victor confirmed. "But Kaslan's people found out what was happening. Harvey disappeared before he could move either piece."
+    file_path: "witnesses/informant_interview.md"
+    line_range: [32, 45]
+    context_summary: "Victor reveals that a diamond from the Ashford collection was being coordinated through the Kaslan network, and Harvey was tasked with returning it along with the Vesper painting before his disappearance."
+expected_answers:
+  question: "What two precious stones were stolen through the criminal networks, and which men were responsible for attempting to recover or return them?"
+  correctness: |
+    A correct answer must identify:
+    1. The emerald from Ashford's collection, stolen by Vincent Castellano on Monday night
+    2. The diamond from Ashford's collection, routed through Kaslan's network and coordinated by the facilitator Vincent
+    Must establish that Vincent took the emerald and that Harvey was tasked with recovering the diamond, and that both were being returned/recovered as acts of atonement or correction
+  completeness: |
+    A complete answer covers:
+    - Both gemstones (emerald and diamond) and their source (Ashford collection)
+    - The roles of Vincent Castellano (thief of emerald) and Harvey (facilitator attempting recovery of diamond)
+    - The connection between both items to the criminal networks (Castellano family and Kaslan operation)
+    - The recovery/return attempts that triggered disappearances
+    - The parallel nature of the two stones in both networks
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+  - criterion: "completeness"
+    weight: 0.5

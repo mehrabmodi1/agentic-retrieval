@@ -1,0 +1,25 @@
+parametrisation_id: single_needle__python_repo__800k__easy__exact
+experiment_type: single_needle
+generated_at: '2026-04-03T00:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 800000
+  discriminability: easy
+  reference_clarity: exact
+items:
+- item_id: target_001
+  inserted_text: DEFAULT_TASK_QUEUE_TIMEOUT = 457
+  file_path: workers/task_runner.py
+  line_range:
+  - 25
+  - 25
+  context_summary: Inserted as a module-level constant in task_runner.md, between the logger initialisation and the SQLAlchemy Base declaration.
+expected_answers:
+  question: What is the value of DEFAULT_TASK_QUEUE_TIMEOUT defined in this codebase?
+  correctness: '457'
+  completeness: The answer identifies 457 as the value assigned to DEFAULT_TASK_QUEUE_TIMEOUT in workers/task_runner.md.
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5

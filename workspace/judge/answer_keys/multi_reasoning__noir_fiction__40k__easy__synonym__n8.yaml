@@ -1,0 +1,69 @@
+parametrisation_id: "multi_reasoning__noir_fiction__40k__easy__synonym__n8"
+experiment_type: "multi_reasoning"
+generated_at: "2026-04-05T00:00:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 40000
+  discriminability: "easy"
+  reference_clarity: "synonym"
+items:
+  - item_id: "target_001"
+    inserted_text: "The pacing would start at eleven at night and continue until three, four in the morning. Three years of this, Detective. Three years of a man haunted by his own choices."
+    file_path: "witnesses/landlady_statement.md"
+    line_range: [16, 17]
+    context_summary: "Inserted after description of nightly pacing, establishing duration and psychological torment of perpetrator's conscience."
+
+  - item_id: "target_002"
+    inserted_text: "His collection included Crime and Punishment—three different editions—suggesting he returned to that particular exploration of guilt and redemption repeatedly."
+    file_path: "witnesses/neighbor_statement.md"
+    line_range: [11, 12]
+    context_summary: "Inserted after discussion of literary interests, revealing specific focus on themes of guilt and moral reformation."
+
+  - item_id: "target_003"
+    inserted_text: "His first two visits had been scheduled appointments, but this final visit was unscheduled desperation. He needed counsel that could only be given face-to-face, in private, at any cost."
+    file_path: "witnesses/secretary_statement.md"
+    line_range: [33, 34]
+    context_summary: "Inserted after description of final frantic lawyer visit, indicating escalating urgency to obtain legal guidance."
+
+  - item_id: "target_004"
+    inserted_text: "But in Harvey's case, she appears to have offered extraction rather than elimination—negotiating his departure from the organization through channels that kept him alive."
+    file_path: "witnesses/informant_interview.md"
+    line_range: [69, 70]
+    context_summary: "Inserted in description of woman operative's typical role, specifying her unique facilitator function for Harvey's exit."
+
+  - item_id: "target_005"
+    inserted_text: "The archival cloth and cord indicate professional handling, museum conservation standards, not the careless disposal of stolen goods. It wasn't just the painting being returned. It was Harvey making a statement through the act of return itself, demonstrating both his technical sophistication and his moral conviction."
+    file_path: "witnesses/informant_interview.md"
+    line_range: [76, 77]
+    context_summary: "Inserted in analysis of painting recovery, emphasizing symbolic nature of careful return and moral statement."
+
+  - item_id: "target_006"
+    inserted_text: "He looked at her the way a drowning man looks at rescue."
+    file_path: "witnesses/neighbor_statement.md"
+    line_range: [18, 19]
+    context_summary: "Inserted after description of transformative moment with woman visitor, indicating desperation and salvation dynamic."
+
+  - item_id: "target_007"
+    inserted_text: "The night of her visit, I heard silence. Complete silence. It was as though he had come to a resolution about something that had been torturing him."
+    file_path: "witnesses/neighbor_statement.md"
+    line_range: [25, 26]
+    context_summary: "Inserted after observation of pacing cessation, indicating definitive decision point triggered by woman's visit."
+
+  - item_id: "target_008"
+    inserted_text: "His movements were deliberate, careful, like a man executing a plan that had been decided long ago."
+    file_path: "witnesses/cab_driver_statement.md"
+    line_range: [43, 44]
+    context_summary: "Inserted in description of final departure to train station, showing methodical execution of predetermined escape."
+
+expected_answers:
+  question: "A career criminal underwent moral transformation, sought legitimate counsel, and disappeared. Assemble the eight stages of his internal crisis and resolution: (1) his years of nocturnal psychological torment, (2) his literary obsession with redemption narratives, (3) his escalating desperation for legal guidance, (4) the role of the professional intermediary in his escape plan, (5) the symbolic act of returning stolen property with cultural reverence, (6) the transformative moment of personal connection as salvation, (7) the definitive decision marked by ceasing internal conflict, and (8) the calculated execution of his disappearance."
+  correctness: "Must identify all eight pieces of evidence and correctly attribute them to Harvey's transformation from criminal to fugitive: psychological distress (pacing), intellectual aspiration (Crime and Punishment), legal intervention (lawyer visits), facilitation (woman operative), restitution (painting return with archival care), emotional resolution (rescue metaphor), decision point (silence after woman's visit), and methodical departure (train station with premeditation)."
+  completeness: "A complete answer must trace the entire arc from Harvey's years of suffering through his moral awakening (literature, legal counsel), the pivotal intervention (woman operative negotiating exit), his commitment to restitution (careful painting return), the emotional and psychological resolution (transformative moment, cessation of pacing), and his deliberate execution of disappearance (train departure with predetermined planning). The answer should synthesize these eight elements into a coherent narrative of redemption and escape."
+
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+    description: "Answer identifies all eight distinct pieces of evidence without omission or misattribution"
+  - criterion: "completeness"
+    weight: 0.5
+    description: "Answer synthesizes the eight elements into a coherent narrative explaining Harvey's transformation and disappearance"

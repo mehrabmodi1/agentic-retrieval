@@ -1,0 +1,25 @@
+parametrisation_id: single_needle__python_repo__40k__easy__exact
+experiment_type: single_needle
+generated_at: '2026-04-03T15:19:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 40000
+  discriminability: easy
+  reference_clarity: exact
+items:
+- item_id: target_001
+  inserted_text: GLOBAL_RATE_LIMIT_CEILING = 5000
+  file_path: api/rate_limiting.py
+  line_range:
+  - 26
+  - 26
+  context_summary: Inserted as a module-level constant in api/rate_limiting.py, between the logger initialization and the RateLimitError class definition.
+expected_answers:
+  question: What is the value of GLOBAL_RATE_LIMIT_CEILING defined in this codebase?
+  correctness: '5000'
+  completeness: The answer identifies GLOBAL_RATE_LIMIT_CEILING as 5000, found in api/rate_limiting.md (api/rate_limiting.py).
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5

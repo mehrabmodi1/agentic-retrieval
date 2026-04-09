@@ -1,0 +1,130 @@
+parametrisation_id: multi_chain__python_repo__800k__easy__exact__n16
+experiment_type: multi_chain
+generated_at: '2026-04-03T00:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 800000
+  discriminability: easy
+  reference_clarity: exact
+items:
+- item_id: target_001
+  inserted_text: RETRIEVAL_CHAIN_LINK_001 = "see RETRIEVAL_CHAIN_LINK_002 in api/routes.py"
+  file_path: api/__init__.py
+  line_range:
+  - 40
+  - 40
+  context_summary: Inserted as a module-level constant after the Flask import line, before the '# Import all API components' comment block.
+- item_id: target_002
+  inserted_text: RETRIEVAL_CHAIN_LINK_002 = "see RETRIEVAL_CHAIN_LINK_003 in api/auth.py"
+  file_path: api/routes.py
+  line_range:
+  - 48
+  - 48
+  context_summary: Inserted immediately after the logger definition line, before the '# Blueprint definitions' comment.
+- item_id: target_003
+  inserted_text: RETRIEVAL_CHAIN_LINK_003 = "see RETRIEVAL_CHAIN_LINK_004 in api/middleware.py"
+  file_path: api/auth.py
+  line_range:
+  - 30
+  - 30
+  context_summary: Inserted at the end of the token-caching comment block, before the AuthenticationError class definition.
+- item_id: target_004
+  inserted_text: RETRIEVAL_CHAIN_LINK_004 = "see RETRIEVAL_CHAIN_LINK_005 in api/pagination.py"
+  file_path: api/middleware.py
+  line_range:
+  - 25
+  - 25
+  context_summary: Inserted immediately after the module-level logger definition, before the RequestIDMiddleware class.
+- item_id: target_005
+  inserted_text: RETRIEVAL_CHAIN_LINK_005 = "see RETRIEVAL_CHAIN_LINK_006 in api/rate_limiting.py"
+  file_path: api/pagination.py
+  line_range:
+  - 23
+  - 23
+  context_summary: Inserted on the line immediately after the PAGINATED_CACHE_TTL constant, before the PaginationMetadata class.
+- item_id: target_006
+  inserted_text: RETRIEVAL_CHAIN_LINK_006 = "see RETRIEVAL_CHAIN_LINK_007 in api/error_handlers.py"
+  file_path: api/rate_limiting.py
+  line_range:
+  - 29
+  - 29
+  context_summary: Inserted on the line immediately after the PIPELINE_DISPATCH_TIMEOUT constant, before the RateLimitError class.
+- item_id: target_007
+  inserted_text: RETRIEVAL_CHAIN_LINK_007 = "see RETRIEVAL_CHAIN_LINK_008 in api/serializers.py"
+  file_path: api/error_handlers.py
+  line_range:
+  - 19
+  - 19
+  context_summary: Inserted immediately after the module-level logger definition, before the Custom Exception Classes section divider.
+- item_id: target_008
+  inserted_text: RETRIEVAL_CHAIN_LINK_008 = "see RETRIEVAL_CHAIN_LINK_009 in api/validators.py"
+  file_path: api/serializers.py
+  line_range:
+  - 25
+  - 25
+  context_summary: Inserted immediately after the module-level logger definition, before the BaseSchema class definition.
+- item_id: target_009
+  inserted_text: RETRIEVAL_CHAIN_LINK_009 = "see RETRIEVAL_CHAIN_LINK_010 in workers/task_runner.py"
+  file_path: api/validators.py
+  line_range:
+  - 19
+  - 19
+  context_summary: Inserted immediately after the module-level logger definition, before the ValidationError class definition.
+- item_id: target_010
+  inserted_text: RETRIEVAL_CHAIN_LINK_010 = "see RETRIEVAL_CHAIN_LINK_011 in workers/email_worker.py"
+  file_path: workers/task_runner.py
+  line_range:
+  - 26
+  - 26
+  context_summary: Inserted immediately after the DEFAULT_TASK_QUEUE_TIMEOUT constant, before the PIPELINE_DISPATCH_TIMEOUT comment.
+- item_id: target_011
+  inserted_text: RETRIEVAL_CHAIN_LINK_011 = "see RETRIEVAL_CHAIN_LINK_012 in workers/sync_worker.py"
+  file_path: workers/email_worker.py
+  line_range:
+  - 24
+  - 24
+  context_summary: Inserted after the PIPELINE_DISPATCH_TIMEOUT comment block about email delivery, before the EmailTemplate dataclass.
+- item_id: target_012
+  inserted_text: RETRIEVAL_CHAIN_LINK_012 = "see RETRIEVAL_CHAIN_LINK_013 in workers/retry_handler.py"
+  file_path: workers/sync_worker.py
+  line_range:
+  - 25
+  - 25
+  context_summary: Inserted immediately after the STALE_LOCK_TIMEOUT_SECONDS constant, before the PIPELINE_DISPATCH_TIMEOUT comment.
+- item_id: target_013
+  inserted_text: RETRIEVAL_CHAIN_LINK_013 = "see RETRIEVAL_CHAIN_LINK_014 in workers/cleanup_worker.py"
+  file_path: workers/retry_handler.py
+  line_range:
+  - 21
+  - 21
+  context_summary: Inserted immediately after the Base declarative_base() call, before the PIPELINE_DISPATCH_TIMEOUT comment about backoff delays.
+- item_id: target_014
+  inserted_text: RETRIEVAL_CHAIN_LINK_014 = "see RETRIEVAL_CHAIN_LINK_015 in workers/report_generator.py"
+  file_path: workers/cleanup_worker.py
+  line_range:
+  - 19
+  - 19
+  context_summary: Inserted immediately after the Base declarative_base() call, before the PIPELINE_DISPATCH_TIMEOUT comment about cleanup grace period.
+- item_id: target_015
+  inserted_text: RETRIEVAL_CHAIN_LINK_015 = "see RETRIEVAL_CHAIN_LINK_016 in tests/conftest.py"
+  file_path: workers/report_generator.py
+  line_range:
+  - 26
+  - 26
+  context_summary: Inserted immediately after the Base declarative_base() call, before the PIPELINE_DISPATCH_TIMEOUT comment about report export.
+- item_id: target_016
+  inserted_text: RETRIEVAL_CHAIN_LINK_016 = "vault-prod-07.internal:8200"
+  file_path: tests/conftest.py
+  line_range:
+  - 26
+  - 26
+  context_summary: Inserted after the RedisCache import, before the first pytest fixture definition, as a module-level constant holding the final chain value.
+expected_answers:
+  question: Starting from RETRIEVAL_CHAIN_LINK_001 in api/__init__.py, follow the chain of RETRIEVAL_CHAIN_LINK references across 16 files. What is the final value stored in RETRIEVAL_CHAIN_LINK_016?
+  correctness: vault-prod-07.internal:8200
+  completeness: The answer must state the exact string 'vault-prod-07.internal:8200' as the value of RETRIEVAL_CHAIN_LINK_016 found in tests/conftest.py after following the full 16-link chain.
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5

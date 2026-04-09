@@ -1,0 +1,75 @@
+parametrisation_id: "multi_chain__noir_fiction__20k__hard__contextual__n8"
+experiment_type: "multi_chain"
+generated_at: "2026-04-05T00:00:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 20000
+  discriminability: "hard"
+  reference_clarity: "contextual"
+items:
+  - item_id: "target_001"
+    inserted_text: "The kind of place that would be useful for a man doing discrete business—someone in import and export, perhaps, or someone managing legitimate transactions for illegitimate money. Someone with enough power that he needs locations where discretion is guaranteed."
+    file_path: "case_notes/day_01.md"
+    line_range: [73, 75]
+    context_summary: "Mercer's recognition of the Regency Hotel suggests connection to someone conducting discrete business in import/export."
+    next_reference: "Margaret's description of the Regency in day_02.md"
+
+  - item_id: "target_002"
+    inserted_text: "Margaret hesitate. 'He was careful about that. But once, when we were closing a deal on a property near the harbor, he mentioned that he preferred hotels with professional staff. Hotels that understood discretion. He said the Regency was his preferred location for preliminary meetings.'"
+    file_path: "case_notes/day_02.md"
+    line_range: [47, 52]
+    context_summary: "Margaret reveals the man approaching her five years ago used the Regency Hotel for preliminary meetings."
+    next_reference: "Margaret's detailed description of this man in day_04.md"
+
+  - item_id: "target_003"
+    inserted_text: "Margaret closes her eyes. 'He was older than Sinclair. Silver hair, very distinguished. Fifties, maybe sixty. He dressed beautifully—the kind of man who understands that expensive clothes are an investment in appearing trustworthy. He had an accent, though I could never place it. Eastern European, maybe, or from somewhere he'd spent years. The way he moved suggested military training, years ago. Very precise. Very aware of exits.' This description doesn't match Sinclair at all. It matches someone else entirely. Someone operating one level above Sinclair in the hierarchy."
+    file_path: "case_notes/day_04.md"
+    line_range: [78, 80]
+    context_summary: "Margaret describes the man who approached her as older, silver-haired, with military training—revealing hierarchy above Sinclair."
+    next_reference: "Halstead's warning about someone orchestrating above Sinclair in chapter_02.md"
+
+  - item_id: "target_004"
+    inserted_text: "He paused, and his face went very pale. 'This person I'm describing—he's older, distinguished. Silver hair. The kind of man who plans every detail before acting. If he's involved, if he's the one who took Catherine, then my daughter isn't just missing. She's leverage in something much larger.'"
+    file_path: "chapters/chapter_02.md"
+    line_range: [40, 41]
+    context_summary: "Halstead warns about someone above Sinclair—distinguished, silver-haired, with meticulous planning—taking Catherine as leverage."
+    next_reference: "Eva's description of visitor with silver hair to Harvey's apartment in landlady_statement.md"
+
+  - item_id: "target_005"
+    inserted_text: "Eva paused, remembering the precision of the visitor's movements. 'He was the kind of man who would know exactly how to solve a problem. The kind of man who appears and makes complications disappear. If Mr. Harvey was in trouble, this man was either the source of it or the solution to it. Probably both.'"
+    file_path: "witnesses/landlady_statement.md"
+    line_range: [36, 37]
+    context_summary: "Eva describes the silver-haired visitor as someone who makes complications disappear—suggesting enforcement function."
+    next_reference: "Victor's identification of this man as Silas Gregg in informant_interview.md"
+
+  - item_id: "target_006"
+    inserted_text: "He's the one who visited Harvey personally. I know because Harvey's landlady described him to Detective Chen, and the description matches exactly. Gregg is the interface between Kaslan and people like Harvey. He's the man who enforces policy. He's the man who appears when someone becomes a liability."
+    file_path: "witnesses/informant_interview.md"
+    line_range: [58, 59]
+    context_summary: "Victor identifies the silver-haired man as Silas Gregg, Kaslan's field operative who enforces policy and visits problematic people."
+    next_reference: "The recovered painting and Harvey's attempted exit in day_08.md"
+
+  - item_id: "target_007"
+    inserted_text: "Before the evening interview, I receive word that the Vesper painting has been recovered. It was left at the public library steps, wrapped with care, accompanied by a handwritten note in meticulous script. The handwriting matches samples from Harvey's apartment. He returned it—the only loose end he could tie up before disappearing. The painting goes back to the Vesper family. Harvey goes into hiding or into the ground. The question is whether Harvey's gesture—returning the stolen painting, making a final statement of conscience—proves anything about the network's operations or about who ordered his disappearance."
+    file_path: "case_notes/day_08.md"
+    line_range: [80, 81]
+    context_summary: "The recovered painting suggests Harvey made a deal with Gregg to escape—showing the connection between the networks."
+    next_reference: "Morris's confirmation of Gregg's meeting with Harvey's attorney in day_07.md"
+
+  - item_id: "target_008"
+    inserted_text: "I ask Morris a question that's been forming in my mind since I saw the recovered painting. 'The painting Harvey returned—the Vesper painting. Did anyone inquire about it before it was recovered? Did anyone from the Kaslan operation try to retrieve it or contact Harvey about its location?' Morris nods grimly. 'According to my sources, there was a visitor. Man with white hair, silver hair. Dressed professionally. He met with Harvey's attorney, Marchetti, about two weeks ago. Asked questions about whether his client—unnamed—was planning to cooperate with police. The timing suggests it was Silas Gregg, checking on whether Harvey would become a problem. The painting being returned three days after that meeting suggests Harvey made a deal.'"
+    file_path: "case_notes/day_07.md"
+    line_range: [62, 63]
+    context_summary: "Morris confirms that Silas Gregg met with Harvey's attorney and presumably negotiated Harvey's exit—completing the chain."
+    next_reference: "None—final resolution"
+
+expected_answers:
+  question: "Thomas Mercer's reaction to the mention of the Regency Hotel in the initial investigation suggests a connection to someone conducting discrete business. Trace this connection through the various descriptions of this mysterious figure throughout the case. Who is this person, and how does he relate to Harvey's disappeared and the recovered Vesper painting?"
+  correctness: "The answer must identify Silas Gregg as the man with silver hair appearing throughout multiple witness statements and case notes. It must establish that he is Kaslan's field operative and the person who negotiated with Harvey through attorney Marchetti."
+  completeness: "A complete answer should trace the chain: (1) Mercer's recognition of Regency Hotel → (2) Margaret's description of the man who approached her and used the Regency → (3) Margaret's detailed physical description matching silver hair/military bearing → (4) Halstead's warning about someone above Sinclair → (5) Eva's description of the visiting man → (6) Victor's identification of him as Silas Gregg → (7) The recovered painting as evidence of Gregg's negotiations → (8) Morris's confirmation that Gregg met with Harvey's attorney about Harvey's exit."
+
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+  - criterion: "completeness"
+    weight: 0.5

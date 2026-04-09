@@ -1,0 +1,28 @@
+parametrisation_id: "multi_reasoning__noir_fiction__800k__easy__synonym__n2"
+experiment_type: "multi_reasoning"
+generated_at: "2026-04-05T16:30:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 800000
+  discriminability: "easy"
+  reference_clarity: "synonym"
+items:
+  - item_id: "target_001"
+    inserted_text: "Just before we arrived at that Oak Hill address, the old man said something to the kid. I only caught part of it, but he said, 'Silas Gregg sends his regards, and this is your severance—use it to disappear.' The kid didn't respond. He just stared out the window."
+    file_path: "witnesses/cab_driver_statement.md"
+    line_range: [42, 44]
+    context_summary: "The cab driver reveals the older man mentioned Silas Gregg by name during the ride to the Oak Hill residence, instructing the younger passenger to use severance money to disappear."
+  - item_id: "target_002"
+    inserted_text: "The detective made a note that Gregg had been documented meeting Harvey at a residential location in Oak Hill approximately two weeks ago, which marked the last confirmed sighting before Harvey's disappearance."
+    file_path: "witnesses/informant_interview.md"
+    line_range: [60, 61]
+    context_summary: "Detective Halloway's notes confirm Silas Gregg was documented meeting the young asset at an Oak Hill residence, providing corroboration of the cab driver's account and establishing the meeting location."
+expected_answers:
+  question: "What was the name and operational title of the intermediary who supervised local facilitators, and where did he conduct a critical meeting with the young asset?"
+  correctness: "A correct answer must identify Silas Gregg as the intermediary/field operative/supervisor and specify Oak Hill as the meeting location. Both names and location are necessary, and both must be explicitly extracted or clearly inferred from combining the two witness accounts."
+  completeness: "A complete answer must include: (1) Silas Gregg's full name, (2) His operational role as field operative/coordinator/intermediary for the Kaslan operation, (3) Oak Hill residential district as the meeting location, (4) Context that this was a severance/final meeting before the young asset's disappearance from the city."
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+  - criterion: "completeness"
+    weight: 0.5

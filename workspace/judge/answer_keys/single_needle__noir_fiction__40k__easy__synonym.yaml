@@ -1,0 +1,26 @@
+parametrisation_id: "single_needle__noir_fiction__40k__easy__synonym"
+experiment_type: "single_needle"
+generated_at: "2026-04-03T15:37:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 40000
+  discriminability: "easy"
+  reference_clarity: "synonym"
+items:
+  - item_id: "target_001"
+    inserted_text: |
+      Morello didn't let it go. "But you heard something. Accidentally."
+
+      Deke was quiet for a moment, polishing the same glass he'd already polished twice. "Once," he finally admitted. "The night with the champagne. The suit called her by name when he thought I was at the other end of the bar. Vivian Marsh, he said. Clear as a church bell. She looked up sharp, like the name itself was a warning. I moved away and pretended I hadn't heard. Never said it again, not to anyone." He set down the glass. "Until now."
+    file_path: "witnesses/bartender_statement.md"
+    line_range: [54, 56]
+    context_summary: "Inserted into Deke the bartender's witness statement, immediately after he claims he never asks for names, as a follow-up exchange where Detective Morello presses him and Deke reveals the name he accidentally overheard for the mysterious redheaded woman."
+expected_answers:
+  question: "What name did the bartender Deke accidentally overhear the auburn-haired woman being called by her companion?"
+  correctness: "Vivian Marsh"
+  completeness: "A complete answer identifies the full name Vivian Marsh and notes it was overheard when the man she was with (described as wearing an expensive suit) used it while thinking Deke was out of earshot."
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+  - criterion: "completeness"
+    weight: 0.5

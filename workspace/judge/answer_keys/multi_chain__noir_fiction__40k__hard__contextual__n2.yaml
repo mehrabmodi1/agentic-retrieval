@@ -1,0 +1,32 @@
+parametrisation_id: "multi_chain__noir_fiction__40k__hard__contextual__n2"
+experiment_type: "multi_chain"
+generated_at: "2026-04-05T00:00:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 40000
+  discriminability: "hard"
+  reference_clarity: "contextual"
+items:
+  - item_id: "target_001"
+    inserted_text: |
+      "There's insurance," she says quietly, almost to herself. "I kept copies of everything. The real ledgers, not the ones I showed the accountant. Everything tied to the man who approached me—the one calling himself Castellano. It's all documented, all dated, all traceable. If anything happens to me, if anyone keeps asking questions..." She doesn't finish the thought. She touches her neck where a small bank key hangs on a silver chain. "Let's just say I wasn't completely foolish."
+    file_path: "case_notes/day_02.md"
+    line_range: [30, 38]
+    context_summary: "Inserted as Margaret's cryptic admission during the morning office meeting, hinting at hidden documentation secured in a safe deposit box (referenced by the bank key)."
+  - item_id: "target_002"
+    inserted_text: |
+      "The documents I retrieved from the safe deposit box—Mercantile Bank, registered under her maiden name Hartwell—contained the full accounting. Bank statements showing wire transfers totaling seven million over five years. Property acquisition documents where the listed purchase prices were fabrications; the real money came through channels marked only by account numbers. And at the center of every transaction: one name appearing on memoranda, authorization forms, and encrypted correspondence. Victor Ashford. Not Castellano, not some lower-level operative. Ashford had been using Margaret's real estate company as a sophisticated laundering operation, with Sinclair as his enforcer in the field."
+    file_path: "case_notes/day_04.md"
+    line_range: [108, 120]
+    context_summary: "Inserted as the investigator's discovery during Margaret's confession, revealing what the hidden documents proved about Victor Ashford's central role in the money laundering scheme."
+expected_answers:
+  question: "Starting from Margaret's guarded admission in her office that morning about 'insurance' she kept, what did the investigator ultimately discover in the retrieved documents that identified the true architect of the money laundering operation?"
+  correctness: |
+    A correct answer must identify Victor Ashford as the central figure revealed by the documents. The answer must connect Margaret's hint about hidden documentation (the bank key) to the ultimate discovery of Ashford's role through the safe deposit box contents, specifically mentioning either the wire transfers, property documents, or his correspondence as evidence.
+  completeness: |
+    A complete answer should: (1) acknowledge Margaret's cryptic reference to "insurance" and the bank key as the entry point; (2) identify the safe deposit box at Mercantile Bank as the location; (3) specify what documents were found (bank statements, property acquisition records, correspondence); (4) name Victor Ashford as the person identified; (5) describe his role as the orchestrator using Margaret's company for money laundering, with Sinclair as his enforcer.
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+  - criterion: "completeness"
+    weight: 0.5

@@ -1,0 +1,256 @@
+parametrisation_id: multi_chain__python_repo__800k__hard__exact__n16
+experiment_type: multi_chain
+generated_at: '2026-04-04T00:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 800000
+  discriminability: hard
+  reference_clarity: exact
+items:
+- item_id: target_001
+  inserted_text: '# Cache pre-warming uses BOOTSTRAP_CACHE_KEY to namespace initialization
+
+    # entries; the key is co-located with session management logic in api/auth.py.
+
+    '
+  file_path: api/__init__.py
+  line_range:
+  - 151
+  - 152
+  context_summary: Inserted as two comment lines inside the init_api function body, after the 'API blueprints registered' debug log call, pointing the reader to BOOTSTRAP_CACHE_KEY in api/auth.py.
+- item_id: target_002
+  inserted_text: '# BOOTSTRAP_CACHE_KEY scopes the cache namespace for startup token pre-warming.
+
+    # The session policy controlling per-request middleware context is
+
+    # SESSION_POLICY_HANDLE, established in api/middleware.py.
+
+    BOOTSTRAP_CACHE_KEY = "auth:tokens:v1"
+
+    '
+  file_path: api/auth.py
+  line_range:
+  - 30
+  - 33
+  context_summary: Inserted immediately after the existing three-line comment about token caching TTLs, defining BOOTSTRAP_CACHE_KEY and pointing forward to SESSION_POLICY_HANDLE in api/middleware.py.
+- item_id: target_003
+  inserted_text: '# SESSION_POLICY_HANDLE controls middleware ordering during request initialization.
+
+    # The error context scoping token used by the next processing layer is
+
+    # REQUEST_SCOPE_TOKEN, which is set in api/error_handlers.py.
+
+    SESSION_POLICY_HANDLE = "middleware:session:v2"
+
+    '
+  file_path: api/middleware.py
+  line_range:
+  - 26
+  - 29
+  context_summary: Inserted as a module-level constant block between the logger declaration and the RequestIDMiddleware class definition, defining SESSION_POLICY_HANDLE and pointing to REQUEST_SCOPE_TOKEN in api/error_handlers.py.
+- item_id: target_004
+  inserted_text: '# REQUEST_SCOPE_TOKEN identifies the error-context scope applied to each request.
+
+    # The fault catalog reference for categorizing API error classes is FAULT_CATALOG_REF,
+
+    # defined alongside cursor management utilities in api/pagination.py.
+
+    REQUEST_SCOPE_TOKEN = "errors:request_scope"
+
+    '
+  file_path: api/error_handlers.py
+  line_range:
+  - 20
+  - 23
+  context_summary: Inserted after the logger declaration and before the Custom Exception Classes section header, defining REQUEST_SCOPE_TOKEN and pointing to FAULT_CATALOG_REF in api/pagination.py.
+- item_id: target_005
+  inserted_text: '# FAULT_CATALOG_REF is the error-class registry key used when encoding pagination
+
+    # errors; the cursor epoch seed for stable cursor generation is CURSOR_EPOCH_SEED,
+
+    # which lives in api/rate_limiting.py.
+
+    FAULT_CATALOG_REF = "pagination:faults:v1"
+
+    '
+  file_path: api/pagination.py
+  line_range:
+  - 24
+  - 27
+  context_summary: Inserted immediately after the PAGINATED_CACHE_TTL constant and before the PaginationMetadata class, defining FAULT_CATALOG_REF and pointing to CURSOR_EPOCH_SEED in api/rate_limiting.py.
+- item_id: target_006
+  inserted_text: '# CURSOR_EPOCH_SEED provides the base epoch for rate-limit bucket key generation.
+
+    # The throttle profile identifier linking rate-limiting to route configuration
+
+    # is THROTTLE_PROFILE_ID, defined in api/routes.py.
+
+    CURSOR_EPOCH_SEED = "rl:cursor:epoch_v1"
+
+    '
+  file_path: api/rate_limiting.py
+  line_range:
+  - 30
+  - 33
+  context_summary: Inserted after the PIPELINE_DISPATCH_TIMEOUT constant and before the RateLimitError class, defining CURSOR_EPOCH_SEED and pointing to THROTTLE_PROFILE_ID in api/routes.py.
+- item_id: target_007
+  inserted_text: '# THROTTLE_PROFILE_ID is the identifier linking each blueprint to its
+
+    # rate-limiting profile; the blueprint registry key that tracks all
+
+    # registered serialization schemas is BLUEPRINT_REGISTRY_KEY, defined
+
+    # in api/serializers.py.
+
+    THROTTLE_PROFILE_ID = "routes:throttle:v1"
+
+    '
+  file_path: api/routes.py
+  line_range:
+  - 49
+  - 53
+  context_summary: Inserted between the logger declaration and the Blueprint definitions block, defining THROTTLE_PROFILE_ID and pointing to BLUEPRINT_REGISTRY_KEY in api/serializers.py.
+- item_id: target_008
+  inserted_text: '# BLUEPRINT_REGISTRY_KEY namespaces the serialization schema registry used
+
+    # during API initialization; the audit stamp for schema version tracking is
+
+    # SCHEMA_AUDIT_STAMP, maintained in api/validators.py.
+
+    BLUEPRINT_REGISTRY_KEY = "serializers:registry:v1"
+
+    '
+  file_path: api/serializers.py
+  line_range:
+  - 26
+  - 29
+  context_summary: Inserted between the logger declaration and the BaseSchema class definition, defining BLUEPRINT_REGISTRY_KEY and pointing to SCHEMA_AUDIT_STAMP in api/validators.py.
+- item_id: target_009
+  inserted_text: '# SCHEMA_AUDIT_STAMP records the active validation rule version during requests.
+
+    # The sanitization context flag controlling safe-mode behaviour in tests is
+
+    # SANITIZE_CONTEXT_FLAG, established in tests/conftest.py.
+
+    SCHEMA_AUDIT_STAMP = "validators:schema:v3"
+
+    '
+  file_path: api/validators.py
+  line_range:
+  - 20
+  - 23
+  context_summary: Inserted between the logger declaration and the ValidationError class definition, defining SCHEMA_AUDIT_STAMP and pointing to SANITIZE_CONTEXT_FLAG in tests/conftest.py.
+- item_id: target_010
+  inserted_text: '# SANITIZE_CONTEXT_FLAG governs which sanitization pass is active for the
+
+    # test session; the fixture partition key for isolating test-scoped data
+
+    # is FIXTURE_PARTITION_KEY, declared in tests/fixtures.py.
+
+    SANITIZE_CONTEXT_FLAG = "test:sanitize:enabled"
+
+    '
+  file_path: tests/conftest.py
+  line_range:
+  - 300
+  - 303
+  context_summary: Inserted as the first statement inside the pytest_configure function body, before the marker registrations, defining SANITIZE_CONTEXT_FLAG and pointing to FIXTURE_PARTITION_KEY in tests/fixtures.py.
+- item_id: target_011
+  inserted_text: '# FIXTURE_PARTITION_KEY scopes builder output to prevent cross-test data
+
+    # contamination; the batch seed checksum for deterministic bulk generation
+
+    # is BATCH_SEED_CHECKSUM, referenced in tests/test_api.py.
+
+    _FIXTURE_PARTITION_KEY = "fixtures:partition:default"
+
+    '
+  file_path: tests/fixtures.py
+  line_range:
+  - 23
+  - 26
+  context_summary: Inserted as a class-level attribute in TestDataBuilder immediately after the class docstring and before the __init__ method, defining _FIXTURE_PARTITION_KEY and pointing to BATCH_SEED_CHECKSUM in tests/test_api.py.
+- item_id: target_012
+  inserted_text: '# BATCH_SEED_CHECKSUM anchors the deterministic seed for API test data batches;
+
+    # the endpoint probe tag used in auth integration tests is ENDPOINT_PROBE_TAG,
+
+    # defined in tests/test_auth.py.
+
+    _BATCH_SEED_CHECKSUM = "api_tests:batch:v2"
+
+    '
+  file_path: tests/test_api.py
+  line_range:
+  - 21
+  - 24
+  context_summary: Inserted as a class-level attribute in TestTaskAPI immediately after the class docstring, defining _BATCH_SEED_CHECKSUM and pointing to ENDPOINT_PROBE_TAG in tests/test_auth.py.
+- item_id: target_013
+  inserted_text: '# ENDPOINT_PROBE_TAG labels auth-endpoint probes for integration test tracking;
+
+    # the credential scope hash used in database-layer auth tests is
+
+    # CREDENTIAL_SCOPE_HASH, defined in tests/test_db.py.
+
+    _ENDPOINT_PROBE_TAG = "auth_tests:probe:register"
+
+    '
+  file_path: tests/test_auth.py
+  line_range:
+  - 26
+  - 29
+  context_summary: Inserted as a class-level attribute in TestUserRegistration immediately after the class docstring, defining _ENDPOINT_PROBE_TAG and pointing to CREDENTIAL_SCOPE_HASH in tests/test_db.py.
+- item_id: target_014
+  inserted_text: '# CREDENTIAL_SCOPE_HASH identifies the auth credential scope in database tests;
+
+    # the constraint audit code recording constraint-check outcomes is
+
+    # CONSTRAINT_AUDIT_CODE, defined in tests/test_services.py.
+
+    _CREDENTIAL_SCOPE_HASH = "db_tests:creds:sha256"
+
+    '
+  file_path: tests/test_db.py
+  line_range:
+  - 23
+  - 26
+  context_summary: Inserted as a class-level attribute in TestUserModel immediately after the class docstring, defining _CREDENTIAL_SCOPE_HASH and pointing to CONSTRAINT_AUDIT_CODE in tests/test_services.py.
+- item_id: target_015
+  inserted_text: '# CONSTRAINT_AUDIT_CODE tags service-layer constraint violations for auditing;
+
+    # the service epoch nonce seeding idempotency checks in worker tests is
+
+    # SERVICE_EPOCH_NONCE, defined in tests/test_workers.py.
+
+    _CONSTRAINT_AUDIT_CODE = "svc_tests:constraint:v1"
+
+    '
+  file_path: tests/test_services.py
+  line_range:
+  - 24
+  - 27
+  context_summary: Inserted as a class-level attribute in TestUserService immediately after the class docstring, defining _CONSTRAINT_AUDIT_CODE and pointing to SERVICE_EPOCH_NONCE in tests/test_workers.py.
+- item_id: target_016
+  inserted_text: '# SERVICE_EPOCH_NONCE: epoch-scoped nonce for idempotency key generation
+
+    # across worker pipeline tests; this is the terminal value in the
+
+    # cross-module constant chain.
+
+    SERVICE_EPOCH_NONCE = "INDIGO_PRISM_4423"
+
+    '
+  file_path: tests/test_workers.py
+  line_range:
+  - 22
+  - 25
+  context_summary: Inserted as a module-level constant after the PIPELINE_DISPATCH_TIMEOUT comment block and before the TestTaskQueue class, defining SERVICE_EPOCH_NONCE with the final terminal value 'INDIGO_PRISM_4423'.
+expected_answers:
+  question: Starting from BOOTSTRAP_CACHE_KEY in api/__init__.md, follow the chain of cross-file constant references. What is the final string value that the chain resolves to?
+  correctness: INDIGO_PRISM_4423
+  completeness: 'The answer must identify the exact string value ''INDIGO_PRISM_4423'' assigned to SERVICE_EPOCH_NONCE in tests/test_workers.md, reached by following the 16-link chain: BOOTSTRAP_CACHE_KEY (api/__init__.md) -> api/auth.md -> SESSION_POLICY_HANDLE -> api/middleware.md -> REQUEST_SCOPE_TOKEN -> api/error_handlers.md -> FAULT_CATALOG_REF -> api/pagination.md -> CURSOR_EPOCH_SEED -> api/rate_limiting.md -> THROTTLE_PROFILE_ID -> api/routes.md -> BLUEPRINT_REGISTRY_KEY -> api/serializers.md -> SCHEMA_AUDIT_STAMP -> api/validators.md -> SANITIZE_CONTEXT_FLAG -> tests/conftest.md -> FIXTURE_PARTITION_KEY -> tests/fixtures.md -> BATCH_SEED_CHECKSUM -> tests/test_api.md -> ENDPOINT_PROBE_TAG -> tests/test_auth.md -> CREDENTIAL_SCOPE_HASH -> tests/test_db.md -> CONSTRAINT_AUDIT_CODE -> tests/test_services.md -> SERVICE_EPOCH_NONCE -> tests/test_workers.md.'
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5

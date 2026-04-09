@@ -1,0 +1,28 @@
+parametrisation_id: "multi_chain__noir_fiction__20k__easy__exact__n2"
+experiment_type: "multi_chain"
+generated_at: "2026-04-04T00:00:00Z"
+parameters:
+  content_profile: "noir_fiction"
+  corpus_token_count: 20000
+  discriminability: "easy"
+  reference_clarity: "exact"
+items:
+  - item_id: "target_001"
+    inserted_text: "Eleanor reached into her coat pocket. \"I almost didn't mention this. I wasn't sure it mattered.\" She set a matchbook on the table—dark red with gold lettering, *The Crimson Door Lounge*. \"Catherine pressed it into my hand just before we left the table that night. Quickly, so the others wouldn't see. There's something written inside the cover.\" She flipped it open. The inscription read: *If something happens, find Deke. He has the rest.*"
+    file_path: "chapters/chapter_03.md"
+    line_range: [77, 77]
+    context_summary: "Inserted after the narrator hands out cards, just before Eleanor's farewell question — Eleanor reveals a matchbook Catherine secretly pressed into her hand, inscribed with instructions to find Deke at The Crimson Door."
+  - item_id: "target_002"
+    inserted_text: "\"Anyone ever ask you to hold something for safekeeping?\" Morello said.\n\nDeke's expression shifted—just slightly, but enough to notice. He reached under the bar and produced a sealed white envelope, slightly yellowed at the edges. \"About six weeks ago. Young woman, dark-haired, came in during the afternoon when the place was nearly empty. Said her name was Catherine. She handed me this and said, 'If a man named Mallory comes asking, give it to him. He'll know what to do with it.' Told me not to open it.\" He turned the envelope over in his hands. On the back, in neat handwriting: *Warehouse 9, Pier 41, north dock.* \"Nobody named Mallory ever came in. So I've been holding it.\""
+    file_path: "witnesses/bartender_statement.md"
+    line_range: [48, 50]
+    context_summary: "Inserted after Deke's reflection on people with envelopes and nervous eyes, before Morello asks about the redhead — Deke produces a sealed envelope left by Catherine, with the address 'Warehouse 9, Pier 41, north dock' written on the back."
+expected_answers:
+  question: "Starting from the matchbook Catherine left with Eleanor Walsh (described in chapter_03.md), follow the chain to Deke at The Crimson Door. What address is written on the envelope Deke has been holding?"
+  correctness: "Warehouse 9, Pier 41, north dock"
+  completeness: "A complete answer identifies the full address as written on the back of the envelope: Warehouse 9, Pier 41, north dock. It may also note that Catherine left the envelope with Deke for a man named Mallory."
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+  - criterion: "completeness"
+    weight: 0.5

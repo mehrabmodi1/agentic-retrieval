@@ -1,0 +1,25 @@
+parametrisation_id: single_needle__python_repo__20k__hard__synonym
+experiment_type: single_needle
+generated_at: '2026-04-03T00:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 20000
+  discriminability: hard
+  reference_clarity: synonym
+items:
+- item_id: target_001
+  inserted_text: "max_records_per_run: int = 5000,\n):\n    self.db_url = db_url\n    self.log_retention_days = log_retention_days\n    self.temp_file_retention_days = temp_file_retention_days\n    self.report_file_retention_days = report_file_retention_days\n    # Cap the number of records removed in a single execution to avoid\n    # overwhelming the database under heavy load.\n    self.max_records_per_run = max_records_per_run"
+  file_path: workers/cleanup_worker.py
+  line_range:
+  - 56
+  - 64
+  context_summary: Inserted as an additional constructor parameter and assignment in CleanupWorker.__init__, alongside existing retention-day settings, capping the number of database records deleted per cleanup execution.
+expected_answers:
+  question: What is the default limit on the number of database records that the cleanup worker can purge in a single execution?
+  correctness: 5000 records (the default value of max_records_per_run)
+  completeness: A complete answer states that the default cap is 5000 records per run, identifies it as the max_records_per_run parameter of CleanupWorker, and notes it exists to avoid overwhelming the database under heavy load.
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5

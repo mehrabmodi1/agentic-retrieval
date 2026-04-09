@@ -1,0 +1,40 @@
+parametrisation_id: multi_chain__python_repo__160k__easy__exact__n2
+experiment_type: multi_chain
+generated_at: '2026-04-03T00:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 160000
+  discriminability: easy
+  reference_clarity: exact
+items:
+- item_id: target_001
+  inserted_text: '# Maximum seconds allowed for a batch export operation triggered by the sync worker;
+
+    # the authoritative value is defined in workers/report_generator.py as SYNC_BATCH_EXPORT_TIMEOUT.
+
+    SYNC_BATCH_EXPORT_TIMEOUT = None  # see workers/report_generator.py'
+  file_path: workers/sync_worker.py
+  line_range:
+  - 26
+  - 28
+  context_summary: Inserted after the STALE_LOCK_TIMEOUT_SECONDS constant definition, declaring SYNC_BATCH_EXPORT_TIMEOUT as None and pointing to workers/report_generator.py for the authoritative value.
+- item_id: target_002
+  inserted_text: '# Ceiling on batch export duration, shared with workers/sync_worker.py which defers
+
+    # to this value via its SYNC_BATCH_EXPORT_TIMEOUT placeholder.
+
+    SYNC_BATCH_EXPORT_TIMEOUT = 634'
+  file_path: workers/report_generator.py
+  line_range:
+  - 27
+  - 29
+  context_summary: Inserted after the Base declarative_base() call, defining SYNC_BATCH_EXPORT_TIMEOUT = 634 as the authoritative value referenced by sync_worker.py.
+expected_answers:
+  question: Starting from workers/sync_worker.py, SYNC_BATCH_EXPORT_TIMEOUT is declared as None and defers to workers/report_generator.py. What is the value of SYNC_BATCH_EXPORT_TIMEOUT defined there?
+  correctness: '634'
+  completeness: The answer identifies that workers/sync_worker.py sets SYNC_BATCH_EXPORT_TIMEOUT = None and points to workers/report_generator.py, where SYNC_BATCH_EXPORT_TIMEOUT = 634 is the authoritative value.
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5
