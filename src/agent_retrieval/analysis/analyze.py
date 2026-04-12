@@ -21,7 +21,7 @@ from agent_retrieval.analysis.tables import (
 def run_analysis(
     batch_name: str,
     workspace_dir: Path,
-    specs_dir: Path,
+    specs_dir: Path | None = None,
 ) -> Path:
     """Top-level orchestrator: load data, save CSVs, figures, and HTML report.
 
@@ -46,7 +46,8 @@ def run_analysis(
     abt = accuracy_by_type(df)
     abt.to_csv(tables_dir / "accuracy_by_type.csv", index=False)
 
-    abp = accuracy_by_param(df, param_column="target_token_count")
+    token_col = "corpus_token_count" if "corpus_token_count" in df.columns else "target_token_count"
+    abp = accuracy_by_param(df, param_column=token_col)
     abp.to_csv(tables_dir / "accuracy_by_token_count.csv", index=False)
 
     tut = tool_usage_by_type(df)

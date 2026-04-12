@@ -48,6 +48,7 @@ class RunnerSpec(BaseModel):
     agent_model: str
     max_tokens: int
     allowed_tools: list[str]
+    effort_mode: str = ""
 
 
 class ExperimentSpec(BaseModel):

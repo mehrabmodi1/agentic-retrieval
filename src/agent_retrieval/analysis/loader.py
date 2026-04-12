@@ -13,7 +13,7 @@ from agent_retrieval.schema.verdict import Verdict
 def load_batch_results(
     batch_name: str,
     workspace_dir: Path,
-    specs_dir: Path,
+    specs_dir: Path | None = None,
 ) -> pd.DataFrame:
     judgements_dir = workspace_dir / "judge" / "judgements" / batch_name
     answer_keys_dir = workspace_dir / "judge" / "answer_keys"
@@ -42,6 +42,14 @@ def load_batch_results(
                 row["discriminability"] = ak.parameters.get("discriminability", "")
                 row["reference_clarity"] = ak.parameters.get("reference_clarity", "")
                 row["n_items"] = ak.parameters.get("n_items")
+                # Extract n_items from parametrisation_id if not in parameters
+                # e.g. "multi_chain__noir_fiction__20k__easy__exact__n16" -> 16
+                if row["n_items"] is None:
+                    parts = ak.parametrisation_id.split("__")
+                    for part in parts:
+                        if part.startswith("n") and part[1:].isdigit():
+                            row["n_items"] = int(part[1:])
+                            break
                 # Derive experiment_type from parametrisation_id
                 if ak.parametrisation_id:
                     row["experiment_type"] = ak.parametrisation_id.split("__")[0]
@@ -49,8 +57,8 @@ def load_batch_results(
                     row["experiment_type"] = ""
             else:
                 # V1 fallback: load from spec file
-                spec_path = specs_dir / f"{verdict.parametrisation_id}.yaml"
-                if spec_path.exists():
+                spec_path = specs_dir / f"{verdict.parametrisation_id}.yaml" if specs_dir else None
+                if spec_path and spec_path.exists():
                     spec = ExperimentSpec.from_yaml(spec_path)
                     row["experiment_type"] = spec.experiment_type
                     row["content_profile"] = spec.corpus.content_profile
@@ -61,8 +69,8 @@ def load_batch_results(
                     row["experiment_type"] = ""
         else:
             # V1 fallback: load from spec file
-            spec_path = specs_dir / f"{verdict.parametrisation_id}.yaml"
-            if spec_path.exists():
+            spec_path = specs_dir / f"{verdict.parametrisation_id}.yaml" if specs_dir else None
+            if spec_path and spec_path.exists():
                 spec = ExperimentSpec.from_yaml(spec_path)
                 row["experiment_type"] = spec.experiment_type
                 row["content_profile"] = spec.corpus.content_profile

@@ -8,11 +8,13 @@ from pydantic import BaseModel
 
 
 class RunState(BaseModel):
-    experiment_id: str
+    parametrisation_id: str
     run_id: str
     batch_name: str
     status: Literal["pending", "running", "completed", "failed"]
     claude_code_version: str
+    agent_model: str = ""
+    effort_mode: str = ""
     started_at: str | None = None
     completed_at: str | None = None
     error_message: str | None = None

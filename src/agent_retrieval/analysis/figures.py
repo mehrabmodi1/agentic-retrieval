@@ -15,17 +15,17 @@ def _save_and_close(fig: plt.Figure, output_path: Path) -> None:
 
 
 def plot_accuracy_vs_corpus_size(df: pd.DataFrame, output_path: Path) -> None:
-    """Errorbar plot of weighted_score vs target_token_count, grouped by experiment_type."""
+    """Errorbar plot of weighted_score vs corpus_token_count, grouped by experiment_type."""
     fig, ax = plt.subplots(figsize=(8, 5))
 
     for exp_type, group in df.groupby("experiment_type"):
         stats = (
-            group.groupby("target_token_count")["weighted_score"]
+            group.groupby("corpus_token_count")["weighted_score"]
             .agg(mean="mean", std="std")
             .reset_index()
         )
         ax.errorbar(
-            stats["target_token_count"],
+            stats["corpus_token_count"],
             stats["mean"],
             yerr=stats["std"].fillna(0),
             label=exp_type,
@@ -41,17 +41,17 @@ def plot_accuracy_vs_corpus_size(df: pd.DataFrame, output_path: Path) -> None:
 
 
 def plot_context_usage(df: pd.DataFrame, output_path: Path) -> None:
-    """Errorbar plot of total_context_tokens vs target_token_count, grouped by experiment_type."""
+    """Errorbar plot of total_context_tokens vs corpus_token_count, grouped by experiment_type."""
     fig, ax = plt.subplots(figsize=(8, 5))
 
     for exp_type, group in df.groupby("experiment_type"):
         stats = (
-            group.groupby("target_token_count")["total_context_tokens"]
+            group.groupby("corpus_token_count")["total_context_tokens"]
             .agg(mean="mean", std="std")
             .reset_index()
         )
         ax.errorbar(
-            stats["target_token_count"],
+            stats["corpus_token_count"],
             stats["mean"],
             yerr=stats["std"].fillna(0),
             label=exp_type,

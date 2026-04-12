@@ -24,9 +24,9 @@ class ExpectedAnswers(BaseModel):
 
 
 class AnswerKey(BaseModel):
-    experiment_id: str
-    generated_at: str
-    parametrisation_id: str | None = None
+    parametrisation_id: str
+    experiment_type: str = ""
+    generated_at: str = ""
     parameters: dict[str, Any] | None = None
     items: list[AnswerKeyItem]
     expected_answers: ExpectedAnswers

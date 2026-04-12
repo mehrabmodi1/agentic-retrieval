@@ -21,7 +21,7 @@ class SessionMetrics(BaseModel):
 
 
 class Verdict(BaseModel):
-    experiment_id: str
+    parametrisation_id: str
     run_id: str
     batch_name: str
     scores: list[ScoreEntry]

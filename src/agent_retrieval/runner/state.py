@@ -1,19 +1,26 @@
 from __future__ import annotations
 import uuid
 from pathlib import Path
-from agent_retrieval.schema.batch import BatchConfig
 from agent_retrieval.schema.run_state import RunState
+
 
 class RunStateManager:
     def __init__(self, runs_dir: Path):
         self.runs_dir = runs_dir
 
-    def create_pending_runs(self, batch: BatchConfig, experiment_id: str, n_repeats: int, claude_version: str) -> list[str]:
+    def create_pending_runs(
+        self, batch_name: str, parametrisation_id: str, n_runs: int,
+        claude_version: str, agent_model: str = "", effort_mode: str = "",
+    ) -> list[str]:
         run_ids = []
-        for _ in range(n_repeats):
+        for _ in range(n_runs):
             run_id = uuid.uuid4().hex[:12]
-            state = RunState(experiment_id=experiment_id, run_id=run_id, batch_name=batch.batch_name, status="pending", claude_code_version=claude_version)
-            run_dir = self.runs_dir / batch.batch_name / experiment_id / run_id
+            state = RunState(
+                parametrisation_id=parametrisation_id, run_id=run_id,
+                batch_name=batch_name, status="pending", claude_code_version=claude_version,
+                agent_model=agent_model, effort_mode=effort_mode,
+            )
+            run_dir = self.runs_dir / batch_name / parametrisation_id / run_id
             state.to_yaml(run_dir / "state.yaml")
             run_ids.append(run_id)
         return run_ids
@@ -31,8 +38,10 @@ class RunStateManager:
                 recovered.append(state.run_id)
         return recovered
 
-    def get_runs_by_status(self, batch_name: str, experiment_id: str, status: str) -> list[tuple[str, Path]]:
-        exp_dir = self.runs_dir / batch_name / experiment_id
+    def get_runs_by_status(
+        self, batch_name: str, parametrisation_id: str, status: str,
+    ) -> list[tuple[str, Path]]:
+        exp_dir = self.runs_dir / batch_name / parametrisation_id
         if not exp_dir.exists():
             return []
         results = []

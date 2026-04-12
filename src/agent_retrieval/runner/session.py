@@ -46,6 +46,7 @@ async def run_agent_session(
     max_tokens: int,
     run_id: str,
     run_dir: Path,
+    effort_mode: str = "",
 ) -> AgentResult:
     system_prompt = (
         f"Answer the following question by searching the provided codebase. "
@@ -55,10 +56,11 @@ async def run_agent_session(
     options = ClaudeAgentOptions(
         model=model,
         system_prompt=system_prompt,
-        cwd=str(corpus_dir),
+        cwd=str(corpus_dir.resolve()),
         allowed_tools=allowed_tools,
         permission_mode="acceptEdits",
         max_turns=50,
+        effort=effort_mode or None,
     )
     response_parts: list[str] = []
     session_id = ""
