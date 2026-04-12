@@ -1,24 +1,34 @@
-# Agent Retrieval Experiment
+# The Multi-Needle Problem
 
-A framework for measuring how well AI agents retrieve information from large corpora. Generates controlled experimental corpora with hidden "needles" (inserted facts, config values, cross-references), then runs AI agents against them and scores their retrieval performance.
+**Agentic retrieval and reasoning fails to scale.**
 
-## What It Does
+A parametric experiment measuring how well an AI agent (Claude Sonnet 4.6, effort: low) retrieves information and reasons over large text corpora. Single-fact retrieval works well (~90% accuracy), but performance degrades sharply with task complexity — multi-chain retrieval drops to ~50%, and multi-reasoning to ~20%.
 
-1. **Generates** realistic background corpora (Python repos, noir fiction) from content profile templates
-2. **Inserts** needle payloads at controlled difficulty levels — varying discriminability (easy/hard), reference clarity (exact/synonym/contextual), and needle count
-3. **Runs** AI agents (via Claude Agent SDK) against the corpora with retrieval questions
-4. **Judges** agent responses against answer keys using rubric-based scoring
-5. **Analyzes** results across parameter grids to identify retrieval performance patterns
+See the full analysis: [`notebooks/full-sweep_sonnet-4-6_effort_low_20260409.ipynb`](notebooks/full-sweep_sonnet-4-6_effort_low_20260409.ipynb)
 
 ## Experiment Types
 
-| Type | Description |
-|------|-------------|
-| `single_needle` | One hidden fact; agent must find and report it |
-| `multi_chain` | N linked needles forming a chain; agent follows references to a final value |
-| `multi_reasoning` | N independent needles; agent must find all and reason across them |
+| Type | Description | Accuracy |
+|------|-------------|----------|
+| `single_needle` | Find one hidden fact in the corpus | ~90% |
+| `multi_chain` | Follow a chain of N cross-references to a final value | ~50% |
+| `multi_reasoning` | Locate N scattered clues and synthesise an answer | ~20% |
 
-Each type is parameterized across content profiles, corpus sizes (20k–800k tokens), discriminability levels, reference clarity levels, and needle counts — producing a full factorial grid of experimental conditions.
+Each type is parameterized across:
+- **Content profiles**: Python repository, noir detective fiction
+- **Corpus sizes**: 20k, 40k, 160k, 800k tokens
+- **Reference clarity**: exact keyword, synonym, contextual paraphrase
+- **Needle counts**: 2, 8, 16 items (multi-chain and multi-reasoning)
+- **Discriminability**: easy, hard
+
+This produces a full factorial grid of 336 experimental conditions, each run 3 times.
+
+## How It Works
+
+1. **Generate** — builds realistic background corpora and inserts needle payloads at controlled difficulty levels
+2. **Run** — executes the agent (via Claude Agent SDK) against each corpus with a retrieval question
+3. **Judge** — scores agent responses against answer keys using rubric-based LLM evaluation (correctness + completeness)
+4. **Analyse** — loads verdicts into a notebook for visualisation and interpretation
 
 ## Getting Started
 
@@ -31,8 +41,8 @@ Each type is parameterized across content profiles, corpus sizes (20k–800k tok
 ### Install
 
 ```bash
-git clone <repo-url>
-cd agent_retrieval_expt
+git clone https://github.com/mehrabmodi1/agentic-retrieval.git
+cd agentic-retrieval
 poetry install
 ```
 
@@ -44,28 +54,8 @@ poetry run pytest -v
 
 ### Generate Corpora
 
-Generate all remaining parametrisations across experiment types:
-
 ```bash
 poetry run python scripts/generate_parallel.py --workers 3
-```
-
-Filter to a specific experiment type:
-
-```bash
-poetry run python scripts/generate_parallel.py --workers 3 --experiments single_needle
-```
-
-Preview what would be generated without running:
-
-```bash
-poetry run python scripts/generate_parallel.py --workers 3 --dry-run
-```
-
-Generate a single parametrisation:
-
-```bash
-poetry run python scripts/generate_parallel.py --workers 1 --experiments single_needle
 ```
 
 ### Project Layout
@@ -79,6 +69,7 @@ src/agent_retrieval/  Source package
   analysis/           Results analysis and figures
   schema/             Pydantic models
 scripts/              CLI entry points
-workspace/            Runtime data (pools, corpora, answer keys)
+workspace/            Runtime data (pools, corpora, answer keys, runs, verdicts)
+notebooks/            Analysis notebooks
 tests/                Test suite
 ```
