@@ -18,6 +18,7 @@ class SessionMetrics(BaseModel):
     total_turns: int
     tool_calls: dict[str, int]
     duration_seconds: float
+    total_cost_usd: float = 0.0
 
 
 class Verdict(BaseModel):

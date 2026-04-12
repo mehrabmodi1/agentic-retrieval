@@ -10,6 +10,7 @@ def extract_session_metrics(session_path: Path, response_path: Path | None = Non
     total_context_tokens = 0
     total_turns = 0
     duration_seconds = 0.0
+    total_cost_usd = 0.0
 
     # Extract tool calls from session.jsonl
     if session_path.exists() and session_path.stat().st_size > 0:
@@ -23,8 +24,30 @@ def extract_session_metrics(session_path: Path, response_path: Path | None = Non
                     message = entry.get("message", {})
                     content = message.get("content", [])
                     for block in content:
-                        if block.get("type") == "tool_use":
-                            tool_calls[block["name"]] += 1
+                        if block.get("type") != "tool_use":
+                            continue
+                        name = block.get("name", "")
+                        if name == "Bash":
+                            cmd = block.get("input", {}).get("command", "").strip()
+                            first = cmd.split()[0] if cmd else ""
+                            if first in ("grep", "rg") or "| grep" in cmd or "| rg " in cmd:
+                                tool_calls["grep"] += 1
+                            elif first in ("find", "ls", "tree"):
+                                tool_calls["glob"] += 1
+                            elif first in ("cat", "head", "tail"):
+                                tool_calls["read"] += 1
+                            else:
+                                tool_calls["other"] += 1
+                        elif name == "Agent":
+                            tool_calls["subagent"] += 1
+                        elif name == "Grep":
+                            tool_calls["grep"] += 1
+                        elif name == "Glob":
+                            tool_calls["glob"] += 1
+                        elif name == "Read":
+                            tool_calls["read"] += 1
+                        else:
+                            tool_calls["other"] += 1
 
     # Extract usage and turns from response.json
     if response_path and response_path.exists():
@@ -36,6 +59,8 @@ def extract_session_metrics(session_path: Path, response_path: Path | None = Non
             + usage.get("cache_read_input_tokens", 0)
         )
         total_turns = data.get("num_turns", 0)
+        total_cost_usd = data.get("total_cost_usd", 0.0)
 
     return SessionMetrics(total_context_tokens=total_context_tokens, total_turns=total_turns,
-                          tool_calls=dict(tool_calls), duration_seconds=duration_seconds)
+                          tool_calls=dict(tool_calls), duration_seconds=duration_seconds,
+                          total_cost_usd=total_cost_usd)

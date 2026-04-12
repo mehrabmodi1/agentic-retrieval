@@ -30,6 +30,7 @@ def load_batch_results(
             "total_context_tokens": verdict.session_metrics.total_context_tokens,
             "total_turns": verdict.session_metrics.total_turns,
             "duration_seconds": verdict.session_metrics.duration_seconds,
+            "total_cost_usd": verdict.session_metrics.total_cost_usd,
         }
 
         # Try to load metadata from v2 answer key first
