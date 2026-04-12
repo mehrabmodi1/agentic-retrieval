@@ -39,7 +39,7 @@ Dorothy adjusted her glasses. There was something about her systematic descripti
 
 "Did Mr. Marchetti mention anything to you?"
 
-Dorothy shook her head slowly. "My brother-in-law is extremely close about his professional matters. I would not expect him to discuss the details. But I will tell you something I observed. After the final visit from Mr. Harvey, Mr. Marchetti seemed disturbed. Not angry. Not frustrated. Disturbed in the way that someone is disturbed when they have been asked to participate in something that violates their ethical code but which they feel compelled to do anyway."
+Dorothy shook her head slowly. "My brother-in-law is extremely close about his professional matters. I would not expect him to discuss the details. But I will tell you something I observed. After the final visit from Mr. Harvey, Mr. Marchetti seemed disturbed. Not angry. Not frustrated. Disturbed in the way that someone is disturbed when they have been asked to participate in something that violates their ethical code but which they feel compelled to do anyway. Mr. Harvey mentioned during his final consultation something about a leather-bound ledger dated October 15th. Mr. Marchetti said only that such a document, if properly authenticated and containing what Harvey claimed it contained, would constitute evidence that should be placed in an evidence locker, not carried by a fugitive. This suggested Harvey intended to deliver it to someone who could use it—a journalist, perhaps, or law enforcement."
 
 "Did he explain this?"
 
@@ -70,8 +70,6 @@ Dorothy walked the detective to the door. As he was leaving, she said, "Detectiv
 **Supplementary Note - November 16, 1947**
 
 Detective Morello interviewed Robert William Marchetti, Esq., regarding his meetings with James Harvey. Mr. Marchetti declined to discuss specifics citing attorney-client privilege but confirmed three meetings occurred as stated. When pressed regarding the content, Mr. Marchetti stated: "I cannot speak to the substance of our conversations. What I can tell you is that Mr. Harvey presented me with a choice—I could help him, which would require me to compromise my professional ethics, or I could refuse, which would require me to accept that his resulting actions would be my responsibility in a moral if not legal sense. I chose to help him. Whether that was the right choice, I will never know."
-
-In his final meeting on October 28th—less than forty-eight hours before Harvey's departure—Mr. Marchetti provided what law enforcement has reconstructed to be legal documentation for Harvey's Canadian entry, including affidavits of good character prepared by third parties, employment verification letters from the Northwood Inn, and travel authorization documents that established Harvey as a legitimate worker rather than a fugitive. These documents proved essential to Harvey's successful crossing into Canada without triggering law enforcement alerts.
 
 Further attempts to clarify resulted in Mr. Marchetti requesting that this office contact his attorney before any additional questions were posed. Investigation shelved pending legal determination of privilege boundaries.
 

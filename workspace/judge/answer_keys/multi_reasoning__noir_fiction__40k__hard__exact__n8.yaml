@@ -1,79 +1,94 @@
 parametrisation_id: "multi_reasoning__noir_fiction__40k__hard__exact__n8"
 experiment_type: "multi_reasoning"
-generated_at: "2026-04-05T00:00:00Z"
+generated_at: "2026-04-12T14:30:00Z"
 parameters:
   content_profile: "noir_fiction"
   corpus_token_count: 40000
   discriminability: "hard"
   reference_clarity: "exact"
+
 items:
   - item_id: "target_001"
-    inserted_text: "But here's the thing I learned later—Harwick Falls has the Northwood Inn, a fishing lodge that was about to hire seasonal staff. The kind of place where a man with legitimate credentials could disappear into legitimate work. The application would have been processed weeks earlier, paperwork filed, housing arranged. Someone arranged everything perfectly."
-    file_path: "witnesses/cab_driver_statement.md"
-    line_range: [64, 66]
-    context_summary: "Cab driver reveals that Harvey's destination, Harwick Falls, was arranged with legitimate employment at a fishing lodge."
+    inserted_text: "Margot was an acquisition specialist who operated on five-percent commission—each transaction she brokered, she took her cut directly from the middle, which was why handlers like Gregg insisted on meeting with operatives before she did. The money always changed hands in a specific order."
+    file_path: "witnesses/bartender_statement.md"
+    line_range: [21, 35]
+    context_summary: "Embedded in bartender's observation about Harvey's bar encounter with the redhead, adding detail about commission structure."
 
   - item_id: "target_002"
-    inserted_text: "What I didn't mention is the mechanism—Margot had access to Kaslan's offshore accounts. She moved Harvey's exit fee through three countries, transforming it into legitimate travel funds and deposit accounts in Canadian banks. Ten thousand dollars, enough to establish him safely while he settled into his new identity. She took a considerable personal risk, which suggests either leverage or something deeper. But the money trail proves she enabled the escape—not through sentiment, but through operational expertise."
-    file_path: "witnesses/informant_interview.md"
-    line_range: [84, 89]
-    context_summary: "Informant Victor reveals that Margot facilitated Harvey's escape by moving exit fees through offshore accounts and Canadian banks."
+    inserted_text: "Handler authorization ceilings typically sat at ten thousand dollars without escalation. Anything beyond that required approval from the tier above, and Gregg was meticulous about documenting every transaction that approached his limit."
+    file_path: "witnesses/landlady_statement.md"
+    line_range: [36, 50]
+    context_summary: "Inserted into landlady's description of Gregg's handler visit, explaining operational authority limits."
 
   - item_id: "target_003"
-    inserted_text: "But that wasn't the only visitor that night who left instructions. The redhead, when she came by his table, she wasn't just saying goodbye. She was giving him something—a small piece of paper she slipped into his hand while they touched. I saw it. She leaned close and whispered—I caught fragments: 'travel papers,' 'Canadian consulate has the documentation,' 'they're expecting you October 31st.' Cold as ice, she was. Professional. But he kept that piece of paper like it was his life, because it probably was."
-    file_path: "witnesses/bartender_statement.md"
-    line_range: [41, 49]
-    context_summary: "Bartender Deke reports that the redhead (Margot) provided Harvey with travel documentation and Canadian consulate information."
+    inserted_text: "What people outside the organization don't understand is that Kaslan himself had to sign off personally on any piece moving internationally. For items valued above one hundred thousand, he reviewed the provenance himself. The Vesper painting had attracted his direct attention."
+    file_path: "witnesses/informant_interview.md"
+    line_range: [10, 25]
+    context_summary: "Woven into Victor's explanation of Kaslan's operation structure, revealing international transaction authority."
 
   - item_id: "target_004"
-    inserted_text: "However, I should note that the Canadian consulate has already been contacted by federal liaison agents. They report that Harvey's travel documents were processed through normal channels—legitimate visa application approved October 28th, travel documents issued October 29th. All paperwork suggests he intended to take employment with a fishing lodge enterprise. The federal angles are already coordinating with Canadian authorities, which suggests institutional cooperation rather than standard law enforcement cooperation."
-    file_path: "witnesses/detective_debrief.md"
-    line_range: [76, 79]
-    context_summary: "Detective Halloway notes federal coordination confirming Harvey's legitimate travel documents and visa processing."
+    inserted_text: "Mr. Marchetti had begun keeping a detailed record—dates, amounts discussed, the moral calculations he was making. It appeared he was documenting his own role in the arrangement, creating a paper trail that would either protect him or condemn him, depending on how things unfolded."
+    file_path: "witnesses/secretary_statement.md"
+    line_range: [47, 60]
+    context_summary: "Inserted after Marchetti's moral crisis dialogue, adding detail about his documentation strategy."
 
   - item_id: "target_005"
-    inserted_text: "In his final meeting on October 28th—less than forty-eight hours before Harvey's departure—Mr. Marchetti provided what law enforcement has reconstructed to be legal documentation for Harvey's Canadian entry, including affidavits of good character prepared by third parties, employment verification letters from the Northwood Inn, and travel authorization documents that established Harvey as a legitimate worker rather than a fugitive. These documents proved essential to Harvey's successful crossing into Canada without triggering law enforcement alerts."
-    file_path: "witnesses/secretary_statement.md"
-    line_range: [73, 79]
-    context_summary: "Detective Morello's notes reveal that attorney Marchetti provided essential legal documentation for Harvey's Canadian entry."
+    inserted_text: "I made sure to note in the document how Ashford handled operations requiring approval authority—anything over twenty-five thousand dollars passed through his desk. He was the approval mechanism, the checkpoint that kept operations from spiraling into unauthorized territory."
+    file_path: "case_notes/day_05.md"
+    line_range: [18, 35]
+    context_summary: "Added to the insurance document section, explaining Ashford's role in the organizational hierarchy."
 
   - item_id: "target_006"
-    inserted_text: "What I didn't tell the detective—I found something after he left, caught in the mail slot downstairs. A Canadian passport, brand new, in a different name. I could tell by the cover and the maple leaf. But the photograph inside, I only saw it briefly. It was Mr. Harvey, but different. Older. Like he had aged years in just weeks. Someone had given him that passport—I assume the man with the silver hair—and it changed everything for him."
-    file_path: "witnesses/landlady_statement.md"
-    line_range: [48, 54]
-    context_summary: "Landlady Eva found evidence that Silas Gregg provided Harvey with a Canadian passport under an assumed identity."
+    inserted_text: "Diana's primary function was coordination between factions—ensuring that Sinclair's street-level operations and Meridian's corporate interests didn't conflict, that territorial agreements were respected, that orders flowing down from the invisible top remained clear and unambiguous through every level below."
+    file_path: "chapters/chapter_05.md"
+    line_range: [75, 95]
+    context_summary: "Embedded in the revelation about Diana Harrow being a tool, clarifying her specific coordination role."
 
   - item_id: "target_007"
-    inserted_text: "Eleanor paused, and her knitting needles continued their familiar rhythm. \"What I should also mention, though it may not matter now: The previous afternoon, around two o'clock, the boy had a telephone call. He was in his apartment, and I could hear him through the wall—just his voice, not words exactly, but the tone changed entirely. He said, 'Yes, I received the information. Harwick Falls, the lodge, employment secured. Yes, I understand. October 30th, morning departure. Thank you.' He hung up, and I heard him sit down heavily, as though a terrible burden had been lifted. That telephone call was his confirmation. Someone had verified that the entire arrangement—the job, the location, the legal documentation—was real and waiting.\""
-    file_path: "witnesses/neighbor_statement.md"
-    line_range: [79, 91]
-    context_summary: "Eleanor Pembroke overheard Harvey receiving confirmation that all escape arrangements were finalized and operational."
+    inserted_text: "Sinclair held veto authority over anything happening on the west side of the city. Nothing operated there without his explicit approval—that kind of territorial control meant he answered to very few people, which made him both powerful and expendable depending on the will of whoever stood above him."
+    file_path: "case_notes/day_03.md"
+    line_range: [86, 105]
+    context_summary: "Inserted into Sylvia's description of Sinclair's position, establishing his veto power over territory."
 
   - item_id: "target_008"
-    inserted_text: "But I also do something else. I write a letter to be delivered to a young man named James Harvey, care of the Northwood Inn, Harwick Falls, with instructions to Helen that this letter should reach him if any move is made against me or my investigation. The letter explains that if I disappear, he's to contact law enforcement and provide his testimony about the Kaslan operation. It's insurance for both of us—it ensures Harvey knows that his cooperation is still valuable, and it ensures that if I fall, his story won't die with me. Helen stores this sealed letter separately, with different instructions, different timing."
-    file_path: "case_notes/day_05.md"
-    line_range: [34, 44]
-    context_summary: "Jack Shepherd creates an insurance policy by sending a sealed letter to Harvey at his final destination, ensuring mutual protection."
+    inserted_text: "Margaret placed an envelope on my desk—thick, professional. 'Five thousand dollars,' she says. 'Retainer. To find my daughter and keep your mouth closed about what you find.' The amount was specific. Not charity. Not panic money. A carefully calculated figure that suggested she'd been given guidance on what to offer."
+    file_path: "case_notes/day_01.md"
+    line_range: [0, 20]
+    context_summary: "Added to Margaret's initial hiring of the investigator, providing the specific retainer amount and its implications."
 
 expected_answers:
-  question: |
-    Based on all available witness statements and investigative notes, construct the complete mechanism through which James Harvey successfully escaped from the Kaslan operation. Your answer must identify: (1) the person who provided legitimate employment documentation, (2) the intermediary who facilitated financial arrangements, (3) the specific destination Harvey was traveling to, (4) the person who provided identity documents, (5) the type of travel authorization used, (6) confirmation that federal agencies were coordinating on Harvey's exit, and (7) what guarantee was established to ensure Harvey's continued silence and cooperation.
+  question: "Based on witness statements and evidence scattered across multiple sources, construct the complete organizational hierarchy of the criminal network, mapping each person's specific role, authorization limits, superior, and the paths through which orders and money flow from top to bottom."
 
   correctness: |
-    A correct answer must include all seven elements:
-    1. Robert Marchetti, attorney, provided legal documentation including affidavits and employment verification
-    2. Margot, Kaslan's acquisition specialist, moved exit funds through offshore accounts into Canadian banks
-    3. The Northwood Inn fishing lodge in Harwick Falls, with legitimate employment arranged in advance
-    4. Silas Gregg provided a Canadian passport under an assumed identity
-    5. Legitimate Canadian visa and travel documents processed through official channels, approved October 28-29
-    6. Federal liaison agents coordinating with Canadian consulate confirming legitimate visa processing
-    7. Jack Shepherd's sealed letter sent to Harvey at Harwick Falls as mutual insurance ensuring continued cooperation
+    A correct answer must identify:
+    - Margot's commission structure (5% of transactions)
+    - Handler authorization ceiling ($10,000)
+    - Kaslan's personal sign-off requirement for international movements
+    - Marchetti's documentation/safety strategy
+    - Ashford's $25,000+ approval authority
+    - Diana Harrow's coordination function between factions
+    - Sinclair's west-side veto power
+    - Margaret's $5,000 retainer amount
+    And demonstrate understanding that these pieces together show a tiered organizational structure with multiple checkpoints.
 
   completeness: |
-    A complete answer must demonstrate that the user found and synthesized information from all eight witness statements and case notes, understanding how each piece (employment setup, financial facilitation, travel documents, identity documentation, federal coordination, and mutual insurance) combined to enable Harvey's successful escape while maintaining his value as a potential witness against both the Kaslan operation and other criminal enterprises in the city.
+    A complete answer must:
+    1. Map at least 5 organizational tiers
+    2. Explain how information and orders flow downward
+    3. Explain how money flows and is verified/approved
+    4. Identify the coordination mechanism between different operational factions
+    5. Show understanding that authority limits create checkpoints
+    6. Connect financial transaction limits to organizational rank
+    7. Recognize the distinction between operational (Sinclair) and corporate (Meridian/Diana) hierarchies
+    8. Synthesize all 8 pieces into a coherent organizational model
 
 rubric_criteria:
   - criterion: "correctness"
     weight: 1.0
+    description: "All 8 factual pieces must be accurately identified and correctly placed in the hierarchy"
   - criterion: "completeness"
     weight: 0.5
+    description: "Answer must synthesize pieces into understanding of how the network actually operates"
+  - criterion: "reasoning"
+    weight: 0.3
+    description: "Must demonstrate logical inference about hierarchical relationships not explicitly stated"

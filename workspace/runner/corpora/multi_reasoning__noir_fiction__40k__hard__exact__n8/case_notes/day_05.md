@@ -32,8 +32,6 @@ Helen doesn't say anything, just gestures for me to continue.
 
 I spend two hours writing out everything I know. Names, dates, locations, theories, the connection to Margaret Hollister's money laundering, the warehouse on Dock Street, Sinclair, Ashford, all of it. I write it in narrative form, the kind that would make sense to a judge if it ever had to be read in court.
 
-But I also do something else. I write a letter to be delivered to a young man named James Harvey, care of the Northwood Inn, Harwick Falls, with instructions to Helen that this letter should reach him if any move is made against me or my investigation. The letter explains that if I disappear, he's to contact law enforcement and provide his testimony about the Kaslan operation. It's insurance for both of us—it ensures Harvey knows that his cooperation is still valuable, and it ensures that if I fall, his story won't die with me. Helen stores this sealed letter separately, with different instructions, different timing.
-
 When I'm done, Helen reads it carefully.
 
 "This is circumstantial," Helen says. "But it's solid circumstantial. It's enough to open an investigation. It's enough to make trouble for powerful people."
@@ -42,7 +40,7 @@ When I'm done, Helen reads it carefully.
 
 "There's someone," Helen says. "A reporter named David Chen at the Chronicle. He's been trying to expose corruption in this city for ten years. He's beaten two bribery attempts and survived a car accident that was probably not an accident. If you want the truth to come out, Chen's your man."
 
-I have Helen put the documents in envelopes, sealed, with strict instructions that if I don't check in with her once a week, she's to deliver the main document to Chen immediately. The secondary letter to Harvey goes out only if there's direct threat to my life or sudden disappearance.
+I have Helen put the document in an envelope, sealed, with strict instructions that if I don't check in with her once a week, she's to deliver it to Chen immediately.
 
 Helen charges me five hundred dollars, which is expensive but not expensive enough to make me flinch.
 
@@ -62,7 +60,7 @@ Patricia hands me the card. It's elegant, expensive, minimalist. Just a name and
 
 "Charles Sinclair - Private Consulting Services"
 
-I pocket the card. This is the closest thing to physical evidence I have, which is almost worthless in a court of law but might be useful in other ways.
+I pocket the card. This is the closest thing to physical evidence I have, which is almost worthless in a court of law but might be useful in other ways. Sinclair's name appears everywhere—in the vehicle registration, on this card—yet nobody can find him. Mercer, the lawyer, would later refuse to tell me anything about who Sinclair really is. That refusal itself was an answer.
 
 ## The Lawyer Again
 

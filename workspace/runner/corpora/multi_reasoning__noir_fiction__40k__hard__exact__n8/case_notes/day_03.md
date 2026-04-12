@@ -27,7 +27,7 @@ I also find something interesting: Margaret Hollister's real estate company, Hol
 
 Which means Margaret wasn't just running a real estate business. She was laundering money for the Castellano family.
 
-That changes things. That explains why she hired me. It also explains why the man came to my apartment. I'm not just looking for a missing girl anymore. I'm potentially threatening a money laundering operation.
+That changes things. That explains why she hired me. It also explains why the man came to my apartment. I'm not just looking for a missing girl anymore. I'm potentially threatening a money laundering operation. And somewhere in this city, there's a ledger dated October 15th that documents every fraudulent transaction, every property flip that was actually a money wash, every connection between Margaret's business and Sinclair's operation. That ledger is the evidence that would destroy them.
 
 ## The Morgue
 
@@ -117,7 +117,7 @@ Mercer's face goes very still. "Then you should stop asking questions."
 
 "Who is Sinclair?"
 
-"I can't tell you that."
+"I can't tell you that." But Mercer's fear and silence told me enough. Sinclair was someone so powerful that even a lawyer couldn't speak his name aloud without fear. The truth about Sinclair lay in understanding the Kaslan operation—the art theft network that Harvey had been involved with, which distributed stolen goods through channels nobody could trace.
 
 "Because you're legally bound to secrecy, or because you're afraid?"
 

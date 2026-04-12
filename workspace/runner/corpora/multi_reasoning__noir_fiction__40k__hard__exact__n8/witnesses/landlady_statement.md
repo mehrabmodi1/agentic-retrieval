@@ -27,7 +27,9 @@ Eva adjusted her glasses. They were connected by a chain of small beads, and the
 
 "No," Eva said, and a slight smile crossed her face—not unkind, but the smile of a woman who had learned to play the long game, who understood that information was more valuable than rent. "I told him that the lease, it required two months' notice. Which was true. And I told him the apartment upstairs would be available in December, but not before. He seemed to relax when I said this. Not happy, you understand. But relieved. Like he had been given a reprieve from something."
 
-"Did anyone visit him? Did you see anyone going to his apartment?"
+""Did anyone visit him? Did you see anyone going to his apartment?"
+
+Detective Chen made a note, but I continued before she could ask the next question. "There was the man. The one I mentioned. He came several times, maybe four times in the last few months. Always between eight and midnight. Always took the stairs, never the elevator—like he didn't want to be seen. The boy, he was clearly afraid of this man, but he also seemed to respect him. Like the man represented something important, someone important. That man was definitely connected to whatever was eating the boy from inside. That man represented the people above the local criminals, the ones with real power. And when the boy finally left, he left because that man told him to leave, or allowed him to leave, or arranged for his leaving.""
 
 "I see many people," Eva said. "This is a big building. But unusual visitors for Mr. Harvey?" She tapped her temple with one finger. "Once, I see a man who does not belong. Nice suit, good shoes, but the walk, you know? The walk of someone who does not walk much. Too stiff. Too deliberate. He goes up to three F—I see him in the hallway because the light, it is not very good on the stairs and I am always checking the lights. He stays maybe forty minutes. When he comes down, his face is different. Like he has given Mr. Harvey something very important, or taken something away."
 
@@ -41,7 +43,7 @@ Chen wrote this down carefully. "When was this?"
 
 "Did Mr. Harvey seem different after this man's visit?"
 
-Eva's hands tightened on her ledger. "He stopped pacing at night. Or maybe he paced quieter. And there was something in his eyes the next time I saw him—he came to pay rent, he always comes in person—something that said he had made a decision about something. A big decision. The kind that changes your life. What I didn't tell the detective—I found something after he left, caught in the mail slot downstairs. A Canadian passport, brand new, in a different name. I could tell by the cover and the maple leaf. But the photograph inside, I only saw it briefly. It was Mr. Harvey, but different. Older. Like he had aged years in just weeks. Someone had given him that passport—I assume the man with the silver hair—and it changed everything for him."
+Eva's hands tightened on her ledger. "He stopped pacing at night. Or maybe he paced quieter. And there was something in his eyes the next time I saw him—he came to pay rent, he always comes in person—something that said he had made a decision about something. A big decision. The kind that changes your life."
 
 "When did you last see him?"
 

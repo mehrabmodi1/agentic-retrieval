@@ -19,7 +19,7 @@ The interview took place in the basement parking structure of an abandoned wareh
 
 "And Harvey was involved in this?"
 
-"Harvey was a facilitator. He worked in shipping—he had legitimate credentials and access to dock facilities. But he was also young and smart and probably more conscience-stricken than was good for him. He helped move pieces for maybe eighteen months. Then something happened."
+"Harvey was a facilitator. He worked in shipping—he had legitimate credentials and access to dock facilities. But he was also young and smart and probably more conscience-stricken than was good for him. He helped move pieces for maybe eighteen months. Then something happened." That was the question—what made Harvey try to leave the network? The bartender had seen a mysterious redheaded woman hand Harvey what looked like a critical message, something that drained the color from his face.
 
 "What kind of something?"
 
@@ -83,9 +83,7 @@ Victor stood, signaling that the interview was approaching its end. "There's a w
 
 "What would that cost?"
 
-"For Margot? Usually everything you have, and then your silence for the rest of your life." Victor moved toward the exit. "Your boy Harvey is either dead, or he's bought his freedom at the cost of his entire life. Either way, he's gone from this city. What I didn't mention is the mechanism—Margot had access to Kaslan's offshore accounts. She moved Harvey's exit fee through three countries, transforming it into legitimate travel funds and deposit accounts in Canadian banks. Ten thousand dollars, enough to establish him safely while he settled into his new identity. She took a considerable personal risk, which suggests either leverage or something deeper. But the money trail proves she enabled the escape—not through sentiment, but through operational expertise."
-
-"And Kaslan, despite losing the painting and losing Harvey, is still operating. Still acquiring. Still distributing. The Vesper painting was a loss—a significant one—but it's not enough to bring down the operation."
+"For Margot? Usually everything you have, and then your silence for the rest of your life." Victor moved toward the exit. "Your boy Harvey is either dead, or he's bought his freedom at the cost of his entire life. Either way, he's gone from this city. And Kaslan, despite losing the painting and losing Harvey, is still operating. Still acquiring. Still distributing. The Vesper painting was a loss—a significant one—but it's not enough to bring down the operation."
 
 "What would bring it down?"
 

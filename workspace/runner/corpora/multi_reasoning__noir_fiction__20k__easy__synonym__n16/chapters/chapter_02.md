@@ -40,7 +40,11 @@ Halstead produced it—typed on plain paper, words cut from newsprint like somet
 
 That was the problem with money—it created the illusion that you could buy your way out of anything. But some prices couldn't be paid in dollars. Some debts were settled in blood.
 
-"What's your business, Mr. Halstead?"
+""What's your business, Mr. Halstead?"
+
+He hesitated, and I realized that question had more weight than he wanted to admit. "Real estate," he said. "Development, mostly. Large projects that require coordination with city officials, with planning boards, with people who have the authority to approve or deny projects worth millions of dollars."
+
+In other words, his business required him to operate at the interface between legitimate money and the kind of money that didn't ask questions. And Catherine being taken meant someone wanted to ensure he remained cooperative, that he continued to funnel what needed to be funneled. The hierarchy above the Castellano family wasn't just a rumor—it was a system where men like Halstead, and lawyers like Mercer, and facilitators like Harvey, all played their assigned roles."
 
 "Import-export. Primarily from South America and Europe. Textiles, some specialty goods." He said it carefully, which meant there was more to it. There always was.
 

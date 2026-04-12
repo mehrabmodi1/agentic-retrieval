@@ -30,6 +30,8 @@ The most recent entry was dated Monday—two days before she disappeared.
 
 *"I told H today that I can't do this anymore—can't be with someone who won't let me in, won't share his burden. He became very still, very controlled. Said, 'You know too much already, Catherine. And loving me is already dangerous. Please don't ask for more.' Then he left. I don't know if he's coming back. I don't know if I want him to. Everything inside me is pulled in two directions."*
 
+The pages that followed were blank, but I understood. Catherine Halstead was not just a victim of a random kidnapping. She was connected to someone inside the criminal network—someone who had wanted to get out, just like Harvey. Her disappearance was no accident. It was leverage, a way to keep H in line. The note in the kidnapping package—"Don't call the police"—made sense only if the kidnappers wanted H to remain silent.
+
 I closed the journal and sat on the bed, thinking. Catherine Halstead had been involved with someone—someone powerful, someone worried, someone who'd warned her about danger. And then she'd gone walking alone at night, and the next thing anyone knew, she was gone and there was a kidnapping note.
 
 It was possible that her mysterious lover had taken her. It was possible that someone had taken her to get to him. It was possible that Catherine knew too much about something illegal or compromising, and this was a warning to keep quiet.

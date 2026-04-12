@@ -21,7 +21,7 @@
 
 **ROSSI:** Cab driver Jerry Salvatore's account places subject at Union Station on what he estimates to be November 3rd or 4th, consistent with landlady's timeline. Subject carried a small suitcase, appeared emotionally distressed, paid exact fare with no gratuity—marked change in previous tipping behavior.
 
-**HALLOWAY:** Right. So October 28th is the critical date. That's the day he visits Marchetti for the final time. That's the day his visible dissolution accelerates. Let me walk through the legal angle, Captain, because this is where it gets delicate.
+**HALLOWAY:** Right. So October 28th is the critical date. That's the day he visits Marchetti for the final time. That's the day his visible dissolution accelerates. Our neighbor witness reported Harvey carrying an accounting ledger marked October 15th, likely passed by his contact. Let me walk through the legal angle, Captain, because this is where it gets delicate.
 
 **CAPTAIN DREYFUS:** I've reviewed the attorney-client privilege issue. Marchetti explicitly stated he cannot discuss the substance of Harvey's consultation. We can subpoena, but the court will almost certainly uphold privilege unless we can establish that Harvey was using Marchetti for current or ongoing criminal conduct. The painting recovery complicates this—we don't know if Harvey returned it, if someone else did, or if it's unrelated to our investigation.
 
@@ -40,6 +40,8 @@
 **HALLOWAY:** Agreed. Now, the redhead. We have multiple witnesses placing a young red-haired woman in connection with Harvey. Bartender Deke says she came to the Crimson Door, met briefly with Harvey, seemed to know him. Jerry Salvatore says a redhead made a separate trip to the same Oak Hill address that Harvey was transported to. And our informant Victor identifies her as "Margot," Kaslan's personal acquisition specialist.
 
 **CHEN:** But there's no indication she was hostile. The bartender described their interaction as intimate—hand-holding, quiet conversation. If she was there to kill him or threaten him, it was done with considerable affection.
+
+**ROSSI:** Unless she was telling him something his superiors wanted him to know. Someone like Silas Gregg doesn't operate independently—there's always someone above him giving orders. Gregg was the enforcer, the handler who ensured compliance. But who was Gregg working for? That's where we find whoever is actually running things.
 
 **MORELLO:** Or she was there to facilitate his escape. Victor suggested that Margot was the negotiator who arranged Harvey's safe passage out of the city. If that's true, then their meetings represent him securing safe exit in exchange for something.
 
@@ -73,7 +75,7 @@
 
 **MORELLO:** But we have to find him first.
 
-**HALLOWAY:** Which we won't without federal assistance. If Harvey is alive and living under an assumed identity, he's crossed state lines. That makes it a federal matter. I'm going to recommend we brief the FBI tomorrow and request their assistance in locating Harvey, both for his safety and for the integrity of a potential prosecution. However, I should note that the Canadian consulate has already been contacted by federal liaison agents. They report that Harvey's travel documents were processed through normal channels—legitimate visa application approved October 28th, travel documents issued October 29th. All paperwork suggests he intended to take employment with a fishing lodge enterprise. The federal angles are already coordinating with Canadian authorities, which suggests institutional cooperation rather than standard law enforcement cooperation.
+**HALLOWAY:** Which we won't without federal assistance. If Harvey is alive and living under an assumed identity, he's crossed state lines. That makes it a federal matter. I'm going to recommend we brief the FBI tomorrow and request their assistance in locating Harvey, both for his safety and for the integrity of a potential prosecution.
 
 **CAPTAIN DREYFUS:** Do you think the Kaslan operation is still a threat?
 

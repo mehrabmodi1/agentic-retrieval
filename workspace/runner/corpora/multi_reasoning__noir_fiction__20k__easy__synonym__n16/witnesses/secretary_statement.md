@@ -39,7 +39,7 @@ Dorothy adjusted her glasses. There was something about her systematic descripti
 
 "Did Mr. Marchetti mention anything to you?"
 
-Dorothy shook her head slowly. "My brother-in-law is extremely close about his professional matters. I would not expect him to discuss the details. But I will tell you something I observed. After the final visit from Mr. Harvey, Mr. Marchetti seemed disturbed. Not angry. Not frustrated. Disturbed in the way that someone is disturbed when they have been asked to participate in something that violates their ethical code but which they feel compelled to do anyway."
+Dorothy shook her head slowly. "My brother-in-law is extremely close about his professional matters. I would not expect him to discuss the details. But I will tell you something I observed. After the final visit from Mr. Harvey, Mr. Marchetti seemed disturbed. Not angry. Not frustrated. Disturbed in the way that someone is disturbed when they have been asked to participate in something that violates their ethical code but which they feel compelled to do anyway. Mr. Harvey mentioned during his final consultation something about a leather-bound ledger dated October 15th. Mr. Marchetti said only that such a document, if properly authenticated and containing what Harvey claimed it contained, would constitute evidence that should be placed in an evidence locker, not carried by a fugitive. This suggested Harvey intended to deliver it to someone who could use it—a journalist, perhaps, or law enforcement."
 
 "Did he explain this?"
 

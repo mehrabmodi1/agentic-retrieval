@@ -55,7 +55,7 @@ Eleanor set down her knitting. "Shall I tell you what I think happened, Detectiv
 
 "Did you ever see anyone else visiting him? Any men, particularly?"
 
-"One. Heavy-set, white-haired man. He came after the woman. Once, maybe twice. He and the boy did not speak much when I saw them in the hallway. But there was a quality of respect between them. The kind of respect that comes from understanding something about each other that doesn't require words."
+"One. Heavy-set, white-haired man. He came after the woman. Once, maybe twice. He and the boy did not speak much when I saw them in the hallway. But there was a quality of respect between them. The kind of respect that comes from understanding something about each other that doesn't require words. The second time he visited, I saw him hand the boy a small leather-bound ledger with October 15th written on the spine in white ink."
 
 "What do you think this man wanted?"
 
@@ -74,8 +74,6 @@ Eleanor didn't answer immediately. She finished a row of knitting, set down the 
 Chen closed her notebook. "Thank you, Mrs. Pembroke."
 
 "Before you go," Eleanor said, "I want to tell you one more thing. The last time I saw the boy, it was the night before he disappeared. I was taking out my trash, and he was leaving his apartment. He was carrying that small suitcase, and his face was determined—but not desperate. There was a quality of intention in his movement, as though every action was deliberate, purposeful. He packed that suitcase not like someone fleeing in panic, but like someone executing a carefully considered plan. I said good luck to him, though I didn't expect him to hear me. But he did. He turned and looked at me, and he said, 'For the first time in a long time, Mrs. Pembroke, I think I'm going to be okay.' And then he left. Whether that was true or not, I cannot say. But I believed him when he said it."
-
-Eleanor paused, and her knitting needles continued their familiar rhythm. "What I should also mention, though it may not matter now: The previous afternoon, around two o'clock, the boy had a telephone call. He was in his apartment, and I could hear him through the wall—just his voice, not words exactly, but the tone changed entirely. He said, 'Yes, I received the information. Harwick Falls, the lodge, employment secured. Yes, I understand. October 30th, morning departure. Thank you.' He hung up, and I heard him sit down heavily, as though a terrible burden had been lifted. That telephone call was his confirmation. Someone had verified that the entire arrangement—the job, the location, the legal documentation—was real and waiting."
 
 Eleanor picked up her knitting again. "Find him, if you can. And if you do, tell him that Mrs. Pembroke in 3G thinks he made the right choice."
 

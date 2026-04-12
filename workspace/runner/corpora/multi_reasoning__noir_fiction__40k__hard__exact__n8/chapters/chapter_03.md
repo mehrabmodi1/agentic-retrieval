@@ -36,7 +36,7 @@ That was the kind of detail that changed everything. A secret boyfriend was eith
 
 "No," Susan said. "Catherine was adamant about keeping it private. We knew only that he was older, successful, and apparently quite taken with her. She had a look about her—the look of someone who's being taken care of, if you know what I mean."
 
-I knew exactly what she meant. The look of someone who was being kept. "Describe the restaurant and the street when you left. I want to know the layout, the lighting, how crowded it was."
+I knew exactly what she meant. The look of someone who was being kept. But I would later learn that Catherine's secret boyfriend—"H" from her journal—was exactly the kind of person the city's machinery used and discarded. He was a facilitator like Harvey, someone with access to shipping networks and dock facilities. He had met Catherine and wanted out. Her kidnapping was the mechanism used to keep him from leaving, to keep him obedient to Sinclair. But there was another layer to this investigation: the detective debrief sessions that consolidated what we knew about the network's structure. "Describe the restaurant and the street when you left. I want to know the layout, the lighting, how crowded it was."
 
 Eleanor pulled out a small notebook—she'd come prepared. "We left at approximately 10:45 PM. The restaurant was quiet by then, most of the crowd had cleared out. When we went outside, there were a few couples walking, a couple of cabs, but it was relatively calm. The street lights were on. It wasn't particularly dark."
 

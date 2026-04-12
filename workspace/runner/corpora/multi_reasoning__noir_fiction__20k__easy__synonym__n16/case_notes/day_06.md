@@ -59,7 +59,7 @@ By two p.m., I'm meeting David Chen at a coffee shop far enough from downtown to
 
 "I've been waiting for someone to come forward about Victor Ashford for three years," Chen tells me. "I've got fragments. I've got suspicions. But I don't have the proof."
 
-"I've got documentation," I tell Chen, and I hand him the envelope that Mercer gave me. "This is money laundering connected to Sinclair's imports and Ashford's operation."
+"I've got documentation," I tell Chen, and I hand him the envelope that Mercer gave me. "This is money laundering connected to Sinclair's imports and Ashford's operation. Wire transfers routed through shell corporations in three countries, with dates that align precisely with Harvey's involvement in the art theft network—he was facilitating sales and moving proceeds through the import-export infrastructure."
 
 Chen goes through the documents carefully. His face doesn't change, but his hands are steady. This is a man who knows how to handle evidence.
 

@@ -21,7 +21,7 @@ Eddie calls back exactly fifty-eight minutes later.
 
 "What do you mean, exists on paper?"
 
-"I mean that the address is real, the company is real, the car is real. But the man? The man is fiction. I checked with the IRS. The company exists, files taxes, everything legitimate on the surface. But nobody I talked to has ever actually seen Charles J. Sinclair in person."
+"I mean that the address is real, the company is real, the car is real. But the man? The man is fiction. I checked with the IRS. The company exists, files taxes, everything legitimate on the surface. But nobody I talked to has ever actually seen Charles J. Sinclair in person." This ghost of a man had left something concrete behind—a business card—which Patricia found at the hospital when the injured kid was brought in. That card would become physical evidence of Sinclair's existence, even if Sinclair himself seemed to exist only in records.
 
 That's interesting. That's the kind of interesting that keeps you up at night.
 

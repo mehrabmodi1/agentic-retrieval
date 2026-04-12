@@ -19,7 +19,7 @@ The interview took place in the basement parking structure of an abandoned wareh
 
 "And Harvey was involved in this?"
 
-"Harvey was a facilitator. He worked in shipping—he had legitimate credentials and access to dock facilities. But he was also young and smart and probably more conscience-stricken than was good for him. He helped move pieces for maybe eighteen months. Then something happened."
+"Harvey was a facilitator. He worked in shipping—he had legitimate credentials and access to dock facilities. But he was also young and smart and probably more conscience-stricken than was good for him. He helped move pieces for maybe eighteen months. Then something happened." That was the question—what made Harvey try to leave the network? The bartender had seen a mysterious redheaded woman hand Harvey what looked like a critical message, something that drained the color from his face.
 
 "What kind of something?"
 
@@ -63,7 +63,7 @@ Halloway's hand was already writing the description down, but it matched the des
 
 "What about the painting? The one from the Vesper estate?"
 
-"That's the interesting part," Victor said, and for the first time there was something like satisfaction in his voice. "The painting was recovered. Three days ago, it was found leaning against the steps of the public library downtown. There was a note attached. It said, 'Property of the Vesper Estate. Return to family of Carl Vesper with apologies.' No signature. But the message was clear: someone wanted to return the painting but couldn't do it openly."
+"That's the interesting part," Victor said, and for the first time there was something like satisfaction in his voice. "The painting was recovered. Three days ago, it was found leaning against the steps of the public library downtown. It was wrapped in museum-quality archival cloth, secured with cord—the kind of care a professional conservator would use. There was a note attached. It said, 'Property of the Vesper Estate. Return to family of Carl Vesper with apologies.' No signature. But here's what's significant: the handwriting on the note—precise, educated, meticulous—matches samples of Harvey's writing that we recovered from his apartment. It wasn't just the painting being returned. It was Harvey making a statement through the act of return itself."
 
 "That has to be Harvey."
 
