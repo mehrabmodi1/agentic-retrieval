@@ -1,34 +1,32 @@
-# The Multi-Needle Problem
+# Agentic Retrieval Experiment Framework
 
-**Agentic retrieval and reasoning fails to scale.**
+A framework for measuring how well AI agents retrieve information and reason over large text corpora. Generates controlled experimental corpora with hidden "needles," runs agents against them, scores their responses, and produces analysis-ready data.
 
-A parametric experiment measuring how well an AI agent (Claude Sonnet 4.6, effort: low) retrieves information and reasons over large text corpora. Single-fact retrieval works well (~90% accuracy), but performance degrades sharply with task complexity — multi-chain retrieval drops to ~50%, and multi-reasoning to ~20%.
-
-See the full analysis: [`notebooks/full-sweep_sonnet-4-6_effort_low_20260409.ipynb`](notebooks/full-sweep_sonnet-4-6_effort_low_20260409.ipynb)
+Designed for use with [Claude Code](https://docs.anthropic.com/en/docs/claude-code) and the Claude Agent SDK, but the generated corpora and answer keys can be used to evaluate any agent.
 
 ## Experiment Types
 
-| Type | Description | Accuracy |
-|------|-------------|----------|
-| `single_needle` | Find one hidden fact in the corpus | ~90% |
-| `multi_chain` | Follow a chain of N cross-references to a final value | ~50% |
-| `multi_reasoning` | Locate N scattered clues and synthesise an answer | ~20% |
+| Type | Description |
+|------|-------------|
+| `single_needle` | Find one hidden fact in the corpus |
+| `multi_chain` | Follow a chain of N cross-references across files to reach a final value |
+| `multi_reasoning` | Locate N scattered clues and synthesise them to answer a question |
 
-Each type is parameterized across:
-- **Content profiles**: Python repository, noir detective fiction
-- **Corpus sizes**: 20k, 40k, 160k, 800k tokens
+Each type can be parameterized across:
+- **Content profiles**: e.g. Python repository, noir detective fiction
+- **Corpus sizes**: e.g. 20k, 40k, 160k, 800k tokens
 - **Reference clarity**: exact keyword, synonym, contextual paraphrase
-- **Needle counts**: 2, 8, 16 items (multi-chain and multi-reasoning)
+- **Needle counts**: e.g. 2, 8, 16 items (multi-chain and multi-reasoning)
 - **Discriminability**: easy, hard
 
-This produces a full factorial grid of 336 experimental conditions, each run 3 times.
+Define your own parameter grids in `experiments/*.yaml`.
 
-## How It Works
+## Pipeline
 
-1. **Generate** — builds realistic background corpora and inserts needle payloads at controlled difficulty levels
-2. **Run** — executes the agent (via Claude Agent SDK) against each corpus with a retrieval question
+1. **Generate** — builds realistic background corpora from content profile templates and inserts needle payloads at controlled difficulty levels
+2. **Run** — executes the agent against each corpus with a retrieval question
 3. **Judge** — scores agent responses against answer keys using rubric-based LLM evaluation (correctness + completeness)
-4. **Analyse** — loads verdicts into a notebook for visualisation and interpretation
+4. **Analyse** — loads verdicts into notebooks for visualisation and interpretation
 
 ## Getting Started
 
@@ -56,6 +54,12 @@ poetry run pytest -v
 
 ```bash
 poetry run python scripts/generate_parallel.py --workers 3
+```
+
+Filter to a specific experiment type:
+
+```bash
+poetry run python scripts/generate_parallel.py --workers 3 --experiments single_needle
 ```
 
 ### Project Layout
