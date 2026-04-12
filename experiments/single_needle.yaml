@@ -73,3 +73,4 @@ runner:
   agent_model: "claude-sonnet-4-6"
   max_tokens: 100000
   allowed_tools: ["Read", "Glob", "Grep", "Bash"]
+  effort_mode: "low"

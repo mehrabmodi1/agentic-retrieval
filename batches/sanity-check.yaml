@@ -1,0 +1,54 @@
+batch_name: "sanity-check"
+max_parallel: 3
+retry_failed: true
+judge_model: "claude-sonnet-4-6"
+
+experiments:
+  # 10 single_needle: 2 profiles × 5 corpus sizes/difficulty combos
+  - experiment_type: "single_needle"
+    filter:
+      content_profile: [python_repo]
+      corpus_token_count: [20000, 160000, 800000]
+      discriminability: [easy, hard]
+      reference_clarity: [exact]
+
+  - experiment_type: "single_needle"
+    filter:
+      content_profile: [noir_fiction]
+      corpus_token_count: [20000, 160000, 800000]
+      discriminability: [easy]
+      reference_clarity: [exact, contextual]
+
+  # 10 multi_chain: spread across sizes, difficulties, n_items
+  - experiment_type: "multi_chain"
+    filter:
+      content_profile: [python_repo]
+      corpus_token_count: [20000, 160000]
+      discriminability: [easy, hard]
+      reference_clarity: [exact]
+      n_items: [2]
+
+  - experiment_type: "multi_chain"
+    filter:
+      content_profile: [noir_fiction]
+      corpus_token_count: [40000, 800000]
+      discriminability: [easy]
+      reference_clarity: [exact]
+      n_items: [2, 8]
+
+  # 10 multi_reasoning: spread across sizes, difficulties, n_items
+  - experiment_type: "multi_reasoning"
+    filter:
+      content_profile: [python_repo]
+      corpus_token_count: [20000, 160000]
+      discriminability: [easy, hard]
+      reference_clarity: [exact]
+      n_items: [2]
+
+  - experiment_type: "multi_reasoning"
+    filter:
+      content_profile: [noir_fiction]
+      corpus_token_count: [40000, 800000]
+      discriminability: [easy]
+      reference_clarity: [exact]
+      n_items: [2, 8]
