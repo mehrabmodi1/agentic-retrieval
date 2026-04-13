@@ -7,20 +7,20 @@ n_repeats: 3
 max_turns: 75
 allowed_tools: ["Read", "Glob", "Grep", "Bash"]
 
-# Grid: both profiles x {40k, 800k} x hard x synonym, + n_items {2, 16} for multi_*.
-# Same 20 parametrisations / 60 runs as the opus-4-6 batch — only the
+# Grid: python_repo only x {40k, 800k} x hard x synonym, + n_items {2, 16} for multi_*.
+# Same 10 parametrisations / 30 runs as the opus-4-6 batch — only the
 # agent_model and effort_mode differ.
 experiments:
   - experiment_type: "single_needle"
     filter:
-      content_profile: [python_repo, noir_fiction]
+      content_profile: [python_repo]
       corpus_token_count: [40000, 800000]
       discriminability: [hard]
       reference_clarity: [synonym]
 
   - experiment_type: "multi_chain"
     filter:
-      content_profile: [python_repo, noir_fiction]
+      content_profile: [python_repo]
       corpus_token_count: [40000, 800000]
       discriminability: [hard]
       reference_clarity: [synonym]
@@ -28,7 +28,7 @@ experiments:
 
   - experiment_type: "multi_reasoning"
     filter:
-      content_profile: [python_repo, noir_fiction]
+      content_profile: [python_repo]
       corpus_token_count: [40000, 800000]
       discriminability: [hard]
       reference_clarity: [synonym]
