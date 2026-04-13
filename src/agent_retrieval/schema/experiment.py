@@ -55,14 +55,6 @@ class RubricCriterion(BaseModel):
     weight: float
 
 
-class RunnerSpec(BaseModel):
-    n_repeats: int
-    agent_model: str
-    max_tokens: int
-    allowed_tools: list[str]
-    effort_mode: str = ""
-
-
 class ExperimentSpec(BaseModel):
     schema_version: str
     experiment_id: str
@@ -71,7 +63,6 @@ class ExperimentSpec(BaseModel):
     payload: PayloadSpec
     question: str
     rubric_criteria: list[RubricCriterion]
-    runner: RunnerSpec
 
     @model_validator(mode="after")
     def validate_depends_on_references(self) -> ExperimentSpec:

@@ -351,3 +351,18 @@ class TestVerdictAuditFields:
                                 "tool_calls": {}, "duration_seconds": 0.0},
         })
         assert v.judge_model == ""
+
+
+class TestRunnerSpecRemoved:
+    def test_runner_spec_not_importable(self):
+        import agent_retrieval.schema.experiment as exp_mod
+        assert not hasattr(exp_mod, "RunnerSpec"), (
+            "RunnerSpec should be removed; runtime knobs now live on BatchConfig"
+        )
+
+    def test_experiment_spec_has_no_runner_field(self):
+        assert "runner" not in ExperimentSpec.model_fields
+
+    def test_experiment_template_has_no_runner_field(self):
+        from agent_retrieval.schema.template import ExperimentTemplate
+        assert "runner" not in ExperimentTemplate.model_fields

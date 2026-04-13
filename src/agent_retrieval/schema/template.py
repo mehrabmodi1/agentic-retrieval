@@ -6,7 +6,7 @@ from typing import Any, Literal
 import yaml
 from pydantic import BaseModel, model_validator
 
-from agent_retrieval.schema.experiment import RubricCriterion, RunnerSpec
+from agent_retrieval.schema.experiment import RubricCriterion
 
 
 class QuestionExample(BaseModel):
@@ -36,7 +36,6 @@ class ExperimentTemplate(BaseModel):
     question_examples: dict[str, dict[str, QuestionExample]]
     rubric_criteria: list[RubricCriterion]
     grid: GridSpec
-    runner: RunnerSpec
 
     @model_validator(mode="after")
     def validate_grid_n_items(self) -> ExperimentTemplate:
