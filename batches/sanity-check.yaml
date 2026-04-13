@@ -1,7 +1,11 @@
 batch_name: "sanity-check"
 max_parallel: 3
 retry_failed: true
-judge_model: "claude-sonnet-4-6"
+agent_model: "claude-sonnet-4-6"
+effort_mode: "low"
+n_repeats: 3
+max_turns: 50
+allowed_tools: ["Read", "Glob", "Grep", "Bash"]
 
 experiments:
   # 10 single_needle: 2 profiles × 5 corpus sizes/difficulty combos

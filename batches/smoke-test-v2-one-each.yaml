@@ -1,7 +1,11 @@
 batch_name: "smoke-test-v2-one-each"
 max_parallel: 1
 retry_failed: true
-judge_model: "claude-sonnet-4-6"
+agent_model: "claude-sonnet-4-6"
+effort_mode: "low"
+n_repeats: 3
+max_turns: 50
+allowed_tools: ["Read", "Glob", "Grep", "Bash"]
 
 experiments:
   - experiment_type: "single_needle"
