@@ -22,6 +22,15 @@ class PayloadItem(BaseModel):
     depends_on: str | None = None
 
 
+# Generator-side model defaults. Single source of truth shared by
+# pool generation (pool.py), payload insertion (insertion.py), and
+# per-experiment CorpusSpec records. These values are the ones used
+# to produce the currently-checked-in corpora; change with care.
+POOL_GENERATION_MODEL = "claude-haiku-4-5-20251001"
+PAYLOAD_INSERTION_MODEL_SINGLE = "claude-sonnet-4-6"
+PAYLOAD_INSERTION_MODEL_MULTI = "claude-haiku-4-5-20251001"
+
+
 class CorpusSpec(BaseModel):
     content_profile: str
     target_token_count: int
@@ -30,6 +39,9 @@ class CorpusSpec(BaseModel):
     folder_distribution: Literal["balanced", "skewed", "flat"]
     generation_model: str
     red_herring_density: Literal["none", "low", "medium", "high"]
+    pool_generation_model: str = POOL_GENERATION_MODEL
+    payload_insertion_model_single: str = PAYLOAD_INSERTION_MODEL_SINGLE
+    payload_insertion_model_multi: str = PAYLOAD_INSERTION_MODEL_MULTI
 
 
 class PayloadSpec(BaseModel):

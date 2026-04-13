@@ -239,3 +239,34 @@ class TestAnswerKeyV2:
                 },
                 "rubric_criteria": [{"criterion": "correctness", "weight": 1.0}],
             })
+
+
+from agent_retrieval.schema.experiment import (
+    CorpusSpec,
+    POOL_GENERATION_MODEL,
+    PAYLOAD_INSERTION_MODEL_SINGLE,
+    PAYLOAD_INSERTION_MODEL_MULTI,
+)
+
+
+class TestGeneratorModelConstants:
+    def test_constants_have_expected_values(self):
+        # These are the values currently hardcoded in pool.py and insertion.py.
+        # Preserved verbatim so already-generated corpora remain reproducible.
+        assert POOL_GENERATION_MODEL == "claude-haiku-4-5-20251001"
+        assert PAYLOAD_INSERTION_MODEL_SINGLE == "claude-sonnet-4-6"
+        assert PAYLOAD_INSERTION_MODEL_MULTI == "claude-haiku-4-5-20251001"
+
+    def test_corpus_spec_defaults_match_constants(self):
+        spec = CorpusSpec(
+            content_profile="python_repo",
+            target_token_count=20000,
+            target_file_count=50,
+            folder_depth=2,
+            folder_distribution="balanced",
+            generation_model="claude-haiku-4-5-20251001",
+            red_herring_density="none",
+        )
+        assert spec.pool_generation_model == POOL_GENERATION_MODEL
+        assert spec.payload_insertion_model_single == PAYLOAD_INSERTION_MODEL_SINGLE
+        assert spec.payload_insertion_model_multi == PAYLOAD_INSERTION_MODEL_MULTI
