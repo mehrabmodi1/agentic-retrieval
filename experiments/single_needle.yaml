@@ -1,4 +1,3 @@
-schema_version: "2.0"
 experiment_type: "single_needle"
 
 payload:
@@ -68,9 +67,3 @@ grid:
   discriminability: [easy, hard]
   reference_clarity: [exact, synonym, contextual]
 
-runner:
-  n_repeats: 3
-  agent_model: "claude-sonnet-4-6"
-  max_tokens: 100000
-  allowed_tools: ["Read", "Glob", "Grep", "Bash"]
-  effort_mode: "low"
