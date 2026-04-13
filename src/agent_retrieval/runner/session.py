@@ -43,7 +43,7 @@ async def run_agent_session(
     corpus_dir: Path,
     model: str,
     allowed_tools: list[str],
-    max_tokens: int,
+    max_turns: int,
     run_id: str,
     run_dir: Path,
     effort_mode: str = "",
@@ -59,7 +59,7 @@ async def run_agent_session(
         cwd=str(corpus_dir.resolve()),
         allowed_tools=allowed_tools,
         permission_mode="acceptEdits",
-        max_turns=50,
+        max_turns=max_turns,
         effort=effort_mode or None,
     )
     response_parts: list[str] = []
@@ -79,7 +79,6 @@ async def run_agent_session(
             total_cost = message.total_cost_usd
             usage = message.usage or {}
 
-    # Copy session JSONL from SDK storage to our run directory
     if session_id:
         jsonl_src = _find_session_jsonl(session_id, str(corpus_dir))
         if jsonl_src:

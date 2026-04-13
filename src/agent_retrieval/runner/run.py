@@ -33,6 +33,10 @@ async def run_batch(
     claude_version = get_claude_version()
     print(f"Claude Code version: {claude_version}")
     print(f"Batch run: {batch_run_name}")
+    print(
+        f"Agent: {batch.agent_model}, effort: {batch.effort_mode}, "
+        f"max_turns: {batch.max_turns}, n_repeats: {batch.n_repeats}"
+    )
 
     recovered = state_mgr.recover_interrupted(batch_run_name)
     if recovered:
@@ -57,25 +61,25 @@ async def run_batch(
                 state_mgr.update_status(run_dir, "pending")
 
     # Create pending runs — count ALL existing runs to avoid duplicates
-    for pid, template in pid_to_template.items():
-        n_repeats = template.runner.n_repeats
+    for pid in pid_to_template:
         existing = state_mgr.get_runs_by_status(batch_run_name, pid, "pending")
         existing += state_mgr.get_runs_by_status(batch_run_name, pid, "completed")
         existing += state_mgr.get_runs_by_status(batch_run_name, pid, "running")
-        n_needed = n_repeats - len(existing)
+        n_needed = batch.n_repeats - len(existing)
         if n_needed > 0:
             state_mgr.create_pending_runs(
                 batch_run_name, pid, n_needed, claude_version,
-                agent_model=template.runner.agent_model,
-                effort_mode=template.runner.effort_mode,
+                agent_model=batch.agent_model,
+                effort_mode=batch.effort_mode,
+                max_turns=batch.max_turns,
+                allowed_tools=batch.allowed_tools,
             )
 
     # Collect pending runs (capped at n_repeats - completed per pid)
     all_pending: list[tuple[str, str, Path]] = []
     for pid in pid_to_template:
-        n_repeats = pid_to_template[pid].runner.n_repeats
         n_completed = len(state_mgr.get_runs_by_status(batch_run_name, pid, "completed"))
-        n_to_run = max(0, n_repeats - n_completed)
+        n_to_run = max(0, batch.n_repeats - n_completed)
         if n_to_run == 0:
             continue
         pending = state_mgr.get_runs_by_status(batch_run_name, pid, "pending")
@@ -95,7 +99,6 @@ async def run_batch(
     async def run_one(pid: str, run_id: str, run_dir: Path) -> None:
         nonlocal completed
         async with semaphore:
-            template = pid_to_template[pid]
             corpus_dir = corpora_dir / pid
             ak_path = answer_keys_dir / f"{pid}.yaml"
 
@@ -109,18 +112,13 @@ async def run_batch(
                 print(f"[{completed}/{total}] FAILED {pid} run {run_id}: bad answer key")
                 return
 
-            agent_model = template.runner.agent_model
-            effort_mode = template.runner.effort_mode
-            allowed_tools = template.runner.allowed_tools
-            max_tokens = template.runner.max_tokens
-
             state_mgr.update_status(run_dir, "running", started_at=datetime.now(timezone.utc).isoformat())
 
             try:
                 result = await run_agent_session(
-                    question=question, corpus_dir=corpus_dir, model=agent_model,
-                    allowed_tools=allowed_tools, max_tokens=max_tokens,
-                    run_id=run_id, run_dir=run_dir, effort_mode=effort_mode,
+                    question=question, corpus_dir=corpus_dir, model=batch.agent_model,
+                    allowed_tools=batch.allowed_tools, max_turns=batch.max_turns,
+                    run_id=run_id, run_dir=run_dir, effort_mode=batch.effort_mode,
                 )
                 response_path = run_dir / "response.json"
                 response_path.write_text(json.dumps({

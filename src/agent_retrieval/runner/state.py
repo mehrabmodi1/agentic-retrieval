@@ -10,7 +10,8 @@ class RunStateManager:
 
     def create_pending_runs(
         self, batch_name: str, parametrisation_id: str, n_runs: int,
-        claude_version: str, agent_model: str = "", effort_mode: str = "",
+        claude_version: str, agent_model: str, effort_mode: str,
+        max_turns: int, allowed_tools: list[str],
     ) -> list[str]:
         run_ids = []
         for _ in range(n_runs):
@@ -19,6 +20,7 @@ class RunStateManager:
                 parametrisation_id=parametrisation_id, run_id=run_id,
                 batch_name=batch_name, status="pending", claude_code_version=claude_version,
                 agent_model=agent_model, effort_mode=effort_mode,
+                max_turns=max_turns, allowed_tools=allowed_tools,
             )
             run_dir = self.runs_dir / batch_name / parametrisation_id / run_id
             state.to_yaml(run_dir / "state.yaml")
