@@ -5,6 +5,7 @@ from pathlib import Path
 from claude_agent_sdk import ClaudeAgentOptions, ResultMessage, query
 
 from agent_retrieval.generator.profiles.registry import get_profile
+from agent_retrieval.schema.experiment import POOL_GENERATION_MODEL
 
 
 def estimate_token_count(directory: Path) -> int:
@@ -46,7 +47,7 @@ async def generate_pool(
         )
 
         options = ClaudeAgentOptions(
-            model="claude-haiku-4-5-20251001",
+            model=POOL_GENERATION_MODEL,
             system_prompt=brief,
             cwd=str(pool_dir),
             allowed_tools=["Write"],

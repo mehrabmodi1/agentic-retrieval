@@ -14,6 +14,10 @@ from claude_agent_sdk import (
     query,
 )
 
+from agent_retrieval.schema.experiment import (
+    PAYLOAD_INSERTION_MODEL_SINGLE,
+    PAYLOAD_INSERTION_MODEL_MULTI,
+)
 from agent_retrieval.schema.template import ExperimentTemplate, Parametrisation
 
 
@@ -254,7 +258,7 @@ async def insert_payloads(
     )
 
     is_multi = parametrisation.experiment_type in ("multi_chain", "multi_reasoning")
-    model = "claude-haiku-4-5-20251001" if is_multi else "claude-sonnet-4-6"
+    model = PAYLOAD_INSERTION_MODEL_MULTI if is_multi else PAYLOAD_INSERTION_MODEL_SINGLE
 
     options = ClaudeAgentOptions(
         model=model,

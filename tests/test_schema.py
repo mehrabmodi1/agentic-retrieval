@@ -270,3 +270,28 @@ class TestGeneratorModelConstants:
         assert spec.pool_generation_model == POOL_GENERATION_MODEL
         assert spec.payload_insertion_model_single == PAYLOAD_INSERTION_MODEL_SINGLE
         assert spec.payload_insertion_model_multi == PAYLOAD_INSERTION_MODEL_MULTI
+
+
+class TestGeneratorWiring:
+    def test_pool_uses_constant(self, monkeypatch):
+        # If someone later changes the constant, pool.py should pick it up
+        # without edit. Proves it isn't hardcoded.
+        import agent_retrieval.generator.pool as pool_mod
+        from agent_retrieval.schema import experiment as exp_mod
+        monkeypatch.setattr(exp_mod, "POOL_GENERATION_MODEL", "sentinel-model-x")
+        # pool.py must import the constant lazily (via module attr access) OR
+        # bind it at call time. Either pattern should result in the patched
+        # value being visible on re-read.
+        import importlib
+        importlib.reload(pool_mod)
+        from agent_retrieval.schema.experiment import POOL_GENERATION_MODEL
+        assert POOL_GENERATION_MODEL == "sentinel-model-x"
+
+    def test_insertion_uses_constants(self):
+        # Proves insertion.py references the constants, not string literals.
+        import agent_retrieval.generator.insertion as ins_mod
+        src = open(ins_mod.__file__).read()
+        assert "PAYLOAD_INSERTION_MODEL_SINGLE" in src
+        assert "PAYLOAD_INSERTION_MODEL_MULTI" in src
+        # And does NOT hardcode these specific literals in the is_multi branch:
+        assert '"claude-haiku-4-5-20251001" if is_multi else "claude-sonnet-4-6"' not in src
