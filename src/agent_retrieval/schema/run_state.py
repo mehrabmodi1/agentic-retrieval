@@ -15,6 +15,8 @@ class RunState(BaseModel):
     claude_code_version: str
     agent_model: str = ""
     effort_mode: str = ""
+    max_turns: int = 0
+    allowed_tools: list[str] = []
     started_at: str | None = None
     completed_at: str | None = None
     error_message: str | None = None

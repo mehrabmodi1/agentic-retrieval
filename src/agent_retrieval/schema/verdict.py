@@ -25,6 +25,7 @@ class Verdict(BaseModel):
     parametrisation_id: str
     run_id: str
     batch_name: str
+    judge_model: str = ""
     scores: list[ScoreEntry]
     weighted_score: float
     session_metrics: SessionMetrics

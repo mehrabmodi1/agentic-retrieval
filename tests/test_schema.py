@@ -295,3 +295,59 @@ class TestGeneratorWiring:
         assert "PAYLOAD_INSERTION_MODEL_MULTI" in src
         # And does NOT hardcode these specific literals in the is_multi branch:
         assert '"claude-haiku-4-5-20251001" if is_multi else "claude-sonnet-4-6"' not in src
+
+
+class TestRunStateAuditFields:
+    def test_max_turns_recorded(self):
+        state = RunState(
+            parametrisation_id="test-001",
+            run_id="abc",
+            batch_name="b",
+            status="pending",
+            claude_code_version="1.0.0",
+            max_turns=75,
+            allowed_tools=["Read", "Grep"],
+        )
+        assert state.max_turns == 75
+        assert state.allowed_tools == ["Read", "Grep"]
+
+    def test_defaults_preserve_legacy_run_state(self):
+        # Reading an old state.yaml that predates these fields must still parse.
+        state = RunState.model_validate({
+            "parametrisation_id": "test-001",
+            "run_id": "abc",
+            "batch_name": "b",
+            "status": "completed",
+            "claude_code_version": "1.0.0",
+        })
+        assert state.max_turns == 0
+        assert state.allowed_tools == []
+
+
+class TestVerdictAuditFields:
+    def test_judge_model_recorded(self):
+        v = Verdict.model_validate({
+            "parametrisation_id": "test-001",
+            "run_id": "abc",
+            "batch_name": "b",
+            "judge_model": "claude-sonnet-4-6",
+            "scores": [{"criterion": "correctness", "score": 1.0,
+                        "weight": 1.0, "reasoning": "ok"}],
+            "weighted_score": 1.0,
+            "session_metrics": {"total_context_tokens": 1, "total_turns": 1,
+                                "tool_calls": {}, "duration_seconds": 0.0},
+        })
+        assert v.judge_model == "claude-sonnet-4-6"
+
+    def test_legacy_verdict_without_judge_model_parses(self):
+        v = Verdict.model_validate({
+            "parametrisation_id": "test-001",
+            "run_id": "abc",
+            "batch_name": "b",
+            "scores": [{"criterion": "correctness", "score": 1.0,
+                        "weight": 1.0, "reasoning": "ok"}],
+            "weighted_score": 1.0,
+            "session_metrics": {"total_context_tokens": 1, "total_turns": 1,
+                                "tool_calls": {}, "duration_seconds": 0.0},
+        })
+        assert v.judge_model == ""
