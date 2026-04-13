@@ -394,3 +394,16 @@ class TestRunnerSpecRemoved:
     def test_experiment_template_has_no_runner_field(self):
         from agent_retrieval.schema.template import ExperimentTemplate
         assert "runner" not in ExperimentTemplate.model_fields
+
+
+class TestSchemaVersionTolerance:
+    def test_experiment_spec_parses_with_schema_version(self, sample_spec_dict):
+        # Legacy v1 spec files contain schema_version; must still parse.
+        sample_spec_dict["schema_version"] = "1.0"
+        spec = ExperimentSpec.model_validate(sample_spec_dict)
+        assert spec.experiment_id == "test-001"
+
+    def test_experiment_spec_parses_without_schema_version(self, sample_spec_dict):
+        sample_spec_dict.pop("schema_version", None)
+        spec = ExperimentSpec.model_validate(sample_spec_dict)
+        assert spec.experiment_id == "test-001"

@@ -4,7 +4,7 @@ from pathlib import Path
 from typing import Literal
 
 import yaml
-from pydantic import BaseModel, model_validator
+from pydantic import BaseModel, ConfigDict, model_validator
 
 
 class PlacementConfig(BaseModel):
@@ -56,7 +56,8 @@ class RubricCriterion(BaseModel):
 
 
 class ExperimentSpec(BaseModel):
-    schema_version: str
+    model_config = ConfigDict(extra="ignore")
+
     experiment_id: str
     experiment_type: str
     corpus: CorpusSpec

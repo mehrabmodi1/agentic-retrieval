@@ -4,7 +4,7 @@ from pathlib import Path
 from typing import Any, Literal
 
 import yaml
-from pydantic import BaseModel, model_validator
+from pydantic import BaseModel, ConfigDict, model_validator
 
 from agent_retrieval.schema.experiment import RubricCriterion
 
@@ -30,7 +30,8 @@ class PayloadTemplateSpec(BaseModel):
 
 
 class ExperimentTemplate(BaseModel):
-    schema_version: str
+    model_config = ConfigDict(extra="ignore")
+
     experiment_type: Literal["single_needle", "multi_chain", "multi_reasoning"]
     payload: PayloadTemplateSpec
     question_examples: dict[str, dict[str, QuestionExample]]

@@ -69,7 +69,6 @@ class TestExperimentTemplate:
     def test_valid_single_needle(self, single_needle_dict):
         tmpl = ExperimentTemplate.model_validate(single_needle_dict)
         assert tmpl.experiment_type == "single_needle"
-        assert tmpl.schema_version == "2.0"
         assert len(tmpl.grid.content_profile) == 2
         assert tmpl.grid.n_items is None
 
@@ -151,3 +150,31 @@ class TestParametrisation:
             reference_clarity="contextual",
         )
         assert p.parametrisation_id == "single_needle__python_repo__800k__hard__contextual"
+
+
+class TestTemplateSchemaVersionTolerance:
+    def _base(self):
+        return {
+            "experiment_type": "single_needle",
+            "payload": {"item_type": "config_value"},
+            "question_examples": {"python_repo": {"easy_exact": {
+                "question": "q", "needle": "n", "answer": "a",
+            }}},
+            "rubric_criteria": [{"criterion": "correctness", "weight": 1.0}],
+            "grid": {
+                "content_profile": ["python_repo"],
+                "corpus_token_count": [20000],
+                "discriminability": ["easy"],
+                "reference_clarity": ["exact"],
+            },
+        }
+
+    def test_template_parses_without_schema_version(self):
+        tpl = ExperimentTemplate.model_validate(self._base())
+        assert tpl.experiment_type == "single_needle"
+
+    def test_template_parses_with_legacy_schema_version(self):
+        data = self._base()
+        data["schema_version"] = "2.0"
+        tpl = ExperimentTemplate.model_validate(data)
+        assert tpl.experiment_type == "single_needle"
