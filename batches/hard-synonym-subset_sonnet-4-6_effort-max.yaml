@@ -1,0 +1,35 @@
+batch_name: "hard-synonym-subset_sonnet-4-6_effort-max"
+max_parallel: 3
+retry_failed: true
+agent_model: "claude-sonnet-4-6"
+effort_mode: "max"
+n_repeats: 3
+max_turns: 75
+allowed_tools: ["Read", "Glob", "Grep", "Bash"]
+
+# Grid: both profiles x {40k, 800k} x hard x synonym, + n_items {2, 16} for multi_*.
+# Same 20 parametrisations / 60 runs as the opus-4-6 batch — only the
+# agent_model and effort_mode differ.
+experiments:
+  - experiment_type: "single_needle"
+    filter:
+      content_profile: [python_repo, noir_fiction]
+      corpus_token_count: [40000, 800000]
+      discriminability: [hard]
+      reference_clarity: [synonym]
+
+  - experiment_type: "multi_chain"
+    filter:
+      content_profile: [python_repo, noir_fiction]
+      corpus_token_count: [40000, 800000]
+      discriminability: [hard]
+      reference_clarity: [synonym]
+      n_items: [2, 16]
+
+  - experiment_type: "multi_reasoning"
+    filter:
+      content_profile: [python_repo, noir_fiction]
+      corpus_token_count: [40000, 800000]
+      discriminability: [hard]
+      reference_clarity: [synonym]
+      n_items: [2, 16]
