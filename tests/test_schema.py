@@ -81,19 +81,6 @@ class TestAnswerKey:
         assert ak.items[0].inserted_text == "TIMEOUT = 42"
 
 
-class TestBatchConfig:
-    def test_valid_batch(self):
-        batch = BatchConfig.model_validate({
-            "batch_name": "test-batch",
-            "max_parallel": 2,
-            "retry_failed": True,
-            "judge_model": "opus",
-            "experiments": ["single_needle"],
-        })
-        assert batch.batch_name == "test-batch"
-        assert batch.experiments[0].experiment_type == "single_needle"
-
-
 class TestRunState:
     def test_valid_run_state(self):
         state = RunState.model_validate({
@@ -147,48 +134,89 @@ from agent_retrieval.schema.batch import BatchConfig, BatchExperimentEntry
 
 
 class TestBatchConfig:
-    def test_simple_experiment_list(self):
-        batch = BatchConfig.model_validate({
+    def _base(self, **overrides):
+        base = {
             "batch_name": "test-batch",
-            "max_parallel": 4,
+            "max_parallel": 2,
             "retry_failed": True,
-            "judge_model": "claude-sonnet-4-6",
-            "experiments": ["single_needle", "multi_chain"],
-        })
-        assert len(batch.experiments) == 2
+            "agent_model": "claude-sonnet-4-6",
+            "effort_mode": "low",
+            "n_repeats": 3,
+            "max_turns": 50,
+            "allowed_tools": ["Read", "Glob", "Grep", "Bash"],
+            "experiments": ["single_needle"],
+        }
+        base.update(overrides)
+        return base
+
+    def test_valid_batch(self):
+        batch = BatchConfig.model_validate(self._base())
+        assert batch.batch_name == "test-batch"
+        assert batch.agent_model == "claude-sonnet-4-6"
+        assert batch.effort_mode == "low"
+        assert batch.n_repeats == 3
+        assert batch.max_turns == 50
+        assert batch.allowed_tools == ["Read", "Glob", "Grep", "Bash"]
         assert batch.experiments[0].experiment_type == "single_needle"
-        assert batch.experiments[0].filter is None
+
+    def test_missing_agent_model_raises(self):
+        data = self._base()
+        del data["agent_model"]
+        with pytest.raises(Exception):
+            BatchConfig.model_validate(data)
+
+    def test_missing_effort_mode_raises(self):
+        data = self._base()
+        del data["effort_mode"]
+        with pytest.raises(Exception):
+            BatchConfig.model_validate(data)
+
+    def test_missing_n_repeats_raises(self):
+        data = self._base()
+        del data["n_repeats"]
+        with pytest.raises(Exception):
+            BatchConfig.model_validate(data)
+
+    def test_missing_max_turns_raises(self):
+        data = self._base()
+        del data["max_turns"]
+        with pytest.raises(Exception):
+            BatchConfig.model_validate(data)
+
+    def test_missing_allowed_tools_raises(self):
+        data = self._base()
+        del data["allowed_tools"]
+        with pytest.raises(Exception):
+            BatchConfig.model_validate(data)
+
+    def test_effort_mode_rejects_invalid_value(self):
+        data = self._base(effort_mode="extreme")
+        with pytest.raises(Exception):
+            BatchConfig.model_validate(data)
+
+    def test_effort_mode_accepts_max(self):
+        batch = BatchConfig.model_validate(self._base(effort_mode="max"))
+        assert batch.effort_mode == "max"
+
+    def test_judge_model_field_rejected(self):
+        # judge_model has no home on BatchConfig anymore.
+        data = self._base(judge_model="claude-opus-4-6")
+        with pytest.raises(Exception):
+            BatchConfig.model_validate(data)
 
     def test_filtered_experiment(self):
-        batch = BatchConfig.model_validate({
-            "batch_name": "test-batch",
-            "max_parallel": 2,
-            "retry_failed": True,
-            "judge_model": "claude-sonnet-4-6",
-            "experiments": [
-                {
-                    "experiment_type": "single_needle",
-                    "filter": {
-                        "content_profile": ["python_repo"],
-                        "corpus_token_count": [20000],
-                    },
-                },
-            ],
-        })
-        assert batch.experiments[0].experiment_type == "single_needle"
+        batch = BatchConfig.model_validate(self._base(experiments=[{
+            "experiment_type": "single_needle",
+            "filter": {"content_profile": ["python_repo"],
+                       "corpus_token_count": [20000]},
+        }]))
         assert batch.experiments[0].filter["content_profile"] == ["python_repo"]
 
-    def test_mixed_format(self):
-        batch = BatchConfig.model_validate({
-            "batch_name": "test-batch",
-            "max_parallel": 2,
-            "retry_failed": True,
-            "judge_model": "claude-sonnet-4-6",
-            "experiments": [
-                "single_needle",
-                {"experiment_type": "multi_chain", "filter": {"n_items": [2]}},
-            ],
-        })
+    def test_mixed_experiment_format(self):
+        batch = BatchConfig.model_validate(self._base(experiments=[
+            "single_needle",
+            {"experiment_type": "multi_chain", "filter": {"n_items": [2]}},
+        ]))
         assert len(batch.experiments) == 2
         assert batch.experiments[0].filter is None
         assert batch.experiments[1].filter is not None

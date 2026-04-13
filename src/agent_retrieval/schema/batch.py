@@ -1,10 +1,10 @@
 from __future__ import annotations
 
 from pathlib import Path
-from typing import Any
+from typing import Any, Literal
 
 import yaml
-from pydantic import BaseModel, model_validator
+from pydantic import BaseModel, ConfigDict, model_validator
 
 
 class BatchExperimentEntry(BaseModel):
@@ -13,16 +13,22 @@ class BatchExperimentEntry(BaseModel):
 
 
 class BatchConfig(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+
     batch_name: str
     max_parallel: int
     retry_failed: bool
-    judge_model: str
+    agent_model: str
+    effort_mode: Literal["low", "medium", "high", "max"]
+    n_repeats: int
+    max_turns: int
+    allowed_tools: list[str]
     experiments: list[BatchExperimentEntry]
 
     @model_validator(mode="before")
     @classmethod
     def normalize_experiments(cls, data: dict) -> dict:
-        if "experiments" in data:
+        if isinstance(data, dict) and "experiments" in data:
             normalized = []
             for entry in data["experiments"]:
                 if isinstance(entry, str):
