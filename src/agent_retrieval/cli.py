@@ -27,7 +27,6 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
 
     judge = sub.add_parser("judge", help="Judge completed runs")
     judge.add_argument("batch_run_name", help="Batch run folder name (e.g. smoke-test__20260408T133300)")
-    judge.add_argument("--judge-model", default="claude-sonnet-4-6", help="Model for judging")
     judge.add_argument("--workspace", default="workspace", help="Workspace directory")
     judge.add_argument("--rejudge", action="store_true", help="Re-judge existing verdicts")
 
@@ -69,7 +68,7 @@ async def _run(args: argparse.Namespace) -> None:
 async def _judge(args: argparse.Namespace) -> None:
     from agent_retrieval.judge import judge_batch
     await judge_batch(
-        args.batch_run_name, args.judge_model,
+        args.batch_run_name,
         Path(args.workspace).resolve(), rejudge=args.rejudge,
     )
 

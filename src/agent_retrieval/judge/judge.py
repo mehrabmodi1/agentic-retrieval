@@ -5,27 +5,27 @@ from itertools import zip_longest
 from pathlib import Path
 
 from agent_retrieval.judge.metrics import extract_session_metrics
-from agent_retrieval.judge.scoring import score_response
+from agent_retrieval.judge.scoring import JUDGE_MODEL, score_response
 from agent_retrieval.schema.answer_key import AnswerKey
 from agent_retrieval.schema.verdict import Verdict
 
 
 async def judge_run(
-    run_dir: Path, answer_key: AnswerKey, judge_model: str,
+    run_dir: Path, answer_key: AnswerKey,
     batch_run_name: str, verdict_path: Path,
 ) -> Verdict:
     response_path = run_dir / "response.json"
     session_path = run_dir / "session.jsonl"
     response_data = json.loads(response_path.read_text())
     agent_response = response_data["response_text"]
-    scores = await score_response(agent_response, answer_key, judge_model)
+    scores = await score_response(agent_response, answer_key)
     total_weight = sum(s.weight for s in scores)
     weighted_score = sum(s.score * s.weight for s in scores) / total_weight if total_weight > 0 else 0.0
     metrics = extract_session_metrics(session_path, response_path)
     run_id = run_dir.name
     verdict = Verdict(
         parametrisation_id=answer_key.parametrisation_id, run_id=run_id,
-        batch_name=batch_run_name, scores=scores,
+        batch_name=batch_run_name, judge_model=JUDGE_MODEL, scores=scores,
         weighted_score=round(weighted_score, 4), session_metrics=metrics,
     )
     verdict.to_yaml(verdict_path)
@@ -34,7 +34,6 @@ async def judge_run(
 
 async def judge_batch(
     batch_run_name: str,
-    judge_model: str,
     workspace_dir: Path,
     rejudge: bool = False,
 ) -> list[Verdict]:
@@ -79,7 +78,7 @@ async def judge_batch(
                 continue
             try:
                 verdict = await judge_run(
-                    run_dir=run_dir, answer_key=answer_key, judge_model=judge_model,
+                    run_dir=run_dir, answer_key=answer_key,
                     batch_run_name=batch_run_name, verdict_path=verdict_path,
                 )
                 verdicts.append(verdict)

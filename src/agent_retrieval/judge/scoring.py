@@ -13,11 +13,15 @@ from claude_agent_sdk import (
 from agent_retrieval.schema.answer_key import AnswerKey
 from agent_retrieval.schema.verdict import ScoreEntry
 
+# Pinned judge model. Standardised across all batches so that judge
+# quality is held constant when comparing agent models / effort modes.
+JUDGE_MODEL = "claude-sonnet-4-6"
+
 MAX_RETRIES = 5
 INITIAL_BACKOFF = 10  # seconds
 
 
-async def score_response(agent_response: str, answer_key: AnswerKey, judge_model: str) -> list[ScoreEntry]:
+async def score_response(agent_response: str, answer_key: AnswerKey) -> list[ScoreEntry]:
     criteria_desc = "\n".join(f"- {c.criterion} (weight: {c.weight})" for c in answer_key.rubric_criteria)
     items_desc = "\n".join(f"- {it.item_id}: '{it.inserted_text}' at {it.file_path}" for it in answer_key.items)
 
@@ -38,7 +42,7 @@ async def score_response(agent_response: str, answer_key: AnswerKey, judge_model
     )
 
     options = ClaudeAgentOptions(
-        model=judge_model,
+        model=JUDGE_MODEL,
         system_prompt=system_prompt,
         allowed_tools=[],
         permission_mode="acceptEdits",
