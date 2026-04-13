@@ -7,7 +7,17 @@ import yaml
 
 from agent_retrieval.schema.answer_key import AnswerKey
 from agent_retrieval.schema.experiment import ExperimentSpec
+from agent_retrieval.schema.run_state import RunState
 from agent_retrieval.schema.verdict import Verdict
+
+
+def _read_run_state(workspace_dir: Path, batch_name: str,
+                    pid: str, run_id: str) -> RunState | None:
+    state_path = (workspace_dir / "runner" / "runs" /
+                  batch_name / pid / run_id / "state.yaml")
+    if state_path.exists():
+        return RunState.from_yaml(state_path)
+    return None
 
 
 def load_batch_results(
@@ -32,6 +42,15 @@ def load_batch_results(
             "duration_seconds": verdict.session_metrics.duration_seconds,
             "total_cost_usd": verdict.session_metrics.total_cost_usd,
         }
+
+        # Per-run runtime config now lives on RunState (recorded at run time
+        # by the batch runner). This is the post-hoc audit trail.
+        state = _read_run_state(workspace_dir, batch_name,
+                                verdict.parametrisation_id, verdict.run_id)
+        if state is not None:
+            row["agent_model"] = state.agent_model
+            row["effort_mode"] = state.effort_mode
+            row["max_turns"] = state.max_turns
 
         # Try to load metadata from v2 answer key first
         ak_path = answer_keys_dir / f"{verdict.parametrisation_id}.yaml"
@@ -65,7 +84,6 @@ def load_batch_results(
                     row["content_profile"] = spec.corpus.content_profile
                     row["target_token_count"] = spec.corpus.target_token_count
                     row["target_file_count"] = spec.corpus.target_file_count
-                    row["agent_model"] = spec.runner.agent_model
                 else:
                     row["experiment_type"] = ""
         else:
@@ -77,7 +95,6 @@ def load_batch_results(
                 row["content_profile"] = spec.corpus.content_profile
                 row["target_token_count"] = spec.corpus.target_token_count
                 row["target_file_count"] = spec.corpus.target_file_count
-                row["agent_model"] = spec.runner.agent_model
             else:
                 row["experiment_type"] = ""
 
