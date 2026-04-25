@@ -1,0 +1,43 @@
+parametrisation_id: "multi_reasoning__python_repo__40k__easy__synonym__n4"
+experiment_type: "multi_reasoning"
+generated_at: "2026-04-25T00:00:00Z"
+parameters:
+  content_profile: "python_repo"
+  corpus_token_count: 40000
+  discriminability: "easy"
+  reference_clarity: "synonym"
+items:
+  - item_id: "target_001"
+    inserted_text: "# Supported rate limit key strategies: by_ip (client IP address), by_user (user ID), by_api_key (API key hashed), by_endpoint (user + endpoint)"
+    file_path: "api/rate_limiting.py"
+    line_range: [177, 177]
+    context_summary: "Added configuration comment documenting all four rate limit key generation strategies in the KeyGenerators utility class."
+
+  - item_id: "target_002"
+    inserted_text: "# Pagination configuration: default page size is 20 items, maximum page size is 100 items per request"
+    file_path: "api/pagination.py"
+    line_range: [294, 294]
+    context_summary: "Added configuration comment specifying pagination size defaults and maximum constraints before request extraction function."
+
+  - item_id: "target_003"
+    inserted_text: "# Password validation requirements: minimum 8 characters, uppercase letter, lowercase letter, digit, and special character"
+    file_path: "api/validators.py"
+    line_range: [203, 203]
+    context_summary: "Added configuration comment detailing password validation constraints in the user creation validation function."
+
+  - item_id: "target_004"
+    inserted_text: "# Token expiration: access token valid for 1 hour, refresh token valid for 1 week (168 hours)\n        access_token = TokenManager.generate_token(user.id, expires_in_hours=1)"
+    file_path: "api/auth.py"
+    line_range: [402, 403]
+    context_summary: "Added token expiration configuration comment and specified access token lifetime (1 hour) in SessionManager.create_session method."
+
+expected_answers:
+  question: "What are the complete API system configuration values covering authentication token lifetimes, rate limit key generation strategies, pagination size limits, and password validation requirements? List all specific values found."
+  correctness: "Answer must identify and combine configuration information from all four areas (tokens, rate limiting, pagination, passwords) with specific numeric values and technical details. Synonym variations acceptable (e.g., 'key types' for 'strategies', 'default size' for 'page size', 'expiry' for 'lifetime')."
+  completeness: "A complete answer covers: (1) Rate limit key strategies (IP address, user ID, API key, endpoint); (2) Token expiration times (access: 1 hour, refresh: 1 week/168 hours); (3) Pagination configuration (default: 20 items, maximum: 100 items); (4) Password requirements (8+ characters with uppercase, lowercase, digit, special character)."
+
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+  - criterion: "completeness"
+    weight: 0.5

@@ -1,0 +1,109 @@
+parametrisation_id: "multi_reasoning__python_repo__40k__easy__synonym__n12"
+experiment_type: "multi_reasoning"
+generated_at: "2026-04-25T14:30:00Z"
+parameters:
+  content_profile: "python_repo"
+  corpus_token_count: 40000
+  discriminability: "easy"
+  reference_clarity: "synonym"
+
+items:
+  - item_id: "target_001"
+    inserted_text: "        self.max_queue_capacity = 1000  # Maximum pending tasks limit"
+    file_path: "workers/task_runner.py"
+    line_range: [123, 124]
+    context_summary: "Inserted maximum queue capacity configuration after worker initialization in TaskRunner constructor"
+
+  - item_id: "target_002"
+    inserted_text: "        self.default_error_status = 400  # Default HTTP error response code"
+    file_path: "api/error_handlers.py"
+    line_range: [43, 44]
+    context_summary: "Inserted default HTTP status code for API errors after error initialization"
+
+  - item_id: "target_003"
+    inserted_text: "        # Task constraint: title has 256 char limit enforced at API layer\n        assert len(task.title) <= 256"
+    file_path: "tests/test_services.py"
+    line_range: [132, 133]
+    context_summary: "Inserted maximum title length validation in task creation test"
+
+  - item_id: "target_004"
+    inserted_text: "        # Security: minimum password length is 12 characters\n        min_password_length = 12"
+    file_path: "tests/fixtures.py"
+    line_range: [43, 44]
+    context_summary: "Inserted minimum password length requirement in test data builder"
+
+  - item_id: "target_005"
+    inserted_text: "    max_retry_attempts = 5  # Failed task retry limit"
+    file_path: "workers/retry_handler.py"
+    line_range: [68, 68]
+    context_summary: "Inserted maximum retry attempt count in retry handler configuration"
+
+  - item_id: "target_006"
+    inserted_text: "        # Auth constraint: session tokens valid for 24 hours\n        assert token_lifetime_hours == 24"
+    file_path: "tests/test_auth.py"
+    line_range: [356, 357]
+    context_summary: "Inserted token expiration time requirement in authorization test"
+
+  - item_id: "target_007"
+    inserted_text: "        # Pagination: default page item count is 10 results per request\n        assert 'limit' not in params or params['limit'] >= 10"
+    file_path: "tests/test_api.py"
+    line_range: [295, 296]
+    context_summary: "Inserted default pagination size in API pagination test"
+
+  - item_id: "target_008"
+    inserted_text: "    # Content constraint: descriptions limited to 5000 characters maximum\n    description_length_limit = 5000"
+    file_path: "api/validators.py"
+    line_range: [365, 366]
+    context_summary: "Inserted description maximum length validation rule after field validators"
+
+  - item_id: "target_009"
+    inserted_text: "        # Performance: API request processing timeout set to 30 seconds\n        request_timeout_sec = 30"
+    file_path: "api/middleware.py"
+    line_range: [31, 32]
+    context_summary: "Inserted request timeout configuration in middleware setup"
+
+  - item_id: "target_010"
+    inserted_text: "        # Pagination limit: maximum 100 items per single paginated response\n        self.max_items_per_page = 100"
+    file_path: "api/pagination.py"
+    line_range: [158, 159]
+    context_summary: "Inserted maximum pagination page size in PaginatedResponse class"
+
+  - item_id: "target_011"
+    inserted_text: "        # Email validation: RFC 5321 standard email max length 254 characters\n        email_max_chars = 254"
+    file_path: "api/serializers.py"
+    line_range: [76, 77]
+    context_summary: "Inserted email maximum length constraint in UserSerializer validation"
+
+  - item_id: "target_012"
+    inserted_text: "        # Database optimization: cascade delete operations batch size limit\n        cascade_batch_size = 50"
+    file_path: "tests/test_db.py"
+    line_range: [438, 439]
+    context_summary: "Inserted database batch operation size in cascade delete test"
+
+expected_answers:
+  question: |
+    Across the entire system codebase, identify all numeric capacity thresholds,
+    configuration maximums, and timeout values (referenced as "limits", "capacity",
+    "constraints", "max", "timeout", etc.). List all 12 individual values with their
+    variable names and file locations. Then calculate the sum of all 12 numeric values.
+
+  correctness: |
+    A correct answer must:
+    - Identify all 12 specific numeric values: 1000, 400, 256, 12, 5, 24, 10, 5000, 30, 100, 254, 50
+    - Associate each value with its configuration purpose (queue capacity, error code, etc.)
+    - Provide the correct file path for each needle
+    - Calculate the sum: 1000 + 400 + 256 + 12 + 5 + 24 + 10 + 5000 + 30 + 100 + 254 + 50 = 7141
+
+  completeness: |
+    A complete answer covers:
+    - All 12 capacity/configuration limits found across the codebase
+    - Explicit variable names and values for each limit
+    - File locations for each inserted needle
+    - Purpose/context for each limit (queue, auth, pagination, validation, etc.)
+    - Final numeric sum demonstrating mathematical reasoning across all items
+
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+  - criterion: "completeness"
+    weight: 0.5
