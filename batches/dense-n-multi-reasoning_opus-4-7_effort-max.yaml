@@ -1,0 +1,20 @@
+batch_name: "dense-n-multi-reasoning_opus-4-7_effort-max"
+max_parallel: 3
+retry_failed: true
+agent_model: "claude-opus-4-7"
+effort_mode: "max"
+n_repeats: 3
+max_turns: 75
+allowed_tools: ["Read", "Glob", "Grep", "Bash"]
+
+# Densifies the n_items axis for multi_reasoning at 40k, easy + synonym,
+# python_repo only. Run set is declared directly via `grid:` (no template
+# referenced at runtime). 4 parametrisations x 3 repeats = 12 runs.
+experiments:
+  - experiment_type: "multi_reasoning"
+    grid:
+      content_profile: [python_repo]
+      corpus_token_count: [40000]
+      discriminability: [easy]
+      reference_clarity: [synonym]
+      n_items: [4, 6, 8, 12]
