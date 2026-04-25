@@ -3,6 +3,7 @@ from __future__ import annotations
 from pathlib import Path
 
 from agent_retrieval.generator.assembler import assemble_corpus
+from agent_retrieval.generator.corpus_files import iter_corpus_files
 from agent_retrieval.generator.grid import expand_grid
 from agent_retrieval.generator.insertion import insert_payloads
 from agent_retrieval.generator.pool import generate_pool
@@ -25,7 +26,7 @@ async def generate_experiment_v2(
     profiles_needed = {p.content_profile for p in parametrisations}
     for profile_name in profiles_needed:
         pool_dir = workspace_dir / "background_corpora" / profile_name
-        if pool_dir.exists() and any(pool_dir.rglob("*.md")):
+        if pool_dir.exists() and any(iter_corpus_files(pool_dir)):
             print(f"Background pool for '{profile_name}' already exists, skipping.")
             continue
         print(f"Ensuring background pool for '{profile_name}'...")

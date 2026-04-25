@@ -4,6 +4,7 @@ from pathlib import Path
 
 from claude_agent_sdk import ClaudeAgentOptions, ResultMessage, query
 
+from agent_retrieval.generator.corpus_files import iter_corpus_files
 from agent_retrieval.generator.profiles.registry import get_profile
 from agent_retrieval.schema.experiment import POOL_GENERATION_MODEL
 
@@ -12,7 +13,7 @@ def estimate_token_count(directory: Path) -> int:
     total_chars = 0
     if not directory.exists():
         return 0
-    for f in directory.rglob("*.md"):
+    for f in iter_corpus_files(directory):
         if f.is_file():
             total_chars += len(f.read_text())
     return total_chars // 4

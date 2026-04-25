@@ -4,6 +4,7 @@ import random
 import shutil
 from pathlib import Path
 
+from agent_retrieval.generator.corpus_files import iter_corpus_files
 from agent_retrieval.schema.template import Parametrisation
 
 
@@ -12,12 +13,12 @@ def assemble_corpus(
     corpus_dir: Path,
     parametrisation: Parametrisation,
 ) -> None:
-    if corpus_dir.exists() and any(corpus_dir.rglob("*.md")):
+    if corpus_dir.exists() and any(iter_corpus_files(corpus_dir)):
         return
 
     corpus_dir.mkdir(parents=True, exist_ok=True)
 
-    all_files = sorted(f for f in pool_dir.rglob("*.md") if f.is_file())
+    all_files = sorted(f for f in iter_corpus_files(pool_dir) if f.is_file())
     if not all_files:
         return
 

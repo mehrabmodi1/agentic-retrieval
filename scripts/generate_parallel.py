@@ -15,6 +15,7 @@ import time
 from pathlib import Path
 
 from agent_retrieval.generator.assembler import assemble_corpus
+from agent_retrieval.generator.corpus_files import iter_corpus_files
 from agent_retrieval.generator.grid import expand_grid
 from agent_retrieval.generator.insertion import InsertionStats, insert_payloads
 from agent_retrieval.schema.template import ExperimentTemplate
@@ -119,7 +120,7 @@ async def process_one(
     if answer_key_path.exists():
         return (pid, True, "already exists", None)
 
-    if not pool_dir.exists() or not any(pool_dir.rglob("*.md")):
+    if not pool_dir.exists() or not any(iter_corpus_files(pool_dir)):
         return (pid, False, f"pool missing: {pool_dir}", None)
 
     try:

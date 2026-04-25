@@ -14,6 +14,7 @@ from claude_agent_sdk import (
     query,
 )
 
+from agent_retrieval.generator.corpus_files import iter_corpus_files
 from agent_retrieval.schema.experiment import (
     PAYLOAD_INSERTION_MODEL_SINGLE,
     PAYLOAD_INSERTION_MODEL_MULTI,
@@ -120,7 +121,7 @@ def _select_target_files(
     n_files: int,
 ) -> list[Path]:
     """Deterministically select target files from corpus using RNG."""
-    all_files = sorted(f for f in corpus_dir.rglob("*.md") if f.is_file())
+    all_files = sorted(f for f in iter_corpus_files(corpus_dir) if f.is_file())
     if not all_files:
         return []
     rng = random.Random(hash(parametrisation.parametrisation_id) ^ 0xBEEF)
