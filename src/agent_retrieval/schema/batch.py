@@ -6,10 +6,22 @@ from typing import Any, Literal
 import yaml
 from pydantic import BaseModel, ConfigDict, model_validator
 
+from agent_retrieval.schema.template import GridSpec
+
 
 class BatchExperimentEntry(BaseModel):
     experiment_type: str
     filter: dict[str, list[Any]] | None = None
+    grid: GridSpec | None = None
+
+    @model_validator(mode="after")
+    def validate_grid_filter_exclusive(self) -> BatchExperimentEntry:
+        if self.grid is not None and self.filter is not None:
+            raise ValueError(
+                "BatchExperimentEntry cannot specify both 'grid' and 'filter' "
+                "(grid declares the run set directly; filter narrows the template grid)"
+            )
+        return self
 
 
 class BatchConfig(BaseModel):

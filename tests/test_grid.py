@@ -1,7 +1,11 @@
 import pytest
 
-from agent_retrieval.generator.grid import expand_grid, filter_parametrisations
-from agent_retrieval.schema.template import ExperimentTemplate, Parametrisation
+from agent_retrieval.generator.grid import (
+    expand_grid,
+    expand_gridspec,
+    filter_parametrisations,
+)
+from agent_retrieval.schema.template import ExperimentTemplate, GridSpec, Parametrisation
 
 
 @pytest.fixture
@@ -118,3 +122,31 @@ class TestFilterParametrisations:
         params = expand_grid(tmpl)
         filtered = filter_parametrisations(params, {})
         assert len(filtered) == len(params)
+
+
+class TestExpandGridspec:
+    def test_dense_n_grid_expands(self):
+        spec = GridSpec(
+            content_profile=["python_repo"],
+            corpus_token_count=[40000],
+            discriminability=["easy"],
+            reference_clarity=["synonym"],
+            n_items=[4, 6, 8, 12],
+        )
+        params = expand_gridspec(spec, "multi_reasoning")
+        assert len(params) == 4
+        ns = sorted(p.n_items for p in params)
+        assert ns == [4, 6, 8, 12]
+        assert all(p.experiment_type == "multi_reasoning" for p in params)
+        ids = {p.parametrisation_id for p in params}
+        assert "multi_reasoning__python_repo__40k__easy__synonym__n4" in ids
+        assert "multi_reasoning__python_repo__40k__easy__synonym__n12" in ids
+
+    def test_expand_grid_delegates_to_gridspec(self, multi_template_dict):
+        tmpl = ExperimentTemplate.model_validate(multi_template_dict)
+        via_template = [p.parametrisation_id for p in expand_grid(tmpl)]
+        via_spec = [
+            p.parametrisation_id
+            for p in expand_gridspec(tmpl.grid, tmpl.experiment_type)
+        ]
+        assert sorted(via_template) == sorted(via_spec)

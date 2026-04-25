@@ -6,7 +6,11 @@ from pathlib import Path
 
 import yaml
 
-from agent_retrieval.generator.grid import expand_grid, filter_parametrisations
+from agent_retrieval.generator.grid import (
+    expand_grid,
+    expand_gridspec,
+    filter_parametrisations,
+)
 from agent_retrieval.runner.session import get_claude_version, run_agent_session
 from agent_retrieval.runner.state import RunStateManager
 from agent_retrieval.schema.batch import BatchConfig
@@ -42,16 +46,30 @@ async def run_batch(
     if recovered:
         print(f"Recovered {len(recovered)} interrupted runs")
 
-    # Resolve parametrisation IDs from experiment templates + filters
-    pid_to_template: dict[str, ExperimentTemplate] = {}
+    # Resolve parametrisation IDs. Each entry uses either:
+    #   - grid: declares the parametrisation set directly (no template needed)
+    #   - filter (or neither): expands the experiment template grid and filters
+    pid_to_template: dict[str, ExperimentTemplate | None] = {}
     for entry in batch.experiments:
-        template_path = experiments_dir / f"{entry.experiment_type}.yaml"
-        template = ExperimentTemplate.from_yaml(template_path)
-        params = expand_grid(template)
-        if entry.filter:
-            params = filter_parametrisations(params, entry.filter)
-        for p in params:
-            pid_to_template[p.parametrisation_id] = template
+        if entry.grid is not None:
+            params = expand_gridspec(entry.grid, entry.experiment_type)
+            for p in params:
+                pid_to_template[p.parametrisation_id] = None
+        else:
+            template_path = experiments_dir / f"{entry.experiment_type}.yaml"
+            template = ExperimentTemplate.from_yaml(template_path)
+            params = expand_grid(template)
+            if entry.filter:
+                params = filter_parametrisations(params, entry.filter)
+            for p in params:
+                pid_to_template[p.parametrisation_id] = template
+
+    # Safety: drop pids whose answer key is missing on disk. Stops a typo or
+    # ungenerated parametrisation from producing dead pending runs.
+    missing = [pid for pid in pid_to_template if not (answer_keys_dir / f"{pid}.yaml").exists()]
+    for pid in missing:
+        print(f"WARN: skipping pid (answer key not found): {pid}")
+        del pid_to_template[pid]
 
     # Reset failed runs to pending for retry (before counting)
     if batch.retry_failed:

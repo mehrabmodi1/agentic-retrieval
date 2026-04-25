@@ -221,6 +221,36 @@ class TestBatchConfig:
         assert batch.experiments[0].filter is None
         assert batch.experiments[1].filter is not None
 
+    def test_grid_field_accepted(self):
+        batch = BatchConfig.model_validate(self._base(experiments=[{
+            "experiment_type": "multi_reasoning",
+            "grid": {
+                "content_profile": ["python_repo"],
+                "corpus_token_count": [40000],
+                "discriminability": ["easy"],
+                "reference_clarity": ["synonym"],
+                "n_items": [4, 6, 8, 12],
+            },
+        }]))
+        entry = batch.experiments[0]
+        assert entry.grid is not None
+        assert entry.grid.n_items == [4, 6, 8, 12]
+        assert entry.filter is None
+
+    def test_grid_and_filter_mutually_exclusive(self):
+        with pytest.raises(Exception):
+            BatchConfig.model_validate(self._base(experiments=[{
+                "experiment_type": "multi_reasoning",
+                "filter": {"n_items": [4]},
+                "grid": {
+                    "content_profile": ["python_repo"],
+                    "corpus_token_count": [40000],
+                    "discriminability": ["easy"],
+                    "reference_clarity": ["synonym"],
+                    "n_items": [4, 6, 8, 12],
+                },
+            }]))
+
 
 class TestAnswerKeyV2:
     def test_answer_key_with_parametrisation(self):

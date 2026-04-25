@@ -3,11 +3,10 @@ from __future__ import annotations
 import itertools
 from typing import Any
 
-from agent_retrieval.schema.template import ExperimentTemplate, Parametrisation
+from agent_retrieval.schema.template import ExperimentTemplate, GridSpec, Parametrisation
 
 
-def expand_grid(template: ExperimentTemplate) -> list[Parametrisation]:
-    grid = template.grid
+def expand_gridspec(grid: GridSpec, experiment_type: str) -> list[Parametrisation]:
     dimensions: list[tuple[str, list[Any]]] = [
         ("content_profile", grid.content_profile),
         ("corpus_token_count", grid.corpus_token_count),
@@ -23,10 +22,14 @@ def expand_grid(template: ExperimentTemplate) -> list[Parametrisation]:
     parametrisations: list[Parametrisation] = []
     for combo in itertools.product(*values):
         params = dict(zip(keys, combo))
-        params["experiment_type"] = template.experiment_type
+        params["experiment_type"] = experiment_type
         parametrisations.append(Parametrisation(**params))
 
     return parametrisations
+
+
+def expand_grid(template: ExperimentTemplate) -> list[Parametrisation]:
+    return expand_gridspec(template.grid, template.experiment_type)
 
 
 def filter_parametrisations(
