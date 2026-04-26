@@ -12,7 +12,7 @@ payload:
 question_examples:
   python_repo:
     easy_exact:
-      question: "What is the total maximum memory allocation across all cache layers (L1_CACHE_SIZE_MB, L2_CACHE_SIZE_MB, L3_CACHE_SIZE_MB)?"
+      question: "Of the three cache layers (L1_CACHE_SIZE_MB, L2_CACHE_SIZE_MB, L3_CACHE_SIZE_MB), which is the largest, which is the smallest, and what is the ratio of largest-to-smallest?"
       items:
         - needle: "L1_CACHE_SIZE_MB = 512"
           file_context: "cache/l1_config.md"
@@ -20,9 +20,9 @@ question_examples:
           file_context: "cache/l2_config.md"
         - needle: "L3_CACHE_SIZE_MB = 8192"
           file_context: "cache/l3_config.md"
-      answer: "10,752 MB (512 + 2048 + 8192)"
+      answer: "L3 is largest (8192 MB), L1 is smallest (512 MB), ratio is 16:1"
     hard_contextual:
-      question: "If the application processes requests at peak throughput, how many database connections would be needed simultaneously?"
+      question: "Given WORKER_THREADS, CONNS_PER_WORKER, and REPLICA_FACTOR, will the system stay under MAX_CONNECTIONS_PER_NODE = 50? Identify which of the three is the bottleneck factor and explain how shrinking it by one would change peak concurrent connections."
       items:
         - needle: "WORKER_THREADS = 8"
           file_context: "server/config.md"
@@ -30,14 +30,14 @@ question_examples:
           file_context: "db/pool.md"
         - needle: "REPLICA_FACTOR = 2  # each write is mirrored"
           file_context: "db/replication.md"
-      answer: "48 connections (8 workers x 3 connections x 2 replication factor)"
+      answer: "Peak is 8 x 3 x 2 = 48, just under 50. WORKER_THREADS is the bottleneck (largest factor); reducing it by one drops peak to 7 x 3 x 2 = 42 (-6). The other factors only drop peak by -16 or -24 each, exceeding what the safety margin needs."
 
 grid:
   content_profile: [python_repo]
   corpus_token_count: [40000]
   discriminability: [easy]
   reference_clarity: [synonym]
-  n_items: [4, 6, 8, 12]
+  n_items: [4, 6, 10, 12, 14]
 
 rubric_criteria:
   - criterion: "correctness"

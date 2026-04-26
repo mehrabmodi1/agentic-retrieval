@@ -188,7 +188,21 @@ def build_insertion_prompt(
         "multi_reasoning": (
             f"Insert {n_items} independent needles across different target files below. "
             f"Each needle contains a distinct piece of information. The question must require "
-            f"finding ALL items and combining/reasoning about them to produce the answer."
+            f"the agent to hold ALL {n_items} items in working memory simultaneously and reason "
+            f"across them.\n\n"
+            f"CRITICAL: do NOT write fold-style questions where the agent can process needles "
+            f"sequentially and discard each after extracting a single number — e.g. 'sum these', "
+            f"'multiply these', 'concatenate these', 'list all then total'. Sums, products, and "
+            f"concatenations are commutative + associative, so the agent can keep a running "
+            f"tally and forget previous needles. Such questions test sequential accumulation, "
+            f"not synthesis, and collapse the multi_reasoning task into a chain.\n\n"
+            f"Instead, write questions that force genuine cross-comparison among the {n_items} "
+            f"items: identify the largest/smallest/median/outlier among them; find pairwise "
+            f"contradictions or consistencies; intersect constraints (e.g. time windows or "
+            f"numeric ranges) into a tighter bound; sort/rank them; identify which item is the "
+            f"bottleneck or pivotal factor; or determine a relationship that depends on every "
+            f"needle being held simultaneously. The answer must change if any single needle is "
+            f"removed or unread."
         ),
     }
 

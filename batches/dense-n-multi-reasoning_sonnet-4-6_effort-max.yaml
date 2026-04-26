@@ -9,7 +9,7 @@ allowed_tools: ["Read", "Glob", "Grep", "Bash"]
 
 # Densifies the n_items axis for multi_reasoning at 40k, easy + synonym,
 # python_repo only. Run set is declared directly via `grid:` (no template
-# referenced at runtime). 4 parametrisations x 3 repeats = 12 runs.
+# referenced at runtime). 6 parametrisations x 3 repeats = 18 runs.
 experiments:
   - experiment_type: "multi_reasoning"
     grid:
@@ -17,4 +17,4 @@ experiments:
       corpus_token_count: [40000]
       discriminability: [easy]
       reference_clarity: [synonym]
-      n_items: [4, 6, 8, 12]
+      n_items: [4, 6, 8, 10, 12, 14]
