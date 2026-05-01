@@ -178,3 +178,36 @@ class TestTemplateSchemaVersionTolerance:
         data["schema_version"] = "2.0"
         tpl = ExperimentTemplate.model_validate(data)
         assert tpl.experiment_type == "single_needle"
+
+
+class TestNewExperimentTypes:
+    def _base_dict(self, experiment_type: str) -> dict:
+        return {
+            "experiment_type": experiment_type,
+            "payload": {"item_type": "fact"},
+            "question_examples": {
+                "python_repo": {
+                    "hard_contextual": {
+                        "question": "q",
+                        "answer": "a",
+                    },
+                },
+            },
+            "rubric_criteria": [{"criterion": "recall", "weight": 1.0}],
+            "grid": {
+                "content_profile": ["python_repo"],
+                "corpus_token_count": [800000],
+                "discriminability": ["hard"],
+                "reference_clarity": ["contextual"],
+                "n_items": [2, 4],
+            },
+        }
+
+    def test_multi_retrieval_validates(self):
+        tmpl = ExperimentTemplate.model_validate(self._base_dict("multi_retrieval"))
+        assert tmpl.experiment_type == "multi_retrieval"
+
+    def test_pure_reasoning_validates(self):
+        d = self._base_dict("pure_reasoning")
+        tmpl = ExperimentTemplate.model_validate(d)
+        assert tmpl.experiment_type == "pure_reasoning"

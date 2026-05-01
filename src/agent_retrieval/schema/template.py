@@ -32,7 +32,13 @@ class PayloadTemplateSpec(BaseModel):
 class ExperimentTemplate(BaseModel):
     model_config = ConfigDict(extra="ignore")
 
-    experiment_type: Literal["single_needle", "multi_chain", "multi_reasoning"]
+    experiment_type: Literal[
+        "single_needle",
+        "multi_chain",
+        "multi_reasoning",
+        "multi_retrieval",
+        "pure_reasoning",
+    ]
     payload: PayloadTemplateSpec
     question_examples: dict[str, dict[str, QuestionExample]]
     rubric_criteria: list[RubricCriterion]
@@ -40,7 +46,8 @@ class ExperimentTemplate(BaseModel):
 
     @model_validator(mode="after")
     def validate_grid_n_items(self) -> ExperimentTemplate:
-        is_multi = self.experiment_type in ("multi_chain", "multi_reasoning")
+        multi_types = {"multi_chain", "multi_reasoning", "multi_retrieval", "pure_reasoning"}
+        is_multi = self.experiment_type in multi_types
         has_n_items = self.grid.n_items is not None
         if is_multi and not has_n_items:
             raise ValueError(
