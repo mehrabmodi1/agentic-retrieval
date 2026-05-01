@@ -211,3 +211,23 @@ class TestNewExperimentTypes:
         d = self._base_dict("pure_reasoning")
         tmpl = ExperimentTemplate.model_validate(d)
         assert tmpl.experiment_type == "pure_reasoning"
+
+    def test_pure_reasoning_grid_omits_corpus_axes(self):
+        """pure_reasoning grids may omit corpus-related axes."""
+        d = self._base_dict("pure_reasoning")
+        del d["grid"]["corpus_token_count"]
+        del d["grid"]["discriminability"]
+        del d["grid"]["reference_clarity"]
+        tmpl = ExperimentTemplate.model_validate(d)
+        assert tmpl.grid.corpus_token_count is None
+        assert tmpl.grid.discriminability is None
+        assert tmpl.grid.reference_clarity is None
+
+    def test_pure_reasoning_parametrisation_id_omits_corpus_segments(self):
+        """When corpus axes are None, the parametrisation_id omits them."""
+        p = Parametrisation(
+            experiment_type="pure_reasoning",
+            content_profile="python_repo",
+            n_items=8,
+        )
+        assert p.parametrisation_id == "pure_reasoning__python_repo__n8"

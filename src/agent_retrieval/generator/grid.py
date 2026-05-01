@@ -7,12 +7,13 @@ from agent_retrieval.schema.template import ExperimentTemplate, GridSpec, Parame
 
 
 def expand_gridspec(grid: GridSpec, experiment_type: str) -> list[Parametrisation]:
-    dimensions: list[tuple[str, list[Any]]] = [
-        ("content_profile", grid.content_profile),
-        ("corpus_token_count", grid.corpus_token_count),
-        ("discriminability", grid.discriminability),
-        ("reference_clarity", grid.reference_clarity),
-    ]
+    dimensions: list[tuple[str, list[Any]]] = [("content_profile", grid.content_profile)]
+    if grid.corpus_token_count is not None:
+        dimensions.append(("corpus_token_count", grid.corpus_token_count))
+    if grid.discriminability is not None:
+        dimensions.append(("discriminability", grid.discriminability))
+    if grid.reference_clarity is not None:
+        dimensions.append(("reference_clarity", grid.reference_clarity))
     if grid.n_items is not None:
         dimensions.append(("n_items", grid.n_items))
 

@@ -19,9 +19,9 @@ class QuestionExample(BaseModel):
 
 class GridSpec(BaseModel):
     content_profile: list[str]
-    corpus_token_count: list[int]
-    discriminability: list[Literal["easy", "hard"]]
-    reference_clarity: list[Literal["exact", "synonym", "contextual"]]
+    corpus_token_count: list[int] | None = None
+    discriminability: list[Literal["easy", "hard"]] | None = None
+    reference_clarity: list[Literal["exact", "synonym", "contextual"]] | None = None
     n_items: list[int] | None = None
 
 
@@ -77,20 +77,20 @@ def _format_token_count(n: int) -> str:
 class Parametrisation(BaseModel):
     experiment_type: str
     content_profile: str
-    corpus_token_count: int
-    discriminability: str
-    reference_clarity: str
+    corpus_token_count: int | None = None
+    discriminability: str | None = None
+    reference_clarity: str | None = None
     n_items: int | None = None
 
     @property
     def parametrisation_id(self) -> str:
-        parts = [
-            self.experiment_type,
-            self.content_profile,
-            _format_token_count(self.corpus_token_count),
-            self.discriminability,
-            self.reference_clarity,
-        ]
+        parts: list[str] = [self.experiment_type, self.content_profile]
+        if self.corpus_token_count is not None:
+            parts.append(_format_token_count(self.corpus_token_count))
+        if self.discriminability is not None:
+            parts.append(self.discriminability)
+        if self.reference_clarity is not None:
+            parts.append(self.reference_clarity)
         if self.n_items is not None:
             parts.append(f"n{self.n_items}")
         return "__".join(parts)
