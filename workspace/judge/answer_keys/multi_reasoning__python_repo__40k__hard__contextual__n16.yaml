@@ -191,10 +191,5 @@ expected_answers:
 rubric_criteria:
 - criterion: correctness
   weight: 1.0
-  description: All 16 constraint values correctly identified and interpreted
 - criterion: completeness
   weight: 0.5
-  description: All values integrated into unified throughput calculation with reasoning
-- criterion: reasoning
-  weight: 0.75
-  description: Clear logical chain connecting constraints to final bottleneck identification

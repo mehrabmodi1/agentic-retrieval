@@ -245,7 +245,14 @@ def build_insertion_prompt(
         f"The answer key MUST follow this exact structure:\n"
         f"```yaml\n{answer_schema}\n```\n\n"
         f"For multiple items, add additional entries under 'items:' with sequential "
-        f"item_ids (target_001, target_002, etc.).\n"
+        f"item_ids (target_001, target_002, etc.).\n\n"
+        f"CRITICAL — rubric_criteria fidelity: copy the rubric_criteria block from the "
+        f"schema VERBATIM. Do not add new criteria, do not remove any criteria, do not "
+        f"rename any criteria, and do not change any weights. The rubric is fixed by the "
+        f"experiment template; inventing additional criteria (e.g. 'reasoning', "
+        f"'integration', 'synthesis', 'bottleneck_analysis') will skew downstream scoring "
+        f"and is forbidden. Use only the criteria shown in the schema, with the exact "
+        f"weights shown.\n"
     )
 
 

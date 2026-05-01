@@ -1,58 +1,74 @@
-parametrisation_id: "multi_chain__noir_fiction__160k__easy__synonym__n8"
-experiment_type: "multi_chain"
-generated_at: "2026-04-05T15:30:00Z"
+parametrisation_id: multi_chain__noir_fiction__160k__easy__synonym__n8
+experiment_type: multi_chain
+generated_at: '2026-04-05T15:30:00Z'
 parameters:
-  content_profile: "noir_fiction"
+  content_profile: noir_fiction
   corpus_token_count: 160000
-  discriminability: "easy"
-  reference_clarity: "synonym"
+  discriminability: easy
+  reference_clarity: synonym
 items:
-  - item_id: "target_001"
-    inserted_text: "Inside the office is a ledger with coded references. The first entry points to the Starlight Motor Inn—room forty-seven specifically—where the next layer of evidence is hidden."
-    file_path: "case_notes/day_03.md"
-    line_range: [122, 135]
-    context_summary: "Added to Mercer's warehouse directions, establishing the Starlight Motor Inn as the first evidence location in the chain."
-  - item_id: "target_002"
-    inserted_text: "Paulie mentions something in passing—the Starlight Motor Inn is Sinclair's operational center for specific transactions, and according to his sources, the room key instructions point to documents hidden in the bartender's safe at the establishment. That bartender—Deke—keeps records of conversations overheard there."
-    file_path: "case_notes/day_02.md"
-    line_range: [91, 100]
-    context_summary: "Added to informant conversation, connecting Starlight Motor Inn to the bartender's evidence cache."
-  - item_id: "target_003"
-    inserted_text: "Behind the register, I'd been keeping a private ledger for years—observations about patrons, conversations, interactions. The Starlight Motor Inn's room forty-seven was connected to a cab driver named Jerry who frequently transported nervous clients through the residential Oak Hill district. The repeated pattern of pickups suggested a safe house operation coordinated through his cab service."
-    file_path: "witnesses/bartender_statement.md"
-    line_range: [15, 25]
-    context_summary: "Added to detective's opening question, revealing the bartender's observations linking to cab driver operations in Oak Hill."
-  - item_id: "target_004"
-    inserted_text: "It was 847 Elm Street. The old man told me, 'Don't write this down. But remember—if anyone asks where the boy went, the answer is the law office of Marchetti & Associates downtown. That's where he'll be looking for help.'"
-    file_path: "witnesses/cab_driver_statement.md"
-    line_range: [32, 45]
-    context_summary: "Extended cab driver's Oak Hill address to reference the law office as the next link in the chain."
-  - item_id: "target_005"
-    inserted_text: "In addition to my rental ledger, I kept notes on visitors. I had observed a lawyer from Marchetti & Associates visiting tenant Harvey—a man named Gregg who arrived with documents. Harvey's file also contained an address for his emergency safe deposit box at Union Station, left luggage office, package retrieval number 4472."
-    file_path: "witnesses/landlady_statement.md"
-    line_range: [10, 20]
-    context_summary: "Added to landlady's opening description, connecting law office to Union Station safe deposit location."
-  - item_id: "target_006"
-    inserted_text: "\"The documents,\" he gasps. \"They're being moved. The operational records that prove everything—the photographs, the ledgers, Sinclair's entire operation—they're in transit right now to the Federal Building. The evidence repository is in the Records Division, room 812. That's where the final proof is being stored.\""
-    file_path: "case_notes/day_05.md"
-    line_range: [158, 170]
-    context_summary: "Inserted Vincent's revelation in the car escape scene, revealing Federal Building room 812 as the ultimate evidence repository."
-  - item_id: "target_007"
-    inserted_text: "Officers also locate a shipping manifest in Sinclair's records indicating a transfer to the Federal Building, Records Division, room 812—confirming Vincent's warning about where the operational records were being stored."
-    file_path: "case_notes/day_07.md"
-    line_range: [88, 95]
-    context_summary: "Added to evidence discovery section, corroborating the Federal Building location through police investigation."
-  - item_id: "target_008"
-    inserted_text: "The critical evidence comes from the Federal Building, Records Division, room 812—where the operational ledgers and photographs have been recovered, documenting Sinclair's activities, his connections to the Castellano family, and the money trail connecting to Margaret Hollister's business. That room contains the backup copies of everything Sinclair tried to hide."
-    file_path: "case_notes/day_08.md"
-    line_range: [152, 160]
-    context_summary: "Added to trial narrative, confirming that Federal Building room 812 is the final destination where all evidence resolves."
+- item_id: target_001
+  inserted_text: Inside the office is a ledger with coded references. The first entry points to the Starlight Motor Inn—room forty-seven specifically—where the next layer of evidence is hidden.
+  file_path: case_notes/day_03.md
+  line_range:
+  - 122
+  - 135
+  context_summary: Added to Mercer's warehouse directions, establishing the Starlight Motor Inn as the first evidence location in the chain.
+- item_id: target_002
+  inserted_text: Paulie mentions something in passing—the Starlight Motor Inn is Sinclair's operational center for specific transactions, and according to his sources, the room key instructions point to documents hidden in the bartender's safe at the establishment. That bartender—Deke—keeps records of conversations overheard there.
+  file_path: case_notes/day_02.md
+  line_range:
+  - 91
+  - 100
+  context_summary: Added to informant conversation, connecting Starlight Motor Inn to the bartender's evidence cache.
+- item_id: target_003
+  inserted_text: Behind the register, I'd been keeping a private ledger for years—observations about patrons, conversations, interactions. The Starlight Motor Inn's room forty-seven was connected to a cab driver named Jerry who frequently transported nervous clients through the residential Oak Hill district. The repeated pattern of pickups suggested a safe house operation coordinated through his cab service.
+  file_path: witnesses/bartender_statement.md
+  line_range:
+  - 15
+  - 25
+  context_summary: Added to detective's opening question, revealing the bartender's observations linking to cab driver operations in Oak Hill.
+- item_id: target_004
+  inserted_text: It was 847 Elm Street. The old man told me, 'Don't write this down. But remember—if anyone asks where the boy went, the answer is the law office of Marchetti & Associates downtown. That's where he'll be looking for help.'
+  file_path: witnesses/cab_driver_statement.md
+  line_range:
+  - 32
+  - 45
+  context_summary: Extended cab driver's Oak Hill address to reference the law office as the next link in the chain.
+- item_id: target_005
+  inserted_text: In addition to my rental ledger, I kept notes on visitors. I had observed a lawyer from Marchetti & Associates visiting tenant Harvey—a man named Gregg who arrived with documents. Harvey's file also contained an address for his emergency safe deposit box at Union Station, left luggage office, package retrieval number 4472.
+  file_path: witnesses/landlady_statement.md
+  line_range:
+  - 10
+  - 20
+  context_summary: Added to landlady's opening description, connecting law office to Union Station safe deposit location.
+- item_id: target_006
+  inserted_text: '"The documents," he gasps. "They''re being moved. The operational records that prove everything—the photographs, the ledgers, Sinclair''s entire operation—they''re in transit right now to the Federal Building. The evidence repository is in the Records Division, room 812. That''s where the final proof is being stored."'
+  file_path: case_notes/day_05.md
+  line_range:
+  - 158
+  - 170
+  context_summary: Inserted Vincent's revelation in the car escape scene, revealing Federal Building room 812 as the ultimate evidence repository.
+- item_id: target_007
+  inserted_text: Officers also locate a shipping manifest in Sinclair's records indicating a transfer to the Federal Building, Records Division, room 812—confirming Vincent's warning about where the operational records were being stored.
+  file_path: case_notes/day_07.md
+  line_range:
+  - 88
+  - 95
+  context_summary: Added to evidence discovery section, corroborating the Federal Building location through police investigation.
+- item_id: target_008
+  inserted_text: The critical evidence comes from the Federal Building, Records Division, room 812—where the operational ledgers and photographs have been recovered, documenting Sinclair's activities, his connections to the Castellano family, and the money trail connecting to Margaret Hollister's business. That room contains the backup copies of everything Sinclair tried to hide.
+  file_path: case_notes/day_08.md
+  line_range:
+  - 152
+  - 160
+  context_summary: Added to trial narrative, confirming that Federal Building room 812 is the final destination where all evidence resolves.
 expected_answers:
-  question: "Starting from the warehouse address mentioned in case_notes/day_03.md, follow the chain of evidence locations. What is the room number at the Federal Building where the backup operational ledgers proving Sinclair's guilt are ultimately recovered?"
-  correctness: "The answer must identify 'room 812' or 'Federal Building room 812' or 'Records Division room 812' as the final destination. The room number 812 is the critical detail that resolves the chain."
-  completeness: "A complete answer would trace the full chain: Sinclair Imports warehouse → Starlight Motor Inn room forty-seven → bartender's records → Oak Hill (847 Elm Street) → Marchetti law office → Union Station left luggage → Federal Building Records Division room 812. However, only the final room number is required to answer correctly."
+  question: Starting from the warehouse address mentioned in case_notes/day_03.md, follow the chain of evidence locations. What is the room number at the Federal Building where the backup operational ledgers proving Sinclair's guilt are ultimately recovered?
+  correctness: The answer must identify 'room 812' or 'Federal Building room 812' or 'Records Division room 812' as the final destination. The room number 812 is the critical detail that resolves the chain.
+  completeness: 'A complete answer would trace the full chain: Sinclair Imports warehouse → Starlight Motor Inn room forty-seven → bartender''s records → Oak Hill (847 Elm Street) → Marchetti law office → Union Station left luggage → Federal Building Records Division room 812. However, only the final room number is required to answer correctly.'
 rubric_criteria:
-  - criterion: "correctness"
-    weight: 1.0
-  - criterion: "completeness"
-    weight: 0.3
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5

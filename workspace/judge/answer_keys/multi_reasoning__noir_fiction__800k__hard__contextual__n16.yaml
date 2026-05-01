@@ -142,7 +142,3 @@ rubric_criteria:
   weight: 1.0
 - criterion: completeness
   weight: 0.5
-- criterion: inference_from_context
-  weight: 0.8
-- criterion: multi_source_synthesis
-  weight: 0.9

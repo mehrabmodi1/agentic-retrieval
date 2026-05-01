@@ -1,30 +1,32 @@
-parametrisation_id: "multi_chain__noir_fiction__40k__easy__exact__n2"
-experiment_type: "multi_chain"
-generated_at: "2026-04-05T00:00:00Z"
+parametrisation_id: multi_chain__noir_fiction__40k__easy__exact__n2
+experiment_type: multi_chain
+generated_at: '2026-04-05T00:00:00Z'
 parameters:
-  content_profile: "noir_fiction"
+  content_profile: noir_fiction
   corpus_token_count: 40000
-  discriminability: "easy"
-  reference_clarity: "exact"
+  discriminability: easy
+  reference_clarity: exact
 items:
-  - item_id: "target_001"
-    inserted_text: "His name, I learn later, is Charles Sinclair. I remember it because it sounded expensive, the kind of name that belongs to someone who keeps secrets for a living."
-    file_path: "witnesses/landlady_statement.md"
-    line_range: [35, 37]
-    context_summary: "Inserted after Eva's description of the visitor to apartment 3F, identifying him by name as Charles Sinclair."
-  - item_id: "target_002"
-    inserted_text: "The moment I see it, I think of the landlady's description—the man in the nice suit who'd visited Harvey in 3F. Charles Sinclair. She'd remembered his name. Now I have the full picture: soft hands, cold eyes, and a business title to match his dangerous presence."
-    file_path: "case_notes/day_05.md"
-    line_range: [60, 62]
-    context_summary: "Inserted before the business card revelation, explicitly connecting Charles Sinclair from the landlady's statement to the card Jack discovers at the hospital."
+- item_id: target_001
+  inserted_text: His name, I learn later, is Charles Sinclair. I remember it because it sounded expensive, the kind of name that belongs to someone who keeps secrets for a living.
+  file_path: witnesses/landlady_statement.md
+  line_range:
+  - 35
+  - 37
+  context_summary: Inserted after Eva's description of the visitor to apartment 3F, identifying him by name as Charles Sinclair.
+- item_id: target_002
+  inserted_text: 'The moment I see it, I think of the landlady''s description—the man in the nice suit who''d visited Harvey in 3F. Charles Sinclair. She''d remembered his name. Now I have the full picture: soft hands, cold eyes, and a business title to match his dangerous presence.'
+  file_path: case_notes/day_05.md
+  line_range:
+  - 60
+  - 62
+  context_summary: Inserted before the business card revelation, explicitly connecting Charles Sinclair from the landlady's statement to the card Jack discovers at the hospital.
 expected_answers:
-  question: "Starting with the visitor identified in the landlady's statement in witnesses/landlady_statement.md, what is the full business card description Jack discovers in case_notes/day_05.md?"
-  correctness: "The answer must identify Charles Sinclair and his business title 'Private Consulting Services'. Bonus points for the exact wording from the business card: 'Charles Sinclair - Private Consulting Services'."
-  completeness: "A complete answer traces the chain from Eva Kosinski's identification of the visitor by name to Jack's discovery of the same person's business card, demonstrating the connection between the two needles and understanding how the chain resolves to Sinclair's professional designation."
+  question: Starting with the visitor identified in the landlady's statement in witnesses/landlady_statement.md, what is the full business card description Jack discovers in case_notes/day_05.md?
+  correctness: 'The answer must identify Charles Sinclair and his business title ''Private Consulting Services''. Bonus points for the exact wording from the business card: ''Charles Sinclair - Private Consulting Services''.'
+  completeness: A complete answer traces the chain from Eva Kosinski's identification of the visitor by name to Jack's discovery of the same person's business card, demonstrating the connection between the two needles and understanding how the chain resolves to Sinclair's professional designation.
 rubric_criteria:
-  - criterion: "correctness"
-    weight: 1.0
-  - criterion: "completeness"
-    weight: 0.5
-  - criterion: "chain_tracing"
-    weight: 0.75
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5

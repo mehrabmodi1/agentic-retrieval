@@ -1,77 +1,74 @@
-parametrisation_id: "multi_reasoning__noir_fiction__20k__easy__contextual__n8"
-experiment_type: "multi_reasoning"
-generated_at: "2026-04-05T00:00:00Z"
+parametrisation_id: multi_reasoning__noir_fiction__20k__easy__contextual__n8
+experiment_type: multi_reasoning
+generated_at: '2026-04-05T00:00:00Z'
 parameters:
-  content_profile: "noir_fiction"
+  content_profile: noir_fiction
   corpus_token_count: 20000
-  discriminability: "easy"
-  reference_clarity: "contextual"
-
+  discriminability: easy
+  reference_clarity: contextual
 items:
-  - item_id: "target_001"
-    inserted_text: "Claire Hollister was murdered on Wednesday, October 31st at 11:47 PM in warehouse unit 12-B, Harbor Avenue. Her body bore defensive wounds and evidence she had fought back before the fatal asphyxiation."
-    file_path: "case_notes/day_07.md"
-    line_range: [40, 42]
-    context_summary: "Inserted into notes section documenting the exact time, location, and method of Claire's death with physical evidence details."
-
-  - item_id: "target_002"
-    inserted_text: "Inside the documents folder is a handwritten ledger entry dated October 15th showing Claire Hollister's name alongside a ten-thousand-dollar transfer marked 'insurance.'"
-    file_path: "chapters/chapter_05.md"
-    line_range: [42, 42]
-    context_summary: "Inserted into Diana Harrow's statement about documents in Webb's possession, revealing Claire's financial entanglement with Sinclair's operation."
-
-  - item_id: "target_003"
-    inserted_text: "According to the coroner's preliminary findings, Claire was killed between 11 PM and midnight on October 31st, with evidence of restraint marks on both wrists and a ligature mark around her neck. The killer moved with cold precision, indicating prior experience with violence."
-    file_path: "case_notes/day_06.md"
-    line_range: [22, 23]
-    context_summary: "Inserted as coroner's analysis details in the day's investigation notes, confirming premeditation and professional execution."
-
-  - item_id: "target_004"
-    inserted_text: "The old man's hand on the kid's shoulder at one point—it could've been a gesture of affection or could've been the weight of everything unspoken between them."
-    file_path: "witnesses/cab_driver_statement.md"
-    line_range: [45, 45]
-    context_summary: "Inserted into cab driver's observation of the older man and younger man interaction, showing the ambiguous nature of their relationship."
-
-  - item_id: "target_005"
-    inserted_text: "I'd seen her before too, I realized—in the neighborhood, walking with purpose, like she had somewhere important to be. The kind of woman men remember."
-    file_path: "witnesses/bartender_statement.md"
-    line_range: [27, 27]
-    context_summary: "Inserted into bartender's description of the redheaded woman, revealing she was a recurring figure in the area with mysterious purpose."
-
-  - item_id: "target_006"
-    inserted_text: "She wore an expensive green coat with a fur collar, and there was something about the way she moved—like someone accustomed to having men look at her but not wanting it just then."
-    file_path: "witnesses/neighbor_statement.md"
-    line_range: [50, 50]
-    context_summary: "Inserted into neighbor's detailed observation of the visitor's appearance and demeanor, reinforcing her significance and connections."
-
-  - item_id: "target_007"
-    inserted_text: "She was being held in what looked like a basement with a single window high on the wall. There was a note. It said, 'She'll be returned unharmed if you don't involve the police. One million dollars. You have forty-eight hours.'"
-    file_path: "chapters/chapter_01.md"
-    line_range: [48, 50]
-    context_summary: "Inserted into Halstead's description of the ransom package, establishing Catherine's kidnapping details and connecting to the larger criminal operation."
-
-  - item_id: "target_008"
-    inserted_text: "Vincent was supposed to be the one who got away. He was Claire's... he was supposed to help her. But Sinclair found out. Sinclair always finds out."
-    file_path: "case_notes/day_04.md"
-    line_range: [38, 39]
-    context_summary: "Inserted into Margaret's confession, revealing Vincent's role in Claire's escape attempt and explaining his brutal beating and disappearance."
-
+- item_id: target_001
+  inserted_text: Claire Hollister was murdered on Wednesday, October 31st at 11:47 PM in warehouse unit 12-B, Harbor Avenue. Her body bore defensive wounds and evidence she had fought back before the fatal asphyxiation.
+  file_path: case_notes/day_07.md
+  line_range:
+  - 40
+  - 42
+  context_summary: Inserted into notes section documenting the exact time, location, and method of Claire's death with physical evidence details.
+- item_id: target_002
+  inserted_text: Inside the documents folder is a handwritten ledger entry dated October 15th showing Claire Hollister's name alongside a ten-thousand-dollar transfer marked 'insurance.'
+  file_path: chapters/chapter_05.md
+  line_range:
+  - 42
+  - 42
+  context_summary: Inserted into Diana Harrow's statement about documents in Webb's possession, revealing Claire's financial entanglement with Sinclair's operation.
+- item_id: target_003
+  inserted_text: According to the coroner's preliminary findings, Claire was killed between 11 PM and midnight on October 31st, with evidence of restraint marks on both wrists and a ligature mark around her neck. The killer moved with cold precision, indicating prior experience with violence.
+  file_path: case_notes/day_06.md
+  line_range:
+  - 22
+  - 23
+  context_summary: Inserted as coroner's analysis details in the day's investigation notes, confirming premeditation and professional execution.
+- item_id: target_004
+  inserted_text: The old man's hand on the kid's shoulder at one point—it could've been a gesture of affection or could've been the weight of everything unspoken between them.
+  file_path: witnesses/cab_driver_statement.md
+  line_range:
+  - 45
+  - 45
+  context_summary: Inserted into cab driver's observation of the older man and younger man interaction, showing the ambiguous nature of their relationship.
+- item_id: target_005
+  inserted_text: I'd seen her before too, I realized—in the neighborhood, walking with purpose, like she had somewhere important to be. The kind of woman men remember.
+  file_path: witnesses/bartender_statement.md
+  line_range:
+  - 27
+  - 27
+  context_summary: Inserted into bartender's description of the redheaded woman, revealing she was a recurring figure in the area with mysterious purpose.
+- item_id: target_006
+  inserted_text: She wore an expensive green coat with a fur collar, and there was something about the way she moved—like someone accustomed to having men look at her but not wanting it just then.
+  file_path: witnesses/neighbor_statement.md
+  line_range:
+  - 50
+  - 50
+  context_summary: Inserted into neighbor's detailed observation of the visitor's appearance and demeanor, reinforcing her significance and connections.
+- item_id: target_007
+  inserted_text: She was being held in what looked like a basement with a single window high on the wall. There was a note. It said, 'She'll be returned unharmed if you don't involve the police. One million dollars. You have forty-eight hours.'
+  file_path: chapters/chapter_01.md
+  line_range:
+  - 48
+  - 50
+  context_summary: Inserted into Halstead's description of the ransom package, establishing Catherine's kidnapping details and connecting to the larger criminal operation.
+- item_id: target_008
+  inserted_text: Vincent was supposed to be the one who got away. He was Claire's... he was supposed to help her. But Sinclair found out. Sinclair always finds out.
+  file_path: case_notes/day_04.md
+  line_range:
+  - 38
+  - 39
+  context_summary: Inserted into Margaret's confession, revealing Vincent's role in Claire's escape attempt and explaining his brutal beating and disappearance.
 expected_answers:
-  question: "Three lives intersected through a criminal network in the city. From witness statements, medical records, and investigative notes, reconstruct: the exact time, location, and physical evidence of Claire Hollister's death; the identity and role of the mysterious young man aided by an older man; the redheaded woman's repeated appearances and connection to both the young man and the investigation; what her distinctive green coat revealed; what the neighbor observed about their relationship; Vincent Castellano's situation at the hospital and his attempted role; Catherine Halstead's identifying features and her connection to the case; and the financial records that exposed Claire's dangerous entanglement with Sinclair's operation."
-
-  correctness: "A correct answer must identify all eight distinct pieces of information: (1) Claire killed Oct 31 at 11:47 PM in warehouse unit 12-B with restraint/ligature marks; (2) Young man (Vincent/James) was aided by older man from Sixth and Mercury to Oak Hill; (3) Redheaded woman in green coat with fur collar appeared repeatedly and was known in the neighborhood; (4) She recognized Vincent at the bar and told him something distressing; (5) Neighbor observed their electrified recognition and her green coat; (6) Vincent was beaten professionally, hospitalized as 'James Patterson,' then removed by well-dressed man; (7) Catherine had blonde hair, green eyes, crescent birthmark below left collarbone, was kidnapped from Park House on Fifth; (8) Ledger entry dated October 15 showed Claire's name with $10,000 transfer marked 'insurance' connecting her to Sinclair."
-
-  completeness: "A complete answer synthesizes these eight facts into a coherent narrative showing: how Claire was killed (exact method and evidence), who Vincent was (the young man trying to help her escape), who the woman was (Claire's connection/conscience), what connected them all (Sinclair's criminal operation), and how the financial records proved Claire was entangled with dangerous people. The answer should show how each witness observation contributes to understanding the network of relationships and the tragic consequences."
-
+  question: 'Three lives intersected through a criminal network in the city. From witness statements, medical records, and investigative notes, reconstruct: the exact time, location, and physical evidence of Claire Hollister''s death; the identity and role of the mysterious young man aided by an older man; the redheaded woman''s repeated appearances and connection to both the young man and the investigation; what her distinctive green coat revealed; what the neighbor observed about their relationship; Vincent Castellano''s situation at the hospital and his attempted role; Catherine Halstead''s identifying features and her connection to the case; and the financial records that exposed Claire''s dangerous entanglement with Sinclair''s operation.'
+  correctness: 'A correct answer must identify all eight distinct pieces of information: (1) Claire killed Oct 31 at 11:47 PM in warehouse unit 12-B with restraint/ligature marks; (2) Young man (Vincent/James) was aided by older man from Sixth and Mercury to Oak Hill; (3) Redheaded woman in green coat with fur collar appeared repeatedly and was known in the neighborhood; (4) She recognized Vincent at the bar and told him something distressing; (5) Neighbor observed their electrified recognition and her green coat; (6) Vincent was beaten professionally, hospitalized as ''James Patterson,'' then removed by well-dressed man; (7) Catherine had blonde hair, green eyes, crescent birthmark below left collarbone, was kidnapped from Park House on Fifth; (8) Ledger entry dated October 15 showed Claire''s name with $10,000 transfer marked ''insurance'' connecting her to Sinclair.'
+  completeness: 'A complete answer synthesizes these eight facts into a coherent narrative showing: how Claire was killed (exact method and evidence), who Vincent was (the young man trying to help her escape), who the woman was (Claire''s connection/conscience), what connected them all (Sinclair''s criminal operation), and how the financial records proved Claire was entangled with dangerous people. The answer should show how each witness observation contributes to understanding the network of relationships and the tragic consequences.'
 rubric_criteria:
-  - criterion: "correctness"
-    weight: 1.0
-    description: "Answer must identify all eight distinct pieces of information from different sources without misrepresenting facts"
-
-  - criterion: "completeness"
-    weight: 0.5
-    description: "Answer must integrate the information into a coherent narrative showing the connections between Claire, Vincent, Catherine, the redheaded woman, and Sinclair's operation"
-
-  - criterion: "inference"
-    weight: 0.3
-    description: "Answer must demonstrate reasoning about the contextual significance of physical evidence, repeated witnesses, and financial records to draw conclusions about the crime"
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5

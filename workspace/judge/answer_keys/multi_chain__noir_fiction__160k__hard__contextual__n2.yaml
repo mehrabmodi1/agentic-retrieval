@@ -1,33 +1,38 @@
-parametrisation_id: "multi_chain__noir_fiction__160k__hard__contextual__n2"
-experiment_type: "multi_chain"
-generated_at: "2026-04-05T14:30:00Z"
+parametrisation_id: multi_chain__noir_fiction__160k__hard__contextual__n2
+experiment_type: multi_chain
+generated_at: '2026-04-05T14:30:00Z'
 parameters:
-  content_profile: "noir_fiction"
+  content_profile: noir_fiction
   corpus_token_count: 160000
-  discriminability: "hard"
-  reference_clarity: "contextual"
+  discriminability: hard
+  reference_clarity: contextual
 items:
-  - item_id: "target_001"
-    inserted_text: "When he stood up to leave, his jacket opened and I caught a glimpse of his shirt cuff—had gold cufflinks with initials. J and W. And in his breast pocket, the corner of a business card was showing. I couldn't read it from the bar, but the letterhead was gold-embossed, the kind lawyers use. Law firms downtown. The kind of places where decisions get made about other people's lives."
-    file_path: "witnesses/bartender_statement.md"
-    line_range: [42, 46]
-    context_summary: "Bartender observes the mysterious older man's personal details including initials J.W. and law firm business card before he departs."
-  - item_id: "target_002"
-    inserted_text: "Before I leave, I ask Helen one more question: \"Anyone else at the firm I should speak with about Claire? Maybe someone in a senior position?\"\n\nHelen's jaw tightens almost imperceptibly. \"There's James P. Whitmore. He's a senior partner. But he's not in the office today. He's been traveling. Mr. Whitmore doesn't usually involve himself in personnel matters—that's Mr. Mercer's domain—but if there's something you need to know about Claire's work, he might have information.\"\n\nI mark him down as someone worth talking to again. And I make a note: The name Whitmore. The Regency Hotel. The careful man with the expensive coat. The pieces are starting to form a picture I don't like."
-    file_path: "case_notes/day_01.md"
-    line_range: [71, 83]
-    context_summary: "Investigator learns from the receptionist Helen that James P. Whitmore is a senior partner at the law firm, connecting the mysterious man from the hotel to the law office."
+- item_id: target_001
+  inserted_text: When he stood up to leave, his jacket opened and I caught a glimpse of his shirt cuff—had gold cufflinks with initials. J and W. And in his breast pocket, the corner of a business card was showing. I couldn't read it from the bar, but the letterhead was gold-embossed, the kind lawyers use. Law firms downtown. The kind of places where decisions get made about other people's lives.
+  file_path: witnesses/bartender_statement.md
+  line_range:
+  - 42
+  - 46
+  context_summary: Bartender observes the mysterious older man's personal details including initials J.W. and law firm business card before he departs.
+- item_id: target_002
+  inserted_text: 'Before I leave, I ask Helen one more question: "Anyone else at the firm I should speak with about Claire? Maybe someone in a senior position?"
+
+
+    Helen''s jaw tightens almost imperceptibly. "There''s James P. Whitmore. He''s a senior partner. But he''s not in the office today. He''s been traveling. Mr. Whitmore doesn''t usually involve himself in personnel matters—that''s Mr. Mercer''s domain—but if there''s something you need to know about Claire''s work, he might have information."
+
+
+    I mark him down as someone worth talking to again. And I make a note: The name Whitmore. The Regency Hotel. The careful man with the expensive coat. The pieces are starting to form a picture I don''t like.'
+  file_path: case_notes/day_01.md
+  line_range:
+  - 71
+  - 83
+  context_summary: Investigator learns from the receptionist Helen that James P. Whitmore is a senior partner at the law firm, connecting the mysterious man from the hotel to the law office.
 expected_answers:
-  question: "Starting with what the bartender observes about the older man's personal identifying details, trace the chain through what the investigator discovers at the law firm. Who is the mysterious older man who met with the young patron, and what is his professional position?"
-  correctness: "A correct answer must identify the man as James P. Whitmore (or note the J.W. initials leading to this identity) and establish that he is a senior partner at Mercer & Associates law firm."
-  completeness: "A complete answer covers the full chain: (1) the bartender's observation of J.W. initials and law firm business card, (2) the investigator's discovery that James P. Whitmore is a senior partner at the firm, and (3) the connection between the mysterious hotel guest and the law firm."
+  question: Starting with what the bartender observes about the older man's personal identifying details, trace the chain through what the investigator discovers at the law firm. Who is the mysterious older man who met with the young patron, and what is his professional position?
+  correctness: A correct answer must identify the man as James P. Whitmore (or note the J.W. initials leading to this identity) and establish that he is a senior partner at Mercer & Associates law firm.
+  completeness: 'A complete answer covers the full chain: (1) the bartender''s observation of J.W. initials and law firm business card, (2) the investigator''s discovery that James P. Whitmore is a senior partner at the firm, and (3) the connection between the mysterious hotel guest and the law firm.'
 rubric_criteria:
-  - criterion: "correctness"
-    weight: 1.0
-    description: "Answer correctly identifies both the name (James P. Whitmore) and the professional position (senior partner at Mercer & Associates)"
-  - criterion: "completeness"
-    weight: 0.5
-    description: "Answer traces the chain across both needles, showing how bartender's observation of initials/business card leads to investigator's discovery of Whitmore's identity and position"
-  - criterion: "contextual_understanding"
-    weight: 0.3
-    description: "Answer demonstrates understanding of how the initials J.W. and law firm reference in the bartender statement connect to the name James P. Whitmore and his role at the law firm"
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5

@@ -1,98 +1,114 @@
-parametrisation_id: "multi_reasoning__noir_fiction__800k__hard__synonym__n8"
-experiment_type: "multi_reasoning"
-generated_at: "2026-04-05T23:30:00Z"
+parametrisation_id: multi_reasoning__noir_fiction__800k__hard__synonym__n8
+experiment_type: multi_reasoning
+generated_at: '2026-04-05T23:30:00Z'
 parameters:
-  content_profile: "noir_fiction"
+  content_profile: noir_fiction
   corpus_token_count: 800000
-  discriminability: "hard"
-  reference_clarity: "synonym"
+  discriminability: hard
+  reference_clarity: synonym
 items:
-  - item_id: "target_001"
-    inserted_text: "He made a decision: he would help recover the painting and return it to Mrs. Vesper, even if it meant betraying Kaslan and sacrificing his own safety."
-    file_path: "witnesses/informant_interview.md"
-    line_range: [34, 34]
-    context_summary: "Embedded within Victor's explanation of Harvey's moral crisis and conscience, revealing Harvey's core motivation and sacrifice."
-    semantic_content: "Harvey's decision to return stolen painting to widow despite personal risk"
-
-  - item_id: "target_002"
-    inserted_text: "More importantly, Chen has already published three major investigations into Sinclair Imports and its connection to organized crime, but nothing has stuck yet—what you have might finally be the piece that breaks the entire network wide open."
-    file_path: "case_notes/day_05.md"
-    line_range: [41, 41]
-    context_summary: "Added to Helen's recommendation of reporter Chen, showing Chen's prior investigative work into the criminal network."
-    semantic_content: "Reporter David Chen's existing investigations into Sinclair Imports organization"
-
-  - item_id: "target_003"
-    inserted_text: "I later learn from a source in the warehouse district that Vincent never left the building—he's being held in the basement of the Sinclair Imports facility at 447 Harbor Boulevard, more valuable as leverage against his family than as a corpse."
-    file_path: "case_notes/day_04.md"
-    line_range: [42, 42]
-    context_summary: "Appended to the speculation about Vincent's status, revealing his actual location and value as hostage."
-    semantic_content: "Vincent Castellano's location: basement of Sinclair Imports at 447 Harbor Boulevard"
-
-  - item_id: "target_004"
-    inserted_text: "What Margaret doesn't mention is that Claire has been using her access to client files to help someone—a young man trying to escape a criminal organization—by providing legal advice on how to safely cooperate with law enforcement."
-    file_path: "case_notes/day_01.md"
-    line_range: [23, 23]
-    context_summary: "Embedded in the description of Claire's job at Mercer & Associates, revealing her hidden role in assisting Harvey."
-    semantic_content: "Claire Hollister's involvement in helping Harvey access legal counsel for escaping criminal network"
-
-  - item_id: "target_005"
-    inserted_text: "She has a small crescent-shaped birthmark just below her left collarbone—barely visible unless you know to look for it, which is how Sinclair authenticated the kidnapping photograph he sent to you."
-    file_path: "chapters/chapter_01.md"
-    line_range: [31, 31]
-    context_summary: "Inserted parenthetically within the description of Catherine's identifying feature, revealing how Sinclair used it to prove he had her."
-    semantic_content: "Catherine's birthmark as authentication method in kidnapping photograph"
-
-  - item_id: "target_006"
-    inserted_text: "She was his connection to the people who could help him disappear—Margot, a woman who works inside the criminal network but who seemed to understand his need for redemption."
-    file_path: "witnesses/neighbor_statement.md"
-    line_range: [40, 40]
-    context_summary: "Added to Eleanor's theory about the redheaded woman's identity and role, naming Margot as Harvey's facilitator."
-    semantic_content: "Margot identified as the woman who facilitated Harvey's escape from the criminal organization"
-
-  - item_id: "target_007"
-    inserted_text: "Later, through some police contacts, I find out the man was Silas Gregg, a retired federal operative working as a private fixer—the kind of man who arranges disappearances and helps people vanish into new identities when the situation requires it."
-    file_path: "witnesses/cab_driver_statement.md"
-    line_range: [46, 46]
-    context_summary: "Appended after Jerry's account of the mysterious warning from the white-haired man, revealing his identity and profession."
-    semantic_content: "Silas Gregg identified as retired federal operative and professional fixer"
-
-  - item_id: "target_008"
-    inserted_text: "Last confirmed sighting is November 3rd, when he purchases a train ticket from Union Station under an assumed name—\"James P. Whitmore,\" we believe. Ticket was destination unrecorded—the clerk doesn't remember the specifics, only that the passenger was young, dark-haired, traveling light with a small suitcase, and seemed relieved rather than frightened. This matches the profile of someone who has made a calculated exit from his former life rather than someone fleeing in panic."
-    file_path: "witnesses/detective_debrief.md"
-    line_range: [18, 18]
-    context_summary: "Embedded in Detective Morello's timeline report, adding details about Harvey's departure date, assumed identity, and demeanor."
-    semantic_content: "Harvey's departure on November 3rd using assumed name 'James P. Whitmore' with calculated demeanor"
-
+- item_id: target_001
+  inserted_text: 'He made a decision: he would help recover the painting and return it to Mrs. Vesper, even if it meant betraying Kaslan and sacrificing his own safety.'
+  file_path: witnesses/informant_interview.md
+  line_range:
+  - 34
+  - 34
+  context_summary: Embedded within Victor's explanation of Harvey's moral crisis and conscience, revealing Harvey's core motivation and sacrifice.
+  semantic_content: Harvey's decision to return stolen painting to widow despite personal risk
+- item_id: target_002
+  inserted_text: More importantly, Chen has already published three major investigations into Sinclair Imports and its connection to organized crime, but nothing has stuck yet—what you have might finally be the piece that breaks the entire network wide open.
+  file_path: case_notes/day_05.md
+  line_range:
+  - 41
+  - 41
+  context_summary: Added to Helen's recommendation of reporter Chen, showing Chen's prior investigative work into the criminal network.
+  semantic_content: Reporter David Chen's existing investigations into Sinclair Imports organization
+- item_id: target_003
+  inserted_text: I later learn from a source in the warehouse district that Vincent never left the building—he's being held in the basement of the Sinclair Imports facility at 447 Harbor Boulevard, more valuable as leverage against his family than as a corpse.
+  file_path: case_notes/day_04.md
+  line_range:
+  - 42
+  - 42
+  context_summary: Appended to the speculation about Vincent's status, revealing his actual location and value as hostage.
+  semantic_content: 'Vincent Castellano''s location: basement of Sinclair Imports at 447 Harbor Boulevard'
+- item_id: target_004
+  inserted_text: What Margaret doesn't mention is that Claire has been using her access to client files to help someone—a young man trying to escape a criminal organization—by providing legal advice on how to safely cooperate with law enforcement.
+  file_path: case_notes/day_01.md
+  line_range:
+  - 23
+  - 23
+  context_summary: Embedded in the description of Claire's job at Mercer & Associates, revealing her hidden role in assisting Harvey.
+  semantic_content: Claire Hollister's involvement in helping Harvey access legal counsel for escaping criminal network
+- item_id: target_005
+  inserted_text: She has a small crescent-shaped birthmark just below her left collarbone—barely visible unless you know to look for it, which is how Sinclair authenticated the kidnapping photograph he sent to you.
+  file_path: chapters/chapter_01.md
+  line_range:
+  - 31
+  - 31
+  context_summary: Inserted parenthetically within the description of Catherine's identifying feature, revealing how Sinclair used it to prove he had her.
+  semantic_content: Catherine's birthmark as authentication method in kidnapping photograph
+- item_id: target_006
+  inserted_text: She was his connection to the people who could help him disappear—Margot, a woman who works inside the criminal network but who seemed to understand his need for redemption.
+  file_path: witnesses/neighbor_statement.md
+  line_range:
+  - 40
+  - 40
+  context_summary: Added to Eleanor's theory about the redheaded woman's identity and role, naming Margot as Harvey's facilitator.
+  semantic_content: Margot identified as the woman who facilitated Harvey's escape from the criminal organization
+- item_id: target_007
+  inserted_text: Later, through some police contacts, I find out the man was Silas Gregg, a retired federal operative working as a private fixer—the kind of man who arranges disappearances and helps people vanish into new identities when the situation requires it.
+  file_path: witnesses/cab_driver_statement.md
+  line_range:
+  - 46
+  - 46
+  context_summary: Appended after Jerry's account of the mysterious warning from the white-haired man, revealing his identity and profession.
+  semantic_content: Silas Gregg identified as retired federal operative and professional fixer
+- item_id: target_008
+  inserted_text: Last confirmed sighting is November 3rd, when he purchases a train ticket from Union Station under an assumed name—"James P. Whitmore," we believe. Ticket was destination unrecorded—the clerk doesn't remember the specifics, only that the passenger was young, dark-haired, traveling light with a small suitcase, and seemed relieved rather than frightened. This matches the profile of someone who has made a calculated exit from his former life rather than someone fleeing in panic.
+  file_path: witnesses/detective_debrief.md
+  line_range:
+  - 18
+  - 18
+  context_summary: Embedded in Detective Morello's timeline report, adding details about Harvey's departure date, assumed identity, and demeanor.
+  semantic_content: Harvey's departure on November 3rd using assumed name 'James P. Whitmore' with calculated demeanor
 expected_answers:
-  question: "What was the complete network of people, organizations, and actions involved in Harvey's escape from the criminal organization, including those who helped him, those who tried to stop him, and the methods used to facilitate his departure?"
+  question: What was the complete network of people, organizations, and actions involved in Harvey's escape from the criminal organization, including those who helped him, those who tried to stop him, and the methods used to facilitate his departure?
+  correctness: 'A correct answer must identify:
 
-  correctness: |
-    A correct answer must identify:
-    - Harvey's moral decision to return the stolen Vesper painting
+    - Harvey''s moral decision to return the stolen Vesper painting
+
     - The Kaslan art theft operation as the criminal network
+
     - Silas Gregg as the field operative/handler attempting to enforce control
-    - Margot as the acquisition specialist and Harvey's escape facilitator
+
+    - Margot as the acquisition specialist and Harvey''s escape facilitator
+
     - Reporter David Chen as the external journalist with prior investigations
+
     - Vincent Castellano as hostage leverage held at 447 Harbor Boulevard
-    - Claire Hollister's role in connecting Harvey to legal counsel
-    - Harvey's departure on November 3rd using assumed identity
 
-  completeness: |
-    A complete answer must synthesize all 8 items to construct:
+    - Claire Hollister''s role in connecting Harvey to legal counsel
+
+    - Harvey''s departure on November 3rd using assumed identity
+
+    '
+  completeness: 'A complete answer must synthesize all 8 items to construct:
+
     1. The criminal infrastructure (Kaslan operation, Sinclair Imports organization)
-    2. The key actors and their roles (Harvey as conscience-stricken facilitator; Gregg as enforcer; Margot as facilitator; Chen as external threat)
-    3. The support network (Claire providing access to legal counsel; attorney Marchetti providing legal advice)
-    4. The leverage and stakes (Vincent as hostage; Catherine's kidnapping authentication method)
-    5. The execution of escape (assumed identity usage; departure timing; emotional state indicating calculated exit rather than panic)
-    6. The broader implications (Chen's prior investigations suggesting Sinclair operation is larger target; painting return as moral statement)
 
+    2. The key actors and their roles (Harvey as conscience-stricken facilitator; Gregg as enforcer; Margot as facilitator; Chen as external threat)
+
+    3. The support network (Claire providing access to legal counsel; attorney Marchetti providing legal advice)
+
+    4. The leverage and stakes (Vincent as hostage; Catherine''s kidnapping authentication method)
+
+    5. The execution of escape (assumed identity usage; departure timing; emotional state indicating calculated exit rather than panic)
+
+    6. The broader implications (Chen''s prior investigations suggesting Sinclair operation is larger target; painting return as moral statement)
+
+    '
 rubric_criteria:
-  - criterion: "correctness"
-    weight: 1.0
-    description: "All 8 items must be identified and correctly attributed to their sources"
-  - criterion: "completeness"
-    weight: 0.5
-    description: "Answer must demonstrate understanding of how all items connect to form the complete escape network"
-  - criterion: "reasoning"
-    weight: 0.3
-    description: "Answer must show causal reasoning about why these people worked together despite organizational conflicts"
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5

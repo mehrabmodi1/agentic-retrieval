@@ -94,13 +94,8 @@ expected_answers:
 rubric_criteria:
 - criterion: correctness
   weight: 1.0
-  description: Final numerical answer is exactly 407 days with all 8 values properly identified and summed
 - criterion: completeness
   weight: 0.5
-  description: Response demonstrates finding all 8 constants across different files and understanding their interdependency in the retention policy system
-- criterion: reasoning
-  weight: 0.5
-  description: Answer shows how scattered retention policies across error handling, email, task management, file cleanup, middleware, validation, and testing all contribute to the total system retention time
 notes: 'This is a hard-discriminability, exact-reference needle set requiring:
 
   - Multi-file navigation (8 different source files)

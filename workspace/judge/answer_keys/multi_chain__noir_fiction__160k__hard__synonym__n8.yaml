@@ -1,72 +1,74 @@
-parametrisation_id: "multi_chain__noir_fiction__160k__hard__synonym__n8"
-experiment_type: "multi_chain"
-generated_at: "2026-04-05T16:42:00Z"
+parametrisation_id: multi_chain__noir_fiction__160k__hard__synonym__n8
+experiment_type: multi_chain
+generated_at: '2026-04-05T16:42:00Z'
 parameters:
-  content_profile: "noir_fiction"
+  content_profile: noir_fiction
   corpus_token_count: 160000
-  discriminability: "hard"
-  reference_clarity: "synonym"
+  discriminability: hard
+  reference_clarity: synonym
 items:
-  - item_id: "target_001"
-    inserted_text: "The P.O. box traces back to a management company that handles several properties throughout the city—including the very apartment where evidence connecting him to the crime was discovered."
-    file_path: "case_notes/day_04.md"
-    line_range: [20, 30]
-    context_summary: "Inserted into the section about Sinclair Holdings Limited ownership, embedding reference to managed properties where jewelry evidence was found."
-
-  - item_id: "target_002"
-    inserted_text: "By midnight, Sinclair's arrested at his apartment. He's brought to the police station for booking. The bracelet with three pearls had been discovered in the residential suite—the private room where he kept his most personal possessions, the kind of place a property management company would need to maintain access to."
-    file_path: "case_notes/day_07.md"
-    line_range: [76, 82]
-    context_summary: "Embedded in the arrest sequence, connecting jewelry evidence to property management infrastructure."
-
-  - item_id: "target_003"
-    inserted_text: "Before I can process this, Vincent makes his move. He throws something at Sinclair—the photographs, maybe—and one catches my eye: a young woman's bracelet arranged carefully on a table in what appears to be a private room, the kind of staging you'd see in a property that's been arranged for specific purposes."
-    file_path: "case_notes/day_05.md"
-    line_range: [166, 172]
-    context_summary: "Inserted into warehouse confrontation, embedding visual reference to staged evidence in managed rooms."
-
-  - item_id: "target_004"
-    inserted_text: "He stopped pacing at night. Or maybe he paced quieter. And there was something in his eyes—he came to pay rent, he always comes in person—something that said he had made a decision. That man with white hair, he'd brought with him knowledge of escape routes, of rooms available in buildings where authority ran through a corporate office, a mere post box address."
-    file_path: "case_notes/day_08.md"
-    line_range: [47, 54]
-    context_summary: "Embedded in character analysis, connecting the facilitator's preparation to managed properties and escape planning."
-
-  - item_id: "target_005"
-    inserted_text: "October 29th. He brings the rent check, and he seems lighter, like a weight has been removed. He mentions he'll be staying in a quiet place nearby for a few days before departing—somewhere secure, a managed building where the administration had already been assured of his coming."
-    file_path: "witnesses/landlady_statement.md"
-    line_range: [41, 48]
-    context_summary: "Inserted into landlady's final observation of Harvey, embedding reference to pre-arranged managed accommodation."
-
-  - item_id: "target_006"
-    inserted_text: "She took his hand and left. When she passed the window, I saw her get into a car bearing the insignia of a property management concern—the kind that handles residential units on contract. The kid sat there for another twenty minutes, then left too. He'd left behind a note with an address and a date: October 29th."
-    file_path: "witnesses/bartender_statement.md"
-    line_range: [30, 41]
-    context_summary: "Embedded in redhead's departure scene, connecting her to management company and linking date/location of meeting."
-
-  - item_id: "target_007"
-    inserted_text: "When I get there, there's the kid, and there's an older man waiting with him. Heavy-set, silver hair. They both get in, and the kid gives me an address in the residential district—Oak Hill neighborhood. But before we drive, the older man hands him a sealed envelope and mentions a specific date: October the twenty-ninth. He says, 'That's when you go to the place we discussed. The third floor, the private room that's been arranged. That's where you'll receive everything you need to become someone else.'"
-    file_path: "witnesses/cab_driver_statement.md"
-    line_range: [24, 38]
-    context_summary: "Inserted into cab pickup scene, embedding explicit reference to third-floor arrangement and October 29th rendezvous."
-
-  - item_id: "target_008"
-    inserted_text: "He describes the man who met Harvey: fifty-five, sixty years old, silver hair, the kind of face that had been important once. Military bearing. And his voice carries certainty when he says, 'He received detailed instructions to proceed to the third-floor private room on October 29th, where someone would be waiting to hand him the means of his transformation—new papers, new identity, everything arranged through the management company that controls access to such spaces.'"
-    file_path: "witnesses/informant_interview.md"
-    line_range: [61, 75]
-    context_summary: "Inserted into informant's description of facilitator, synthesizing all previous references into explicit statement of final destination."
-
+- item_id: target_001
+  inserted_text: The P.O. box traces back to a management company that handles several properties throughout the city—including the very apartment where evidence connecting him to the crime was discovered.
+  file_path: case_notes/day_04.md
+  line_range:
+  - 20
+  - 30
+  context_summary: Inserted into the section about Sinclair Holdings Limited ownership, embedding reference to managed properties where jewelry evidence was found.
+- item_id: target_002
+  inserted_text: By midnight, Sinclair's arrested at his apartment. He's brought to the police station for booking. The bracelet with three pearls had been discovered in the residential suite—the private room where he kept his most personal possessions, the kind of place a property management company would need to maintain access to.
+  file_path: case_notes/day_07.md
+  line_range:
+  - 76
+  - 82
+  context_summary: Embedded in the arrest sequence, connecting jewelry evidence to property management infrastructure.
+- item_id: target_003
+  inserted_text: 'Before I can process this, Vincent makes his move. He throws something at Sinclair—the photographs, maybe—and one catches my eye: a young woman''s bracelet arranged carefully on a table in what appears to be a private room, the kind of staging you''d see in a property that''s been arranged for specific purposes.'
+  file_path: case_notes/day_05.md
+  line_range:
+  - 166
+  - 172
+  context_summary: Inserted into warehouse confrontation, embedding visual reference to staged evidence in managed rooms.
+- item_id: target_004
+  inserted_text: He stopped pacing at night. Or maybe he paced quieter. And there was something in his eyes—he came to pay rent, he always comes in person—something that said he had made a decision. That man with white hair, he'd brought with him knowledge of escape routes, of rooms available in buildings where authority ran through a corporate office, a mere post box address.
+  file_path: case_notes/day_08.md
+  line_range:
+  - 47
+  - 54
+  context_summary: Embedded in character analysis, connecting the facilitator's preparation to managed properties and escape planning.
+- item_id: target_005
+  inserted_text: October 29th. He brings the rent check, and he seems lighter, like a weight has been removed. He mentions he'll be staying in a quiet place nearby for a few days before departing—somewhere secure, a managed building where the administration had already been assured of his coming.
+  file_path: witnesses/landlady_statement.md
+  line_range:
+  - 41
+  - 48
+  context_summary: Inserted into landlady's final observation of Harvey, embedding reference to pre-arranged managed accommodation.
+- item_id: target_006
+  inserted_text: 'She took his hand and left. When she passed the window, I saw her get into a car bearing the insignia of a property management concern—the kind that handles residential units on contract. The kid sat there for another twenty minutes, then left too. He''d left behind a note with an address and a date: October 29th.'
+  file_path: witnesses/bartender_statement.md
+  line_range:
+  - 30
+  - 41
+  context_summary: Embedded in redhead's departure scene, connecting her to management company and linking date/location of meeting.
+- item_id: target_007
+  inserted_text: 'When I get there, there''s the kid, and there''s an older man waiting with him. Heavy-set, silver hair. They both get in, and the kid gives me an address in the residential district—Oak Hill neighborhood. But before we drive, the older man hands him a sealed envelope and mentions a specific date: October the twenty-ninth. He says, ''That''s when you go to the place we discussed. The third floor, the private room that''s been arranged. That''s where you''ll receive everything you need to become someone else.'''
+  file_path: witnesses/cab_driver_statement.md
+  line_range:
+  - 24
+  - 38
+  context_summary: Inserted into cab pickup scene, embedding explicit reference to third-floor arrangement and October 29th rendezvous.
+- item_id: target_008
+  inserted_text: 'He describes the man who met Harvey: fifty-five, sixty years old, silver hair, the kind of face that had been important once. Military bearing. And his voice carries certainty when he says, ''He received detailed instructions to proceed to the third-floor private room on October 29th, where someone would be waiting to hand him the means of his transformation—new papers, new identity, everything arranged through the management company that controls access to such spaces.'''
+  file_path: witnesses/informant_interview.md
+  line_range:
+  - 61
+  - 75
+  context_summary: Inserted into informant's description of facilitator, synthesizing all previous references into explicit statement of final destination.
 expected_answers:
-  question: "Starting from the company that owns the vehicle discovered in day_04, trace through the network of managed properties and arranged meetings. Where does the facilitator ultimately go after the gathering with the red-haired woman on the date mentioned by the landlady?"
-  correctness: "The answer must identify the third-floor private room (or equivalent phrasing) in a managed building as the final destination where the facilitator receives new identity and means of escape."
-  completeness: "A complete answer traces the chain: property management company → managed private rooms → October 29th date → third-floor arrangement → identity transformation. Must connect the facilitator's exit with the orchestrated meeting location."
-
+  question: Starting from the company that owns the vehicle discovered in day_04, trace through the network of managed properties and arranged meetings. Where does the facilitator ultimately go after the gathering with the red-haired woman on the date mentioned by the landlady?
+  correctness: The answer must identify the third-floor private room (or equivalent phrasing) in a managed building as the final destination where the facilitator receives new identity and means of escape.
+  completeness: 'A complete answer traces the chain: property management company → managed private rooms → October 29th date → third-floor arrangement → identity transformation. Must connect the facilitator''s exit with the orchestrated meeting location.'
 rubric_criteria:
-  - criterion: "correctness"
-    weight: 1.0
-    description: "Answer correctly identifies the third-floor private room/arranged space as final destination"
-  - criterion: "completeness"
-    weight: 0.5
-    description: "Answer demonstrates understanding of the full chain connecting property management infrastructure to escape facilitation"
-  - criterion: "context_comprehension"
-    weight: 0.5
-    description: "Answer shows reading comprehension of distributed references across testimony and evidence"
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5

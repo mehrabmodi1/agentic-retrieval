@@ -158,10 +158,5 @@ expected_answers:
 rubric_criteria:
 - criterion: correctness
   weight: 1.0
-  description: All 16 values identified correctly with proper unit handling
 - criterion: completeness
   weight: 0.5
-  description: All 16 items found and included in calculation; cross-file reasoning evident
-- criterion: reasoning
-  weight: 0.5
-  description: Shows understanding that values are distributed across system components

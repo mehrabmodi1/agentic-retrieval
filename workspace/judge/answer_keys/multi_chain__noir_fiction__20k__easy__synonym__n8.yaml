@@ -1,65 +1,74 @@
-parametrisation_id: "multi_chain__noir_fiction__20k__easy__synonym__n8"
-experiment_type: "multi_chain"
-generated_at: "2026-04-05T00:00:00Z"
+parametrisation_id: multi_chain__noir_fiction__20k__easy__synonym__n8
+experiment_type: multi_chain
+generated_at: '2026-04-05T00:00:00Z'
 parameters:
-  content_profile: "noir_fiction"
+  content_profile: noir_fiction
   corpus_token_count: 20000
-  discriminability: "easy"
-  reference_clarity: "synonym"
+  discriminability: easy
+  reference_clarity: synonym
 items:
-  - item_id: "target_001"
-    inserted_text: "He leaned down and said something before he took his hand away. Bar was quiet that night, and I caught a few words clear enough—'the Starlight Motor Inn, room fourteen. The registration is under Kaslan Shipping. Look for the ledger in the nightstand.' Said it like giving directions, real matter-of-fact."
-    file_path: "witnesses/bartender_statement.md"
-    line_range: [42, 42]
-    context_summary: "Deke the bartender recalls the old man whispering about Starlight Motor Inn registration under Kaslan Shipping and a ledger in the nightstand."
-  - item_id: "target_002"
-    inserted_text: "October 29th. He brings the rent check, and he seems lighter, like a weight has been removed. We speak about the weather—it is turning cold—and he says he might spend Thanksgiving with family. Family! In three years, he has never mentioned family. I don't even know if he has family. But that day he mentions it like he is making a promise to himself. He also leaves behind a note hidden under the loose floorboard—I found it after his disappearance. The note says, 'If anyone asks, tell them to check with Marchetti at Consolidated Building, Suite 1450. He'll explain about the ledger and what it means.' Then he leaves."
-    file_path: "witnesses/landlady_statement.md"
-    line_range: [48, 48]
-    context_summary: "Eva the landlady discovers a hidden note from Harvey directing investigators to attorney Marchetti at Consolidated Building, Suite 1450, who can explain the ledger."
-  - item_id: "target_003"
-    inserted_text: "The following day, he came to my desk and said, 'Dorothy, if anyone ever asks you about a client named James Harvey, you say nothing. You confirm no appointments, you verify no meetings, you admit no knowledge of him whatsoever. But if you ever find the documents he brought—the shipping ledgers—you tell the police to look at the Vesper painting recovery at the public library steps. That painting came from Pier 11, Warehouse C. That's where it all connects.' I asked him if there was a legal matter that required this discretion, and he said, 'No. There's something worse than a legal matter. There's a moral one.'"
-    file_path: "witnesses/secretary_statement.md"
-    line_range: [46, 46]
-    context_summary: "Dorothy the secretary reveals Marchetti's instruction to connect the Vesper painting recovery to Pier 11, Warehouse C as the operational hub."
-  - item_id: "target_004"
-    inserted_text: "'That's the interesting part,' Victor said, and for the first time there was something like satisfaction in his voice. 'The painting was recovered. Three days ago, it was found leaning against the steps of the public library downtown. There was a note attached. It said, \"Property of the Vesper Estate. Return to family of Carl Vesper with apologies. The real inventory is stored at Pier 11, Warehouse C under Sinclair's control.\" No signature. But the message was clear: someone wanted to return the painting but couldn't do it openly, and someone else wanted law enforcement to know where the real operation was based.'"
-    file_path: "witnesses/informant_interview.md"
-    line_range: [66, 66]
-    context_summary: "Victor the informant discloses that the Vesper painting note contained a hidden message pointing to Pier 11, Warehouse C as Sinclair's main storage facility."
-  - item_id: "target_005"
-    inserted_text: "By four in the afternoon I'm back at the waterfront, looking for Paulie. I find him at the Anchor, nursing a beer and looking nervous. 'I need information,' I tell him. 'About the Kaslan operation and Pier 11. That's where Sinclair runs the real storage facility. Warehouse C. That's where Catherine is being held. The redheaded woman—the one called Margot—she has Catherine because of something her father Halstead did. But Sinclair doesn't care about Halstead. Sinclair cares about what Harvey knows about the operation and who he's told.' Paulie goes even whiter. 'You know about Pier 11?'"
-    file_path: "case_notes/day_04.md"
-    line_range: [94, 98]
-    context_summary: "Detective Shepherd's notes reveal that Sinclair is using Catherine as leverage at Pier 11, Warehouse C, connected to both Harvey's betrayal and Halstead's involvement."
-  - item_id: "target_006"
-    inserted_text: "She left perhaps an hour later. When she came out of his apartment, she was crying. Not sobbing. Just tears running down her face while she maintained complete composure. She was carrying an envelope—I caught a glimpse of it—and inside appeared to be photographs. Of buildings, I think. She wiped her eyes before she went to the elevator, but not before I saw them."
-    file_path: "witnesses/neighbor_statement.md"
-    line_range: [32, 32]
-    context_summary: "Eleanor's observation confirms the redheaded woman (Margot) carried photographs of buildings—likely evidence of Kaslan's operations including the warehouse."
-  - item_id: "target_007"
-    inserted_text: "'And these specialty goods—they wouldn't happen to include anything that might interest someone enough to kidnap your daughter?' He looked away, out the window at the pre-dawn gray that was starting to seep into the darkness. 'I have had... dealings. With people who aren't always on the right side of the law. Nothing violent, nothing involving drugs. But yes, there are people who wouldn't mind having leverage against me. Specifically, an organization called Kaslan. They've been moving stolen art through my import network. Catherine found out. She found documents in my office—shipping manifests, location details. The warehouse at Pier 11, Warehouse C. That's where they keep the high-value pieces. That's where they're probably keeping her.'"
-    file_path: "chapters/chapter_02.md"
-    line_range: [49, 49]
-    context_summary: "Halstead reveals Catherine discovered documents about Kaslan's operation and is being held at Pier 11, Warehouse C as leverage."
-  - item_id: "target_008"
-    inserted_text: "I walked north, retracing the route Catherine would have taken. The neighborhood was exactly what Eleanor had described: well-lit, quiet, respectable. The kind of place where you wouldn't expect violence or theft or kidnapping. The kind of place where people trusted that safety was a given. But I was beginning to understand something. Catherine hadn't been grabbed randomly. She'd been taken because of what she knew. She'd been taken because her father was involved with the Kaslan operation. And now, with the ledger missing, with Harvey gone, with the painting recovered—there was only one person left who could identify the specific locations and operations. Only one person who had seen the manifests, the photographs, the proof of what was stored at Pier 11, Warehouse C. Catherine Halstead was alive, but she was being held as insurance. As the one piece Sinclair could use to ensure that no one talked, no one testified, no one brought down the entire operation. She was the final guarantee of everyone's silence."
-    file_path: "chapters/chapter_03.md"
-    line_range: [81, 85]
-    context_summary: "Shepherd's final realization that Catherine is alive but being held as insurance/leverage at Pier 11, Warehouse C to prevent testimony against the Kaslan operation."
-
+- item_id: target_001
+  inserted_text: He leaned down and said something before he took his hand away. Bar was quiet that night, and I caught a few words clear enough—'the Starlight Motor Inn, room fourteen. The registration is under Kaslan Shipping. Look for the ledger in the nightstand.' Said it like giving directions, real matter-of-fact.
+  file_path: witnesses/bartender_statement.md
+  line_range:
+  - 42
+  - 42
+  context_summary: Deke the bartender recalls the old man whispering about Starlight Motor Inn registration under Kaslan Shipping and a ledger in the nightstand.
+- item_id: target_002
+  inserted_text: October 29th. He brings the rent check, and he seems lighter, like a weight has been removed. We speak about the weather—it is turning cold—and he says he might spend Thanksgiving with family. Family! In three years, he has never mentioned family. I don't even know if he has family. But that day he mentions it like he is making a promise to himself. He also leaves behind a note hidden under the loose floorboard—I found it after his disappearance. The note says, 'If anyone asks, tell them to check with Marchetti at Consolidated Building, Suite 1450. He'll explain about the ledger and what it means.' Then he leaves.
+  file_path: witnesses/landlady_statement.md
+  line_range:
+  - 48
+  - 48
+  context_summary: Eva the landlady discovers a hidden note from Harvey directing investigators to attorney Marchetti at Consolidated Building, Suite 1450, who can explain the ledger.
+- item_id: target_003
+  inserted_text: The following day, he came to my desk and said, 'Dorothy, if anyone ever asks you about a client named James Harvey, you say nothing. You confirm no appointments, you verify no meetings, you admit no knowledge of him whatsoever. But if you ever find the documents he brought—the shipping ledgers—you tell the police to look at the Vesper painting recovery at the public library steps. That painting came from Pier 11, Warehouse C. That's where it all connects.' I asked him if there was a legal matter that required this discretion, and he said, 'No. There's something worse than a legal matter. There's a moral one.'
+  file_path: witnesses/secretary_statement.md
+  line_range:
+  - 46
+  - 46
+  context_summary: Dorothy the secretary reveals Marchetti's instruction to connect the Vesper painting recovery to Pier 11, Warehouse C as the operational hub.
+- item_id: target_004
+  inserted_text: '''That''s the interesting part,'' Victor said, and for the first time there was something like satisfaction in his voice. ''The painting was recovered. Three days ago, it was found leaning against the steps of the public library downtown. There was a note attached. It said, "Property of the Vesper Estate. Return to family of Carl Vesper with apologies. The real inventory is stored at Pier 11, Warehouse C under Sinclair''s control." No signature. But the message was clear: someone wanted to return the painting but couldn''t do it openly, and someone else wanted law enforcement to know where the real operation was based.'''
+  file_path: witnesses/informant_interview.md
+  line_range:
+  - 66
+  - 66
+  context_summary: Victor the informant discloses that the Vesper painting note contained a hidden message pointing to Pier 11, Warehouse C as Sinclair's main storage facility.
+- item_id: target_005
+  inserted_text: By four in the afternoon I'm back at the waterfront, looking for Paulie. I find him at the Anchor, nursing a beer and looking nervous. 'I need information,' I tell him. 'About the Kaslan operation and Pier 11. That's where Sinclair runs the real storage facility. Warehouse C. That's where Catherine is being held. The redheaded woman—the one called Margot—she has Catherine because of something her father Halstead did. But Sinclair doesn't care about Halstead. Sinclair cares about what Harvey knows about the operation and who he's told.' Paulie goes even whiter. 'You know about Pier 11?'
+  file_path: case_notes/day_04.md
+  line_range:
+  - 94
+  - 98
+  context_summary: Detective Shepherd's notes reveal that Sinclair is using Catherine as leverage at Pier 11, Warehouse C, connected to both Harvey's betrayal and Halstead's involvement.
+- item_id: target_006
+  inserted_text: She left perhaps an hour later. When she came out of his apartment, she was crying. Not sobbing. Just tears running down her face while she maintained complete composure. She was carrying an envelope—I caught a glimpse of it—and inside appeared to be photographs. Of buildings, I think. She wiped her eyes before she went to the elevator, but not before I saw them.
+  file_path: witnesses/neighbor_statement.md
+  line_range:
+  - 32
+  - 32
+  context_summary: Eleanor's observation confirms the redheaded woman (Margot) carried photographs of buildings—likely evidence of Kaslan's operations including the warehouse.
+- item_id: target_007
+  inserted_text: '''And these specialty goods—they wouldn''t happen to include anything that might interest someone enough to kidnap your daughter?'' He looked away, out the window at the pre-dawn gray that was starting to seep into the darkness. ''I have had... dealings. With people who aren''t always on the right side of the law. Nothing violent, nothing involving drugs. But yes, there are people who wouldn''t mind having leverage against me. Specifically, an organization called Kaslan. They''ve been moving stolen art through my import network. Catherine found out. She found documents in my office—shipping manifests, location details. The warehouse at Pier 11, Warehouse C. That''s where they keep the high-value pieces. That''s where they''re probably keeping her.'''
+  file_path: chapters/chapter_02.md
+  line_range:
+  - 49
+  - 49
+  context_summary: Halstead reveals Catherine discovered documents about Kaslan's operation and is being held at Pier 11, Warehouse C as leverage.
+- item_id: target_008
+  inserted_text: 'I walked north, retracing the route Catherine would have taken. The neighborhood was exactly what Eleanor had described: well-lit, quiet, respectable. The kind of place where you wouldn''t expect violence or theft or kidnapping. The kind of place where people trusted that safety was a given. But I was beginning to understand something. Catherine hadn''t been grabbed randomly. She''d been taken because of what she knew. She''d been taken because her father was involved with the Kaslan operation. And now, with the ledger missing, with Harvey gone, with the painting recovered—there was only one person left who could identify the specific locations and operations. Only one person who had seen the manifests, the photographs, the proof of what was stored at Pier 11, Warehouse C. Catherine Halstead was alive, but she was being held as insurance. As the one piece Sinclair could use to ensure that no one talked, no one testified, no one brought down the entire operation. She was the final guarantee of everyone''s silence.'
+  file_path: chapters/chapter_03.md
+  line_range:
+  - 81
+  - 85
+  context_summary: Shepherd's final realization that Catherine is alive but being held as insurance/leverage at Pier 11, Warehouse C to prevent testimony against the Kaslan operation.
 expected_answers:
-  question: "Starting from the conversation between Deke the bartender and the old man about the Starlight Motor Inn, follow the chain of locations, documents, and people to determine where Catherine Halstead is being held and why."
-  correctness: "The answer must identify Pier 11, Warehouse C as Catherine's location and must explain that she is being held as leverage/insurance to prevent testimony about the Kaslan art smuggling operation and Halstead's involvement."
-  completeness: "A complete answer should trace at least 5 of the 8 linked clues in the chain: (1) Starlight Motor Inn ledger, (2) Marchetti's location and knowledge, (3) Vesper painting and warehouse connection, (4) Sinclair's operation at Pier 11 Warehouse C, (5) Catherine's discovery of the manifests, and conclude with the final location and purpose of her captivity."
-
+  question: Starting from the conversation between Deke the bartender and the old man about the Starlight Motor Inn, follow the chain of locations, documents, and people to determine where Catherine Halstead is being held and why.
+  correctness: The answer must identify Pier 11, Warehouse C as Catherine's location and must explain that she is being held as leverage/insurance to prevent testimony about the Kaslan art smuggling operation and Halstead's involvement.
+  completeness: 'A complete answer should trace at least 5 of the 8 linked clues in the chain: (1) Starlight Motor Inn ledger, (2) Marchetti''s location and knowledge, (3) Vesper painting and warehouse connection, (4) Sinclair''s operation at Pier 11 Warehouse C, (5) Catherine''s discovery of the manifests, and conclude with the final location and purpose of her captivity.'
 rubric_criteria:
-  - criterion: "correctness"
-    weight: 1.0
-    description: "Final answer correctly identifies Pier 11, Warehouse C as Catherine's location"
-  - criterion: "completeness"
-    weight: 0.5
-    description: "Answer traces multiple linked references in the chain, demonstrating understanding of connections across documents"
-  - criterion: "chain_coherence"
-    weight: 0.3
-    description: "Answer demonstrates how individual clues link together to form the complete chain"
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5

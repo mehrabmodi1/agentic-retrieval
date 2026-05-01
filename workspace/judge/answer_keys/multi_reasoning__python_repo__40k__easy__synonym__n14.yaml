@@ -1,0 +1,191 @@
+parametrisation_id: multi_reasoning__python_repo__40k__easy__synonym__n14
+experiment_type: multi_reasoning
+generated_at: '2026-04-26T00:00:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 40000
+  discriminability: easy
+  reference_clarity: synonym
+items:
+- item_id: target_001
+  inserted_text: mock_service.max_retry_attempts = 4
+  file_path: tests/fixtures.py
+  line_range:
+  - 165
+  - 165
+  context_summary: Inserted email service max retry attempts configuration in the
+    create_mock_email_service fixture method.
+- item_id: target_002
+  inserted_text: max_retry_delay_seconds = 600
+  file_path: workers/retry_handler.py
+  line_range:
+  - 207
+  - 207
+  context_summary: Inserted maximum retry delay constant in the calculate_retry_delay
+    method of the retry handler.
+- item_id: target_003
+  inserted_text: session_expiry_threshold_days = 14
+  file_path: tests/test_workers.py
+  line_range:
+  - 164
+  - 164
+  context_summary: Inserted session expiry threshold configuration as an argument
+    to the cleanup task test.
+- item_id: target_004
+  inserted_text: config['max_records_per_batch'] = 5000
+  file_path: workers/sync_worker.py
+  line_range:
+  - 115
+  - 115
+  context_summary: Inserted maximum records per batch configuration in the execute_sync
+    method.
+- item_id: target_005
+  inserted_text: error_response_ttl_seconds = 300
+  file_path: api/error_handlers.py
+  line_range:
+  - 54
+  - 58
+  context_summary: Inserted error response time-to-live constant in the to_dict error
+    response formatting method.
+- item_id: target_006
+  inserted_text: token_validity_hours = 36
+  file_path: api/auth.py
+  line_range:
+  - 361
+  - 361
+  context_summary: Inserted token validity duration constant in the optional_auth
+    decorator.
+- item_id: target_007
+  inserted_text: request_processing_timeout = 8
+  file_path: api/middleware.py
+  line_range:
+  - 149
+  - 149
+  context_summary: Inserted request processing timeout value in the before_request
+    content validation method.
+- item_id: target_008
+  inserted_text: max_response_payload_kb = 2048
+  file_path: tests/test_api.py
+  line_range:
+  - 352
+  - 352
+  context_summary: Inserted maximum response payload size limit in the test_task_response_format
+    test method.
+- item_id: target_009
+  inserted_text: email_batch_size_limit = 250
+  file_path: workers/email_worker.py
+  line_range:
+  - 263
+  - 263
+  context_summary: Inserted email batch size limit constant in the get_email_stats
+    method.
+- item_id: target_010
+  inserted_text: burst_capacity_multiplier = 1.5
+  file_path: api/rate_limiting.py
+  line_range:
+  - 244
+  - 244
+  context_summary: Inserted burst capacity multiplier configuration in the rate_limit_by_user
+    decorator function.
+- item_id: target_011
+  inserted_text: slow_test_timeout_seconds = 180
+  file_path: tests/conftest.py
+  line_range:
+  - 312
+  - 312
+  context_summary: Inserted slow test timeout value in the pytest_collection_modifyitems
+    hook.
+- item_id: target_012
+  inserted_text: max_deletion_batch_size = 2000
+  file_path: workers/cleanup_worker.py
+  line_range:
+  - 189
+  - 189
+  context_summary: Inserted maximum deletion batch size in the _cleanup_database_records
+    method.
+- item_id: target_013
+  inserted_text: MAX_CONCURRENT_API_CONNECTIONS = 80
+  file_path: api/__init__.py
+  line_range:
+  - 40
+  - 40
+  context_summary: Inserted maximum concurrent API connections configuration constant
+    at the module level.
+- item_id: target_014
+  inserted_text: max_task_execution_seconds = 180
+  file_path: workers/task_runner.py
+  line_range:
+  - 251
+  - 251
+  context_summary: Inserted maximum task execution timeout in the _handle_task_failure
+    method.
+expected_answers:
+  question: 'The system contains 14 numeric configuration parameters distributed across
+    different operational components (email delivery, task synchronization, API management,
+    authentication, request handling, data cleanup, and task execution). These parameters
+    define various constraints: time windows (in seconds, hours, or days), resource
+    capacity limits (connections, records, payload size), batch processing sizes,
+    and behavioral multipliers.
+
+
+    Identify:
+
+    1. Which parameters represent time-based constraints (duration windows), and which
+    represent capacity/size constraints?
+
+    2. When sorted by numeric value from largest to smallest, name the top 3 largest
+    and top 3 smallest values.
+
+    3. Which parameter, if reduced to 50% of its current value, would most severely
+    impact system throughput under high load?
+
+    4. Calculate the ratio of the largest numeric value to the smallest numeric value
+    across all 14 parameters.
+
+    5. Identify whether any parameter''s value creates a logical dependency or cascading
+    constraint on another parameter, and explain why.
+
+    '
+  correctness: 'A correct answer must:
+
+    - Identify all 14 parameters correctly by their numeric values
+
+    - Accurately categorize time-based (600s, 300s, 36h, 8s, 180s, 180s, 14d) vs.
+    capacity (4, 5000, 2048, 250, 80, 2000) vs. other (1.5) parameters
+
+    - Correctly rank parameters by numeric magnitude (accounting for unit conversions
+    where applicable)
+
+    - Identify 5000, 2048, 2000, 600, 300 as largest values and 4, 8, 1.5, 14, 250
+    as smallest values in comparable magnitude ranges
+
+    - Recognize that max_records_per_batch (5000) or max_deletion_batch_size (2000)
+    or MAX_CONCURRENT_API_CONNECTIONS (80) would most impact throughput
+
+    - Calculate accurate ratio considering the scaling across different units
+
+    - Recognize that token_validity_hours constrains session cleanup timing, and batch
+    sizes constrain sync/cleanup operations
+
+    '
+  completeness: 'A complete answer must:
+
+    - Reference all 14 inserted parameters by name and value
+
+    - Explain the functional purpose of each category of parameters
+
+    - Provide reasoning for the cascading constraint relationships
+
+    - Account for unit differences (seconds vs. hours vs. days) in comparisons
+
+    - Discuss at least two specific cascading dependencies between parameters
+
+    - Provide a coherent analysis of how these parameters interact to define system
+    behavior under load
+
+    '
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5

@@ -197,17 +197,7 @@ expected_answers:
 
     '
 rubric_criteria:
-- criterion: Correctness of core facts
+- criterion: correctness
   weight: 1.0
-- criterion: Identification of all 16 items
-  weight: 1.0
-- criterion: Temporal sequencing accuracy
-  weight: 0.8
-- criterion: Geographic accuracy of locations
-  weight: 0.8
-- criterion: Understanding of interconnections
-  weight: 1.0
-- criterion: Physical evidence chain integrity
-  weight: 0.9
-- criterion: Integration of multiple witness perspectives
-  weight: 0.7
+- criterion: completeness
+  weight: 0.5

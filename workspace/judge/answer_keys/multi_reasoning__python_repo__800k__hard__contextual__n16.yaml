@@ -145,18 +145,9 @@ expected_answers:
 
     '
   correctness: "A correct answer must:\n1. Calculate exponential backoff delays: 2^1=2, 2^2=4, 2^3=8, 2^4=16, 2^5=32 seconds per attempt\n2. Sum delays (excluding attempt 0): 2 + 4 + 8 + 16 + 32 = 62 seconds maximum\n3. Verify this fits within the 30-second task timeout (noting the conflict)\n4. Compare against 60-minute (3600-second) session timeout window\n5. Note the rate limiter allows 10 requests/second = 100 requests per 10-second window\n6. Identify pagination (100 items) and batch limits (1000 records) as relevant to query scaling\n7. Recognize that 90-day audit retention + 30-day report retention + daily 1440-minute cleanup\n   create a maintenance schedule that must not block retry operations\n8. Note that 401 unauthorized status code requires token validation against 24-hour expiration window\n"
-  completeness: "A complete answer covers:\n- The specific exponential backoff formula and calculated delays for all 5 retry attempts\n- The mathematical sum of cumulative delay (62 seconds without jitter)\n- Comparison of this delay to the 30-second task execution timeout (identifying a constraint violation)\n- Analysis of how the 60-minute session timeout provides a broader window\n- The rate limiter's throughput (10 req/sec) and its implications for retry queue processing\n- The interaction between pagination limits (100 items) and batch query limits (1000 records)\n- The maintenance windows (daily cleanup at 1440 minutes) and retention periods (90 days audit, 30 days reports)\n- Token expiration (86400 seconds) and its interaction with session timeout (3600 seconds)\n- Identification of which parameters constrain each other (compression threshold 1024 bytes affects payload size,\n  which affects pagination effectiveness)\n- Recommendations for coordinating these parameters to prevent\
-    \ cascading failures\n"
+  completeness: "A complete answer covers:\n- The specific exponential backoff formula and calculated delays for all 5 retry attempts\n- The mathematical sum of cumulative delay (62 seconds without jitter)\n- Comparison of this delay to the 30-second task execution timeout (identifying a constraint violation)\n- Analysis of how the 60-minute session timeout provides a broader window\n- The rate limiter's throughput (10 req/sec) and its implications for retry queue processing\n- The interaction between pagination limits (100 items) and batch query limits (1000 records)\n- The maintenance windows (daily cleanup at 1440 minutes) and retention periods (90 days audit, 30 days reports)\n- Token expiration (86400 seconds) and its interaction with session timeout (3600 seconds)\n- Identification of which parameters constrain each other (compression threshold 1024 bytes affects payload size,\n  which affects pagination effectiveness)\n- Recommendations for coordinating these parameters to prevent cascading failures\n"
 rubric_criteria:
 - criterion: correctness
   weight: 1.0
-  description: Mathematical accuracy of backoff calculations and identification of constraint violations
 - criterion: completeness
   weight: 0.5
-  description: Coverage of all 16 configuration parameters and their system-wide interactions
-- criterion: reasoning
-  weight: 0.75
-  description: Quality of synthesis showing how parameters constrain and interact with each other
-- criterion: constraint_identification
-  weight: 0.6
-  description: Recognition of conflicts (e.g., 62-second retry delay vs. 30-second timeout) and coordination needs

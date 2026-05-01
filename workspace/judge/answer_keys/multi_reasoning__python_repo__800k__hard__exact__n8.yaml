@@ -78,10 +78,5 @@ expected_answers:
 rubric_criteria:
 - criterion: correctness
   weight: 1.0
-  description: Final numeric answer must be exactly 574
 - criterion: completeness
   weight: 0.5
-  description: Must identify and extract all 8 configuration values from different files
-- criterion: reasoning
-  weight: 0.5
-  description: Must demonstrate understanding of where each value appears in context and why calculations were applied

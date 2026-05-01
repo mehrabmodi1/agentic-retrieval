@@ -1,0 +1,97 @@
+parametrisation_id: "multi_reasoning__python_repo__40k__easy__synonym__n6"
+experiment_type: "multi_reasoning"
+generated_at: "2026-04-26T12:00:00Z"
+parameters:
+  content_profile: "python_repo"
+  corpus_token_count: 40000
+  discriminability: "easy"
+  reference_clarity: "synonym"
+
+items:
+  - item_id: "target_001"
+    inserted_text: |
+      # Maximum number of emails to process per batch to manage memory usage.
+      EMAIL_BATCH_SIZE = 50
+    file_path: "workers/email_worker.py"
+    line_range: [26, 27]
+    context_summary: "Inserted EMAIL_BATCH_SIZE constant after STALE_RECORD_THRESHOLD_DAYS in email worker module-level configuration."
+
+  - item_id: "target_002"
+    inserted_text: |
+      # Configuration: maximum records to delete per batch operation
+      MAX_RECORDS_PER_CLEANUP_BATCH = 100
+    file_path: "workers/cleanup_worker.py"
+    line_range: [213, 214]
+    context_summary: "Inserted MAX_RECORDS_PER_CLEANUP_BATCH constant before generic deletion logic in cleanup worker."
+
+  - item_id: "target_003"
+    inserted_text: |
+      # Maximum retry attempts for failed sync operations
+      MAX_SYNC_RETRIES = 5
+    file_path: "workers/sync_worker.py"
+    line_range: [190, 191]
+    context_summary: "Inserted MAX_SYNC_RETRIES constant before _log_sync method definition in sync worker."
+
+  - item_id: "target_004"
+    inserted_text: |
+      # Maximum execution time allowed per task (in minutes) before timeout
+      TASK_EXECUTION_TIMEOUT_MINUTES = 30
+    file_path: "workers/task_runner.py"
+    line_range: [208, 209]
+    context_summary: "Inserted TASK_EXECUTION_TIMEOUT_MINUTES constant before _execute_task method definition."
+
+  - item_id: "target_005"
+    inserted_text: |
+      # Time window for rate limit calculations (in seconds = 1 hour)
+      RATE_LIMIT_WINDOW_SECONDS = 3600
+    file_path: "api/rate_limiting.py"
+    line_range: [204, 205]
+    context_summary: "Inserted RATE_LIMIT_WINDOW_SECONDS constant before the rate_limit decorator implementation."
+
+  - item_id: "target_006"
+    inserted_text: |
+      # Number of days to retain reports before archival or deletion
+      REPORT_RETENTION_DAYS = 90
+    file_path: "workers/report_generator.py"
+    line_range: [212, 213]
+    context_summary: "Inserted REPORT_RETENTION_DAYS constant before _export_json method definition in report generator."
+
+expected_answers:
+  question: |
+    Across the system, six configuration parameters define operational constraints distributed throughout worker modules and API layers:
+    - EMAIL_BATCH_SIZE = 50 (from workers/email_worker.py)
+    - MAX_RECORDS_PER_CLEANUP_BATCH = 100 (from workers/cleanup_worker.py)
+    - MAX_SYNC_RETRIES = 5 (from workers/sync_worker.py)
+    - TASK_EXECUTION_TIMEOUT_MINUTES = 30 (from workers/task_runner.py)
+    - RATE_LIMIT_WINDOW_SECONDS = 3600 (from api/rate_limiting.py)
+    - REPORT_RETENTION_DAYS = 90 (from workers/report_generator.py)
+
+    Analyze these parameters comprehensively to answer:
+    1. Which two batch-size parameters have a 2:1 ratio, and which is the larger?
+    2. Convert TASK_EXECUTION_TIMEOUT_MINUTES to seconds. What is the ratio between this converted value and RATE_LIMIT_WINDOW_SECONDS?
+    3. Rank all six parameters by numeric magnitude from smallest to largest. What operational patterns does this ranking reveal?
+    4. When all parameters are expressed in seconds (the smallest common time unit), which represents the longest time window?
+    5. Considering system throughput and constraints, which single parameter would be the most restrictive bottleneck, and how might the others need adjustment?
+
+  correctness: |
+    A correct answer must:
+    - Identify EMAIL_BATCH_SIZE = 50 and MAX_RECORDS_PER_CLEANUP_BATCH = 100 with the 2:1 ratio (100 = 2 × 50)
+    - State TASK_EXECUTION_TIMEOUT_MINUTES = 30 minutes = 1800 seconds
+    - Compare 1800 seconds to RATE_LIMIT_WINDOW_SECONDS = 3600, correctly calculating the 1:2 ratio
+    - Rank all six by numeric magnitude: 5, 30, 50, 100, 3600, and 7,776,000 (90 days in seconds)
+    - Demonstrate understanding of how batch sizes, retry counts, timeouts, and retention windows interact systemically
+
+  completeness: |
+    A complete answer must:
+    - Reference all six parameter names and their literal values
+    - Show unit conversions (minutes-to-seconds, days-to-seconds) with calculations
+    - Perform multiple comparative analyses across the six items (at least two different comparisons)
+    - Discuss operational implications (batch throughput vs timeout, rate limit window vs task execution time, retention window vs retry attempts)
+    - Synthesize findings into a coherent explanation of system bottlenecks and how all six constraints interact as a unified system
+    - Demonstrate that removing any single needle would change the analysis
+
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+  - criterion: "completeness"
+    weight: 0.5

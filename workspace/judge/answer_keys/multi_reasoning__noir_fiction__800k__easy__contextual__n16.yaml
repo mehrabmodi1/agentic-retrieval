@@ -1,120 +1,130 @@
-parametrisation_id: "multi_reasoning__noir_fiction__800k__easy__contextual__n16"
-experiment_type: "multi_reasoning"
-generated_at: "2026-04-05T00:00:00Z"
+parametrisation_id: multi_reasoning__noir_fiction__800k__easy__contextual__n16
+experiment_type: multi_reasoning
+generated_at: '2026-04-05T00:00:00Z'
 parameters:
-  content_profile: "noir_fiction"
+  content_profile: noir_fiction
   corpus_token_count: 800000
-  discriminability: "easy"
-  reference_clarity: "contextual"
+  discriminability: easy
+  reference_clarity: contextual
 items:
-  - item_id: "target_001"
-    inserted_text: "I also learned that Vincent's role was procurement—he identified targets and people of value. That made him useful, but useful people can become liabilities."
-    file_path: "case_notes/day_02.md"
-    line_range: [140, 142]
-    context_summary: "Inserted after the list of known facts, clarifying Vincent Castellano's role as procurement specialist in the organization."
-
-  - item_id: "target_002"
-    inserted_text: "Later I would learn his name was Matthias Cole, field coordinator for the operation. He was the one who delivered warnings."
-    file_path: "case_notes/day_02.md"
-    line_range: [151, 153]
-    context_summary: "Inserted after dialogue identifying the visitor as a warning operative, establishing Matthias Cole as field coordinator."
-
-  - item_id: "target_003"
-    inserted_text: "Sinclair operates as the logistics coordinator—managing warehouses, transport, and disposal. He answers to someone higher but runs the day-to-day operations without hesitation."
-    file_path: "case_notes/day_06.md"
-    line_range: [13, 15]
-    context_summary: "Inserted after mention of Sinclair's charges, clarifying his operational role in the organization."
-
-  - item_id: "target_004"
-    inserted_text: "Margaret's specialty was financial integration—converting criminal proceeds into legitimate-appearing business accounts and property transfers. That was her value to them."
-    file_path: "case_notes/day_03.md"
-    line_range: [18, 20]
-    context_summary: "Inserted after discovery that Margaret laundered money, specifying her technical financial role."
-
-  - item_id: "target_005"
-    inserted_text: "Meridian Holdings was the parent organization—Kaslan's official cover."
-    file_path: "chapters/chapter_05.md"
-    line_range: [47, 48]
-    context_summary: "Inserted into description of Meridian Holdings, revealing its role as Kaslan's corporate front."
-
-  - item_id: "target_006"
-    inserted_text: "Kaslan, whoever that is, controls everything—operations, personnel, enforcement. That's the real power structure here."
-    file_path: "witnesses/informant_interview.md"
-    line_range: [50, 51]
-    context_summary: "Inserted into Victor's explanation of Kaslan's reach, establishing his central authority."
-
-  - item_id: "target_007"
-    inserted_text: "Silas Gregg serves as the enforcement and problem-resolution specialist—he's the one who ensures loose ends get tied up permanently or repositioned."
-    file_path: "witnesses/informant_interview.md"
-    line_range: [57, 59]
-    context_summary: "Inserted after description of Gregg, clarifying his operational function as enforcer."
-
-  - item_id: "target_008"
-    inserted_text: "Harvey worked as an art acquisition facilitator, which means he identified and extracted valuable pieces on behalf of clients."
-    file_path: "witnesses/informant_interview.md"
-    line_range: [66, 68]
-    context_summary: "Inserted into painting recovery narrative, specifying Harvey's acquisition role in the organization."
-
-  - item_id: "target_009"
-    inserted_text: "They call her Margot. She's the negotiator and resolver—capable of both acquiring targets and negotiating exits from the operation when necessary."
-    file_path: "witnesses/informant_interview.md"
-    line_range: [76, 78]
-    context_summary: "Inserted into description of red-haired woman, identifying her as Margot with dual negotiation and elimination capabilities."
-
-  - item_id: "target_010"
-    inserted_text: "What Halstead didn't mention was that Catherine's museum access made her valuable to people who collected expensive items—she had keys, knowledge of schedules, and access to building blueprints. That made her a target rather than a victim of random misfortune."
-    file_path: "chapters/chapter_02.md"
-    line_range: [22, 24]
-    context_summary: "Inserted after description of Catherine's museum work, explaining her strategic value as acquisition target."
-
-  - item_id: "target_011"
-    inserted_text: "James Harvey was seeking legal counsel on how to formally exit the organization while protecting his own life—a strategy that would require cooperation with law enforcement."
-    file_path: "witnesses/secretary_statement.md"
-    line_range: [43, 45]
-    context_summary: "Inserted after description of Harvey's distressed demeanor, clarifying his legal strategy for testifying."
-
-  - item_id: "target_012"
-    inserted_text: "That conversation stayed with me because Harvey was clearly struggling with conscience—the internal conflict between his work and his humanity was visible in every word he chose."
-    file_path: "witnesses/neighbor_statement.md"
-    line_range: [27, 29]
-    context_summary: "Inserted after literary discussion with Harvey, showing his moral struggle as acquisition specialist."
-
-  - item_id: "target_013"
-    inserted_text: "The woman—Margot—had come to negotiate his exit. She was empowered to offer him a way out if he agreed to certain conditions."
-    file_path: "witnesses/neighbor_statement.md"
-    line_range: [34, 36]
-    context_summary: "Inserted after Harvey's emotional response to visitor, identifying Margot's negotiating mission."
-
-  - item_id: "target_014"
-    inserted_text: "- James Harvey, art acquisition specialist, attempting to testify against the organization"
-    file_path: "case_notes/day_05.md"
-    line_range: [13, 15]
-    context_summary: "Inserted into witness list of dead and disappeared, identifying Harvey's role and intent."
-
-  - item_id: "target_015"
-    inserted_text: "That was Gregg handing over the location and arrangements. The envelope contained the key to the Starlight Motor Inn—a safe house for operatives needing to disappear."
-    file_path: "witnesses/bartender_statement.md"
-    line_range: [47, 49]
-    context_summary: "Inserted into description of envelope exchange, explaining Gregg's role in providing operatives with exit logistics."
-
-  - item_id: "target_016"
-    inserted_text: "That man was one of Kaslan's decision-makers, probably reviewing Margot's work or discussing a particularly sensitive acquisition project."
-    file_path: "witnesses/bartender_statement.md"
-    line_range: [56, 58]
-    context_summary: "Inserted into narrative of Margot's meeting with mysterious suit, identifying hierarchy above field operatives."
-
+- item_id: target_001
+  inserted_text: I also learned that Vincent's role was procurement—he identified targets and people of value. That made him useful, but useful people can become liabilities.
+  file_path: case_notes/day_02.md
+  line_range:
+  - 140
+  - 142
+  context_summary: Inserted after the list of known facts, clarifying Vincent Castellano's role as procurement specialist in the organization.
+- item_id: target_002
+  inserted_text: Later I would learn his name was Matthias Cole, field coordinator for the operation. He was the one who delivered warnings.
+  file_path: case_notes/day_02.md
+  line_range:
+  - 151
+  - 153
+  context_summary: Inserted after dialogue identifying the visitor as a warning operative, establishing Matthias Cole as field coordinator.
+- item_id: target_003
+  inserted_text: Sinclair operates as the logistics coordinator—managing warehouses, transport, and disposal. He answers to someone higher but runs the day-to-day operations without hesitation.
+  file_path: case_notes/day_06.md
+  line_range:
+  - 13
+  - 15
+  context_summary: Inserted after mention of Sinclair's charges, clarifying his operational role in the organization.
+- item_id: target_004
+  inserted_text: Margaret's specialty was financial integration—converting criminal proceeds into legitimate-appearing business accounts and property transfers. That was her value to them.
+  file_path: case_notes/day_03.md
+  line_range:
+  - 18
+  - 20
+  context_summary: Inserted after discovery that Margaret laundered money, specifying her technical financial role.
+- item_id: target_005
+  inserted_text: Meridian Holdings was the parent organization—Kaslan's official cover.
+  file_path: chapters/chapter_05.md
+  line_range:
+  - 47
+  - 48
+  context_summary: Inserted into description of Meridian Holdings, revealing its role as Kaslan's corporate front.
+- item_id: target_006
+  inserted_text: Kaslan, whoever that is, controls everything—operations, personnel, enforcement. That's the real power structure here.
+  file_path: witnesses/informant_interview.md
+  line_range:
+  - 50
+  - 51
+  context_summary: Inserted into Victor's explanation of Kaslan's reach, establishing his central authority.
+- item_id: target_007
+  inserted_text: Silas Gregg serves as the enforcement and problem-resolution specialist—he's the one who ensures loose ends get tied up permanently or repositioned.
+  file_path: witnesses/informant_interview.md
+  line_range:
+  - 57
+  - 59
+  context_summary: Inserted after description of Gregg, clarifying his operational function as enforcer.
+- item_id: target_008
+  inserted_text: Harvey worked as an art acquisition facilitator, which means he identified and extracted valuable pieces on behalf of clients.
+  file_path: witnesses/informant_interview.md
+  line_range:
+  - 66
+  - 68
+  context_summary: Inserted into painting recovery narrative, specifying Harvey's acquisition role in the organization.
+- item_id: target_009
+  inserted_text: They call her Margot. She's the negotiator and resolver—capable of both acquiring targets and negotiating exits from the operation when necessary.
+  file_path: witnesses/informant_interview.md
+  line_range:
+  - 76
+  - 78
+  context_summary: Inserted into description of red-haired woman, identifying her as Margot with dual negotiation and elimination capabilities.
+- item_id: target_010
+  inserted_text: What Halstead didn't mention was that Catherine's museum access made her valuable to people who collected expensive items—she had keys, knowledge of schedules, and access to building blueprints. That made her a target rather than a victim of random misfortune.
+  file_path: chapters/chapter_02.md
+  line_range:
+  - 22
+  - 24
+  context_summary: Inserted after description of Catherine's museum work, explaining her strategic value as acquisition target.
+- item_id: target_011
+  inserted_text: James Harvey was seeking legal counsel on how to formally exit the organization while protecting his own life—a strategy that would require cooperation with law enforcement.
+  file_path: witnesses/secretary_statement.md
+  line_range:
+  - 43
+  - 45
+  context_summary: Inserted after description of Harvey's distressed demeanor, clarifying his legal strategy for testifying.
+- item_id: target_012
+  inserted_text: That conversation stayed with me because Harvey was clearly struggling with conscience—the internal conflict between his work and his humanity was visible in every word he chose.
+  file_path: witnesses/neighbor_statement.md
+  line_range:
+  - 27
+  - 29
+  context_summary: Inserted after literary discussion with Harvey, showing his moral struggle as acquisition specialist.
+- item_id: target_013
+  inserted_text: The woman—Margot—had come to negotiate his exit. She was empowered to offer him a way out if he agreed to certain conditions.
+  file_path: witnesses/neighbor_statement.md
+  line_range:
+  - 34
+  - 36
+  context_summary: Inserted after Harvey's emotional response to visitor, identifying Margot's negotiating mission.
+- item_id: target_014
+  inserted_text: '- James Harvey, art acquisition specialist, attempting to testify against the organization'
+  file_path: case_notes/day_05.md
+  line_range:
+  - 13
+  - 15
+  context_summary: Inserted into witness list of dead and disappeared, identifying Harvey's role and intent.
+- item_id: target_015
+  inserted_text: That was Gregg handing over the location and arrangements. The envelope contained the key to the Starlight Motor Inn—a safe house for operatives needing to disappear.
+  file_path: witnesses/bartender_statement.md
+  line_range:
+  - 47
+  - 49
+  context_summary: Inserted into description of envelope exchange, explaining Gregg's role in providing operatives with exit logistics.
+- item_id: target_016
+  inserted_text: That man was one of Kaslan's decision-makers, probably reviewing Margot's work or discussing a particularly sensitive acquisition project.
+  file_path: witnesses/bartender_statement.md
+  line_range:
+  - 56
+  - 58
+  context_summary: Inserted into narrative of Margot's meeting with mysterious suit, identifying hierarchy above field operatives.
 expected_answers:
-  question: "Identify all 16 criminal operatives and facilitators mentioned across the investigation. For each person, specify their name, role in the organization, and key identifying characteristics or operational details."
-  correctness: "Must identify all 16 individuals: Kaslan (organizational authority), Matthias Cole (field coordinator), Sinclair (logistics coordinator), Margaret Hollister (financial integration), Silas Gregg (enforcement/problem-resolution), James Harvey (art acquisition facilitator), Margot (negotiation/acquisition specialist), Victor Ashford (harbor operations), Vincent Castellano (procurement), the unnamed decision-maker above field level, and supporting details about their functions. Must distinguish between different operational roles and the hierarchy."
-  completeness: "A complete answer reconstructs the full organizational structure showing: top authority (Kaslan via Meridian Holdings cover), decision-making tier, operational specialists by function (finance, enforcement, negotiation, acquisition, logistics, harbor ops, procurement), and supporting personnel. Must connect individuals to their specific competencies and how those fit together as an integrated criminal enterprise."
-
+  question: Identify all 16 criminal operatives and facilitators mentioned across the investigation. For each person, specify their name, role in the organization, and key identifying characteristics or operational details.
+  correctness: 'Must identify all 16 individuals: Kaslan (organizational authority), Matthias Cole (field coordinator), Sinclair (logistics coordinator), Margaret Hollister (financial integration), Silas Gregg (enforcement/problem-resolution), James Harvey (art acquisition facilitator), Margot (negotiation/acquisition specialist), Victor Ashford (harbor operations), Vincent Castellano (procurement), the unnamed decision-maker above field level, and supporting details about their functions. Must distinguish between different operational roles and the hierarchy.'
+  completeness: 'A complete answer reconstructs the full organizational structure showing: top authority (Kaslan via Meridian Holdings cover), decision-making tier, operational specialists by function (finance, enforcement, negotiation, acquisition, logistics, harbor ops, procurement), and supporting personnel. Must connect individuals to their specific competencies and how those fit together as an integrated criminal enterprise.'
 rubric_criteria:
-  - criterion: "correctness"
-    weight: 1.0
-    description: "All 16 individuals identified with accurate roles and characteristics as specified in the distributed needles"
-  - criterion: "completeness"
-    weight: 0.5
-    description: "Demonstrates understanding of organizational hierarchy and how different specializations create an integrated system capable of executing kidnappings, acquisitions, and eliminating problems"
-  - criterion: "synthesis"
-    weight: 0.5
-    description: "Successfully combines information from multiple dispersed locations to show how individual operatives work together as a unified criminal organization"
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5

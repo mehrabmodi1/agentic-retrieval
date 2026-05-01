@@ -1,91 +1,99 @@
-parametrisation_id: "multi_reasoning__noir_fiction__160k__hard__synonym__n8"
-experiment_type: "multi_reasoning"
-generated_at: "2026-04-05T00:00:00Z"
+parametrisation_id: multi_reasoning__noir_fiction__160k__hard__synonym__n8
+experiment_type: multi_reasoning
+generated_at: '2026-04-05T00:00:00Z'
 parameters:
-  content_profile: "noir_fiction"
+  content_profile: noir_fiction
   corpus_token_count: 160000
-  discriminability: "hard"
-  reference_clarity: "synonym"
-
+  discriminability: hard
+  reference_clarity: synonym
 items:
-  - item_id: "target_001"
-    inserted_text: "What you need to understand about Sinclair is that he operates through calculated manipulation—every word he speaks, every gesture, is designed to control the narrative. He's the kind of man who sees the law as a system to be navigated, not a moral framework to be respected."
-    file_path: "case_notes/day_07.md"
-    line_range: [17, 18]
-    context_summary: "Sinclair's operational methodology emphasizing calculated control and manipulation of systems."
-
-  - item_id: "target_002"
-    inserted_text: "After this visit, Mr. Harvey's fear intensified. The pacing increased. He began wearing dark clothing, like someone preparing to become invisible."
-    file_path: "witnesses/landlady_statement.md"
-    line_range: [21, 21]
-    context_summary: "Harvey's behavioral changes following Gregg's threatening visit indicate psychological escalation and preparation for flight."
-
-  - item_id: "target_003"
-    inserted_text: "Later, I realized she had been there to help him escape, to offer him a path out through connections he didn't know she had. She was the bridge between his old world and whatever came next."
-    file_path: "witnesses/neighbor_statement.md"
-    line_range: [19, 19]
-    context_summary: "Margot's facilitation role in Harvey's escape attempt, embedded in Eleanor's observation of their emotional connection."
-
-  - item_id: "target_004"
-    inserted_text: "A murder never solved, never prosecuted. Someone protected someone high enough up the chain that justice never caught up with them—which means Kaslan's operation exists in spaces where ordinary law enforcement can't reach."
-    file_path: "witnesses/informant_interview.md"
-    line_range: [10, 10]
-    context_summary: "Kaslan operation's protection through systemic corruption and institutional silence about historical crimes."
-
-  - item_id: "target_005"
-    inserted_text: "My entire career has been a negotiation with my conscience. I told myself I was just a lawyer doing what lawyers do. But at a certain point, the distinction between participating in evil and simply allowing it to happen becomes meaningless. We're both guilty. The only difference is I can still live with myself if I stop now."
-    file_path: "case_notes/day_03.md"
-    line_range: [16, 16]
-    context_summary: "Mercer's rationalizations collapsing as he confronts his complicity in criminal enterprise and institutional corruption."
-
-  - item_id: "target_006"
-    inserted_text: "What distinguishes Harvey from the others—from Sinclair, from Kaslan—is that he tried to undo his complicity rather than deepening it. That's not redemption. But it's something."
-    file_path: "witnesses/detective_debrief.md"
-    line_range: [28, 28]
-    context_summary: "Harvey's moral distinction through attempted moral recovery, contrasting him with architects of the criminal network."
-
-  - item_id: "target_007"
-    inserted_text: "What becomes clear is that Sinclair operates by identifying people's fracture points—their weaknesses, their guilt, their desperation—and applying pressure until they break entirely or comply absolutely."
-    file_path: "case_notes/day_04.md"
-    line_range: [3, 3]
-    context_summary: "Sinclair's systematic exploitation of psychological vulnerabilities across his network of victims and subordinates."
-
-  - item_id: "target_008"
-    inserted_text: "The fear of someone who knows they've made a choice and can never unmake it, no matter how far they drive."
-    file_path: "witnesses/cab_driver_statement.md"
-    line_range: [10, 10]
-    context_summary: "Harvey's existential dread embedded in the cab driver's perceptive reading of trapped psychological states."
-
+- item_id: target_001
+  inserted_text: What you need to understand about Sinclair is that he operates through calculated manipulation—every word he speaks, every gesture, is designed to control the narrative. He's the kind of man who sees the law as a system to be navigated, not a moral framework to be respected.
+  file_path: case_notes/day_07.md
+  line_range:
+  - 17
+  - 18
+  context_summary: Sinclair's operational methodology emphasizing calculated control and manipulation of systems.
+- item_id: target_002
+  inserted_text: After this visit, Mr. Harvey's fear intensified. The pacing increased. He began wearing dark clothing, like someone preparing to become invisible.
+  file_path: witnesses/landlady_statement.md
+  line_range:
+  - 21
+  - 21
+  context_summary: Harvey's behavioral changes following Gregg's threatening visit indicate psychological escalation and preparation for flight.
+- item_id: target_003
+  inserted_text: Later, I realized she had been there to help him escape, to offer him a path out through connections he didn't know she had. She was the bridge between his old world and whatever came next.
+  file_path: witnesses/neighbor_statement.md
+  line_range:
+  - 19
+  - 19
+  context_summary: Margot's facilitation role in Harvey's escape attempt, embedded in Eleanor's observation of their emotional connection.
+- item_id: target_004
+  inserted_text: A murder never solved, never prosecuted. Someone protected someone high enough up the chain that justice never caught up with them—which means Kaslan's operation exists in spaces where ordinary law enforcement can't reach.
+  file_path: witnesses/informant_interview.md
+  line_range:
+  - 10
+  - 10
+  context_summary: Kaslan operation's protection through systemic corruption and institutional silence about historical crimes.
+- item_id: target_005
+  inserted_text: My entire career has been a negotiation with my conscience. I told myself I was just a lawyer doing what lawyers do. But at a certain point, the distinction between participating in evil and simply allowing it to happen becomes meaningless. We're both guilty. The only difference is I can still live with myself if I stop now.
+  file_path: case_notes/day_03.md
+  line_range:
+  - 16
+  - 16
+  context_summary: Mercer's rationalizations collapsing as he confronts his complicity in criminal enterprise and institutional corruption.
+- item_id: target_006
+  inserted_text: What distinguishes Harvey from the others—from Sinclair, from Kaslan—is that he tried to undo his complicity rather than deepening it. That's not redemption. But it's something.
+  file_path: witnesses/detective_debrief.md
+  line_range:
+  - 28
+  - 28
+  context_summary: Harvey's moral distinction through attempted moral recovery, contrasting him with architects of the criminal network.
+- item_id: target_007
+  inserted_text: What becomes clear is that Sinclair operates by identifying people's fracture points—their weaknesses, their guilt, their desperation—and applying pressure until they break entirely or comply absolutely.
+  file_path: case_notes/day_04.md
+  line_range:
+  - 3
+  - 3
+  context_summary: Sinclair's systematic exploitation of psychological vulnerabilities across his network of victims and subordinates.
+- item_id: target_008
+  inserted_text: The fear of someone who knows they've made a choice and can never unmake it, no matter how far they drive.
+  file_path: witnesses/cab_driver_statement.md
+  line_range:
+  - 10
+  - 10
+  context_summary: Harvey's existential dread embedded in the cab driver's perceptive reading of trapped psychological states.
 expected_answers:
-  question: "What are the psychological profiles and operational methods of the key figures—Sinclair, Harvey, Mercer, Margot, and Kaslan—as revealed through their interactions, motivations, and the system they operate within?"
+  question: What are the psychological profiles and operational methods of the key figures—Sinclair, Harvey, Mercer, Margot, and Kaslan—as revealed through their interactions, motivations, and the system they operate within?
+  correctness: 'A correct answer must identify at least five distinct psychological or behavioral characteristics:
 
-  correctness: |
-    A correct answer must identify at least five distinct psychological or behavioral characteristics:
-    1. Sinclair: Calculated manipulator who treats law as a system to navigate, identifies and exploits people's fracture points
+    1. Sinclair: Calculated manipulator who treats law as a system to navigate, identifies and exploits people''s fracture points
+
     2. Harvey: Psychologically tormented by his complicity, attempts moral recovery, fears irreversible consequences of past choices
+
     3. Mercer: Operates through rationalizations about his legal role, gradually confronts the meaninglessness of complicity distinctions
+
     4. Margot: Functions as facilitator/bridge offering escape routes, operates with precision but shows emotional investment in Harvey
+
     5. Kaslan: Operates through protected institutional channels where ordinary law enforcement cannot reach, uses intermediaries
 
-  completeness: |
-    A complete answer must synthesize evidence from all eight sources to address:
-    - How each figure's psychology shapes their operational methods (Sinclair's manipulation, Harvey's struggle, Mercer's rationalization)
+    '
+  completeness: 'A complete answer must synthesize evidence from all eight sources to address:
+
+    - How each figure''s psychology shapes their operational methods (Sinclair''s manipulation, Harvey''s struggle, Mercer''s rationalization)
+
     - The hierarchical structure and systemic protection (Kaslan→Sinclair→subordinates like Harvey)
+
     - The contrast between those deepening complicity and those attempting recovery
-    - How institutional corruption enables the criminal network's operations
+
+    - How institutional corruption enables the criminal network''s operations
+
     - The psychological isolation of each figure despite their interconnection
 
+    '
 rubric_criteria:
-  - criterion: "correctness"
-    weight: 1.0
-    description: "Answer identifies key psychological traits and methods of each major figure accurately based on evidence from multiple sources"
-
-  - criterion: "completeness"
-    weight: 0.5
-    description: "Answer synthesizes all eight distinct pieces of evidence to paint comprehensive picture of system and individuals"
-
-  - criterion: "synthesis"
-    weight: 0.5
-    description: "Answer connects individual psychologies to systemic operation and demonstrates understanding of how personal motivations enable institutional corruption"
-
-note: "This multi_reasoning task requires combining evidence about individual psychology with systemic structure. Each needle provides one piece of a larger puzzle about how power operates through personal manipulation, institutional protection, and moral compromise. The question uses synonyms like 'psychological profiles and operational methods' rather than exact needle language, forcing readers to extract implicit information from context."
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5
+note: This multi_reasoning task requires combining evidence about individual psychology with systemic structure. Each needle provides one piece of a larger puzzle about how power operates through personal manipulation, institutional protection, and moral compromise. The question uses synonyms like 'psychological profiles and operational methods' rather than exact needle language, forcing readers to extract implicit information from context.

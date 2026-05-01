@@ -128,5 +128,3 @@ rubric_criteria:
   weight: 1.0
 - criterion: completeness
   weight: 0.5
-- criterion: cross_file_reasoning
-  weight: 0.75

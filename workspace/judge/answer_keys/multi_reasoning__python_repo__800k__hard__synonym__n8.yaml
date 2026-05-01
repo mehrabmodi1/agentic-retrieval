@@ -115,10 +115,5 @@ expected_answers:
 rubric_criteria:
 - criterion: correctness
   weight: 1.0
-  description: Answer must calculate the correct sum of all eight values
 - criterion: completeness
   weight: 0.5
-  description: Answer must identify and reference all eight configuration values
-- criterion: reasoning
-  weight: 0.3
-  description: Answer should explain why these limits matter collectively

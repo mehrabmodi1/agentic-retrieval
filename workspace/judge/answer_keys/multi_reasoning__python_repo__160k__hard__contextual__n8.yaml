@@ -117,10 +117,5 @@ expected_answers:
 rubric_criteria:
 - criterion: correctness
   weight: 1.0
-  description: Answer correctly calculates number of cleanup cycles (2) using token expiry (3600s) and cleanup interval (1800s)
 - criterion: completeness
   weight: 0.5
-  description: Answer references all 8 timing/capacity constraints and combines them to support final claim
-- criterion: reasoning
-  weight: 0.5
-  description: Answer shows explicit combination of multiple facts from different components

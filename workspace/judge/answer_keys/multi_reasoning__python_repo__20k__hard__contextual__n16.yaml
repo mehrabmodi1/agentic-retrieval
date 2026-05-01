@@ -140,10 +140,5 @@ expected_answers:
 rubric_criteria:
 - criterion: correctness
   weight: 1.0
-  description: Must extract and correctly identify all 16 metrics without misinterpretation
 - criterion: completeness
   weight: 0.5
-  description: Must connect all metrics into a coherent capacity calculation demonstrating understanding of system constraints
-- criterion: reasoning
-  weight: 0.5
-  description: Must explain how concurrency limits, timeouts, batch sizes, and rate limits interact to determine effective throughput

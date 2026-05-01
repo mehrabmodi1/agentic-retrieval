@@ -126,10 +126,5 @@ expected_answers:
 rubric_criteria:
 - criterion: correctness
   weight: 1.0
-  description: Accurately identifies and extracts all needle values with correct unit conversions.
 - criterion: completeness
   weight: 0.5
-  description: Finds all 8 required time-based configuration parameters and performs comprehensive aggregation.
-- criterion: reasoning
-  weight: 0.3
-  description: Demonstrates clear reasoning about which parameters to include and explicit unit conversion steps.

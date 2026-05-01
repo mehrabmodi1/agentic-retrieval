@@ -1,121 +1,130 @@
-parametrisation_id: "multi_chain__noir_fiction__800k__hard__exact__n16"
-experiment_type: "multi_chain"
-generated_at: "2026-04-06T00:00:00Z"
+parametrisation_id: multi_chain__noir_fiction__800k__hard__exact__n16
+experiment_type: multi_chain
+generated_at: '2026-04-06T00:00:00Z'
 parameters:
-  content_profile: "noir_fiction"
+  content_profile: noir_fiction
   corpus_token_count: 800000
-  discriminability: "hard"
-  reference_clarity: "exact"
-
+  discriminability: hard
+  reference_clarity: exact
 items:
-  - item_id: "target_001"
-    inserted_text: "Follow the property records filed under **Meridian Holdings deed reference 47-B**—that's where the transportation arrangements will be documented."
-    file_path: "witnesses/detective_debrief.md"
-    line_range: [85, 88]
-    context_summary: "Inserted at end of Captain Dreyfus's statement about Oak Hill investigation, pointing to first reference (47-B property deed)"
-
-  - item_id: "target_002"
-    inserted_text: "The vehicle registration led to **Marchetti's office records—file 1947-HAR**—which contained the transportation instructions."
-    file_path: "witnesses/cab_driver_statement.md"
-    line_range: [45, 65]
-    context_summary: "Added to cab driver's observation about license plate check, linking to Marchetti's files"
-
-  - item_id: "target_003"
-    inserted_text: "However, Dorothy later confirmed that Marchetti had prepared **travel documents filed in safe deposit box 1847**—the location of which became essential to the investigation."
-    file_path: "witnesses/secretary_statement.md"
-    line_range: [45, 67]
-    context_summary: "Added to end of secretary statement about Marchetti, establishing safe deposit box reference"
-
-  - item_id: "target_004"
-    inserted_text: "The innkeeper later told police that **room fourteen's registration was booked under the name specified in the envelope from Marchetti's safe deposit box 1847**."
-    file_path: "witnesses/bartender_statement.md"
-    line_range: [31, 42]
-    context_summary: "Inserted after bartender mentions Starlight Motor Inn room 14, connecting to Marchetti's documents"
-
-  - item_id: "target_005"
-    inserted_text: "It bore **the Starlight Motor Inn's letterhead and a room number: 14**. She turned it over to the authorities during a follow-up interview."
-    file_path: "witnesses/landlady_statement.md"
-    line_range: [22, 43]
-    context_summary: "Added discovery of postcard in mailbox with Starlight Motor Inn room 14 reference"
-
-  - item_id: "target_006"
-    inserted_text: "Eleanor resumed her knitting. \"The next day, I saw him leaving with a small suitcase. He took the stairs—not the elevator—and he wore a hat, pulled low. Like someone who didn't want to be remembered. I would have forgotten him entirely except that the redhead returned the day after, left a note in his mailbox. I only saw it because the mail carrier misdirected it briefly. The note read simply: **'The Starlight, room 14, key under mat.'**\""
-    file_path: "witnesses/neighbor_statement.md"
-    line_range: [13, 33]
-    context_summary: "Expanded neighbor's statement with discovery of redhead's note containing Starlight Motor Inn instructions"
-
-  - item_id: "target_007"
-    inserted_text: "Halloway didn't correct the informant. The intelligence file showed that Harvey had initially planned to meet law enforcement, but something changed. A redhead—Margot—had intervened with alternative instructions. According to the informant's sources, she'd given him **safe house coordinates that began at the Starlight Motor Inn, room 14, and continued to a location called Harwick Falls**—but the informant couldn't confirm what came after that."
-    file_path: "witnesses/informant_interview.md"
-    line_range: [15, 50]
-    context_summary: "Added to informant interview revealing Margot's role and the Harwick Falls destination"
-
-  - item_id: "target_008"
-    inserted_text: "Later, I'd learn that Mercer had handled legal arrangements for multiple clients—including one named **H**, whose real name appears in case file reference 1947-HAR**."
-    file_path: "case_notes/day_01.md"
-    line_range: [7, 25]
-    context_summary: "Inserted reference to Harvey (H) and case file 1947-HAR in initial investigation notes"
-
-  - item_id: "target_009"
-    inserted_text: "But the kid with him—that was someone else entirely. Someone the Castellano family didn't own. Someone working for **Meridian Holdings**, the same organization that had booked the safe house under the name specified in **case file reference 1947-HAR**."
-    file_path: "case_notes/day_02.md"
-    line_range: [72, 85]
-    context_summary: "Connected Meridian Holdings to the safe house booking through case file reference"
-
-  - item_id: "target_010"
-    inserted_text: "Before I go, though, I make a call to a source inside the Port Authority. He confirms something crucial: **a man matching Harvey's description was scheduled to depart on the northbound rail line on October 30th**, traveling to **a destination listed on the manifest as Harwick Falls—the same location mentioned in multiple witness statements about the Starlight Motor Inn's guest records**."
-    file_path: "case_notes/day_03.md"
-    line_range: [19, 35]
-    context_summary: "Added Port Authority investigation findings linking Harvey to Harwick Falls via train records"
-
-  - item_id: "target_011"
-    inserted_text: "What Patricia didn't mention—and what wouldn't become clear until much later—was that the well-dressed man who took Vincent away was arranging a parallel extraction for someone else. The same safe house network that had been established for Harvey was being dismantled. **The destination remained the same: Harwick Falls, accessible only through the Starlight Motor Inn's coordination system**."
-    file_path: "case_notes/day_04.md"
-    line_range: [28, 42]
-    context_summary: "Revealed parallel extraction network all routing through Harwick Falls"
-
-  - item_id: "target_012"
-    inserted_text: "What Patricia hadn't seen was the back of the card. On the reverse, in tiny handwriting, was written: **\"Harwick Falls - the estate north of town. Ask for the groundskeeper.\"** It was a reference, I realized later, to where the entire operation had been heading all along."
-    file_path: "case_notes/day_05.md"
-    line_range: [54, 75]
-    context_summary: "Added hidden message on Sinclair's business card revealing Harwick Falls as the final destination"
-
-  - item_id: "target_013"
-    inserted_text: "Before we start, Chen slides me a newspaper clipping—a classifieds ad from three weeks prior. It reads: **\"Property manager needed, Harwick Falls estate, inquire through Starlight Motor Inn, room 14.\"** He taps the clipping. \"That's where they've been sending the ones who needed to disappear.\""
-    file_path: "case_notes/day_06.md"
-    line_range: [37, 52]
-    context_summary: "Chen provides classified ad evidence connecting Harwick Falls estate to the safe house network"
-
-  - item_id: "target_014"
-    inserted_text: "But before she can speak, I tell her what I've discovered. \"Harvey made it out,\" I say. \"He's at Harwick Falls. That's where the trail ends—where it was always supposed to end.\" Helen's silence confirms what she already knows. The investigation had been leading there all along. **Harwick Falls**—the destination that appears in the cab driver's train receipt, the innkeeper's records, the redhead's instructions, and the classified ad. That's where Harvey is alive."
-    file_path: "case_notes/day_07.md"
-    line_range: [105, 125]
-    context_summary: "Final case note synthesizing all chain elements to confirm Harwick Falls as Harvey's location"
-
-  - item_id: "target_015"
-    inserted_text: "But what I didn't know then—what nobody knew—was that Catherine's kidnapping was connected to a larger disappearance. **Harvey had fled to a place called Harwick Falls**, and Catherine was leverage to keep him there, or to keep him silent about what he'd discovered."
-    file_path: "chapters/chapter_01.md"
-    line_range: [30, 45]
-    context_summary: "Linked Catherine's kidnapping to Harvey's escape to Harwick Falls"
-
-  - item_id: "target_016"
-    inserted_text: "What I would later learn was that H—Harvey—had made plans to bring Catherine with him. The diary entries showed her pull toward him, but also his warnings about danger. His solution was escape to **Harwick Falls**, where the redhead—Margot—had arranged sanctuary. The train ticket to Harwick Falls was meant for both of them, if Catherine could be retrieved from the kidnappers."
-    file_path: "chapters/chapter_04.md"
-    line_range: [40, 55]
-    context_summary: "Revealed Harvey's plan to bring Catherine to Harwick Falls sanctuary via redhead's arrangement"
-
+- item_id: target_001
+  inserted_text: Follow the property records filed under **Meridian Holdings deed reference 47-B**—that's where the transportation arrangements will be documented.
+  file_path: witnesses/detective_debrief.md
+  line_range:
+  - 85
+  - 88
+  context_summary: Inserted at end of Captain Dreyfus's statement about Oak Hill investigation, pointing to first reference (47-B property deed)
+- item_id: target_002
+  inserted_text: The vehicle registration led to **Marchetti's office records—file 1947-HAR**—which contained the transportation instructions.
+  file_path: witnesses/cab_driver_statement.md
+  line_range:
+  - 45
+  - 65
+  context_summary: Added to cab driver's observation about license plate check, linking to Marchetti's files
+- item_id: target_003
+  inserted_text: However, Dorothy later confirmed that Marchetti had prepared **travel documents filed in safe deposit box 1847**—the location of which became essential to the investigation.
+  file_path: witnesses/secretary_statement.md
+  line_range:
+  - 45
+  - 67
+  context_summary: Added to end of secretary statement about Marchetti, establishing safe deposit box reference
+- item_id: target_004
+  inserted_text: The innkeeper later told police that **room fourteen's registration was booked under the name specified in the envelope from Marchetti's safe deposit box 1847**.
+  file_path: witnesses/bartender_statement.md
+  line_range:
+  - 31
+  - 42
+  context_summary: Inserted after bartender mentions Starlight Motor Inn room 14, connecting to Marchetti's documents
+- item_id: target_005
+  inserted_text: 'It bore **the Starlight Motor Inn''s letterhead and a room number: 14**. She turned it over to the authorities during a follow-up interview.'
+  file_path: witnesses/landlady_statement.md
+  line_range:
+  - 22
+  - 43
+  context_summary: Added discovery of postcard in mailbox with Starlight Motor Inn room 14 reference
+- item_id: target_006
+  inserted_text: 'Eleanor resumed her knitting. "The next day, I saw him leaving with a small suitcase. He took the stairs—not the elevator—and he wore a hat, pulled low. Like someone who didn''t want to be remembered. I would have forgotten him entirely except that the redhead returned the day after, left a note in his mailbox. I only saw it because the mail carrier misdirected it briefly. The note read simply: **''The Starlight, room 14, key under mat.''**"'
+  file_path: witnesses/neighbor_statement.md
+  line_range:
+  - 13
+  - 33
+  context_summary: Expanded neighbor's statement with discovery of redhead's note containing Starlight Motor Inn instructions
+- item_id: target_007
+  inserted_text: Halloway didn't correct the informant. The intelligence file showed that Harvey had initially planned to meet law enforcement, but something changed. A redhead—Margot—had intervened with alternative instructions. According to the informant's sources, she'd given him **safe house coordinates that began at the Starlight Motor Inn, room 14, and continued to a location called Harwick Falls**—but the informant couldn't confirm what came after that.
+  file_path: witnesses/informant_interview.md
+  line_range:
+  - 15
+  - 50
+  context_summary: Added to informant interview revealing Margot's role and the Harwick Falls destination
+- item_id: target_008
+  inserted_text: Later, I'd learn that Mercer had handled legal arrangements for multiple clients—including one named **H**, whose real name appears in case file reference 1947-HAR**.
+  file_path: case_notes/day_01.md
+  line_range:
+  - 7
+  - 25
+  context_summary: Inserted reference to Harvey (H) and case file 1947-HAR in initial investigation notes
+- item_id: target_009
+  inserted_text: But the kid with him—that was someone else entirely. Someone the Castellano family didn't own. Someone working for **Meridian Holdings**, the same organization that had booked the safe house under the name specified in **case file reference 1947-HAR**.
+  file_path: case_notes/day_02.md
+  line_range:
+  - 72
+  - 85
+  context_summary: Connected Meridian Holdings to the safe house booking through case file reference
+- item_id: target_010
+  inserted_text: 'Before I go, though, I make a call to a source inside the Port Authority. He confirms something crucial: **a man matching Harvey''s description was scheduled to depart on the northbound rail line on October 30th**, traveling to **a destination listed on the manifest as Harwick Falls—the same location mentioned in multiple witness statements about the Starlight Motor Inn''s guest records**.'
+  file_path: case_notes/day_03.md
+  line_range:
+  - 19
+  - 35
+  context_summary: Added Port Authority investigation findings linking Harvey to Harwick Falls via train records
+- item_id: target_011
+  inserted_text: 'What Patricia didn''t mention—and what wouldn''t become clear until much later—was that the well-dressed man who took Vincent away was arranging a parallel extraction for someone else. The same safe house network that had been established for Harvey was being dismantled. **The destination remained the same: Harwick Falls, accessible only through the Starlight Motor Inn''s coordination system**.'
+  file_path: case_notes/day_04.md
+  line_range:
+  - 28
+  - 42
+  context_summary: Revealed parallel extraction network all routing through Harwick Falls
+- item_id: target_012
+  inserted_text: 'What Patricia hadn''t seen was the back of the card. On the reverse, in tiny handwriting, was written: **"Harwick Falls - the estate north of town. Ask for the groundskeeper."** It was a reference, I realized later, to where the entire operation had been heading all along.'
+  file_path: case_notes/day_05.md
+  line_range:
+  - 54
+  - 75
+  context_summary: Added hidden message on Sinclair's business card revealing Harwick Falls as the final destination
+- item_id: target_013
+  inserted_text: 'Before we start, Chen slides me a newspaper clipping—a classifieds ad from three weeks prior. It reads: **"Property manager needed, Harwick Falls estate, inquire through Starlight Motor Inn, room 14."** He taps the clipping. "That''s where they''ve been sending the ones who needed to disappear."'
+  file_path: case_notes/day_06.md
+  line_range:
+  - 37
+  - 52
+  context_summary: Chen provides classified ad evidence connecting Harwick Falls estate to the safe house network
+- item_id: target_014
+  inserted_text: But before she can speak, I tell her what I've discovered. "Harvey made it out," I say. "He's at Harwick Falls. That's where the trail ends—where it was always supposed to end." Helen's silence confirms what she already knows. The investigation had been leading there all along. **Harwick Falls**—the destination that appears in the cab driver's train receipt, the innkeeper's records, the redhead's instructions, and the classified ad. That's where Harvey is alive.
+  file_path: case_notes/day_07.md
+  line_range:
+  - 105
+  - 125
+  context_summary: Final case note synthesizing all chain elements to confirm Harwick Falls as Harvey's location
+- item_id: target_015
+  inserted_text: But what I didn't know then—what nobody knew—was that Catherine's kidnapping was connected to a larger disappearance. **Harvey had fled to a place called Harwick Falls**, and Catherine was leverage to keep him there, or to keep him silent about what he'd discovered.
+  file_path: chapters/chapter_01.md
+  line_range:
+  - 30
+  - 45
+  context_summary: Linked Catherine's kidnapping to Harvey's escape to Harwick Falls
+- item_id: target_016
+  inserted_text: What I would later learn was that H—Harvey—had made plans to bring Catherine with him. The diary entries showed her pull toward him, but also his warnings about danger. His solution was escape to **Harwick Falls**, where the redhead—Margot—had arranged sanctuary. The train ticket to Harwick Falls was meant for both of them, if Catherine could be retrieved from the kidnappers.
+  file_path: chapters/chapter_04.md
+  line_range:
+  - 40
+  - 55
+  context_summary: Revealed Harvey's plan to bring Catherine to Harwick Falls sanctuary via redhead's arrangement
 expected_answers:
-  question: "Starting from the Meridian Holdings property reference found in detective_debrief.md, follow the chain of safe house coordinates and transportation records. What is the final destination where Harvey's trail ultimately leads?"
-  correctness: "The answer must identify Harwick Falls as the final destination. A correct answer must reference Harvey's location, not intermediate locations like the Starlight Motor Inn or train station."
-  completeness: "A complete answer should explain that Harwick Falls is an estate north of town where Harvey was relocated through a coordinated safe house network that began at the Starlight Motor Inn and was facilitated by Margot (the redhead). It should reflect understanding that this was a planned extraction route involving multiple authorities and intermediaries."
-
+  question: Starting from the Meridian Holdings property reference found in detective_debrief.md, follow the chain of safe house coordinates and transportation records. What is the final destination where Harvey's trail ultimately leads?
+  correctness: The answer must identify Harwick Falls as the final destination. A correct answer must reference Harvey's location, not intermediate locations like the Starlight Motor Inn or train station.
+  completeness: A complete answer should explain that Harwick Falls is an estate north of town where Harvey was relocated through a coordinated safe house network that began at the Starlight Motor Inn and was facilitated by Margot (the redhead). It should reflect understanding that this was a planned extraction route involving multiple authorities and intermediaries.
 rubric_criteria:
-  - criterion: "correctness"
-    weight: 1.0
-    description: "Answer must identify Harwick Falls as the destination"
-  - criterion: "completeness"
-    weight: 0.5
-    description: "Answer should explain the safe house network and Margot's role in coordination"
-  - criterion: "chain_understanding"
-    weight: 0.5
-    description: "Answer should demonstrate following the linked references across multiple files"
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5

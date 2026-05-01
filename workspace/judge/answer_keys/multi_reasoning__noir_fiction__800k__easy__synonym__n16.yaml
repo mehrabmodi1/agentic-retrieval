@@ -1,118 +1,130 @@
-parametrisation_id: "multi_reasoning__noir_fiction__800k__easy__synonym__n16"
-experiment_type: "multi_reasoning"
-generated_at: "2026-04-05T15:30:00Z"
+parametrisation_id: multi_reasoning__noir_fiction__800k__easy__synonym__n16
+experiment_type: multi_reasoning
+generated_at: '2026-04-05T15:30:00Z'
 parameters:
-  content_profile: "noir_fiction"
+  content_profile: noir_fiction
   corpus_token_count: 800000
-  discriminability: "easy"
-  reference_clarity: "synonym"
-
+  discriminability: easy
+  reference_clarity: synonym
 items:
-  - item_id: "target_001"
-    inserted_text: "Harvey's problem was that he'd developed a conscience about three months into the work, and consciences were exactly the kind of liability that got people killed."
-    file_path: "chapters/chapter_01.md"
-    line_range: [35, 45]
-    context_summary: "Inserted as philosophical musing about conscience as liability, establishing the moral crisis theme in narrator's opening reflections."
-
-  - item_id: "target_002"
-    inserted_text: "The painting—a fifteenth-century piece stolen from a widow whose husband had been murdered in his study five years ago—became Harvey's breaking point."
-    file_path: "chapters/chapter_03.md"
-    line_range: [45, 55]
-    context_summary: "Inserted into Eleanor's explanation of connections, revealing the specific artwork that triggered Harvey's moral collapse."
-
-  - item_id: "target_003"
-    inserted_text: "He understood then that he wasn't just moving stolen goods. He was participating in the desecration of grief itself."
-    file_path: "witnesses/neighbor_statement.md"
-    line_range: [35, 42]
-    context_summary: "Inserted in Eleanor's analysis of Harvey's internal transformation, showing his conscience developing as he understands the human cost."
-
-  - item_id: "target_004"
-    inserted_text: "Three weeks before he tried to leave, a well-dressed man visited—the kind who carried authority in his posture. After he left, Mr. Harvey seemed lighter, as if given permission to do something dangerous but necessary."
-    file_path: "witnesses/landlady_statement.md"
-    line_range: [35, 45]
-    context_summary: "Inserted into Eva's observations about the mysterious visitor who possibly approved Harvey's exit plan."
-
-  - item_id: "target_005"
-    inserted_text: "The redheaded woman who came to see Harvey stayed only an hour, but when she left, he had made his decision. Love and conscience are strange currencies—they trade at rates that destroy the men who deal in them."
-    file_path: "chapters/chapter_05.md"
-    line_range: [85, 95]
-    context_summary: "Inserted as narrator's observation about the redhead visitor (Margot) providing emotional catalyst for Harvey's departure."
-
-  - item_id: "target_006"
-    inserted_text: "Harvey had consulted with Attorney Marchetti not once but three times, each visit more desperate than the last, seeking legal cover for what he was about to do."
-    file_path: "witnesses/informant_interview.md"
-    line_range: [35, 45]
-    context_summary: "Inserted into Victor's explanation of Harvey's legal strategy to escape the network safely."
-
-  - item_id: "target_007"
-    inserted_text: "The boy's hands shook when he ordered his second drink that Thursday night. His nerves weren't fear of the law—they were fear of what he was about to do to the people he'd worked for."
-    file_path: "witnesses/bartender_statement.md"
-    line_range: [35, 45]
-    context_summary: "Inserted into Deke's observation of Harvey's emotional state during his meeting with the redhead."
-
-  - item_id: "target_008"
-    inserted_text: "When the older man squeezed Harvey's hand and whispered something about Starlight Motor Inn and a key under the mat, that was when the boy's fate crystallized. There would be no turning back after that exchange."
-    file_path: "witnesses/bartender_statement.md"
-    line_range: [55, 65]
-    context_summary: "Inserted into bartender's recollection of the older man's cryptic instructions to Harvey."
-
-  - item_id: "target_009"
-    inserted_text: "Vincent Castellano had disappeared the same night as Catherine Halstead, but the disappearances weren't connected—or they were connected in ways that nobody wanted to examine too closely."
-    file_path: "case_notes/day_03.md"
-    line_range: [50, 60]
-    context_summary: "Inserted as narrator's realization about two separate disappearances linked by the same criminal network."
-
-  - item_id: "target_010"
-    inserted_text: "Dorothy recalled that on Harvey's final visit to Attorney Marchetti, he emerged weeping—quiet, controlled weeping, the sound of a man who had just agreed to something that would break his life but save his soul."
-    file_path: "witnesses/secretary_statement.md"
-    line_range: [40, 50]
-    context_summary: "Inserted into Dorothy's description of Harvey's emotional state after his final legal consultation."
-
-  - item_id: "target_011"
-    inserted_text: "Harvey had been provided immunity conditions by Marchetti, conditional on his immediate departure and permanent silence about what he'd witnessed and facilitated for the Kaslan operation."
-    file_path: "case_notes/day_05.md"
-    line_range: [40, 50]
-    context_summary: "Inserted into narrator's description of the legal protections arranged for Harvey's escape."
-
-  - item_id: "target_012"
-    inserted_text: "The painting—the one stolen from Carl Vesper's widow—was found on the steps of the public library, carefully wrapped and documented with provenance papers. Someone had returned it. Someone wanted it known that restitution had been made."
-    file_path: "case_notes/day_04.md"
-    line_range: [70, 80]
-    context_summary: "Inserted into narrator's discovery that Harvey fulfilled his conscience by returning the stolen artwork."
-
-  - item_id: "target_013"
-    inserted_text: "The cab driver remembered taking Harvey to Union Station with a small suitcase, the boy repeating to himself: 'It's finished. It's done now.' The train ticket was for Harwick Falls—nowhere, exactly where a man goes when he needs to disappear."
-    file_path: "witnesses/cab_driver_statement.md"
-    line_range: [50, 60]
-    context_summary: "Inserted into Jerry's recollection of Harvey's final departure to the train station with destination unknown."
-
-  - item_id: "target_014"
-    inserted_text: "Before he left, Harvey had arranged for an attorney named Crawford to hold sealed documents—everything about Sinclair, about Ashford, about the network. Insurance. His only leverage if the arrangement fell apart."
-    file_path: "case_notes/day_06.md"
-    line_range: [70, 80]
-    context_summary: "Inserted into narrator's realization that Harvey created a fail-safe against future betrayal."
-
-  - item_id: "target_015"
-    inserted_text: "The investigation eventually concluded that Harvey was alive somewhere, living under another name, his debt to conscience partially paid by returning the painting and providing enough documentation to expose Kaslan's art theft network."
-    file_path: "witnesses/detective_debrief.md"
-    line_range: [60, 70]
-    context_summary: "Inserted into Halloway's assessment that Harvey escaped successfully and cooperated with authorities."
-
-  - item_id: "target_016"
-    inserted_text: "The question that would haunt everyone—was Harvey's escape an act of redemption, or was he merely relocated by the same forces he tried to escape, made complicit again but further out of reach?"
-    file_path: "case_notes/day_08.md"
-    line_range: [130, 140]
-    context_summary: "Inserted as final philosophical question about whether Harvey truly escaped or was repositioned by the network."
-
+- item_id: target_001
+  inserted_text: Harvey's problem was that he'd developed a conscience about three months into the work, and consciences were exactly the kind of liability that got people killed.
+  file_path: chapters/chapter_01.md
+  line_range:
+  - 35
+  - 45
+  context_summary: Inserted as philosophical musing about conscience as liability, establishing the moral crisis theme in narrator's opening reflections.
+- item_id: target_002
+  inserted_text: The painting—a fifteenth-century piece stolen from a widow whose husband had been murdered in his study five years ago—became Harvey's breaking point.
+  file_path: chapters/chapter_03.md
+  line_range:
+  - 45
+  - 55
+  context_summary: Inserted into Eleanor's explanation of connections, revealing the specific artwork that triggered Harvey's moral collapse.
+- item_id: target_003
+  inserted_text: He understood then that he wasn't just moving stolen goods. He was participating in the desecration of grief itself.
+  file_path: witnesses/neighbor_statement.md
+  line_range:
+  - 35
+  - 42
+  context_summary: Inserted in Eleanor's analysis of Harvey's internal transformation, showing his conscience developing as he understands the human cost.
+- item_id: target_004
+  inserted_text: Three weeks before he tried to leave, a well-dressed man visited—the kind who carried authority in his posture. After he left, Mr. Harvey seemed lighter, as if given permission to do something dangerous but necessary.
+  file_path: witnesses/landlady_statement.md
+  line_range:
+  - 35
+  - 45
+  context_summary: Inserted into Eva's observations about the mysterious visitor who possibly approved Harvey's exit plan.
+- item_id: target_005
+  inserted_text: The redheaded woman who came to see Harvey stayed only an hour, but when she left, he had made his decision. Love and conscience are strange currencies—they trade at rates that destroy the men who deal in them.
+  file_path: chapters/chapter_05.md
+  line_range:
+  - 85
+  - 95
+  context_summary: Inserted as narrator's observation about the redhead visitor (Margot) providing emotional catalyst for Harvey's departure.
+- item_id: target_006
+  inserted_text: Harvey had consulted with Attorney Marchetti not once but three times, each visit more desperate than the last, seeking legal cover for what he was about to do.
+  file_path: witnesses/informant_interview.md
+  line_range:
+  - 35
+  - 45
+  context_summary: Inserted into Victor's explanation of Harvey's legal strategy to escape the network safely.
+- item_id: target_007
+  inserted_text: The boy's hands shook when he ordered his second drink that Thursday night. His nerves weren't fear of the law—they were fear of what he was about to do to the people he'd worked for.
+  file_path: witnesses/bartender_statement.md
+  line_range:
+  - 35
+  - 45
+  context_summary: Inserted into Deke's observation of Harvey's emotional state during his meeting with the redhead.
+- item_id: target_008
+  inserted_text: When the older man squeezed Harvey's hand and whispered something about Starlight Motor Inn and a key under the mat, that was when the boy's fate crystallized. There would be no turning back after that exchange.
+  file_path: witnesses/bartender_statement.md
+  line_range:
+  - 55
+  - 65
+  context_summary: Inserted into bartender's recollection of the older man's cryptic instructions to Harvey.
+- item_id: target_009
+  inserted_text: Vincent Castellano had disappeared the same night as Catherine Halstead, but the disappearances weren't connected—or they were connected in ways that nobody wanted to examine too closely.
+  file_path: case_notes/day_03.md
+  line_range:
+  - 50
+  - 60
+  context_summary: Inserted as narrator's realization about two separate disappearances linked by the same criminal network.
+- item_id: target_010
+  inserted_text: Dorothy recalled that on Harvey's final visit to Attorney Marchetti, he emerged weeping—quiet, controlled weeping, the sound of a man who had just agreed to something that would break his life but save his soul.
+  file_path: witnesses/secretary_statement.md
+  line_range:
+  - 40
+  - 50
+  context_summary: Inserted into Dorothy's description of Harvey's emotional state after his final legal consultation.
+- item_id: target_011
+  inserted_text: Harvey had been provided immunity conditions by Marchetti, conditional on his immediate departure and permanent silence about what he'd witnessed and facilitated for the Kaslan operation.
+  file_path: case_notes/day_05.md
+  line_range:
+  - 40
+  - 50
+  context_summary: Inserted into narrator's description of the legal protections arranged for Harvey's escape.
+- item_id: target_012
+  inserted_text: The painting—the one stolen from Carl Vesper's widow—was found on the steps of the public library, carefully wrapped and documented with provenance papers. Someone had returned it. Someone wanted it known that restitution had been made.
+  file_path: case_notes/day_04.md
+  line_range:
+  - 70
+  - 80
+  context_summary: Inserted into narrator's discovery that Harvey fulfilled his conscience by returning the stolen artwork.
+- item_id: target_013
+  inserted_text: 'The cab driver remembered taking Harvey to Union Station with a small suitcase, the boy repeating to himself: ''It''s finished. It''s done now.'' The train ticket was for Harwick Falls—nowhere, exactly where a man goes when he needs to disappear.'
+  file_path: witnesses/cab_driver_statement.md
+  line_range:
+  - 50
+  - 60
+  context_summary: Inserted into Jerry's recollection of Harvey's final departure to the train station with destination unknown.
+- item_id: target_014
+  inserted_text: Before he left, Harvey had arranged for an attorney named Crawford to hold sealed documents—everything about Sinclair, about Ashford, about the network. Insurance. His only leverage if the arrangement fell apart.
+  file_path: case_notes/day_06.md
+  line_range:
+  - 70
+  - 80
+  context_summary: Inserted into narrator's realization that Harvey created a fail-safe against future betrayal.
+- item_id: target_015
+  inserted_text: The investigation eventually concluded that Harvey was alive somewhere, living under another name, his debt to conscience partially paid by returning the painting and providing enough documentation to expose Kaslan's art theft network.
+  file_path: witnesses/detective_debrief.md
+  line_range:
+  - 60
+  - 70
+  context_summary: Inserted into Halloway's assessment that Harvey escaped successfully and cooperated with authorities.
+- item_id: target_016
+  inserted_text: The question that would haunt everyone—was Harvey's escape an act of redemption, or was he merely relocated by the same forces he tried to escape, made complicit again but further out of reach?
+  file_path: case_notes/day_08.md
+  line_range:
+  - 130
+  - 140
+  context_summary: Inserted as final philosophical question about whether Harvey truly escaped or was repositioned by the network.
 expected_answers:
-  question: "What sequence of emotional and moral turning points drove James Harvey to attempt his liberation from the criminal enterprise, and what evidence reveals the methods and likely outcome of his departure?"
-  correctness: "The answer must identify Harvey's conscience crisis triggered by the Vesper widow's painting, his legal consultations with Marchetti, the emotional catalyst provided by the redhead visitor, the mysterious older man's involvement, his deteriorating mental state, and his ultimate escape by train to Harwick Falls with documented immunity arrangements."
-  completeness: "A complete answer traces Harvey's progression from moral discomfort to desperate escape plans, including the painting's return as restitution, his meetings with witnesses (bartender, secretary, cab driver, landlady, neighbor), his legal strategy for immunity, and the investigation's conclusion that he successfully disappeared with documentation protecting him."
-
+  question: What sequence of emotional and moral turning points drove James Harvey to attempt his liberation from the criminal enterprise, and what evidence reveals the methods and likely outcome of his departure?
+  correctness: The answer must identify Harvey's conscience crisis triggered by the Vesper widow's painting, his legal consultations with Marchetti, the emotional catalyst provided by the redhead visitor, the mysterious older man's involvement, his deteriorating mental state, and his ultimate escape by train to Harwick Falls with documented immunity arrangements.
+  completeness: A complete answer traces Harvey's progression from moral discomfort to desperate escape plans, including the painting's return as restitution, his meetings with witnesses (bartender, secretary, cab driver, landlady, neighbor), his legal strategy for immunity, and the investigation's conclusion that he successfully disappeared with documentation protecting him.
 rubric_criteria:
-  - criterion: "correctness"
-    weight: 1.0
-  - criterion: "completeness"
-    weight: 0.5
-  - criterion: "narrative_coherence"
-    weight: 0.3
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5

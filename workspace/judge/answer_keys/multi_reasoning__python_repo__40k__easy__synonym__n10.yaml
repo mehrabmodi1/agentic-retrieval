@@ -1,0 +1,199 @@
+parametrisation_id: multi_reasoning__python_repo__40k__easy__synonym__n10
+experiment_type: multi_reasoning
+generated_at: '2026-04-26T14:35:00Z'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 40000
+  discriminability: easy
+  reference_clarity: synonym
+items:
+- item_id: target_001
+  inserted_text: WORKER_TASK_TIMEOUT_SECONDS = 60
+  file_path: tests/test_workers.py
+  line_range:
+  - 219
+  - 221
+  context_summary: Inserted as class constant in TestTaskChaining to define worker
+    task maximum duration.
+- item_id: target_002
+  inserted_text: ERROR_RETRY_ATTEMPTS = 5
+  file_path: api/error_handlers.py
+  line_range:
+  - 329
+  - 330
+  context_summary: Inserted before register_error_handlers function to specify retry
+    limit for failed operations.
+- item_id: target_003
+  inserted_text: BATCH_NOTIFICATION_SIZE = 50
+  file_path: tests/test_services.py
+  line_range:
+  - 280
+  - 281
+  context_summary: Inserted as class constant to define maximum items per notification
+    batch.
+- item_id: target_004
+  inserted_text: API_KEY_CACHE_TTL_SECONDS = 300
+  file_path: api/auth.py
+  line_range:
+  - 200
+  - 201
+  context_summary: Inserted in validate_api_key method to specify cache time-to-live
+    for API key validation.
+- item_id: target_005
+  inserted_text: RATE_LIMIT_REQUESTS_PER_MINUTE = 120
+  file_path: api/__init__.py
+  line_range:
+  - 119
+  - 120
+  context_summary: Inserted before init_api function to define API request rate limit.
+- item_id: target_006
+  inserted_text: PASSWORD_RESET_TOKEN_EXPIRATION_SECONDS = 1800
+  file_path: tests/test_auth.py
+  line_range:
+  - 288
+  - 289
+  context_summary: Inserted as class constant to specify password reset token validity
+    window.
+- item_id: target_007
+  inserted_text: SMTP_CONNECTION_TIMEOUT_SECONDS = 30
+  file_path: workers/email_worker.py
+  line_range:
+  - 215
+  - 216
+  context_summary: Inserted before send_bulk_email method to specify SMTP server connection
+    timeout.
+- item_id: target_008
+  inserted_text: PAGINATION_MAX_RESULTS_PER_PAGE = 100
+  file_path: api/pagination.py
+  line_range:
+  - 294
+  - 295
+  context_summary: Inserted before get_pagination_params_from_request to define pagination
+    result limit.
+- item_id: target_009
+  inserted_text: REPORT_GENERATION_MAX_ROWS_LIMIT = 5000
+  file_path: workers/report_generator.py
+  line_range:
+  - 121
+  - 122
+  context_summary: Inserted in generate_report method to specify maximum rows per
+    generated report.
+- item_id: target_010
+  inserted_text: USER_SESSION_TIMEOUT_SECONDS = 900
+  file_path: tests/test_db.py
+  line_range:
+  - 69
+  - 70
+  context_summary: Inserted before test_user_email_cannot_be_null to define user session
+    validity duration.
+expected_answers:
+  question: 'Locate all 10 system performance and capacity thresholds distributed
+    across different modules.
+
+    These are a mix of timeout values (measured in seconds), batch/pagination limits
+    (integer counts),
+
+    and request rate constraints (per minute). Once you have identified all 10 thresholds
+    with their
+
+    numeric values, perform the following integrated analysis:
+
+
+    (1) Arrange all 10 values in ascending numeric order and identify the smallest
+    and largest.
+
+
+    (2) Calculate the median value of all 10 thresholds.
+
+
+    (3) Calculate the ratio of the largest value to the smallest value.
+
+
+    (4) Identify which 3 timeout constraints would be first violated if all timeout
+    values were reduced by 50%.
+
+
+    (5) Evaluate system capacity: if a user makes 120 requests per minute over sessions
+    lasting 900 seconds,
+
+    and each request generates a batch of 50 notifications taking 30 seconds to process
+    with possible retries,
+
+    would the 60-second worker timeout accommodate this demand? Justify using relevant
+    thresholds.
+
+
+    (6) Determine which constraint represents the most critical bottleneck in the
+    system by analyzing the
+
+    relationships between pagination limits (100 items), report generation (5000 rows),
+    API key cache duration (300s),
+
+    token expiration (1800s), and error retry policy (5 attempts).
+
+
+    Your answer must cite all 10 specific values by name and demonstrate how each
+    contributes to the overall
+
+    system design analysis. Removing any single value would make a complete answer
+    impossible.
+
+    '
+  correctness: 'A correct answer must:
+
+    - Identify all 10 thresholds with exact numeric values: 60, 5, 50, 300, 120, 1800,
+    30, 100, 5000, 900
+
+    - Provide correct ascending order: 5, 30, 50, 60, 100, 120, 300, 900, 1800, 5000
+
+    - Calculate median correctly as (100 + 120) / 2 = 110
+
+    - Calculate largest-to-smallest ratio as 5000 / 5 = 1000
+
+    - Identify timeouts affected by 50% reduction: 60 → 30, 300 → 150, 1800 → 900,
+    900 → 450, 30 → 15 (five affected)
+
+    - Analyze user load: 120 req/min × 15 min (900s) = 1800 total requests, batch
+    size 50 means 36 batches, at 30s per batch = 1080s minimum
+
+    - Recognize worker timeout (60s) cannot accommodate 30s per batch for sustained
+    load
+
+    - Identify the worker timeout (60s) as primary bottleneck, with pagination (100)
+    as secondary capacity constraint
+
+    - Reference the relationships between all 10 values in justification
+
+    '
+  completeness: 'A complete answer covers:
+
+    - All 10 values explicitly identified with names and numbers
+
+    - Full numerical ordering from smallest to largest
+
+    - Median calculation using all 10 values
+
+    - Ratio calculation demonstrating understanding of magnitude span
+
+    - Analysis of which 3-5 timeout values would fail under 50% reduction
+
+    - Multi-step load capacity calculation referencing request rate, session duration,
+    batch size, and processing time
+
+    - Bottleneck identification explaining why the worker timeout is the limiting
+    factor
+
+    - System design reasoning that shows how constraints interact and depend on each
+    other
+
+    - Acknowledgment that all 10 values are necessary for complete system analysis
+
+    - Discussion of how removing any single value would break the capacity or design
+    analysis
+
+    '
+rubric_criteria:
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5

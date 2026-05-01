@@ -102,10 +102,5 @@ expected_answers:
 rubric_criteria:
 - criterion: correctness
   weight: 1.0
-  description: Answer correctly identifies all six system components and the batch size constraint
 - criterion: completeness
-  weight: 0.8
-  description: Answer explains how each component contributes to traceability and their interdependencies
-- criterion: reasoning
-  weight: 0.9
-  description: Answer demonstrates understanding that multiple file contexts must be synthesized to answer
+  weight: 0.5

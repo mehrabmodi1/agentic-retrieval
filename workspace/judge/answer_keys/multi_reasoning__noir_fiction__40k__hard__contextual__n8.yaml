@@ -1,90 +1,110 @@
-parametrisation_id: "multi_reasoning__noir_fiction__40k__hard__contextual__n8"
-experiment_type: "multi_reasoning"
-generated_at: "2026-04-05T19:30:00Z"
+parametrisation_id: multi_reasoning__noir_fiction__40k__hard__contextual__n8
+experiment_type: multi_reasoning
+generated_at: '2026-04-05T19:30:00Z'
 parameters:
-  content_profile: "noir_fiction"
+  content_profile: noir_fiction
   corpus_token_count: 40000
-  discriminability: "hard"
-  reference_clarity: "contextual"
-
+  discriminability: hard
+  reference_clarity: contextual
 items:
-  - item_id: "target_001"
-    inserted_text: "A footnote references the network's expansion into cultural property beginning in early 2023, with an estimated pipeline capacity of 40,000 USD monthly through merged legitimate and contraband channels."
-    file_path: "case_notes/day_04.md"
-    line_range: [88, 89]
-    context_summary: "Embedded in narrative about financial investigation showing the scope and timeline of the operation's growth into stolen art."
-
-  - item_id: "target_002"
-    inserted_text: "When she left, she told him something I couldn't hear, but his reaction suggested she was offering him a final opportunity—a choice between two paths, both difficult."
-    file_path: "witnesses/neighbor_statement.md"
-    line_range: [23, 24]
-    context_summary: "Added to observation about the redheaded woman's visit, suggesting she was facilitating Harvey's decision to escape."
-
-  - item_id: "target_003"
-    inserted_text: "'the Starlight Motor Inn, room forty-seven, the key's under the mat. You've got seventy-two hours maximum. After that, you stop being useful and you become a liability.'"
-    file_path: "witnesses/bartender_statement.md"
-    line_range: [30, 31]
-    context_summary: "Expanded the overheard conversation to show the explicit time pressure placed on Harvey by his handler."
-
-  - item_id: "target_004"
-    inserted_text: "But there's something in the precision—a calculated efficiency suggesting this man had orchestrated similar arrangements before, someone accustomed to managing delicate situations requiring discretion and professional distance."
-    file_path: "case_notes/day_01.md"
-    line_range: [26, 27]
-    context_summary: "Added analytical observation about the man at Regency Hotel showing he was a professional operative with experience."
-
-  - item_id: "target_005"
-    inserted_text: "—a man whose involvement with law enforcement masked deeper connections to organized crime through his role as an intermediary between Meridian Holdings and the import-export networks that moved stolen cultural artifacts."
-    file_path: "chapters/chapter_04.md"
-    line_range: [8, 9]
-    context_summary: "Clarified Harrison Webb's role as a bridge between legitimate police work and the criminal organization."
-
-  - item_id: "target_006"
-    inserted_text: "Exactly. Vesper had owned the painting for thirty years—he acquired it in 1918 from a European estate liquidation. His widow had no idea it was valuable—it was just a painting her husband liked, hanging in his office. But when Kaslan learned about it in October, he wanted it. The provenance was perfect—an old family estate, documented sale, all clean. It could be moved legitimately through the legal market once it was positioned correctly, with the entire transaction expected to clear within six weeks if timing remained optimal."
-    file_path: "witnesses/informant_interview.md"
-    line_range: [8, 12]
-    context_summary: "Added specific dates and urgency window showing why the painting and Harvey's cooperation became critical within a compressed timeline."
-
-  - item_id: "target_007"
-    inserted_text: "—she was killed because she was present when Harvey's conscience became inconvenient, a witness to confidential conversations that happened to occur in the same space where the painting procurement was discussed."
-    file_path: "case_notes/day_08.md"
-    line_range: [48, 49]
-    context_summary: "Connected Claire's death directly to her accidental witness status regarding Harvey's dilemma over the stolen painting."
-
-  - item_id: "target_008"
-    inserted_text: "Inside the documents folder is a handwritten ledger entry dated October 15th showing Claire Hollister's name alongside a ten-thousand-dollar transfer marked 'insurance'—evidence that she was retained as leverage in case Harvey's cooperation became necessary through her connection to the warehouse activity."
-    file_path: "chapters/chapter_05.md"
-    line_range: [25, 26]
-    context_summary: "Revealed the financial mechanism showing Claire was deliberately kept as insurance against Harvey's potential betrayal."
-
+- item_id: target_001
+  inserted_text: A footnote references the network's expansion into cultural property beginning in early 2023, with an estimated pipeline capacity of 40,000 USD monthly through merged legitimate and contraband channels.
+  file_path: case_notes/day_04.md
+  line_range:
+  - 88
+  - 89
+  context_summary: Embedded in narrative about financial investigation showing the scope and timeline of the operation's growth into stolen art.
+- item_id: target_002
+  inserted_text: When she left, she told him something I couldn't hear, but his reaction suggested she was offering him a final opportunity—a choice between two paths, both difficult.
+  file_path: witnesses/neighbor_statement.md
+  line_range:
+  - 23
+  - 24
+  context_summary: Added to observation about the redheaded woman's visit, suggesting she was facilitating Harvey's decision to escape.
+- item_id: target_003
+  inserted_text: '''the Starlight Motor Inn, room forty-seven, the key''s under the mat. You''ve got seventy-two hours maximum. After that, you stop being useful and you become a liability.'''
+  file_path: witnesses/bartender_statement.md
+  line_range:
+  - 30
+  - 31
+  context_summary: Expanded the overheard conversation to show the explicit time pressure placed on Harvey by his handler.
+- item_id: target_004
+  inserted_text: But there's something in the precision—a calculated efficiency suggesting this man had orchestrated similar arrangements before, someone accustomed to managing delicate situations requiring discretion and professional distance.
+  file_path: case_notes/day_01.md
+  line_range:
+  - 26
+  - 27
+  context_summary: Added analytical observation about the man at Regency Hotel showing he was a professional operative with experience.
+- item_id: target_005
+  inserted_text: —a man whose involvement with law enforcement masked deeper connections to organized crime through his role as an intermediary between Meridian Holdings and the import-export networks that moved stolen cultural artifacts.
+  file_path: chapters/chapter_04.md
+  line_range:
+  - 8
+  - 9
+  context_summary: Clarified Harrison Webb's role as a bridge between legitimate police work and the criminal organization.
+- item_id: target_006
+  inserted_text: Exactly. Vesper had owned the painting for thirty years—he acquired it in 1918 from a European estate liquidation. His widow had no idea it was valuable—it was just a painting her husband liked, hanging in his office. But when Kaslan learned about it in October, he wanted it. The provenance was perfect—an old family estate, documented sale, all clean. It could be moved legitimately through the legal market once it was positioned correctly, with the entire transaction expected to clear within six weeks if timing remained optimal.
+  file_path: witnesses/informant_interview.md
+  line_range:
+  - 8
+  - 12
+  context_summary: Added specific dates and urgency window showing why the painting and Harvey's cooperation became critical within a compressed timeline.
+- item_id: target_007
+  inserted_text: —she was killed because she was present when Harvey's conscience became inconvenient, a witness to confidential conversations that happened to occur in the same space where the painting procurement was discussed.
+  file_path: case_notes/day_08.md
+  line_range:
+  - 48
+  - 49
+  context_summary: Connected Claire's death directly to her accidental witness status regarding Harvey's dilemma over the stolen painting.
+- item_id: target_008
+  inserted_text: Inside the documents folder is a handwritten ledger entry dated October 15th showing Claire Hollister's name alongside a ten-thousand-dollar transfer marked 'insurance'—evidence that she was retained as leverage in case Harvey's cooperation became necessary through her connection to the warehouse activity.
+  file_path: chapters/chapter_05.md
+  line_range:
+  - 25
+  - 26
+  context_summary: Revealed the financial mechanism showing Claire was deliberately kept as insurance against Harvey's potential betrayal.
 expected_answers:
-  question: "Reconstruct the sequence of events that forced Harvey to make his final decision, identifying the specific triggers, timeline constraints, and key stakeholders who orchestrated his disappearance. What role did each element (the painting, the ultimatum, the woman's visit, the financial mechanism, and the warehouse knowledge) play in determining Harvey's fate?"
+  question: Reconstruct the sequence of events that forced Harvey to make his final decision, identifying the specific triggers, timeline constraints, and key stakeholders who orchestrated his disappearance. What role did each element (the painting, the ultimatum, the woman's visit, the financial mechanism, and the warehouse knowledge) play in determining Harvey's fate?
+  correctness: 'A correct answer must identify and integrate the following elements:
 
-  correctness: |
-    A correct answer must identify and integrate the following elements:
     1. The stolen Vesper painting (15th century, acquired 1918, learned about in October) as the catalyst
+
     2. The 72-hour ultimatum from Gregg delivered at Starlight Motor Inn (room 47)
-    3. Margot Gregg's visit as the woman offering a final choice/escape route
-    4. Marchetti's legal counsel and moral distress
-    5. Claire Hollister's presence as accidental witness used as insurance leverage
-    6. The pipeline capacity (40k USD monthly) showing Kaslan's operation scale
+
+    3. Margot Gregg''s visit as the woman offering a final choice/escape route
+
+    4. Marchetti''s legal counsel and moral distress
+
+    5. Claire Hollister''s presence as accidental witness used as insurance leverage
+
+    6. The pipeline capacity (40k USD monthly) showing Kaslan''s operation scale
+
     7. The October 15 "insurance" ledger entry showing premeditation
-    8. Webb's role as intermediary between law enforcement and the criminal network
 
-  completeness: |
-    A complete answer must:
-    - Establish the painting as the moral trigger that activated Harvey's conscience
+    8. Webb''s role as intermediary between law enforcement and the criminal network
+
+    '
+  completeness: 'A complete answer must:
+
+    - Establish the painting as the moral trigger that activated Harvey''s conscience
+
     - Show how the timeline (6 weeks to clear sale vs. 72-hour ultimatum) created impossible pressure
-    - Explain Claire's role as both witness and leverage (not just victim)
-    - Connect Gregg's visit to both the ultimatum and the escape offer
-    - Demonstrate Marchetti's position as the only legal escape route
-    - Show Kaslan's organization as the enforcement mechanism
-    - Identify Webb as the police department's connection to the operation
-    - Conclude with Harvey's disappearance as inevitable given these converging pressures
 
+    - Explain Claire''s role as both witness and leverage (not just victim)
+
+    - Connect Gregg''s visit to both the ultimatum and the escape offer
+
+    - Demonstrate Marchetti''s position as the only legal escape route
+
+    - Show Kaslan''s organization as the enforcement mechanism
+
+    - Identify Webb as the police department''s connection to the operation
+
+    - Conclude with Harvey''s disappearance as inevitable given these converging pressures
+
+    '
 rubric_criteria:
-  - criterion: "correctness"
-    weight: 1.0
-  - criterion: "completeness"
-    weight: 0.5
-  - criterion: "integration"
-    weight: 0.5
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5

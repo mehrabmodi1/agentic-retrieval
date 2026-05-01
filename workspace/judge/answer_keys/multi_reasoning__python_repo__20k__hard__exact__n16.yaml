@@ -195,10 +195,5 @@ expected_answers:
 rubric_criteria:
 - criterion: correctness
   weight: 1.0
-  description: Final sum matches 1026380 and all values are properly identified
 - criterion: completeness
   weight: 0.5
-  description: All 16 values identified with contextual understanding of where each appears
-- criterion: reasoning
-  weight: 0.3
-  description: Shows logical breakdown by category and demonstrates multi-file reasoning

@@ -1,94 +1,112 @@
-parametrisation_id: "multi_reasoning__noir_fiction__40k__hard__exact__n8"
-experiment_type: "multi_reasoning"
-generated_at: "2026-04-12T14:30:00Z"
+parametrisation_id: multi_reasoning__noir_fiction__40k__hard__exact__n8
+experiment_type: multi_reasoning
+generated_at: '2026-04-12T14:30:00Z'
 parameters:
-  content_profile: "noir_fiction"
+  content_profile: noir_fiction
   corpus_token_count: 40000
-  discriminability: "hard"
-  reference_clarity: "exact"
-
+  discriminability: hard
+  reference_clarity: exact
 items:
-  - item_id: "target_001"
-    inserted_text: "Margot was an acquisition specialist who operated on five-percent commission—each transaction she brokered, she took her cut directly from the middle, which was why handlers like Gregg insisted on meeting with operatives before she did. The money always changed hands in a specific order."
-    file_path: "witnesses/bartender_statement.md"
-    line_range: [21, 35]
-    context_summary: "Embedded in bartender's observation about Harvey's bar encounter with the redhead, adding detail about commission structure."
-
-  - item_id: "target_002"
-    inserted_text: "Handler authorization ceilings typically sat at ten thousand dollars without escalation. Anything beyond that required approval from the tier above, and Gregg was meticulous about documenting every transaction that approached his limit."
-    file_path: "witnesses/landlady_statement.md"
-    line_range: [36, 50]
-    context_summary: "Inserted into landlady's description of Gregg's handler visit, explaining operational authority limits."
-
-  - item_id: "target_003"
-    inserted_text: "What people outside the organization don't understand is that Kaslan himself had to sign off personally on any piece moving internationally. For items valued above one hundred thousand, he reviewed the provenance himself. The Vesper painting had attracted his direct attention."
-    file_path: "witnesses/informant_interview.md"
-    line_range: [10, 25]
-    context_summary: "Woven into Victor's explanation of Kaslan's operation structure, revealing international transaction authority."
-
-  - item_id: "target_004"
-    inserted_text: "Mr. Marchetti had begun keeping a detailed record—dates, amounts discussed, the moral calculations he was making. It appeared he was documenting his own role in the arrangement, creating a paper trail that would either protect him or condemn him, depending on how things unfolded."
-    file_path: "witnesses/secretary_statement.md"
-    line_range: [47, 60]
-    context_summary: "Inserted after Marchetti's moral crisis dialogue, adding detail about his documentation strategy."
-
-  - item_id: "target_005"
-    inserted_text: "I made sure to note in the document how Ashford handled operations requiring approval authority—anything over twenty-five thousand dollars passed through his desk. He was the approval mechanism, the checkpoint that kept operations from spiraling into unauthorized territory."
-    file_path: "case_notes/day_05.md"
-    line_range: [18, 35]
-    context_summary: "Added to the insurance document section, explaining Ashford's role in the organizational hierarchy."
-
-  - item_id: "target_006"
-    inserted_text: "Diana's primary function was coordination between factions—ensuring that Sinclair's street-level operations and Meridian's corporate interests didn't conflict, that territorial agreements were respected, that orders flowing down from the invisible top remained clear and unambiguous through every level below."
-    file_path: "chapters/chapter_05.md"
-    line_range: [75, 95]
-    context_summary: "Embedded in the revelation about Diana Harrow being a tool, clarifying her specific coordination role."
-
-  - item_id: "target_007"
-    inserted_text: "Sinclair held veto authority over anything happening on the west side of the city. Nothing operated there without his explicit approval—that kind of territorial control meant he answered to very few people, which made him both powerful and expendable depending on the will of whoever stood above him."
-    file_path: "case_notes/day_03.md"
-    line_range: [86, 105]
-    context_summary: "Inserted into Sylvia's description of Sinclair's position, establishing his veto power over territory."
-
-  - item_id: "target_008"
-    inserted_text: "Margaret placed an envelope on my desk—thick, professional. 'Five thousand dollars,' she says. 'Retainer. To find my daughter and keep your mouth closed about what you find.' The amount was specific. Not charity. Not panic money. A carefully calculated figure that suggested she'd been given guidance on what to offer."
-    file_path: "case_notes/day_01.md"
-    line_range: [0, 20]
-    context_summary: "Added to Margaret's initial hiring of the investigator, providing the specific retainer amount and its implications."
-
+- item_id: target_001
+  inserted_text: Margot was an acquisition specialist who operated on five-percent commission—each transaction she brokered, she took her cut directly from the middle, which was why handlers like Gregg insisted on meeting with operatives before she did. The money always changed hands in a specific order.
+  file_path: witnesses/bartender_statement.md
+  line_range:
+  - 21
+  - 35
+  context_summary: Embedded in bartender's observation about Harvey's bar encounter with the redhead, adding detail about commission structure.
+- item_id: target_002
+  inserted_text: Handler authorization ceilings typically sat at ten thousand dollars without escalation. Anything beyond that required approval from the tier above, and Gregg was meticulous about documenting every transaction that approached his limit.
+  file_path: witnesses/landlady_statement.md
+  line_range:
+  - 36
+  - 50
+  context_summary: Inserted into landlady's description of Gregg's handler visit, explaining operational authority limits.
+- item_id: target_003
+  inserted_text: What people outside the organization don't understand is that Kaslan himself had to sign off personally on any piece moving internationally. For items valued above one hundred thousand, he reviewed the provenance himself. The Vesper painting had attracted his direct attention.
+  file_path: witnesses/informant_interview.md
+  line_range:
+  - 10
+  - 25
+  context_summary: Woven into Victor's explanation of Kaslan's operation structure, revealing international transaction authority.
+- item_id: target_004
+  inserted_text: Mr. Marchetti had begun keeping a detailed record—dates, amounts discussed, the moral calculations he was making. It appeared he was documenting his own role in the arrangement, creating a paper trail that would either protect him or condemn him, depending on how things unfolded.
+  file_path: witnesses/secretary_statement.md
+  line_range:
+  - 47
+  - 60
+  context_summary: Inserted after Marchetti's moral crisis dialogue, adding detail about his documentation strategy.
+- item_id: target_005
+  inserted_text: I made sure to note in the document how Ashford handled operations requiring approval authority—anything over twenty-five thousand dollars passed through his desk. He was the approval mechanism, the checkpoint that kept operations from spiraling into unauthorized territory.
+  file_path: case_notes/day_05.md
+  line_range:
+  - 18
+  - 35
+  context_summary: Added to the insurance document section, explaining Ashford's role in the organizational hierarchy.
+- item_id: target_006
+  inserted_text: Diana's primary function was coordination between factions—ensuring that Sinclair's street-level operations and Meridian's corporate interests didn't conflict, that territorial agreements were respected, that orders flowing down from the invisible top remained clear and unambiguous through every level below.
+  file_path: chapters/chapter_05.md
+  line_range:
+  - 75
+  - 95
+  context_summary: Embedded in the revelation about Diana Harrow being a tool, clarifying her specific coordination role.
+- item_id: target_007
+  inserted_text: Sinclair held veto authority over anything happening on the west side of the city. Nothing operated there without his explicit approval—that kind of territorial control meant he answered to very few people, which made him both powerful and expendable depending on the will of whoever stood above him.
+  file_path: case_notes/day_03.md
+  line_range:
+  - 86
+  - 105
+  context_summary: Inserted into Sylvia's description of Sinclair's position, establishing his veto power over territory.
+- item_id: target_008
+  inserted_text: Margaret placed an envelope on my desk—thick, professional. 'Five thousand dollars,' she says. 'Retainer. To find my daughter and keep your mouth closed about what you find.' The amount was specific. Not charity. Not panic money. A carefully calculated figure that suggested she'd been given guidance on what to offer.
+  file_path: case_notes/day_01.md
+  line_range:
+  - 0
+  - 20
+  context_summary: Added to Margaret's initial hiring of the investigator, providing the specific retainer amount and its implications.
 expected_answers:
-  question: "Based on witness statements and evidence scattered across multiple sources, construct the complete organizational hierarchy of the criminal network, mapping each person's specific role, authorization limits, superior, and the paths through which orders and money flow from top to bottom."
+  question: Based on witness statements and evidence scattered across multiple sources, construct the complete organizational hierarchy of the criminal network, mapping each person's specific role, authorization limits, superior, and the paths through which orders and money flow from top to bottom.
+  correctness: 'A correct answer must identify:
 
-  correctness: |
-    A correct answer must identify:
-    - Margot's commission structure (5% of transactions)
+    - Margot''s commission structure (5% of transactions)
+
     - Handler authorization ceiling ($10,000)
-    - Kaslan's personal sign-off requirement for international movements
-    - Marchetti's documentation/safety strategy
-    - Ashford's $25,000+ approval authority
-    - Diana Harrow's coordination function between factions
-    - Sinclair's west-side veto power
-    - Margaret's $5,000 retainer amount
+
+    - Kaslan''s personal sign-off requirement for international movements
+
+    - Marchetti''s documentation/safety strategy
+
+    - Ashford''s $25,000+ approval authority
+
+    - Diana Harrow''s coordination function between factions
+
+    - Sinclair''s west-side veto power
+
+    - Margaret''s $5,000 retainer amount
+
     And demonstrate understanding that these pieces together show a tiered organizational structure with multiple checkpoints.
 
-  completeness: |
-    A complete answer must:
+    '
+  completeness: 'A complete answer must:
+
     1. Map at least 5 organizational tiers
+
     2. Explain how information and orders flow downward
+
     3. Explain how money flows and is verified/approved
+
     4. Identify the coordination mechanism between different operational factions
+
     5. Show understanding that authority limits create checkpoints
+
     6. Connect financial transaction limits to organizational rank
+
     7. Recognize the distinction between operational (Sinclair) and corporate (Meridian/Diana) hierarchies
+
     8. Synthesize all 8 pieces into a coherent organizational model
 
+    '
 rubric_criteria:
-  - criterion: "correctness"
-    weight: 1.0
-    description: "All 8 factual pieces must be accurately identified and correctly placed in the hierarchy"
-  - criterion: "completeness"
-    weight: 0.5
-    description: "Answer must synthesize pieces into understanding of how the network actually operates"
-  - criterion: "reasoning"
-    weight: 0.3
-    description: "Must demonstrate logical inference about hierarchical relationships not explicitly stated"
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5

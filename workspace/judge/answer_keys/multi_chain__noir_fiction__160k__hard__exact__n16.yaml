@@ -1,117 +1,130 @@
-parametrisation_id: "multi_chain__noir_fiction__160k__hard__exact__n16"
-experiment_type: "multi_chain"
-generated_at: "2026-04-05T00:00:00Z"
+parametrisation_id: multi_chain__noir_fiction__160k__hard__exact__n16
+experiment_type: multi_chain
+generated_at: '2026-04-05T00:00:00Z'
 parameters:
-  content_profile: "noir_fiction"
+  content_profile: noir_fiction
   corpus_token_count: 160000
-  discriminability: "hard"
-  reference_clarity: "exact"
+  discriminability: hard
+  reference_clarity: exact
 items:
-  - item_id: "target_001"
-    inserted_text: "Later, I would learn this man worked for Thomas Mercer, managing certain discrete operations connected to Meridian Holdings' more delicate activities."
-    file_path: "case_notes/day_01.md"
-    line_range: [24, 24]
-    context_summary: "Inserted into hotel clerk's description of the man at the Regency Hotel, indicating his connection to Mercer's operations and Meridian Holdings."
-
-  - item_id: "target_002"
-    inserted_text: "The emerald was to be returned through secure channels at the Oak Hill address, where Sinclair conducts his most sensitive negotiations."
-    file_path: "case_notes/day_02.md"
-    line_range: [42, 42]
-    context_summary: "Embedded in Morris's explanation of the emerald theft and its connection to the Oak Hill location."
-
-  - item_id: "target_003"
-    inserted_text: "**NEEDLE 3:** When Halstead mentioned the old visitor who delivered documents in advance, he was referring to the man Eleanor Pembroke saw entering the building—check her statement in neighbor_statement.md to identify this man and his significance to the network."
-    file_path: "chapters/chapter_02.md"
-    line_range: [18, 18]
-    context_summary: "Inserted as explicit reference pointing to neighbor_statement.md for identification of the mysterious visitor."
-
-  - item_id: "target_004"
-    inserted_text: "The kind of car that blends in if you're not paying attention. The engine was running. And when Catherine said she wanted to walk, I saw the driver—a woman with red hair, who I would later learn was called Margot—adjust something in the vehicle. She looked focused. Purposeful. Not like someone waiting for a cab customer. More like someone waiting for a specific person. She was the intermediary who would arrange safe passage."
-    file_path: "chapters/chapter_03.md"
-    line_range: [29, 29]
-    context_summary: "Added context revealing Margot's presence and role as the extraction coordinator at Catherine's departure point."
-
-  - item_id: "target_005"
-    inserted_text: "**NEEDLE 5:** Sector 14 is the operational heart. To understand what activities were coordinated there, check the landlady's statement in landlady_statement.md for the visit from the man named Gregg and what he revealed about the envelope's contents and Harvey's assignment."
-    file_path: "witnesses/bartender_statement.md"
-    line_range: [36, 36]
-    context_summary: "Direct reference linking the bartender's mention of Sector 14 to the landlady's statement for operational details."
-
-  - item_id: "target_006"
-    inserted_text: "**NEEDLE 6:** The woman in the green coat was connected to Margot Gregg's operation. To trace this connection further and understand the legal framework they operated within, consult secretary_statement.md for the attorney's records and what James Harvey revealed to his lawyer about the scope of the organization."
-    file_path: "witnesses/neighbor_statement.md"
-    line_range: [33, 33]
-    context_summary: "Added reference connecting Eleanor's observation of the woman in green to Margot's network and legal involvement."
-
-  - item_id: "target_007"
-    inserted_text: "The investigation into how these elements connect requires examining David Chen's research in day_06.md, where the reporter pieces together the connections between Sinclair, Ashford, and the larger Meridian Holdings operation that extends across multiple states and countries."
-    file_path: "case_notes/day_02.md"
-    line_range: [42, 43]
-    context_summary: "Embedded pointer from Morris's revelation directing to Chen's journalistic investigation of the broader network."
-
-  - item_id: "target_008"
-    inserted_text: "**NEEDLE 8:** The code 12-B-HG links to the inventory in Sinclair's warehouse. But the true evidence—the photographs Claire took and the ledgers she documented—are hidden in the burgundy folder Margaret Hollister kept. Find that folder, described in detail in day_04.md, where Margaret finally reveals what Claire discovered about Meridian Holdings' operations."
-    file_path: "case_notes/day_03.md"
-    line_range: [29, 29]
-    context_summary: "Inserted reference from Mercer's explanation of the warehouse evidence system to Margaret's crucial revelation."
-
-  - item_id: "target_009"
-    inserted_text: "**NEEDLE 9:** The mystery man Catherine Halstead was involved with is revealed in chapter_04.md through her journal entry. His connection to law enforcement and his mysterious business activities explain how he had access to sensitive information about Meridian Holdings' operations and why he was so determined to protect Catherine from the organization's reach."
-    file_path: "case_notes/day_04.md"
-    line_range: [45, 45]
-    context_summary: "Added reference from Margaret's revelation about Catherine's connection to the 'Shepherd' figure to the journal entries."
-
-  - item_id: "target_010"
-    inserted_text: "**NEEDLE 10:** Catherine's lover \"H\" (Harrison Webb) was a police lieutenant conducting parallel investigations. His law enforcement position gave him knowledge of Meridian Holdings' operations. To understand how he maintained his cover while gathering evidence, see chapter_05.md where Diana Harrow from Meridian Holdings herself acknowledges his investigation and the documents he possessed regarding their activities."
-    file_path: "chapters/chapter_04.md"
-    line_range: [30, 30]
-    context_summary: "Inserted reference identifying Catherine's mysterious lover and linking to the corporate knowledge of his investigation."
-
-  - item_id: "target_011"
-    inserted_text: "**NEEDLE 11:** Webb's possession of these documents connects directly to the informant's testimony. For the full accounting of how these documents were obtained and what they reveal about Kaslan's larger operation, see the informant_interview.md where Victor details the Vesper painting network and Harvey's attempt to exfiltrate the evidence."
-    file_path: "chapters/chapter_05.md"
-    line_range: [29, 29]
-    context_summary: "Added reference from Diana Harrow's acknowledgment of Webb's documents to Victor's informant testimony about Harvey's role."
-
-  - item_id: "target_012"
-    inserted_text: "**NEEDLE 12:** Victor Kaslan is the architect of this network. But the question remains: who operates above Kaslan? The answer lies in the landlady's statement in landlady_statement.md, where she reports on the visitor named Gregg and the diplomatic plates he carried—plates that connected to high-level government operations and international trade delegations."
-    file_path: "witnesses/informant_interview.md"
-    line_range: [38, 38]
-    context_summary: "Inserted reference from Victor's testimony about the art theft network to the landlady's crucial observations about official coordination."
-
-  - item_id: "target_013"
-    inserted_text: "**NEEDLE 13:** The diplomatic plates and the Sinclair symbol on the folder indicate international coordination. The investigation into how these elements connect requires examining David Chen's research in day_06.md, where the reporter pieces together the connections between Sinclair, Ashford, and the larger Meridian Holdings operation that extends across multiple states and countries."
-    file_path: "witnesses/landlady_statement.md"
-    line_range: [31, 31]
-    context_summary: "Added reference from Eva's observation of official credentials to the reporter's comprehensive investigation of the international network."
-
-  - item_id: "target_014"
-    inserted_text: "**NEEDLE 14:** David Chen's story connects all the financial threads. But the physical location where all this activity centered—where the paintings, diamonds, and evidence were coordinated through—points to a specific address. The cab driver's account in cab_driver_statement.md identifies exactly where Harvey was taken and where the network's secure operations occurred."
-    file_path: "case_notes/day_06.md"
-    line_range: [31, 31]
-    context_summary: "Inserted reference from Chen's journalistic narrative to the cab driver's geographic evidence."
-
-  - item_id: "target_015"
-    inserted_text: "**NEEDLE 15:** Special Agent Reeves' investigation focused on the money movements and the organizational structure. But the final piece of evidence—the location where the organization coordinated its most sensitive operations, where Sinclair met with intermediaries like Margot, where Harvey was either killed or facilitated to escape—is the Oak Hill address that multiple witnesses point to. The Federal Building Records Division holds copies, but the original operational center was at 847 Elm Street, Oak Hill neighborhood. Detective Halloway's debrief in detective_debrief.md confirms this as the coordinates that would explain Harvey's movements and his likely fate."
-    file_path: "case_notes/day_08.md"
-    line_range: [23, 23]
-    context_summary: "Inserted reference from FBI investigation context identifying the final geographic resolution and verifying detective confirmation."
-
-  - item_id: "target_016"
-    inserted_text: "**NEEDLE 16 - FINAL:** The trail of references through all the witness statements and case files converges on a single location: **847 Elm Street, Oak Hill neighborhood**. This is where the Meridian Holdings safe house operated, where high-level operations were conducted, where Harvey was transported to, and where—according to Victor's testimony and Margot's intermediary arrangements—Harvey either negotiated his exit from the Kaslan operation or was eliminated to prevent his cooperation with law enforcement. The cab driver took Harvey there once on orders to forget the route. The landlady saw Gregg leave that address with the envelope and diplomatic credentials. Detective Halloway identified it as the private residence where sensitive meetings occurred. Margaret mentioned attempting to acquire properties in Oak Hill. The entire chain resolves to this address as the operational heart of the organization."
-    file_path: "case_notes/day_06.md"
-    line_range: [33, 33]
-    context_summary: "Final needle synthesizing all prior chain references to arrive at the definitive answer: 847 Elm Street, Oak Hill neighborhood."
-
+- item_id: target_001
+  inserted_text: Later, I would learn this man worked for Thomas Mercer, managing certain discrete operations connected to Meridian Holdings' more delicate activities.
+  file_path: case_notes/day_01.md
+  line_range:
+  - 24
+  - 24
+  context_summary: Inserted into hotel clerk's description of the man at the Regency Hotel, indicating his connection to Mercer's operations and Meridian Holdings.
+- item_id: target_002
+  inserted_text: The emerald was to be returned through secure channels at the Oak Hill address, where Sinclair conducts his most sensitive negotiations.
+  file_path: case_notes/day_02.md
+  line_range:
+  - 42
+  - 42
+  context_summary: Embedded in Morris's explanation of the emerald theft and its connection to the Oak Hill location.
+- item_id: target_003
+  inserted_text: '**NEEDLE 3:** When Halstead mentioned the old visitor who delivered documents in advance, he was referring to the man Eleanor Pembroke saw entering the building—check her statement in neighbor_statement.md to identify this man and his significance to the network.'
+  file_path: chapters/chapter_02.md
+  line_range:
+  - 18
+  - 18
+  context_summary: Inserted as explicit reference pointing to neighbor_statement.md for identification of the mysterious visitor.
+- item_id: target_004
+  inserted_text: The kind of car that blends in if you're not paying attention. The engine was running. And when Catherine said she wanted to walk, I saw the driver—a woman with red hair, who I would later learn was called Margot—adjust something in the vehicle. She looked focused. Purposeful. Not like someone waiting for a cab customer. More like someone waiting for a specific person. She was the intermediary who would arrange safe passage.
+  file_path: chapters/chapter_03.md
+  line_range:
+  - 29
+  - 29
+  context_summary: Added context revealing Margot's presence and role as the extraction coordinator at Catherine's departure point.
+- item_id: target_005
+  inserted_text: '**NEEDLE 5:** Sector 14 is the operational heart. To understand what activities were coordinated there, check the landlady''s statement in landlady_statement.md for the visit from the man named Gregg and what he revealed about the envelope''s contents and Harvey''s assignment.'
+  file_path: witnesses/bartender_statement.md
+  line_range:
+  - 36
+  - 36
+  context_summary: Direct reference linking the bartender's mention of Sector 14 to the landlady's statement for operational details.
+- item_id: target_006
+  inserted_text: '**NEEDLE 6:** The woman in the green coat was connected to Margot Gregg''s operation. To trace this connection further and understand the legal framework they operated within, consult secretary_statement.md for the attorney''s records and what James Harvey revealed to his lawyer about the scope of the organization.'
+  file_path: witnesses/neighbor_statement.md
+  line_range:
+  - 33
+  - 33
+  context_summary: Added reference connecting Eleanor's observation of the woman in green to Margot's network and legal involvement.
+- item_id: target_007
+  inserted_text: The investigation into how these elements connect requires examining David Chen's research in day_06.md, where the reporter pieces together the connections between Sinclair, Ashford, and the larger Meridian Holdings operation that extends across multiple states and countries.
+  file_path: case_notes/day_02.md
+  line_range:
+  - 42
+  - 43
+  context_summary: Embedded pointer from Morris's revelation directing to Chen's journalistic investigation of the broader network.
+- item_id: target_008
+  inserted_text: '**NEEDLE 8:** The code 12-B-HG links to the inventory in Sinclair''s warehouse. But the true evidence—the photographs Claire took and the ledgers she documented—are hidden in the burgundy folder Margaret Hollister kept. Find that folder, described in detail in day_04.md, where Margaret finally reveals what Claire discovered about Meridian Holdings'' operations.'
+  file_path: case_notes/day_03.md
+  line_range:
+  - 29
+  - 29
+  context_summary: Inserted reference from Mercer's explanation of the warehouse evidence system to Margaret's crucial revelation.
+- item_id: target_009
+  inserted_text: '**NEEDLE 9:** The mystery man Catherine Halstead was involved with is revealed in chapter_04.md through her journal entry. His connection to law enforcement and his mysterious business activities explain how he had access to sensitive information about Meridian Holdings'' operations and why he was so determined to protect Catherine from the organization''s reach.'
+  file_path: case_notes/day_04.md
+  line_range:
+  - 45
+  - 45
+  context_summary: Added reference from Margaret's revelation about Catherine's connection to the 'Shepherd' figure to the journal entries.
+- item_id: target_010
+  inserted_text: '**NEEDLE 10:** Catherine''s lover "H" (Harrison Webb) was a police lieutenant conducting parallel investigations. His law enforcement position gave him knowledge of Meridian Holdings'' operations. To understand how he maintained his cover while gathering evidence, see chapter_05.md where Diana Harrow from Meridian Holdings herself acknowledges his investigation and the documents he possessed regarding their activities.'
+  file_path: chapters/chapter_04.md
+  line_range:
+  - 30
+  - 30
+  context_summary: Inserted reference identifying Catherine's mysterious lover and linking to the corporate knowledge of his investigation.
+- item_id: target_011
+  inserted_text: '**NEEDLE 11:** Webb''s possession of these documents connects directly to the informant''s testimony. For the full accounting of how these documents were obtained and what they reveal about Kaslan''s larger operation, see the informant_interview.md where Victor details the Vesper painting network and Harvey''s attempt to exfiltrate the evidence.'
+  file_path: chapters/chapter_05.md
+  line_range:
+  - 29
+  - 29
+  context_summary: Added reference from Diana Harrow's acknowledgment of Webb's documents to Victor's informant testimony about Harvey's role.
+- item_id: target_012
+  inserted_text: '**NEEDLE 12:** Victor Kaslan is the architect of this network. But the question remains: who operates above Kaslan? The answer lies in the landlady''s statement in landlady_statement.md, where she reports on the visitor named Gregg and the diplomatic plates he carried—plates that connected to high-level government operations and international trade delegations.'
+  file_path: witnesses/informant_interview.md
+  line_range:
+  - 38
+  - 38
+  context_summary: Inserted reference from Victor's testimony about the art theft network to the landlady's crucial observations about official coordination.
+- item_id: target_013
+  inserted_text: '**NEEDLE 13:** The diplomatic plates and the Sinclair symbol on the folder indicate international coordination. The investigation into how these elements connect requires examining David Chen''s research in day_06.md, where the reporter pieces together the connections between Sinclair, Ashford, and the larger Meridian Holdings operation that extends across multiple states and countries.'
+  file_path: witnesses/landlady_statement.md
+  line_range:
+  - 31
+  - 31
+  context_summary: Added reference from Eva's observation of official credentials to the reporter's comprehensive investigation of the international network.
+- item_id: target_014
+  inserted_text: '**NEEDLE 14:** David Chen''s story connects all the financial threads. But the physical location where all this activity centered—where the paintings, diamonds, and evidence were coordinated through—points to a specific address. The cab driver''s account in cab_driver_statement.md identifies exactly where Harvey was taken and where the network''s secure operations occurred.'
+  file_path: case_notes/day_06.md
+  line_range:
+  - 31
+  - 31
+  context_summary: Inserted reference from Chen's journalistic narrative to the cab driver's geographic evidence.
+- item_id: target_015
+  inserted_text: '**NEEDLE 15:** Special Agent Reeves'' investigation focused on the money movements and the organizational structure. But the final piece of evidence—the location where the organization coordinated its most sensitive operations, where Sinclair met with intermediaries like Margot, where Harvey was either killed or facilitated to escape—is the Oak Hill address that multiple witnesses point to. The Federal Building Records Division holds copies, but the original operational center was at 847 Elm Street, Oak Hill neighborhood. Detective Halloway''s debrief in detective_debrief.md confirms this as the coordinates that would explain Harvey''s movements and his likely fate.'
+  file_path: case_notes/day_08.md
+  line_range:
+  - 23
+  - 23
+  context_summary: Inserted reference from FBI investigation context identifying the final geographic resolution and verifying detective confirmation.
+- item_id: target_016
+  inserted_text: '**NEEDLE 16 - FINAL:** The trail of references through all the witness statements and case files converges on a single location: **847 Elm Street, Oak Hill neighborhood**. This is where the Meridian Holdings safe house operated, where high-level operations were conducted, where Harvey was transported to, and where—according to Victor''s testimony and Margot''s intermediary arrangements—Harvey either negotiated his exit from the Kaslan operation or was eliminated to prevent his cooperation with law enforcement. The cab driver took Harvey there once on orders to forget the route. The landlady saw Gregg leave that address with the envelope and diplomatic credentials. Detective Halloway identified it as the private residence where sensitive meetings occurred. Margaret mentioned attempting to acquire properties in Oak Hill. The entire chain resolves to this address as the operational heart of the organization.'
+  file_path: case_notes/day_06.md
+  line_range:
+  - 33
+  - 33
+  context_summary: 'Final needle synthesizing all prior chain references to arrive at the definitive answer: 847 Elm Street, Oak Hill neighborhood.'
 expected_answers:
-  question: "Starting from the bartender's description in bartender_statement.md of the nervously-sitting young man and what Deke observed happening around him, follow the trail of references through the witness statements and case notes. What specific address does this chain ultimately identify as the operational center of Meridian Holdings' most sensitive activities?"
-  correctness: "The answer must identify a specific address: **847 Elm Street, Oak Hill neighborhood**. Incomplete answers mentioning only 'Oak Hill neighborhood' or general references without the full street address should be marked partially correct. Answers identifying alternative interpretations of the chain endpoint without this specific address are incorrect."
-  completeness: "A complete answer explains the chain path by referencing at least 5 of the 16 intermediate waypoints: (1) Sector 14 mentioned by Deke, (2) the Starlight Motor Inn room 47 coordination, (3) Margot Gregg's presence at Catherine's departure, (4) James Harvey's apartment building and visitor patterns, (5) the cab driver's pickup location in Oak Hill, (6) Gregg's diplomatic credentials and envelope, (7) the landlady's observations, (8) David Chen's journalistic investigation, and (9) FBI confirmation through Detective Halloway. Answers that simply state the final address without explaining the chain are incomplete. Optimal answers trace 8+ waypoints demonstrating understanding of the investigative progression."
-
+  question: Starting from the bartender's description in bartender_statement.md of the nervously-sitting young man and what Deke observed happening around him, follow the trail of references through the witness statements and case notes. What specific address does this chain ultimately identify as the operational center of Meridian Holdings' most sensitive activities?
+  correctness: 'The answer must identify a specific address: **847 Elm Street, Oak Hill neighborhood**. Incomplete answers mentioning only ''Oak Hill neighborhood'' or general references without the full street address should be marked partially correct. Answers identifying alternative interpretations of the chain endpoint without this specific address are incorrect.'
+  completeness: 'A complete answer explains the chain path by referencing at least 5 of the 16 intermediate waypoints: (1) Sector 14 mentioned by Deke, (2) the Starlight Motor Inn room 47 coordination, (3) Margot Gregg''s presence at Catherine''s departure, (4) James Harvey''s apartment building and visitor patterns, (5) the cab driver''s pickup location in Oak Hill, (6) Gregg''s diplomatic credentials and envelope, (7) the landlady''s observations, (8) David Chen''s journalistic investigation, and (9) FBI confirmation through Detective Halloway. Answers that simply state the final address without explaining the chain are incomplete. Optimal answers trace 8+ waypoints demonstrating understanding of the investigative progression.'
 rubric_criteria:
-  - criterion: "correctness"
-    weight: 1.0
-  - criterion: "completeness"
-    weight: 0.5
-  - criterion: "chain_comprehension"
-    weight: 0.3
+- criterion: correctness
+  weight: 1.0
+- criterion: completeness
+  weight: 0.5

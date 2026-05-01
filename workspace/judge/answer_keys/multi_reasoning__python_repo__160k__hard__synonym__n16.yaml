@@ -185,5 +185,3 @@ rubric_criteria:
   weight: 1.0
 - criterion: completeness
   weight: 0.5
-- criterion: context_comprehension
-  weight: 0.75
