@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 from pathlib import Path
-from typing import Any
+from typing import Any, Literal
 
 import yaml
 from pydantic import BaseModel
@@ -12,9 +12,11 @@ from agent_retrieval.schema.experiment import RubricCriterion
 class AnswerKeyItem(BaseModel):
     item_id: str
     inserted_text: str
-    file_path: str
-    line_range: list[int]
+    file_path: str | None = None
+    line_range: list[int] | None = None
     context_summary: str
+    value: str | None = None
+    bound_direction: Literal["lower", "upper"] | None = None
 
 
 class ExpectedAnswers(BaseModel):

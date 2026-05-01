@@ -437,3 +437,44 @@ class TestSchemaVersionTolerance:
         sample_spec_dict.pop("schema_version", None)
         spec = ExperimentSpec.model_validate(sample_spec_dict)
         assert spec.experiment_id == "test-001"
+
+
+from agent_retrieval.schema.answer_key import AnswerKeyItem
+
+
+class TestAnswerKeyItemNewFields:
+    def test_existing_item_validates_without_new_fields(self):
+        """Backward-compat: legacy answer keys still parse."""
+        item = AnswerKeyItem(
+            item_id="target_001",
+            inserted_text="x = 1",
+            file_path="src/foo.py",
+            line_range=[10, 10],
+            context_summary="inserted at top of foo.py",
+        )
+        assert item.value is None
+        assert item.bound_direction is None
+
+    def test_multi_retrieval_item_with_value(self):
+        item = AnswerKeyItem(
+            item_id="target_001",
+            inserted_text="canary_traffic_split = 5",
+            file_path="deploy/canary.py",
+            line_range=[10, 10],
+            context_summary="canary traffic split percentage",
+            value="5",
+        )
+        assert item.value == "5"
+
+    def test_pure_reasoning_item_omits_corpus_fields(self):
+        """pure_reasoning items have no file_path or line_range."""
+        item = AnswerKeyItem(
+            item_id="target_001",
+            inserted_text="REPLICATION_LAG_RECOVERY_S = 300",
+            context_summary="lower bound on migration start time",
+            value="300",
+            bound_direction="lower",
+        )
+        assert item.file_path is None
+        assert item.line_range is None
+        assert item.bound_direction == "lower"
