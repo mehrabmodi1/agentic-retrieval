@@ -231,3 +231,24 @@ class TestNewExperimentTypes:
             n_items=8,
         )
         assert p.parametrisation_id == "pure_reasoning__python_repo__n8"
+
+    def test_fixed_pool_field_accepts_per_profile_items(self):
+        d = self._base_dict("multi_retrieval")
+        d["fixed_pool"] = {
+            "python_repo": [
+                {"inserted_text": "canary_traffic_split = 5", "value": "5",
+                 "content_hint": "in deploy/canary.py"},
+                {"inserted_text": "evaluation_window_hours = 6", "value": "6",
+                 "content_hint": "in deploy/canary.py"},
+            ],
+        }
+        tmpl = ExperimentTemplate.model_validate(d)
+        assert "python_repo" in tmpl.fixed_pool
+        assert len(tmpl.fixed_pool["python_repo"]) == 2
+        assert tmpl.fixed_pool["python_repo"][0]["value"] == "5"
+
+    def test_fixed_pool_field_optional(self):
+        """Existing experiment types without fixed_pool still validate."""
+        d = self._base_dict("multi_retrieval")
+        tmpl = ExperimentTemplate.model_validate(d)
+        assert tmpl.fixed_pool == {}

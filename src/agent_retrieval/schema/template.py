@@ -41,6 +41,7 @@ class ExperimentTemplate(BaseModel):
     ]
     payload: PayloadTemplateSpec
     question_examples: dict[str, dict[str, QuestionExample]]
+    fixed_pool: dict[str, list[dict[str, Any]]] = {}
     rubric_criteria: list[RubricCriterion]
     grid: GridSpec
 
