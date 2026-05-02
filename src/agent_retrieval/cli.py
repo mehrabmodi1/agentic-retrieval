@@ -43,7 +43,7 @@ async def _generate(args: argparse.Namespace) -> None:
     config_path = Path(args.config_path)
     template = ExperimentTemplate.from_yaml(config_path)
     print(f"Generating experiment '{template.experiment_type}'...")
-    ids = await generate_experiment_v2(template, Path(args.workspace))
+    ids = await generate_experiment_v2(template, Path(args.workspace), experiment_yaml_path=config_path)
     print(f"Generated {len(ids)} parametrisations")
 
 

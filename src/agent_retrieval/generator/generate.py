@@ -16,12 +16,25 @@ async def generate_experiment_v2(
     template: ExperimentTemplate,
     workspace_dir: Path,
     skip_existing: bool = True,
+    experiment_yaml_path: Path | None = None,
 ) -> list[str]:
     parametrisations = expand_grid(template)
     generated_ids: list[str] = []
 
-    if template.experiment_type == "pure_reasoning":
+    pure_reasoning_types = {"pure_reasoning", "pure_reasoning_l2", "pure_reasoning_l3"}
+    if template.experiment_type in pure_reasoning_types:
         # No corpus, no insertion agent — just write answer keys.
+        world_state = None
+        if template.experiment_type == "pure_reasoning_l3":
+            if experiment_yaml_path is None:
+                raise ValueError(
+                    "experiment_yaml_path is required for pure_reasoning_l3 "
+                    "(needed to read top-level world_state)"
+                )
+            import yaml
+            raw = yaml.safe_load(experiment_yaml_path.read_text())
+            world_state = raw.get("world_state", {})
+
         for param in parametrisations:
             pid = param.parametrisation_id
             answer_key_path = workspace_dir / "judge" / "answer_keys" / f"{pid}.yaml"
@@ -32,6 +45,7 @@ async def generate_experiment_v2(
                 template=template,
                 parametrisation=param,
                 answer_key_path=answer_key_path,
+                world_state=world_state,
             )
             generated_ids.append(pid)
             print(f"  Done: {pid}")

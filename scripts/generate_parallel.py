@@ -108,6 +108,7 @@ async def process_one(
     template: ExperimentTemplate,
     workspace_dir: Path,
     worker_id: int,
+    experiments_dir: Path,
 ) -> tuple[str, bool, str, InsertionStats | None]:
     """Process a single parametrisation. Returns (pid, success, message, stats)."""
     params = expand_grid(template)
@@ -122,11 +123,21 @@ async def process_one(
     if answer_key_path.exists():
         return (pid, True, "already exists", None)
 
-    # pure_reasoning has no corpus and no LLM call; just write the answer key.
-    if template.experiment_type == "pure_reasoning":
+    # pure_reasoning (L1/L2/L3) has no corpus and no LLM call; just write the answer key.
+    pure_reasoning_types = {"pure_reasoning", "pure_reasoning_l2", "pure_reasoning_l3"}
+    if template.experiment_type in pure_reasoning_types:
         try:
+            world_state = None
+            if template.experiment_type == "pure_reasoning_l3":
+                import yaml
+                exp_yaml_path = experiments_dir / f"{experiment_name}.yaml"
+                if not exp_yaml_path.exists():
+                    return (pid, False, f"experiment file missing: {exp_yaml_path}", None)
+                raw = yaml.safe_load(exp_yaml_path.read_text())
+                world_state = raw.get("world_state", {})
             generate_pure_reasoning_cell(
-                template=template, parametrisation=param, answer_key_path=answer_key_path,
+                template=template, parametrisation=param,
+                answer_key_path=answer_key_path, world_state=world_state,
             )
             return (pid, True, "done", None)
         except Exception as e:
@@ -154,6 +165,7 @@ async def run_workers(
     remaining: list[tuple[str, str, ExperimentTemplate]],
     workspace_dir: Path,
     max_workers: int,
+    experiments_dir: Path,
 ) -> None:
     semaphore = asyncio.Semaphore(max_workers)
     total = len(remaining)
@@ -164,7 +176,7 @@ async def run_workers(
             seq = tracker.completed + tracker.failed + tracker.skipped + 1
             print(f"[{seq}/{total}] W{idx % max_workers}: {pid}")
             result_pid, success, msg, stats = await process_one(
-                exp_name, pid, template, workspace_dir, idx,
+                exp_name, pid, template, workspace_dir, idx, experiments_dir,
             )
             tracker.record(stats, success)
 
@@ -235,7 +247,7 @@ def main():
         print("Nothing to do!")
         return
 
-    asyncio.run(run_workers(remaining, workspace_dir, args.workers))
+    asyncio.run(run_workers(remaining, workspace_dir, args.workers, experiments_dir))
 
 
 if __name__ == "__main__":
