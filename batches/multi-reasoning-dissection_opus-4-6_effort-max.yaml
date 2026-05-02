@@ -1,0 +1,28 @@
+batch_name: "multi-reasoning-dissection_opus-4-6_effort-max"
+max_parallel: 3
+retry_failed: true
+agent_model: "claude-opus-4-6"
+effort_mode: "max"
+n_repeats: 3
+max_turns: 75
+allowed_tools: ["Read", "Glob", "Grep", "Bash"]
+
+# Dissects the cognitive demands of multi_reasoning into:
+# - multi_retrieval: pure retrieval+retention (no reasoning)
+# - pure_reasoning: pure cross-fact reasoning (no retrieval)
+#
+# multi_retrieval: 5 x 2 = 10 cells x 3 repeats = 30 runs
+# pure_reasoning:  5 x 2 = 10 cells x 3 repeats = 30 runs
+# Total per batch: 60 runs
+experiments:
+  - experiment_type: "multi_retrieval"
+    grid:
+      content_profile: [python_repo, noir_fiction]
+      corpus_token_count: [800000]
+      discriminability: [hard]
+      reference_clarity: [contextual]
+      n_items: [2, 4, 8, 12, 16]
+  - experiment_type: "pure_reasoning"
+    grid:
+      content_profile: [python_repo, noir_fiction]
+      n_items: [2, 4, 8, 12, 16]
