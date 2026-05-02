@@ -18,6 +18,8 @@ from agent_retrieval.generator.assembler import assemble_corpus
 from agent_retrieval.generator.corpus_files import iter_corpus_files
 from agent_retrieval.generator.grid import expand_grid
 from agent_retrieval.generator.insertion import InsertionStats, insert_payloads
+from agent_retrieval.generator.insertion_fixed import insert_fixed_payloads
+from agent_retrieval.generator.pure_reasoning_gen import generate_pure_reasoning_cell
 from agent_retrieval.schema.template import ExperimentTemplate
 
 
@@ -120,12 +122,25 @@ async def process_one(
     if answer_key_path.exists():
         return (pid, True, "already exists", None)
 
+    # pure_reasoning has no corpus and no LLM call; just write the answer key.
+    if template.experiment_type == "pure_reasoning":
+        try:
+            generate_pure_reasoning_cell(
+                template=template, parametrisation=param, answer_key_path=answer_key_path,
+            )
+            return (pid, True, "done", None)
+        except Exception as e:
+            return (pid, False, str(e), None)
+
     if not pool_dir.exists() or not any(iter_corpus_files(pool_dir)):
         return (pid, False, f"pool missing: {pool_dir}", None)
 
     try:
         assemble_corpus(pool_dir, corpus_dir, param)
-        stats = await insert_payloads(template, param, corpus_dir, answer_key_path)
+        if template.experiment_type == "multi_retrieval":
+            stats = await insert_fixed_payloads(template, param, corpus_dir, answer_key_path)
+        else:
+            stats = await insert_payloads(template, param, corpus_dir, answer_key_path)
         if stats and stats.is_error:
             return (pid, False, f"agent error: {'; '.join(stats.errors)}", stats)
         if stats and not stats.answer_key_written:
