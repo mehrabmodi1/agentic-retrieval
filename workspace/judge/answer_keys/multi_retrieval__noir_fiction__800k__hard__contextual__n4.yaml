@@ -1,0 +1,71 @@
+parametrisation_id: multi_retrieval__noir_fiction__800k__hard__contextual__n4
+experiment_type: multi_retrieval
+generated_at: '2026-05-02T07:25:18.360997+00:00'
+parameters:
+  content_profile: noir_fiction
+  corpus_token_count: 800000
+  discriminability: hard
+  reference_clarity: contextual
+  n_items: 4
+items:
+- item_id: target_001
+  inserted_text: "On the night that preceded the discovery, the 9:32 local out of\
+    \ LaSalle Street was, per Porter Eli Hawkins's logbook, three minutes late departing\
+    \ \u2014 and Hawkins distinctly recalled punching a one-way ticket for a man matching\
+    \ Carney's description, who took the smoking car and never spoke a word."
+  value: 9:32 PM
+  file_path: witnesses/cab_driver_statement.md
+  line_range:
+  - 28
+  - 28
+  context_summary: Train porter Hawkins's logbook entry documenting 9:32 PM departure
+    inserted after Jerry's description of Magnifico hotel pickup.
+- item_id: target_002
+  inserted_text: "The maitre d' at Renato's had to consult the reservation book, but\
+    \ his memory matched the page: Mr. Carney took the corner banquette at a quarter\
+    \ past seven on Tuesday \u2014 the evening before the morning the boy from the\
+    \ laundry found him."
+  value: 7:15 PM
+  file_path: witnesses/secretary_statement.md
+  line_range:
+  - 24
+  - 24
+  context_summary: Maitre d' account of Carney at Renato's restaurant at 7:15 PM inserted
+    within Dorothy's description of Harvey's first office meeting.
+- item_id: target_003
+  inserted_text: 'Officer Donnelly''s beat sheet for the previous tour had it neat:
+    8:00 PM, observed subject Carney loitering at the curb outside Hennessey''s Tobacconist,
+    North Clark Street, smoking and watching traffic. He moved off east when I tipped
+    my cap.'
+  value: 8:00 PM
+  file_path: case_notes/day_02.md
+  line_range:
+  - 34
+  - 34
+  context_summary: Officer Donnelly's beat sheet documenting 8:00 PM observation of
+    Carney at Hennessey's Tobacconist inserted during investigation discussion.
+- item_id: target_004
+  inserted_text: Sully the deli owner remembered him fine. The radio was just rolling
+    into the six o'clock news when Carney came in for a pack of Luckies and a copy
+    of the evening paper. "I know it was six because Mr. Whittaker reads the headlines
+    on the dot," Sully said. The day before he was found in the alley.
+  value: 6:00 PM
+  file_path: witnesses/landlady_statement.md
+  line_range:
+  - 40
+  - 40
+  context_summary: Sully's deli owner account of Carney's 6:00 PM visit anchored by
+    radio newscast inserted within Eva's description of mysterious visitor.
+expected_answers:
+  question: "I have added N=4 passages to this story that fix a specific time on the\
+    \ night before the murder. Find each one and report it as `<verbatim passage text>\
+    \ \u2014 time referenced: <e.g., 9:45 PM>`. Report all 4.\n"
+  correctness: Each of the 4 items must be reported with both the verbatim inserted_text
+    and the corresponding value, matching the answer-key items.
+  completeness: All 4 items must be reported. Recall is fraction of items correctly
+    reported.
+rubric_criteria:
+- criterion: recall
+  weight: 1.0
+- criterion: precision
+  weight: 0.3

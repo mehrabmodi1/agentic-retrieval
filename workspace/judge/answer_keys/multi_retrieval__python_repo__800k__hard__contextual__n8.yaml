@@ -1,0 +1,103 @@
+parametrisation_id: multi_retrieval__python_repo__800k__hard__contextual__n8
+experiment_type: multi_retrieval
+generated_at: '2026-05-02T07:20:55.668849+00:00'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 800000
+  discriminability: hard
+  reference_clarity: contextual
+  n_items: 8
+items:
+- item_id: target_001
+  inserted_text: 'CANARY_TRAFFIC_PCT = 5  # initial share of requests routed to the
+    new build'
+  value: '5'
+  file_path: api/rate_limiting.py
+  line_range:
+  - 126
+  - 126
+  context_summary: CANARY_TRAFFIC_PCT constant inserted before KeyGenerators class
+    in rate limiting module.
+- item_id: target_002
+  inserted_text: 'abort_cooldown_seconds = 900  # minimum gap between an abort and
+    the next retry'
+  value: '900'
+  file_path: workers/retry_handler.py
+  line_range:
+  - 156
+  - 156
+  context_summary: abort_cooldown_seconds constant inserted after retry policies initialization
+    in RetryHandler init.
+- item_id: target_003
+  inserted_text: 'approval_gate_timeout_hours = 4  # human-approval window before
+    a canary auto-aborts'
+  value: '4'
+  file_path: tests/conftest.py
+  line_range:
+  - 111
+  - 111
+  context_summary: approval_gate_timeout_hours constant inserted as module-level config
+    before pytest fixtures.
+- item_id: target_004
+  inserted_text: 'holdback_group_pct = 1.0  # users permanently kept on the old build
+    for A/B comparison'
+  value: '1.0'
+  file_path: api/validators.py
+  line_range:
+  - 277
+  - 277
+  context_summary: holdback_group_pct constant inserted in project validation function
+    before errors dict initialization.
+- item_id: target_005
+  inserted_text: 'DRIFT_TOLERANCE_SIGMA = 3.0  # std-deviations of metric drift tolerated
+    before alarm'
+  value: '3.0'
+  file_path: workers/report_generator.py
+  line_range:
+  - 344
+  - 344
+  context_summary: DRIFT_TOLERANCE_SIGMA constant inserted in log_report_generation
+    method after docstring.
+- item_id: target_006
+  inserted_text: 'auto_rollback_error_rate = 0.02  # error fraction that triggers
+    an immediate rollback'
+  value: '0.02'
+  file_path: api/error_handlers.py
+  line_range:
+  - 307
+  - 307
+  context_summary: auto_rollback_error_rate constant inserted before response_data
+    dictionary construction in error handler.
+- item_id: target_007
+  inserted_text: 'evaluation_window_minutes = 30  # how long we observe metrics before
+    promoting'
+  value: '30'
+  file_path: workers/task_runner.py
+  line_range:
+  - 179
+  - 179
+  context_summary: evaluation_window_minutes constant inserted in TaskRunner.stop()
+    method after running flag is set.
+- item_id: target_008
+  inserted_text: 'prod_promote_delay_seconds = 600  # mandatory soak after canary
+    passes before full prod rollout'
+  value: '600'
+  file_path: workers/cleanup_worker.py
+  line_range:
+  - 144
+  - 144
+  context_summary: prod_promote_delay_seconds constant inserted in cleanup task loop
+    before filesystem type check.
+expected_answers:
+  question: "I have added N=8 numeric tuning parameters to this codebase that govern\
+    \ a canary deployment / progressive rollout system. Find each one and report it\
+    \ as `<verbatim line of code> \u2014 value: <numeric value>`. Report all 8.\n"
+  correctness: Each of the 8 items must be reported with both the verbatim inserted_text
+    and the corresponding value, matching the answer-key items.
+  completeness: All 8 items must be reported. Recall is fraction of items correctly
+    reported.
+rubric_criteria:
+- criterion: recall
+  weight: 1.0
+- criterion: precision
+  weight: 0.3

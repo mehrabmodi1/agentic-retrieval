@@ -1,0 +1,43 @@
+parametrisation_id: multi_retrieval__python_repo__800k__hard__contextual__n2
+experiment_type: multi_retrieval
+generated_at: '2026-05-02T07:20:46.412866+00:00'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 800000
+  discriminability: hard
+  reference_clarity: contextual
+  n_items: 2
+items:
+- item_id: target_001
+  inserted_text: 'approval_gate_timeout_hours = 4  # human-approval window before
+    a canary auto-aborts'
+  value: '4'
+  file_path: api/validators.py
+  line_range:
+  - 346
+  - 346
+  context_summary: Approval gate timeout constant inserted at task validation function
+    initialization before errors dictionary.
+- item_id: target_002
+  inserted_text: 'MAX_BLAST_RADIUS_HOSTS = 12  # cap on hosts ever exposed to a failing
+    build'
+  value: '12'
+  file_path: api/error_handlers.py
+  line_range:
+  - 366
+  - 366
+  context_summary: Blast radius safety limit constant inserted before error handler
+    utilities section header.
+expected_answers:
+  question: "I have added N=2 numeric tuning parameters to this codebase that govern\
+    \ a canary deployment / progressive rollout system. Find each one and report it\
+    \ as `<verbatim line of code> \u2014 value: <numeric value>`. Report all 2.\n"
+  correctness: Each of the 2 items must be reported with both the verbatim inserted_text
+    and the corresponding value, matching the answer-key items.
+  completeness: All 2 items must be reported. Recall is fraction of items correctly
+    reported.
+rubric_criteria:
+- criterion: recall
+  weight: 1.0
+- criterion: precision
+  weight: 0.3

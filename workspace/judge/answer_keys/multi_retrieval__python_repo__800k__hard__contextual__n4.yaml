@@ -1,0 +1,63 @@
+parametrisation_id: multi_retrieval__python_repo__800k__hard__contextual__n4
+experiment_type: multi_retrieval
+generated_at: '2026-05-02T07:21:03.262914+00:00'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 800000
+  discriminability: hard
+  reference_clarity: contextual
+  n_items: 4
+items:
+- item_id: target_001
+  inserted_text: 'prod_promote_delay_seconds = 600  # mandatory soak after canary
+    passes before full prod rollout'
+  value: '600'
+  file_path: api/auth.py
+  line_range:
+  - 387
+  - 387
+  context_summary: Configuration constant for prod deployment promotion delay inserted
+    before SessionManager class definition.
+- item_id: target_002
+  inserted_text: 'auto_rollback_error_rate = 0.02  # error fraction that triggers
+    an immediate rollback'
+  value: '0.02'
+  file_path: tests/test_api.py
+  line_range:
+  - 288
+  - 288
+  context_summary: Test configuration constant for error rate threshold inserted before
+    test class definition.
+- item_id: target_003
+  inserted_text: 'REGRESSION_P99_MULTIPLIER = 1.25  # abort if canary p99 latency
+    exceeds baseline by this factor'
+  value: '1.25'
+  file_path: api/validators.py
+  line_range:
+  - 426
+  - 426
+  context_summary: Validation configuration constant for canary p99 latency regression
+    detection inserted before sanitize_string function.
+- item_id: target_004
+  inserted_text: 'CANARY_TRAFFIC_PCT = 5  # initial share of requests routed to the
+    new build'
+  value: '5'
+  file_path: api/rate_limiting.py
+  line_range:
+  - 306
+  - 306
+  context_summary: Traffic routing configuration constant for canary deployment inserted
+    in rate limiter before redis availability check.
+expected_answers:
+  question: "I have added N=4 numeric tuning parameters to this codebase that govern\
+    \ a canary deployment / progressive rollout system. Find each one and report it\
+    \ as `<verbatim line of code> \u2014 value: <numeric value>`. Report all 4.\n"
+  correctness: Each of the 4 items must be reported with both the verbatim inserted_text
+    and the corresponding value, matching the answer-key items.
+  completeness: All 4 items must be reported. Recall is fraction of items correctly
+    reported.
+rubric_criteria:
+- criterion: recall
+  weight: 1.0
+- criterion: precision
+  weight: 0.3

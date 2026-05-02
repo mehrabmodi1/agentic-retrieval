@@ -1,0 +1,120 @@
+parametrisation_id: multi_retrieval__noir_fiction__800k__hard__contextual__n8
+experiment_type: multi_retrieval
+generated_at: '2026-05-02T07:27:58.326071+00:00'
+parameters:
+  content_profile: noir_fiction
+  corpus_token_count: 800000
+  discriminability: hard
+  reference_clarity: contextual
+  n_items: 8
+items:
+- item_id: target_001
+  inserted_text: "The harbormaster's deck clock read twelve-fifteen when the last\
+    \ ferry of the night cleared Pier 11 \u2014 and Mate Sorensen, signing the manifest\
+    \ in the wheelhouse, would later swear to homicide that a man answering Carney's\
+    \ description had stood alone at the stern rail, watching the city recede, on\
+    \ the crossing that preceded the murder by mere hours."
+  value: 12:15 AM
+  file_path: case_notes/day_04.md
+  line_range:
+  - 118
+  - 121
+  context_summary: 'Maritime witness account: harbormaster and ferry crew report observing
+    man matching Carney''s description at 12:15 AM the night before murder.'
+- item_id: target_002
+  inserted_text: Maeve, working the switchboard at the Belmont, had logged the call.
+    "Room 412 placed an outgoing at nine sharp the previous night," she said, sliding
+    her finger along the ledger column. "I know because the nine o'clock chimes were
+    still going on the lobby radio."
+  value: 9:00 PM
+  file_path: witnesses/cab_driver_statement.md
+  line_range:
+  - 27
+  - 29
+  context_summary: Hotel switchboard operator Maeve logged outgoing call from Room
+    412 at 9:00 PM previous night with radio chimes confirming the time.
+- item_id: target_003
+  inserted_text: 'Officer Donnelly''s beat sheet for the previous tour had it neat:
+    8:00 PM, observed subject Carney loitering at the curb outside Hennessey''s Tobacconist,
+    North Clark Street, smoking and watching traffic. He moved off east when I tipped
+    my cap.'
+  value: 8:00 PM
+  file_path: witnesses/detective_debrief.md
+  line_range:
+  - 87
+  - 89
+  context_summary: 'Police beat sheet entry: Officer Donnelly observed Carney loitering
+    at Hennessey''s Tobacconist at 8:00 PM on night preceding the killing.'
+- item_id: target_004
+  inserted_text: "The bartender at Cleary's had a clear recollection of Carney's last\
+    \ drink the previous evening. \"Rye, neat, around quarter past nine \u2014 I remember\
+    \ because the jukebox rolled over to that Sinatra record everyone was sick of,\
+    \ and he asked me to pull the plug.\""
+  value: 9:15 PM
+  file_path: witnesses/informant_interview.md
+  line_range:
+  - 87
+  - 89
+  context_summary: Bartender at Cleary's recalls Carney's rye drink around 9:15 PM
+    previous evening, with jukebox record change anchoring the time.
+- item_id: target_005
+  inserted_text: "From the diary of Rose Calabrese, recovered later from her vanity\
+    \ drawer: 'Tuesday \u2014 I saw him crossing under the streetlight at the corner\
+    \ near half-past ten. He was alone and walking quick. I should have called out.\
+    \ Tomorrow I'll telephone.' The entry was the last she ever made before the news\
+    \ broke."
+  value: 10:30 PM
+  file_path: chapters/chapter_01.md
+  line_range:
+  - 62
+  - 64
+  context_summary: 'Diary entry by Rose Calabrese: witnessed man crossing under streetlight
+    at corner near 10:30 PM night before news broke.'
+- item_id: target_006
+  inserted_text: "The maitre d' at Renato's had to consult the reservation book, but\
+    \ his memory matched the page: Mr. Carney took the corner banquette at a quarter\
+    \ past seven on Tuesday \u2014 the evening before the morning the boy from the\
+    \ laundry found him."
+  value: 7:15 PM
+  file_path: chapters/chapter_03.md
+  line_range:
+  - 72
+  - 74
+  context_summary: Restaurant maitre d' at Renato's confirms Mr. Carney's reservation
+    for corner banquette at 7:15 PM evening before body discovery.
+- item_id: target_007
+  inserted_text: "Mrs. Petrovich, the landlady at 414 West Erie, knocked at apartment\
+    \ 3B at ten o'clock the evening before the killing, to deliver a telegram. \"\
+    He answered in his shirtsleeves, and the radio was tuned to that Lights Out program\
+    \ \u2014 you know, the spooky one. That's a ten o'clock show.\""
+  value: 10:00 PM
+  file_path: witnesses/landlady_statement.md
+  line_range:
+  - 52
+  - 54
+  context_summary: Landlady Mrs. Petrovich knocked at apartment 3B at 10:00 PM evening
+    before killing to deliver telegram; radio program time confirms the hour.
+- item_id: target_008
+  inserted_text: Mrs. Ostrowski had been at her window across the airshaft. "He turned
+    on the lamp by his desk just as the seven o'clock bells started up at St. Anselm's,"
+    she told the patrolman. That was the night before everything went bad.
+  value: 7:00 PM
+  file_path: witnesses/landlady_statement.md
+  line_range:
+  - 58
+  - 59
+  context_summary: Neighbor witness Mrs. Ostrowski observed lamp turned on synchronized
+    with St. Anselm's church bells at 7:00 PM night before everything went bad.
+expected_answers:
+  question: "I have added N=8 passages to this story that fix a specific time on the\
+    \ night before the murder. Find each one and report it as `<verbatim passage text>\
+    \ \u2014 time referenced: <e.g., 9:45 PM>`. Report all 8.\n"
+  correctness: Each of the 8 items must be reported with both the verbatim inserted_text
+    and the corresponding value, matching the answer-key items.
+  completeness: All 8 items must be reported. Recall is fraction of items correctly
+    reported.
+rubric_criteria:
+- criterion: recall
+  weight: 1.0
+- criterion: precision
+  weight: 0.3

@@ -1,0 +1,143 @@
+parametrisation_id: multi_retrieval__python_repo__800k__hard__contextual__n12
+experiment_type: multi_retrieval
+generated_at: '2026-05-02T07:23:05.174831+00:00'
+parameters:
+  content_profile: python_repo
+  corpus_token_count: 800000
+  discriminability: hard
+  reference_clarity: contextual
+  n_items: 12
+items:
+- item_id: target_001
+  inserted_text: 'auto_rollback_error_rate = 0.02  # error fraction that triggers
+    an immediate rollback'
+  value: '0.02'
+  file_path: api/rate_limiting.py
+  line_range:
+  - 29
+  - 29
+  context_summary: Safety threshold constant for auto-rollback error rate inserted
+    after pipeline dispatch timeout definition.
+- item_id: target_002
+  inserted_text: 'FLAG_EXPOSURE_INCREMENT = 0.10  # fraction added to a feature flag
+    per ramp tick'
+  value: '0.10'
+  file_path: workers/sync_worker.py
+  line_range:
+  - 283
+  - 283
+  context_summary: Feature flag exposure increment constant inserted before RateLimiter
+    class definition in sync worker.
+- item_id: target_003
+  inserted_text: 'MAX_BLAST_RADIUS_HOSTS = 12  # cap on hosts ever exposed to a failing
+    build'
+  value: '12'
+  file_path: workers/task_runner.py
+  line_range:
+  - 134
+  - 134
+  context_summary: Maximum blast radius hosts constant inserted after TaskRunner initialization
+    in register_handler.
+- item_id: target_004
+  inserted_text: 'prod_promote_delay_seconds = 600  # mandatory soak after canary
+    passes before full prod rollout'
+  value: '600'
+  file_path: workers/cleanup_worker.py
+  line_range:
+  - 77
+  - 77
+  context_summary: Production promotion delay constant inserted after cleanup execution
+    start time initialization.
+- item_id: target_005
+  inserted_text: 'min_probe_success_ratio = 0.995  # canary judged unhealthy below
+    this synthetic-probe pass rate'
+  value: '0.995'
+  file_path: workers/report_generator.py
+  line_range:
+  - 122
+  - 122
+  context_summary: Minimum probe success ratio threshold inserted in data validation
+    section of report generation.
+- item_id: target_006
+  inserted_text: 'abort_cooldown_seconds = 900  # minimum gap between an abort and
+    the next retry'
+  value: '900'
+  file_path: workers/retry_handler.py
+  line_range:
+  - 208
+  - 208
+  context_summary: Abort cooldown seconds constant inserted at start of calculate_retry_delay
+    method implementation.
+- item_id: target_007
+  inserted_text: 'DRIFT_TOLERANCE_SIGMA = 3.0  # std-deviations of metric drift tolerated
+    before alarm'
+  value: '3.0'
+  file_path: workers/email_worker.py
+  line_range:
+  - 98
+  - 98
+  context_summary: Drift tolerance sigma constant inserted after email templates initialization
+    in email worker.
+- item_id: target_008
+  inserted_text: 'exposure_ramp_steps = [1, 5, 10, 25, 50, 100]  # percent of users
+    at each ramp stage'
+  value: '[1, 5, 10, 25, 50, 100]'
+  file_path: api/validators.py
+  line_range:
+  - 173
+  - 173
+  context_summary: Exposure ramp steps configuration inserted after per_page validation
+    in validate_pagination.
+- item_id: target_009
+  inserted_text: 'CANARY_TRAFFIC_PCT = 5  # initial share of requests routed to the
+    new build'
+  value: '5'
+  file_path: api/auth.py
+  line_range:
+  - 361
+  - 361
+  context_summary: Canary traffic percentage constant inserted at start of optional_auth
+    decorator function body.
+- item_id: target_010
+  inserted_text: 'approval_gate_timeout_hours = 4  # human-approval window before
+    a canary auto-aborts'
+  value: '4'
+  file_path: api/pagination.py
+  line_range:
+  - 310
+  - 310
+  context_summary: Approval gate timeout hours constant inserted in sanitize_params
+    between per_page validation checks.
+- item_id: target_011
+  inserted_text: 'synthetic_probe_ratio = 0.15  # fraction of canary traffic that
+    is synthetic'
+  value: '0.15'
+  file_path: api/__init__.py
+  line_range:
+  - 82
+  - 82
+  context_summary: Synthetic probe ratio constant inserted immediately after logger
+    initialization in API module.
+- item_id: target_012
+  inserted_text: 'evaluation_window_minutes = 30  # how long we observe metrics before
+    promoting'
+  value: '30'
+  file_path: tests/conftest.py
+  line_range:
+  - 170
+  - 170
+  context_summary: Evaluation window minutes constant inserted after test API key
+    database refresh in conftest.
+expected_answers:
+  question: "I have added N=12 numeric tuning parameters to this codebase that govern\
+    \ a canary deployment / progressive rollout system. Find each one and report it\
+    \ as `<verbatim line of code> \u2014 value: <numeric value>`. Report all 12.\n"
+  correctness: Each of the 12 items must be reported with both the verbatim inserted_text
+    and the corresponding value, matching the answer-key items.
+  completeness: All 12 items must be reported. Recall is fraction of items correctly
+    reported.
+rubric_criteria:
+- criterion: recall
+  weight: 1.0
+- criterion: precision
+  weight: 0.3

@@ -1,0 +1,49 @@
+parametrisation_id: multi_retrieval__noir_fiction__800k__hard__contextual__n2
+experiment_type: multi_retrieval
+generated_at: '2026-05-02T07:23:50.401580+00:00'
+parameters:
+  content_profile: noir_fiction
+  corpus_token_count: 800000
+  discriminability: hard
+  reference_clarity: contextual
+  n_items: 2
+items:
+- item_id: target_001
+  inserted_text: "\"He bought the aspirin and a tin of pastilles at eight-twenty,\"\
+    \ the pharmacist said, sliding the till tape across the counter. The tape was\
+    \ dated the day prior. \"I remember because I was about to lock the front door\
+    \ \u2014 I close at eight-thirty sharp.\""
+  value: 8:20 PM
+  file_path: case_notes/day_05.md
+  line_range:
+  - 131
+  - 131
+  context_summary: Pharmacy witness testimony establishes the 8:20 PM timeline, embedded
+    in the detective's reflection before Vincent reveals his photographs.
+- item_id: target_002
+  inserted_text: "From the diary of Rose Calabrese, recovered later from her vanity\
+    \ drawer: 'Tuesday \u2014 I saw him crossing under the streetlight at the corner\
+    \ near half-past ten. He was alone and walking quick. I should have called out.\
+    \ Tomorrow I'll telephone.' The entry was the last she ever made before the news\
+    \ broke."
+  value: 10:30 PM
+  file_path: chapters/chapter_04.md
+  line_range:
+  - 33
+  - 33
+  context_summary: Rose Calabrese's diary entry at 10:30 PM provides corroborating
+    witness account, integrated into the analysis of Catherine's journal and the criminal
+    network connection.
+expected_answers:
+  question: "I have added N=2 passages to this story that fix a specific time on the\
+    \ night before the murder. Find each one and report it as `<verbatim passage text>\
+    \ \u2014 time referenced: <e.g., 9:45 PM>`. Report all 2.\n"
+  correctness: Each of the 2 items must be reported with both the verbatim inserted_text
+    and the corresponding value, matching the answer-key items.
+  completeness: All 2 items must be reported. Recall is fraction of items correctly
+    reported.
+rubric_criteria:
+- criterion: recall
+  weight: 1.0
+- criterion: precision
+  weight: 0.3
