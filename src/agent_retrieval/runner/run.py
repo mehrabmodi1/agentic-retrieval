@@ -130,11 +130,16 @@ async def run_batch(
                 print(f"[{completed}/{total}] FAILED {pid} run {run_id}: bad answer key")
                 return
 
+            # pure_reasoning has no corpus; the question prompt is self-contained.
+            # Use run_dir as the SDK cwd (it exists; corpus_dir does not).
+            is_pure_reasoning = pid.startswith("pure_reasoning__")
+            session_cwd = run_dir if is_pure_reasoning else corpus_dir
+
             state_mgr.update_status(run_dir, "running", started_at=datetime.now(timezone.utc).isoformat())
 
             try:
                 result = await run_agent_session(
-                    question=question, corpus_dir=corpus_dir, model=batch.agent_model,
+                    question=question, corpus_dir=session_cwd, model=batch.agent_model,
                     allowed_tools=batch.allowed_tools, max_turns=batch.max_turns,
                     run_id=run_id, run_dir=run_dir, effort_mode=batch.effort_mode,
                 )
