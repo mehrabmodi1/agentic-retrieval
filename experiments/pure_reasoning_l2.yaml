@@ -1,0 +1,148 @@
+experiment_type: "pure_reasoning_l2"
+
+payload:
+  item_type: "fact"
+
+question_examples:
+  python_repo:
+    hard_contextual:
+      question: |
+        You are running a database migration. It must execute during a window of system quiescence. Below are {n} numeric configuration parameters from across the service. Each implies a constraint on *when* the migration can safely begin and end relative to a reference event (the most recent backup, the next traffic peak, the next certificate rotation, the latest replication lag spike, etc.).
+
+        Some parameters establish a *lower bound* on the migration start time (must wait at least X seconds after the reference event).
+
+        Others establish an *upper bound* on the migration end time (must complete before X seconds after the reference event).
+
+        Some constraints are stated in mixed units or relative to a named reference. Normalise to a common scale (seconds) before reasoning.
+
+        Below are the {n} facts:
+
+        {facts_block}
+
+        Derive the narrowest safe-migration window [earliest_start, latest_end] consistent with all {n} constraints. For each endpoint, cite the parameter that establishes it. Justify your classification of each parameter's bound direction.
+      answer: "Window endpoints with citations"
+  noir_fiction:
+    hard_contextual:
+      question: |
+        You are given {n} pieces of evidence from a homicide investigation, each pertaining to events on the night of the murder. Some pieces establish that the suspect was at large (free, unaccounted-for) at or after a specific time; others establish that the suspect was off-the-streets (accounted-for, with an alibi) at or before a specific time.
+
+        Some pieces of evidence are stated as clock times, others as offsets from a named anchor event, and some on a 24-hour clock or in colloquial form. Normalise to a single clock-time scale before reasoning.
+
+        Below are the {n} pieces of evidence:
+
+        {facts_block}
+
+        Derive the narrowest defensible time window during which the suspect was at large on the night of the murder. Cite the specific pieces of evidence that establish your window's lower and upper bounds. Justify your classification of each piece of evidence's bound direction.
+      answer: "Window endpoints with citations"
+
+rubric_criteria:
+  - criterion: "endpoint_correctness"
+    weight: 1.0
+  - criterion: "classification_accuracy"
+    weight: 0.5
+
+grid:
+  content_profile: [python_repo, noir_fiction]
+  n_items: [2, 4, 8, 12, 16]
+
+fixed_pool:
+  python_repo:
+    # ---- 8 lower-bound items ----
+    - text: "REPLICATION_LAG_RECOVERY_S = 300"
+      bound_direction: "lower"
+      bound_value: "300"
+      context_summary: "Time the read replicas need to catch up after the latest traffic-peak lag spike."
+      variant_id: 0
+      variant_text: "REPLICATION_LAG_RECOVERY_S = 300"
+    - text: "CERT_ROTATION_GRACE_MIN = 30  # minutes"
+      bound_direction: "lower"
+      bound_value: "1800"
+      context_summary: "Quiet period after the most recent certificate rotation; expressed in minutes."
+      variant_id: 1
+      variant_text: "CERT_ROTATION_GRACE_MIN = 30  # minutes"
+    - text: "Reference: HOURLY_KICK_S = 3600. Then DDL_LOCK_COOLDOWN_OFFSET_S = 3000  # seconds before HOURLY_KICK"
+      bound_direction: "lower"
+      bound_value: "600"
+      context_summary: "Cooldown after DDL lock release, expressed as offset before the hourly kick (3600 - 3000 = 600s)."
+      variant_id: 2
+      variant_text: "Reference: HOURLY_KICK_S = 3600. Then DDL_LOCK_COOLDOWN_OFFSET_S = 3000  # seconds before HOURLY_KICK"
+    - text: "LEADER_ELECTION_QUIESCE_S = 900"
+      bound_direction: "lower"
+      bound_value: "900"
+      context_summary: "Stabilization window after the most recent leader election."
+      variant_id: 0
+      variant_text: "LEADER_ELECTION_QUIESCE_S = 900"
+    - text: "AUTOVACUUM_TAIL_DRAIN_MS = 1200000  # milliseconds"
+      bound_direction: "lower"
+      bound_value: "1200"
+      context_summary: "Auto-vacuum tail drain delay, expressed in milliseconds."
+      variant_id: 1
+      variant_text: "AUTOVACUUM_TAIL_DRAIN_MS = 1200000  # milliseconds"
+    - text: "Reference: BACKUP_FINISH_S = 600. Then INFLIGHT_RPC_DRAIN_OFFSET_S = 420  # seconds before BACKUP_FINISH"
+      bound_direction: "lower"
+      bound_value: "180"
+      context_summary: "RPC drain wait, expressed as offset before backup finish (600 - 420 = 180s)."
+      variant_id: 2
+      variant_text: "Reference: BACKUP_FINISH_S = 600. Then INFLIGHT_RPC_DRAIN_OFFSET_S = 420  # seconds before BACKUP_FINISH"
+    - text: "TRACE_FLUSH_BUFFER_S = 120"
+      bound_direction: "lower"
+      bound_value: "120"
+      context_summary: "Tracing collector buffer flush delay."
+      variant_id: 0
+      variant_text: "TRACE_FLUSH_BUFFER_S = 120"
+    - text: "ON_CALL_HANDOFF_QUIET_MIN = 25  # minutes"
+      bound_direction: "lower"
+      bound_value: "1500"
+      context_summary: "Quiet interval after on-call handoff, expressed in minutes."
+      variant_id: 1
+      variant_text: "ON_CALL_HANDOFF_QUIET_MIN = 25  # minutes"
+    # ---- 8 upper-bound items ----
+    - text: "Reference: WEEKEND_ROLLOVER_S = 86400. Then BACKUP_WINDOW_OPEN_OFFSET_S = 79200  # seconds before WEEKEND_ROLLOVER"
+      bound_direction: "upper"
+      bound_value: "7200"
+      context_summary: "Backup window open, expressed as offset before weekend rollover (86400 - 79200 = 7200s)."
+      variant_id: 2
+      variant_text: "Reference: WEEKEND_ROLLOVER_S = 86400. Then BACKUP_WINDOW_OPEN_OFFSET_S = 79200  # seconds before WEEKEND_ROLLOVER"
+    - text: "PEAK_TRAFFIC_RAMP_BEGIN_S = 5400"
+      bound_direction: "upper"
+      bound_value: "5400"
+      context_summary: "Daily traffic ramp begins."
+      variant_id: 0
+      variant_text: "PEAK_TRAFFIC_RAMP_BEGIN_S = 5400"
+    - text: "AUTOSCALER_SCALEDOWN_DEADLINE_MIN = 180  # minutes"
+      bound_direction: "upper"
+      bound_value: "10800"
+      context_summary: "Autoscaler scaledown deadline, expressed in minutes."
+      variant_id: 1
+      variant_text: "AUTOSCALER_SCALEDOWN_DEADLINE_MIN = 180  # minutes"
+    - text: "Reference: NIGHTLY_LOG_TRIM_S = 28800. Then WEEKLY_SNAPSHOT_KICKOFF_OFFSET_S = 3600  # seconds before NIGHTLY_LOG_TRIM (negative = after)"
+      bound_direction: "upper"
+      bound_value: "25200"
+      context_summary: "Weekly snapshot kickoff, expressed as offset before nightly log trim (28800 - 3600 = 25200s)."
+      variant_id: 2
+      variant_text: "Reference: NIGHTLY_LOG_TRIM_S = 28800. Then WEEKLY_SNAPSHOT_KICKOFF_OFFSET_S = 3600  # seconds before NIGHTLY_LOG_TRIM (negative = after)"
+    - text: "DEPLOY_FREEZE_BOUNDARY_S = 14400"
+      bound_direction: "upper"
+      bound_value: "14400"
+      context_summary: "Change-management deploy-freeze takes effect."
+      variant_id: 0
+      variant_text: "DEPLOY_FREEZE_BOUNDARY_S = 14400"
+    - text: "ALERTING_SILENCE_EXPIRES_MIN = 75  # minutes"
+      bound_direction: "upper"
+      bound_value: "4500"
+      context_summary: "Alerting silence window expiry, expressed in minutes."
+      variant_id: 1
+      variant_text: "ALERTING_SILENCE_EXPIRES_MIN = 75  # minutes"
+    - text: "Reference: SHIFT_END_S = 21600. Then PLANNED_MAINTENANCE_CLOSE_OFFSET_S = 3600  # seconds before SHIFT_END (negative = after)"
+      bound_direction: "upper"
+      bound_value: "18000"
+      context_summary: "Planned-maintenance window close, expressed as offset before shift end (21600 - 3600 = 18000s)."
+      variant_id: 2
+      variant_text: "Reference: SHIFT_END_S = 21600. Then PLANNED_MAINTENANCE_CLOSE_OFFSET_S = 3600  # seconds before SHIFT_END (negative = after)"
+    - text: "METRICS_ROLLUP_TRIGGER_S = 9000"
+      bound_direction: "upper"
+      bound_value: "9000"
+      context_summary: "Hourly metrics rollup begins."
+      variant_id: 0
+      variant_text: "METRICS_ROLLUP_TRIGGER_S = 9000"
+  noir_fiction: []
