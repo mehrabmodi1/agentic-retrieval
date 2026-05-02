@@ -15,6 +15,38 @@ def _format_facts_block(items: list[dict[str, Any]]) -> str:
     return "\n".join(f"{i}. {item['text']}" for i, item in enumerate(items, start=1))
 
 
+def _to_comparable(value: str) -> float:
+    """Parse a bound_value string into a comparable float.
+
+    Handles plain numeric strings ('300', '1.5') and 12-hour time-of-day
+    strings ('7:30 PM', '12:15 AM') — the latter converted to minutes
+    since midnight (so '7:30 PM' → 19*60 + 30 = 1170.0).
+    """
+    s = value.strip()
+    try:
+        return float(s)
+    except ValueError:
+        pass
+    s_upper = s.upper()
+    is_pm = "PM" in s_upper
+    is_am = "AM" in s_upper
+    if not (is_pm or is_am):
+        raise ValueError(f"unrecognised bound_value: {value!r}")
+    s_clean = s_upper.replace("PM", "").replace("AM", "").strip()
+    if ":" in s_clean:
+        h_str, m_str = s_clean.split(":", 1)
+        h = int(h_str)
+        m = int(m_str)
+    else:
+        h = int(s_clean)
+        m = 0
+    if is_pm and h != 12:
+        h += 12
+    elif is_am and h == 12:
+        h = 0
+    return float(h * 60 + m)
+
+
 def _compute_expected_endpoints(items: list[dict[str, Any]]) -> tuple[str, str, str, str]:
     """Compute (max_lower_value, max_lower_text, min_upper_value, min_upper_text).
 
@@ -25,8 +57,8 @@ def _compute_expected_endpoints(items: list[dict[str, Any]]) -> tuple[str, str, 
     uppers = [it for it in items if it["bound_direction"] == "upper"]
     if not lowers or not uppers:
         return "", "", "", ""
-    max_lower = max(lowers, key=lambda it: float(it["bound_value"]))
-    min_upper = min(uppers, key=lambda it: float(it["bound_value"]))
+    max_lower = max(lowers, key=lambda it: _to_comparable(it["bound_value"]))
+    min_upper = min(uppers, key=lambda it: _to_comparable(it["bound_value"]))
     return (
         max_lower["bound_value"],
         max_lower["text"],
