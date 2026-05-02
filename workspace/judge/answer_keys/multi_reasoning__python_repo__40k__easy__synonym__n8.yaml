@@ -1,0 +1,58 @@
+parametrisation_id: "multi_reasoning__python_repo__40k__easy__synonym__n8"
+experiment_type: "multi_reasoning"
+generated_at: "2026-05-02T00:00:00Z"
+parameters:
+  content_profile: "python_repo"
+  corpus_token_count: 40000
+  discriminability: "easy"
+  reference_clarity: "synonym"
+items:
+  - item_id: "target_001"
+    inserted_text: "DB_CONNECTION_POOL_MAX_OVERFLOW = 5"
+    file_path: "tests/conftest.py"
+    line_range: [26, 26]
+    context_summary: "Database connection pool size limit inserted after imports in test configuration module."
+  - item_id: "target_002"
+    inserted_text: "RATE_LIMIT_REQUESTS_PER_MINUTE = 1000"
+    file_path: "api/rate_limiting.py"
+    line_range: [233, 233]
+    context_summary: "API rate limiting threshold inserted as module-level constant defining maximum requests per minute."
+  - item_id: "target_003"
+    inserted_text: "DEFAULT_MAX_PAGE_SIZE = 100"
+    file_path: "api/pagination.py"
+    line_range: [127, 127]
+    context_summary: "Pagination constraint inserted before PaginatedResponse class definition."
+  - item_id: "target_004"
+    inserted_text: "RESPONSE_COMPRESSION_THRESHOLD_BYTES = 1024"
+    file_path: "api/middleware.py"
+    line_range: [268, 268]
+    context_summary: "Response compression threshold inserted between middleware registration and utility function definition."
+  - item_id: "target_005"
+    inserted_text: "API_REQUEST_TIMEOUT_SECONDS = 120"
+    file_path: "api/__init__.py"
+    line_range: [162, 162]
+    context_summary: "API request processing timeout inserted between Flask route handlers defining system timeout constraint."
+  - item_id: "target_006"
+    inserted_text: "STRING_SANITIZE_MAX_LENGTH_BYTES = 1000"
+    file_path: "api/validators.py"
+    line_range: [449, 449]
+    context_summary: "String sanitization limit inserted after sanitize_string function definition."
+  - item_id: "target_007"
+    inserted_text: "WORKER_PIPELINE_DISPATCH_TIMEOUT_SECONDS = 300"
+    file_path: "tests/test_workers.py"
+    line_range: [21, 21]
+    context_summary: "Worker task dispatch timeout inserted after module-level comment about pipeline timeout constant."
+  - item_id: "target_008"
+    inserted_text: "TASK_STATUS_PERSISTENCE_TIMEOUT_MINUTES = 30"
+    file_path: "tests/test_db.py"
+    line_range: [145, 145]
+    context_summary: "Task status persistence timeout inserted between database test methods as constraint value."
+expected_answers:
+  question: "Given the 8 system configuration constraints (DB_CONNECTION_POOL_MAX_OVERFLOW=5, RATE_LIMIT_REQUESTS_PER_MINUTE=1000, DEFAULT_MAX_PAGE_SIZE=100, RESPONSE_COMPRESSION_THRESHOLD_BYTES=1024, API_REQUEST_TIMEOUT_SECONDS=120, WORKER_PIPELINE_DISPATCH_TIMEOUT_SECONDS=300, STRING_SANITIZE_MAX_LENGTH_BYTES=1000, TASK_STATUS_PERSISTENCE_TIMEOUT_MINUTES=30), if the system must handle 100 concurrent users each making 50 paginated API requests to retrieve 5000 total records, which THREE configuration values would most constrain the system's throughput, and what is the maximum sustained request rate (requests/second) achievable under current configuration?"
+  correctness: "A correct answer must identify three bottlenecks from the eight values and calculate or estimate the maximum request rate. The three most critical constraints are: (1) DB_CONNECTION_POOL_MAX_OVERFLOW=5 (hard concurrency limit for database operations, can only handle 5 simultaneous DB requests), (2) RATE_LIMIT_REQUESTS_PER_MINUTE=1000 (approximately 16.67 requests/second maximum sustained throughput), and either (3) API_REQUEST_TIMEOUT_SECONDS=120 or DEFAULT_MAX_PAGE_SIZE=100 depending on scenario details. The maximum achievable throughput is approximately 16.67 requests/second, constrained by the rate limiter. The answer must explain why the other five values (compression threshold, dispatch timeout, string sanitization limit, and task persistence timeout) do not constrain the system more than these three primary bottlenecks."
+  completeness: "A complete answer must: (1) identify and reference all 8 configuration values by name and numerical value; (2) explain the functional impact of each constraint on system throughput; (3) perform comparative analysis showing which constraints interact and compound limiting effects; (4) rank the three primary bottlenecks with reasoning specific to the 100 concurrent users / 5000 records scenario; (5) calculate or derive the maximum request rate from the identified bottleneck (16.67 req/sec from 1000 req/min rate limit); (6) explain why each of the five non-limiting values does not constrain the scenario more than the three primary bottlenecks (e.g., why compression threshold of 1024 bytes is not a bottleneck for typical API responses, why 120-second timeout is generous for individual requests, why 300-second worker timeout is ample for page retrieval)."
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+  - criterion: "completeness"
+    weight: 0.5

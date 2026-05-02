@@ -1,0 +1,78 @@
+parametrisation_id: "multi_reasoning__python_repo__40k__easy__synonym__n12"
+experiment_type: "multi_reasoning"
+generated_at: "2026-05-02T00:00:00Z"
+parameters:
+  content_profile: "python_repo"
+  corpus_token_count: 40000
+  discriminability: "easy"
+  reference_clarity: "synonym"
+items:
+  - item_id: "target_001"
+    inserted_text: "'request_timeout_seconds': 30"
+    file_path: "api/__init__.py"
+    line_range: [198, 199]
+    context_summary: "HTTP API request timeout enforced at authentication configuration level."
+  - item_id: "target_002"
+    inserted_text: "# Check rate limit: 1000 requests per 60-second sliding window"
+    file_path: "api/rate_limiting.py"
+    line_range: [209, 209]
+    context_summary: "Rate limiting constraint documented in decorator implementation showing 1000/60s window."
+  - item_id: "target_003"
+    inserted_text: "task_title_max_length = 500"
+    file_path: "api/serializers.py"
+    line_range: [153, 153]
+    context_summary: "Task title field validation constraint inserted in TaskSerializer class."
+  - item_id: "target_004"
+    inserted_text: "api_key.rotation_period_days = 90"
+    file_path: "tests/conftest.py"
+    line_range: [171, 171]
+    context_summary: "API key rotation requirement specified in test fixture setup."
+  - item_id: "target_005"
+    inserted_text: "backoff_multiplier = 1.5\n        max_backoff_seconds = 128"
+    file_path: "workers/retry_handler.py"
+    line_range: [229, 230]
+    context_summary: "Exponential backoff parameters for task retry logic with 1.5x multiplier and 128-second ceiling."
+  - item_id: "target_006"
+    inserted_text: '"api_rate_limit": 1000,\n                    "rate_limit_window": 60,'
+    file_path: "tests/test_api.py"
+    line_range: [213, 214]
+    context_summary: "API rate limit settings of 1000 requests per 60-second window in test configuration."
+  - item_id: "target_007"
+    inserted_text: "assert user.created_at.tzinfo is not None  # UTC timestamp required"
+    file_path: "tests/fixtures.py"
+    line_range: [120, 120]
+    context_summary: "UTC timezone requirement enforced for user creation timestamps in test assertions."
+  - item_id: "target_008"
+    inserted_text: '"Convert pagination to dict. Max page size limit: 50 items."'
+    file_path: "api/pagination.py"
+    line_range: [114, 114]
+    context_summary: "Maximum pagination size of 50 items per page specified in pagination serialization method."
+  - item_id: "target_009"
+    inserted_text: "# All field modifications must be tracked in audit logs for compliance"
+    file_path: "tests/test_db.py"
+    line_range: [342, 342]
+    context_summary: "Compliance requirement for complete audit logging of all field changes in database operations."
+  - item_id: "target_010"
+    inserted_text: "# Session timeout: 86400 seconds (24 hours) from last activity"
+    file_path: "tests/test_auth.py"
+    line_range: [351, 351]
+    context_summary: "User session timeout constraint of 86400 seconds (24 hours) specified in authentication tests."
+  - item_id: "target_011"
+    inserted_text: "# Report generation timeout: 300 seconds max per report"
+    file_path: "workers/report_generator.py"
+    line_range: [373, 373]
+    context_summary: "Maximum report generation duration of 300 seconds enforced in report worker entry point."
+  - item_id: "target_012"
+    inserted_text: '"Start the task runner with 4 workers polling every 2 seconds."'
+    file_path: "workers/task_runner.py"
+    line_range: [164, 164]
+    context_summary: "Worker thread configuration specifying 4 concurrent workers with 2-second polling interval."
+expected_answers:
+  question: "Given a system with 4 workers polling every 2 seconds, an HTTP request timeout of 30 seconds, API rate limit of 1000 requests per 60-second window, task retry backoff of 1.5x multiplier (max 128 seconds), report generation timeout of 300 seconds, pagination limited to 50 items per page, session timeout of 86400 seconds, UTC timestamp requirements, API key rotation every 90 days, complete audit logging requirement, and task title maximum length of 500 characters: if a report generation task requires 250 seconds to complete and fails on the first attempt, triggering exponential backoff retry, will the system successfully complete the task within safe operational bounds? Identify which constraint becomes the critical bottleneck and explain the constraint interaction."
+  correctness: "Correct answer must identify that the 300-second report generation timeout is the primary constraint that will be violated, since the task requires 250 seconds + additional time for retries. The answer must explain that when the first attempt fails after 250 seconds and enters exponential backoff (starting at 2 seconds base with 1.5x multiplier), the retried task will exceed the 300-second limit. The answer should also recognize how the 4 workers/2-second polling and 30-second request timeout interact to limit concurrent task processing. Additionally, the answer must note that the 1000 requests per 60-second rate limit means at most ~16.67 requests per second, which constrains how quickly the system can process audit log writes (compliance requirement) and retry scheduling logic."
+  completeness: "A complete answer must address: (1) The report timeout constraint and its interaction with task execution time, (2) The exponential backoff retry parameters and whether they can fit within the 300-second window, (3) How the 4 workers with 2-second polling limits concurrent task capacity, (4) The 30-second HTTP timeout constraint and its effect on individual request handling, (5) The 1000/60s rate limit and its effect on system throughput when combined with complete audit logging requirements, (6) Why the 86400-second session timeout is not the bottleneck in this scenario, (7) The interaction between pagination (50 items) and audit logging overhead. The answer should demonstrate that removing or changing any of these 12 values would alter the bottleneck analysis."
+rubric_criteria:
+  - criterion: "correctness"
+    weight: 1.0
+  - criterion: "completeness"
+    weight: 0.5
