@@ -119,3 +119,131 @@ class TestRunnerPureReasoning:
         # run_dir lives under workspace/runner/runs/<batch_run_name>/<pid>/<run_id>
         assert "runner/runs" in str(captured["corpus_dir"])
         assert "runner/corpora" not in str(captured["corpus_dir"])
+
+    @pytest.mark.asyncio
+    async def test_pure_reasoning_l2_uses_run_dir_as_cwd(self, tmp_workspace):
+        """pure_reasoning_l2 runs use run_dir as cwd (no populated corpus required)."""
+        workspace = tmp_workspace / "workspace"
+        ak_path = workspace / "judge" / "answer_keys" / "pure_reasoning_l2__python_repo__n4.yaml"
+        ak_path.write_text(yaml.dump({
+            "parametrisation_id": "pure_reasoning_l2__python_repo__n4",
+            "experiment_type": "pure_reasoning_l2",
+            "items": [{
+                "item_id": "target_001",
+                "inserted_text": "A",
+                "context_summary": "x",
+                "value": "100",
+                "bound_direction": "lower",
+            }],
+            "expected_answers": {
+                "question": "Inlined facts: 1. A. 2. B. Derive window.",
+                "correctness": "ok",
+                "completeness": "ok",
+            },
+            "rubric_criteria": [
+                {"criterion": "endpoint_correctness", "weight": 1.0},
+            ],
+        }))
+
+        batch = BatchConfig.model_validate({
+            "batch_name": "test_pure_l2",
+            "max_parallel": 1,
+            "retry_failed": False,
+            "agent_model": "claude-haiku-4-5-20251001",
+            "effort_mode": "low",
+            "n_repeats": 1,
+            "max_turns": 5,
+            "allowed_tools": [],
+            "experiments": [{
+                "experiment_type": "pure_reasoning_l2",
+                "grid": {
+                    "content_profile": ["python_repo"],
+                    "n_items": [4],
+                },
+            }],
+        })
+
+        captured: dict = {}
+
+        async def fake_run_session(**kwargs):
+            captured.update(kwargs)
+            return AgentResult(
+                response_text="window = [100, 500]",
+                session_id="x", num_turns=1, total_cost_usd=0.0, usage={},
+            )
+
+        with patch("agent_retrieval.runner.run.get_claude_version", return_value="claude 1.0"), \
+             patch(
+                 "agent_retrieval.runner.run.run_agent_session",
+                 side_effect=fake_run_session,
+             ):
+            await run_batch(batch, experiments_dir=tmp_workspace / "experiments",
+                            workspace_dir=workspace)
+
+        assert "Inlined facts" in captured["question"]
+        assert "runner/runs" in str(captured["corpus_dir"])
+        assert "runner/corpora" not in str(captured["corpus_dir"])
+
+    @pytest.mark.asyncio
+    async def test_pure_reasoning_l3_uses_run_dir_as_cwd(self, tmp_workspace):
+        """pure_reasoning_l3 runs use run_dir as cwd (no populated corpus required)."""
+        workspace = tmp_workspace / "workspace"
+        ak_path = workspace / "judge" / "answer_keys" / "pure_reasoning_l3__python_repo__n4.yaml"
+        ak_path.write_text(yaml.dump({
+            "parametrisation_id": "pure_reasoning_l3__python_repo__n4",
+            "experiment_type": "pure_reasoning_l3",
+            "items": [{
+                "item_id": "target_001",
+                "inserted_text": "A",
+                "context_summary": "x",
+                "value": "100",
+                "bound_direction": "lower",
+            }],
+            "expected_answers": {
+                "question": "Inlined facts: 1. A. 2. B. Derive window.",
+                "correctness": "ok",
+                "completeness": "ok",
+            },
+            "rubric_criteria": [
+                {"criterion": "endpoint_correctness", "weight": 1.0},
+            ],
+        }))
+
+        batch = BatchConfig.model_validate({
+            "batch_name": "test_pure_l3",
+            "max_parallel": 1,
+            "retry_failed": False,
+            "agent_model": "claude-haiku-4-5-20251001",
+            "effort_mode": "low",
+            "n_repeats": 1,
+            "max_turns": 5,
+            "allowed_tools": [],
+            "experiments": [{
+                "experiment_type": "pure_reasoning_l3",
+                "grid": {
+                    "content_profile": ["python_repo"],
+                    "n_items": [4],
+                },
+            }],
+        })
+
+        captured: dict = {}
+
+        async def fake_run_session(**kwargs):
+            captured.update(kwargs)
+            return AgentResult(
+                response_text="window = [100, 500]",
+                session_id="x", num_turns=1, total_cost_usd=0.0, usage={},
+            )
+
+        with patch("agent_retrieval.runner.run.get_claude_version", return_value="claude 1.0"), \
+             patch(
+                 "agent_retrieval.runner.run.run_agent_session",
+                 side_effect=fake_run_session,
+             ):
+            await run_batch(batch, experiments_dir=tmp_workspace / "experiments",
+                            workspace_dir=workspace)
+
+        assert "Inlined facts" in captured["question"]
+        assert "runner/runs" in str(captured["corpus_dir"])
+        assert "runner/corpora" not in str(captured["corpus_dir"])

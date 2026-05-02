@@ -132,7 +132,9 @@ async def run_batch(
 
             # pure_reasoning has no corpus; the question prompt is self-contained.
             # Use run_dir as the SDK cwd (it exists; corpus_dir does not).
-            is_pure_reasoning = pid.startswith("pure_reasoning__")
+            is_pure_reasoning = pid.split("__", 1)[0] in {
+                "pure_reasoning", "pure_reasoning_l2", "pure_reasoning_l3"
+            }
             session_cwd = run_dir if is_pure_reasoning else corpus_dir
 
             state_mgr.update_status(run_dir, "running", started_at=datetime.now(timezone.utc).isoformat())
