@@ -1,0 +1,25 @@
+batch_name: "cognitive-ladder_opus-4-7_effort-max"
+max_parallel: 3
+retry_failed: true
+agent_model: "claude-opus-4-7"
+effort_mode: "max"
+n_repeats: 3
+max_turns: 75
+allowed_tools: ["Read", "Glob", "Grep", "Bash"]
+
+# Cognitive ladder layered on pure_reasoning:
+# - pure_reasoning_l2: + per-item unit normalisation
+# - pure_reasoning_l3: + conditional gating on top of L2
+#
+# pure_reasoning_l2: 2 profiles x 5 n_items x 3 repeats = 30 runs
+# pure_reasoning_l3: 2 profiles x 5 n_items x 3 repeats = 30 runs
+# Total per batch: 60 runs
+experiments:
+  - experiment_type: "pure_reasoning_l2"
+    grid:
+      content_profile: [python_repo, noir_fiction]
+      n_items: [2, 4, 8, 12, 16]
+  - experiment_type: "pure_reasoning_l3"
+    grid:
+      content_profile: [python_repo, noir_fiction]
+      n_items: [2, 4, 8, 12, 16]
