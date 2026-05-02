@@ -1,0 +1,181 @@
+experiment_type: "pure_reasoning"
+
+payload:
+  item_type: "fact"
+
+question_examples:
+  python_repo:
+    hard_contextual:
+      question: |
+        You are running a database migration. It must execute during a window of system quiescence. Below are {n} numeric configuration parameters from across the service. Each implies a constraint on *when* the migration can safely begin and end relative to a reference event (the most recent backup, the next traffic peak, the next certificate rotation, the latest replication lag spike, etc.).
+
+        Some parameters establish a *lower bound* on the migration start time (must wait at least X seconds after the reference event).
+
+        Others establish an *upper bound* on the migration end time (must complete before X seconds after the reference event).
+
+        Below are the {n} facts:
+
+        {facts_block}
+
+        Derive the narrowest safe-migration window [earliest_start, latest_end] consistent with all {n} constraints. For each endpoint, cite the parameter that establishes it. Justify your classification of each parameter's bound direction.
+      answer: "Window endpoints with citations"
+  noir_fiction:
+    hard_contextual:
+      question: |
+        You are given {n} pieces of evidence from a homicide investigation, each pertaining to events on the night of the murder. Some pieces establish that the suspect was at large (free, unaccounted-for) at or after a specific time; others establish that the suspect was off-the-streets (accounted-for, with an alibi) at or before a specific time.
+
+        Below are the {n} pieces of evidence:
+
+        {facts_block}
+
+        Derive the narrowest defensible time window during which the suspect was at large on the night of the murder. Cite the specific pieces of evidence that establish your window's lower and upper bounds. Justify your classification of each piece of evidence's bound direction.
+      answer: "Window endpoints with citations"
+
+rubric_criteria:
+  - criterion: "endpoint_correctness"
+    weight: 1.0
+  - criterion: "classification_accuracy"
+    weight: 0.5
+
+grid:
+  content_profile: [python_repo, noir_fiction]
+  n_items: [2, 4, 8, 12, 16]
+
+fixed_pool:
+  python_repo:
+    # ---- 8 lower-bound items (values in [0, 2000]) ----
+    - text: "REPLICATION_LAG_RECOVERY_S = 300"
+      bound_direction: "lower"
+      bound_value: "300"
+      context_summary: "Time the read replicas need to catch up after the latest traffic-peak lag spike; the migration may not begin until at least this many seconds after that spike, so it imposes a lower bound on the start time."
+    - text: "CERT_ROTATION_GRACE_S = 1800"
+      bound_direction: "lower"
+      bound_value: "1800"
+      context_summary: "Quiet period that must elapse after the most recent certificate rotation before any schema-changing work runs; pushes the earliest start forward."
+    - text: "DDL_LOCK_COOLDOWN_S = 600"
+      bound_direction: "lower"
+      bound_value: "600"
+      context_summary: "Minimum cooldown after the previous DDL lock release before a new one is acquired; the migration cannot begin until this delay has passed since the reference DDL release."
+    - text: "LEADER_ELECTION_QUIESCE_S = 900"
+      bound_direction: "lower"
+      bound_value: "900"
+      context_summary: "Stabilization window required after the most recent leader election; migrations are gated until the cluster has been quiet for this long, establishing a lower bound on start."
+    - text: "AUTOVACUUM_TAIL_DRAIN_S = 1200"
+      bound_direction: "lower"
+      bound_value: "1200"
+      context_summary: "How long the long-running auto-vacuum tail keeps running after the last bulk write; the migration must wait until that tail has drained, so this is a lower bound on start."
+    - text: "INFLIGHT_RPC_DRAIN_S = 180"
+      bound_direction: "lower"
+      bound_value: "180"
+      context_summary: "Wait period the orchestrator gives in-flight RPCs to complete after the freeze signal; until this elapses the migration is held off, imposing a lower bound on start."
+    - text: "TRACE_FLUSH_BUFFER_S = 120"
+      bound_direction: "lower"
+      bound_value: "120"
+      context_summary: "Delay needed for the tracing collector to flush its buffer to durable storage after the last sampled span; migrations begin only after this flush completes."
+    - text: "ON_CALL_HANDOFF_QUIET_S = 1500"
+      bound_direction: "lower"
+      bound_value: "1500"
+      context_summary: "Minimum quiet interval after the on-call handoff during which no risky work begins; the new on-call must be settled before the migration kicks off, a lower bound on start."
+
+    # ---- 8 upper-bound items (values in [3000, 50000]) ----
+    - text: "BACKUP_WINDOW_OPEN_S = 7200"
+      bound_direction: "upper"
+      bound_value: "7200"
+      context_summary: "Time-from-reference at which the next nightly backup window opens; the migration must finish before that, so it caps the latest end."
+    - text: "PEAK_TRAFFIC_RAMP_BEGIN_S = 5400"
+      bound_direction: "upper"
+      bound_value: "5400"
+      context_summary: "Time-from-reference at which the daily traffic ramp toward peak begins; running migrations into the ramp is forbidden, so this is an upper bound on end."
+    - text: "AUTOSCALER_SCALEDOWN_DEADLINE_S = 10800"
+      bound_direction: "upper"
+      bound_value: "10800"
+      context_summary: "Cutoff at which the autoscaler will start removing capacity; the migration must complete before that capacity disappears, capping the end time."
+    - text: "WEEKLY_SNAPSHOT_KICKOFF_S = 25200"
+      bound_direction: "upper"
+      bound_value: "25200"
+      context_summary: "Time-from-reference at which the weekly snapshot job is triggered; the migration must conclude before snapshotting begins, an upper bound on end."
+    - text: "DEPLOY_FREEZE_BOUNDARY_S = 14400"
+      bound_direction: "upper"
+      bound_value: "14400"
+      context_summary: "Time at which the change-management deploy-freeze takes effect; nothing risky may complete after this, so it bounds the latest end."
+    - text: "ALERTING_SILENCE_EXPIRES_S = 4500"
+      bound_direction: "upper"
+      bound_value: "4500"
+      context_summary: "Lifetime of the alerting silence window opened for the migration; once it expires noisy alarms will fire, so the migration must end before this."
+    - text: "PLANNED_MAINTENANCE_CLOSE_S = 18000"
+      bound_direction: "upper"
+      bound_value: "18000"
+      context_summary: "End of the announced planned-maintenance window; work must wrap up before it closes to honor the customer notice, capping the end time."
+    - text: "METRICS_ROLLUP_TRIGGER_S = 9000"
+      bound_direction: "upper"
+      bound_value: "9000"
+      context_summary: "Time at which the hourly metrics rollup begins consuming WAL; the migration must finish before the rollup contends for resources, so this is an upper bound on end."
+
+  noir_fiction:
+    # ---- 8 lower-bound items (suspect at large at/after time T; spread 6:00 PM - 8:50 PM) ----
+    - text: "Old Mrs. Halloran from across the hall swore on her late husband's grave that Costa came up the stoop and slammed his door at six on the dot — she had just put the kettle on and the radio was running the news."
+      bound_direction: "lower"
+      bound_value: "6:00 PM"
+      context_summary: "The neighbor narrator places Costa at the apartment building, alone and unsupervised, at 6:00 PM; he was demonstrably at large at that hour."
+    - text: "Eddie at the newsstand on Forty-Third remembered selling Costa an evening Standard at a quarter past six — 'He paid in nickels, like always,' Eddie said, 'and walked off east toward the river.'"
+      bound_direction: "lower"
+      bound_value: "6:15 PM"
+      context_summary: "The newsstand vendor's account fixes Costa walking the streets, free, at 6:15 PM."
+    - text: "The Greek who runs the diner on Lex told me, between bites of his own dinner, that Costa took the corner booth at half past six and ordered nothing — just sat. He left after maybe twenty minutes."
+      bound_direction: "lower"
+      bound_value: "6:50 PM"
+      context_summary: "The diner owner's recollection puts Costa unaccounted-for and on the move by roughly 6:50 PM when he left the diner."
+    - text: "A streetcar conductor punched Costa's transfer at seven-oh-five, the night the Adler woman died. He remembered the face — said the man had a bruise on his cheek that hadn't been there the day before."
+      bound_direction: "lower"
+      bound_value: "7:05 PM"
+      context_summary: "The streetcar conductor's punch-record places Costa boarding at 7:05 PM; he was loose in the city at that moment."
+    - text: "Mickey was last seen alive — and very much alone — by the doorman at the Astor at half past seven, the night of the killing."
+      bound_direction: "lower"
+      bound_value: "7:30 PM"
+      context_summary: "The Astor doorman puts the suspect on the sidewalk at 7:30 PM, free and unsupervised."
+    - text: "I caught up with the cigarette girl at the Indigo. She remembered him fine. 'About a quarter of eight,' she said, 'maybe a minute either side. Bought a pack of Luckies and didn't tip.'"
+      bound_direction: "lower"
+      bound_value: "7:45 PM"
+      context_summary: "The cigarette girl pegs Costa at the Indigo at 7:45 PM; her account establishes he was at large then."
+    - text: "The bartender at the Indigo served Costa a third gin at twenty after eight; Costa lingered another half hour, the bartender said, then left."
+      bound_direction: "lower"
+      bound_value: "8:50 PM"
+      context_summary: "The bartender's account stretches Costa's documented at-large time to roughly 8:50 PM, when he finally left the Indigo."
+    - text: "Two patrolmen on the Grand-Central beat said they tipped their caps to Costa as he came up out of the IRT — they fixed it at eight-thirty, give or take, because they had just turned the corner past the cigar shop."
+      bound_direction: "lower"
+      bound_value: "8:30 PM"
+      context_summary: "The two beat cops independently fix Costa emerging from the subway at 8:30 PM, free and visible."
+
+    # ---- 8 upper-bound items (suspect off the streets at/before time T; spread 9:05 PM - 1:00 AM) ----
+    - text: "The desk sergeant logged Costa's pickup at the precinct at five past nine — the suspect, demonstrably, was no longer at large."
+      bound_direction: "upper"
+      bound_value: "9:05 PM"
+      context_summary: "The precinct intake log proves Costa was in custody by 9:05 PM and could not have been on the streets after that hour."
+    - text: "The jail clerk pushed the booking slip across his desk and tapped the time stamp: nine-twenty, sharp. 'He's been ours since,' the clerk said, 'and he ain't going anywhere.'"
+      bound_direction: "upper"
+      bound_value: "9:20 PM"
+      context_summary: "The jail clerk's booking slip independently confirms Costa in lockup by 9:20 PM."
+    - text: "Costa's lawyer arrived at the holding cell at quarter to ten; Costa had been there for the better part of an hour by then."
+      bound_direction: "upper"
+      bound_value: "9:45 PM"
+      context_summary: "The lawyer's arrival time at the holding cell puts Costa firmly off the streets by 9:45 PM (and consistent with custody since around 9 PM)."
+    - text: "The night nurse at Bellevue had Costa sedated and under restraint from ten o'clock onward — there was no question of him leaving that ward."
+      bound_direction: "upper"
+      bound_value: "10:00 PM"
+      context_summary: "The hospital nurse's record shows Costa sedated and restrained from 10:00 PM, off the streets thereafter."
+    - text: "Mrs. Pavone, his landlady, watched him climb the stairs to his room at twenty past ten and bolted the front door behind him; she said the lock had not been turned again before morning."
+      bound_direction: "upper"
+      bound_value: "10:20 PM"
+      context_summary: "The landlady's bolt-the-door account places Costa locked inside the rooming house from 10:20 PM, accounted-for thereafter."
+    - text: "The hotel switchboard operator had Costa on a long-distance call to Newark from eleven that evening clear through midnight; she stayed on the line, as she did with every long-distance, and could swear to it."
+      bound_direction: "upper"
+      bound_value: "11:00 PM"
+      context_summary: "The switchboard operator's continuous monitoring of the call shows Costa on the hotel phone from 11:00 PM, alibi'd from then until midnight."
+    - text: "The night porter on the eastbound Twentieth Century swung Costa's bag aboard at eleven forty-five; he saw the man tucked into the lower berth and drew the curtain himself."
+      bound_direction: "upper"
+      bound_value: "11:45 PM"
+      context_summary: "The train porter's berth-record confirms Costa aboard a moving train by 11:45 PM, removed from the streets of the city."
+    - text: "By five of midnight, the theatre usher was certain — he'd walked Costa, dead drunk, into the manager's office to sleep it off, and the manager had locked the door from the outside."
+      bound_direction: "upper"
+      bound_value: "11:55 PM"
+      context_summary: "The usher and theatre manager together place Costa locked in the manager's office by 11:55 PM, accounted-for and unable to be on the streets after."
