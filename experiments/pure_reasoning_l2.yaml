@@ -145,4 +145,102 @@ fixed_pool:
       context_summary: "Hourly metrics rollup begins."
       variant_id: 0
       variant_text: "METRICS_ROLLUP_TRIGGER_S = 9000"
-  noir_fiction: []
+  noir_fiction:
+    # ---- 8 lower-bound items (suspect at large at/after time T) ----
+    - text: "Old Mrs. Halloran from across the hall swore on her late husband's grave that Costa came up the stoop and slammed his door at six on the dot — she had just put the kettle on and the radio was running the news."
+      bound_direction: "lower"
+      bound_value: "6:00 PM"
+      context_summary: "Neighbor narrator places Costa at the apartment building at 6:00 PM."
+      variant_id: 0
+      variant_text: "Old Mrs. Halloran from across the hall swore on her late husband's grave that Costa came up the stoop and slammed his door at six on the dot — she had just put the kettle on and the radio was running the news."
+    - text: "Eddie at the newsstand on Forty-Third remembered selling Costa an evening Standard at 18:15 — 'He paid in nickels, like always,' Eddie said, 'and walked off east toward the river.'"
+      bound_direction: "lower"
+      bound_value: "6:15 PM"
+      context_summary: "Newsstand vendor's account at 18:15 (24-hour clock variant)."
+      variant_id: 1
+      variant_text: "Eddie at the newsstand on Forty-Third remembered selling Costa an evening Standard at 18:15 — 'He paid in nickels, like always,' Eddie said, 'and walked off east toward the river.'"
+    - text: "Anchor: the rosary bell at St. Catherine's tolled at 6:00 PM sharp that evening. The Greek who runs the diner on Lex told me Costa took the corner booth fifty minutes after the rosary bell and ordered nothing — just sat. He left after maybe twenty minutes."
+      bound_direction: "lower"
+      bound_value: "6:50 PM"
+      context_summary: "Diner owner places Costa at 50 minutes after the 6:00 PM rosary bell anchor."
+      variant_id: 2
+      variant_text: "Anchor: the rosary bell at St. Catherine's tolled at 6:00 PM sharp that evening. The Greek who runs the diner on Lex told me Costa took the corner booth fifty minutes after the rosary bell and ordered nothing — just sat. He left after maybe twenty minutes."
+    - text: "A streetcar conductor punched Costa's transfer at seven-oh-five, the night the Adler woman died. He remembered the face — said the man had a bruise on his cheek that hadn't been there the day before."
+      bound_direction: "lower"
+      bound_value: "7:05 PM"
+      context_summary: "Streetcar conductor punches transfer at 7:05 PM."
+      variant_id: 0
+      variant_text: "A streetcar conductor punched Costa's transfer at seven-oh-five, the night the Adler woman died. He remembered the face — said the man had a bruise on his cheek that hadn't been there the day before."
+    - text: "Mickey was last seen alive — and very much alone — by the doorman at the Astor at 19:30, the night of the killing."
+      bound_direction: "lower"
+      bound_value: "7:30 PM"
+      context_summary: "Astor doorman's logbook shows the suspect at 19:30 (24-hour variant)."
+      variant_id: 1
+      variant_text: "Mickey was last seen alive — and very much alone — by the doorman at the Astor at 19:30, the night of the killing."
+    - text: "Anchor: the express to Chicago departed Penn at 7:00 PM that evening. I caught up with the cigarette girl at the Indigo. She remembered him fine. 'Forty-five minutes after the Chicago express pulled out,' she said, 'he bought a pack of Luckies and didn't tip.'"
+      bound_direction: "lower"
+      bound_value: "7:45 PM"
+      context_summary: "Cigarette girl pegs Costa at 45 minutes after the 7:00 PM Chicago express anchor."
+      variant_id: 2
+      variant_text: "Anchor: the express to Chicago departed Penn at 7:00 PM that evening. I caught up with the cigarette girl at the Indigo. She remembered him fine. 'Forty-five minutes after the Chicago express pulled out,' she said, 'he bought a pack of Luckies and didn't tip.'"
+    - text: "The bartender at the Indigo served Costa a third gin at twenty before nine; Costa lingered another ten minutes, the bartender said, then left at half past."
+      bound_direction: "lower"
+      bound_value: "8:50 PM"
+      context_summary: "Bartender's account stretches Costa's documented at-large time to 8:50 PM (colloquial variant)."
+      variant_id: 0
+      variant_text: "The bartender at the Indigo served Costa a third gin at twenty before nine; Costa lingered another ten minutes, the bartender said, then left at half past."
+    - text: "Two patrolmen on the Grand-Central beat said they tipped their caps to Costa as he came up out of the IRT — they fixed it at 20:30, give or take, because they had just turned the corner past the cigar shop."
+      bound_direction: "lower"
+      bound_value: "8:30 PM"
+      context_summary: "Beat cops fix Costa emerging from the subway at 20:30 (24-hour variant)."
+      variant_id: 1
+      variant_text: "Two patrolmen on the Grand-Central beat said they tipped their caps to Costa as he came up out of the IRT — they fixed it at 20:30, give or take, because they had just turned the corner past the cigar shop."
+    # ---- 8 upper-bound items (suspect off the streets at/before time T) ----
+    - text: "Anchor: the late edition went to press at 10:00 PM that evening. The desk sergeant logged Costa's pickup at the precinct fifty-five minutes before the late edition went to press — the suspect, demonstrably, was no longer at large."
+      bound_direction: "upper"
+      bound_value: "9:05 PM"
+      context_summary: "Precinct intake at 55 minutes before the 10:00 PM late edition anchor."
+      variant_id: 2
+      variant_text: "Anchor: the late edition went to press at 10:00 PM that evening. The desk sergeant logged Costa's pickup at the precinct fifty-five minutes before the late edition went to press — the suspect, demonstrably, was no longer at large."
+    - text: "The jail clerk pushed the booking slip across his desk and tapped the time stamp: nine-twenty, sharp. 'He's been ours since,' the clerk said, 'and he ain't going anywhere.'"
+      bound_direction: "upper"
+      bound_value: "9:20 PM"
+      context_summary: "Jail clerk's booking slip at 9:20 PM."
+      variant_id: 0
+      variant_text: "The jail clerk pushed the booking slip across his desk and tapped the time stamp: nine-twenty, sharp. 'He's been ours since,' the clerk said, 'and he ain't going anywhere.'"
+    - text: "Costa's lawyer arrived at the holding cell at 21:45; Costa had been there for the better part of an hour by then."
+      bound_direction: "upper"
+      bound_value: "9:45 PM"
+      context_summary: "Lawyer's arrival at 21:45 (24-hour variant)."
+      variant_id: 1
+      variant_text: "Costa's lawyer arrived at the holding cell at 21:45; Costa had been there for the better part of an hour by then."
+    - text: "Anchor: the second feature at the Roxy began at 9:30 PM that evening. The night nurse at Bellevue had Costa sedated and under restraint from thirty minutes after the second feature at the Roxy began — there was no question of him leaving that ward."
+      bound_direction: "upper"
+      bound_value: "10:00 PM"
+      context_summary: "Night nurse's record at 30 min after the 9:30 PM Roxy anchor."
+      variant_id: 2
+      variant_text: "Anchor: the second feature at the Roxy began at 9:30 PM that evening. The night nurse at Bellevue had Costa sedated and under restraint from thirty minutes after the second feature at the Roxy began — there was no question of him leaving that ward."
+    - text: "Mrs. Pavone, his landlady, watched him climb the stairs to his room at twenty past ten and bolted the front door behind him; she said the lock had not been turned again before morning."
+      bound_direction: "upper"
+      bound_value: "10:20 PM"
+      context_summary: "Landlady's bolt-the-door account at 10:20 PM (canonical clock-time variant)."
+      variant_id: 0
+      variant_text: "Mrs. Pavone, his landlady, watched him climb the stairs to his room at twenty past ten and bolted the front door behind him; she said the lock had not been turned again before morning."
+    - text: "The hotel switchboard operator had Costa on a long-distance call to Newark from 23:00 clear through midnight; she stayed on the line, as she did with every long-distance, and could swear to it."
+      bound_direction: "upper"
+      bound_value: "11:00 PM"
+      context_summary: "Switchboard operator's continuous call from 23:00 (24-hour variant)."
+      variant_id: 1
+      variant_text: "The hotel switchboard operator had Costa on a long-distance call to Newark from 23:00 clear through midnight; she stayed on the line, as she did with every long-distance, and could swear to it."
+    - text: "Anchor: the last ferry to Hoboken sailed at 11:00 PM that evening. The night porter on the eastbound Twentieth Century swung Costa's bag aboard forty-five minutes after the last Hoboken ferry sailed; he saw the man tucked into the lower berth and drew the curtain himself."
+      bound_direction: "upper"
+      bound_value: "11:45 PM"
+      context_summary: "Train porter's berth-record at 45 min after the 11:00 PM ferry anchor."
+      variant_id: 2
+      variant_text: "Anchor: the last ferry to Hoboken sailed at 11:00 PM that evening. The night porter on the eastbound Twentieth Century swung Costa's bag aboard forty-five minutes after the last Hoboken ferry sailed; he saw the man tucked into the lower berth and drew the curtain himself."
+    - text: "By five of midnight, the theatre usher was certain — he'd walked Costa, dead drunk, into the manager's office to sleep it off, and the manager had locked the door from the outside."
+      bound_direction: "upper"
+      bound_value: "11:55 PM"
+      context_summary: "Theatre usher places Costa locked in manager's office by 11:55 PM (canonical variant)."
+      variant_id: 0
+      variant_text: "By five of midnight, the theatre usher was certain — he'd walked Costa, dead drunk, into the manager's office to sleep it off, and the manager had locked the door from the outside."
