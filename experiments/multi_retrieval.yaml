@@ -1,0 +1,145 @@
+experiment_type: "multi_retrieval"
+
+payload:
+  item_type: "fact"
+
+question_examples:
+  python_repo:
+    hard_contextual:
+      question: |
+        I have added N={n} numeric tuning parameters to this codebase that govern a canary deployment / progressive rollout system. Find each one and report it as `<verbatim line of code> — value: <numeric value>`. Report all {n}.
+      answer: "List of {n} canary parameters with values"
+  noir_fiction:
+    hard_contextual:
+      question: |
+        I have added N={n} passages to this story that fix a specific time on the night before the murder. Find each one and report it as `<verbatim passage text> — time referenced: <e.g., 9:45 PM>`. Report all {n}.
+      answer: "List of {n} timing passages with times"
+
+rubric_criteria:
+  - criterion: "recall"
+    weight: 1.0
+  - criterion: "precision"
+    weight: 0.3
+
+grid:
+  content_profile: [python_repo, noir_fiction]
+  corpus_token_count: [800000]
+  discriminability: [hard]
+  reference_clarity: [contextual]
+  n_items: [2, 4, 8, 12, 16]
+
+fixed_pool:
+  python_repo:
+    - inserted_text: "CANARY_TRAFFIC_PCT = 5  # initial share of requests routed to the new build"
+      value: "5"
+      content_hint: "Lives in the deployment package's traffic-routing config, alongside load-balancer weights."
+    - inserted_text: "evaluation_window_minutes = 30  # how long we observe metrics before promoting"
+      value: "30"
+      content_hint: "Belongs in the release-controller module that watches metrics during a canary."
+    - inserted_text: "REGRESSION_P99_MULTIPLIER = 1.25  # abort if canary p99 latency exceeds baseline by this factor"
+      value: "1.25"
+      content_hint: "Threshold lives in the SLO-comparison helpers used by the canary judge."
+    - inserted_text: "auto_rollback_error_rate = 0.02  # error fraction that triggers an immediate rollback"
+      value: "0.02"
+      content_hint: "Sits in the safety-controller config next to other circuit-breaker thresholds."
+    - inserted_text: "MAX_BLAST_RADIUS_HOSTS = 12  # cap on hosts ever exposed to a failing build"
+      value: "12"
+      content_hint: "Lives in the fleet-orchestrator's safety limits, near concurrency caps."
+    - inserted_text: "synthetic_probe_ratio = 0.15  # fraction of canary traffic that is synthetic"
+      value: "0.15"
+      content_hint: "Used by the traffic-shaper that mixes real and replayed requests into the canary."
+    - inserted_text: "exposure_ramp_steps = [1, 5, 10, 25, 50, 100]  # percent of users at each ramp stage"
+      value: "[1, 5, 10, 25, 50, 100]"
+      content_hint: "Lives in the progressive-delivery scheduler that walks rollout through stages."
+    - inserted_text: "holdback_group_pct = 1.0  # users permanently kept on the old build for A/B comparison"
+      value: "1.0"
+      content_hint: "Belongs in the feature-flag service config, alongside cohort definitions."
+    - inserted_text: "abort_cooldown_seconds = 900  # minimum gap between an abort and the next retry"
+      value: "900"
+      content_hint: "Used by the deploy state-machine to throttle retries after a failed canary."
+    - inserted_text: "DRIFT_TOLERANCE_SIGMA = 3.0  # std-deviations of metric drift tolerated before alarm"
+      value: "3.0"
+      content_hint: "Lives in the metric-drift detector that compares canary distributions to baseline."
+    - inserted_text: "min_probe_success_ratio = 0.995  # canary judged unhealthy below this synthetic-probe pass rate"
+      value: "0.995"
+      content_hint: "Threshold lives in the probe-evaluator that scores synthetic checks."
+    - inserted_text: "health_check_interval_seconds = 10  # cadence of canary health polling"
+      value: "10"
+      content_hint: "Belongs in the canary-monitor loop, controlling how often health endpoints are scraped."
+    - inserted_text: "prod_promote_delay_seconds = 600  # mandatory soak after canary passes before full prod rollout"
+      value: "600"
+      content_hint: "Used by the promotion controller to force a quiet period between canary and prod."
+    - inserted_text: "FLAG_EXPOSURE_INCREMENT = 0.10  # fraction added to a feature flag per ramp tick"
+      value: "0.10"
+      content_hint: "Lives in the feature-flag rollout scheduler, separate from hard traffic splits."
+    - inserted_text: "stability_hold_duration_minutes = 45  # how long metrics must remain green before promotion"
+      value: "45"
+      content_hint: "Used by the stability-watcher that gates the promote step on sustained healthy windows."
+    - inserted_text: "approval_gate_timeout_hours = 4  # human-approval window before a canary auto-aborts"
+      value: "4"
+      content_hint: "Lives in the release-pipeline config alongside other gate timeouts."
+  noir_fiction:
+    - inserted_text: |-
+        Sully the deli owner remembered him fine. The radio was just rolling into the six o'clock news when Carney came in for a pack of Luckies and a copy of the evening paper. "I know it was six because Mr. Whittaker reads the headlines on the dot," Sully said. The day before he was found in the alley.
+      value: "6:00 PM"
+      content_hint: "Witness statement chapter, voice of a deli owner anchoring the time by a radio newscast."
+    - inserted_text: |-
+        From the case-file note, dated the eve of the killing: Subject sighted entering the Belmont Hotel lobby at six-thirty in the evening; the lobby clock chimed once for the half-hour as he crossed to the elevators (per doorman Ed Ruskin).
+      value: "6:30 PM"
+      content_hint: "Detective's case-file note quoting a doorman; the date in the file places it the previous evening."
+    - inserted_text: |-
+        Mrs. Ostrowski had been at her window across the airshaft. "He turned on the lamp by his desk just as the seven o'clock bells started up at St. Anselm's," she told the patrolman. That was the night before everything went bad.
+      value: "7:00 PM"
+      content_hint: "Neighbor witness in third-person investigative scene; church bells anchor the time."
+    - inserted_text: |-
+        The maitre d' at Renato's had to consult the reservation book, but his memory matched the page: Mr. Carney took the corner banquette at a quarter past seven on Tuesday — the evening before the morning the boy from the laundry found him.
+      value: "7:15 PM"
+      content_hint: "Restaurant scene; the maitre d' is interviewed; date framed as 'the evening before' the body's discovery."
+    - inserted_text: |-
+        A torn ticket stub turned up in the inside pocket. The Orpheum's seven-thirty showing of "Strangers in the Rain," dated the previous evening — the show had let out at nine-fifteen, the usher confirmed, and Carney had walked out alone.
+      value: "7:30 PM"
+      content_hint: "Evidence-list scene; physical artifact from the body anchors the time, with theatre usher corroborating."
+    - inserted_text: |-
+        Officer Donnelly's beat sheet for the previous tour had it neat: 8:00 PM, observed subject Carney loitering at the curb outside Hennessey's Tobacconist, North Clark Street, smoking and watching traffic. He moved off east when I tipped my cap.
+      value: "8:00 PM"
+      content_hint: "Police log entry from a beat cop's tour the night before the killing."
+    - inserted_text: |-
+        "He bought the aspirin and a tin of pastilles at eight-twenty," the pharmacist said, sliding the till tape across the counter. The tape was dated the day prior. "I remember because I was about to lock the front door — I close at eight-thirty sharp."
+      value: "8:20 PM"
+      content_hint: "Pharmacy witness scene; cash-register tape dated the previous day anchors the time."
+    - inserted_text: |-
+        The cabbie's trip sheet, surrendered to homicide that morning, had a fare logged the night before: pickup 8:45 PM, corner of Grand and Washington, single male passenger, destination 'the Avalon, members' entrance.'
+      value: "8:45 PM"
+      content_hint: "Taxi driver's trip sheet entered into evidence the morning after the murder."
+    - inserted_text: |-
+        Maeve, working the switchboard at the Belmont, had logged the call. "Room 412 placed an outgoing at nine sharp the previous night," she said, sliding her finger along the ledger column. "I know because the nine o'clock chimes were still going on the lobby radio."
+      value: "9:00 PM"
+      content_hint: "Hotel switchboard operator interview; ledger plus radio-chime cue anchor the time."
+    - inserted_text: |-
+        The bartender at Cleary's had a clear recollection of Carney's last drink the previous evening. "Rye, neat, around quarter past nine — I remember because the jukebox rolled over to that Sinatra record everyone was sick of, and he asked me to pull the plug."
+      value: "9:15 PM"
+      content_hint: "Bartender witness; jukebox record-change anchors the time."
+    - inserted_text: |-
+        On the night that preceded the discovery, the 9:32 local out of LaSalle Street was, per Porter Eli Hawkins's logbook, three minutes late departing — and Hawkins distinctly recalled punching a one-way ticket for a man matching Carney's description, who took the smoking car and never spoke a word.
+      value: "9:32 PM"
+      content_hint: "Train porter's logbook; precise scheduled departure time anchors the moment."
+    - inserted_text: |-
+        Mrs. Petrovich, the landlady at 414 West Erie, knocked at apartment 3B at ten o'clock the evening before the killing, to deliver a telegram. "He answered in his shirtsleeves, and the radio was tuned to that Lights Out program — you know, the spooky one. That's a ten o'clock show."
+      value: "10:00 PM"
+      content_hint: "Landlady witness; radio program schedule confirms the time."
+    - inserted_text: |-
+        From the diary of Rose Calabrese, recovered later from her vanity drawer: 'Tuesday — I saw him crossing under the streetlight at the corner near half-past ten. He was alone and walking quick. I should have called out. Tomorrow I'll telephone.' The entry was the last she ever made before the news broke.
+      value: "10:30 PM"
+      content_hint: "Diary entry by an acquaintance, dated the night before the murder."
+    - inserted_text: |-
+        The night clerk at the Greyhound depot stamped the parcel ticket at 11:00 PM — that much was on the carbon. He remembered Carney because the man had been sweating in the cold, asking three times whether the package would be in Cleveland by morning. The clerk filed the carbon away the night before the body was found.
+      value: "11:00 PM"
+      content_hint: "Bus-depot clerk; timestamped carbon ticket anchors the moment."
+    - inserted_text: |-
+        Last call at the Velvet Spur came down at half-past eleven on the eve of the killing, and Lila the hat-check girl was certain. "He left without his coat," she said. "Nobody leaves a camel-hair like that behind unless they're in a hurry or already dead inside."
+      value: "11:30 PM"
+      content_hint: "Late-night club scene with the hat-check girl narrating the timing of last call."
+    - inserted_text: |-
+        The harbormaster's deck clock read twelve-fifteen when the last ferry of the night cleared Pier 11 — and Mate Sorensen, signing the manifest in the wheelhouse, would later swear to homicide that a man answering Carney's description had stood alone at the stern rail, watching the city recede, on the crossing that preceded the murder by mere hours.
+      value: "12:15 AM"
+      content_hint: "Maritime witness; ferry crew report; harbormaster's deck clock anchors the late-night time."
