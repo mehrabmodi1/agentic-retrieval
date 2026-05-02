@@ -37,7 +37,7 @@ grid:
   corpus_token_count: [40000]
   discriminability: [easy]
   reference_clarity: [synonym]
-  n_items: [4, 6, 10, 12, 14]
+  n_items: [4, 6, 8, 10, 12, 14]
 
 rubric_criteria:
   - criterion: "correctness"
