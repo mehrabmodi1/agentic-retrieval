@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import json
 import shutil
 from datetime import datetime, timezone
 from pathlib import Path
@@ -35,7 +36,9 @@ def build_fixed_insertion_prompt(
 
     Differs from build_insertion_prompt in that the needles are fixed —
     the agent's only job is to find good insertion sites and report
-    file_path + line_range per item.
+    file_path + line_range per item.  The agent writes a simple JSON
+    locations file (not the full YAML answer key); the driver writes the
+    schema-valid AK after the SDK call returns.
     """
     n_items = parametrisation.n_items or len(selected_items)
     needles_block = "\n".join(
@@ -44,6 +47,7 @@ def build_fixed_insertion_prompt(
         f"   content_hint: {item.get('content_hint', '')!r}"
         for i, item in enumerate(selected_items)
     )
+    locations_path = answer_key_path.with_suffix(".locations.json")
 
     return (
         f"You are inserting {n_items} pre-authored needles into a corpus for a "
@@ -61,24 +65,22 @@ def build_fixed_insertion_prompt(
         f"insertion line within that fragment where the needle reads naturally.\n"
         f"2. Use the Edit tool to insert each needle VERBATIM (same text, same "
         f"capitalisation, same operators, same spacing).\n"
-        f"3. Write the answer key YAML to {answer_key_path.resolve()} using the "
-        f"schema below. For each item, fill in file_path, line_range, and "
-        f"context_summary; copy inserted_text and value verbatim from the needles "
-        f"above.\n\n"
+        f"3. Write a JSON file to {locations_path.resolve()} that records where "
+        f"each needle was inserted. This is your ONLY output file — do NOT write "
+        f"a YAML answer key.\n\n"
         f"IMPORTANT: Batch ALL Edit and Write tool calls into a single response. "
         f"Do not use multiple turns.\n\n"
-        f"## Answer key schema\n"
-        f"```yaml\n"
-        f"parametrisation_id: \"{parametrisation.parametrisation_id}\"\n"
-        f"experiment_type: \"multi_retrieval\"\n"
-        f"items:\n"
-        f"  - item_id: \"target_001\"\n"
-        f"    inserted_text: \"<verbatim from needle 1>\"\n"
-        f"    value: \"<verbatim from needle 1>\"\n"
-        f"    file_path: \"<relative path>\"\n"
-        f"    line_range: [<start>, <end>]\n"
-        f"    context_summary: \"<one sentence>\"\n"
-        f"  # ... item_002 through item_{n_items:03d}\n"
+        f"## locations.json schema\n"
+        f"The file must be a JSON array with exactly {n_items} objects, one per "
+        f"needle in order (needle 1 → target_001, etc.):\n"
+        f"```json\n"
+        f"[\n"
+        f"  {{\"item_id\": \"target_001\", \"file_path\": \"<relative path>\", "
+        f"\"line_range\": [<start>, <end>], \"context_summary\": \"<one sentence>\"}},\n"
+        f"  {{\"item_id\": \"target_002\", \"file_path\": \"<relative path>\", "
+        f"\"line_range\": [<start>, <end>], \"context_summary\": \"<one sentence>\"}}\n"
+        f"  // ... through target_{n_items:03d}\n"
+        f"]\n"
         f"```\n"
     )
 
@@ -219,6 +221,29 @@ async def insert_fixed_payloads(
             stats.is_error = message.is_error
             stats.errors = message.errors or []
             break
+
+    # Driver writes the schema-valid AK from the agent-produced locations file.
+    locations_path = answer_key_path.with_suffix(".locations.json")
+    locations_ok = locations_path.exists()
+    if locations_ok:
+        try:
+            locations = json.loads(locations_path.read_text())
+            if len(locations) < n_items:
+                locations_ok = False
+                stats.errors.append(
+                    f"locations.json has {len(locations)} entries, expected {n_items}"
+                )
+        except Exception as exc:
+            locations_ok = False
+            stats.errors.append(f"failed to parse locations.json: {exc}")
+
+    if locations_ok:
+        items_with_locations = [
+            {**selected[i], **locations[i]}
+            for i in range(n_items)
+        ]
+        write_fixed_pool_answer_key(template, parametrisation, items_with_locations, answer_key_path)
+        locations_path.unlink(missing_ok=True)
 
     stats.answer_key_written = answer_key_path.exists()
     if not stats.answer_key_written and stats.tool_calls:

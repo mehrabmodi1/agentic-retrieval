@@ -86,6 +86,36 @@ class TestBuildFixedInsertionPrompt:
         # Must explicitly forbid invention.
         assert "do not invent" in prompt.lower() or "do not modify" in prompt.lower()
 
+    def test_prompt_instructs_json_locations_file(self, sample_template):
+        """Prompt must tell the agent to write a JSON locations file, not a YAML AK."""
+        param = Parametrisation(
+            experiment_type="multi_retrieval",
+            content_profile="python_repo",
+            corpus_token_count=800000,
+            discriminability="hard",
+            reference_clarity="contextual",
+            n_items=2,
+        )
+        selected = sample_template.fixed_pool["python_repo"]
+        ak_path = Path("/tmp/ak.yaml")
+        prompt = build_fixed_insertion_prompt(
+            template=sample_template,
+            parametrisation=param,
+            selected_items=selected,
+            target_files_content="...",
+            answer_key_path=ak_path,
+        )
+        # Must reference the locations.json path (not the YAML AK path directly).
+        expected_locations = str(ak_path.with_suffix(".locations.json").resolve())
+        assert expected_locations in prompt
+        # Must describe the JSON shape with required keys.
+        assert "item_id" in prompt
+        assert "file_path" in prompt
+        assert "line_range" in prompt
+        assert "context_summary" in prompt
+        # Must NOT instruct agent to write YAML answer key.
+        assert ".yaml" not in prompt
+
 
 class TestWriteFixedPoolAnswerKey:
     def test_writes_valid_answer_key_with_values(self, sample_template, tmp_path):
