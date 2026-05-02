@@ -215,4 +215,152 @@ fixed_pool:
       gate_clause: "If read_traffic_paused, then"
       gate_world_var: "read_traffic_paused"
       live: false
-  noir_fiction: []
+  noir_fiction:
+    # ---- (live, lower) ----
+    - text: "If Vincent did return from Brooklyn that night, then Old Mrs. Halloran from across the hall swore on her late husband's grave that Costa came up the stoop and slammed his door at six on the dot — she had just put the kettle on and the radio was running the news."
+      bound_direction: "lower"
+      bound_value: "6:00 PM"
+      context_summary: "Mrs. Halloran's account at 6:00 PM; gated on Vincent's return."
+      variant_id: 0
+      variant_text: "Old Mrs. Halloran from across the hall swore on her late husband's grave that Costa came up the stoop and slammed his door at six on the dot — she had just put the kettle on and the radio was running the news."
+      gate_clause: "If Vincent did return from Brooklyn that night, then"
+      gate_world_var: "vincent_returned_from_brooklyn"
+      live: true
+    - text: "If Vincent did return from Brooklyn that night, then Eddie at the newsstand on Forty-Third remembered selling Costa an evening Standard at 18:15 — 'He paid in nickels, like always,' Eddie said, 'and walked off east toward the river.'"
+      bound_direction: "lower"
+      bound_value: "6:15 PM"
+      context_summary: "Eddie's newsstand account at 18:15; gated on Vincent's return."
+      variant_id: 1
+      variant_text: "Eddie at the newsstand on Forty-Third remembered selling Costa an evening Standard at 18:15 — 'He paid in nickels, like always,' Eddie said, 'and walked off east toward the river.'"
+      gate_clause: "If Vincent did return from Brooklyn that night, then"
+      gate_world_var: "vincent_returned_from_brooklyn"
+      live: true
+    - text: "If the dispatcher's logbook is reliable, then Anchor: the rosary bell at St. Catherine's tolled at 6:00 PM sharp that evening. The Greek who runs the diner on Lex told me Costa took the corner booth fifty minutes after the rosary bell and ordered nothing — just sat. He left after maybe twenty minutes."
+      bound_direction: "lower"
+      bound_value: "6:50 PM"
+      context_summary: "Diner owner's account at 50 min after rosary bell anchor; gated on dispatcher logbook."
+      variant_id: 2
+      variant_text: "Anchor: the rosary bell at St. Catherine's tolled at 6:00 PM sharp that evening. The Greek who runs the diner on Lex told me Costa took the corner booth fifty minutes after the rosary bell and ordered nothing — just sat. He left after maybe twenty minutes."
+      gate_clause: "If the dispatcher's logbook is reliable, then"
+      gate_world_var: "dispatcher_logbook_reliable"
+      live: true
+    - text: "If the dispatcher's logbook is reliable, then a streetcar conductor punched Costa's transfer at seven-oh-five, the night the Adler woman died. He remembered the face — said the man had a bruise on his cheek that hadn't been there the day before."
+      bound_direction: "lower"
+      bound_value: "7:05 PM"
+      context_summary: "Streetcar conductor's punch at 7:05 PM; gated on dispatcher logbook."
+      variant_id: 0
+      variant_text: "A streetcar conductor punched Costa's transfer at seven-oh-five, the night the Adler woman died. He remembered the face — said the man had a bruise on his cheek that hadn't been there the day before."
+      gate_clause: "If the dispatcher's logbook is reliable, then"
+      gate_world_var: "dispatcher_logbook_reliable"
+      live: true
+    # ---- (live, upper) ----
+    - text: "If Vincent did return from Brooklyn that night, then Anchor: the late edition went to press at 10:00 PM that evening. The desk sergeant logged Costa's pickup at the precinct fifty-five minutes before the late edition went to press — the suspect, demonstrably, was no longer at large."
+      bound_direction: "upper"
+      bound_value: "9:05 PM"
+      context_summary: "Precinct intake at 9:05 PM via 10 PM late-edition anchor; gated on Vincent's return."
+      variant_id: 2
+      variant_text: "Anchor: the late edition went to press at 10:00 PM that evening. The desk sergeant logged Costa's pickup at the precinct fifty-five minutes before the late edition went to press — the suspect, demonstrably, was no longer at large."
+      gate_clause: "If Vincent did return from Brooklyn that night, then"
+      gate_world_var: "vincent_returned_from_brooklyn"
+      live: true
+    - text: "If Vincent did return from Brooklyn that night, then the jail clerk pushed the booking slip across his desk and tapped the time stamp: nine-twenty, sharp. 'He's been ours since,' the clerk said, 'and he ain't going anywhere.'"
+      bound_direction: "upper"
+      bound_value: "9:20 PM"
+      context_summary: "Jail clerk's booking slip at 9:20 PM; gated on Vincent's return."
+      variant_id: 0
+      variant_text: "The jail clerk pushed the booking slip across his desk and tapped the time stamp: nine-twenty, sharp. 'He's been ours since,' the clerk said, 'and he ain't going anywhere.'"
+      gate_clause: "If Vincent did return from Brooklyn that night, then"
+      gate_world_var: "vincent_returned_from_brooklyn"
+      live: true
+    - text: "If the dispatcher's logbook is reliable, then Costa's lawyer arrived at the holding cell at 21:45; Costa had been there for the better part of an hour by then."
+      bound_direction: "upper"
+      bound_value: "9:45 PM"
+      context_summary: "Lawyer's arrival at 21:45; gated on dispatcher logbook."
+      variant_id: 1
+      variant_text: "Costa's lawyer arrived at the holding cell at 21:45; Costa had been there for the better part of an hour by then."
+      gate_clause: "If the dispatcher's logbook is reliable, then"
+      gate_world_var: "dispatcher_logbook_reliable"
+      live: true
+    - text: "If the dispatcher's logbook is reliable, then Anchor: the second feature at the Roxy began at 9:30 PM that evening. The night nurse at Bellevue had Costa sedated and under restraint from thirty minutes after the second feature at the Roxy began — there was no question of him leaving that ward."
+      bound_direction: "upper"
+      bound_value: "10:00 PM"
+      context_summary: "Nurse's record at 10 PM via Roxy 9:30 PM anchor; gated on dispatcher logbook."
+      variant_id: 2
+      variant_text: "Anchor: the second feature at the Roxy began at 9:30 PM that evening. The night nurse at Bellevue had Costa sedated and under restraint from thirty minutes after the second feature at the Roxy began — there was no question of him leaving that ward."
+      gate_clause: "If the dispatcher's logbook is reliable, then"
+      gate_world_var: "dispatcher_logbook_reliable"
+      live: true
+    # ---- (dead, lower) ----
+    - text: "If the lawyer was telling the truth, then Mickey was last seen alive — and very much alone — by the doorman at the Astor at 19:30, the night of the killing."
+      bound_direction: "lower"
+      bound_value: "7:30 PM"
+      context_summary: "Doorman's logbook at 19:30; gated on lawyer's truthfulness (off)."
+      variant_id: 1
+      variant_text: "Mickey was last seen alive — and very much alone — by the doorman at the Astor at 19:30, the night of the killing."
+      gate_clause: "If the lawyer was telling the truth, then"
+      gate_world_var: "lawyer_was_truthful"
+      live: false
+    - text: "If the lawyer was telling the truth, then Anchor: the express to Chicago departed Penn at 7:00 PM that evening. I caught up with the cigarette girl at the Indigo. She remembered him fine. 'Forty-five minutes after the Chicago express pulled out,' she said, 'he bought a pack of Luckies and didn't tip.'"
+      bound_direction: "lower"
+      bound_value: "7:45 PM"
+      context_summary: "Cigarette girl at 45 min after 7 PM Chicago express anchor; gated on lawyer's truthfulness (off)."
+      variant_id: 2
+      variant_text: "Anchor: the express to Chicago departed Penn at 7:00 PM that evening. I caught up with the cigarette girl at the Indigo. She remembered him fine. 'Forty-five minutes after the Chicago express pulled out,' she said, 'he bought a pack of Luckies and didn't tip.'"
+      gate_clause: "If the lawyer was telling the truth, then"
+      gate_world_var: "lawyer_was_truthful"
+      live: false
+    - text: "If the conductor's punch records were accurate that night, then the bartender at the Indigo served Costa a third gin at twenty before nine; Costa lingered another ten minutes, the bartender said, then left at half past."
+      bound_direction: "lower"
+      bound_value: "8:50 PM"
+      context_summary: "Bartender's account at 8:50 PM; gated on conductor records (off)."
+      variant_id: 0
+      variant_text: "The bartender at the Indigo served Costa a third gin at twenty before nine; Costa lingered another ten minutes, the bartender said, then left at half past."
+      gate_clause: "If the conductor's punch records were accurate that night, then"
+      gate_world_var: "conductor_punch_records_accurate"
+      live: false
+    - text: "If the conductor's punch records were accurate that night, then two patrolmen on the Grand-Central beat said they tipped their caps to Costa as he came up out of the IRT — they fixed it at 20:30, give or take, because they had just turned the corner past the cigar shop."
+      bound_direction: "lower"
+      bound_value: "8:30 PM"
+      context_summary: "Patrolmen's account at 20:30; gated on conductor records (off)."
+      variant_id: 1
+      variant_text: "Two patrolmen on the Grand-Central beat said they tipped their caps to Costa as he came up out of the IRT — they fixed it at 20:30, give or take, because they had just turned the corner past the cigar shop."
+      gate_clause: "If the conductor's punch records were accurate that night, then"
+      gate_world_var: "conductor_punch_records_accurate"
+      live: false
+    # ---- (dead, upper) ----
+    - text: "If the lawyer was telling the truth, then Mrs. Pavone, his landlady, watched him climb the stairs to his room at twenty past ten and bolted the front door behind him; she said the lock had not been turned again before morning."
+      bound_direction: "upper"
+      bound_value: "10:20 PM"
+      context_summary: "Landlady's bolt-the-door at 10:20 PM; gated on lawyer's truthfulness (off)."
+      variant_id: 0
+      variant_text: "Mrs. Pavone, his landlady, watched him climb the stairs to his room at twenty past ten and bolted the front door behind him; she said the lock had not been turned again before morning."
+      gate_clause: "If the lawyer was telling the truth, then"
+      gate_world_var: "lawyer_was_truthful"
+      live: false
+    - text: "If the lawyer was telling the truth, then the hotel switchboard operator had Costa on a long-distance call to Newark from 23:00 clear through midnight; she stayed on the line, as she did with every long-distance, and could swear to it."
+      bound_direction: "upper"
+      bound_value: "11:00 PM"
+      context_summary: "Switchboard operator's continuous call from 23:00; gated on lawyer's truthfulness (off)."
+      variant_id: 1
+      variant_text: "The hotel switchboard operator had Costa on a long-distance call to Newark from 23:00 clear through midnight; she stayed on the line, as she did with every long-distance, and could swear to it."
+      gate_clause: "If the lawyer was telling the truth, then"
+      gate_world_var: "lawyer_was_truthful"
+      live: false
+    - text: "If the conductor's punch records were accurate that night, then Anchor: the last ferry to Hoboken sailed at 11:00 PM that evening. The night porter on the eastbound Twentieth Century swung Costa's bag aboard forty-five minutes after the last Hoboken ferry sailed; he saw the man tucked into the lower berth and drew the curtain himself."
+      bound_direction: "upper"
+      bound_value: "11:45 PM"
+      context_summary: "Train porter at 45 min after 11 PM ferry anchor; gated on conductor records (off)."
+      variant_id: 2
+      variant_text: "Anchor: the last ferry to Hoboken sailed at 11:00 PM that evening. The night porter on the eastbound Twentieth Century swung Costa's bag aboard forty-five minutes after the last Hoboken ferry sailed; he saw the man tucked into the lower berth and drew the curtain himself."
+      gate_clause: "If the conductor's punch records were accurate that night, then"
+      gate_world_var: "conductor_punch_records_accurate"
+      live: false
+    - text: "If the conductor's punch records were accurate that night, then by five of midnight, the theatre usher was certain — he'd walked Costa, dead drunk, into the manager's office to sleep it off, and the manager had locked the door from the outside."
+      bound_direction: "upper"
+      bound_value: "11:55 PM"
+      context_summary: "Theatre usher at 11:55 PM; gated on conductor records (off)."
+      variant_id: 0
+      variant_text: "By five of midnight, the theatre usher was certain — he'd walked Costa, dead drunk, into the manager's office to sleep it off, and the manager had locked the door from the outside."
+      gate_clause: "If the conductor's punch records were accurate that night, then"
+      gate_world_var: "conductor_punch_records_accurate"
+      live: false
