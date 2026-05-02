@@ -1,0 +1,218 @@
+experiment_type: "pure_reasoning_l3"
+
+payload:
+  item_type: "fact"
+
+question_examples:
+  python_repo:
+    hard_contextual:
+      question: |
+        You are running a database migration. It must execute during a window of system quiescence. Below are {n} numeric configuration parameters from across the service. Each implies a constraint on *when* the migration can safely begin and end relative to a reference event.
+
+        Some parameters establish a *lower bound* on the migration start time (must wait at least X seconds after the reference event); others establish an *upper bound* on the migration end time (must complete before X seconds after the reference event).
+
+        Some constraints are stated in mixed units or relative to a named reference. Normalise to a common scale (seconds) before reasoning.
+
+        The constraints are conditional on the current system state. Some apply only if the corresponding precondition holds. Use only constraints whose preconditions are satisfied. Ignore the rest.
+
+        World state:
+        {world_state_block}
+
+        Below are the {n} facts:
+
+        {facts_block}
+
+        Derive the narrowest safe-migration window [earliest_start, latest_end] consistent with all *applicable* constraints. For each endpoint, cite the parameter that establishes it. Justify your classification of each parameter's bound direction, and call out which parameters were ignored because their precondition was not satisfied.
+      answer: "Window endpoints with citations"
+  noir_fiction:
+    hard_contextual:
+      question: |
+        You are given {n} pieces of evidence from a homicide investigation, each pertaining to events on the night of the murder. Some pieces establish that the suspect was at large at or after a specific time; others establish that the suspect was off-the-streets at or before a specific time.
+
+        Some pieces are stated as clock times, others as offsets from a named anchor event, and some on a 24-hour clock or in colloquial form. Normalise to a single clock-time scale before reasoning.
+
+        Each piece of evidence is conditional on a separately-attested fact about that night. Use only pieces whose precondition is corroborated; ignore those that are not.
+
+        Corroborated facts:
+        {world_state_block}
+
+        Below are the {n} pieces of evidence:
+
+        {facts_block}
+
+        Derive the narrowest defensible time window during which the suspect was at large on the night of the murder. Cite the specific pieces of evidence that establish your window's lower and upper bounds. Justify your classification of each piece of evidence's bound direction, and call out which pieces were ignored because their precondition was not corroborated.
+      answer: "Window endpoints with citations"
+
+rubric_criteria:
+  - criterion: "endpoint_correctness"
+    weight: 1.0
+  - criterion: "classification_accuracy"
+    weight: 0.5
+
+grid:
+  content_profile: [python_repo, noir_fiction]
+  n_items: [2, 4, 8, 12, 16]
+
+world_state:
+  python_repo:
+    current_phase: "rolling"
+    replica_promoted: true
+    dual_write_enabled: false
+    read_traffic_paused: false
+  noir_fiction:
+    vincent_returned_from_brooklyn: true
+    dispatcher_logbook_reliable: true
+    lawyer_was_truthful: false
+    conductor_punch_records_accurate: false
+
+fixed_pool:
+  python_repo:
+    # ---- (live, lower) — gate var TRUE, 4 items ----
+    - text: "If current_phase == 'rolling', then REPLICATION_LAG_RECOVERY_S = 300"
+      bound_direction: "lower"
+      bound_value: "300"
+      context_summary: "Replication lag recovery; gated on rolling phase."
+      variant_id: 0
+      variant_text: "REPLICATION_LAG_RECOVERY_S = 300"
+      gate_clause: "If current_phase == 'rolling', then"
+      gate_world_var: "current_phase"
+      live: true
+    - text: "If current_phase == 'rolling', then CERT_ROTATION_GRACE_MIN = 30  # minutes"
+      bound_direction: "lower"
+      bound_value: "1800"
+      context_summary: "Cert rotation grace; minutes; gated on rolling phase."
+      variant_id: 1
+      variant_text: "CERT_ROTATION_GRACE_MIN = 30  # minutes"
+      gate_clause: "If current_phase == 'rolling', then"
+      gate_world_var: "current_phase"
+      live: true
+    - text: "If replica_promoted, then Reference: HOURLY_KICK_S = 3600. Then DDL_LOCK_COOLDOWN_OFFSET_S = 3000  # seconds before HOURLY_KICK"
+      bound_direction: "lower"
+      bound_value: "600"
+      context_summary: "DDL lock cooldown; offset variant; gated on replica promotion."
+      variant_id: 2
+      variant_text: "Reference: HOURLY_KICK_S = 3600. Then DDL_LOCK_COOLDOWN_OFFSET_S = 3000  # seconds before HOURLY_KICK"
+      gate_clause: "If replica_promoted, then"
+      gate_world_var: "replica_promoted"
+      live: true
+    - text: "If replica_promoted, then LEADER_ELECTION_QUIESCE_S = 900"
+      bound_direction: "lower"
+      bound_value: "900"
+      context_summary: "Leader election quiesce; gated on replica promotion."
+      variant_id: 0
+      variant_text: "LEADER_ELECTION_QUIESCE_S = 900"
+      gate_clause: "If replica_promoted, then"
+      gate_world_var: "replica_promoted"
+      live: true
+    # ---- (live, upper) — gate var TRUE, 4 items ----
+    - text: "If current_phase == 'rolling', then Reference: WEEKEND_ROLLOVER_S = 86400. Then BACKUP_WINDOW_OPEN_OFFSET_S = 79200  # seconds before WEEKEND_ROLLOVER"
+      bound_direction: "upper"
+      bound_value: "7200"
+      context_summary: "Backup window open; offset variant; gated on rolling phase."
+      variant_id: 2
+      variant_text: "Reference: WEEKEND_ROLLOVER_S = 86400. Then BACKUP_WINDOW_OPEN_OFFSET_S = 79200  # seconds before WEEKEND_ROLLOVER"
+      gate_clause: "If current_phase == 'rolling', then"
+      gate_world_var: "current_phase"
+      live: true
+    - text: "If current_phase == 'rolling', then PEAK_TRAFFIC_RAMP_BEGIN_S = 5400"
+      bound_direction: "upper"
+      bound_value: "5400"
+      context_summary: "Peak traffic ramp begin; gated on rolling phase."
+      variant_id: 0
+      variant_text: "PEAK_TRAFFIC_RAMP_BEGIN_S = 5400"
+      gate_clause: "If current_phase == 'rolling', then"
+      gate_world_var: "current_phase"
+      live: true
+    - text: "If replica_promoted, then AUTOSCALER_SCALEDOWN_DEADLINE_MIN = 180  # minutes"
+      bound_direction: "upper"
+      bound_value: "10800"
+      context_summary: "Autoscaler scaledown deadline; minutes; gated on replica promotion."
+      variant_id: 1
+      variant_text: "AUTOSCALER_SCALEDOWN_DEADLINE_MIN = 180  # minutes"
+      gate_clause: "If replica_promoted, then"
+      gate_world_var: "replica_promoted"
+      live: true
+    - text: "If replica_promoted, then Reference: NIGHTLY_LOG_TRIM_S = 28800. Then WEEKLY_SNAPSHOT_KICKOFF_OFFSET_S = 3600  # seconds before NIGHTLY_LOG_TRIM (negative = after)"
+      bound_direction: "upper"
+      bound_value: "25200"
+      context_summary: "Weekly snapshot kickoff; offset variant; gated on replica promotion."
+      variant_id: 2
+      variant_text: "Reference: NIGHTLY_LOG_TRIM_S = 28800. Then WEEKLY_SNAPSHOT_KICKOFF_OFFSET_S = 3600  # seconds before NIGHTLY_LOG_TRIM (negative = after)"
+      gate_clause: "If replica_promoted, then"
+      gate_world_var: "replica_promoted"
+      live: true
+    # ---- (dead, lower) — gate var FALSE, 4 items ----
+    - text: "If dual_write_enabled, then AUTOVACUUM_TAIL_DRAIN_MS = 1200000  # milliseconds"
+      bound_direction: "lower"
+      bound_value: "1200"
+      context_summary: "Autovacuum tail drain; ms variant; gated on dual-write (off)."
+      variant_id: 1
+      variant_text: "AUTOVACUUM_TAIL_DRAIN_MS = 1200000  # milliseconds"
+      gate_clause: "If dual_write_enabled, then"
+      gate_world_var: "dual_write_enabled"
+      live: false
+    - text: "If dual_write_enabled, then Reference: BACKUP_FINISH_S = 600. Then INFLIGHT_RPC_DRAIN_OFFSET_S = 420  # seconds before BACKUP_FINISH"
+      bound_direction: "lower"
+      bound_value: "180"
+      context_summary: "RPC drain; offset variant; gated on dual-write (off)."
+      variant_id: 2
+      variant_text: "Reference: BACKUP_FINISH_S = 600. Then INFLIGHT_RPC_DRAIN_OFFSET_S = 420  # seconds before BACKUP_FINISH"
+      gate_clause: "If dual_write_enabled, then"
+      gate_world_var: "dual_write_enabled"
+      live: false
+    - text: "If read_traffic_paused, then TRACE_FLUSH_BUFFER_S = 120"
+      bound_direction: "lower"
+      bound_value: "120"
+      context_summary: "Trace flush buffer; gated on read-traffic-paused (off)."
+      variant_id: 0
+      variant_text: "TRACE_FLUSH_BUFFER_S = 120"
+      gate_clause: "If read_traffic_paused, then"
+      gate_world_var: "read_traffic_paused"
+      live: false
+    - text: "If read_traffic_paused, then ON_CALL_HANDOFF_QUIET_MIN = 25  # minutes"
+      bound_direction: "lower"
+      bound_value: "1500"
+      context_summary: "On-call handoff quiet; minutes; gated on read-traffic-paused (off)."
+      variant_id: 1
+      variant_text: "ON_CALL_HANDOFF_QUIET_MIN = 25  # minutes"
+      gate_clause: "If read_traffic_paused, then"
+      gate_world_var: "read_traffic_paused"
+      live: false
+    # ---- (dead, upper) — gate var FALSE, 4 items ----
+    - text: "If dual_write_enabled, then DEPLOY_FREEZE_BOUNDARY_S = 14400"
+      bound_direction: "upper"
+      bound_value: "14400"
+      context_summary: "Deploy freeze boundary; gated on dual-write (off)."
+      variant_id: 0
+      variant_text: "DEPLOY_FREEZE_BOUNDARY_S = 14400"
+      gate_clause: "If dual_write_enabled, then"
+      gate_world_var: "dual_write_enabled"
+      live: false
+    - text: "If dual_write_enabled, then ALERTING_SILENCE_EXPIRES_MIN = 75  # minutes"
+      bound_direction: "upper"
+      bound_value: "4500"
+      context_summary: "Alerting silence expires; minutes; gated on dual-write (off)."
+      variant_id: 1
+      variant_text: "ALERTING_SILENCE_EXPIRES_MIN = 75  # minutes"
+      gate_clause: "If dual_write_enabled, then"
+      gate_world_var: "dual_write_enabled"
+      live: false
+    - text: "If read_traffic_paused, then Reference: SHIFT_END_S = 21600. Then PLANNED_MAINTENANCE_CLOSE_OFFSET_S = 3600  # seconds before SHIFT_END (negative = after)"
+      bound_direction: "upper"
+      bound_value: "18000"
+      context_summary: "Planned maintenance close; offset variant; gated on read-traffic-paused (off)."
+      variant_id: 2
+      variant_text: "Reference: SHIFT_END_S = 21600. Then PLANNED_MAINTENANCE_CLOSE_OFFSET_S = 3600  # seconds before SHIFT_END (negative = after)"
+      gate_clause: "If read_traffic_paused, then"
+      gate_world_var: "read_traffic_paused"
+      live: false
+    - text: "If read_traffic_paused, then METRICS_ROLLUP_TRIGGER_S = 9000"
+      bound_direction: "upper"
+      bound_value: "9000"
+      context_summary: "Metrics rollup trigger; gated on read-traffic-paused (off)."
+      variant_id: 0
+      variant_text: "METRICS_ROLLUP_TRIGGER_S = 9000"
+      gate_clause: "If read_traffic_paused, then"
+      gate_world_var: "read_traffic_paused"
+      live: false
+  noir_fiction: []
