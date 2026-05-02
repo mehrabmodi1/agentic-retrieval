@@ -45,6 +45,48 @@ def sample_template() -> ExperimentTemplate:
     })
 
 
+@pytest.fixture
+def large_template() -> ExperimentTemplate:
+    """Template with 8 lower + 8 upper pool entries for balance_key testing."""
+    lower_items = [
+        {"text": f"LOWER_CONST_{i} = {100 + i * 10}", "bound_direction": "lower",
+         "bound_value": str(100 + i * 10), "context_summary": f"lower fact {i}"}
+        for i in range(8)
+    ]
+    upper_items = [
+        {"text": f"UPPER_CONST_{i} = {500 + i * 10}", "bound_direction": "upper",
+         "bound_value": str(500 + i * 10), "context_summary": f"upper fact {i}"}
+        for i in range(8)
+    ]
+    return ExperimentTemplate.model_validate({
+        "experiment_type": "pure_reasoning",
+        "payload": {"item_type": "fact"},
+        "question_examples": {
+            "python_repo": {
+                "hard_contextual": {
+                    "question": (
+                        "You have {n} parameters. Below are the facts:\n\n"
+                        "{facts_block}\n\n"
+                        "Derive the narrowest safe-migration window."
+                    ),
+                    "answer": "Window endpoints + citations.",
+                },
+            },
+        },
+        "rubric_criteria": [
+            {"criterion": "endpoint_correctness", "weight": 1.0},
+            {"criterion": "classification_accuracy", "weight": 0.5},
+        ],
+        "grid": {
+            "content_profile": ["python_repo"],
+            "n_items": [2],
+        },
+        "fixed_pool": {
+            "python_repo": lower_items + upper_items,
+        },
+    })
+
+
 class TestGeneratePureReasoningCell:
     def test_writes_answer_key_with_facts_inlined_in_question(self, sample_template, tmp_path):
         param = Parametrisation(
@@ -88,3 +130,24 @@ class TestGeneratePureReasoningCell:
             answer_key_path=ak_path,
         )
         assert ak_path.read_text() == first  # unchanged
+
+
+class TestGeneratePureReasoningCellStratified:
+    def test_n2_large_pool_always_has_one_lower_and_one_upper(self, large_template, tmp_path):
+        """With 8L/8U pool and n=2, balance_key ensures 1 lower + 1 upper — never degenerate."""
+        param = Parametrisation(
+            experiment_type="pure_reasoning",
+            content_profile="python_repo",
+            n_items=2,
+        )
+        ak_path = tmp_path / "ak.yaml"
+        generate_pure_reasoning_cell(
+            template=large_template,
+            parametrisation=param,
+            answer_key_path=ak_path,
+        )
+        ak = AnswerKey.from_yaml(ak_path)
+        assert len(ak.items) == 2
+        directions = [it.bound_direction for it in ak.items]
+        assert "lower" in directions, f"No lower-bound item in generated answer key: {directions}"
+        assert "upper" in directions, f"No upper-bound item in generated answer key: {directions}"

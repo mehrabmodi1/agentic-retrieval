@@ -50,7 +50,12 @@ def generate_pure_reasoning_cell(
         raise ValueError(f"fixed_pool is empty for profile {profile}")
 
     n = parametrisation.n_items or 1
-    selected = sample_fixed_pool(pool, n=n, parametrisation_id=parametrisation.parametrisation_id)
+    selected = sample_fixed_pool(
+        pool,
+        n=n,
+        parametrisation_id=parametrisation.parametrisation_id,
+        balance_key="bound_direction",
+    )
 
     profile_examples = template.question_examples.get(profile, {})
     example = profile_examples.get("hard_contextual")
