@@ -177,9 +177,11 @@ class TestL3Generation:
             answer_key_path=ak_path, world_state=world_state,
         )
         ak = AnswerKey.from_yaml(ak_path)
-        # World-state block must appear and contain both world variables
-        assert "phase_rolling" in ak.expected_answers.question
-        assert "feature_x_off" in ak.expected_answers.question
+        # World-state block must be substituted (placeholder absent) and contain
+        # both world variables in the bullet format produced by _format_world_state_block.
+        assert "{world_state_block}" not in ak.expected_answers.question
+        assert "- phase_rolling = True" in ak.expected_answers.question
+        assert "- feature_x_off = False" in ak.expected_answers.question
 
     def test_l3_correctness_mentions_live_items_only(self, tmp_path):
         template, world_state = _l3_template_and_world_state()
