@@ -11,6 +11,8 @@ Designed for use with [Claude Code](https://docs.anthropic.com/en/docs/claude-co
 | `single_needle` | Find one hidden fact in the corpus |
 | `multi_chain` | Follow a chain of N cross-references across files to reach a final value |
 | `multi_reasoning` | Locate N scattered clues and synthesise them to answer a question |
+| `multi_retrieval` | Retrieve N category-coherent pre-authored items from a large corpus and report each verbatim. Tests pure retrieval+retention without reasoning. |
+| `pure_reasoning` | Reason across N facts handed in the prompt to derive a structured interval-shaped answer. No corpus, no retrieval. |
 
 Each type can be parameterized across:
 - **Content profiles**: e.g. Python repository, noir detective fiction
@@ -19,11 +21,13 @@ Each type can be parameterized across:
 - **Needle counts**: e.g. 2, 8, 16 items (multi-chain and multi-reasoning)
 - **Discriminability**: easy, hard
 
+Note: `pure_reasoning` has no corpus, so corpus_size, reference_clarity, and discriminability don't apply.
+
 Define your own parameter grids in `experiments/*.yaml`.
 
 ## Pipeline
 
-1. **Generate** — builds realistic background corpora from content profile templates and inserts needle payloads at controlled difficulty levels
+1. **Generate** — builds realistic background corpora from content profile templates and inserts needle payloads at controlled difficulty levels. `multi_retrieval` and `pure_reasoning` use hand-authored fixed-pool needles committed to YAML rather than LLM-generated needles; the other types use LLM-generated needles.
 2. **Run** — executes the agent against each corpus with a retrieval question
 3. **Judge** — scores agent responses against answer keys using rubric-based LLM evaluation (correctness + completeness)
 4. **Analyse** — loads verdicts into notebooks for visualisation and interpretation

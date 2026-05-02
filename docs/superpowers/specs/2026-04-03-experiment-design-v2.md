@@ -17,6 +17,10 @@ Three experiment types, each with distinct cognitive demands on the agent:
 | `single_needle` | Find one piece of information and report it | Retrieval from noise |
 | `multi_chain` | Follow a sequence of N linked clues. Question provides the entry point. Each link points to the next; previous links can be forgotten after following. | Sequential navigation, short-term memory |
 | `multi_reasoning` | Find N independent pieces of information, hold them all, answer a question that requires combining them | Parallel retrieval + synthesis, long-term memory |
+| `multi_retrieval` | Find N category-coherent pre-authored items in a large corpus and report each verbatim with its parsed value | Pure retrieval + retention without reasoning |
+| `pure_reasoning` | Reason across N facts inlined in the prompt to derive a structured interval-shaped answer | Pure cross-fact reasoning without retrieval |
+
+The two new types (`multi_retrieval` and `pure_reasoning`) dissect the cognitive demands that `multi_reasoning` couples — retrieval+retention vs. reasoning. They use hand-authored 16-item fixed pools committed to the experiment YAML (under a `fixed_pool` field), with N items sampled per cell via a deterministic hashlib-based RNG. `pure_reasoning` additionally uses stratified sampling on `bound_direction` to guarantee at least one lower-bound and one upper-bound fact per cell. See `docs/superpowers/specs/2026-05-01-multi-retrieval-and-pure-reasoning-design.md` for the full design.
 
 ---
 
