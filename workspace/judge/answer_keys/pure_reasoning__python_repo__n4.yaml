@@ -1,0 +1,82 @@
+parametrisation_id: pure_reasoning__python_repo__n4
+experiment_type: pure_reasoning
+generated_at: '2026-05-02T09:30:41.133974+00:00'
+parameters:
+  content_profile: python_repo
+  n_items: 4
+items:
+- item_id: target_001
+  inserted_text: METRICS_ROLLUP_TRIGGER_S = 9000
+  value: '9000'
+  bound_direction: upper
+  context_summary: Time at which the hourly metrics rollup begins consuming WAL; the
+    migration must finish before the rollup contends for resources, so this is an
+    upper bound on end.
+- item_id: target_002
+  inserted_text: AUTOVACUUM_TAIL_DRAIN_S = 1200
+  value: '1200'
+  bound_direction: lower
+  context_summary: How long the long-running auto-vacuum tail keeps running after
+    the last bulk write; the migration must wait until that tail has drained, so this
+    is a lower bound on start.
+- item_id: target_003
+  inserted_text: INFLIGHT_RPC_DRAIN_S = 180
+  value: '180'
+  bound_direction: lower
+  context_summary: Wait period the orchestrator gives in-flight RPCs to complete after
+    the freeze signal; until this elapses the migration is held off, imposing a lower
+    bound on start.
+- item_id: target_004
+  inserted_text: LEADER_ELECTION_QUIESCE_S = 900
+  value: '900'
+  bound_direction: lower
+  context_summary: Stabilization window required after the most recent leader election;
+    migrations are gated until the cluster has been quiet for this long, establishing
+    a lower bound on start.
+expected_answers:
+  question: 'You are running a database migration. It must execute during a window
+    of system quiescence. Below are 4 numeric configuration parameters from across
+    the service. Each implies a constraint on *when* the migration can safely begin
+    and end relative to a reference event (the most recent backup, the next traffic
+    peak, the next certificate rotation, the latest replication lag spike, etc.).
+
+
+    Some parameters establish a *lower bound* on the migration start time (must wait
+    at least X seconds after the reference event).
+
+
+    Others establish an *upper bound* on the migration end time (must complete before
+    X seconds after the reference event).
+
+
+    Below are the 4 facts:
+
+
+    1. METRICS_ROLLUP_TRIGGER_S = 9000
+
+    2. AUTOVACUUM_TAIL_DRAIN_S = 1200
+
+    3. INFLIGHT_RPC_DRAIN_S = 180
+
+    4. LEADER_ELECTION_QUIESCE_S = 900
+
+
+    Derive the narrowest safe-migration window [earliest_start, latest_end] consistent
+    with all 4 constraints. For each endpoint, cite the parameter that establishes
+    it. Justify your classification of each parameter''s bound direction.
+
+    '
+  correctness: 'The answer must derive the narrowest valid window. The lower endpoint
+    is established by the fact whose bound_direction is ''lower'' and bound_value
+    is largest: ''AUTOVACUUM_TAIL_DRAIN_S = 1200'' (value: 1200). The upper endpoint
+    is established by the fact whose bound_direction is ''upper'' and bound_value
+    is smallest: ''METRICS_ROLLUP_TRIGGER_S = 9000'' (value: 9000). The agent must
+    cite both facts.'
+  completeness: The agent must classify each of the 4 facts as a lower or upper bound
+    consistent with the answer-key bound_direction field, OR justify any deviation
+    in the reasoning.
+rubric_criteria:
+- criterion: endpoint_correctness
+  weight: 1.0
+- criterion: classification_accuracy
+  weight: 0.5

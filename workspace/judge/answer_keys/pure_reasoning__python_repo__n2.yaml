@@ -1,0 +1,63 @@
+parametrisation_id: pure_reasoning__python_repo__n2
+experiment_type: pure_reasoning
+generated_at: '2026-05-02T09:30:41.131736+00:00'
+parameters:
+  content_profile: python_repo
+  n_items: 2
+items:
+- item_id: target_001
+  inserted_text: WEEKLY_SNAPSHOT_KICKOFF_S = 25200
+  value: '25200'
+  bound_direction: upper
+  context_summary: Time-from-reference at which the weekly snapshot job is triggered;
+    the migration must conclude before snapshotting begins, an upper bound on end.
+- item_id: target_002
+  inserted_text: AUTOVACUUM_TAIL_DRAIN_S = 1200
+  value: '1200'
+  bound_direction: lower
+  context_summary: How long the long-running auto-vacuum tail keeps running after
+    the last bulk write; the migration must wait until that tail has drained, so this
+    is a lower bound on start.
+expected_answers:
+  question: 'You are running a database migration. It must execute during a window
+    of system quiescence. Below are 2 numeric configuration parameters from across
+    the service. Each implies a constraint on *when* the migration can safely begin
+    and end relative to a reference event (the most recent backup, the next traffic
+    peak, the next certificate rotation, the latest replication lag spike, etc.).
+
+
+    Some parameters establish a *lower bound* on the migration start time (must wait
+    at least X seconds after the reference event).
+
+
+    Others establish an *upper bound* on the migration end time (must complete before
+    X seconds after the reference event).
+
+
+    Below are the 2 facts:
+
+
+    1. WEEKLY_SNAPSHOT_KICKOFF_S = 25200
+
+    2. AUTOVACUUM_TAIL_DRAIN_S = 1200
+
+
+    Derive the narrowest safe-migration window [earliest_start, latest_end] consistent
+    with all 2 constraints. For each endpoint, cite the parameter that establishes
+    it. Justify your classification of each parameter''s bound direction.
+
+    '
+  correctness: 'The answer must derive the narrowest valid window. The lower endpoint
+    is established by the fact whose bound_direction is ''lower'' and bound_value
+    is largest: ''AUTOVACUUM_TAIL_DRAIN_S = 1200'' (value: 1200). The upper endpoint
+    is established by the fact whose bound_direction is ''upper'' and bound_value
+    is smallest: ''WEEKLY_SNAPSHOT_KICKOFF_S = 25200'' (value: 25200). The agent must
+    cite both facts.'
+  completeness: The agent must classify each of the 2 facts as a lower or upper bound
+    consistent with the answer-key bound_direction field, OR justify any deviation
+    in the reasoning.
+rubric_criteria:
+- criterion: endpoint_correctness
+  weight: 1.0
+- criterion: classification_accuracy
+  weight: 0.5

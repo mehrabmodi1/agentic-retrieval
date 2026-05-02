@@ -1,0 +1,114 @@
+parametrisation_id: pure_reasoning__python_repo__n8
+experiment_type: pure_reasoning
+generated_at: '2026-05-02T09:30:41.136217+00:00'
+parameters:
+  content_profile: python_repo
+  n_items: 8
+items:
+- item_id: target_001
+  inserted_text: BACKUP_WINDOW_OPEN_S = 7200
+  value: '7200'
+  bound_direction: upper
+  context_summary: Time-from-reference at which the next nightly backup window opens;
+    the migration must finish before that, so it caps the latest end.
+- item_id: target_002
+  inserted_text: REPLICATION_LAG_RECOVERY_S = 300
+  value: '300'
+  bound_direction: lower
+  context_summary: Time the read replicas need to catch up after the latest traffic-peak
+    lag spike; the migration may not begin until at least this many seconds after
+    that spike, so it imposes a lower bound on the start time.
+- item_id: target_003
+  inserted_text: INFLIGHT_RPC_DRAIN_S = 180
+  value: '180'
+  bound_direction: lower
+  context_summary: Wait period the orchestrator gives in-flight RPCs to complete after
+    the freeze signal; until this elapses the migration is held off, imposing a lower
+    bound on start.
+- item_id: target_004
+  inserted_text: DDL_LOCK_COOLDOWN_S = 600
+  value: '600'
+  bound_direction: lower
+  context_summary: Minimum cooldown after the previous DDL lock release before a new
+    one is acquired; the migration cannot begin until this delay has passed since
+    the reference DDL release.
+- item_id: target_005
+  inserted_text: METRICS_ROLLUP_TRIGGER_S = 9000
+  value: '9000'
+  bound_direction: upper
+  context_summary: Time at which the hourly metrics rollup begins consuming WAL; the
+    migration must finish before the rollup contends for resources, so this is an
+    upper bound on end.
+- item_id: target_006
+  inserted_text: AUTOSCALER_SCALEDOWN_DEADLINE_S = 10800
+  value: '10800'
+  bound_direction: upper
+  context_summary: Cutoff at which the autoscaler will start removing capacity; the
+    migration must complete before that capacity disappears, capping the end time.
+- item_id: target_007
+  inserted_text: WEEKLY_SNAPSHOT_KICKOFF_S = 25200
+  value: '25200'
+  bound_direction: upper
+  context_summary: Time-from-reference at which the weekly snapshot job is triggered;
+    the migration must conclude before snapshotting begins, an upper bound on end.
+- item_id: target_008
+  inserted_text: TRACE_FLUSH_BUFFER_S = 120
+  value: '120'
+  bound_direction: lower
+  context_summary: Delay needed for the tracing collector to flush its buffer to durable
+    storage after the last sampled span; migrations begin only after this flush completes.
+expected_answers:
+  question: 'You are running a database migration. It must execute during a window
+    of system quiescence. Below are 8 numeric configuration parameters from across
+    the service. Each implies a constraint on *when* the migration can safely begin
+    and end relative to a reference event (the most recent backup, the next traffic
+    peak, the next certificate rotation, the latest replication lag spike, etc.).
+
+
+    Some parameters establish a *lower bound* on the migration start time (must wait
+    at least X seconds after the reference event).
+
+
+    Others establish an *upper bound* on the migration end time (must complete before
+    X seconds after the reference event).
+
+
+    Below are the 8 facts:
+
+
+    1. BACKUP_WINDOW_OPEN_S = 7200
+
+    2. REPLICATION_LAG_RECOVERY_S = 300
+
+    3. INFLIGHT_RPC_DRAIN_S = 180
+
+    4. DDL_LOCK_COOLDOWN_S = 600
+
+    5. METRICS_ROLLUP_TRIGGER_S = 9000
+
+    6. AUTOSCALER_SCALEDOWN_DEADLINE_S = 10800
+
+    7. WEEKLY_SNAPSHOT_KICKOFF_S = 25200
+
+    8. TRACE_FLUSH_BUFFER_S = 120
+
+
+    Derive the narrowest safe-migration window [earliest_start, latest_end] consistent
+    with all 8 constraints. For each endpoint, cite the parameter that establishes
+    it. Justify your classification of each parameter''s bound direction.
+
+    '
+  correctness: 'The answer must derive the narrowest valid window. The lower endpoint
+    is established by the fact whose bound_direction is ''lower'' and bound_value
+    is largest: ''DDL_LOCK_COOLDOWN_S = 600'' (value: 600). The upper endpoint is
+    established by the fact whose bound_direction is ''upper'' and bound_value is
+    smallest: ''BACKUP_WINDOW_OPEN_S = 7200'' (value: 7200). The agent must cite both
+    facts.'
+  completeness: The agent must classify each of the 8 facts as a lower or upper bound
+    consistent with the answer-key bound_direction field, OR justify any deviation
+    in the reasoning.
+rubric_criteria:
+- criterion: endpoint_correctness
+  weight: 1.0
+- criterion: classification_accuracy
+  weight: 0.5

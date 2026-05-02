@@ -1,0 +1,75 @@
+parametrisation_id: pure_reasoning__noir_fiction__n4
+experiment_type: pure_reasoning
+generated_at: '2026-05-02T09:33:00.482233+00:00'
+parameters:
+  content_profile: noir_fiction
+  n_items: 4
+items:
+- item_id: target_001
+  inserted_text: "A streetcar conductor punched Costa's transfer at seven-oh-five,\
+    \ the night the Adler woman died. He remembered the face \u2014 said the man had\
+    \ a bruise on his cheek that hadn't been there the day before."
+  value: 7:05 PM
+  bound_direction: lower
+  context_summary: The streetcar conductor's punch-record places Costa boarding at
+    7:05 PM; he was loose in the city at that moment.
+- item_id: target_002
+  inserted_text: "The night nurse at Bellevue had Costa sedated and under restraint\
+    \ from ten o'clock onward \u2014 there was no question of him leaving that ward."
+  value: 10:00 PM
+  bound_direction: upper
+  context_summary: The hospital nurse's record shows Costa sedated and restrained
+    from 10:00 PM, off the streets thereafter.
+- item_id: target_003
+  inserted_text: "The Greek who runs the diner on Lex told me, between bites of his\
+    \ own dinner, that Costa took the corner booth at half past six and ordered nothing\
+    \ \u2014 just sat. He left after maybe twenty minutes."
+  value: 6:50 PM
+  bound_direction: lower
+  context_summary: The diner owner's recollection puts Costa unaccounted-for and on
+    the move by roughly 6:50 PM when he left the diner.
+- item_id: target_004
+  inserted_text: "By five of midnight, the theatre usher was certain \u2014 he'd walked\
+    \ Costa, dead drunk, into the manager's office to sleep it off, and the manager\
+    \ had locked the door from the outside."
+  value: 11:55 PM
+  bound_direction: upper
+  context_summary: The usher and theatre manager together place Costa locked in the
+    manager's office by 11:55 PM, accounted-for and unable to be on the streets after.
+expected_answers:
+  question: "You are given 4 pieces of evidence from a homicide investigation, each\
+    \ pertaining to events on the night of the murder. Some pieces establish that\
+    \ the suspect was at large (free, unaccounted-for) at or after a specific time;\
+    \ others establish that the suspect was off-the-streets (accounted-for, with an\
+    \ alibi) at or before a specific time.\n\nBelow are the 4 pieces of evidence:\n\
+    \n1. A streetcar conductor punched Costa's transfer at seven-oh-five, the night\
+    \ the Adler woman died. He remembered the face \u2014 said the man had a bruise\
+    \ on his cheek that hadn't been there the day before.\n2. The night nurse at Bellevue\
+    \ had Costa sedated and under restraint from ten o'clock onward \u2014 there was\
+    \ no question of him leaving that ward.\n3. The Greek who runs the diner on Lex\
+    \ told me, between bites of his own dinner, that Costa took the corner booth at\
+    \ half past six and ordered nothing \u2014 just sat. He left after maybe twenty\
+    \ minutes.\n4. By five of midnight, the theatre usher was certain \u2014 he'd\
+    \ walked Costa, dead drunk, into the manager's office to sleep it off, and the\
+    \ manager had locked the door from the outside.\n\nDerive the narrowest defensible\
+    \ time window during which the suspect was at large on the night of the murder.\
+    \ Cite the specific pieces of evidence that establish your window's lower and\
+    \ upper bounds. Justify your classification of each piece of evidence's bound\
+    \ direction.\n"
+  correctness: "The answer must derive the narrowest valid window. The lower endpoint\
+    \ is established by the fact whose bound_direction is 'lower' and bound_value\
+    \ is largest: \"A streetcar conductor punched Costa's transfer at seven-oh-five,\
+    \ the night the Adler woman died. He remembered the face \u2014 said the man had\
+    \ a bruise on his cheek that hadn't been there the day before.\" (value: 7:05\
+    \ PM). The upper endpoint is established by the fact whose bound_direction is\
+    \ 'upper' and bound_value is smallest: \"The night nurse at Bellevue had Costa\
+    \ sedated and under restraint from ten o'clock onward \u2014 there was no question\
+    \ of him leaving that ward.\" (value: 10:00 PM). The agent must cite both facts."
+  completeness: The agent must classify each of the 4 facts as a lower or upper bound
+    consistent with the answer-key bound_direction field, OR justify any deviation
+    in the reasoning.
+rubric_criteria:
+- criterion: endpoint_correctness
+  weight: 1.0
+- criterion: classification_accuracy
+  weight: 0.5
