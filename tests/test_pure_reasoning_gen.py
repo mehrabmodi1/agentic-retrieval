@@ -132,6 +132,38 @@ class TestGeneratePureReasoningCell:
         assert ak_path.read_text() == first  # unchanged
 
 
+class TestPureReasoningHallucinationPenalty:
+    def test_correctness_contains_hallucination(self, sample_template, tmp_path):
+        param = Parametrisation(
+            experiment_type="pure_reasoning",
+            content_profile="python_repo",
+            n_items=2,
+        )
+        ak_path = tmp_path / "ak.yaml"
+        generate_pure_reasoning_cell(
+            template=sample_template,
+            parametrisation=param,
+            answer_key_path=ak_path,
+        )
+        ak = AnswerKey.from_yaml(ak_path)
+        assert "HALLUCINATION" in ak.expected_answers.correctness
+
+    def test_completeness_mentions_hallucination(self, sample_template, tmp_path):
+        param = Parametrisation(
+            experiment_type="pure_reasoning",
+            content_profile="python_repo",
+            n_items=2,
+        )
+        ak_path = tmp_path / "ak.yaml"
+        generate_pure_reasoning_cell(
+            template=sample_template,
+            parametrisation=param,
+            answer_key_path=ak_path,
+        )
+        ak = AnswerKey.from_yaml(ak_path)
+        assert "hallucinat" in ak.expected_answers.completeness.lower()
+
+
 class TestToComparable:
     def test_plain_int_string(self):
         assert _to_comparable("300") == 300.0

@@ -141,11 +141,19 @@ def write_fixed_pool_answer_key(
             "correctness": (
                 f"Each of the {n} items must be reported with both the verbatim "
                 f"inserted_text and the corresponding value, matching the "
-                f"answer-key items."
+                f"answer-key items. Items in the agent's response whose verbatim "
+                f"text does not appear in the answer-key item list are FALSE "
+                f"POSITIVES; if the agent also cites a specific file_path or line "
+                f"number for a false-positive item, treat it as a HALLUCINATION "
+                f"(the agent claimed verbatim content that does not exist) and "
+                f"penalize it under the precision criterion as strictly as a missed "
+                f"item is penalized under recall."
             ),
             "completeness": (
-                f"All {n} items must be reported. Recall is fraction of items "
-                f"correctly reported."
+                f"All {n} items must be reported. Recall is the fraction of "
+                f"answer-key items correctly reported (verbatim text + value "
+                f"match). Hallucinated items in the response do not count toward "
+                f"recall."
             ),
         },
         "rubric_criteria": rubric_yaml,

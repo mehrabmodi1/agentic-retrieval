@@ -9,10 +9,10 @@ parameters:
   n_items: 4
 items:
 - item_id: target_001
-  inserted_text: "On the night that preceded the discovery, the 9:32 local out of\
-    \ LaSalle Street was, per Porter Eli Hawkins's logbook, three minutes late departing\
-    \ \u2014 and Hawkins distinctly recalled punching a one-way ticket for a man matching\
-    \ Carney's description, who took the smoking car and never spoke a word."
+  inserted_text: On the night that preceded the discovery, the 9:32 local out of LaSalle
+    Street was, per Porter Eli Hawkins's logbook, three minutes late departing — and
+    Hawkins distinctly recalled punching a one-way ticket for a man matching Carney's
+    description, who took the smoking car and never spoke a word.
   value: 9:32 PM
   file_path: witnesses/cab_driver_statement.md
   line_range:
@@ -21,10 +21,10 @@ items:
   context_summary: Train porter Hawkins's logbook entry documenting 9:32 PM departure
     inserted after Jerry's description of Magnifico hotel pickup.
 - item_id: target_002
-  inserted_text: "The maitre d' at Renato's had to consult the reservation book, but\
-    \ his memory matched the page: Mr. Carney took the corner banquette at a quarter\
-    \ past seven on Tuesday \u2014 the evening before the morning the boy from the\
-    \ laundry found him."
+  inserted_text: 'The maitre d'' at Renato''s had to consult the reservation book,
+    but his memory matched the page: Mr. Carney took the corner banquette at a quarter
+    past seven on Tuesday — the evening before the morning the boy from the laundry
+    found him.'
   value: 7:15 PM
   file_path: witnesses/secretary_statement.md
   line_range:
@@ -57,13 +57,21 @@ items:
   context_summary: Sully's deli owner account of Carney's 6:00 PM visit anchored by
     radio newscast inserted within Eva's description of mysterious visitor.
 expected_answers:
-  question: "I have added N=4 passages to this story that fix a specific time on the\
-    \ night before the murder. Find each one and report it as `<verbatim passage text>\
-    \ \u2014 time referenced: <e.g., 9:45 PM>`. Report all 4.\n"
+  question: 'I have added N=4 passages to this story that fix a specific time on the
+    night before the murder. Find each one and report it as `<verbatim passage text>
+    — time referenced: <e.g., 9:45 PM>`. Report all 4.
+
+    '
   correctness: Each of the 4 items must be reported with both the verbatim inserted_text
-    and the corresponding value, matching the answer-key items.
-  completeness: All 4 items must be reported. Recall is fraction of items correctly
-    reported.
+    and the corresponding value, matching the answer-key items. Items in the agent's
+    response whose verbatim text does not appear in the answer-key item list are FALSE
+    POSITIVES; if the agent also cites a specific file_path or line number for a false-positive
+    item, treat it as a HALLUCINATION (the agent claimed verbatim content that does
+    not exist) and penalize it under the precision criterion as strictly as a missed
+    item is penalized under recall.
+  completeness: All 4 items must be reported. Recall is the fraction of answer-key
+    items correctly reported (verbatim text + value match). Hallucinated items in
+    the response do not count toward recall.
 rubric_criteria:
 - criterion: recall
   weight: 1.0

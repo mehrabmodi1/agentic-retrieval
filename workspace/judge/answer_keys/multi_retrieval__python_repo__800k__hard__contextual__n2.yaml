@@ -29,13 +29,21 @@ items:
   context_summary: Blast radius safety limit constant inserted before error handler
     utilities section header.
 expected_answers:
-  question: "I have added N=2 numeric tuning parameters to this codebase that govern\
-    \ a canary deployment / progressive rollout system. Find each one and report it\
-    \ as `<verbatim line of code> \u2014 value: <numeric value>`. Report all 2.\n"
+  question: 'I have added N=2 numeric tuning parameters to this codebase that govern
+    a canary deployment / progressive rollout system. Find each one and report it
+    as `<verbatim line of code> — value: <numeric value>`. Report all 2.
+
+    '
   correctness: Each of the 2 items must be reported with both the verbatim inserted_text
-    and the corresponding value, matching the answer-key items.
-  completeness: All 2 items must be reported. Recall is fraction of items correctly
-    reported.
+    and the corresponding value, matching the answer-key items. Items in the agent's
+    response whose verbatim text does not appear in the answer-key item list are FALSE
+    POSITIVES; if the agent also cites a specific file_path or line number for a false-positive
+    item, treat it as a HALLUCINATION (the agent claimed verbatim content that does
+    not exist) and penalize it under the precision criterion as strictly as a missed
+    item is penalized under recall.
+  completeness: All 2 items must be reported. Recall is the fraction of answer-key
+    items correctly reported (verbatim text + value match). Hallucinated items in
+    the response do not count toward recall.
 rubric_criteria:
 - criterion: recall
   weight: 1.0

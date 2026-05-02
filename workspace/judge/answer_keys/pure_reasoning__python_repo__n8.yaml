@@ -103,10 +103,13 @@ expected_answers:
     is largest: ''DDL_LOCK_COOLDOWN_S = 600'' (value: 600). The upper endpoint is
     established by the fact whose bound_direction is ''upper'' and bound_value is
     smallest: ''BACKUP_WINDOW_OPEN_S = 7200'' (value: 7200). The agent must cite both
-    facts.'
+    facts. The agent''s cited evidence must come from the 8 facts provided in the
+    question. Any cited fact that is not verbatim one of the 8 provided facts is a
+    HALLUCINATION and must be penalized under the endpoint_correctness criterion.'
   completeness: The agent must classify each of the 8 facts as a lower or upper bound
     consistent with the answer-key bound_direction field, OR justify any deviation
-    in the reasoning.
+    in the reasoning. Classifications attached to facts not actually present in the
+    question prompt are hallucinations and reduce classification_accuracy.
 rubric_criteria:
 - criterion: endpoint_correctness
   weight: 1.0

@@ -146,3 +146,52 @@ class TestWriteFixedPoolAnswerKey:
         assert ak.items[0].value == "5"
         assert "{n}" not in ak.expected_answers.question  # n was substituted
         assert "2" in ak.expected_answers.question
+
+    def test_correctness_contains_hallucination_penalty(self, sample_template, tmp_path):
+        param = Parametrisation(
+            experiment_type="multi_retrieval",
+            content_profile="python_repo",
+            corpus_token_count=800000,
+            discriminability="hard",
+            reference_clarity="contextual",
+            n_items=2,
+        )
+        selected = sample_template.fixed_pool["python_repo"]
+        items_with_locations = [
+            {**selected[0], "file_path": "deploy/canary.py", "line_range": [10, 10]},
+            {**selected[1], "file_path": "deploy/canary.py", "line_range": [20, 20]},
+        ]
+        ak_path = tmp_path / "ak.yaml"
+        write_fixed_pool_answer_key(
+            template=sample_template,
+            parametrisation=param,
+            items_with_locations=items_with_locations,
+            answer_key_path=ak_path,
+        )
+        ak = AnswerKey.from_yaml(ak_path)
+        assert "HALLUCINATION" in ak.expected_answers.correctness
+        assert "FALSE POSITIVE" in ak.expected_answers.correctness or "false positive" in ak.expected_answers.correctness.lower()
+
+    def test_completeness_mentions_hallucination(self, sample_template, tmp_path):
+        param = Parametrisation(
+            experiment_type="multi_retrieval",
+            content_profile="python_repo",
+            corpus_token_count=800000,
+            discriminability="hard",
+            reference_clarity="contextual",
+            n_items=2,
+        )
+        selected = sample_template.fixed_pool["python_repo"]
+        items_with_locations = [
+            {**selected[0], "file_path": "deploy/canary.py", "line_range": [10, 10]},
+            {**selected[1], "file_path": "deploy/canary.py", "line_range": [20, 20]},
+        ]
+        ak_path = tmp_path / "ak.yaml"
+        write_fixed_pool_answer_key(
+            template=sample_template,
+            parametrisation=param,
+            items_with_locations=items_with_locations,
+            answer_key_path=ak_path,
+        )
+        ak = AnswerKey.from_yaml(ak_path)
+        assert "hallucinat" in ak.expected_answers.completeness.lower()

@@ -6,44 +6,58 @@ parameters:
   n_items: 2
 items:
 - item_id: target_001
-  inserted_text: "The desk sergeant logged Costa's pickup at the precinct at five\
-    \ past nine \u2014 the suspect, demonstrably, was no longer at large."
+  inserted_text: The desk sergeant logged Costa's pickup at the precinct at five past
+    nine — the suspect, demonstrably, was no longer at large.
   value: 9:05 PM
   bound_direction: upper
   context_summary: The precinct intake log proves Costa was in custody by 9:05 PM
     and could not have been on the streets after that hour.
 - item_id: target_002
-  inserted_text: "Mickey was last seen alive \u2014 and very much alone \u2014 by\
-    \ the doorman at the Astor at half past seven, the night of the killing."
+  inserted_text: Mickey was last seen alive — and very much alone — by the doorman
+    at the Astor at half past seven, the night of the killing.
   value: 7:30 PM
   bound_direction: lower
   context_summary: The Astor doorman puts the suspect on the sidewalk at 7:30 PM,
     free and unsupervised.
 expected_answers:
-  question: "You are given 2 pieces of evidence from a homicide investigation, each\
-    \ pertaining to events on the night of the murder. Some pieces establish that\
-    \ the suspect was at large (free, unaccounted-for) at or after a specific time;\
-    \ others establish that the suspect was off-the-streets (accounted-for, with an\
-    \ alibi) at or before a specific time.\n\nBelow are the 2 pieces of evidence:\n\
-    \n1. The desk sergeant logged Costa's pickup at the precinct at five past nine\
-    \ \u2014 the suspect, demonstrably, was no longer at large.\n2. Mickey was last\
-    \ seen alive \u2014 and very much alone \u2014 by the doorman at the Astor at\
-    \ half past seven, the night of the killing.\n\nDerive the narrowest defensible\
-    \ time window during which the suspect was at large on the night of the murder.\
-    \ Cite the specific pieces of evidence that establish your window's lower and\
-    \ upper bounds. Justify your classification of each piece of evidence's bound\
-    \ direction.\n"
-  correctness: "The answer must derive the narrowest valid window. The lower endpoint\
-    \ is established by the fact whose bound_direction is 'lower' and bound_value\
-    \ is largest: 'Mickey was last seen alive \u2014 and very much alone \u2014 by\
-    \ the doorman at the Astor at half past seven, the night of the killing.' (value:\
-    \ 7:30 PM). The upper endpoint is established by the fact whose bound_direction\
-    \ is 'upper' and bound_value is smallest: \"The desk sergeant logged Costa's pickup\
-    \ at the precinct at five past nine \u2014 the suspect, demonstrably, was no longer\
-    \ at large.\" (value: 9:05 PM). The agent must cite both facts."
+  question: 'You are given 2 pieces of evidence from a homicide investigation, each
+    pertaining to events on the night of the murder. Some pieces establish that the
+    suspect was at large (free, unaccounted-for) at or after a specific time; others
+    establish that the suspect was off-the-streets (accounted-for, with an alibi)
+    at or before a specific time.
+
+
+    Below are the 2 pieces of evidence:
+
+
+    1. The desk sergeant logged Costa''s pickup at the precinct at five past nine
+    — the suspect, demonstrably, was no longer at large.
+
+    2. Mickey was last seen alive — and very much alone — by the doorman at the Astor
+    at half past seven, the night of the killing.
+
+
+    Derive the narrowest defensible time window during which the suspect was at large
+    on the night of the murder. Cite the specific pieces of evidence that establish
+    your window''s lower and upper bounds. Justify your classification of each piece
+    of evidence''s bound direction.
+
+    '
+  correctness: 'The answer must derive the narrowest valid window. The lower endpoint
+    is established by the fact whose bound_direction is ''lower'' and bound_value
+    is largest: ''Mickey was last seen alive — and very much alone — by the doorman
+    at the Astor at half past seven, the night of the killing.'' (value: 7:30 PM).
+    The upper endpoint is established by the fact whose bound_direction is ''upper''
+    and bound_value is smallest: "The desk sergeant logged Costa''s pickup at the
+    precinct at five past nine — the suspect, demonstrably, was no longer at large."
+    (value: 9:05 PM). The agent must cite both facts. The agent''s cited evidence
+    must come from the 2 facts provided in the question. Any cited fact that is not
+    verbatim one of the 2 provided facts is a HALLUCINATION and must be penalized
+    under the endpoint_correctness criterion.'
   completeness: The agent must classify each of the 2 facts as a lower or upper bound
     consistent with the answer-key bound_direction field, OR justify any deviation
-    in the reasoning.
+    in the reasoning. Classifications attached to facts not actually present in the
+    question prompt are hallucinations and reduce classification_accuracy.
 rubric_criteria:
 - criterion: endpoint_correctness
   weight: 1.0

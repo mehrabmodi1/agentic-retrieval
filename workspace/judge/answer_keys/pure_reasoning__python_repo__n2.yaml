@@ -52,10 +52,13 @@ expected_answers:
     is largest: ''AUTOVACUUM_TAIL_DRAIN_S = 1200'' (value: 1200). The upper endpoint
     is established by the fact whose bound_direction is ''upper'' and bound_value
     is smallest: ''WEEKLY_SNAPSHOT_KICKOFF_S = 25200'' (value: 25200). The agent must
-    cite both facts.'
+    cite both facts. The agent''s cited evidence must come from the 2 facts provided
+    in the question. Any cited fact that is not verbatim one of the 2 provided facts
+    is a HALLUCINATION and must be penalized under the endpoint_correctness criterion.'
   completeness: The agent must classify each of the 2 facts as a lower or upper bound
     consistent with the answer-key bound_direction field, OR justify any deviation
-    in the reasoning.
+    in the reasoning. Classifications attached to facts not actually present in the
+    question prompt are hallucinations and reduce classification_accuracy.
 rubric_criteria:
 - criterion: endpoint_correctness
   weight: 1.0

@@ -171,10 +171,13 @@ expected_answers:
     is largest: ''CERT_ROTATION_GRACE_S = 1800'' (value: 1800). The upper endpoint
     is established by the fact whose bound_direction is ''upper'' and bound_value
     is smallest: ''ALERTING_SILENCE_EXPIRES_S = 4500'' (value: 4500). The agent must
-    cite both facts.'
+    cite both facts. The agent''s cited evidence must come from the 16 facts provided
+    in the question. Any cited fact that is not verbatim one of the 16 provided facts
+    is a HALLUCINATION and must be penalized under the endpoint_correctness criterion.'
   completeness: The agent must classify each of the 16 facts as a lower or upper bound
     consistent with the answer-key bound_direction field, OR justify any deviation
-    in the reasoning.
+    in the reasoning. Classifications attached to facts not actually present in the
+    question prompt are hallucinations and reduce classification_accuracy.
 rubric_criteria:
 - criterion: endpoint_correctness
   weight: 1.0

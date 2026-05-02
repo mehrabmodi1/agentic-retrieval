@@ -129,12 +129,19 @@ def generate_pure_reasoning_cell(
                 f"(value: {max_lower_val}). The upper endpoint is established "
                 f"by the fact whose bound_direction is 'upper' and bound_value "
                 f"is smallest: {min_upper_text!r} (value: {min_upper_val}). "
-                f"The agent must cite both facts."
+                f"The agent must cite both facts. "
+                f"The agent's cited evidence must come from the {n} facts provided "
+                f"in the question. Any cited fact that is not verbatim one of the "
+                f"{n} provided facts is a HALLUCINATION and must be penalized under "
+                f"the endpoint_correctness criterion."
             ),
             "completeness": (
                 f"The agent must classify each of the {n} facts as a lower or "
                 f"upper bound consistent with the answer-key bound_direction "
-                f"field, OR justify any deviation in the reasoning."
+                f"field, OR justify any deviation in the reasoning. "
+                f"Classifications attached to facts not actually present in the "
+                f"question prompt are hallucinations and reduce "
+                f"classification_accuracy."
             ),
         },
         "rubric_criteria": rubric_yaml,
