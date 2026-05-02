@@ -38,6 +38,8 @@ class ExperimentTemplate(BaseModel):
         "multi_reasoning",
         "multi_retrieval",
         "pure_reasoning",
+        "pure_reasoning_l2",
+        "pure_reasoning_l3",
     ]
     payload: PayloadTemplateSpec
     question_examples: dict[str, dict[str, QuestionExample]]
@@ -47,7 +49,10 @@ class ExperimentTemplate(BaseModel):
 
     @model_validator(mode="after")
     def validate_grid_n_items(self) -> ExperimentTemplate:
-        multi_types = {"multi_chain", "multi_reasoning", "multi_retrieval", "pure_reasoning"}
+        multi_types = {
+            "multi_chain", "multi_reasoning", "multi_retrieval",
+            "pure_reasoning", "pure_reasoning_l2", "pure_reasoning_l3",
+        }
         is_multi = self.experiment_type in multi_types
         has_n_items = self.grid.n_items is not None
         if is_multi and not has_n_items:

@@ -252,3 +252,27 @@ class TestNewExperimentTypes:
         d = self._base_dict("multi_retrieval")
         tmpl = ExperimentTemplate.model_validate(d)
         assert tmpl.fixed_pool == {}
+
+
+def test_pure_reasoning_l2_is_valid_experiment_type():
+    template = ExperimentTemplate.model_validate({
+        "experiment_type": "pure_reasoning_l2",
+        "payload": {"item_type": "fact"},
+        "question_examples": {"python_repo": {"hard_contextual": {"question": "q", "answer": "a"}}},
+        "rubric_criteria": [{"criterion": "endpoint_correctness", "weight": 1.0}],
+        "grid": {"content_profile": ["python_repo"], "n_items": [2]},
+        "fixed_pool": {"python_repo": []},
+    })
+    assert template.experiment_type == "pure_reasoning_l2"
+
+
+def test_pure_reasoning_l3_is_valid_experiment_type():
+    template = ExperimentTemplate.model_validate({
+        "experiment_type": "pure_reasoning_l3",
+        "payload": {"item_type": "fact"},
+        "question_examples": {"python_repo": {"hard_contextual": {"question": "q", "answer": "a"}}},
+        "rubric_criteria": [{"criterion": "endpoint_correctness", "weight": 1.0}],
+        "grid": {"content_profile": ["python_repo"], "n_items": [2]},
+        "fixed_pool": {"python_repo": []},
+    })
+    assert template.experiment_type == "pure_reasoning_l3"
