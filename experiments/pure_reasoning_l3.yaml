@@ -77,15 +77,16 @@ fixed_pool:
       gate_clause: "If current_phase == 'rolling', then"
       gate_world_var: "current_phase"
       live: true
-    - text: "If current_phase == 'rolling', then CERT_ROTATION_GRACE_MIN = 30  # minutes"
+    - text: "If current_phase == 'rolling', then Reference: HEALTH_PROBE_INTERVAL_S = 2400. Then CERT_ROTATION_GRACE_OFFSET_S = 600  # seconds before HEALTH_PROBE_INTERVAL"
       bound_direction: "lower"
       bound_value: "1800"
-      context_summary: "Cert rotation grace; minutes; gated on rolling phase."
-      variant_id: 1
-      variant_text: "CERT_ROTATION_GRACE_MIN = 30  # minutes"
+      context_summary: "Cert rotation grace; offset variant (2400 - 600 = 1800s); gated on rolling phase. Designated binding lower for L3."
+      variant_id: 2
+      variant_text: "Reference: HEALTH_PROBE_INTERVAL_S = 2400. Then CERT_ROTATION_GRACE_OFFSET_S = 600  # seconds before HEALTH_PROBE_INTERVAL"
       gate_clause: "If current_phase == 'rolling', then"
       gate_world_var: "current_phase"
       live: true
+      binding: true
     - text: "If replica_promoted, then Reference: HOURLY_KICK_S = 3600. Then DDL_LOCK_COOLDOWN_OFFSET_S = 3000  # seconds before HOURLY_KICK"
       bound_direction: "lower"
       bound_value: "600"
@@ -105,21 +106,22 @@ fixed_pool:
       gate_world_var: "replica_promoted"
       live: true
     # ---- (live, upper) — gate var TRUE, 4 items ----
-    - text: "If current_phase == 'rolling', then Reference: WEEKEND_ROLLOVER_S = 86400. Then BACKUP_WINDOW_OPEN_OFFSET_S = 79200  # seconds before WEEKEND_ROLLOVER"
+    - text: "If current_phase == 'rolling', then Reference: WEEKEND_ROLLOVER_S = 86400. Then BACKUP_WINDOW_OPEN_OFFSET_S = 81000  # seconds before WEEKEND_ROLLOVER"
       bound_direction: "upper"
-      bound_value: "7200"
-      context_summary: "Backup window open; offset variant; gated on rolling phase."
+      bound_value: "5400"
+      context_summary: "Backup window open; offset variant (86400 - 81000 = 5400s); gated on rolling phase. Designated binding upper for L3."
       variant_id: 2
-      variant_text: "Reference: WEEKEND_ROLLOVER_S = 86400. Then BACKUP_WINDOW_OPEN_OFFSET_S = 79200  # seconds before WEEKEND_ROLLOVER"
+      variant_text: "Reference: WEEKEND_ROLLOVER_S = 86400. Then BACKUP_WINDOW_OPEN_OFFSET_S = 81000  # seconds before WEEKEND_ROLLOVER"
       gate_clause: "If current_phase == 'rolling', then"
       gate_world_var: "current_phase"
       live: true
-    - text: "If current_phase == 'rolling', then PEAK_TRAFFIC_RAMP_BEGIN_S = 5400"
+      binding: true
+    - text: "If current_phase == 'rolling', then PEAK_TRAFFIC_RAMP_BEGIN_S = 7200"
       bound_direction: "upper"
-      bound_value: "5400"
+      bound_value: "7200"
       context_summary: "Peak traffic ramp begin; gated on rolling phase."
       variant_id: 0
-      variant_text: "PEAK_TRAFFIC_RAMP_BEGIN_S = 5400"
+      variant_text: "PEAK_TRAFFIC_RAMP_BEGIN_S = 7200"
       gate_clause: "If current_phase == 'rolling', then"
       gate_world_var: "current_phase"
       live: true
@@ -188,12 +190,12 @@ fixed_pool:
       gate_clause: "If dual_write_enabled, then"
       gate_world_var: "dual_write_enabled"
       live: false
-    - text: "If dual_write_enabled, then ALERTING_SILENCE_EXPIRES_MIN = 75  # minutes"
+    - text: "If dual_write_enabled, then Reference: MAINTENANCE_TOKEN_TTL_S = 5400. Then ALERTING_SILENCE_EXPIRES_OFFSET_S = 900  # seconds before MAINTENANCE_TOKEN_TTL"
       bound_direction: "upper"
       bound_value: "4500"
-      context_summary: "Alerting silence expires; minutes; gated on dual-write (off)."
-      variant_id: 1
-      variant_text: "ALERTING_SILENCE_EXPIRES_MIN = 75  # minutes"
+      context_summary: "Alerting silence expires; offset variant (5400 - 900 = 4500s); gated on dual-write (off)."
+      variant_id: 2
+      variant_text: "Reference: MAINTENANCE_TOKEN_TTL_S = 5400. Then ALERTING_SILENCE_EXPIRES_OFFSET_S = 900  # seconds before MAINTENANCE_TOKEN_TTL"
       gate_clause: "If dual_write_enabled, then"
       gate_world_var: "dual_write_enabled"
       live: false
@@ -244,25 +246,27 @@ fixed_pool:
       gate_clause: "If the dispatcher's logbook is reliable, then"
       gate_world_var: "dispatcher_logbook_reliable"
       live: true
-    - text: "If the dispatcher's logbook is reliable, then a streetcar conductor punched Costa's transfer at seven-oh-five, the night the Adler woman died. He remembered the face — said the man had a bruise on his cheek that hadn't been there the day before."
+    - text: "If the dispatcher's logbook is reliable, then Anchor: the curtain rose on the late show at the Hippodrome at 7:00 PM that evening. A streetcar conductor punched Costa's transfer five minutes after the curtain went up, the night the Adler woman died. He remembered the face — said the man had a bruise on his cheek that hadn't been there the day before."
       bound_direction: "lower"
       bound_value: "7:05 PM"
-      context_summary: "Streetcar conductor's punch at 7:05 PM; gated on dispatcher logbook."
-      variant_id: 0
-      variant_text: "A streetcar conductor punched Costa's transfer at seven-oh-five, the night the Adler woman died. He remembered the face — said the man had a bruise on his cheek that hadn't been there the day before."
+      context_summary: "Streetcar conductor's punch at 7:05 PM, expressed as offset after the 7:00 PM Hippodrome curtain; gated on dispatcher logbook. Designated binding lower for L3."
+      variant_id: 2
+      variant_text: "Anchor: the curtain rose on the late show at the Hippodrome at 7:00 PM that evening. A streetcar conductor punched Costa's transfer five minutes after the curtain went up, the night the Adler woman died. He remembered the face — said the man had a bruise on his cheek that hadn't been there the day before."
       gate_clause: "If the dispatcher's logbook is reliable, then"
       gate_world_var: "dispatcher_logbook_reliable"
       live: true
+      binding: true
     # ---- (live, upper) ----
     - text: "If Vincent did return from Brooklyn that night, then Anchor: the late edition went to press at 10:00 PM that evening. The desk sergeant logged Costa's pickup at the precinct fifty-five minutes before the late edition went to press — the suspect, demonstrably, was no longer at large."
       bound_direction: "upper"
       bound_value: "9:05 PM"
-      context_summary: "Precinct intake at 9:05 PM via 10 PM late-edition anchor; gated on Vincent's return."
+      context_summary: "Precinct intake at 9:05 PM via 10 PM late-edition anchor; gated on Vincent's return. Designated binding upper for L3."
       variant_id: 2
       variant_text: "Anchor: the late edition went to press at 10:00 PM that evening. The desk sergeant logged Costa's pickup at the precinct fifty-five minutes before the late edition went to press — the suspect, demonstrably, was no longer at large."
       gate_clause: "If Vincent did return from Brooklyn that night, then"
       gate_world_var: "vincent_returned_from_brooklyn"
       live: true
+      binding: true
     - text: "If Vincent did return from Brooklyn that night, then the jail clerk pushed the booking slip across his desk and tapped the time stamp: nine-twenty, sharp. 'He's been ours since,' the clerk said, 'and he ain't going anywhere.'"
       bound_direction: "upper"
       bound_value: "9:20 PM"
@@ -309,12 +313,12 @@ fixed_pool:
       gate_clause: "If the lawyer was telling the truth, then"
       gate_world_var: "lawyer_was_truthful"
       live: false
-    - text: "If the conductor's punch records were accurate that night, then the bartender at the Indigo served Costa a third gin at twenty before nine; Costa lingered another ten minutes, the bartender said, then left at half past."
+    - text: "If the conductor's punch records were accurate that night, then Anchor: the cleaners locked the Garment District showroom at 8:00 PM that evening. The bartender at the Indigo served Costa a third gin fifty minutes after the showroom locked, and remembered Costa leaving soon after."
       bound_direction: "lower"
       bound_value: "8:50 PM"
-      context_summary: "Bartender's account at 8:50 PM; gated on conductor records (off)."
-      variant_id: 0
-      variant_text: "The bartender at the Indigo served Costa a third gin at twenty before nine; Costa lingered another ten minutes, the bartender said, then left at half past."
+      context_summary: "Bartender's account at 8:50 PM, expressed as offset after the 8:00 PM showroom lockup; gated on conductor records (off)."
+      variant_id: 2
+      variant_text: "Anchor: the cleaners locked the Garment District showroom at 8:00 PM that evening. The bartender at the Indigo served Costa a third gin fifty minutes after the showroom locked, and remembered Costa leaving soon after."
       gate_clause: "If the conductor's punch records were accurate that night, then"
       gate_world_var: "conductor_punch_records_accurate"
       live: false

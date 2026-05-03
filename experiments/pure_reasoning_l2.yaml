@@ -54,12 +54,13 @@ fixed_pool:
       context_summary: "Time the read replicas need to catch up after the latest traffic-peak lag spike."
       variant_id: 0
       variant_text: "REPLICATION_LAG_RECOVERY_S = 300"
-    - text: "CERT_ROTATION_GRACE_MIN = 30  # minutes"
+    - text: "Reference: HEALTH_PROBE_INTERVAL_S = 2400. Then CERT_ROTATION_GRACE_OFFSET_S = 600  # seconds before HEALTH_PROBE_INTERVAL"
       bound_direction: "lower"
       bound_value: "1800"
-      context_summary: "Quiet period after the most recent certificate rotation; expressed in minutes."
-      variant_id: 1
-      variant_text: "CERT_ROTATION_GRACE_MIN = 30  # minutes"
+      context_summary: "Cert rotation grace; expressed as offset before the next health probe (2400 - 600 = 1800s). Designated binding lower for L2/L3."
+      variant_id: 2
+      variant_text: "Reference: HEALTH_PROBE_INTERVAL_S = 2400. Then CERT_ROTATION_GRACE_OFFSET_S = 600  # seconds before HEALTH_PROBE_INTERVAL"
+      binding: true
     - text: "Reference: HOURLY_KICK_S = 3600. Then DDL_LOCK_COOLDOWN_OFFSET_S = 3000  # seconds before HOURLY_KICK"
       bound_direction: "lower"
       bound_value: "600"
@@ -97,18 +98,18 @@ fixed_pool:
       variant_id: 1
       variant_text: "ON_CALL_HANDOFF_QUIET_MIN = 25  # minutes"
     # ---- 8 upper-bound items ----
-    - text: "Reference: WEEKEND_ROLLOVER_S = 86400. Then BACKUP_WINDOW_OPEN_OFFSET_S = 79200  # seconds before WEEKEND_ROLLOVER"
-      bound_direction: "upper"
-      bound_value: "7200"
-      context_summary: "Backup window open, expressed as offset before weekend rollover (86400 - 79200 = 7200s)."
-      variant_id: 2
-      variant_text: "Reference: WEEKEND_ROLLOVER_S = 86400. Then BACKUP_WINDOW_OPEN_OFFSET_S = 79200  # seconds before WEEKEND_ROLLOVER"
-    - text: "PEAK_TRAFFIC_RAMP_BEGIN_S = 5400"
+    - text: "Reference: WEEKEND_ROLLOVER_S = 86400. Then BACKUP_WINDOW_OPEN_OFFSET_S = 81000  # seconds before WEEKEND_ROLLOVER"
       bound_direction: "upper"
       bound_value: "5400"
+      context_summary: "Backup window open, expressed as offset before weekend rollover (86400 - 81000 = 5400s)."
+      variant_id: 2
+      variant_text: "Reference: WEEKEND_ROLLOVER_S = 86400. Then BACKUP_WINDOW_OPEN_OFFSET_S = 81000  # seconds before WEEKEND_ROLLOVER"
+    - text: "PEAK_TRAFFIC_RAMP_BEGIN_S = 7200"
+      bound_direction: "upper"
+      bound_value: "7200"
       context_summary: "Daily traffic ramp begins."
       variant_id: 0
-      variant_text: "PEAK_TRAFFIC_RAMP_BEGIN_S = 5400"
+      variant_text: "PEAK_TRAFFIC_RAMP_BEGIN_S = 7200"
     - text: "AUTOSCALER_SCALEDOWN_DEADLINE_MIN = 180  # minutes"
       bound_direction: "upper"
       bound_value: "10800"
@@ -127,12 +128,13 @@ fixed_pool:
       context_summary: "Change-management deploy-freeze takes effect."
       variant_id: 0
       variant_text: "DEPLOY_FREEZE_BOUNDARY_S = 14400"
-    - text: "ALERTING_SILENCE_EXPIRES_MIN = 75  # minutes"
+    - text: "Reference: MAINTENANCE_TOKEN_TTL_S = 5400. Then ALERTING_SILENCE_EXPIRES_OFFSET_S = 900  # seconds before MAINTENANCE_TOKEN_TTL"
       bound_direction: "upper"
       bound_value: "4500"
-      context_summary: "Alerting silence window expiry, expressed in minutes."
-      variant_id: 1
-      variant_text: "ALERTING_SILENCE_EXPIRES_MIN = 75  # minutes"
+      context_summary: "Alerting silence expiry; expressed as offset before maintenance token TTL (5400 - 900 = 4500s). Designated binding upper for L2/L3."
+      variant_id: 2
+      variant_text: "Reference: MAINTENANCE_TOKEN_TTL_S = 5400. Then ALERTING_SILENCE_EXPIRES_OFFSET_S = 900  # seconds before MAINTENANCE_TOKEN_TTL"
+      binding: true
     - text: "Reference: SHIFT_END_S = 21600. Then PLANNED_MAINTENANCE_CLOSE_OFFSET_S = 3600  # seconds before SHIFT_END (negative = after)"
       bound_direction: "upper"
       bound_value: "18000"
@@ -165,12 +167,12 @@ fixed_pool:
       context_summary: "Diner owner places Costa at 50 minutes after the 6:00 PM rosary bell anchor."
       variant_id: 2
       variant_text: "Anchor: the rosary bell at St. Catherine's tolled at 6:00 PM sharp that evening. The Greek who runs the diner on Lex told me Costa took the corner booth fifty minutes after the rosary bell and ordered nothing — just sat. He left after maybe twenty minutes."
-    - text: "A streetcar conductor punched Costa's transfer at seven-oh-five, the night the Adler woman died. He remembered the face — said the man had a bruise on his cheek that hadn't been there the day before."
+    - text: "Anchor: the curtain rose on the late show at the Hippodrome at 7:00 PM that evening. A streetcar conductor punched Costa's transfer five minutes after the curtain went up, the night the Adler woman died. He remembered the face — said the man had a bruise on his cheek that hadn't been there the day before."
       bound_direction: "lower"
       bound_value: "7:05 PM"
-      context_summary: "Streetcar conductor punches transfer at 7:05 PM."
-      variant_id: 0
-      variant_text: "A streetcar conductor punched Costa's transfer at seven-oh-five, the night the Adler woman died. He remembered the face — said the man had a bruise on his cheek that hadn't been there the day before."
+      context_summary: "Streetcar conductor punches transfer at 7:05 PM, expressed as offset after the 7:00 PM Hippodrome curtain."
+      variant_id: 2
+      variant_text: "Anchor: the curtain rose on the late show at the Hippodrome at 7:00 PM that evening. A streetcar conductor punched Costa's transfer five minutes after the curtain went up, the night the Adler woman died. He remembered the face — said the man had a bruise on his cheek that hadn't been there the day before."
     - text: "Mickey was last seen alive — and very much alone — by the doorman at the Astor at 19:30, the night of the killing."
       bound_direction: "lower"
       bound_value: "7:30 PM"
@@ -183,12 +185,13 @@ fixed_pool:
       context_summary: "Cigarette girl pegs Costa at 45 minutes after the 7:00 PM Chicago express anchor."
       variant_id: 2
       variant_text: "Anchor: the express to Chicago departed Penn at 7:00 PM that evening. I caught up with the cigarette girl at the Indigo. She remembered him fine. 'Forty-five minutes after the Chicago express pulled out,' she said, 'he bought a pack of Luckies and didn't tip.'"
-    - text: "The bartender at the Indigo served Costa a third gin at twenty before nine; Costa lingered another ten minutes, the bartender said, then left at half past."
+    - text: "Anchor: the cleaners locked the Garment District showroom at 8:00 PM that evening. The bartender at the Indigo served Costa a third gin fifty minutes after the showroom locked, and remembered Costa leaving soon after."
       bound_direction: "lower"
       bound_value: "8:50 PM"
-      context_summary: "Bartender's account stretches Costa's documented at-large time to 8:50 PM (colloquial variant)."
-      variant_id: 0
-      variant_text: "The bartender at the Indigo served Costa a third gin at twenty before nine; Costa lingered another ten minutes, the bartender said, then left at half past."
+      context_summary: "Bartender's account at 8:50 PM, expressed as offset after the 8:00 PM Garment District showroom lockup. Designated binding lower for L2/L3."
+      variant_id: 2
+      variant_text: "Anchor: the cleaners locked the Garment District showroom at 8:00 PM that evening. The bartender at the Indigo served Costa a third gin fifty minutes after the showroom locked, and remembered Costa leaving soon after."
+      binding: true
     - text: "Two patrolmen on the Grand-Central beat said they tipped their caps to Costa as he came up out of the IRT — they fixed it at 20:30, give or take, because they had just turned the corner past the cigar shop."
       bound_direction: "lower"
       bound_value: "8:30 PM"
@@ -199,9 +202,10 @@ fixed_pool:
     - text: "Anchor: the late edition went to press at 10:00 PM that evening. The desk sergeant logged Costa's pickup at the precinct fifty-five minutes before the late edition went to press — the suspect, demonstrably, was no longer at large."
       bound_direction: "upper"
       bound_value: "9:05 PM"
-      context_summary: "Precinct intake at 55 minutes before the 10:00 PM late edition anchor."
+      context_summary: "Precinct intake at 55 minutes before the 10:00 PM late edition anchor. Designated binding upper for L2/L3."
       variant_id: 2
       variant_text: "Anchor: the late edition went to press at 10:00 PM that evening. The desk sergeant logged Costa's pickup at the precinct fifty-five minutes before the late edition went to press — the suspect, demonstrably, was no longer at large."
+      binding: true
     - text: "The jail clerk pushed the booking slip across his desk and tapped the time stamp: nine-twenty, sharp. 'He's been ours since,' the clerk said, 'and he ain't going anywhere.'"
       bound_direction: "upper"
       bound_value: "9:20 PM"
